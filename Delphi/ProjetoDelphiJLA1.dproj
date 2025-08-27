@@ -126,10 +126,27 @@
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
+        <DCCReference Include="unitCrudClientes.pas">
+            <Form>Form2</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <DCCReference Include="unitLogoJLA.pas">
             <Form>formLogin</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <RcItem Include="..\..\..\..\..\Downloads\cadeado-azul-bloqueado.bmp">
+            <ResourceType>BITMAP</ResourceType>
+            <ResourceId>Bitmap_1</ResourceId>
+        </RcItem>
+        <RcItem Include="..\..\..\..\..\Downloads\cadeado azul desbloqueado.png">
+            <ResourceType>RCDATA</ResourceType>
+            <ResourceId>PngImage_1</ResourceId>
+        </RcItem>
+        <RcItem Include="..\..\..\..\..\Downloads\cadeado azul bloqueado.png">
+            <ResourceType>RCDATA</ResourceType>
+            <ResourceId>PngImage_2</ResourceId>
+        </RcItem>
+        <None Include="..\..\..\..\..\Desktop\saída X.webp"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
@@ -156,6 +173,30 @@
                 </Source>
             </Delphi.Personality>
             <Deployment Version="4">
+                <DeployFile LocalName="..\..\..\..\..\Desktop\saída X.webp" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\..\..\Downloads\cadeado azul bloqueado.png" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\..\..\Downloads\cadeado azul desbloqueado.png" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\..\..\Downloads\cadeado-azul-bloqueado.bmp" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="Win32\Debug\ProjetoDelphiJLA1.exe" Configuration="Debug" Class="ProjectOutput">
                     <Platform Name="Win32">
                         <RemoteName>ProjetoDelphiJLA1.exe</RemoteName>
@@ -1117,6 +1158,7 @@
                 <Platform value="Win32">True</Platform>
                 <Platform value="Win64">True</Platform>
             </Platforms>
+            <ModelSupport>True</ModelSupport>
         </BorlandProject>
         <ProjectFileVersion>12</ProjectFileVersion>
     </ProjectExtensions>
