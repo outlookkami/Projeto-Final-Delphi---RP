@@ -20,10 +20,6 @@ object formLogin: TformLogin
     Color = clHighlight
     ParentBackground = False
     TabOrder = 0
-    ExplicitLeft = 8
-    ExplicitTop = 8
-    ExplicitWidth = 1150
-    ExplicitHeight = 701
     object pnlLogin: TPanel
       AlignWithMargins = True
       Left = 581
@@ -36,11 +32,10 @@ object formLogin: TformLogin
       Color = clWhite
       ParentBackground = False
       TabOrder = 0
-      ExplicitTop = 2
       object Image1: TImage
         AlignWithMargins = True
-        Left = 536
-        Top = 8
+        Left = 520
+        Top = 16
         Width = 41
         Height = 34
         Center = True
@@ -6787,8 +6782,8 @@ object formLogin: TformLogin
         object lblUsuario: TLabel
           Left = 24
           Top = 159
-          Width = 67
-          Height = 23
+          Width = 57
+          Height = 21
           Align = alCustom
           Anchors = [akLeft, akTop, akRight, akBottom]
           Caption = 'Usu'#225'rio:'
@@ -6798,14 +6793,12 @@ object formLogin: TformLogin
           Font.Name = 'Segoe UI'
           Font.Style = []
           ParentFont = False
-          ExplicitWidth = 77
-          ExplicitHeight = 19
         end
         object lblSenha: TLabel
           Left = 24
           Top = 252
-          Width = 56
-          Height = 23
+          Width = 46
+          Height = 21
           Anchors = [akLeft, akTop, akRight, akBottom]
           Caption = 'Senha:'
           Font.Charset = DEFAULT_CHARSET
@@ -6814,8 +6807,6 @@ object formLogin: TformLogin
           Font.Name = 'Segoe UI'
           Font.Style = []
           ParentFont = False
-          ExplicitWidth = 66
-          ExplicitHeight = 19
         end
         object lblLogin: TLabel
           Left = 0
@@ -6831,8 +6822,6 @@ object formLogin: TformLogin
           Font.Name = 'Segoe UI'
           Font.Style = []
           ParentFont = False
-          ExplicitLeft = 1
-          ExplicitTop = 33
           ExplicitWidth = 79
         end
         object lblEspaco: TLabel
@@ -6842,8 +6831,6 @@ object formLogin: TformLogin
           Height = 15
           Align = alTop
           Alignment = taCenter
-          ExplicitLeft = 1
-          ExplicitTop = 1
           ExplicitWidth = 3
         end
         object Label1: TLabel
@@ -6853,8 +6840,7 @@ object formLogin: TformLogin
           Height = 15
           Align = alTop
           Alignment = taCenter
-          ExplicitTop = 66
-          ExplicitWidth = 461
+          ExplicitWidth = 3
         end
         object lblEspaco2: TLabel
           Left = 0
@@ -6862,15 +6848,13 @@ object formLogin: TformLogin
           Width = 451
           Height = 15
           Align = alBottom
-          ExplicitLeft = 1
-          ExplicitTop = 493
           ExplicitWidth = 3
         end
         object lblAvisoUsuario: TLabel
           Left = 24
           Top = 184
-          Width = 361
-          Height = 17
+          Width = 3
+          Height = 15
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clRed
           Font.Height = -12
@@ -6881,8 +6865,8 @@ object formLogin: TformLogin
         object lblAvisoSenha: TLabel
           Left = 24
           Top = 280
-          Width = 377
-          Height = 17
+          Width = 3
+          Height = 15
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clRed
           Font.Height = -12
@@ -8390,7 +8374,6 @@ object formLogin: TformLogin
           PasswordChar = '*'
           TabOrder = 1
           TextHint = 'Digite sua senha'
-          ExplicitWidth = 397
         end
         object edtUsuario: TEdit
           Left = 24
@@ -8401,7 +8384,6 @@ object formLogin: TformLogin
           Anchors = [akLeft, akTop, akRight]
           TabOrder = 0
           TextHint = 'Digite seu ID de usu'#225'rio'
-          ExplicitWidth = 397
         end
         object pnlEntrar: TPanel
           Left = 121
@@ -8423,7 +8405,6 @@ object formLogin: TformLogin
           ParentFont = False
           TabOrder = 2
           OnClick = pnlEntrarClick
-          ExplicitWidth = 228
         end
       end
     end
@@ -8437,8 +8418,6 @@ object formLogin: TformLogin
       Color = clHighlight
       ParentBackground = False
       TabOrder = 1
-      ExplicitLeft = 0
-      ExplicitTop = -6
     end
   end
 end

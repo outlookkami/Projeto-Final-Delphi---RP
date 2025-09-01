@@ -1,34 +1,29 @@
-unit unitLogoJLA;
+unit unitLoginJLANew;
 
 interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Mask, Vcl.ComCtrls,
-  Vcl.ExtCtrls, Vcl.Imaging.jpeg, System.ImageList, Vcl.ImgList,
-  Vcl.Imaging.pngimage, unitCrudClientes, Vcl.Skia;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.StdCtrls, Vcl.Mask, Vcl.ComCtrls,
+  Vcl.Imaging.pngimage, unitNew;
 
 type
-  TformLogin = class(TForm)
+  TFormLogin = class(TForm)
+    panelMain: TPanel;
     pnlLogin: TPanel;
-    pnlLogin2: TPanel;
-    lblUsuario: TLabel;
+    pnlLoginInterno: TPanel;
     lblSenha: TLabel;
+    lblUsuario: TLabel;
     lblLogin: TLabel;
-    lblEspaco: TLabel;
+    btnEntrarLogin: TPanel;
+    pnlilustrativo: TPanel;
     edtUsuario: TEdit;
     edtSenha: TEdit;
-    pnlEntrar: TPanel;
-    Label1: TLabel;
-    lblEspaco2: TLabel;
+    imgCadeados: TImage;
     lblAvisoUsuario: TLabel;
     lblAvisoSenha: TLabel;
-    pnlBaseLogin: TPanel;
-    Image1: TImage;
-    pnlLayoutLogin: TPanel;
-    imgCadeados: TImage;
-    procedure pnlEntrarClick(Sender: TObject);
-    procedure imgCadeadoDesbClick(Sender: TObject);
+    procedure btnEntrarLoginClick(Sender: TObject);
+    procedure imgCadeadosClick(Sender: TObject);
   private
     { Private declarations }
     procedure HideShowSenha;
@@ -37,13 +32,13 @@ type
   end;
 
 var
-  formLogin: TformLogin;
+  FormLogin: TFormLogin;
 
 implementation
 
 {$R *.dfm}
 
-procedure TformLogin.HideShowSenha;
+procedure TFormLogin.HideShowSenha;
 begin
     if edtSenha.PasswordChar = '*' then begin
     imgCadeados.Picture.LoadFromFile('C:\Users\Kamilly Souza\Desktop\Projeto Delphi - JLA\Assets\cadeado azul bloqueado.png');
@@ -54,12 +49,12 @@ begin
     end;
 end;
 
-procedure TformLogin.imgCadeadoDesbClick(Sender: TObject);
+procedure TformLogin.imgCadeadosClick(Sender: TObject);
 begin
      HideShowSenha;
 end;
 
-procedure TformLogin.pnlEntrarClick(Sender: TObject);
+procedure TformLogin.btnEntrarLoginClick(Sender: TObject);
 begin
   if (edtUsuario.Text = '') or (edtSenha.Text = '') then begin
     ShowMessage('Preencha todos os campos.');
@@ -78,7 +73,7 @@ begin
   end else begin
         lblAvisoUsuario.Caption := '';
   end;
-     Form2.Show;
+     FormLogin.Show;
 end;
 
 end.

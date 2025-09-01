@@ -1,4 +1,4 @@
-unit unitLogoJLA;
+unit unitLoginJLA;
 
 interface
 
@@ -6,7 +6,7 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Mask, Vcl.ComCtrls,
   Vcl.ExtCtrls, Vcl.Imaging.jpeg, System.ImageList, Vcl.ImgList,
-  Vcl.Imaging.pngimage, unitCrudClientes, Vcl.Skia;
+  Vcl.Imaging.pngimage, Vcl.Skia, unitCrudClientes;
 
 type
   TformLogin = class(TForm)
@@ -23,10 +23,10 @@ type
     lblEspaco2: TLabel;
     lblAvisoUsuario: TLabel;
     lblAvisoSenha: TLabel;
+    imgCadeadoDesb: TImage;
     pnlBaseLogin: TPanel;
     Image1: TImage;
     pnlLayoutLogin: TPanel;
-    imgCadeados: TImage;
     procedure pnlEntrarClick(Sender: TObject);
     procedure imgCadeadoDesbClick(Sender: TObject);
   private
@@ -46,10 +46,10 @@ implementation
 procedure TformLogin.HideShowSenha;
 begin
     if edtSenha.PasswordChar = '*' then begin
-    imgCadeados.Picture.LoadFromFile('C:\Users\Kamilly Souza\Desktop\Projeto Delphi - JLA\Assets\cadeado azul bloqueado.png');
+    imgCadeadoDesb.Picture.LoadFromFile('C:\Users\Kamilly Souza\Desktop\Projeto Delphi - JLA\Assets\cadeado azul bloqueado.png');
     edtSenha.PasswordChar := #0;
     end else if edtSenha.PasswordChar = #0 then begin
-    imgCadeados.Picture.LoadFromFile('C:\Users\Kamilly Souza\Desktop\Projeto Delphi - JLA\Assets\cadeado azul desbloqueado.png');
+    imgCadeadoDesb.Picture.LoadFromFile('C:\Users\Kamilly Souza\Desktop\Projeto Delphi - JLA\Assets\cadeado azul desbloqueado.png');
     edtSenha.PasswordChar := '*';
     end;
 end;

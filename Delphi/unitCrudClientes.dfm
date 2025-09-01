@@ -19,7 +19,6 @@ object Form2: TForm2
     Height = 701
     Align = alClient
     TabOrder = 0
-    ExplicitTop = 8
     object pnlHeader: TPanel
       Left = 1
       Top = 1
@@ -30,8 +29,6 @@ object Form2: TForm2
       Color = clHighlight
       ParentBackground = False
       TabOrder = 0
-      ExplicitLeft = 2
-      ExplicitTop = 0
       DesignSize = (
         1148
         56)
