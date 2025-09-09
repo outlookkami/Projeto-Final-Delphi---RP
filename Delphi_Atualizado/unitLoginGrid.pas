@@ -21,6 +21,16 @@ type
     lblVazio3: TLabel;
     pnlEntrar: TPanel;
     imgCadeadoDesb: TImage;
+    GridPanel2: TGridPanel;
+    Label3: TLabel;
+    DBLabeledEdit4: TDBLabeledEdit;
+    Label4: TLabel;
+    Label5: TLabel;
+    Label6: TLabel;
+    Panel2: TPanel;
+    GridPanel3: TGridPanel;
+    DBLabeledEdit5: TDBLabeledEdit;
+    Image4: TImage;
     procedure pnlEntrarClick(Sender: TObject);
   private
     { Private declarations }
@@ -46,5 +56,44 @@ begin
     frameFormularioDePedido.Align := alClient;
     frameFormularioDePedido.Visible := True;
 end;
+
+
+//procedure TformLoginSemGridPanel.HideShowSenha;
+//begin
+//    if edtSenha.PasswordChar = '*' then begin
+//    imgCadeadoDesb.Picture.LoadFromFile('C:\Users\Kamilly Souza\Desktop\Projeto Delphi - JLA\Assets\cadeado azul bloqueado.png');
+//    edtSenha.PasswordChar := #0;
+//    end else if edtSenha.PasswordChar = #0 then begin
+//    imgCadeadoDesb.Picture.LoadFromFile('C:\Users\Kamilly Souza\Desktop\Projeto Delphi - JLA\Assets\cadeado azul desbloqueado.png');
+//    edtSenha.PasswordChar := '*';
+//    end;
+//end;
+//
+//procedure TformLoginSemGridPanel.imgCadeadoDesbClick(Sender: TObject);
+//begin
+//     HideShowSenha;
+//end;
+//
+//procedure TformLoginSemGridPanel.pnlEntrarClick(Sender: TObject);
+//begin
+//  if (edtUsuario.Text = '') or (edtSenha.Text = '') then begin
+//    ShowMessage('Preencha todos os campos.');
+//  end;
+//
+//  if edtSenha.Text = '' then begin
+//      lblAvisoSenha.Caption := 'Informe sua senha';
+//      edtSenha.SetFocus;
+//  end else begin
+//        lblAvisoSenha.Caption := '';
+//  end;
+//
+//  if edtUsuario.Text = '' then begin
+//      lblAvisoUsuario.Caption := 'Informe seu código de usuário';
+//      edtUsuario.SetFocus;
+//  end else begin
+//        lblAvisoUsuario.Caption := '';
+//  end;
+//     Form2.Show;
+//end;
 
 end.

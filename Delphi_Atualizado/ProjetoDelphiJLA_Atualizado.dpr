@@ -21,15 +21,16 @@ uses
 begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TformLoginSemGridPanel, formLoginSemGridPanel);
   Application.CreateForm(TformLoginGrid, formLoginGrid);
   Application.CreateForm(TframeCadastroFunc, frameCadastroFunc);
   Application.CreateForm(TformPáginaInicial, formPáginaInicial);
   Application.CreateForm(TformCadastroFuncionarios, formCadastroFuncionarios);
   Application.CreateForm(TframeCadSenhaFuncionario, frameCadSenhaFuncionario);
   Application.CreateForm(TframeFormularioPedidoSemGridPanel, frameFormularioPedidoSemGridPanel);
-  Application.CreateForm(TformLoginSemGridPanel, formLoginSemGridPanel);
   Application.CreateForm(TframeFormularioDePedido, frameFormularioDePedido);
   Application.CreateForm(TformCadastroDeClientes, formCadastroDeClientes);
   Application.CreateForm(TformCadastroClientes, formCadastroClientes);
+  Application.CreateForm(TformTESTEPanelGrid, formTESTEPanelGrid);
   Application.Run;
 end.

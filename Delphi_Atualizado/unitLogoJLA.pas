@@ -6,27 +6,25 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Mask, Vcl.ComCtrls,
   Vcl.ExtCtrls, Vcl.Imaging.jpeg, System.ImageList, Vcl.ImgList,
-  Vcl.Imaging.pngimage, Vcl.Skia, unitCrudClientes;
+  Vcl.Imaging.pngimage, Vcl.Skia, unitCrudClientes, Vcl.DBCtrls;
 
 type
   TformLoginSemGridPanel = class(TForm)
     pnlLogin: TPanel;
-    pnlLogin2: TPanel;
-    lblUsuario: TLabel;
-    lblSenha: TLabel;
-    lblLogin: TLabel;
-    lblEspaco: TLabel;
-    edtUsuario: TEdit;
-    edtSenha: TEdit;
-    pnlEntrar: TPanel;
-    Label1: TLabel;
-    lblEspaco2: TLabel;
-    lblAvisoUsuario: TLabel;
-    lblAvisoSenha: TLabel;
-    imgCadeadoDesb: TImage;
     pnlBaseLogin: TPanel;
     Image1: TImage;
     pnlLayoutLogin: TPanel;
+    imgCadeadoDesb: TImage;
+    GridPanel1: TGridPanel;
+    Label3: TLabel;
+    DBLabeledEdit4: TDBLabeledEdit;
+    Label4: TLabel;
+    Label5: TLabel;
+    Label6: TLabel;
+    Panel2: TPanel;
+    GridPanel3: TGridPanel;
+    DBLabeledEdit5: TDBLabeledEdit;
+    Image4: TImage;
     procedure pnlEntrarClick(Sender: TObject);
     procedure imgCadeadoDesbClick(Sender: TObject);
   private
@@ -45,12 +43,12 @@ implementation
 
 procedure TformLoginSemGridPanel.HideShowSenha;
 begin
-    if edtSenha.PasswordChar = '*' then begin
+    if DBLabeledEdit4.PasswordChar = '*' then begin
     imgCadeadoDesb.Picture.LoadFromFile('C:\Users\Kamilly Souza\Desktop\Projeto Delphi - JLA\Assets\cadeado azul bloqueado.png');
-    edtSenha.PasswordChar := #0;
-    end else if edtSenha.PasswordChar = #0 then begin
+    DBLabeledEdit4.PasswordChar := #0;
+    end else if DBLabeledEdit4.PasswordChar = #0 then begin
     imgCadeadoDesb.Picture.LoadFromFile('C:\Users\Kamilly Souza\Desktop\Projeto Delphi - JLA\Assets\cadeado azul desbloqueado.png');
-    edtSenha.PasswordChar := '*';
+    DBLabeledEdit4.PasswordChar := '*';
     end;
 end;
 
@@ -61,20 +59,20 @@ end;
 
 procedure TformLoginSemGridPanel.pnlEntrarClick(Sender: TObject);
 begin
-  if (edtUsuario.Text = '') or (edtSenha.Text = '') then begin
+  if (DBLabeledEdit4.Text = '') or (DBLabeledEdit5.Text = '') then begin
     ShowMessage('Preencha todos os campos.');
   end;
 
-  if edtSenha.Text = '' then begin
+  if DBLabeledEdit5.Text = '' then begin
       lblAvisoSenha.Caption := 'Informe sua senha';
-      edtSenha.SetFocus;
+      DBLabeledEdit5.SetFocus;
   end else begin
-        lblAvisoSenha.Caption := '';
+      lblAvisoSenha.Caption := '';
   end;
 
-  if edtUsuario.Text = '' then begin
+  if DBLabeledEdit4.Text = '' then begin
       lblAvisoUsuario.Caption := 'Informe seu código de usuário';
-      edtUsuario.SetFocus;
+      DBLabeledEdit4.SetFocus;
   end else begin
         lblAvisoUsuario.Caption := '';
   end;

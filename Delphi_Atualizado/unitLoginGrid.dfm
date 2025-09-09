@@ -35,6 +35,11 @@ object formLoginGrid: TformLoginGrid
         Column = 1
         Control = pnlLogin
         Row = 0
+      end
+      item
+        Column = 0
+        Control = GridPanel2
+        Row = 1
       end>
     RowCollection = <
       item
@@ -49,7 +54,7 @@ object formLoginGrid: TformLoginGrid
       Left = 1
       Top = 1
       Width = 510
-      Height = 646
+      Height = 605
       Align = alClient
       Color = clHighlight
       ParentBackground = False
@@ -57,9 +62,9 @@ object formLoginGrid: TformLoginGrid
     end
     object pnlLogin: TPanel
       Left = 564
-      Top = 46
+      Top = 47
       Width = 402
-      Height = 536
+      Height = 495
       Align = alCustom
       Anchors = [akLeft, akTop, akRight, akBottom]
       TabOrder = 1
@@ -1555,7 +1560,7 @@ object formLoginGrid: TformLoginGrid
         Left = 24
         Top = 21
         Width = 349
-        Height = 490
+        Height = 449
         Align = alCustom
         Anchors = [akLeft, akTop, akRight, akBottom]
         BevelEdges = []
@@ -1634,7 +1639,7 @@ object formLoginGrid: TformLoginGrid
         TabOrder = 0
         DesignSize = (
           349
-          490)
+          449)
         object lblLogin: TLabel
           Left = 115
           Top = 0
@@ -1653,7 +1658,7 @@ object formLoginGrid: TformLoginGrid
         end
         object DBLabeledEdit1: TDBLabeledEdit
           Left = 10
-          Top = 156
+          Top = 145
           Width = 329
           Height = 29
           Margins.Left = 0
@@ -1678,7 +1683,7 @@ object formLoginGrid: TformLoginGrid
         end
         object DBLabeledEdit2: TDBLabeledEdit
           Left = 12
-          Top = 278
+          Top = 257
           Width = 324
           Height = 29
           Anchors = []
@@ -1696,7 +1701,7 @@ object formLoginGrid: TformLoginGrid
         end
         object lblVazio1: TLabel
           Left = 172
-          Top = 81
+          Top = 73
           Width = 4
           Height = 21
           Anchors = []
@@ -1705,7 +1710,7 @@ object formLoginGrid: TformLoginGrid
         end
         object lblVazio2: TLabel
           Left = 172
-          Top = 204
+          Top = 185
           Width = 4
           Height = 21
           Anchors = []
@@ -1714,7 +1719,7 @@ object formLoginGrid: TformLoginGrid
         end
         object lblVazio3: TLabel
           Left = 172
-          Top = 326
+          Top = 298
           Width = 4
           Height = 21
           Anchors = []
@@ -1723,7 +1728,7 @@ object formLoginGrid: TformLoginGrid
         end
         object pnlEntrar: TPanel
           Left = 82
-          Top = 378
+          Top = 344
           Width = 185
           Height = 41
           Cursor = crHandPoint
@@ -1739,6 +1744,236 @@ object formLoginGrid: TformLoginGrid
           ParentFont = False
           TabOrder = 2
           OnClick = pnlEntrarClick
+        end
+      end
+    end
+    object GridPanel2: TGridPanel
+      Left = 1
+      Top = 606
+      Width = 510
+      Height = 41
+      Align = alClient
+      BevelEdges = []
+      BevelOuter = bvNone
+      ColumnCollection = <
+        item
+          Value = 100.000000000000000000
+        end>
+      ControlCollection = <
+        item
+          Column = 0
+          Control = Label3
+          Row = 0
+        end
+        item
+          Column = 0
+          Control = DBLabeledEdit4
+          Row = 2
+        end
+        item
+          Column = 0
+          Control = Label4
+          Row = 1
+        end
+        item
+          Column = 0
+          Control = Label5
+          Row = 3
+        end
+        item
+          Column = 0
+          Control = Label6
+          Row = 5
+        end
+        item
+          Column = 0
+          Control = Panel2
+          Row = 6
+        end
+        item
+          Column = -1
+          Row = -1
+        end
+        item
+          Column = 0
+          Control = GridPanel3
+          Row = 4
+        end>
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+      RowCollection = <
+        item
+          Value = 12.500000000000000000
+        end
+        item
+          Value = 12.500000000000000000
+        end
+        item
+          Value = 12.500000000000000000
+        end
+        item
+          Value = 12.500000000000000000
+        end
+        item
+          Value = 12.500000000000000000
+        end
+        item
+          Value = 12.500000000000000000
+        end
+        item
+          Value = 12.500000000000000000
+        end
+        item
+          Value = 12.500000000000000000
+        end>
+      TabOrder = 2
+      DesignSize = (
+        510
+        41)
+      object Label3: TLabel
+        Left = 196
+        Top = 0
+        Width = 118
+        Height = 65
+        Anchors = []
+        Caption = 'Login'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -48
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
+        ExplicitLeft = 136
+        ExplicitTop = 6
+      end
+      object DBLabeledEdit4: TDBLabeledEdit
+        Left = 92
+        Top = 43
+        Width = 326
+        Height = 29
+        Margins.Left = 0
+        Margins.Top = 0
+        Margins.Right = 0
+        Margins.Bottom = 0
+        Anchors = [akLeft, akRight, akBottom]
+        BevelEdges = []
+        BevelInner = bvNone
+        BevelOuter = bvNone
+        TabOrder = 0
+        StyleName = 'Windows'
+        EditLabel.Width = 75
+        EditLabel.Height = 30
+        EditLabel.Caption = 'Usu'#225'rio:'
+        EditLabel.Font.Charset = DEFAULT_CHARSET
+        EditLabel.Font.Color = clWindowText
+        EditLabel.Font.Height = -21
+        EditLabel.Font.Name = 'Segoe UI'
+        EditLabel.Font.Style = []
+        EditLabel.ParentFont = False
+      end
+      object Label4: TLabel
+        Left = 253
+        Top = 5
+        Width = 4
+        Height = 21
+        Anchors = []
+        ExplicitLeft = 158
+        ExplicitTop = 84
+      end
+      object Label5: TLabel
+        Left = 253
+        Top = 15
+        Width = 4
+        Height = 21
+        Anchors = []
+        ExplicitLeft = 150
+        ExplicitTop = 211
+      end
+      object Label6: TLabel
+        Left = 253
+        Top = 26
+        Width = 4
+        Height = 21
+        Anchors = []
+        ExplicitLeft = 150
+        ExplicitTop = 338
+      end
+      object Panel2: TPanel
+        Left = 162
+        Top = 31
+        Width = 185
+        Height = 41
+        Cursor = crHandPoint
+        Anchors = []
+        Caption = 'Entrar'
+        Color = clHighlight
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWhite
+        Font.Height = -19
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentBackground = False
+        ParentFont = False
+        TabOrder = 1
+        OnClick = pnlEntrarClick
+      end
+      object GridPanel3: TGridPanel
+        Left = 90
+        Top = 21
+        Width = 330
+        Height = 58
+        Anchors = []
+        Caption = 'GridPanel2'
+        ColumnCollection = <
+          item
+            SizeStyle = ssAbsolute
+            Value = 290.000000000000000000
+          end
+          item
+            SizeStyle = ssAbsolute
+            Value = 40.000000000000000000
+          end>
+        ControlCollection = <
+          item
+            Column = 0
+            Control = DBLabeledEdit5
+            Row = 0
+          end
+          item
+            Column = 1
+            Control = Image4
+            Row = 0
+          end>
+        RowCollection = <
+          item
+            Value = 100.000000000000000000
+          end>
+        TabOrder = 2
+        DesignSize = (
+          330
+          58)
+        object DBLabeledEdit5: TDBLabeledEdit
+          Left = 4
+          Top = 26
+          Width = 284
+          Height = 29
+          Anchors = []
+          TabOrder = 0
+          EditLabel.Width = 46
+          EditLabel.Height = 21
+          EditLabel.Caption = 'Senha:'
+        end
+        object Image4: TImage
+          Left = 296
+          Top = 14
+          Width = 30
+          Height = 29
+          Anchors = []
+          ExplicitLeft = 294
         end
       end
     end
