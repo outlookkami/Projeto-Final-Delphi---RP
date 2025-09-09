@@ -1,31 +1,35 @@
 program ProjetoDelphiJLA_Atualizado;
 
-{$R *.dres}
+
 
 uses
   Vcl.Forms,
-  unitLogoJLA in 'unitLogoJLA.pas' {formLogin},
-  unitCrudClientes in 'unitCrudClientes.pas' {Form2},
-  unitDadosCadastro in 'unitDadosCadastro.pas' {formCadastroClientes},
-  unitTestesJLA in 'unitTestesJLA.pas' {Form4},
-  unitLoginGrid in 'unitLoginGrid.pas' {Form5},
-  unitCadastroFuncionario in 'unitCadastroFuncionario.pas' {frameCadastroFunc: TFrame},
-  frameCadastroCli in 'frameCadastroCli.pas' {Frame2: TFrame},
-  unitCadastroClientes_Form in 'unitCadastroClientes_Form.pas' {formCadastroCliente},
+  unitLogoJLA in 'unitLogoJLA.pas' {formLoginSemGridPanel},
+  formPáginaDeInício in 'formPáginaDeInício.pas' {formPáginaInicial},
+  formCadastroClientesANTIGO in 'formCadastroClientesANTIGO.pas' {formCadastroClientes},
+  unitTestesJLA in 'unitTestesJLA.pas' {formTESTEPanelGrid},
+  unitLoginGrid in 'unitLoginGrid.pas' {formLoginGrid},
+  frameCadastroFuncionario in 'frameCadastroFuncionario.pas' {frameCadastroFunc: TFrame},
   formCadastroFuncionario in 'formCadastroFuncionario.pas' {formCadastroFuncionarios},
-  frameCadastroDeSenhaFuncionário in 'frameCadastroDeSenhaFuncionário.pas' {Frame1: TFrame};
+  frameCadastroDeSenhaFuncionário in 'frameCadastroDeSenhaFuncionário.pas' {frameCadSenhaFuncionario: TFrame},
+  frameTESTEFormularioPedido in 'frameTESTEFormularioPedido.pas' {frameFormularioPedidoSemGridPanel: TFrame},
+  frameFormularioPedido in 'frameFormularioPedido.pas' {frameFormularioDePedido: TFrame},
+  frameCadastroClientes in 'frameCadastroClientes.pas' {formCadastroDeClientes};
 
 {$R *.res}
 
 begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
-  Application.CreateForm(TformCadastroCliente, formCadastroCliente);
-  Application.CreateForm(TformCadastroClientes, formCadastroClientes);
-  Application.CreateForm(TForm4, Form4);
+  Application.CreateForm(TformLoginGrid, formLoginGrid);
   Application.CreateForm(TframeCadastroFunc, frameCadastroFunc);
-  Application.CreateForm(TForm2, Form2);
-  Application.CreateForm(TFrame2, Frame2);
+  Application.CreateForm(TformPáginaInicial, formPáginaInicial);
   Application.CreateForm(TformCadastroFuncionarios, formCadastroFuncionarios);
+  Application.CreateForm(TframeCadSenhaFuncionario, frameCadSenhaFuncionario);
+  Application.CreateForm(TframeFormularioPedidoSemGridPanel, frameFormularioPedidoSemGridPanel);
+  Application.CreateForm(TformLoginSemGridPanel, formLoginSemGridPanel);
+  Application.CreateForm(TframeFormularioDePedido, frameFormularioDePedido);
+  Application.CreateForm(TformCadastroDeClientes, formCadastroDeClientes);
+  Application.CreateForm(TformCadastroClientes, formCadastroClientes);
   Application.Run;
 end.

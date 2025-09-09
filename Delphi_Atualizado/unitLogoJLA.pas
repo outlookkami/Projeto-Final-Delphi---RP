@@ -9,7 +9,7 @@ uses
   Vcl.Imaging.pngimage, Vcl.Skia, unitCrudClientes;
 
 type
-  TformLogin = class(TForm)
+  TformLoginSemGridPanel = class(TForm)
     pnlLogin: TPanel;
     pnlLogin2: TPanel;
     lblUsuario: TLabel;
@@ -37,13 +37,13 @@ type
   end;
 
 var
-  formLogin: TformLogin;
+  formLoginSemGridPanel: TformLoginSemGridPanel;
 
 implementation
 
 {$R *.dfm}
 
-procedure TformLogin.HideShowSenha;
+procedure TformLoginSemGridPanel.HideShowSenha;
 begin
     if edtSenha.PasswordChar = '*' then begin
     imgCadeadoDesb.Picture.LoadFromFile('C:\Users\Kamilly Souza\Desktop\Projeto Delphi - JLA\Assets\cadeado azul bloqueado.png');
@@ -54,12 +54,12 @@ begin
     end;
 end;
 
-procedure TformLogin.imgCadeadoDesbClick(Sender: TObject);
+procedure TformLoginSemGridPanel.imgCadeadoDesbClick(Sender: TObject);
 begin
      HideShowSenha;
 end;
 
-procedure TformLogin.pnlEntrarClick(Sender: TObject);
+procedure TformLoginSemGridPanel.pnlEntrarClick(Sender: TObject);
 begin
   if (edtUsuario.Text = '') or (edtSenha.Text = '') then begin
     ShowMessage('Preencha todos os campos.');

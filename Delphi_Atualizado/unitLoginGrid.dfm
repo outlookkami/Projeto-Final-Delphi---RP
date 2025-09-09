@@ -1,7 +1,7 @@
-object Form5: TForm5
+object formLoginGrid: TformLoginGrid
   Left = 0
   Top = 0
-  Caption = 'Form5'
+  Caption = 'formLoginGrid'
   ClientHeight = 654
   ClientWidth = 1027
   Color = clBtnFace
@@ -45,8 +45,6 @@ object Form5: TForm5
       end>
     ShowCaption = False
     TabOrder = 0
-    ExplicitWidth = 1015
-    ExplicitHeight = 631
     object pnlilustrativo: TPanel
       Left = 1
       Top = 1

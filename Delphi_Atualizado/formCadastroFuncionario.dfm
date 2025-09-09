@@ -45,8 +45,6 @@ object formCadastroFuncionarios: TformCadastroFuncionarios
       end>
     ShowCaption = False
     TabOrder = 0
-    ExplicitWidth = 1155
-    ExplicitHeight = 696
     object pnlilustrativo: TPanel
       Left = 1
       Top = 1
@@ -56,8 +54,6 @@ object formCadastroFuncionarios: TformCadastroFuncionarios
       Color = clHighlight
       ParentBackground = False
       TabOrder = 0
-      ExplicitLeft = 0
-      ExplicitTop = 15
     end
     object pnlLogin: TPanel
       Left = 641
@@ -247,7 +243,7 @@ object formCadastroFuncionarios: TformCadastroFuncionarios
             Value = 5.263157894736842000
           end
           item
-            Value = 5.263157894736786000
+            Value = 5.263157894736871000
           end>
         TabOrder = 0
         DesignSize = (
@@ -294,7 +290,6 @@ object formCadastroFuncionarios: TformCadastroFuncionarios
           EditLabel.Width = 115
           EditLabel.Height = 21
           EditLabel.Caption = 'Telefone/Celular:'
-          ExplicitTop = 116
         end
         object Label3: TLabel
           Left = 223
@@ -316,7 +311,6 @@ object formCadastroFuncionarios: TformCadastroFuncionarios
           EditLabel.Width = 47
           EditLabel.Height = 21
           EditLabel.Caption = 'E-mail:'
-          ExplicitTop = 178
         end
         object Label4: TLabel
           Left = 223
@@ -338,7 +332,6 @@ object formCadastroFuncionarios: TformCadastroFuncionarios
           EditLabel.Width = 30
           EditLabel.Height = 21
           EditLabel.Caption = 'CEP:'
-          ExplicitTop = 239
         end
         object Label5: TLabel
           Left = 223
@@ -360,7 +353,6 @@ object formCadastroFuncionarios: TformCadastroFuncionarios
           EditLabel.Width = 67
           EditLabel.Height = 21
           EditLabel.Caption = 'Endere'#231'o:'
-          ExplicitTop = 301
         end
         object Label6: TLabel
           Left = 223
@@ -403,7 +395,6 @@ object formCadastroFuncionarios: TformCadastroFuncionarios
               Value = 100.000000000000000000
             end>
           TabOrder = 5
-          ExplicitTop = 339
           DesignSize = (
             370
             56)
@@ -479,7 +470,6 @@ object formCadastroFuncionarios: TformCadastroFuncionarios
               SizeStyle = ssAuto
             end>
           TabOrder = 6
-          ExplicitTop = 400
           DesignSize = (
             379
             58)
@@ -493,7 +483,6 @@ object formCadastroFuncionarios: TformCadastroFuncionarios
             EditLabel.Width = 51
             EditLabel.Height = 21
             EditLabel.Caption = 'Cidade:'
-            ExplicitTop = 26
           end
           object dbleUF: TDBLabeledEdit
             Left = 278
@@ -505,7 +494,6 @@ object formCadastroFuncionarios: TformCadastroFuncionarios
             EditLabel.Width = 22
             EditLabel.Height = 21
             EditLabel.Caption = 'UF:'
-            ExplicitTop = 26
           end
           object Label8: TLabel
             Left = 129
@@ -533,7 +521,6 @@ object formCadastroFuncionarios: TformCadastroFuncionarios
           Anchors = []
           BevelOuter = bvNone
           TabOrder = 7
-          ExplicitTop = 465
           object lblSelecionaFuncao: TLabel
             Left = 24
             Top = 5

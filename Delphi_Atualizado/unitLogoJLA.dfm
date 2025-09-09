@@ -1,4 +1,4 @@
-object formLogin: TformLogin
+object formLoginSemGridPanel: TformLoginSemGridPanel
   Left = 0
   Top = 0
   Caption = 'Login'

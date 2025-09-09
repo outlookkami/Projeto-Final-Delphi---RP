@@ -8,7 +8,7 @@ uses
   Vcl.ExtCtrls, Vcl.DBCtrls;
 
 type
-  TFrame1 = class(TFrame)
+  TframeCadSenhaFuncionario = class(TFrame)
     pnlSenhaFuncionario: TPanel;
     lblCadastrandoSenhaFunc: TLabel;
     pnlCadSenhaFunc: TPanel;
@@ -25,6 +25,8 @@ type
   public
     { Public declarations }
   end;
+
+  var frameCadSenhaFuncionario: TframeCadSenhaFuncionario;
 
 implementation
 

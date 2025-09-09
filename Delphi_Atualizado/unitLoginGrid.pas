@@ -5,10 +5,10 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.StdCtrls,
-  Vcl.Imaging.pngimage, Vcl.Mask, Vcl.DBCtrls, frameCadastroCli, unitCadastroClientes_Form;
+  Vcl.Imaging.pngimage, Vcl.Mask, Vcl.DBCtrls, formPáginaDeInício, frameFormularioPedido;
 
 type
-  TForm5 = class(TForm)
+  TformLoginGrid = class(TForm)
     GridPanel1: TGridPanel;
     pnlilustrativo: TPanel;
     pnlLogin: TPanel;
@@ -29,7 +29,7 @@ type
   end;
 
 var
-  Form5: TForm5;
+  formLoginGrid: TformLoginGrid;
 
 implementation
 
@@ -37,14 +37,14 @@ implementation
 
 
 
-procedure TForm5.pnlEntrarClick(Sender: TObject);
-var Frame2: TFrame2;
+procedure TformLoginGrid.pnlEntrarClick(Sender: TObject);
+var frameFormularioDePedido: TframeFormularioDePedido;
 begin
-      Form3.ShowModal;
-//    Frame2 := TFrame2.Create(Self);
-//    Frame2.Parent := Self;
-//    Frame2.Align := alClient;
-//    Frame2.Visible := True;
+    formPáginaInicial.ShowModal;
+    frameFormularioDePedido := TframeFormularioDePedido.Create(Self);
+    frameFormularioDePedido.Parent := Self;
+    frameFormularioDePedido.Align := alClient;
+    frameFormularioDePedido.Visible := True;
 end;
 
 end.

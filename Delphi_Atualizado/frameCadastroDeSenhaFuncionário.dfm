@@ -1,4 +1,4 @@
-object Frame1: TFrame1
+object frameCadSenhaFuncionario: TframeCadSenhaFuncionario
   Left = 0
   Top = 0
   Width = 741
@@ -195,12 +195,12 @@ object Frame1: TFrame1
         end
         object Label3: TLabel
           Left = 187
-          Top = 155
+          Top = 163
           Width = 34
-          Height = 30
+          Height = 15
           Anchors = []
           Caption = 'Label3'
-          ExplicitTop = 163
+          ExplicitTop = 155
         end
         object pnlBotaoCadastrarSenha: TPanel
           Left = 112
