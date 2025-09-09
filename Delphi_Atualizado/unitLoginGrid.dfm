@@ -45,6 +45,8 @@ object Form5: TForm5
       end>
     ShowCaption = False
     TabOrder = 0
+    ExplicitWidth = 1015
+    ExplicitHeight = 631
     object pnlilustrativo: TPanel
       Left = 1
       Top = 1
@@ -56,10 +58,10 @@ object Form5: TForm5
       TabOrder = 0
     end
     object pnlLogin: TPanel
-      Left = 568
-      Top = 47
-      Width = 406
-      Height = 553
+      Left = 564
+      Top = 46
+      Width = 402
+      Height = 536
       Align = alCustom
       Anchors = [akLeft, akTop, akRight, akBottom]
       TabOrder = 1
@@ -1554,8 +1556,8 @@ object Form5: TForm5
       object gridPanelLogin: TGridPanel
         Left = 24
         Top = 21
-        Width = 353
-        Height = 507
+        Width = 349
+        Height = 490
         Align = alCustom
         Anchors = [akLeft, akTop, akRight, akBottom]
         BevelEdges = []
@@ -1633,10 +1635,10 @@ object Form5: TForm5
           end>
         TabOrder = 0
         DesignSize = (
-          353
-          507)
+          349
+          490)
         object lblLogin: TLabel
-          Left = 117
+          Left = 115
           Top = 0
           Width = 118
           Height = 65
@@ -1652,10 +1654,10 @@ object Form5: TForm5
           ExplicitTop = 6
         end
         object DBLabeledEdit1: TDBLabeledEdit
-          Left = 12
-          Top = 160
+          Left = 10
+          Top = 156
           Width = 329
-          Height = 40
+          Height = 29
           Margins.Left = 0
           Margins.Top = 0
           Margins.Right = 0
@@ -1675,11 +1677,10 @@ object Form5: TForm5
           EditLabel.Font.Name = 'Segoe UI'
           EditLabel.Font.Style = []
           EditLabel.ParentFont = False
-          ExplicitTop = 161
         end
         object DBLabeledEdit2: TDBLabeledEdit
-          Left = 14
-          Top = 287
+          Left = 12
+          Top = 278
           Width = 324
           Height = 29
           Anchors = []
@@ -1694,35 +1695,37 @@ object Form5: TForm5
           EditLabel.Font.Name = 'Segoe UI'
           EditLabel.Font.Style = []
           EditLabel.ParentFont = False
-          ExplicitLeft = 19
         end
         object lblVazio1: TLabel
-          Left = 174
-          Top = 84
+          Left = 172
+          Top = 81
           Width = 4
           Height = 21
           Anchors = []
           ExplicitLeft = 158
+          ExplicitTop = 84
         end
         object lblVazio2: TLabel
-          Left = 174
-          Top = 211
+          Left = 172
+          Top = 204
           Width = 4
           Height = 21
           Anchors = []
           ExplicitLeft = 150
+          ExplicitTop = 211
         end
         object lblVazio3: TLabel
-          Left = 174
-          Top = 338
+          Left = 172
+          Top = 326
           Width = 4
           Height = 21
           Anchors = []
           ExplicitLeft = 150
+          ExplicitTop = 338
         end
         object pnlEntrar: TPanel
-          Left = 84
-          Top = 391
+          Left = 82
+          Top = 378
           Width = 185
           Height = 41
           Cursor = crHandPoint
@@ -1738,8 +1741,6 @@ object Form5: TForm5
           ParentFont = False
           TabOrder = 2
           OnClick = pnlEntrarClick
-          ExplicitLeft = 168
-          ExplicitTop = 416
         end
       end
     end

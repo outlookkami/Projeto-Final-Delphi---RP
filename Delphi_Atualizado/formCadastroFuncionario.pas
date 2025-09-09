@@ -1,19 +1,19 @@
-unit formCadastroClientes;
+unit formCadastroFuncionario;
 
 interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.Mask,
-  Vcl.DBCtrls;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Mask, Vcl.ExtCtrls,
+  Vcl.DBCtrls, Vcl.Buttons;
 
 type
-  TformCadastroCliente = class(TForm)
+  TformCadastroFuncionarios = class(TForm)
     GridPanel1: TGridPanel;
     pnlilustrativo: TPanel;
     pnlLogin: TPanel;
-    gridPanelLogin: TGridPanel;
     Label1: TLabel;
+    gridPanelLogin: TGridPanel;
     lblVazio5: TLabel;
     dbleNome: TDBLabeledEdit;
     Label2: TLabel;
@@ -32,6 +32,13 @@ type
     GridPanel4: TGridPanel;
     dbleCidade: TDBLabeledEdit;
     dbleUF: TDBLabeledEdit;
+    Label8: TLabel;
+    SpeedButton1: TSpeedButton;
+    pnlSelecionaFuncao: TPanel;
+    lblSelecionaFuncao: TLabel;
+    DBComboBox1: TDBComboBox;
+    Label9: TLabel;
+    Panel1: TPanel;
   private
     { Private declarations }
   public
@@ -39,7 +46,7 @@ type
   end;
 
 var
-  formCadastroCliente: TformCadastroCliente;
+  formCadastroFuncionarios: TformCadastroFuncionarios;
 
 implementation
 
