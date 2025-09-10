@@ -26,8 +26,11 @@ type
     dbleUsuario: TDBLabeledEdit;
     lblVazio: TLabel;
     lblCadastreAqui: TLabel;
+    pnlFechar: TPanel;
+    imgFechar: TImage;
     procedure pnlEntrarClick(Sender: TObject);
     procedure imgCadeadoClick(Sender: TObject);
+    procedure imgFecharClick(Sender: TObject);
   private
     { Private declarations }
     procedure HideShowSenha;
@@ -56,6 +59,11 @@ end;
 procedure TformLoginSemGridPanel.imgCadeadoClick(Sender: TObject);
 begin
      HideShowSenha;
+end;
+
+procedure TformLoginSemGridPanel.imgFecharClick(Sender: TObject);
+begin
+    Close;
 end;
 
 procedure TformLoginSemGridPanel.pnlEntrarClick(Sender: TObject);

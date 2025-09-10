@@ -22,8 +22,8 @@ uses
 begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
-  Application.CreateForm(TformCadastroDeClientes, formCadastroDeClientes);
   Application.CreateForm(TformLoginSemGridPanel, formLoginSemGridPanel);
+  Application.CreateForm(TformCadastroDeClientes, formCadastroDeClientes);
   Application.CreateForm(TformLoginGrid, formLoginGrid);
   Application.CreateForm(TframeCadastroFunc, frameCadastroFunc);
   Application.CreateForm(TformPáginaInicial, formPáginaInicial);
