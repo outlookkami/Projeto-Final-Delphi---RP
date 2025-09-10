@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Mask, Vcl.ExtCtrls,
-  Vcl.DBCtrls;
+  Vcl.DBCtrls, frameFormularioPedido;
 
 type
   TformCadastroDeClientes = class(TForm)
@@ -14,7 +14,7 @@ type
     pnlLogin: TPanel;
     Label1: TLabel;
     gridPanelLogin: TGridPanel;
-    lblVazio5: TLabel;
+    LableV1: TLabel;
     dbleNome: TDBLabeledEdit;
     Label2: TLabel;
     dbleTelefone: TDBLabeledEdit;
@@ -32,6 +32,14 @@ type
     GridPanel4: TGridPanel;
     dbleCidade: TDBLabeledEdit;
     dbleUF: TDBLabeledEdit;
+    Label8: TLabel;
+    dbleSenha: TLabeledEdit;
+    Label9: TLabel;
+    dbleConfSenha: TLabeledEdit;
+    Label10: TLabel;
+    Label11: TLabel;
+    pnlCadastrar: TPanel;
+    procedure pnlCadastrarClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -44,5 +52,16 @@ var
 implementation
 
 {$R *.dfm}
+
+
+
+procedure TformCadastroDeClientes.pnlCadastrarClick(Sender: TObject);
+var frameFormularioDePedido: TframeFormularioDePedido;
+begin
+    frameFormularioDePedido := TframeFormularioDePedido.Create(Self);
+    frameFormularioDePedido.Parent := Self;
+    frameFormularioDePedido.Align := alClient;
+    frameFormularioDePedido.Visible := True;
+end;
 
 end.

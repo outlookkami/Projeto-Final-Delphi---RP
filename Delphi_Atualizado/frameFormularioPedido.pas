@@ -32,11 +32,8 @@ type
     lblVazio7: TLabel;
     dbleCodigoPedido: TDBLabeledEdit;
     lblVazio8: TLabel;
-    memoDescricaoDoServiço: TMemo;
     dbleData: TDBLabeledEdit;
     lblDescServico: TLabel;
-    pnlEnviar: TPanel;
-    pnlVerOrçamento: TPanel;
     GridPanel4: TGridPanel;
     GridPanel5: TGridPanel;
     DBLabeledEdit1: TDBLabeledEdit;
@@ -60,6 +57,12 @@ type
     DBLabeledEdit10: TDBLabeledEdit;
     Label8: TLabel;
     DBLabeledEdit11: TDBLabeledEdit;
+    GridPanel8: TGridPanel;
+    Panel2: TPanel;
+    Label9: TLabel;
+    Panel3: TPanel;
+    memoDescricaoDoServiço: TMemo;
+    procedure TmemoDescricaoDoServiçoOnCreate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -72,5 +75,12 @@ type
 implementation
 
 {$R *.dfm}
+
+procedure TframeFormularioDePedido.TmemoDescricaoDoServiçoOnCreate(Sender: TObject);
+var TmemoDescricaoDoServiço: Tmemo;
+begin
+//      if TmemoDescricaoDoServiço.StyleName then
+        TmemoDescricaoDoServiço.Clear;
+end;
 
 end.

@@ -57,9 +57,9 @@ object formCadastroDeClientes: TformCadastroDeClientes
     end
     object pnlLogin: TPanel
       Left = 641
-      Top = 48
+      Top = 24
       Width = 478
-      Height = 635
+      Height = 659
       Align = alCustom
       Anchors = [akLeft, akTop, akRight, akBottom]
       TabOrder = 1
@@ -80,10 +80,10 @@ object formCadastroDeClientes: TformCadastroDeClientes
         ExplicitWidth = 147
       end
       object gridPanelLogin: TGridPanel
-        Left = 16
+        Left = 8
         Top = 48
-        Width = 451
-        Height = 554
+        Width = 465
+        Height = 601
         Align = alCustom
         Anchors = [akLeft, akTop, akRight, akBottom]
         BevelEdges = []
@@ -95,7 +95,7 @@ object formCadastroDeClientes: TformCadastroDeClientes
         ControlCollection = <
           item
             Column = 0
-            Control = lblVazio5
+            Control = LableV1
             Row = 0
           end
           item
@@ -162,6 +162,41 @@ object formCadastroDeClientes: TformCadastroDeClientes
             Column = 0
             Control = GridPanel4
             Row = 13
+          end
+          item
+            Column = 0
+            Control = Label8
+            Row = 14
+          end
+          item
+            Column = 0
+            Control = dbleSenha
+            Row = 15
+          end
+          item
+            Column = 0
+            Control = Label9
+            Row = 16
+          end
+          item
+            Column = 0
+            Control = dbleConfSenha
+            Row = 17
+          end
+          item
+            Column = 0
+            Control = Label10
+            Row = 18
+          end
+          item
+            Column = 0
+            Control = Label11
+            Row = 19
+          end
+          item
+            Column = 0
+            Control = pnlCadastrar
+            Row = 20
           end>
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
@@ -171,66 +206,78 @@ object formCadastroDeClientes: TformCadastroDeClientes
         ParentFont = False
         RowCollection = <
           item
-            Value = 5.555555555555555000
+            Value = 4.545454545454546000
           end
           item
-            Value = 5.555555555555555000
+            Value = 4.545454545454546000
           end
           item
-            Value = 5.555555555555555000
+            Value = 4.545454545454546000
           end
           item
-            Value = 5.555555555555555000
+            Value = 4.545454545454546000
           end
           item
-            Value = 5.555555555555555000
+            Value = 4.545454545454546000
           end
           item
-            Value = 5.555555555555555000
+            Value = 4.545454545454546000
           end
           item
-            Value = 5.555555555555555000
+            Value = 4.545454545454546000
           end
           item
-            Value = 5.555555555555555000
+            Value = 4.545454545454546000
           end
           item
-            Value = 5.555555555555555000
+            Value = 4.545454545454546000
           end
           item
-            Value = 5.555555555555555000
+            Value = 4.545454545454546000
           end
           item
-            Value = 5.555555555555555000
+            Value = 4.545454545454546000
           end
           item
-            Value = 5.555555555555555000
+            Value = 4.545454545454546000
           end
           item
-            Value = 5.555555555555555000
+            Value = 4.545454545454546000
           end
           item
-            Value = 5.555555555555555000
+            Value = 4.545454545454546000
           end
           item
-            Value = 5.555555555555555000
+            Value = 4.545454545454546000
           end
           item
-            Value = 5.555555555555555000
+            Value = 4.545454545454546000
           end
           item
-            Value = 5.555555555555555000
+            Value = 4.545454545454546000
           end
           item
-            Value = 5.555555555555541000
+            Value = 4.545454545454546000
+          end
+          item
+            Value = 4.545454545454546000
+          end
+          item
+            Value = 4.545454545454546000
+          end
+          item
+            Value = 4.545454545454546000
+          end
+          item
+            Value = 4.545454545454532000
           end>
         TabOrder = 0
         DesignSize = (
-          451
-          554)
-        object lblVazio5: TLabel
-          Left = 223
-          Top = 5
+          465
+          601)
+        object LableV1: TLabel
+          Left = 230
+          Top = 3
           Width = 4
           Height = 21
           Anchors = []
@@ -238,8 +285,8 @@ object formCadastroDeClientes: TformCadastroDeClientes
           ExplicitTop = 4
         end
         object dbleNome: TDBLabeledEdit
-          Left = 52
-          Top = 55
+          Left = 59
+          Top = 51
           Width = 346
           Height = 29
           Anchors = []
@@ -250,8 +297,8 @@ object formCadastroDeClientes: TformCadastroDeClientes
           EditLabel.Caption = 'Nome Completo:'
         end
         object Label2: TLabel
-          Left = 223
-          Top = 66
+          Left = 230
+          Top = 58
           Width = 4
           Height = 21
           Anchors = []
@@ -259,8 +306,8 @@ object formCadastroDeClientes: TformCadastroDeClientes
           ExplicitTop = 64
         end
         object dbleTelefone: TDBLabeledEdit
-          Left = 52
-          Top = 116
+          Left = 59
+          Top = 106
           Width = 346
           Height = 29
           Anchors = []
@@ -271,8 +318,8 @@ object formCadastroDeClientes: TformCadastroDeClientes
           EditLabel.Caption = 'Telefone/Celular:'
         end
         object Label3: TLabel
-          Left = 223
-          Top = 128
+          Left = 230
+          Top = 112
           Width = 4
           Height = 21
           Anchors = []
@@ -280,8 +327,8 @@ object formCadastroDeClientes: TformCadastroDeClientes
           ExplicitTop = 125
         end
         object dbleEmail: TDBLabeledEdit
-          Left = 53
-          Top = 178
+          Left = 60
+          Top = 161
           Width = 344
           Height = 29
           Anchors = []
@@ -292,8 +339,8 @@ object formCadastroDeClientes: TformCadastroDeClientes
           EditLabel.Caption = 'E-mail:'
         end
         object Label4: TLabel
-          Left = 223
-          Top = 189
+          Left = 230
+          Top = 167
           Width = 4
           Height = 21
           Anchors = []
@@ -301,8 +348,8 @@ object formCadastroDeClientes: TformCadastroDeClientes
           ExplicitTop = 185
         end
         object dbleCEP: TDBLabeledEdit
-          Left = 53
-          Top = 239
+          Left = 60
+          Top = 215
           Width = 344
           Height = 29
           Anchors = []
@@ -313,8 +360,8 @@ object formCadastroDeClientes: TformCadastroDeClientes
           EditLabel.Caption = 'CEP:'
         end
         object Label5: TLabel
-          Left = 223
-          Top = 251
+          Left = 230
+          Top = 222
           Width = 4
           Height = 21
           Anchors = []
@@ -322,8 +369,8 @@ object formCadastroDeClientes: TformCadastroDeClientes
           ExplicitTop = 250
         end
         object dbleEndereco: TDBLabeledEdit
-          Left = 52
-          Top = 301
+          Left = 59
+          Top = 270
           Width = 347
           Height = 29
           Anchors = []
@@ -334,8 +381,8 @@ object formCadastroDeClientes: TformCadastroDeClientes
           EditLabel.Caption = 'Endere'#231'o:'
         end
         object Label6: TLabel
-          Left = 223
-          Top = 313
+          Left = 230
+          Top = 276
           Width = 4
           Height = 21
           Anchors = []
@@ -343,8 +390,8 @@ object formCadastroDeClientes: TformCadastroDeClientes
           ExplicitTop = 311
         end
         object GridPanel3: TGridPanel
-          Left = 40
-          Top = 339
+          Left = 47
+          Top = 301
           Width = 370
           Height = 56
           Anchors = []
@@ -384,6 +431,7 @@ object formCadastroDeClientes: TformCadastroDeClientes
             Height = 29
             Anchors = []
             TabOrder = 0
+            TextHint = 'N'#176' do endere'#231'o'
             EditLabel.Width = 18
             EditLabel.Height = 21
             EditLabel.Caption = 'N'#176
@@ -395,14 +443,15 @@ object formCadastroDeClientes: TformCadastroDeClientes
             Height = 29
             Anchors = []
             TabOrder = 1
+            TextHint = 'Seu bairro'
             EditLabel.Width = 45
             EditLabel.Height = 21
             EditLabel.Caption = 'Bairro:'
           end
         end
         object Label7: TLabel
-          Left = 223
-          Top = 374
+          Left = 230
+          Top = 331
           Width = 4
           Height = 21
           Anchors = []
@@ -410,8 +459,8 @@ object formCadastroDeClientes: TformCadastroDeClientes
           ExplicitTop = 373
         end
         object GridPanel4: TGridPanel
-          Left = 36
-          Top = 400
+          Left = 43
+          Top = 355
           Width = 379
           Height = 58
           Anchors = []
@@ -439,6 +488,9 @@ object formCadastroDeClientes: TformCadastroDeClientes
           RowCollection = <
             item
               Value = 100.000000000000000000
+            end
+            item
+              SizeStyle = ssAuto
             end>
           TabOrder = 6
           DesignSize = (
@@ -451,6 +503,7 @@ object formCadastroDeClientes: TformCadastroDeClientes
             Height = 29
             Anchors = []
             TabOrder = 0
+            TextHint = 'Nome da sua cidade'
             EditLabel.Width = 51
             EditLabel.Height = 21
             EditLabel.Caption = 'Cidade:'
@@ -462,10 +515,90 @@ object formCadastroDeClientes: TformCadastroDeClientes
             Height = 29
             Anchors = []
             TabOrder = 1
+            TextHint = 'UF do estado'
             EditLabel.Width = 22
             EditLabel.Height = 21
             EditLabel.Caption = 'UF:'
           end
+        end
+        object Label8: TLabel
+          Left = 230
+          Top = 385
+          Width = 4
+          Height = 21
+          Anchors = []
+          ExplicitLeft = 226
+          ExplicitTop = 387
+        end
+        object dbleSenha: TLabeledEdit
+          Left = 63
+          Top = 434
+          Width = 339
+          Height = 29
+          Anchors = []
+          EditLabel.Width = 46
+          EditLabel.Height = 21
+          EditLabel.Caption = 'Senha:'
+          TabOrder = 7
+          Text = ''
+          TextHint = 'Crie uma senha'
+        end
+        object Label9: TLabel
+          Left = 230
+          Top = 440
+          Width = 4
+          Height = 21
+          Anchors = []
+          ExplicitLeft = 202
+          ExplicitTop = 462
+        end
+        object dbleConfSenha: TLabeledEdit
+          Left = 64
+          Top = 488
+          Width = 337
+          Height = 29
+          Anchors = []
+          EditLabel.Width = 125
+          EditLabel.Height = 21
+          EditLabel.Caption = 'Confirme a senha:'
+          TabOrder = 8
+          Text = ''
+          TextHint = 'Redigite a senha '
+        end
+        object Label10: TLabel
+          Left = 230
+          Top = 495
+          Width = 4
+          Height = 21
+          Anchors = []
+          ExplicitLeft = 198
+        end
+        object Label11: TLabel
+          Left = 230
+          Top = 522
+          Width = 4
+          Height = 21
+          Anchors = []
+          ExplicitLeft = 198
+        end
+        object pnlCadastrar: TPanel
+          Left = 140
+          Top = 546
+          Width = 185
+          Height = 41
+          Cursor = crHandPoint
+          Anchors = []
+          Caption = 'Cadastrar'
+          Color = clHighlight
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWhite
+          Font.Height = -19
+          Font.Name = 'Segoe UI'
+          Font.Style = []
+          ParentBackground = False
+          ParentFont = False
+          TabOrder = 9
+          OnClick = pnlCadastrarClick
         end
       end
     end

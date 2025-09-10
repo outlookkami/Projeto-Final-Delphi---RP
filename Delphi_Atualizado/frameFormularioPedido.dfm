@@ -12,21 +12,19 @@
     Align = alClient
     ParentBackground = False
     TabOrder = 0
-    ExplicitLeft = 3
-    ExplicitTop = 3
     DesignSize = (
       890
       711)
     object lblDescServico: TLabel
-      Left = 97
-      Top = 307
-      Width = 125
-      Height = 17
+      Left = 99
+      Top = 315
+      Width = 140
+      Height = 20
       Anchors = [akLeft, akTop, akRight]
       Caption = 'Descri'#231#227'o do servi'#231'o:'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
-      Font.Height = -13
+      Font.Height = -15
       Font.Name = 'Segoe UI'
       Font.Style = []
       ParentFont = False
@@ -120,7 +118,6 @@
         EditLabel.Width = 49
         EditLabel.Height = 17
         EditLabel.Caption = 'Contato:'
-        ExplicitLeft = 3
       end
       object lblVazio4: TLabel
         Left = 248
@@ -141,7 +138,6 @@
         EditLabel.Width = 58
         EditLabel.Height = 17
         EditLabel.Caption = 'Endere'#231'o:'
-        ExplicitLeft = 274
       end
       object lblVazio5: TLabel
         Left = 578
@@ -162,7 +158,6 @@
         EditLabel.Width = 25
         EditLabel.Height = 17
         EditLabel.Caption = 'CEP:'
-        ExplicitLeft = 602
       end
     end
     object GridPanel2: TGridPanel
@@ -260,7 +255,6 @@
         EditLabel.Width = 42
         EditLabel.Height = 17
         EditLabel.Caption = 'Cliente:'
-        ExplicitLeft = 3
       end
       object lblVazio6: TLabel
         Left = 248
@@ -281,7 +275,6 @@
         EditLabel.Width = 109
         EditLabel.Height = 17
         EditLabel.Caption = 'C'#243'digo do Cliente:'
-        ExplicitLeft = 273
       end
       object lblVazio7: TLabel
         Left = 413
@@ -302,7 +295,6 @@
         EditLabel.Width = 111
         EditLabel.Height = 17
         EditLabel.Caption = 'C'#243'digo do Pedido:'
-        ExplicitLeft = 438
       end
       object lblVazio8: TLabel
         Left = 578
@@ -421,7 +413,6 @@
         EditLabel.Width = 33
         EditLabel.Height = 17
         EditLabel.Caption = 'Placa:'
-        ExplicitLeft = 3
       end
       object lblVazio: TLabel
         Left = 143
@@ -442,7 +433,6 @@
         EditLabel.Width = 40
         EditLabel.Height = 17
         EditLabel.Caption = 'Marca:'
-        ExplicitLeft = 168
       end
       object lblVazio2: TLabel
         Left = 363
@@ -463,7 +453,6 @@
         EditLabel.Width = 49
         EditLabel.Height = 17
         EditLabel.Caption = 'Modelo:'
-        ExplicitLeft = 388
       end
       object lblVazio3: TLabel
         Left = 578
@@ -484,51 +473,19 @@
         EditLabel.Width = 24
         EditLabel.Height = 17
         EditLabel.Caption = 'Cor:'
-        ExplicitLeft = 603
       end
     end
     object memoDescricaoDoServiço: TMemo
       Left = 97
-      Top = 330
+      Top = 345
       Width = 718
       Height = 225
-      Anchors = [akLeft, akTop, akRight]
+      Anchors = [akLeft, akTop, akRight, akBottom]
+      ImeMode = imDisable
       Lines.Strings = (
         'memoDescricaoDoServi'#231'o')
       TabOrder = 4
-    end
-    object pnlEnviar: TPanel
-      Left = 261
-      Top = 592
-      Width = 185
-      Height = 41
-      Caption = 'Enviar Pedido'
-      Color = clHighlight
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWhite
-      Font.Height = -13
-      Font.Name = 'Segoe UI'
-      Font.Style = []
-      ParentBackground = False
-      ParentFont = False
-      TabOrder = 5
-    end
-    object pnlVerOrçamento: TPanel
-      Left = 507
-      Top = 592
-      Width = 185
-      Height = 41
-      Anchors = [akTop, akRight]
-      Caption = 'Ver Or'#231'amento'
-      Color = clHighlight
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWhite
-      Font.Height = -13
-      Font.Name = 'Segoe UI'
-      Font.Style = []
-      ParentBackground = False
-      ParentFont = False
-      TabOrder = 6
+      StyleName = 'Windows'
     end
     object GridPanel4: TGridPanel
       Left = 96
@@ -564,9 +521,9 @@
           Value = 33.333333333333340000
         end
         item
-          Value = 33.333333333333340000
+          Value = 33.333333333333310000
         end>
-      TabOrder = 7
+      TabOrder = 5
       DesignSize = (
         719
         183)
@@ -643,7 +600,7 @@
           end>
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -13
+        Font.Height = -15
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
@@ -659,77 +616,73 @@
           Left = 2
           Top = 25
           Width = 226
-          Height = 25
+          Height = 28
           Anchors = []
           TabOrder = 0
-          EditLabel.Width = 42
-          EditLabel.Height = 17
+          EditLabel.Width = 49
+          EditLabel.Height = 20
           EditLabel.Caption = 'Cliente:'
-          ExplicitLeft = 0
-          ExplicitTop = 20
+          ExplicitTop = 27
         end
         object Label1: TLabel
           Left = 248
-          Top = 19
+          Top = 18
           Width = 4
-          Height = 17
+          Height = 20
           Anchors = []
-          ExplicitLeft = 249
-          ExplicitTop = 16
+          ExplicitTop = 19
         end
         object DBLabeledEdit2: TDBLabeledEdit
-          Left = 272
+          Left = 270
           Top = 25
           Width = 121
-          Height = 25
+          Height = 28
           Anchors = []
           TabOrder = 1
-          EditLabel.Width = 109
-          EditLabel.Height = 17
+          EditLabel.Width = 124
+          EditLabel.Height = 20
           EditLabel.Caption = 'C'#243'digo do Cliente:'
-          ExplicitTop = 21
+          ExplicitTop = 27
         end
         object Label2: TLabel
           Left = 413
-          Top = 19
+          Top = 18
           Width = 4
-          Height = 17
+          Height = 20
           Anchors = []
-          ExplicitLeft = 414
-          ExplicitTop = 16
+          ExplicitTop = 19
         end
         object DBLabeledEdit3: TDBLabeledEdit
-          Left = 437
+          Left = 435
           Top = 25
           Width = 121
-          Height = 25
+          Height = 28
           Anchors = []
           TabOrder = 2
-          EditLabel.Width = 111
-          EditLabel.Height = 17
+          EditLabel.Width = 124
+          EditLabel.Height = 20
           EditLabel.Caption = 'C'#243'digo do Pedido:'
-          ExplicitTop = 21
+          ExplicitTop = 27
         end
         object Label3: TLabel
           Left = 578
-          Top = 19
+          Top = 18
           Width = 4
-          Height = 17
+          Height = 20
           Anchors = []
-          ExplicitLeft = 579
-          ExplicitTop = 16
+          ExplicitTop = 19
         end
         object DBLabeledEdit4: TDBLabeledEdit
           Left = 602
           Top = 25
           Width = 108
-          Height = 25
+          Height = 28
           Anchors = []
           TabOrder = 3
-          EditLabel.Width = 30
-          EditLabel.Height = 17
+          EditLabel.Width = 35
+          EditLabel.Height = 20
           EditLabel.Caption = 'Data:'
-          ExplicitLeft = 605
+          ExplicitTop = 27
         end
       end
       object GridPanel6: TGridPanel
@@ -788,7 +741,7 @@
           end>
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -13
+        Font.Height = -15
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
@@ -804,54 +757,53 @@
           Left = 2
           Top = 27
           Width = 226
-          Height = 25
+          Height = 28
           Anchors = []
           TabOrder = 0
-          EditLabel.Width = 49
-          EditLabel.Height = 17
+          EditLabel.Width = 56
+          EditLabel.Height = 20
           EditLabel.Caption = 'Contato:'
-          ExplicitTop = 22
+          ExplicitTop = 29
         end
         object Label4: TLabel
           Left = 248
-          Top = 21
+          Top = 20
           Width = 4
-          Height = 17
+          Height = 20
           Anchors = []
-          ExplicitLeft = 249
-          ExplicitTop = 17
+          ExplicitTop = 21
         end
         object DBLabeledEdit6: TDBLabeledEdit
           Left = 273
           Top = 27
           Width = 284
-          Height = 25
+          Height = 28
           Anchors = []
           TabOrder = 1
-          EditLabel.Width = 58
-          EditLabel.Height = 17
+          EditLabel.Width = 65
+          EditLabel.Height = 20
           EditLabel.Caption = 'Endere'#231'o:'
-          ExplicitTop = 22
+          ExplicitTop = 29
         end
         object Label5: TLabel
           Left = 578
-          Top = 21
+          Top = 20
           Width = 4
-          Height = 17
+          Height = 20
           Anchors = []
-          ExplicitLeft = 579
-          ExplicitTop = 17
+          ExplicitTop = 21
         end
         object DBLabeledEdit7: TDBLabeledEdit
           Left = 606
           Top = 27
           Width = 107
-          Height = 25
+          Height = 28
           Anchors = []
           TabOrder = 2
-          EditLabel.Width = 25
-          EditLabel.Height = 17
+          EditLabel.Width = 28
+          EditLabel.Height = 20
           EditLabel.Caption = 'CEP:'
+          ExplicitTop = 29
         end
       end
       object GridPanel7: TGridPanel
@@ -928,7 +880,7 @@
           end>
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -13
+        Font.Height = -15
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
@@ -944,77 +896,165 @@
           Left = 2
           Top = 25
           Width = 121
-          Height = 25
+          Height = 28
           Anchors = []
           TabOrder = 0
-          EditLabel.Width = 33
-          EditLabel.Height = 17
+          EditLabel.Width = 38
+          EditLabel.Height = 20
           EditLabel.Caption = 'Placa:'
-          ExplicitTop = 22
+          ExplicitTop = 26
         end
         object Label6: TLabel
           Left = 143
-          Top = 19
+          Top = 17
           Width = 4
-          Height = 17
+          Height = 20
           Anchors = []
-          ExplicitLeft = 144
-          ExplicitTop = 17
+          ExplicitTop = 19
         end
         object DBLabeledEdit9: TDBLabeledEdit
           Left = 167
           Top = 25
           Width = 176
-          Height = 25
+          Height = 28
           Anchors = []
           TabOrder = 1
-          EditLabel.Width = 40
-          EditLabel.Height = 17
+          EditLabel.Width = 44
+          EditLabel.Height = 20
           EditLabel.Caption = 'Marca:'
-          ExplicitTop = 22
+          ExplicitTop = 26
         end
         object Label7: TLabel
           Left = 363
-          Top = 19
+          Top = 17
           Width = 4
-          Height = 17
+          Height = 20
           Anchors = []
-          ExplicitLeft = 364
-          ExplicitTop = 17
+          ExplicitTop = 19
         end
         object DBLabeledEdit10: TDBLabeledEdit
           Left = 387
           Top = 25
           Width = 170
-          Height = 25
+          Height = 28
           Anchors = []
           TabOrder = 2
-          EditLabel.Width = 49
-          EditLabel.Height = 17
+          EditLabel.Width = 55
+          EditLabel.Height = 20
           EditLabel.Caption = 'Modelo:'
-          ExplicitTop = 22
+          ExplicitTop = 26
         end
         object Label8: TLabel
           Left = 578
-          Top = 19
+          Top = 17
           Width = 4
-          Height = 17
+          Height = 20
           Anchors = []
-          ExplicitLeft = 579
-          ExplicitTop = 17
+          ExplicitTop = 19
         end
         object DBLabeledEdit11: TDBLabeledEdit
           Left = 606
           Top = 25
           Width = 108
-          Height = 25
+          Height = 28
           Anchors = []
           TabOrder = 3
-          EditLabel.Width = 24
-          EditLabel.Height = 17
+          EditLabel.Width = 26
+          EditLabel.Height = 20
           EditLabel.Caption = 'Cor:'
-          ExplicitLeft = 605
+          ExplicitTop = 26
         end
+      end
+    end
+    object GridPanel8: TGridPanel
+      Left = 223
+      Top = 609
+      Width = 484
+      Height = 56
+      Anchors = [akBottom]
+      BevelOuter = bvNone
+      ColumnCollection = <
+        item
+          SizeStyle = ssAbsolute
+          Value = 190.000000000000000000
+        end
+        item
+          SizeStyle = ssAbsolute
+          Value = 100.000000000000000000
+        end
+        item
+          SizeStyle = ssAbsolute
+          Value = 190.000000000000000000
+        end>
+      ControlCollection = <
+        item
+          Column = 0
+          Control = Panel2
+          Row = 0
+        end
+        item
+          Column = 1
+          Control = Label9
+          Row = 0
+        end
+        item
+          Column = 2
+          Control = Panel3
+          Row = 0
+        end>
+      RowCollection = <
+        item
+          Value = 100.000000000000000000
+        end>
+      TabOrder = 6
+      DesignSize = (
+        484
+        56)
+      object Panel2: TPanel
+        Left = 0
+        Top = 9
+        Width = 185
+        Height = 47
+        Anchors = [akLeft, akBottom]
+        Caption = 'Enviar Pedido'
+        Color = clHighlight
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWhite
+        Font.Height = -13
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentBackground = False
+        ParentFont = False
+        TabOrder = 0
+        ExplicitTop = 8
+      end
+      object Label9: TLabel
+        Left = 238
+        Top = 20
+        Width = 3
+        Height = 15
+        Anchors = []
+        ExplicitLeft = 209
+        ExplicitTop = 12
+      end
+      object Panel3: TPanel
+        Left = 295
+        Top = 9
+        Width = 185
+        Height = 47
+        Anchors = [akRight, akBottom]
+        Caption = 'Ver Or'#231'amento'
+        Color = clHighlight
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWhite
+        Font.Height = -13
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentBackground = False
+        ParentFont = False
+        TabOrder = 1
+        ExplicitLeft = 296
+        ExplicitTop = 8
       end
     end
   end

@@ -173,6 +173,11 @@
             <Form>formCadastroDeClientes</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="DataModuleInicial.pas">
+            <Form>DataModule1</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
         <None Include="..\..\..\..\Desktop\saída X.webp"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>

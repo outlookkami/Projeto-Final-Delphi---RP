@@ -12,21 +12,22 @@ type
   TformLoginSemGridPanel = class(TForm)
     pnlLogin: TPanel;
     pnlBaseLogin: TPanel;
-    Image1: TImage;
     pnlLayoutLogin: TPanel;
-    imgCadeadoDesb: TImage;
     GridPanel1: TGridPanel;
     Label3: TLabel;
-    DBLabeledEdit4: TDBLabeledEdit;
     Label4: TLabel;
-    Label5: TLabel;
-    Label6: TLabel;
+    lblAvisoUsuario: TLabel;
+    lblAvisoSenha: TLabel;
     Panel2: TPanel;
     GridPanel3: TGridPanel;
-    DBLabeledEdit5: TDBLabeledEdit;
-    Image4: TImage;
+    dbleSenha: TDBLabeledEdit;
+    imgCadeado: TImage;
+    GridPanel2: TGridPanel;
+    dbleUsuario: TDBLabeledEdit;
+    lblVazio: TLabel;
+    lblCadastreAqui: TLabel;
     procedure pnlEntrarClick(Sender: TObject);
-    procedure imgCadeadoDesbClick(Sender: TObject);
+    procedure imgCadeadoClick(Sender: TObject);
   private
     { Private declarations }
     procedure HideShowSenha;
@@ -43,36 +44,36 @@ implementation
 
 procedure TformLoginSemGridPanel.HideShowSenha;
 begin
-    if DBLabeledEdit4.PasswordChar = '*' then begin
-    imgCadeadoDesb.Picture.LoadFromFile('C:\Users\Kamilly Souza\Desktop\Projeto Delphi - JLA\Assets\cadeado azul bloqueado.png');
-    DBLabeledEdit4.PasswordChar := #0;
-    end else if DBLabeledEdit4.PasswordChar = #0 then begin
-    imgCadeadoDesb.Picture.LoadFromFile('C:\Users\Kamilly Souza\Desktop\Projeto Delphi - JLA\Assets\cadeado azul desbloqueado.png');
-    DBLabeledEdit4.PasswordChar := '*';
+    if dbleSenha.PasswordChar = '*' then begin
+    imgCadeado.Picture.LoadFromFile('C:\Users\Kamilly Souza\Desktop\Projeto Delphi - JLA\Assets\cadeado azul bloqueado.png');
+    dbleSenha.PasswordChar := #0;
+    end else if dbleSenha.PasswordChar = #0 then begin
+    imgCadeado.Picture.LoadFromFile('C:\Users\Kamilly Souza\Desktop\Projeto Delphi - JLA\Assets\cadeado azul desbloqueado.png');
+    dbleSenha.PasswordChar := '*';
     end;
 end;
 
-procedure TformLoginSemGridPanel.imgCadeadoDesbClick(Sender: TObject);
+procedure TformLoginSemGridPanel.imgCadeadoClick(Sender: TObject);
 begin
      HideShowSenha;
 end;
 
 procedure TformLoginSemGridPanel.pnlEntrarClick(Sender: TObject);
 begin
-  if (DBLabeledEdit4.Text = '') or (DBLabeledEdit5.Text = '') then begin
+  if (dbleSenha.Text = '') or (dbleUsuario.Text = '') then begin
     ShowMessage('Preencha todos os campos.');
   end;
 
-  if DBLabeledEdit5.Text = '' then begin
+  if dbleSenha.Text = '' then begin
       lblAvisoSenha.Caption := 'Informe sua senha';
-      DBLabeledEdit5.SetFocus;
+      dbleSenha.SetFocus;
   end else begin
       lblAvisoSenha.Caption := '';
   end;
 
-  if DBLabeledEdit4.Text = '' then begin
+  if dbleUsuario.Text = '' then begin
       lblAvisoUsuario.Caption := 'Informe seu código de usuário';
-      DBLabeledEdit4.SetFocus;
+      dbleUsuario.SetFocus;
   end else begin
         lblAvisoUsuario.Caption := '';
   end;

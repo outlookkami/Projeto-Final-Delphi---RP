@@ -31,6 +31,12 @@ type
     GridPanel3: TGridPanel;
     DBLabeledEdit5: TDBLabeledEdit;
     Image4: TImage;
+    GridPanel4: TGridPanel;
+    DBLabeledEdit3: TDBLabeledEdit;
+    labelVazio: TLabel;
+    GridPanel5: TGridPanel;
+    DBLabeledEdit6: TDBLabeledEdit;
+    imgCadeado: TImage;
     procedure pnlEntrarClick(Sender: TObject);
   private
     { Private declarations }

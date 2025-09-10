@@ -14,13 +14,15 @@ uses
   frameCadastroDeSenhaFuncionário in 'frameCadastroDeSenhaFuncionário.pas' {frameCadSenhaFuncionario: TFrame},
   frameTESTEFormularioPedido in 'frameTESTEFormularioPedido.pas' {frameFormularioPedidoSemGridPanel: TFrame},
   frameFormularioPedido in 'frameFormularioPedido.pas' {frameFormularioDePedido: TFrame},
-  frameCadastroClientes in 'frameCadastroClientes.pas' {formCadastroDeClientes};
+  frameCadastroClientes in 'frameCadastroClientes.pas' {formCadastroDeClientes},
+  DataModuleInicial in 'DataModuleInicial.pas' {DataModule1: TDataModule};
 
 {$R *.res}
 
 begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TformCadastroDeClientes, formCadastroDeClientes);
   Application.CreateForm(TformLoginSemGridPanel, formLoginSemGridPanel);
   Application.CreateForm(TformLoginGrid, formLoginGrid);
   Application.CreateForm(TframeCadastroFunc, frameCadastroFunc);
@@ -29,8 +31,8 @@ begin
   Application.CreateForm(TframeCadSenhaFuncionario, frameCadSenhaFuncionario);
   Application.CreateForm(TframeFormularioPedidoSemGridPanel, frameFormularioPedidoSemGridPanel);
   Application.CreateForm(TframeFormularioDePedido, frameFormularioDePedido);
-  Application.CreateForm(TformCadastroDeClientes, formCadastroDeClientes);
   Application.CreateForm(TformCadastroClientes, formCadastroClientes);
   Application.CreateForm(TformTESTEPanelGrid, formTESTEPanelGrid);
+  Application.CreateForm(TDataModule1, DataModule1);
   Application.Run;
 end.
