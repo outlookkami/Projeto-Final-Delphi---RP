@@ -56,7 +56,7 @@ implementation
 procedure TformLoginGrid.pnlEntrarClick(Sender: TObject);
 var frameFormularioDePedido: TframeFormularioDePedido;
 begin
-    formPáginaInicial.ShowModal;
+    formPáginaInicialFunc.ShowModal;
     frameFormularioDePedido := TframeFormularioDePedido.Create(Self);
     frameFormularioDePedido.Parent := Self;
     frameFormularioDePedido.Align := alClient;

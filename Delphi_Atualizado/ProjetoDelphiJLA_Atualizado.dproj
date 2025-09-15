@@ -129,16 +129,8 @@
             <Form>formLoginSemGridPanel</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="formPáginaDeInício.pas">
-            <Form>formPáginaInicial</Form>
-            <FormType>dfm</FormType>
-        </DCCReference>
-        <DCCReference Include="formCadastroClientesANTIGO.pas">
-            <Form>formCadastroClientes</Form>
-            <FormType>dfm</FormType>
-        </DCCReference>
-        <DCCReference Include="unitTestesJLA.pas">
-            <Form>formTESTEPanelGrid</Form>
+        <DCCReference Include="formPáginaDeInícioFunc.pas">
+            <Form>formPáginaInicialFunc</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="unitLoginGrid.pas">
@@ -159,17 +151,12 @@
             <FormType>dfm</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
-        <DCCReference Include="frameTESTEFormularioPedido.pas">
-            <Form>frameFormularioPedidoSemGridPanel</Form>
-            <FormType>dfm</FormType>
-            <DesignClass>TFrame</DesignClass>
-        </DCCReference>
         <DCCReference Include="frameFormularioPedido.pas">
             <Form>frameFormularioDePedido</Form>
             <FormType>dfm</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
-        <DCCReference Include="frameCadastroClientes.pas">
+        <DCCReference Include="formCadastroClientes.pas">
             <Form>formCadastroDeClientes</Form>
             <FormType>dfm</FormType>
         </DCCReference>
@@ -178,7 +165,24 @@
             <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
-        <None Include="..\..\..\..\Desktop\saída X.webp"/>
+        <DCCReference Include="frameInicioPageControl.pas">
+            <Form>framePageControlInicio</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="formPáginaDeInícioClientes.pas">
+            <Form>formPáginaInicialCli</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="formPáginaDeInícioADM.pas">
+            <Form>Form1</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="framePerfil.pas">
+            <Form>Frame1</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
@@ -205,12 +209,6 @@
                 </Source>
             </Delphi.Personality>
             <Deployment Version="4">
-                <DeployFile LocalName="..\..\..\..\Desktop\saída X.webp" Configuration="Debug" Class="ProjectFile">
-                    <Platform Name="Win32">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
                 <DeployFile LocalName="Win32\Debug\ProjetoDelphiJLA_Atualizado.exe" Configuration="Debug" Class="ProjectOutput">
                     <Platform Name="Win32">
                         <RemoteName>ProjetoDelphiJLA_Atualizado.exe</RemoteName>

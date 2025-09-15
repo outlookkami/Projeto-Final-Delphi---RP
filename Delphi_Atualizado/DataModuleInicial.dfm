@@ -1,7 +1,7 @@
 object DataModule1: TDataModule1
   Height = 480
   Width = 640
-  object ZConnection1: TZConnection
+  object ZConnectionPG: TZConnection
     ControlsCodePage = cCP_UTF16
     Catalog = ''
     DisableSavepoints = False
@@ -11,7 +11,7 @@ object DataModule1: TDataModule1
     User = ''
     Password = ''
     Protocol = ''
-    Left = 144
+    Left = 160
     Top = 104
   end
 end

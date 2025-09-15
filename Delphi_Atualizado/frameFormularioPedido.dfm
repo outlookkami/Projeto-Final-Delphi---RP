@@ -622,7 +622,6 @@
           EditLabel.Width = 49
           EditLabel.Height = 20
           EditLabel.Caption = 'Cliente:'
-          ExplicitTop = 27
         end
         object Label1: TLabel
           Left = 248
@@ -633,7 +632,7 @@
           ExplicitTop = 19
         end
         object DBLabeledEdit2: TDBLabeledEdit
-          Left = 270
+          Left = 272
           Top = 25
           Width = 121
           Height = 28
@@ -642,7 +641,6 @@
           EditLabel.Width = 124
           EditLabel.Height = 20
           EditLabel.Caption = 'C'#243'digo do Cliente:'
-          ExplicitTop = 27
         end
         object Label2: TLabel
           Left = 413
@@ -653,7 +651,7 @@
           ExplicitTop = 19
         end
         object DBLabeledEdit3: TDBLabeledEdit
-          Left = 435
+          Left = 437
           Top = 25
           Width = 121
           Height = 28
@@ -662,7 +660,6 @@
           EditLabel.Width = 124
           EditLabel.Height = 20
           EditLabel.Caption = 'C'#243'digo do Pedido:'
-          ExplicitTop = 27
         end
         object Label3: TLabel
           Left = 578
@@ -682,7 +679,6 @@
           EditLabel.Width = 35
           EditLabel.Height = 20
           EditLabel.Caption = 'Data:'
-          ExplicitTop = 27
         end
       end
       object GridPanel6: TGridPanel
@@ -763,7 +759,6 @@
           EditLabel.Width = 56
           EditLabel.Height = 20
           EditLabel.Caption = 'Contato:'
-          ExplicitTop = 29
         end
         object Label4: TLabel
           Left = 248
@@ -783,7 +778,6 @@
           EditLabel.Width = 65
           EditLabel.Height = 20
           EditLabel.Caption = 'Endere'#231'o:'
-          ExplicitTop = 29
         end
         object Label5: TLabel
           Left = 578
@@ -794,16 +788,16 @@
           ExplicitTop = 21
         end
         object DBLabeledEdit7: TDBLabeledEdit
-          Left = 606
+          Left = 604
           Top = 27
-          Width = 107
+          Width = 111
           Height = 28
           Anchors = []
           TabOrder = 2
           EditLabel.Width = 28
           EditLabel.Height = 20
           EditLabel.Caption = 'CEP:'
-          ExplicitTop = 29
+          ExplicitLeft = 602
         end
       end
       object GridPanel7: TGridPanel
@@ -902,7 +896,6 @@
           EditLabel.Width = 38
           EditLabel.Height = 20
           EditLabel.Caption = 'Placa:'
-          ExplicitTop = 26
         end
         object Label6: TLabel
           Left = 143
@@ -922,7 +915,6 @@
           EditLabel.Width = 44
           EditLabel.Height = 20
           EditLabel.Caption = 'Marca:'
-          ExplicitTop = 26
         end
         object Label7: TLabel
           Left = 363
@@ -942,7 +934,6 @@
           EditLabel.Width = 55
           EditLabel.Height = 20
           EditLabel.Caption = 'Modelo:'
-          ExplicitTop = 26
         end
         object Label8: TLabel
           Left = 578
@@ -953,7 +944,7 @@
           ExplicitTop = 19
         end
         object DBLabeledEdit11: TDBLabeledEdit
-          Left = 606
+          Left = 602
           Top = 25
           Width = 108
           Height = 28
@@ -962,7 +953,6 @@
           EditLabel.Width = 26
           EditLabel.Height = 20
           EditLabel.Caption = 'Cor:'
-          ExplicitTop = 26
         end
       end
     end
@@ -1026,7 +1016,6 @@
         ParentBackground = False
         ParentFont = False
         TabOrder = 0
-        ExplicitTop = 8
       end
       object Label9: TLabel
         Left = 238
@@ -1053,8 +1042,6 @@
         ParentBackground = False
         ParentFont = False
         TabOrder = 1
-        ExplicitLeft = 296
-        ExplicitTop = 8
       end
     end
   end

@@ -123,13 +123,12 @@ object formLoginGrid: TformLoginGrid
           ExplicitTop = 38
         end
         object labelVazio: TLabel
-          Left = 305
+          Left = 309
           Top = 21
-          Width = 12
+          Width = 3
           Height = 15
           Anchors = []
-          ExplicitLeft = 309
-          ExplicitTop = 29
+          ExplicitLeft = 305
         end
       end
       object GridPanel5: TGridPanel
@@ -169,7 +168,7 @@ object formLoginGrid: TformLoginGrid
           58)
         object DBLabeledEdit6: TDBLabeledEdit
           Left = 12
-          Top = 29
+          Top = 26
           Width = 266
           Height = 23
           Anchors = []

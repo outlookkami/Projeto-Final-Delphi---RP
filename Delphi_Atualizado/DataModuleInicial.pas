@@ -7,7 +7,7 @@ uses
 
 type
   TDataModule1 = class(TDataModule)
-    ZConnection1: TZConnection;
+    ZConnectionPG: TZConnection;
   private
     { Private declarations }
   public

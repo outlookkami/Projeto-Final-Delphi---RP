@@ -26,8 +26,15 @@ type
     dbleUsuario: TDBLabeledEdit;
     lblVazio: TLabel;
     lblCadastreAqui: TLabel;
-    pnlFechar: TPanel;
+    GridPanel4: TGridPanel;
+    lblVazio001: TLabel;
+    lblVazio002: TLabel;
+    lblVazio003: TLabel;
+    lblVazio004: TLabel;
+    lblVazio005: TLabel;
+    lblVazio006: TLabel;
     imgFechar: TImage;
+    Image1: TImage;
     procedure pnlEntrarClick(Sender: TObject);
     procedure imgCadeadoClick(Sender: TObject);
     procedure imgFecharClick(Sender: TObject);
