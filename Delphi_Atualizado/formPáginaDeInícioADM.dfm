@@ -1,7 +1,7 @@
-object Form1: TForm1
+﻿object formPáginaInicialADM: TformPáginaInicialADM
   Left = 0
   Top = 0
-  Caption = 'Form1'
+  Caption = 'formP'#225'ginaInicialADM'
   ClientHeight = 701
   ClientWidth = 1150
   Color = clBtnFace
@@ -10,6 +10,7 @@ object Form1: TForm1
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  OnShow = FormShow
   TextHeight = 15
   object pnlCrudClientes: TPanel
     Left = 0
@@ -18,15 +19,12 @@ object Form1: TForm1
     Height = 701
     Align = alClient
     TabOrder = 0
-    DesignSize = (
-      1150
-      701)
     object GridPanel1: TGridPanel
       Left = 1
-      Top = 0
-      Width = 1149
+      Top = 1
+      Width = 1148
       Height = 57
-      Anchors = [akLeft, akTop, akRight]
+      Align = alTop
       Color = clHighlight
       ColumnCollection = <
         item
@@ -140,8 +138,10 @@ object Form1: TForm1
           Value = 100.000000000000000000
         end>
       TabOrder = 0
+      ExplicitTop = 0
+      ExplicitWidth = 1149
       DesignSize = (
-        1149
+        1148
         57)
       object Image2: TImage
         Left = 2
@@ -4794,8 +4794,7 @@ object Form1: TForm1
           1BD88217956477AB2CCC2021F1D1F0FF01AD81751F8AE5E95C0000000049454E
           44AE426082}
         Proportional = True
-        ExplicitLeft = 1
-        ExplicitTop = 3
+        ExplicitLeft = 0
       end
       object btnpDashboard: TPanel
         Left = 54
@@ -4806,7 +4805,7 @@ object Form1: TForm1
         Anchors = [akLeft, akTop, akRight, akBottom]
         BevelEdges = []
         BevelOuter = bvNone
-        Caption = 'Dashboard'
+        Caption = '&Dashboard'
         Color = clHighlight
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWhite
@@ -4825,7 +4824,7 @@ object Form1: TForm1
         Cursor = crHandPoint
         Anchors = [akLeft, akTop, akRight, akBottom]
         BevelOuter = bvNone
-        Caption = 'Pedidos'
+        Caption = '&Pedidos'
         Color = clHighlight
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWhite
@@ -4844,7 +4843,7 @@ object Form1: TForm1
         Cursor = crHandPoint
         Anchors = [akLeft, akTop, akRight, akBottom]
         BevelOuter = bvNone
-        Caption = 'Or'#231'amentos'
+        Caption = '&Or'#231'amentos'
         Color = clHighlight
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWhite
@@ -4863,7 +4862,7 @@ object Form1: TForm1
         Cursor = crHandPoint
         Anchors = [akLeft, akTop, akRight, akBottom]
         BevelOuter = bvNone
-        Caption = 'OS'#39's'
+        Caption = 'O&S'#39's'
         Color = clHighlight
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWhite
@@ -4883,7 +4882,7 @@ object Form1: TForm1
         Align = alCustom
         Anchors = [akLeft, akTop, akRight, akBottom]
         BevelOuter = bvNone
-        Caption = 'Estoque'
+        Caption = '&Estoque'
         Color = clHighlight
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWhite
@@ -4895,15 +4894,15 @@ object Form1: TForm1
         TabOrder = 4
       end
       object btnpPortfolio: TPanel
-        Left = 575
+        Left = 581
         Top = 6
-        Width = 98
+        Width = 99
         Height = 45
         Cursor = crHandPoint
         Align = alCustom
         Anchors = [akLeft, akTop, akRight, akBottom]
         BevelOuter = bvNone
-        Caption = 'Portf'#243'lio'
+        Caption = 'Por&tf'#243'lio'
         Color = clHighlight
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWhite
@@ -4913,17 +4912,19 @@ object Form1: TForm1
         ParentBackground = False
         ParentFont = False
         TabOrder = 5
+        ExplicitLeft = 575
+        ExplicitWidth = 98
       end
       object btnpClientes: TPanel
-        Left = 679
+        Left = 672
         Top = 3
-        Width = 99
+        Width = 98
         Height = 49
         Cursor = crHandPoint
         Align = alCustom
         Anchors = [akLeft, akTop, akRight, akBottom]
         BevelOuter = bvNone
-        Caption = 'Clientes'
+        Caption = '&Clientes'
         Color = clHighlight
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWhite
@@ -4933,18 +4934,18 @@ object Form1: TForm1
         ParentBackground = False
         ParentFont = False
         TabOrder = 6
-        ExplicitLeft = 749
-        ExplicitWidth = 110
+        ExplicitLeft = 679
+        ExplicitWidth = 99
       end
       object btnpVeiculos: TPanel
-        Left = 784
+        Left = 783
         Top = 8
         Width = 106
         Height = 41
         Cursor = crHandPoint
         Anchors = [akLeft, akTop, akRight, akBottom]
         BevelOuter = bvNone
-        Caption = 'Ve'#237'culos'
+        Caption = '&Ve'#237'culos'
         Color = clHighlight
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWhite
@@ -4956,7 +4957,7 @@ object Form1: TForm1
         TabOrder = 7
       end
       object btnpPerfil: TPanel
-        Left = 993
+        Left = 992
         Top = 8
         Width = 83
         Height = 41
@@ -4975,14 +4976,14 @@ object Form1: TForm1
         TabOrder = 8
       end
       object btnpFuncionarios: TPanel
-        Left = 889
+        Left = 888
         Top = 8
         Width = 112
         Height = 41
         Cursor = crHandPoint
         Anchors = [akLeft, akTop, akRight, akBottom]
         BevelOuter = bvNone
-        Caption = 'Funcion'#225'rios'
+        Caption = '&Funcion'#225'rios'
         Color = clHighlight
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWhite
@@ -4994,7 +4995,7 @@ object Form1: TForm1
         TabOrder = 9
       end
       object GridPanel2: TGridPanel
-        Left = 1102
+        Left = 1101
         Top = 8
         Width = 41
         Height = 41
@@ -5031,7 +5032,7 @@ object Form1: TForm1
             Value = 5.000000000000000000
           end>
         TabOrder = 10
-        ExplicitLeft = 1120
+        ExplicitLeft = 1102
         DesignSize = (
           41
           41)
@@ -12402,9 +12403,58 @@ object Form1: TForm1
             42F40D4110044110C48BC4FF0F02439F92F6C3910C0000000049454E44AE4260
             82}
           Proportional = True
+          OnClick = Image1Click
           ExplicitLeft = -4
           ExplicitTop = 14
         end
+      end
+    end
+    object PageControl1: TPageControl
+      Left = 1
+      Top = 58
+      Width = 1148
+      Height = 642
+      ActivePage = TabSheet10
+      Align = alClient
+      TabOrder = 1
+      object TabSheet1: TTabSheet
+        Caption = 'Dasboard'
+      end
+      object TabSheet2: TTabSheet
+        Caption = 'Pedidos'
+        ImageIndex = 1
+      end
+      object TabSheet3: TTabSheet
+        Caption = 'Or'#231'amentos'
+        ImageIndex = 2
+      end
+      object TabSheet4: TTabSheet
+        Caption = 'OS'#39's'
+        ImageIndex = 3
+      end
+      object TabSheet5: TTabSheet
+        Caption = 'Estoque'
+        ImageIndex = 4
+      end
+      object TabSheet6: TTabSheet
+        Caption = 'Portf'#243'lio'
+        ImageIndex = 5
+      end
+      object TabSheet7: TTabSheet
+        Caption = 'Clientes'
+        ImageIndex = 6
+      end
+      object TabSheet8: TTabSheet
+        Caption = 'Ve'#237'culos'
+        ImageIndex = 7
+      end
+      object TabSheet9: TTabSheet
+        Caption = 'Funcion'#225'rios'
+        ImageIndex = 8
+      end
+      object TabSheet10: TTabSheet
+        Caption = 'Perfil'
+        ImageIndex = 9
       end
     end
   end

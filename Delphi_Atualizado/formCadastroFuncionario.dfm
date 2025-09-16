@@ -57,20 +57,20 @@ object formCadastroFuncionarios: TformCadastroFuncionarios
     end
     object pnlLogin: TPanel
       Left = 641
-      Top = 24
+      Top = 1
       Width = 478
-      Height = 659
+      Height = 696
       Align = alCustom
       Anchors = [akLeft, akTop, akRight, akBottom]
       TabOrder = 1
       DesignSize = (
         478
-        659)
+        696)
       object Label1: TLabel
         Left = 1
         Top = 1
         Width = 476
-        Height = 50
+        Height = 58
         Align = alTop
         Alignment = taCenter
         Caption = 'Cadastro'
@@ -80,13 +80,12 @@ object formCadastroFuncionarios: TformCadastroFuncionarios
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 147
       end
       object gridPanelLogin: TGridPanel
         Left = 16
         Top = 48
         Width = 451
-        Height = 593
+        Height = 631
         Align = alCustom
         Anchors = [akLeft, akTop, akRight, akBottom]
         BevelEdges = []
@@ -168,11 +167,6 @@ object formCadastroFuncionarios: TformCadastroFuncionarios
           end
           item
             Column = 0
-            Control = SpeedButton1
-            Row = 14
-          end
-          item
-            Column = 0
             Control = pnlSelecionaFuncao
             Row = 15
           end
@@ -180,6 +174,26 @@ object formCadastroFuncionarios: TformCadastroFuncionarios
             Column = 0
             Control = Label9
             Row = 16
+          end
+          item
+            Column = 0
+            Control = Label8
+            Row = 14
+          end
+          item
+            Column = 0
+            Control = dbleCPF
+            Row = 17
+          end
+          item
+            Column = 0
+            Control = Label10
+            Row = 18
+          end
+          item
+            Column = 0
+            Control = dbleRG
+            Row = 19
           end>
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
@@ -189,78 +203,86 @@ object formCadastroFuncionarios: TformCadastroFuncionarios
         ParentFont = False
         RowCollection = <
           item
-            Value = 5.263157894736842000
+            Value = 4.545454545454546000
           end
           item
-            Value = 5.263157894736842000
+            Value = 4.545454545454546000
           end
           item
-            Value = 5.263157894736842000
+            Value = 4.545454545454546000
           end
           item
-            Value = 5.263157894736842000
+            Value = 4.545454545454546000
           end
           item
-            Value = 5.263157894736842000
+            Value = 4.545454545454546000
           end
           item
-            Value = 5.263157894736842000
+            Value = 4.545454545454546000
           end
           item
-            Value = 5.263157894736842000
+            Value = 4.545454545454546000
           end
           item
-            Value = 5.263157894736842000
+            Value = 4.545454545454546000
           end
           item
-            Value = 5.263157894736842000
+            Value = 4.545454545454546000
           end
           item
-            Value = 5.263157894736842000
+            Value = 4.545454545454546000
           end
           item
-            Value = 5.263157894736842000
+            Value = 4.545454545454546000
           end
           item
-            Value = 5.263157894736842000
+            Value = 4.545454545454546000
           end
           item
-            Value = 5.263157894736842000
+            Value = 4.545454545454546000
           end
           item
-            Value = 5.263157894736842000
+            Value = 4.545454545454546000
           end
           item
-            Value = 5.263157894736842000
+            Value = 4.545454545454546000
           end
           item
-            Value = 5.263157894736842000
+            Value = 4.545454545454546000
           end
           item
-            Value = 5.263157894736842000
+            Value = 4.545454545454546000
           end
           item
-            Value = 5.263157894736842000
+            Value = 4.545454545454546000
           end
           item
-            Value = 5.263157894736871000
+            Value = 4.545454545454546000
+          end
+          item
+            Value = 4.545454545454546000
+          end
+          item
+            Value = 4.545454545454546000
+          end
+          item
+            Value = 4.545454545454532000
           end>
         TabOrder = 0
         DesignSize = (
           451
-          593)
+          631)
         object lblVazio5: TLabel
           Left = 223
-          Top = 5
+          Top = 4
           Width = 4
           Height = 21
           Anchors = []
           ExplicitLeft = 185
-          ExplicitTop = 4
         end
         object dbleNome: TDBLabeledEdit
           Left = 52
-          Top = 55
+          Top = 53
           Width = 346
           Height = 29
           Anchors = []
@@ -269,10 +291,11 @@ object formCadastroFuncionarios: TformCadastroFuncionarios
           EditLabel.Width = 118
           EditLabel.Height = 21
           EditLabel.Caption = 'Nome Completo:'
+          ExplicitTop = 55
         end
         object Label2: TLabel
           Left = 223
-          Top = 67
+          Top = 61
           Width = 4
           Height = 21
           Anchors = []
@@ -281,7 +304,7 @@ object formCadastroFuncionarios: TformCadastroFuncionarios
         end
         object dbleTelefone: TDBLabeledEdit
           Left = 52
-          Top = 118
+          Top = 110
           Width = 346
           Height = 29
           Anchors = []
@@ -290,10 +313,11 @@ object formCadastroFuncionarios: TformCadastroFuncionarios
           EditLabel.Width = 115
           EditLabel.Height = 21
           EditLabel.Caption = 'Telefone/Celular:'
+          ExplicitTop = 118
         end
         object Label3: TLabel
           Left = 223
-          Top = 130
+          Top = 118
           Width = 4
           Height = 21
           Anchors = []
@@ -302,7 +326,7 @@ object formCadastroFuncionarios: TformCadastroFuncionarios
         end
         object dbleEmail: TDBLabeledEdit
           Left = 53
-          Top = 180
+          Top = 167
           Width = 344
           Height = 29
           Anchors = []
@@ -311,10 +335,11 @@ object formCadastroFuncionarios: TformCadastroFuncionarios
           EditLabel.Width = 47
           EditLabel.Height = 21
           EditLabel.Caption = 'E-mail:'
+          ExplicitTop = 180
         end
         object Label4: TLabel
           Left = 223
-          Top = 192
+          Top = 176
           Width = 4
           Height = 21
           Anchors = []
@@ -323,7 +348,7 @@ object formCadastroFuncionarios: TformCadastroFuncionarios
         end
         object dbleCEP: TDBLabeledEdit
           Left = 53
-          Top = 242
+          Top = 225
           Width = 344
           Height = 29
           Anchors = []
@@ -332,10 +357,11 @@ object formCadastroFuncionarios: TformCadastroFuncionarios
           EditLabel.Width = 30
           EditLabel.Height = 21
           EditLabel.Caption = 'CEP:'
+          ExplicitTop = 242
         end
         object Label5: TLabel
           Left = 223
-          Top = 255
+          Top = 233
           Width = 4
           Height = 21
           Anchors = []
@@ -344,7 +370,7 @@ object formCadastroFuncionarios: TformCadastroFuncionarios
         end
         object dbleEndereco: TDBLabeledEdit
           Left = 52
-          Top = 305
+          Top = 282
           Width = 347
           Height = 29
           Anchors = []
@@ -353,10 +379,11 @@ object formCadastroFuncionarios: TformCadastroFuncionarios
           EditLabel.Width = 67
           EditLabel.Height = 21
           EditLabel.Caption = 'Endere'#231'o:'
+          ExplicitTop = 305
         end
         object Label6: TLabel
           Left = 223
-          Top = 317
+          Top = 291
           Width = 4
           Height = 21
           Anchors = []
@@ -365,7 +392,7 @@ object formCadastroFuncionarios: TformCadastroFuncionarios
         end
         object GridPanel3: TGridPanel
           Left = 40
-          Top = 343
+          Top = 316
           Width = 370
           Height = 56
           Anchors = []
@@ -395,6 +422,7 @@ object formCadastroFuncionarios: TformCadastroFuncionarios
               Value = 100.000000000000000000
             end>
           TabOrder = 5
+          ExplicitTop = 343
           DesignSize = (
             370
             56)
@@ -423,7 +451,7 @@ object formCadastroFuncionarios: TformCadastroFuncionarios
         end
         object Label7: TLabel
           Left = 223
-          Top = 380
+          Top = 348
           Width = 4
           Height = 21
           Anchors = []
@@ -432,7 +460,7 @@ object formCadastroFuncionarios: TformCadastroFuncionarios
         end
         object GridPanel4: TGridPanel
           Left = 36
-          Top = 406
+          Top = 373
           Width = 379
           Height = 58
           Anchors = []
@@ -454,11 +482,6 @@ object formCadastroFuncionarios: TformCadastroFuncionarios
               Column = 1
               Control = dbleUF
               Row = 0
-            end
-            item
-              Column = 0
-              Control = Label8
-              Row = 1
             end>
           ParentBackground = False
           ParentColor = True
@@ -470,12 +493,13 @@ object formCadastroFuncionarios: TformCadastroFuncionarios
               SizeStyle = ssAuto
             end>
           TabOrder = 6
+          ExplicitTop = 406
           DesignSize = (
             379
             58)
           object dbleCidade: TDBLabeledEdit
             Left = 17
-            Top = 24
+            Top = 26
             Width = 229
             Height = 29
             Anchors = []
@@ -483,10 +507,11 @@ object formCadastroFuncionarios: TformCadastroFuncionarios
             EditLabel.Width = 51
             EditLabel.Height = 21
             EditLabel.Caption = 'Cidade:'
+            ExplicitTop = 24
           end
           object dbleUF: TDBLabeledEdit
             Left = 278
-            Top = 24
+            Top = 26
             Width = 86
             Height = 29
             Anchors = []
@@ -494,36 +519,21 @@ object formCadastroFuncionarios: TformCadastroFuncionarios
             EditLabel.Width = 22
             EditLabel.Height = 21
             EditLabel.Caption = 'UF:'
+            ExplicitTop = 24
           end
-          object Label8: TLabel
-            Left = 129
-            Top = 37
-            Width = 4
-            Height = 21
-            Anchors = []
-            ExplicitLeft = 108
-          end
-        end
-        object SpeedButton1: TSpeedButton
-          Left = 214
-          Top = 441
-          Width = 23
-          Height = 22
-          Anchors = []
-          ExplicitLeft = 288
-          ExplicitTop = 512
         end
         object pnlSelecionaFuncao: TPanel
           Left = 33
-          Top = 468
+          Top = 430
           Width = 384
           Height = 64
           Anchors = []
           BevelOuter = bvNone
           TabOrder = 7
+          ExplicitTop = 468
           object lblSelecionaFuncao: TLabel
             Left = 24
-            Top = 5
+            Top = 3
             Width = 132
             Height = 21
             Caption = 'Selecione a fun'#231#227'o:'
@@ -536,7 +546,7 @@ object formCadastroFuncionarios: TformCadastroFuncionarios
           end
           object DBComboBox1: TDBComboBox
             Left = 24
-            Top = 32
+            Top = 25
             Width = 345
             Height = 29
             TabOrder = 0
@@ -544,18 +554,62 @@ object formCadastroFuncionarios: TformCadastroFuncionarios
         end
         object Label9: TLabel
           Left = 223
-          Top = 504
+          Top = 463
           Width = 4
           Height = 21
           Anchors = []
           ExplicitLeft = 202
+          ExplicitTop = 504
+        end
+        object Label8: TLabel
+          Left = 223
+          Top = 405
+          Width = 4
+          Height = 21
+          Anchors = []
+          ExplicitLeft = 202
+          ExplicitTop = 411
+        end
+        object dbleCPF: TDBLabeledEdit
+          Left = 59
+          Top = 512
+          Width = 333
+          Height = 29
+          Anchors = []
+          TabOrder = 8
+          TextHint = 'Digite seu CEP'
+          EditLabel.Width = 30
+          EditLabel.Height = 21
+          EditLabel.Caption = 'CPF:'
+          ExplicitLeft = 64
+        end
+        object Label10: TLabel
+          Left = 223
+          Top = 520
+          Width = 4
+          Height = 21
+          Anchors = []
+          ExplicitLeft = 198
+        end
+        object dbleRG: TDBLabeledEdit
+          Left = 61
+          Top = 569
+          Width = 328
+          Height = 29
+          Anchors = []
+          TabOrder = 9
+          TextHint = 'Digite seu nome completo'
+          EditLabel.Width = 24
+          EditLabel.Height = 21
+          EditLabel.Caption = 'RG:'
+          ExplicitLeft = 40
         end
       end
       object Panel1: TPanel
         Left = 114
-        Top = 600
+        Top = 652
         Width = 254
-        Height = 44
+        Height = 37
         Anchors = []
         Caption = 'Cadastrar Funcion'#225'rio'
         Color = clHighlight

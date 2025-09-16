@@ -476,11 +476,14 @@
       end
     end
     object memoDescricaoDoServiço: TMemo
-      Left = 97
-      Top = 345
+      Left = 99
+      Top = 341
       Width = 718
       Height = 225
       Anchors = [akLeft, akTop, akRight, akBottom]
+      BevelInner = bvNone
+      BevelOuter = bvNone
+      BorderStyle = bsNone
       ImeMode = imDisable
       Lines.Strings = (
         'memoDescricaoDoServi'#231'o')
@@ -797,7 +800,6 @@
           EditLabel.Width = 28
           EditLabel.Height = 20
           EditLabel.Caption = 'CEP:'
-          ExplicitLeft = 602
         end
       end
       object GridPanel7: TGridPanel

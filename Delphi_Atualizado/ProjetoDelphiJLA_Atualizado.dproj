@@ -125,16 +125,12 @@
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
-        <DCCReference Include="unitLogoJLA.pas">
-            <Form>formLoginSemGridPanel</Form>
+        <DCCReference Include="formLoginJLA.pas">
+            <Form>formLogin</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="formPáginaDeInícioFunc.pas">
             <Form>formPáginaInicialFunc</Form>
-            <FormType>dfm</FormType>
-        </DCCReference>
-        <DCCReference Include="unitLoginGrid.pas">
-            <Form>formLoginGrid</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="frameCadastroFuncionario.pas">
@@ -165,21 +161,31 @@
             <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
-        <DCCReference Include="frameInicioPageControl.pas">
-            <Form>framePageControlInicio</Form>
-            <FormType>dfm</FormType>
-            <DesignClass>TFrame</DesignClass>
-        </DCCReference>
         <DCCReference Include="formPáginaDeInícioClientes.pas">
             <Form>formPáginaInicialCli</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="formPáginaDeInícioADM.pas">
-            <Form>Form1</Form>
+            <Form>formPáginaInicialADM</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="framePerfil.pas">
             <Form>Frame1</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="crudClientes.pas">
+            <Form>crudCli</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="frameSobreNos.pas">
+            <Form>framePáginaSobreNos</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="crudFuncionarios.pas">
+            <Form>Frame2</Form>
             <FormType>dfm</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>

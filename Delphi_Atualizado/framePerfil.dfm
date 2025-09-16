@@ -27,9 +27,9 @@ object Frame1: TFrame1
       ExplicitWidth = 93
     end
     object gridPanelLogin: TGridPanel
-      Left = 288
+      Left = 272
       Top = 52
-      Width = 465
+      Width = 513
       Height = 618
       Align = alCustom
       Anchors = [akLeft, akTop, akRight, akBottom]
@@ -127,11 +127,6 @@ object Frame1: TFrame1
         end
         item
           Column = 0
-          Control = dbleConfSenha
-          Row = 17
-        end
-        item
-          Column = 0
           Control = Label10
           Row = 18
         end
@@ -144,6 +139,11 @@ object Frame1: TFrame1
           Column = 0
           Control = pnlAtualizar
           Row = 20
+        end
+        item
+          Column = 0
+          Control = dbleConfSenha
+          Row = 17
         end>
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
@@ -220,10 +220,10 @@ object Frame1: TFrame1
         end>
       TabOrder = 0
       DesignSize = (
-        465
+        513
         618)
       object LableV1: TLabel
-        Left = 230
+        Left = 254
         Top = 3
         Width = 4
         Height = 21
@@ -232,7 +232,7 @@ object Frame1: TFrame1
         ExplicitTop = 4
       end
       object dbleNome: TDBLabeledEdit
-        Left = 59
+        Left = 83
         Top = 52
         Width = 346
         Height = 29
@@ -242,10 +242,10 @@ object Frame1: TFrame1
         EditLabel.Width = 118
         EditLabel.Height = 21
         EditLabel.Caption = 'Nome Completo:'
-        ExplicitTop = 51
+        ExplicitLeft = 59
       end
       object Label2: TLabel
-        Left = 230
+        Left = 254
         Top = 59
         Width = 4
         Height = 21
@@ -254,7 +254,7 @@ object Frame1: TFrame1
         ExplicitTop = 64
       end
       object dbleTelefone: TDBLabeledEdit
-        Left = 59
+        Left = 83
         Top = 108
         Width = 346
         Height = 29
@@ -264,10 +264,10 @@ object Frame1: TFrame1
         EditLabel.Width = 115
         EditLabel.Height = 21
         EditLabel.Caption = 'Telefone/Celular:'
-        ExplicitTop = 106
+        ExplicitLeft = 59
       end
       object Label3: TLabel
-        Left = 230
+        Left = 254
         Top = 115
         Width = 4
         Height = 21
@@ -276,7 +276,7 @@ object Frame1: TFrame1
         ExplicitTop = 125
       end
       object dbleEmail: TDBLabeledEdit
-        Left = 60
+        Left = 84
         Top = 164
         Width = 344
         Height = 29
@@ -286,10 +286,10 @@ object Frame1: TFrame1
         EditLabel.Width = 47
         EditLabel.Height = 21
         EditLabel.Caption = 'E-mail:'
-        ExplicitTop = 161
+        ExplicitLeft = 60
       end
       object Label4: TLabel
-        Left = 230
+        Left = 254
         Top = 172
         Width = 4
         Height = 21
@@ -298,7 +298,7 @@ object Frame1: TFrame1
         ExplicitTop = 185
       end
       object dbleCEP: TDBLabeledEdit
-        Left = 60
+        Left = 84
         Top = 221
         Width = 344
         Height = 29
@@ -308,10 +308,10 @@ object Frame1: TFrame1
         EditLabel.Width = 30
         EditLabel.Height = 21
         EditLabel.Caption = 'CEP:'
-        ExplicitTop = 215
+        ExplicitLeft = 60
       end
       object Label5: TLabel
-        Left = 230
+        Left = 254
         Top = 228
         Width = 4
         Height = 21
@@ -320,7 +320,7 @@ object Frame1: TFrame1
         ExplicitTop = 250
       end
       object dbleEndereco: TDBLabeledEdit
-        Left = 59
+        Left = 83
         Top = 277
         Width = 347
         Height = 29
@@ -330,10 +330,10 @@ object Frame1: TFrame1
         EditLabel.Width = 67
         EditLabel.Height = 21
         EditLabel.Caption = 'Endere'#231'o:'
-        ExplicitTop = 270
+        ExplicitLeft = 59
       end
       object Label6: TLabel
-        Left = 230
+        Left = 254
         Top = 284
         Width = 4
         Height = 21
@@ -342,7 +342,7 @@ object Frame1: TFrame1
         ExplicitTop = 311
       end
       object GridPanel3: TGridPanel
-        Left = 47
+        Left = 71
         Top = 309
         Width = 370
         Height = 56
@@ -373,7 +373,7 @@ object Frame1: TFrame1
             Value = 100.000000000000000000
           end>
         TabOrder = 5
-        ExplicitTop = 301
+        ExplicitLeft = 47
         DesignSize = (
           370
           56)
@@ -403,7 +403,7 @@ object Frame1: TFrame1
         end
       end
       object Label7: TLabel
-        Left = 230
+        Left = 254
         Top = 340
         Width = 4
         Height = 21
@@ -412,7 +412,7 @@ object Frame1: TFrame1
         ExplicitTop = 373
       end
       object GridPanel4: TGridPanel
-        Left = 43
+        Left = 67
         Top = 365
         Width = 379
         Height = 58
@@ -446,7 +446,7 @@ object Frame1: TFrame1
             SizeStyle = ssAuto
           end>
         TabOrder = 6
-        ExplicitTop = 355
+        ExplicitLeft = 43
         DesignSize = (
           379
           58)
@@ -476,7 +476,7 @@ object Frame1: TFrame1
         end
       end
       object Label8: TLabel
-        Left = 230
+        Left = 254
         Top = 396
         Width = 4
         Height = 21
@@ -485,7 +485,7 @@ object Frame1: TFrame1
         ExplicitTop = 387
       end
       object dbleSenha: TLabeledEdit
-        Left = 63
+        Left = 87
         Top = 445
         Width = 339
         Height = 29
@@ -496,10 +496,10 @@ object Frame1: TFrame1
         TabOrder = 7
         Text = ''
         TextHint = 'Crie uma senha'
-        ExplicitTop = 434
+        ExplicitLeft = 63
       end
       object Label9: TLabel
-        Left = 230
+        Left = 254
         Top = 453
         Width = 4
         Height = 21
@@ -507,22 +507,8 @@ object Frame1: TFrame1
         ExplicitLeft = 202
         ExplicitTop = 462
       end
-      object dbleConfSenha: TLabeledEdit
-        Left = 64
-        Top = 502
-        Width = 337
-        Height = 29
-        Anchors = []
-        EditLabel.Width = 125
-        EditLabel.Height = 21
-        EditLabel.Caption = 'Confirme a senha:'
-        TabOrder = 8
-        Text = ''
-        TextHint = 'Redigite a senha '
-        ExplicitTop = 488
-      end
       object Label10: TLabel
-        Left = 230
+        Left = 254
         Top = 509
         Width = 4
         Height = 21
@@ -531,7 +517,7 @@ object Frame1: TFrame1
         ExplicitTop = 495
       end
       object Label11: TLabel
-        Left = 230
+        Left = 254
         Top = 537
         Width = 4
         Height = 21
@@ -540,7 +526,7 @@ object Frame1: TFrame1
         ExplicitTop = 522
       end
       object pnlAtualizar: TPanel
-        Left = 140
+        Left = 164
         Top = 562
         Width = 185
         Height = 41
@@ -555,8 +541,22 @@ object Frame1: TFrame1
         Font.Style = []
         ParentBackground = False
         ParentFont = False
+        TabOrder = 8
+        ExplicitLeft = 140
+      end
+      object dbleConfSenha: TLabeledEdit
+        Left = 89
+        Top = 502
+        Width = 335
+        Height = 29
+        Anchors = []
+        EditLabel.Width = 125
+        EditLabel.Height = 21
+        EditLabel.Caption = 'Confirme a senha:'
         TabOrder = 9
-        ExplicitTop = 546
+        Text = ''
+        TextHint = 'Redigite a senha '
+        ExplicitLeft = 87
       end
     end
   end

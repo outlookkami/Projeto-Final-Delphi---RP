@@ -10,22 +10,21 @@
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  OnShow = FormShow
   TextHeight = 15
   object Panel1: TPanel
     Left = 0
     Top = 0
     Width = 1150
     Height = 705
+    Align = alTop
     TabOrder = 0
-    DesignSize = (
-      1150
-      705)
     object GridPanel1: TGridPanel
-      Left = -10
-      Top = 0
-      Width = 1160
+      Left = 1
+      Top = 1
+      Width = 1148
       Height = 57
-      Anchors = [akLeft, akTop, akRight]
+      Align = alTop
       Color = clMenuHighlight
       ColumnCollection = <
         item
@@ -107,11 +106,14 @@
           Value = 100.000000000000000000
         end>
       TabOrder = 0
+      ExplicitLeft = -10
+      ExplicitTop = 0
+      ExplicitWidth = 1160
       DesignSize = (
-        1160
+        1148
         57)
       object Image2: TImage
-        Left = 9
+        Left = 3
         Top = 4
         Width = 56
         Height = 47
@@ -4763,17 +4765,16 @@
           1BD88217956477AB2CCC2021F1D1F0FF01AD81751F8AE5E95C0000000049454E
           44AE426082}
         Proportional = True
-        ExplicitTop = 0
       end
       object btnpPedidos: TPanel
-        Left = 66
+        Left = 65
         Top = 8
         Width = 164
         Height = 41
         Cursor = crHandPoint
         Anchors = [akLeft, akTop, akRight, akBottom]
         BevelOuter = bvNone
-        Caption = 'Pedidos'
+        Caption = '&Pedidos'
         Color = clHighlight
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWhite
@@ -4785,14 +4786,14 @@
         TabOrder = 0
       end
       object btnpOrcamentos: TPanel
-        Left = 242
+        Left = 239
         Top = 8
         Width = 162
         Height = 41
         Cursor = crHandPoint
         Anchors = [akLeft, akTop, akRight, akBottom]
         BevelOuter = bvNone
-        Caption = 'Or'#231'amentos'
+        Caption = '&Or'#231'amentos'
         Color = clHighlight
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWhite
@@ -4804,14 +4805,14 @@
         TabOrder = 1
       end
       object btnpOS: TPanel
-        Left = 412
+        Left = 407
         Top = 8
         Width = 170
         Height = 41
         Cursor = crHandPoint
         Anchors = [akLeft, akTop, akRight, akBottom]
         BevelOuter = bvNone
-        Caption = 'Ordens de Servi'#231'o'
+        Caption = 'Ordens de &Servi'#231'o'
         Color = clHighlight
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWhite
@@ -4823,15 +4824,15 @@
         TabOrder = 2
       end
       object btnpSobreNos: TPanel
-        Left = 588
+        Left = 581
         Top = 4
-        Width = 165
+        Width = 163
         Height = 49
         Cursor = crHandPoint
         Align = alCustom
         Anchors = [akLeft, akTop, akRight, akBottom]
         BevelOuter = bvNone
-        Caption = 'Sobre N'#243's'
+        Caption = 'Sobre &N'#243's'
         Color = clHighlight
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWhite
@@ -4841,17 +4842,19 @@
         ParentBackground = False
         ParentFont = False
         TabOrder = 3
+        ExplicitLeft = 588
+        ExplicitWidth = 165
       end
       object btnpPortfolio: TPanel
-        Left = 768
+        Left = 759
         Top = 4
-        Width = 161
+        Width = 159
         Height = 49
         Cursor = crHandPoint
         Align = alCustom
         Anchors = [akLeft, akTop, akRight, akBottom]
         BevelOuter = bvNone
-        Caption = 'Portf'#243'lio'
+        Caption = 'Por&tf'#243'lio'
         Color = clHighlight
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWhite
@@ -4861,9 +4864,11 @@
         ParentBackground = False
         ParentFont = False
         TabOrder = 4
+        ExplicitLeft = 768
+        ExplicitWidth = 161
       end
       object btnpPerfil: TPanel
-        Left = 935
+        Left = 924
         Top = 8
         Width = 172
         Height = 41
@@ -4882,7 +4887,7 @@
         TabOrder = 5
       end
       object GridPanel3: TGridPanel
-        Left = 1111
+        Left = 1099
         Top = 4
         Width = 45
         Height = 49
@@ -4918,6 +4923,7 @@
             Value = 2.000000000000000000
           end>
         TabOrder = 6
+        ExplicitLeft = 1111
         DesignSize = (
           45
           49)
@@ -12287,7 +12293,40 @@
             42F40D4110044110C48BC4FF0F02439F92F6C3910C0000000049454E44AE4260
             82}
           Proportional = True
+          OnClick = Image3Click
         end
+      end
+    end
+    object PageControl1: TPageControl
+      Left = 1
+      Top = 58
+      Width = 1148
+      Height = 646
+      ActivePage = TabSheet6
+      Align = alClient
+      TabOrder = 1
+      object TabSheet1: TTabSheet
+        Caption = 'Pedidos'
+      end
+      object TabSheet2: TTabSheet
+        Caption = 'Or'#231'amentos'
+        ImageIndex = 1
+      end
+      object TabSheet3: TTabSheet
+        Caption = 'Ordens de Servi'#231'o'
+        ImageIndex = 2
+      end
+      object TabSheet4: TTabSheet
+        Caption = 'Sobre N'#243's'
+        ImageIndex = 3
+      end
+      object TabSheet5: TTabSheet
+        Caption = 'Portf'#243'lio'
+        ImageIndex = 4
+      end
+      object TabSheet6: TTabSheet
+        Caption = 'Perfil'
+        ImageIndex = 5
       end
     end
   end

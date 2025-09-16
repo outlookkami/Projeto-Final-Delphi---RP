@@ -32,13 +32,15 @@ type
     GridPanel4: TGridPanel;
     dbleCidade: TDBLabeledEdit;
     dbleUF: TDBLabeledEdit;
-    Label8: TLabel;
-    SpeedButton1: TSpeedButton;
     pnlSelecionaFuncao: TPanel;
     lblSelecionaFuncao: TLabel;
     DBComboBox1: TDBComboBox;
     Label9: TLabel;
     Panel1: TPanel;
+    Label8: TLabel;
+    dbleCPF: TDBLabeledEdit;
+    Label10: TLabel;
+    dbleRG: TDBLabeledEdit;
   private
     { Private declarations }
   public
