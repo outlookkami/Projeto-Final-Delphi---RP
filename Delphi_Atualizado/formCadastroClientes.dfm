@@ -599,7 +599,6 @@ object formCadastroDeClientes: TformCadastroDeClientes
           ParentFont = False
           TabOrder = 9
           OnClick = pnlCadastrarClick
-          ExplicitTop = 570
         end
       end
     end

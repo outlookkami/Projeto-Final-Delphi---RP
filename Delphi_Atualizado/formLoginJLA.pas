@@ -6,7 +6,7 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Mask, Vcl.ComCtrls,
   Vcl.ExtCtrls, Vcl.Imaging.jpeg, System.ImageList, Vcl.ImgList,
-  Vcl.Imaging.pngimage, Vcl.Skia, unitCrudClientes, Vcl.DBCtrls;
+  Vcl.Imaging.pngimage, Vcl.Skia, unitCrudClientes, Vcl.DBCtrls, formCadastroClientes; //, BCrypt
 
 type
   TformLogin = class(TForm)
@@ -16,8 +16,6 @@ type
     GridPanel1: TGridPanel;
     Label3: TLabel;
     Label4: TLabel;
-    lblAvisoUsuario: TLabel;
-    lblAvisoSenha: TLabel;
     Panel2: TPanel;
     GridPanel3: TGridPanel;
     dbleSenha: TDBLabeledEdit;
@@ -35,9 +33,12 @@ type
     lblVazio006: TLabel;
     imgFechar: TImage;
     Image1: TImage;
+    lblAvisoUsuario: TLabel;
+    lblAvisoSenha: TLabel;
     procedure pnlEntrarClick(Sender: TObject);
     procedure imgCadeadoClick(Sender: TObject);
     procedure imgFecharClick(Sender: TObject);
+    procedure lblCadastreAquiClick(Sender: TObject);
   private
     { Private declarations }
     procedure HideShowSenha;
@@ -49,8 +50,10 @@ var
   formLogin: TformLogin;
 
 implementation
+//uses BCrypt;
 
 {$R *.dfm}
+
 
 procedure TformLogin.HideShowSenha;
 begin
@@ -73,10 +76,19 @@ begin
     Close;
 end;
 
+procedure TformLogin.lblCadastreAquiClick(Sender: TObject);
+begin
+    formCadastroDeClientes.ShowModal;
+
+end;
+
 procedure TformLogin.pnlEntrarClick(Sender: TObject);
+var senha, hash: String;
+
 begin
   if (dbleSenha.Text = '') or (dbleUsuario.Text = '') then begin
     ShowMessage('Preencha todos os campos.');
+
   end;
 
   if dbleSenha.Text = '' then begin
@@ -92,7 +104,16 @@ begin
   end else begin
         lblAvisoUsuario.Caption := '';
   end;
-     Form2.Show;
+
+  begin
+    if Trim(dbleSenha.Text) = '' then
+    senha := Trim(dbleSenha.Text);
+    //hash := TBCrypt.GenerateHash(Trim(dbleSenha.Text));
+
 end;
+end;
+
+
+
 
 end.

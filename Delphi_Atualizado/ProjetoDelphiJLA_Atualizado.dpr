@@ -17,17 +17,19 @@ uses
   framePerfil in 'framePerfil.pas' {Frame1: TFrame},
   crudClientes in 'crudClientes.pas' {crudCli: TFrame},
   frameSobreNos in 'frameSobreNos.pas' {framePáginaSobreNos: TFrame},
-  crudFuncionarios in 'crudFuncionarios.pas' {Frame2: TFrame};
+  crudFuncionarios in 'crudFuncionarios.pas' {Frame2: TFrame},
+  frameCadastroVeiculo in 'frameCadastroVeiculo.pas' {Frame4: TFrame};
 
 {$R *.res}
 
 begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
-  Application.CreateForm(TformCadastroFuncionarios, formCadastroFuncionarios);
+  Application.Title := 'Aviso';
   Application.CreateForm(TformLogin, formLogin);
-  Application.CreateForm(TformPáginaInicialADM, formPáginaInicialADM);
   Application.CreateForm(TformPáginaInicialFunc, formPáginaInicialFunc);
+  Application.CreateForm(TformCadastroFuncionarios, formCadastroFuncionarios);
+  Application.CreateForm(TformPáginaInicialADM, formPáginaInicialADM);
   Application.CreateForm(TformPáginaInicialCli, formPáginaInicialCli);
   Application.CreateForm(TformCadastroDeClientes, formCadastroDeClientes);
   Application.CreateForm(TframeCadastroFunc, frameCadastroFunc);

@@ -5,23 +5,13 @@ BEGIN;
 
 CREATE EXTENSION IF NOT EXISTS pgcrypto;
 
-ALTER DATABASE ProjetoDelphiJLA SET log_statement = 'all';
+ALTER DATABASE ProjetoDelphiJLA SET log_statement = 'ddl';
 
 CREATE TABLE IF NOT EXISTS public."Usuarios"
 (
 codigo_usuario SERIAL PRIMARY KEY,
+nome_usuario VARCHAR(255) UNIQUE NOT NULL,
 hash_senha_usuario VARCHAR(255) NOT NULL,
-nome_usuario VARCHAR(100) NOT NULL,
-telefone_usuario VARCHAR(9) NOT NULL,
-email_usuario VARCHAR(250) UNIQUE,
-cep_usuario VARCHAR(8),
-veiculo VARCHAR(7) NOT NULL,
-endereco_usuario VARCHAR(60),
-num_endereco VARCHAR(7),
-bairro VARCHAR(30),
-cidade VARCHAR(30),
-uf VARCHAR(2),
-cliente_data_criacao TIMESTAMP
 
 );
 
@@ -52,8 +42,9 @@ CREATE TABLE IF NOT EXISTS public."Funcionarios"
 (
 codigo_funcionario SERIAL PRIMARY KEY,
 hash_senha_func VARCHAR(255) NOT NULL,
-nome_funcionario VARCHAR(100) UNIQUE NOT NULL,
+nome funcionário VARCHAR(100) UNIQUE NOT NULL,
 telefone_funcionario VARCHAR(9) NOT NULL,
+email_funcionario VARCHAR(255) UNIQUE NOT NULL,
 funcao VARCHAR,
 rg_funcionario(9) UNIQUE,
 cpf_funcionario VARCHAR(11) UNIQUE,
@@ -77,10 +68,10 @@ CREATE TABLE IF NOT EXISTS public.veiculos
 (
 placa_veiculo VARCHAR(7) PRIMARY KEY,
 chassi VARCHAR(17) UNIQUE,
-marca VARCHAR(20),
 modelo VARCHAR(20),
-ano SMALLINT,
+marca VARCHAR(20),
 cor VARCHAR(20),
+ano SMALLINT,
 nome_cliente FOREIGN KEY,
 codigo_cliente FOREIGN KEY,
 

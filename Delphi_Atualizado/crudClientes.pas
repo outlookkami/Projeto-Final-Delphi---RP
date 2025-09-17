@@ -66,6 +66,8 @@ end;
 procedure TcrudCli.pnlCadastrarClick(Sender: TObject);
 begin
     pnlLogin.Visible := False;
+
+    MessageDlg('Cadastro finalizado com sucesso! Deseja incluir um veículo?', mtConfirmation, [mbYes, mbNo], 0);
 end;
 
 end.

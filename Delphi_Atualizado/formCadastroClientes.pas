@@ -53,15 +53,10 @@ implementation
 
 {$R *.dfm}
 
-
-
 procedure TformCadastroDeClientes.pnlCadastrarClick(Sender: TObject);
-var frameFormularioDePedido: TframeFormularioDePedido;
 begin
-    frameFormularioDePedido := TframeFormularioDePedido.Create(Self);
-    frameFormularioDePedido.Parent := Self;
-    frameFormularioDePedido.Align := alClient;
-    frameFormularioDePedido.Visible := True;
+    MessageDlg('Cadastro finalizado com sucesso! Deseja incluir seu veículo?', mtConfirmation, [mbYes, mbNo], 0);
 end;
+
 
 end.

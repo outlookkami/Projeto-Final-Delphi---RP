@@ -11,7 +11,6 @@ object crudCli: TcrudCli
     Height = 740
     Align = alClient
     TabOrder = 0
-    ExplicitLeft = 3
     DesignSize = (
       1166
       740)
@@ -219,13 +218,11 @@ object crudCli: TcrudCli
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitLeft = 0
-        ExplicitTop = -1
-        ExplicitWidth = 437
+        ExplicitWidth = 147
       end
       object gridPanelLogin: TGridPanel
         Left = 1
-        Top = 42
+        Top = 41
         Width = 532
         Height = 600
         Align = alCustom
@@ -416,7 +413,6 @@ object crudCli: TcrudCli
             Value = 4.545454545454532000
           end>
         TabOrder = 0
-        ExplicitHeight = 575
         DesignSize = (
           532
           600)
@@ -440,8 +436,6 @@ object crudCli: TcrudCli
           EditLabel.Width = 118
           EditLabel.Height = 21
           EditLabel.Caption = 'Nome Completo:'
-          ExplicitLeft = 93
-          ExplicitTop = 50
         end
         object Label2: TLabel
           Left = 264
@@ -463,8 +457,6 @@ object crudCli: TcrudCli
           EditLabel.Width = 115
           EditLabel.Height = 21
           EditLabel.Caption = 'Telefone/Celular:'
-          ExplicitLeft = 93
-          ExplicitTop = 101
         end
         object Label3: TLabel
           Left = 264
@@ -486,8 +478,6 @@ object crudCli: TcrudCli
           EditLabel.Width = 47
           EditLabel.Height = 21
           EditLabel.Caption = 'E-mail:'
-          ExplicitLeft = 94
-          ExplicitTop = 153
         end
         object Label4: TLabel
           Left = 264
@@ -509,8 +499,6 @@ object crudCli: TcrudCli
           EditLabel.Width = 30
           EditLabel.Height = 21
           EditLabel.Caption = 'CEP:'
-          ExplicitLeft = 94
-          ExplicitTop = 204
         end
         object Label5: TLabel
           Left = 264
@@ -525,7 +513,7 @@ object crudCli: TcrudCli
           Left = 78
           Top = 269
           Width = 375
-          Height = 28
+          Height = 29
           Anchors = []
           TabOrder = 4
           TextHint = 'Informe a rua'
@@ -574,7 +562,6 @@ object crudCli: TcrudCli
               Value = 100.000000000000000000
             end>
           TabOrder = 5
-          ExplicitTop = 287
           DesignSize = (
             384
             53)
@@ -589,8 +576,6 @@ object crudCli: TcrudCli
             EditLabel.Width = 18
             EditLabel.Height = 21
             EditLabel.Caption = 'N'#176
-            ExplicitLeft = 2
-            ExplicitTop = 25
           end
           object dbleBairro: TDBLabeledEdit
             Left = 160
@@ -603,8 +588,6 @@ object crudCli: TcrudCli
             EditLabel.Width = 45
             EditLabel.Height = 21
             EditLabel.Caption = 'Bairro:'
-            ExplicitLeft = 166
-            ExplicitTop = 25
           end
         end
         object Label7: TLabel
@@ -651,7 +634,6 @@ object crudCli: TcrudCli
               SizeStyle = ssAuto
             end>
           TabOrder = 6
-          ExplicitLeft = 43
           DesignSize = (
             379
             58)
@@ -666,7 +648,6 @@ object crudCli: TcrudCli
             EditLabel.Width = 51
             EditLabel.Height = 21
             EditLabel.Caption = 'Cidade:'
-            ExplicitLeft = 0
           end
           object dbleUF: TDBLabeledEdit
             Left = 266
@@ -679,7 +660,6 @@ object crudCli: TcrudCli
             EditLabel.Width = 22
             EditLabel.Height = 21
             EditLabel.Caption = 'UF:'
-            ExplicitLeft = 267
           end
         end
         object Label8: TLabel
@@ -703,8 +683,6 @@ object crudCli: TcrudCli
           TabOrder = 7
           Text = ''
           TextHint = 'Crie uma senha'
-          ExplicitLeft = 64
-          ExplicitTop = 411
         end
         object Label9: TLabel
           Left = 264
@@ -727,8 +705,6 @@ object crudCli: TcrudCli
           TabOrder = 8
           Text = ''
           TextHint = 'Redigite a senha '
-          ExplicitLeft = 64
-          ExplicitTop = 462
         end
         object Label10: TLabel
           Left = 264
@@ -766,7 +742,6 @@ object crudCli: TcrudCli
           ParentFont = False
           TabOrder = 9
           OnClick = pnlCadastrarClick
-          ExplicitTop = 548
         end
       end
     end
