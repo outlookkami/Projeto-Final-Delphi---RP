@@ -1,4 +1,4 @@
-object Frame1: TFrame1
+﻿object framePerfilUsuário: TframePerfilUsuário
   Left = 0
   Top = 0
   Width = 1101
@@ -242,7 +242,6 @@ object Frame1: TFrame1
         EditLabel.Width = 118
         EditLabel.Height = 21
         EditLabel.Caption = 'Nome Completo:'
-        ExplicitLeft = 59
       end
       object Label2: TLabel
         Left = 254
@@ -264,7 +263,6 @@ object Frame1: TFrame1
         EditLabel.Width = 115
         EditLabel.Height = 21
         EditLabel.Caption = 'Telefone/Celular:'
-        ExplicitLeft = 59
       end
       object Label3: TLabel
         Left = 254
@@ -286,7 +284,6 @@ object Frame1: TFrame1
         EditLabel.Width = 47
         EditLabel.Height = 21
         EditLabel.Caption = 'E-mail:'
-        ExplicitLeft = 60
       end
       object Label4: TLabel
         Left = 254
@@ -308,7 +305,6 @@ object Frame1: TFrame1
         EditLabel.Width = 30
         EditLabel.Height = 21
         EditLabel.Caption = 'CEP:'
-        ExplicitLeft = 60
       end
       object Label5: TLabel
         Left = 254
@@ -330,7 +326,6 @@ object Frame1: TFrame1
         EditLabel.Width = 67
         EditLabel.Height = 21
         EditLabel.Caption = 'Endere'#231'o:'
-        ExplicitLeft = 59
       end
       object Label6: TLabel
         Left = 254
@@ -373,7 +368,6 @@ object Frame1: TFrame1
             Value = 100.000000000000000000
           end>
         TabOrder = 5
-        ExplicitLeft = 47
         DesignSize = (
           370
           56)
@@ -446,7 +440,6 @@ object Frame1: TFrame1
             SizeStyle = ssAuto
           end>
         TabOrder = 6
-        ExplicitLeft = 43
         DesignSize = (
           379
           58)
@@ -496,7 +489,6 @@ object Frame1: TFrame1
         TabOrder = 7
         Text = ''
         TextHint = 'Crie uma senha'
-        ExplicitLeft = 63
       end
       object Label9: TLabel
         Left = 254
@@ -542,7 +534,6 @@ object Frame1: TFrame1
         ParentBackground = False
         ParentFont = False
         TabOrder = 8
-        ExplicitLeft = 140
       end
       object dbleConfSenha: TLabeledEdit
         Left = 89
@@ -556,7 +547,6 @@ object Frame1: TFrame1
         TabOrder = 9
         Text = ''
         TextHint = 'Redigite a senha '
-        ExplicitLeft = 87
       end
     end
   end

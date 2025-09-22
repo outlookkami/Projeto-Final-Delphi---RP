@@ -1,4 +1,4 @@
-object crudCli: TcrudCli
+﻿object crudCli: TcrudCli
   Left = 0
   Top = 0
   Width = 1166
@@ -11,6 +11,8 @@ object crudCli: TcrudCli
     Height = 740
     Align = alClient
     TabOrder = 0
+    ExplicitLeft = 3
+    ExplicitTop = 3
     DesignSize = (
       1166
       740)
@@ -30,7 +32,7 @@ object crudCli: TcrudCli
       Font.Style = []
       ParentBackground = False
       ParentFont = False
-      TabOrder = 3
+      TabOrder = 2
       OnClick = btnIncluirCliClick
     end
     object pnlPesquisa: TPanel
@@ -195,19 +197,22 @@ object crudCli: TcrudCli
           Visible = True
         end>
     end
-    object pnlLogin: TPanel
-      Left = 296
-      Top = 48
-      Width = 545
-      Height = 650
+    object pnlCadastro: TPanel
+      Left = 337
+      Top = 18
+      Width = 478
+      Height = 704
       Align = alCustom
-      Anchors = [akLeft, akTop, akRight, akBottom]
-      TabOrder = 2
+      Anchors = [akLeft, akTop, akRight]
+      TabOrder = 3
       Visible = False
+      DesignSize = (
+        478
+        704)
       object Label1: TLabel
         Left = 1
         Top = 1
-        Width = 543
+        Width = 476
         Height = 50
         Align = alTop
         Alignment = taCenter
@@ -218,13 +223,14 @@ object crudCli: TcrudCli
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 147
+        ExplicitLeft = -15
+        ExplicitTop = 0
       end
       object gridPanelLogin: TGridPanel
-        Left = 1
-        Top = 41
-        Width = 532
-        Height = 600
+        Left = 16
+        Top = 43
+        Width = 451
+        Height = 639
         Align = alCustom
         Anchors = [akLeft, akTop, akRight, akBottom]
         BevelEdges = []
@@ -236,7 +242,7 @@ object crudCli: TcrudCli
         ControlCollection = <
           item
             Column = 0
-            Control = LableV1
+            Control = lblVazio5
             Row = 0
           end
           item
@@ -306,12 +312,7 @@ object crudCli: TcrudCli
           end
           item
             Column = 0
-            Control = Label8
-            Row = 14
-          end
-          item
-            Column = 0
-            Control = dbleSenha
+            Control = pnlSelecionaFuncao
             Row = 15
           end
           item
@@ -321,7 +322,12 @@ object crudCli: TcrudCli
           end
           item
             Column = 0
-            Control = dbleConfSenha
+            Control = Label8
+            Row = 14
+          end
+          item
+            Column = 0
+            Control = dbleCPF
             Row = 17
           end
           item
@@ -331,13 +337,8 @@ object crudCli: TcrudCli
           end
           item
             Column = 0
-            Control = Label11
+            Control = dbleRG
             Row = 19
-          end
-          item
-            Column = 0
-            Control = pnlCadastrar
-            Row = 20
           end>
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
@@ -414,32 +415,34 @@ object crudCli: TcrudCli
           end>
         TabOrder = 0
         DesignSize = (
-          532
-          600)
-        object LableV1: TLabel
-          Left = 264
-          Top = 3
+          451
+          639)
+        object lblVazio5: TLabel
+          Left = 223
+          Top = 4
           Width = 4
           Height = 21
           Anchors = []
           ExplicitLeft = 185
-          ExplicitTop = 4
         end
         object dbleNome: TDBLabeledEdit
-          Left = 80
-          Top = 51
-          Width = 372
+          Left = 52
+          Top = 53
+          Width = 346
           Height = 29
           Anchors = []
           TabOrder = 0
           TextHint = 'Digite seu nome completo'
           EditLabel.Width = 118
           EditLabel.Height = 21
+          EditLabel.Hint = 'Digite seu nome'
           EditLabel.Caption = 'Nome Completo:'
+          EditLabel.ParentShowHint = False
+          EditLabel.ShowHint = True
         end
         object Label2: TLabel
-          Left = 264
-          Top = 58
+          Left = 223
+          Top = 62
           Width = 4
           Height = 21
           Anchors = []
@@ -447,9 +450,9 @@ object crudCli: TcrudCli
           ExplicitTop = 64
         end
         object dbleTelefone: TDBLabeledEdit
-          Left = 80
-          Top = 106
-          Width = 372
+          Left = 52
+          Top = 111
+          Width = 346
           Height = 29
           Anchors = []
           TabOrder = 1
@@ -459,8 +462,8 @@ object crudCli: TcrudCli
           EditLabel.Caption = 'Telefone/Celular:'
         end
         object Label3: TLabel
-          Left = 264
-          Top = 112
+          Left = 223
+          Top = 120
           Width = 4
           Height = 21
           Anchors = []
@@ -468,20 +471,21 @@ object crudCli: TcrudCli
           ExplicitTop = 125
         end
         object dbleEmail: TDBLabeledEdit
-          Left = 80
-          Top = 160
-          Width = 371
+          Left = 53
+          Top = 169
+          Width = 344
           Height = 29
           Anchors = []
           TabOrder = 2
           TextHint = 'Digite seu email'
           EditLabel.Width = 47
           EditLabel.Height = 21
+          EditLabel.Hint = 'Digite seu email'
           EditLabel.Caption = 'E-mail:'
         end
         object Label4: TLabel
-          Left = 264
-          Top = 167
+          Left = 223
+          Top = 178
           Width = 4
           Height = 21
           Anchors = []
@@ -489,9 +493,9 @@ object crudCli: TcrudCli
           ExplicitTop = 185
         end
         object dbleCEP: TDBLabeledEdit
-          Left = 80
-          Top = 215
-          Width = 371
+          Left = 53
+          Top = 227
+          Width = 344
           Height = 29
           Anchors = []
           TabOrder = 3
@@ -501,8 +505,8 @@ object crudCli: TcrudCli
           EditLabel.Caption = 'CEP:'
         end
         object Label5: TLabel
-          Left = 264
-          Top = 221
+          Left = 223
+          Top = 236
           Width = 4
           Height = 21
           Anchors = []
@@ -510,9 +514,9 @@ object crudCli: TcrudCli
           ExplicitTop = 250
         end
         object dbleEndereco: TDBLabeledEdit
-          Left = 78
-          Top = 269
-          Width = 375
+          Left = 52
+          Top = 285
+          Width = 347
           Height = 29
           Anchors = []
           TabOrder = 4
@@ -522,8 +526,8 @@ object crudCli: TcrudCli
           EditLabel.Caption = 'Endere'#231'o:'
         end
         object Label6: TLabel
-          Left = 264
-          Top = 276
+          Left = 223
+          Top = 294
           Width = 4
           Height = 21
           Anchors = []
@@ -531,10 +535,10 @@ object crudCli: TcrudCli
           ExplicitTop = 311
         end
         object GridPanel3: TGridPanel
-          Left = 74
-          Top = 300
-          Width = 384
-          Height = 53
+          Left = 40
+          Top = 320
+          Width = 370
+          Height = 56
           Anchors = []
           BevelOuter = bvNone
           ColumnCollection = <
@@ -563,36 +567,34 @@ object crudCli: TcrudCli
             end>
           TabOrder = 5
           DesignSize = (
-            384
-            53)
+            370
+            56)
           object dbleNumero: TDBLabeledEdit
-            Left = 6
-            Top = 24
-            Width = 144
+            Left = 13
+            Top = 25
+            Width = 124
             Height = 29
             Anchors = []
             TabOrder = 0
-            TextHint = 'N'#176' do endere'#231'o'
             EditLabel.Width = 18
             EditLabel.Height = 21
             EditLabel.Caption = 'N'#176
           end
           object dbleBairro: TDBLabeledEdit
-            Left = 160
-            Top = 24
-            Width = 219
+            Left = 161
+            Top = 25
+            Width = 199
             Height = 29
             Anchors = []
             TabOrder = 1
-            TextHint = 'Seu bairro'
             EditLabel.Width = 45
             EditLabel.Height = 21
             EditLabel.Caption = 'Bairro:'
           end
         end
         object Label7: TLabel
-          Left = 264
-          Top = 330
+          Left = 223
+          Top = 353
           Width = 4
           Height = 21
           Anchors = []
@@ -600,8 +602,8 @@ object crudCli: TcrudCli
           ExplicitTop = 373
         end
         object GridPanel4: TGridPanel
-          Left = 76
-          Top = 355
+          Left = 36
+          Top = 378
           Width = 379
           Height = 58
           Anchors = []
@@ -638,110 +640,240 @@ object crudCli: TcrudCli
             379
             58)
           object dbleCidade: TDBLabeledEdit
-            Left = 5
+            Left = 17
             Top = 26
-            Width = 253
+            Width = 229
             Height = 29
             Anchors = []
             TabOrder = 0
-            TextHint = 'Nome da sua cidade'
             EditLabel.Width = 51
             EditLabel.Height = 21
             EditLabel.Caption = 'Cidade:'
           end
           object dbleUF: TDBLabeledEdit
-            Left = 266
+            Left = 278
             Top = 26
-            Width = 110
+            Width = 86
             Height = 29
             Anchors = []
             TabOrder = 1
-            TextHint = 'UF do estado'
             EditLabel.Width = 22
             EditLabel.Height = 21
             EditLabel.Caption = 'UF:'
           end
         end
-        object Label8: TLabel
-          Left = 264
-          Top = 385
-          Width = 4
-          Height = 21
+        object pnlSelecionaFuncao: TPanel
+          Left = 33
+          Top = 436
+          Width = 384
+          Height = 64
           Anchors = []
-          ExplicitLeft = 226
-          ExplicitTop = 387
-        end
-        object dbleSenha: TLabeledEdit
-          Left = 80
-          Top = 433
-          Width = 371
-          Height = 29
-          Anchors = []
-          EditLabel.Width = 46
-          EditLabel.Height = 21
-          EditLabel.Caption = 'Senha:'
+          BevelOuter = bvNone
           TabOrder = 7
-          Text = ''
-          TextHint = 'Crie uma senha'
+          object lblSelecionaFuncao: TLabel
+            Left = 24
+            Top = 3
+            Width = 132
+            Height = 21
+            Caption = 'Selecione a fun'#231#227'o:'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -16
+            Font.Name = 'Segoe UI'
+            Font.Style = []
+            ParentFont = False
+          end
+          object DBComboBox1: TDBComboBox
+            Left = 24
+            Top = 25
+            Width = 345
+            Height = 29
+            TabOrder = 0
+          end
         end
         object Label9: TLabel
-          Left = 264
-          Top = 439
+          Left = 223
+          Top = 469
           Width = 4
           Height = 21
           Anchors = []
           ExplicitLeft = 202
-          ExplicitTop = 462
+          ExplicitTop = 504
         end
-        object dbleConfSenha: TLabeledEdit
-          Left = 81
-          Top = 488
-          Width = 370
-          Height = 29
+        object Label8: TLabel
+          Left = 223
+          Top = 411
+          Width = 4
+          Height = 21
           Anchors = []
-          EditLabel.Width = 125
-          EditLabel.Height = 21
-          EditLabel.Caption = 'Confirme a senha:'
+          ExplicitLeft = 202
+        end
+        object dbleCPF: TDBLabeledEdit
+          Left = 59
+          Top = 518
+          Width = 342
+          Height = 29
+          Align = alCustom
           TabOrder = 8
-          Text = ''
-          TextHint = 'Redigite a senha '
+          TextHint = 'Digite seu CEP'
+          EditLabel.Width = 30
+          EditLabel.Height = 21
+          EditLabel.Caption = 'CPF:'
         end
         object Label10: TLabel
-          Left = 264
-          Top = 494
+          Left = 223
+          Top = 527
           Width = 4
           Height = 21
           Anchors = []
           ExplicitLeft = 198
-          ExplicitTop = 495
+          ExplicitTop = 520
         end
-        object Label11: TLabel
-          Left = 264
-          Top = 521
-          Width = 4
-          Height = 21
-          Anchors = []
-          ExplicitLeft = 198
-          ExplicitTop = 522
-        end
-        object pnlCadastrar: TPanel
-          Left = 173
-          Top = 545
-          Width = 185
-          Height = 41
-          Cursor = crHandPoint
-          Anchors = []
-          Caption = 'Cadastrar'
-          Color = clHighlight
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWhite
-          Font.Height = -19
-          Font.Name = 'Segoe UI'
-          Font.Style = []
-          ParentBackground = False
-          ParentFont = False
+        object dbleRG: TDBLabeledEdit
+          Left = 61
+          Top = 576
+          Width = 340
+          Height = 29
+          Align = alCustom
           TabOrder = 9
-          OnClick = pnlCadastrarClick
+          TextHint = 'Digite seu nome completo'
+          EditLabel.Width = 24
+          EditLabel.Height = 21
+          EditLabel.Caption = 'RG:'
+        end
+      end
+      object Panel2: TPanel
+        Left = 114
+        Top = 660
+        Width = 254
+        Height = 37
+        Anchors = []
+        Caption = 'Cadastrar Funcion'#225'rio'
+        Color = clHighlight
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWhite
+        Font.Height = -20
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentBackground = False
+        ParentFont = False
+        TabOrder = 1
+      end
+    end
+    inline frameCadVeiculo1: TframeCadVeiculo
+      Left = 176
+      Top = 69
+      Width = 824
+      Height = 653
+      Anchors = [akLeft, akTop, akRight]
+      TabOrder = 4
+      Visible = False
+      ExplicitLeft = 176
+      ExplicitTop = 69
+      inherited pnlSenhaFuncionario: TPanel
+        StyleElements = [seFont, seClient, seBorder]
+        inherited lblCadastrandoVeiculo: TLabel
+          StyleElements = [seFont, seClient, seBorder]
+        end
+        inherited pnlDadosVeículo: TPanel
+          StyleElements = [seFont, seClient, seBorder]
+          inherited pnlInfoVeiculo: TPanel
+            StyleElements = [seFont, seClient, seBorder]
+            inherited GridPanel2: TGridPanel
+              ControlCollection = <
+                item
+                  Column = 0
+                  Control = frameCadVeiculo1.dbleModeloVeiculo
+                  Row = 0
+                end
+                item
+                  Column = 0
+                  Control = frameCadVeiculo1.Label1
+                  Row = 1
+                end
+                item
+                  Column = 0
+                  Control = frameCadVeiculo1.dbleMarcaVeiculo
+                  Row = 2
+                end
+                item
+                  Column = 0
+                  Control = frameCadVeiculo1.Label3
+                  Row = 3
+                end
+                item
+                  Column = 0
+                  Control = frameCadVeiculo1.dbleCorVeiculo
+                  Row = 4
+                end
+                item
+                  Column = 0
+                  Control = frameCadVeiculo1.Label4
+                  Row = 5
+                end
+                item
+                  Column = 0
+                  Control = frameCadVeiculo1.dbleAnoVeiculo
+                  Row = 6
+                end>
+              StyleElements = [seFont, seClient, seBorder]
+              inherited dbleModeloVeiculo: TDBLabeledEdit
+                StyleElements = [seFont, seClient, seBorder]
+              end
+              inherited Label1: TLabel
+                StyleElements = [seFont, seClient, seBorder]
+              end
+              inherited dbleMarcaVeiculo: TDBLabeledEdit
+                StyleElements = [seFont, seClient, seBorder]
+              end
+              inherited Label3: TLabel
+                StyleElements = [seFont, seClient, seBorder]
+              end
+              inherited dbleCorVeiculo: TDBLabeledEdit
+                StyleElements = [seFont, seClient, seBorder]
+              end
+              inherited Label4: TLabel
+                StyleElements = [seFont, seClient, seBorder]
+              end
+              inherited dbleAnoVeiculo: TDBLabeledEdit
+                StyleElements = [seFont, seClient, seBorder]
+              end
+            end
+          end
+          inherited Panel1: TPanel
+            StyleElements = [seFont, seClient, seBorder]
+            inherited GridPanel1: TGridPanel
+              ControlCollection = <
+                item
+                  Column = 0
+                  Control = frameCadVeiculo1.DBLabeledEdit2
+                  Row = 0
+                end
+                item
+                  Column = 0
+                  Control = frameCadVeiculo1.dbleChassiVeiculo
+                  Row = 2
+                end
+                item
+                  Column = 0
+                  Control = frameCadVeiculo1.Label2
+                  Row = 1
+                end>
+              StyleElements = [seFont, seClient, seBorder]
+              inherited DBLabeledEdit2: TDBLabeledEdit
+                StyleElements = [seFont, seClient, seBorder]
+              end
+              inherited dbleChassiVeiculo: TDBLabeledEdit
+                StyleElements = [seFont, seClient, seBorder]
+              end
+              inherited Label2: TLabel
+                StyleElements = [seFont, seClient, seBorder]
+              end
+            end
+          end
+          inherited pnlBotaoCadastrarVeiculo: TPanel
+            StyleElements = [seFont, seClient, seBorder]
+          end
         end
       end
     end

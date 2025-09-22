@@ -57,7 +57,7 @@ object formCadastroFuncionarios: TformCadastroFuncionarios
     end
     object pnlLogin: TPanel
       Left = 641
-      Top = 1
+      Top = 5
       Width = 478
       Height = 704
       Align = alCustom
@@ -316,7 +316,6 @@ object formCadastroFuncionarios: TformCadastroFuncionarios
           EditLabel.Width = 115
           EditLabel.Height = 21
           EditLabel.Caption = 'Telefone/Celular:'
-          ExplicitTop = 110
         end
         object Label3: TLabel
           Left = 223
@@ -339,7 +338,6 @@ object formCadastroFuncionarios: TformCadastroFuncionarios
           EditLabel.Height = 21
           EditLabel.Hint = 'Digite seu email'
           EditLabel.Caption = 'E-mail:'
-          ExplicitTop = 175
         end
         object Label4: TLabel
           Left = 223
@@ -361,7 +359,6 @@ object formCadastroFuncionarios: TformCadastroFuncionarios
           EditLabel.Width = 30
           EditLabel.Height = 21
           EditLabel.Caption = 'CEP:'
-          ExplicitTop = 225
         end
         object Label5: TLabel
           Left = 223
@@ -383,7 +380,6 @@ object formCadastroFuncionarios: TformCadastroFuncionarios
           EditLabel.Width = 67
           EditLabel.Height = 21
           EditLabel.Caption = 'Endere'#231'o:'
-          ExplicitTop = 282
         end
         object Label6: TLabel
           Left = 223
@@ -426,7 +422,6 @@ object formCadastroFuncionarios: TformCadastroFuncionarios
               Value = 100.000000000000000000
             end>
           TabOrder = 5
-          ExplicitTop = 316
           DesignSize = (
             370
             56)
@@ -497,7 +492,6 @@ object formCadastroFuncionarios: TformCadastroFuncionarios
               SizeStyle = ssAuto
             end>
           TabOrder = 6
-          ExplicitTop = 373
           DesignSize = (
             379
             58)
@@ -532,7 +526,6 @@ object formCadastroFuncionarios: TformCadastroFuncionarios
           Anchors = []
           BevelOuter = bvNone
           TabOrder = 7
-          ExplicitTop = 430
           object lblSelecionaFuncao: TLabel
             Left = 24
             Top = 3
@@ -582,7 +575,6 @@ object formCadastroFuncionarios: TformCadastroFuncionarios
           EditLabel.Width = 30
           EditLabel.Height = 21
           EditLabel.Caption = 'CPF:'
-          ExplicitTop = 512
         end
         object Label10: TLabel
           Left = 223
@@ -604,7 +596,6 @@ object formCadastroFuncionarios: TformCadastroFuncionarios
           EditLabel.Width = 24
           EditLabel.Height = 21
           EditLabel.Caption = 'RG:'
-          ExplicitTop = 569
         end
       end
       object Panel1: TPanel
@@ -623,7 +614,6 @@ object formCadastroFuncionarios: TformCadastroFuncionarios
         ParentBackground = False
         ParentFont = False
         TabOrder = 1
-        ExplicitTop = 652
       end
     end
   end

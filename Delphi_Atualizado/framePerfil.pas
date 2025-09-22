@@ -8,7 +8,7 @@ uses
   Vcl.Mask, Vcl.DBCtrls;
 
 type
-  TFrame1 = class(TFrame)
+  TframePerfilUsuário = class(TFrame)
     Panel1: TPanel;
     Label1: TLabel;
     gridPanelLogin: TGridPanel;
@@ -43,7 +43,7 @@ type
     { Public declarations }
   end;
 
-  var frame1: TFrame1;
+  var framePerfilUsuário: TframePerfilUsuário;
 
 implementation
 

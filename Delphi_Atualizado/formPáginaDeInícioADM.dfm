@@ -138,8 +138,6 @@
           Value = 100.000000000000000000
         end>
       TabOrder = 0
-      ExplicitTop = 0
-      ExplicitWidth = 1149
       DesignSize = (
         1148
         57)
@@ -4912,8 +4910,6 @@
         ParentBackground = False
         ParentFont = False
         TabOrder = 5
-        ExplicitLeft = 575
-        ExplicitWidth = 98
       end
       object btnpClientes: TPanel
         Left = 672
@@ -4934,8 +4930,6 @@
         ParentBackground = False
         ParentFont = False
         TabOrder = 6
-        ExplicitLeft = 679
-        ExplicitWidth = 99
       end
       object btnpVeiculos: TPanel
         Left = 783
@@ -5032,7 +5026,6 @@
             Value = 5.000000000000000000
           end>
         TabOrder = 10
-        ExplicitLeft = 1102
         DesignSize = (
           41
           41)
@@ -12414,7 +12407,7 @@
       Top = 58
       Width = 1148
       Height = 642
-      ActivePage = TabSheet10
+      ActivePage = TabSheet9
       Align = alClient
       TabOrder = 1
       object TabSheet1: TTabSheet

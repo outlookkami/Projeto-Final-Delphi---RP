@@ -3,11 +3,16 @@ unit DataModuleInicial;
 interface
 
 uses
-  System.SysUtils, System.Classes, ZAbstractConnection, ZConnection;
+  System.SysUtils, System.Classes, ZAbstractConnection, ZConnection,
+  ZAbstractTable, ZDataset, ZSqlUpdate, Data.DB, ZAbstractRODataset,
+  ZAbstractDataset;
 
 type
-  TDataModule1 = class(TDataModule)
-    ZConnectionPG: TZConnection;
+  TdtmInicial = class(TDataModule)
+    ConexaoPG: TZConnection;
+    ZQuery1: TZQuery;
+    ZUpdateSQL1: TZUpdateSQL;
+    ZTable1: TZTable;
   private
     { Private declarations }
   public
@@ -15,12 +20,13 @@ type
   end;
 
 var
-  DataModule1: TDataModule1;
+  dtmInicial: TdtmInicial;
 
 implementation
 
 {%CLASSGROUP 'Vcl.Controls.TControl'}
 
 {$R *.dfm}
+
 
 end.

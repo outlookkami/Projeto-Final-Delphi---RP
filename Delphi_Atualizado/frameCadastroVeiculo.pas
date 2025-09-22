@@ -8,11 +8,10 @@ uses
   Vcl.ExtCtrls, Vcl.DBCtrls;
 
 type
-  TFrame4 = class(TFrame)
+  TframeCadVeiculo = class(TFrame)
     pnlSenhaFuncionario: TPanel;
     lblCadastrandoVeiculo: TLabel;
-    pnlCadSenhaFunc: TPanel;
-    pnlBotaoCadastrarVeiculo: TPanel;
+    pnlDadosVeículo: TPanel;
     GridPanel2: TGridPanel;
     dbleModeloVeiculo: TDBLabeledEdit;
     Label1: TLabel;
@@ -21,16 +20,20 @@ type
     Panel1: TPanel;
     GridPanel1: TGridPanel;
     DBLabeledEdit2: TDBLabeledEdit;
-    Label2: TLabel;
     dbleChassiVeiculo: TDBLabeledEdit;
     dbleCorVeiculo: TDBLabeledEdit;
     Label4: TLabel;
     dbleAnoVeiculo: TDBLabeledEdit;
+    pnlInfoVeiculo: TPanel;
+    Label2: TLabel;
+    pnlBotaoCadastrarVeiculo: TPanel;
   private
     { Private declarations }
   public
     { Public declarations }
   end;
+
+  var frameCadVeiculo: TframeCadVeiculo;
 
 implementation
 

@@ -10,6 +10,7 @@ object formLogin: TformLogin
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  OnCreate = FormCreate
   TextHeight = 15
   object pnlBaseLogin: TPanel
     Left = 0
@@ -202,7 +203,6 @@ object formLogin: TformLogin
               Value = 50.000000000000000000
             end>
           TabOrder = 1
-          ExplicitLeft = 128
           DesignSize = (
             331
             98)
@@ -220,7 +220,6 @@ object formLogin: TformLogin
             EditLabel.Caption = 'Senha:'
             EditLabel.ParentShowHint = False
             EditLabel.ShowHint = True
-            ExplicitLeft = 0
           end
           object imgCadeado: TImage
             Left = 295
@@ -1711,12 +1710,13 @@ object formLogin: TformLogin
               4E44AE426082}
             Proportional = True
             OnClick = imgCadeadoClick
+            ExplicitLeft = 293
           end
           object lblAvisoSenha: TLabel
             AlignWithMargins = True
             Left = 3
             Top = 52
-            Width = 269
+            Width = 4
             Height = 43
             Align = alLeft
             Font.Charset = DEFAULT_CHARSET
@@ -1725,7 +1725,7 @@ object formLogin: TformLogin
             Font.Name = 'Segoe UI'
             Font.Style = []
             ParentFont = False
-            ExplicitLeft = 8
+            ExplicitHeight = 21
           end
         end
         object GridPanel2: TGridPanel
@@ -1784,7 +1784,6 @@ object formLogin: TformLogin
             EditLabel.Caption = 'Usu'#225'rio:'
             EditLabel.ParentShowHint = False
             EditLabel.ShowHint = True
-            ExplicitLeft = 5
           end
           object lblVazio: TLabel
             Left = 308
@@ -1799,7 +1798,7 @@ object formLogin: TformLogin
             AlignWithMargins = True
             Left = 3
             Top = 49
-            Width = 276
+            Width = 4
             Height = 41
             Align = alLeft
             Font.Charset = DEFAULT_CHARSET
@@ -1808,8 +1807,7 @@ object formLogin: TformLogin
             Font.Name = 'Segoe UI'
             Font.Style = []
             ParentFont = False
-            ExplicitTop = 72
-            ExplicitHeight = 18
+            ExplicitHeight = 21
           end
         end
         object lblCadastreAqui: TLabel

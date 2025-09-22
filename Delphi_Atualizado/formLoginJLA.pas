@@ -6,7 +6,7 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Mask, Vcl.ComCtrls,
   Vcl.ExtCtrls, Vcl.Imaging.jpeg, System.ImageList, Vcl.ImgList,
-  Vcl.Imaging.pngimage, Vcl.Skia, unitCrudClientes, Vcl.DBCtrls, formCadastroClientes; //, BCrypt
+  Vcl.Imaging.pngimage, Vcl.Skia, unitCrudClientes, Vcl.DBCtrls, formCadastroClientes, DataModuleInicial; //, BCrypt
 
 type
   TformLogin = class(TForm)
@@ -39,11 +39,13 @@ type
     procedure imgCadeadoClick(Sender: TObject);
     procedure imgFecharClick(Sender: TObject);
     procedure lblCadastreAquiClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
     procedure HideShowSenha;
   public
     { Public declarations }
+
   end;
 
 var
@@ -54,14 +56,20 @@ implementation
 
 {$R *.dfm}
 
+procedure TformLogin.FormCreate(Sender: TObject);
+begin
+    dtmInicial := TdtmInicial.Create(Self);
+    dtmInicial.ConexaoPG.SQLHourGlass := True;
+    dtmInicial.ConexaoPG.Connected := True;
+end;
 
 procedure TformLogin.HideShowSenha;
 begin
     if dbleSenha.PasswordChar = '*' then begin
-    imgCadeado.Picture.LoadFromFile('C:\Users\Kamilly Souza\Desktop\Projeto Delphi - JLA\Delphi_Atualizado\Assets\cadeado azul bloqueado.png');
+    imgCadeado.Picture.LoadFromFile('C:\Users\Kamilly Souza\Desktop\Projeto Delphi - JLA\Delphi_Atualizado\Assets\cadeado azul desbloqueado.png');
     dbleSenha.PasswordChar := #0;
     end else if dbleSenha.PasswordChar = #0 then begin
-    imgCadeado.Picture.LoadFromFile('C:\Users\Kamilly Souza\Desktop\Projeto Delphi - JLA\Delphi_Atualizado\Assets\cadeado azul desbloqueado.png');
+    imgCadeado.Picture.LoadFromFile('C:\Users\Kamilly Souza\Desktop\Projeto Delphi - JLA\Delphi_Atualizado\Assets\cadeado azul bloqueado.png');
     dbleSenha.PasswordChar := '*';
     end;
 end;
@@ -79,7 +87,6 @@ end;
 procedure TformLogin.lblCadastreAquiClick(Sender: TObject);
 begin
     formCadastroDeClientes.ShowModal;
-
 end;
 
 procedure TformLogin.pnlEntrarClick(Sender: TObject);
@@ -112,8 +119,4 @@ begin
 
 end;
 end;
-
-
-
-
 end.

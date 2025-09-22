@@ -5,7 +5,8 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.ComCtrls,
-  Vcl.Imaging.pngimage, Vcl.StdCtrls, frameTESTEFormularioPedido, framePerfil, crudClientes;
+  Vcl.Imaging.pngimage, Vcl.StdCtrls, frameTESTEFormularioPedido, framePerfil, crudClientes,
+  Data.Bind.EngExt, Vcl.Bind.DBEngExt, Data.Bind.Components;
 
 type
   TformPáginaInicialFunc = class(TForm)
@@ -34,8 +35,7 @@ type
     TabSheet7: TTabSheet;
     TabSheet8: TTabSheet;
     TabSheet9: TTabSheet;
-    Frame11: TFrame1;
-    crudCli1: TcrudCli;
+    crudCli1: TCrudCli;
     procedure btnpDashboardClick(Sender: TObject);
     procedure btnpPedidosClick(Sender: TObject);
     procedure Image1Click(Sender: TObject);
@@ -47,7 +47,7 @@ type
     procedure btnpVeiculosClick(Sender: TObject);
     procedure btnpPerfilClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
-    procedure crudCli1btnIncluirCliClick(Sender: TObject);
+    procedure crudClibtnIncluirCliClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -114,10 +114,9 @@ begin
     PageControl1.ActivePageIndex := 7;
 end;
 
-procedure TformPáginaInicialFunc.crudCli1btnIncluirCliClick(Sender: TObject);
+procedure TformPáginaInicialFunc.crudClibtnIncluirCliClick(Sender: TObject);
 begin
-  crudCli1.btnIncluirCliClick(Sender);
-
+  crudCli.btnIncluirCliClick(Sender);
 end;
 
 procedure TformPáginaInicialFunc.btnpPerfilClick(Sender: TObject);

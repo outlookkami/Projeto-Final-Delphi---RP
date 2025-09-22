@@ -158,7 +158,7 @@
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="DataModuleInicial.pas">
-            <Form>DataModule1</Form>
+            <Form>dtmInicial</Form>
             <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
@@ -171,7 +171,7 @@
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="framePerfil.pas">
-            <Form>Frame1</Form>
+            <Form>framePerfilUsuário</Form>
             <FormType>dfm</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
@@ -191,9 +191,13 @@
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
         <DCCReference Include="frameCadastroVeiculo.pas">
-            <Form>Frame4</Form>
+            <Form>frameCadVeiculo</Form>
             <FormType>dfm</FormType>
             <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="testandoHash.pas">
+            <Form>Form1</Form>
+            <FormType>dfm</FormType>
         </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>

@@ -6,7 +6,7 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes,
   Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.Grids,
   Vcl.DBGrids, Vcl.Imaging.pngimage, Vcl.ExtCtrls, Vcl.StdCtrls, Vcl.Mask,
-  Vcl.DBCtrls;
+  Vcl.DBCtrls, frameCadastroVeiculo;
 
 type
   TcrudCli = class(TFrame)
@@ -15,10 +15,11 @@ type
     DBEdit1: TDBEdit;
     iconePesquisa: TImage;
     DBGrid1: TDBGrid;
-    pnlLogin: TPanel;
+    btnIncluirCli: TPanel;
+    pnlCadastro: TPanel;
     Label1: TLabel;
     gridPanelLogin: TGridPanel;
-    LableV1: TLabel;
+    lblVazio5: TLabel;
     dbleNome: TDBLabeledEdit;
     Label2: TLabel;
     dbleTelefone: TDBLabeledEdit;
@@ -36,14 +37,16 @@ type
     GridPanel4: TGridPanel;
     dbleCidade: TDBLabeledEdit;
     dbleUF: TDBLabeledEdit;
-    Label8: TLabel;
-    dbleSenha: TLabeledEdit;
+    pnlSelecionaFuncao: TPanel;
+    lblSelecionaFuncao: TLabel;
+    DBComboBox1: TDBComboBox;
     Label9: TLabel;
-    dbleConfSenha: TLabeledEdit;
+    Label8: TLabel;
+    dbleCPF: TDBLabeledEdit;
     Label10: TLabel;
-    Label11: TLabel;
-    pnlCadastrar: TPanel;
-    btnIncluirCli: TPanel;
+    dbleRG: TDBLabeledEdit;
+    Panel2: TPanel;
+    frameCadVeiculo1: TframeCadVeiculo;
     procedure btnIncluirCliClick(Sender: TObject);
     procedure pnlCadastrarClick(Sender: TObject);
   private
@@ -60,14 +63,14 @@ implementation
 
 procedure TcrudCli.btnIncluirCliClick(Sender: TObject);
 begin
-   pnlLogin.Visible := True;
+   pnlCadastro.Visible := True;
 end;
 
 procedure TcrudCli.pnlCadastrarClick(Sender: TObject);
 begin
-    pnlLogin.Visible := False;
-
-    MessageDlg('Cadastro finalizado com sucesso! Deseja incluir um veículo?', mtConfirmation, [mbYes, mbNo], 0);
+    pnlCadastro.Visible := False;
+    if MessageDlg('Cadastro finalizado com sucesso! Deseja incluir um veículo?', mtConfirmation, [mbYes, mbNo], 0) = mrYes then
+    frameCadVeiculo1.Visible := True;
 end;
 
 end.

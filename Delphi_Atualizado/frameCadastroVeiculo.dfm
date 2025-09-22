@@ -1,12 +1,9 @@
-object Frame4: TFrame4
+﻿object frameCadVeiculo: TframeCadVeiculo
   Left = 0
   Top = 0
   Width = 824
   Height = 653
   TabOrder = 0
-  DesignSize = (
-    824
-    653)
   object pnlSenhaFuncionario: TPanel
     Left = 83
     Top = 32
@@ -29,16 +26,18 @@ object Frame4: TFrame4
       Font.Name = 'Segoe UI'
       Font.Style = []
       ParentFont = False
-      ExplicitLeft = 17
-      ExplicitTop = 0
+      ExplicitWidth = 226
     end
-    object pnlCadSenhaFunc: TPanel
+    object pnlDadosVeículo: TPanel
       Left = 56
       Top = 60
       Width = 561
       Height = 469
       TabOrder = 0
-      object TPanel
+      DesignSize = (
+        561
+        469)
+      object pnlInfoVeiculo: TPanel
         Left = 40
         Top = 140
         Width = 481
@@ -140,7 +139,6 @@ object Frame4: TFrame4
             EditLabel.Font.Name = 'Segoe UI'
             EditLabel.Font.Style = []
             EditLabel.ParentFont = False
-            ExplicitTop = 75
           end
           object Label1: TLabel
             Left = 239
@@ -173,7 +171,6 @@ object Frame4: TFrame4
             EditLabel.Font.Name = 'Segoe UI'
             EditLabel.Font.Style = []
             EditLabel.ParentFont = False
-            ExplicitTop = 126
           end
           object Label3: TLabel
             Left = 239
@@ -188,7 +185,7 @@ object Frame4: TFrame4
             Left = 73
             Top = 149
             Width = 335
-            Height = 26
+            Height = 29
             Anchors = []
             Font.Charset = DEFAULT_CHARSET
             Font.Color = clWindowText
@@ -206,7 +203,6 @@ object Frame4: TFrame4
             EditLabel.Font.Name = 'Segoe UI'
             EditLabel.Font.Style = []
             EditLabel.ParentFont = False
-            ExplicitTop = 151
           end
           object Label4: TLabel
             Left = 239
@@ -221,7 +217,7 @@ object Frame4: TFrame4
             Left = 71
             Top = 211
             Width = 338
-            Height = 27
+            Height = 29
             Anchors = []
             Font.Charset = DEFAULT_CHARSET
             Font.Color = clWindowText
@@ -239,7 +235,6 @@ object Frame4: TFrame4
             EditLabel.Font.Name = 'Segoe UI'
             EditLabel.Font.Style = []
             EditLabel.ParentFont = False
-            ExplicitTop = 214
           end
         end
       end
@@ -266,13 +261,13 @@ object Frame4: TFrame4
             end
             item
               Column = 0
-              Control = Label2
-              Row = 1
+              Control = dbleChassiVeiculo
+              Row = 2
             end
             item
               Column = 0
-              Control = dbleChassiVeiculo
-              Row = 2
+              Control = Label2
+              Row = 1
             end>
           RowCollection = <
             item
@@ -314,15 +309,6 @@ object Frame4: TFrame4
             EditLabel.Font.Style = []
             EditLabel.ParentFont = False
           end
-          object Label2: TLabel
-            Left = 239
-            Top = 41
-            Width = 3
-            Height = 15
-            Anchors = []
-            ExplicitLeft = 223
-            ExplicitTop = 43
-          end
           object dbleChassiVeiculo: TDBLabeledEdit
             Left = 73
             Top = 89
@@ -345,28 +331,35 @@ object Frame4: TFrame4
             EditLabel.Font.Name = 'Segoe UI'
             EditLabel.Font.Style = []
             EditLabel.ParentFont = False
-            ExplicitLeft = 72
-            ExplicitTop = 94
+          end
+          object Label2: TLabel
+            Left = 239
+            Top = 41
+            Width = 3
+            Height = 15
+            Anchors = []
+            ExplicitLeft = 208
+            ExplicitTop = 40
           end
         end
       end
+      object pnlBotaoCadastrarVeiculo: TPanel
+        Left = 180
+        Top = 420
+        Width = 185
+        Height = 41
+        Anchors = [akLeft, akTop, akRight]
+        Caption = 'Cadastrar Ve'#237'culo'
+        Color = clHighlight
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWhite
+        Font.Height = -18
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentBackground = False
+        ParentFont = False
+        TabOrder = 2
+      end
     end
-  end
-  object pnlBotaoCadastrarVeiculo: TPanel
-    Left = 324
-    Top = 499
-    Width = 185
-    Height = 41
-    Anchors = []
-    Caption = 'Cadastrar Ve'#237'culo'
-    Color = clHighlight
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWhite
-    Font.Height = -18
-    Font.Name = 'Segoe UI'
-    Font.Style = []
-    ParentBackground = False
-    ParentFont = False
-    TabOrder = 1
   end
 end
