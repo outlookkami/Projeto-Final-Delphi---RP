@@ -58,18 +58,18 @@ implementation
 
 procedure TformLogin.FormCreate(Sender: TObject);
 begin
-    dtmInicial := TdtmInicial.Create(Self);
-    dtmInicial.ConexaoPG.SQLHourGlass := True;
-    dtmInicial.ConexaoPG.Connected := True;
+//    dtmInicial := TdtmInicial.Create(Self);
+//    dtmInicial.ConexaoPG.SQLHourGlass := True;
+//    dtmInicial.ConexaoPG.Connected := True;
 end;
 
 procedure TformLogin.HideShowSenha;
 begin
     if dbleSenha.PasswordChar = '*' then begin
-    imgCadeado.Picture.LoadFromFile('C:\Users\Kamilly Souza\Desktop\Projeto Delphi - JLA\Delphi_Atualizado\Assets\cadeado azul desbloqueado.png');
+    imgCadeado.Picture.LoadFromFile('C:\Users\Kamilly Souza\Desktop\Projeto Delphi-JLA\Delphi_Atualizado\Assets\cadeado azul desbloqueado.png');
     dbleSenha.PasswordChar := #0;
     end else if dbleSenha.PasswordChar = #0 then begin
-    imgCadeado.Picture.LoadFromFile('C:\Users\Kamilly Souza\Desktop\Projeto Delphi - JLA\Delphi_Atualizado\Assets\cadeado azul bloqueado.png');
+    imgCadeado.Picture.LoadFromFile('C:\Users\Kamilly Souza\Desktop\Projeto Delphi-JLA\Delphi_Atualizado\Assets\cadeado azul bloqueado.png');
     dbleSenha.PasswordChar := '*';
     end;
 end;

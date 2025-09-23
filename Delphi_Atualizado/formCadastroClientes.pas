@@ -39,12 +39,15 @@ type
     Label12: TLabel;
     Label13: TLabel;
     GridPanel5: TGridPanel;
-    leSenha: TLabeledEdit;
-    cadeadoSenha: TImage;
     Label14: TLabel;
     GridPanel6: TGridPanel;
-    cadeadoConfSenha: TImage;
     leConfSenha: TLabeledEdit;
+    Label10: TLabel;
+    leSenha: TLabeledEdit;
+    cadeadoSenha: TImage;
+    cadeadoConfSenha: TImage;
+    Label15: TLabel;
+    Edit15: TEdit;
     procedure pnlCadastrarClick(Sender: TObject);
     procedure cadeadoSenhaClick(Sender: TObject);
     procedure cadeadoConfSenhaClick(Sender: TObject);
@@ -66,18 +69,26 @@ implementation
 
 procedure TformCadastroDeClientes.FormCreate(Sender: TObject);
 begin
-    dtmInicial := TdtmInicial.Create(Self);
-    dtmInicial.ConexaoPG.SQLHourGlass := True;
-    dtmInicial.ConexaoPG.Connected := True;
+//    dtmInicial := TdtmInicial.Create(Self);
+//    dtmInicial.ConexaoPG.SQLHourGlass := True;
+//    dtmInicial.ConexaoPG.Protocol := 'postgresql';
+//    dtmInicial.ConexaoPG.LibraryLocation := 'C:\Projeto Delphi-JLA\Delphi_Atualizado\BancoDeDados\lib\libpq.dll';
+//    dtmInicial.ConexaoPG.HostName := 'localhost';
+//    dtmInicial.ConexaoPG.Port := 5432;
+//    dtmInicial.ConexaoPG.User := 'postgres';
+//    dtmInicial.ConexaoPG.Password := 'root';
+//    dtmInicial.ConexaoPG.Database := 'ProjetoDelphiJLA';
+//    dtmInicial.ConexaoPG.Connected := True;
+//    dtmInicial.ConexaoPG.ClientCodePage := 'UTF-8';
 end;
 
 procedure TformCadastroDeClientes.HideShowSenha;
 begin
     if leSenha.PasswordChar = '*' then begin
-    cadeadoSenha.Picture.LoadFromFile('C:\Users\Kamilly Souza\Desktop\Projeto Delphi - JLA\Delphi_Atualizado\Assets\cadeado azul desbloqueado.png');
+    cadeadoSenha.Picture.LoadFromFile('C:\Users\Kamilly Souza\Desktop\Projeto Delphi-JLA\Delphi_Atualizado\Assets\cadeado azul desbloqueado.png');
     leSenha.PasswordChar := #0;
     end else if leSenha.PasswordChar = #0 then begin
-    cadeadoSenha.Picture.LoadFromFile('C:\Users\Kamilly Souza\Desktop\Projeto Delphi - JLA\Delphi_Atualizado\Assets\cadeado azul bloqueado.png');
+    cadeadoSenha.Picture.LoadFromFile('C:\Users\Kamilly Souza\Desktop\Projeto Delphi-JLA\Delphi_Atualizado\Assets\cadeado azul bloqueado.png');
     leSenha.PasswordChar := '*';
     end;
 end;
@@ -85,10 +96,10 @@ end;
 procedure TformCadastroDeClientes.cadeadoConfSenhaClick(Sender: TObject);
 begin
     if leConfSenha.PasswordChar = '*' then begin
-    cadeadoConfSenha.Picture.LoadFromFile('C:\Users\Kamilly Souza\Desktop\Projeto Delphi - JLA\Delphi_Atualizado\Assets\cadeado azul desbloqueado.png');
+    cadeadoConfSenha.Picture.LoadFromFile('C:\Users\Kamilly Souza\Desktop\Projeto Delphi-JLA\Delphi_Atualizado\Assets\cadeado azul desbloqueado.png');
     leConfSenha.PasswordChar := #0;
     end else if leConfSenha.PasswordChar = #0 then begin
-    cadeadoConfSenha.Picture.LoadFromFile('C:\Users\Kamilly Souza\Desktop\Projeto Delphi - JLA\Delphi_Atualizado\Assets\cadeado azul bloqueado.png');
+    cadeadoConfSenha.Picture.LoadFromFile('C:\Users\Kamilly Souza\Desktop\Projeto Delphi-JLA\Delphi_Atualizado\Assets\cadeado azul bloqueado.png');
     leConfSenha.PasswordChar := '*';
     end;
 end;
@@ -102,6 +113,7 @@ procedure TformCadastroDeClientes.pnlCadastrarClick(Sender: TObject);
 begin
     if leConfSenha.Text = leSenha.Text then begin
       THashSHA1.GetHashString(leConfSenha.Text);
+      Edit15.Text := THashSHA1.GetHashString(leConfSenha.Text);
 
       if MessageDlg('Cadastro finalizado com sucesso! Deseja incluir seu veículo?', mtConfirmation, [mbYes, mbNo], 0) = mrYes then
 

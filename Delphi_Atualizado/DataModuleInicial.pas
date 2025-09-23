@@ -9,7 +9,6 @@ uses
 
 type
   TdtmInicial = class(TDataModule)
-    ConexaoPG: TZConnection;
     ZQuery1: TZQuery;
     ZUpdateSQL1: TZUpdateSQL;
     ZTable1: TZTable;

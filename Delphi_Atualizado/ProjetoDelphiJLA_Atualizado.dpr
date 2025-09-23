@@ -19,7 +19,8 @@ uses
   frameSobreNos in 'frameSobreNos.pas' {framePáginaSobreNos: TFrame},
   crudFuncionarios in 'crudFuncionarios.pas' {Frame2: TFrame},
   frameCadastroVeiculo in 'frameCadastroVeiculo.pas' {frameCadVeiculo: TFrame},
-  testandoHash in 'testandoHash.pas' {Form1};
+  testandoHash in 'testandoHash.pas' {Form1},
+  dataModuleNormal in 'dataModuleNormal.pas' {DataModule1: TDataModule};
 
 {$R *.res}
 
@@ -27,8 +28,8 @@ begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
   Application.Title := 'Aviso';
-  Application.CreateForm(TformPáginaInicialFunc, formPáginaInicialFunc);
   Application.CreateForm(TformCadastroDeClientes, formCadastroDeClientes);
+  Application.CreateForm(TformPáginaInicialFunc, formPáginaInicialFunc);
   Application.CreateForm(TformLogin, formLogin);
   Application.CreateForm(TformCadastroFuncionarios, formCadastroFuncionarios);
   Application.CreateForm(TformPáginaInicialADM, formPáginaInicialADM);
@@ -38,5 +39,6 @@ begin
   Application.CreateForm(TcrudCli, crudCli);
   Application.CreateForm(TframeCadastroFunc, frameCadastroFunc);
   Application.CreateForm(TframeCadVeiculo, frameCadVeiculo);
+  Application.CreateForm(TDataModule1, DataModule1);
   Application.Run;
 end.
