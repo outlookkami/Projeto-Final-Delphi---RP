@@ -16,39 +16,10 @@ type
     iconePesquisa: TImage;
     DBGrid1: TDBGrid;
     btnIncluirCli: TPanel;
-    pnlCadastro: TPanel;
-    Label1: TLabel;
-    gridPanelLogin: TGridPanel;
-    lblVazio5: TLabel;
-    dbleNome: TDBLabeledEdit;
-    Label2: TLabel;
-    dbleTelefone: TDBLabeledEdit;
-    Label3: TLabel;
-    dbleEmail: TDBLabeledEdit;
-    Label4: TLabel;
-    dbleCEP: TDBLabeledEdit;
-    Label5: TLabel;
-    dbleEndereco: TDBLabeledEdit;
-    Label6: TLabel;
-    GridPanel3: TGridPanel;
-    dbleNumero: TDBLabeledEdit;
-    dbleBairro: TDBLabeledEdit;
-    Label7: TLabel;
-    GridPanel4: TGridPanel;
-    dbleCidade: TDBLabeledEdit;
-    dbleUF: TDBLabeledEdit;
-    pnlSelecionaFuncao: TPanel;
-    lblSelecionaFuncao: TLabel;
-    DBComboBox1: TDBComboBox;
-    Label9: TLabel;
-    Label8: TLabel;
-    dbleCPF: TDBLabeledEdit;
-    Label10: TLabel;
-    dbleRG: TDBLabeledEdit;
-    Panel2: TPanel;
-    frameCadVeiculo1: TframeCadVeiculo;
-    procedure btnIncluirCliClick(Sender: TObject);
-    procedure pnlCadastrarClick(Sender: TObject);
+    DataSource1: TDataSource;
+//    procedure btnIncluirCliClick(Sender: TObject);
+//    procedure pnlCadastrarClick(Sender: TObject);
+//    procedure Panel1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -61,16 +32,21 @@ implementation
 
 {$R *.dfm}
 
-procedure TcrudCli.btnIncluirCliClick(Sender: TObject);
-begin
-   pnlCadastro.Visible := True;
-end;
-
-procedure TcrudCli.pnlCadastrarClick(Sender: TObject);
-begin
-    pnlCadastro.Visible := False;
-    if MessageDlg('Cadastro finalizado com sucesso! Deseja incluir um veículo?', mtConfirmation, [mbYes, mbNo], 0) = mrYes then
-    frameCadVeiculo1.Visible := True;
-end;
+//procedure TcrudCli.btnIncluirCliClick(Sender: TObject);
+//begin
+//   pnlCadastro.Visible := True;
+//end;
+//
+//procedure TcrudCli.Panel1Click(Sender: TObject);
+//begin
+//
+//end;
+//
+//procedure TcrudCli.pnlCadastrarClick(Sender: TObject);
+//begin
+//    pnlCadastro.Visible := False;
+//    if MessageDlg('Cadastro finalizado com sucesso! Deseja incluir um veículo?', mtConfirmation, [mbYes, mbNo], 0) = mrYes then
+//    frameCadVeiculo1.Visible := True;
+//end;
 
 end.

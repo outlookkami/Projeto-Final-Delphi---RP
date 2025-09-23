@@ -9,7 +9,7 @@ uses
   Vcl.Imaging.pngimage;
 
 type
-  TFrame1 = class(TFrame)
+  TframeCrudClientes = class(TFrame)
     Panel1: TPanel;
     btnIncluirCli: TPanel;
     pnlPesquisa: TPanel;
@@ -57,8 +57,27 @@ type
     { Public declarations }
   end;
 
+  var frameCrudClientes: TframeCrudClientes;
+
 implementation
 
 {$R *.dfm}
+
+//procedure TcrudCli.btnIncluirCliClick(Sender: TObject);
+//begin
+//   pnlCadastro.Visible := True;
+//end;
+//
+//procedure TcrudCli.Panel1Click(Sender: TObject);
+//begin
+//
+//end;
+//
+//procedure TcrudCli.pnlCadastrarClick(Sender: TObject);
+//begin
+//    pnlCadastro.Visible := False;
+//    if MessageDlg('Cadastro finalizado com sucesso! Deseja incluir um veículo?', mtConfirmation, [mbYes, mbNo], 0) = mrYes then
+//    frameCadVeiculo1.Visible := True;
+//end;
 
 end.

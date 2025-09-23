@@ -13,9 +13,22 @@ uses
 type
   TDataModule1 = class(TDataModule)
     ConexaoBanco: TFDConnection;
-    QueryCadLogin: TFDQuery;
+    QueryCadastro: TFDQuery;
     FDGUIxWaitCursor1: TFDGUIxWaitCursor;
     FDPhysPgDriverLink1: TFDPhysPgDriverLink;
+    QueryCadastrocodigo_cliente: TIntegerField;
+    QueryCadastrohash_senha_cli: TStringField;
+    QueryCadastronome_cliente: TStringField;
+    QueryCadastrotelefone_cliente: TStringField;
+    QueryCadastroemail_cliente: TStringField;
+    QueryCadastrocep_cliente: TStringField;
+    QueryCadastroendereco_cliente: TStringField;
+    QueryCadastronum_endereco: TStringField;
+    QueryCadastrobairro: TStringField;
+    QueryCadastrocidade: TStringField;
+    QueryCadastrouf: TStringField;
+    QueryCadastroveiculo: TStringField;
+    procedure FDPhysPgDriverLink1DriverCreated(Sender: TObject);
   private
     { Private declarations }
   public
@@ -30,5 +43,6 @@ implementation
 {%CLASSGROUP 'Vcl.Controls.TControl'}
 
 {$R *.dfm}
+
 
 end.

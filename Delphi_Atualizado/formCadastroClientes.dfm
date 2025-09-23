@@ -57,25 +57,6 @@ object formCadastroDeClientes: TformCadastroDeClientes
       TabOrder = 0
       ExplicitLeft = 0
       ExplicitTop = -4
-      object Label12: TLabel
-        Left = 328
-        Top = 392
-        Width = 3
-        Height = 15
-      end
-      object Label15: TLabel
-        Left = 280
-        Top = 328
-        Width = 3
-        Height = 15
-      end
-      object Edit15: TEdit
-        Left = 328
-        Top = 360
-        Width = 121
-        Height = 23
-        TabOrder = 0
-      end
     end
     object pnlLogin: TPanel
       Left = 641
@@ -119,17 +100,17 @@ object formCadastroDeClientes: TformCadastroDeClientes
         ControlCollection = <
           item
             Column = 0
-            Control = LableV1
+            Control = lblV1
             Row = 0
           end
           item
             Column = 0
-            Control = dbleNome
+            Control = dbleNomeCompleto
             Row = 1
           end
           item
             Column = 0
-            Control = Label2
+            Control = lblV2
             Row = 2
           end
           item
@@ -308,7 +289,7 @@ object formCadastroDeClientes: TformCadastroDeClientes
         DesignSize = (
           464
           598)
-        object LableV1: TLabel
+        object lblV1: TLabel
           Left = 230
           Top = 3
           Width = 4
@@ -317,7 +298,7 @@ object formCadastroDeClientes: TformCadastroDeClientes
           ExplicitLeft = 185
           ExplicitTop = 4
         end
-        object dbleNome: TDBLabeledEdit
+        object dbleNomeCompleto: TDBLabeledEdit
           Left = 59
           Top = 51
           Width = 346
@@ -330,14 +311,13 @@ object formCadastroDeClientes: TformCadastroDeClientes
           EditLabel.Caption = 'Nome Completo:'
           ExplicitLeft = 58
         end
-        object Label2: TLabel
+        object lblV2: TLabel
           Left = 230
           Top = 57
           Width = 4
           Height = 21
           Anchors = []
-          ExplicitLeft = 193
-          ExplicitTop = 64
+          ExplicitLeft = 227
         end
         object dbleTelefone: TDBLabeledEdit
           Left = 59

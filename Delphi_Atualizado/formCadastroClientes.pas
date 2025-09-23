@@ -14,9 +14,9 @@ type
     pnlLogin: TPanel;
     Label1: TLabel;
     gridPanelLogin: TGridPanel;
-    LableV1: TLabel;
-    dbleNome: TDBLabeledEdit;
-    Label2: TLabel;
+    lblV1: TLabel;
+    dbleNomeCompleto: TDBLabeledEdit;
+    lblV2: TLabel;
     dbleTelefone: TDBLabeledEdit;
     Label3: TLabel;
     dbleEmail: TDBLabeledEdit;
@@ -36,7 +36,6 @@ type
     Label9: TLabel;
     Label11: TLabel;
     pnlCadastrar: TPanel;
-    Label12: TLabel;
     Label13: TLabel;
     GridPanel5: TGridPanel;
     Label14: TLabel;
@@ -46,8 +45,6 @@ type
     leSenha: TLabeledEdit;
     cadeadoSenha: TImage;
     cadeadoConfSenha: TImage;
-    Label15: TLabel;
-    Edit15: TEdit;
     procedure pnlCadastrarClick(Sender: TObject);
     procedure cadeadoSenhaClick(Sender: TObject);
     procedure cadeadoConfSenhaClick(Sender: TObject);

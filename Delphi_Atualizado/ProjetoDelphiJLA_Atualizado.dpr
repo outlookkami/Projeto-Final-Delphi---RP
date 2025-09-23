@@ -20,7 +20,8 @@ uses
   crudFuncionarios in 'crudFuncionarios.pas' {Frame2: TFrame},
   frameCadastroVeiculo in 'frameCadastroVeiculo.pas' {frameCadVeiculo: TFrame},
   testandoHash in 'testandoHash.pas' {Form1},
-  dataModuleNormal in 'dataModuleNormal.pas' {DataModule1: TDataModule};
+  dataModuleNormal in 'dataModuleNormal.pas' {DataModule1: TDataModule},
+  crudClientesSemErro in 'crudClientesSemErro.pas' {frameCrudClientes: TFrame};
 
 {$R *.res}
 
