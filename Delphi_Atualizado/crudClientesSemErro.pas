@@ -6,7 +6,7 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes,
   Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.Grids,
   Vcl.DBGrids, Vcl.StdCtrls, Vcl.Mask, Vcl.ExtCtrls, Vcl.DBCtrls,
-  Vcl.Imaging.pngimage;
+  Vcl.Imaging.pngimage, System.UITypes, formCadastroClientes;
 
 type
   TframeCrudClientes = class(TFrame)
@@ -16,8 +16,8 @@ type
     iconePesquisa: TImage;
     DBEdit1: TDBEdit;
     DBGrid1: TDBGrid;
-    DataSource1: TDataSource;
-    pnlLogin: TPanel;
+    DSClientes: TDataSource;
+    pnlCadastroCli: TPanel;
     Label1: TLabel;
     gridPanelLogin: TGridPanel;
     lblV1: TLabel;
@@ -51,6 +51,10 @@ type
     GridPanel6: TGridPanel;
     leConfSenha: TLabeledEdit;
     cadeadoConfSenha: TImage;
+    procedure btnIncluirCliClick(Sender: TObject);
+    procedure pnlCadastrarClick(Sender: TObject);
+    procedure cadeadoSenhaClick(Sender: TObject);
+    procedure cadeadoConfSenhaClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -63,21 +67,39 @@ implementation
 
 {$R *.dfm}
 
-//procedure TcrudCli.btnIncluirCliClick(Sender: TObject);
-//begin
-//   pnlCadastro.Visible := True;
-//end;
-//
-//procedure TcrudCli.Panel1Click(Sender: TObject);
-//begin
-//
-//end;
-//
-//procedure TcrudCli.pnlCadastrarClick(Sender: TObject);
-//begin
-//    pnlCadastro.Visible := False;
-//    if MessageDlg('Cadastro finalizado com sucesso! Deseja incluir um veículo?', mtConfirmation, [mbYes, mbNo], 0) = mrYes then
-//    frameCadVeiculo1.Visible := True;
-//end;
+procedure TframeCrudClientes.btnIncluirCliClick(Sender: TObject);
+begin
+   pnlCadastroCli.Visible := True;
+end;
+
+procedure TframeCrudClientes.cadeadoSenhaClick(Sender: TObject);
+begin
+    if leSenha.PasswordChar = '*' then begin
+    cadeadoSenha.Picture.LoadFromFile('C:\Users\Kamilly Souza\Desktop\Projeto Delphi-JLA\Delphi_Atualizado\Assets\cadeado azul desbloqueado.png');
+    leSenha.PasswordChar := #0;
+    end else if leSenha.PasswordChar = #0 then begin
+    cadeadoSenha.Picture.LoadFromFile('C:\Users\Kamilly Souza\Desktop\Projeto Delphi-JLA\Delphi_Atualizado\Assets\cadeado azul bloqueado.png');
+    leSenha.PasswordChar := '*';
+    end;
+end;
+
+
+procedure TframeCrudClientes.cadeadoConfSenhaClick(Sender: TObject);
+begin
+    if leConfSenha.PasswordChar = '*' then begin
+    cadeadoConfSenha.Picture.LoadFromFile('C:\Users\Kamilly Souza\Desktop\Projeto Delphi-JLA\Delphi_Atualizado\Assets\cadeado azul desbloqueado.png');
+    leConfSenha.PasswordChar := #0;
+    end else if leConfSenha.PasswordChar = #0 then begin
+    cadeadoConfSenha.Picture.LoadFromFile('C:\Users\Kamilly Souza\Desktop\Projeto Delphi-JLA\Delphi_Atualizado\Assets\cadeado azul bloqueado.png');
+    leConfSenha.PasswordChar := '*';
+    end;
+end;
+
+procedure TframeCrudClientes.pnlCadastrarClick(Sender: TObject);
+begin
+    pnlCadastroCli.Visible := False;
+    if MessageDlg('Cadastro finalizado com sucesso! Deseja incluir um veículo?', mtConfirmation, [mbYes, mbNo], 0) = mrYes then
+    //frameCadVeiculo.Visible := True;
+end;
 
 end.

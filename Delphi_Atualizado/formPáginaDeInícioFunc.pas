@@ -6,7 +6,7 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.ComCtrls,
   Vcl.Imaging.pngimage, Vcl.StdCtrls, frameTESTEFormularioPedido, framePerfil, crudClientes,
-  Data.Bind.EngExt, Vcl.Bind.DBEngExt, Data.Bind.Components;
+  Data.Bind.EngExt, Vcl.Bind.DBEngExt, Data.Bind.Components, crudClientesSemErro;
 
 type
   TformPáginaInicialFunc = class(TForm)
@@ -35,7 +35,7 @@ type
     TabSheet7: TTabSheet;
     TabSheet8: TTabSheet;
     TabSheet9: TTabSheet;
-    crudCli1: TCrudCli;
+    frameCrudClientes1: TframeCrudClientes;
     procedure btnpDashboardClick(Sender: TObject);
     procedure btnpPedidosClick(Sender: TObject);
     procedure Image1Click(Sender: TObject);
@@ -47,7 +47,8 @@ type
     procedure btnpVeiculosClick(Sender: TObject);
     procedure btnpPerfilClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
-    procedure crudClibtnIncluirCliClick(Sender: TObject);
+    procedure frameCrudClientes1cadeadoSenhaClick(Sender: TObject);
+    //procedure crudClibtnIncluirCliClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -70,15 +71,25 @@ begin
 
 end;
 
+procedure TformPáginaInicialFunc.frameCrudClientes1cadeadoSenhaClick(
+  Sender: TObject);
+begin
+//    if frameCrudClientes1leSenha.PasswordChar = '*' then begin
+//    frameCrudClientes1cadeadoSenha.Picture.LoadFromFile('C:\Users\Kamilly Souza\Desktop\Projeto Delphi-JLA\Delphi_Atualizado\Assets\cadeado azul desbloqueado.png');
+//    leSenha.PasswordChar := #0;
+//    end else if leSenha.PasswordChar = #0 then begin
+//    cadeadoSenha.Picture.LoadFromFile('C:\Users\Kamilly Souza\Desktop\Projeto Delphi-JLA\Delphi_Atualizado\Assets\cadeado azul bloqueado.png');
+//    leSenha.PasswordChar := '*';
+//    end;
+end;
+
 procedure TformPáginaInicialFunc.btnpDashboardClick(Sender: TObject);
-var frameFormularioPedidoSemGridPanel: TframeFormularioPedidoSemGridPanel;
 begin
     PageControl1.ActivePageIndex := 0;
 end;
 
 
 procedure TformPáginaInicialFunc.btnpPedidosClick(Sender: TObject);
-var frameFormularioPedidoSemGridPanel: TframeFormularioPedidoSemGridPanel;
 begin
     PageControl1.ActivePageIndex := 1;
 end;
@@ -114,10 +125,10 @@ begin
     PageControl1.ActivePageIndex := 7;
 end;
 
-procedure TformPáginaInicialFunc.crudClibtnIncluirCliClick(Sender: TObject);
-begin
-  crudCli.btnIncluirCliClick(Sender);
-end;
+//procedure TformPáginaInicialFunc.crudClibtnIncluirCliClick(Sender: TObject);
+//begin
+//  crudCli.btnIncluirCliClick(Sender);
+//end;
 
 procedure TformPáginaInicialFunc.btnpPerfilClick(Sender: TObject);
 begin

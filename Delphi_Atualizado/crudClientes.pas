@@ -16,7 +16,7 @@ type
     iconePesquisa: TImage;
     DBGrid1: TDBGrid;
     btnIncluirCli: TPanel;
-    DataSource1: TDataSource;
+    DSCadastro: TDataSource;
 //    procedure btnIncluirCliClick(Sender: TObject);
 //    procedure pnlCadastrarClick(Sender: TObject);
 //    procedure Panel1Click(Sender: TObject);

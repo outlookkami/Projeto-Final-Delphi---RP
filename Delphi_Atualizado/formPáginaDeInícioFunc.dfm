@@ -12419,18 +12419,20 @@
       object TabSheet7: TTabSheet
         Caption = 'Clientes'
         ImageIndex = 6
-        inline crudCli1: TcrudCli
+        DesignSize = (
+          1140
+          712)
+        inline frameCrudClientes1: TframeCrudClientes
           Left = -26
           Top = -28
           Width = 1166
           Height = 740
+          Anchors = [akLeft, akTop, akRight, akBottom]
           TabOrder = 0
           ExplicitLeft = -26
           ExplicitTop = -28
           inherited Panel1: TPanel
             StyleElements = [seFont, seClient, seBorder]
-            ExplicitLeft = 0
-            ExplicitTop = 0
             inherited btnIncluirCli: TPanel
               StyleElements = [seFont, seClient, seBorder]
             end
@@ -12440,337 +12442,263 @@
                 StyleElements = [seFont, seClient, seBorder]
               end
             end
-            inherited pnlCadastro: TPanel
-              Left = 345
+          end
+          inherited pnlCadastroCli: TPanel
+            Anchors = [akTop, akBottom]
+            StyleElements = [seFont, seClient, seBorder]
+            inherited Label1: TLabel
               StyleElements = [seFont, seClient, seBorder]
-              ExplicitLeft = 345
-              inherited Label1: TLabel
+            end
+            inherited gridPanelLogin: TGridPanel
+              ControlCollection = <
+                item
+                  Column = 0
+                  Control = frameCrudClientes1.lblV1
+                  Row = 0
+                end
+                item
+                  Column = 0
+                  Control = frameCrudClientes1.dbleNomeCompleto
+                  Row = 1
+                end
+                item
+                  Column = 0
+                  Control = frameCrudClientes1.lblV2
+                  Row = 2
+                end
+                item
+                  Column = 0
+                  Control = frameCrudClientes1.dbleTelefone
+                  Row = 3
+                end
+                item
+                  Column = 0
+                  Control = frameCrudClientes1.Label3
+                  Row = 4
+                end
+                item
+                  Column = 0
+                  Control = frameCrudClientes1.dbleEmail
+                  Row = 5
+                end
+                item
+                  Column = 0
+                  Control = frameCrudClientes1.Label4
+                  Row = 6
+                end
+                item
+                  Column = 0
+                  Control = frameCrudClientes1.dbleCEP
+                  Row = 7
+                end
+                item
+                  Column = 0
+                  Control = frameCrudClientes1.Label5
+                  Row = 8
+                end
+                item
+                  Column = 0
+                  Control = frameCrudClientes1.dbleEndereco
+                  Row = 9
+                end
+                item
+                  Column = 0
+                  Control = frameCrudClientes1.Label6
+                  Row = 10
+                end
+                item
+                  Column = 0
+                  Control = frameCrudClientes1.GridPanel3
+                  Row = 11
+                end
+                item
+                  Column = 0
+                  Control = frameCrudClientes1.Label7
+                  Row = 12
+                end
+                item
+                  Column = 0
+                  Control = frameCrudClientes1.GridPanel4
+                  Row = 13
+                end
+                item
+                  Column = 0
+                  Control = frameCrudClientes1.Label8
+                  Row = 14
+                end
+                item
+                  Column = 0
+                  Control = frameCrudClientes1.Label9
+                  Row = 16
+                end
+                item
+                  Column = 0
+                  Control = frameCrudClientes1.Label11
+                  Row = 19
+                end
+                item
+                  Column = 0
+                  Control = frameCrudClientes1.pnlCadastrar
+                  Row = 20
+                end
+                item
+                  Column = 0
+                  Control = frameCrudClientes1.Label13
+                  Row = 21
+                end
+                item
+                  Column = 0
+                  Control = frameCrudClientes1.GridPanel5
+                  Row = 15
+                end
+                item
+                  Column = 0
+                  Control = frameCrudClientes1.Label14
+                  Row = 17
+                end
+                item
+                  Column = 0
+                  Control = frameCrudClientes1.GridPanel6
+                  Row = 18
+                end>
+              StyleElements = [seFont, seClient, seBorder]
+              inherited lblV1: TLabel
                 StyleElements = [seFont, seClient, seBorder]
-                ExplicitLeft = 16
               end
-              inherited gridPanelLogin: TGridPanel
+              inherited dbleNomeCompleto: TDBLabeledEdit
+                StyleElements = [seFont, seClient, seBorder]
+              end
+              inherited lblV2: TLabel
+                StyleElements = [seFont, seClient, seBorder]
+              end
+              inherited dbleTelefone: TDBLabeledEdit
+                StyleElements = [seFont, seClient, seBorder]
+              end
+              inherited Label3: TLabel
+                StyleElements = [seFont, seClient, seBorder]
+              end
+              inherited dbleEmail: TDBLabeledEdit
+                StyleElements = [seFont, seClient, seBorder]
+              end
+              inherited Label4: TLabel
+                StyleElements = [seFont, seClient, seBorder]
+              end
+              inherited dbleCEP: TDBLabeledEdit
+                StyleElements = [seFont, seClient, seBorder]
+              end
+              inherited Label5: TLabel
+                StyleElements = [seFont, seClient, seBorder]
+              end
+              inherited dbleEndereco: TDBLabeledEdit
+                StyleElements = [seFont, seClient, seBorder]
+              end
+              inherited Label6: TLabel
+                StyleElements = [seFont, seClient, seBorder]
+              end
+              inherited GridPanel3: TGridPanel
                 ControlCollection = <
                   item
                     Column = 0
-                    Control = crudCli1.lblVazio5
+                    Control = frameCrudClientes1.dbleNumero
                     Row = 0
                   end
                   item
-                    Column = 0
-                    Control = crudCli1.dbleNome
-                    Row = 1
-                  end
-                  item
-                    Column = 0
-                    Control = crudCli1.Label2
-                    Row = 2
-                  end
-                  item
-                    Column = 0
-                    Control = crudCli1.dbleTelefone
-                    Row = 3
-                  end
-                  item
-                    Column = 0
-                    Control = crudCli1.Label3
-                    Row = 4
-                  end
-                  item
-                    Column = 0
-                    Control = crudCli1.dbleEmail
-                    Row = 5
-                  end
-                  item
-                    Column = 0
-                    Control = crudCli1.Label4
-                    Row = 6
-                  end
-                  item
-                    Column = 0
-                    Control = crudCli1.dbleCEP
-                    Row = 7
-                  end
-                  item
-                    Column = 0
-                    Control = crudCli1.Label5
-                    Row = 8
-                  end
-                  item
-                    Column = 0
-                    Control = crudCli1.dbleEndereco
-                    Row = 9
-                  end
-                  item
-                    Column = 0
-                    Control = crudCli1.Label6
-                    Row = 10
-                  end
-                  item
-                    Column = 0
-                    Control = crudCli1.GridPanel3
-                    Row = 11
-                  end
-                  item
-                    Column = 0
-                    Control = crudCli1.Label7
-                    Row = 12
-                  end
-                  item
-                    Column = 0
-                    Control = crudCli1.GridPanel4
-                    Row = 13
-                  end
-                  item
-                    Column = 0
-                    Control = crudCli1.pnlSelecionaFuncao
-                    Row = 15
-                  end
-                  item
-                    Column = 0
-                    Control = crudCli1.Label9
-                    Row = 16
-                  end
-                  item
-                    Column = 0
-                    Control = crudCli1.Label8
-                    Row = 14
-                  end
-                  item
-                    Column = 0
-                    Control = crudCli1.dbleCPF
-                    Row = 17
-                  end
-                  item
-                    Column = 0
-                    Control = crudCli1.Label10
-                    Row = 18
-                  end
-                  item
-                    Column = 0
-                    Control = crudCli1.dbleRG
-                    Row = 19
+                    Column = 1
+                    Control = frameCrudClientes1.dbleBairro
+                    Row = 0
                   end>
                 StyleElements = [seFont, seClient, seBorder]
-                inherited lblVazio5: TLabel
+                inherited dbleNumero: TDBLabeledEdit
                   StyleElements = [seFont, seClient, seBorder]
                 end
-                inherited dbleNome: TDBLabeledEdit
+                inherited dbleBairro: TDBLabeledEdit
                   StyleElements = [seFont, seClient, seBorder]
                 end
-                inherited Label2: TLabel
-                  StyleElements = [seFont, seClient, seBorder]
-                end
-                inherited dbleTelefone: TDBLabeledEdit
-                  StyleElements = [seFont, seClient, seBorder]
-                end
-                inherited Label3: TLabel
-                  StyleElements = [seFont, seClient, seBorder]
-                end
-                inherited dbleEmail: TDBLabeledEdit
-                  StyleElements = [seFont, seClient, seBorder]
-                end
-                inherited Label4: TLabel
-                  StyleElements = [seFont, seClient, seBorder]
-                end
-                inherited dbleCEP: TDBLabeledEdit
-                  StyleElements = [seFont, seClient, seBorder]
-                end
-                inherited Label5: TLabel
-                  StyleElements = [seFont, seClient, seBorder]
-                end
-                inherited dbleEndereco: TDBLabeledEdit
-                  StyleElements = [seFont, seClient, seBorder]
-                end
-                inherited Label6: TLabel
-                  StyleElements = [seFont, seClient, seBorder]
-                end
-                inherited GridPanel3: TGridPanel
-                  ControlCollection = <
-                    item
-                      Column = 0
-                      Control = crudCli1.dbleNumero
-                      Row = 0
-                    end
-                    item
-                      Column = 1
-                      Control = crudCli1.dbleBairro
-                      Row = 0
-                    end>
-                  StyleElements = [seFont, seClient, seBorder]
-                  inherited dbleNumero: TDBLabeledEdit
-                    StyleElements = [seFont, seClient, seBorder]
+              end
+              inherited Label7: TLabel
+                StyleElements = [seFont, seClient, seBorder]
+              end
+              inherited GridPanel4: TGridPanel
+                ControlCollection = <
+                  item
+                    Column = 0
+                    Control = frameCrudClientes1.dbleCidade
+                    Row = 0
                   end
-                  inherited dbleBairro: TDBLabeledEdit
-                    StyleElements = [seFont, seClient, seBorder]
+                  item
+                    Column = 1
+                    Control = frameCrudClientes1.dbleUF
+                    Row = 0
+                  end>
+                StyleElements = [seFont, seClient, seBorder]
+                inherited dbleCidade: TDBLabeledEdit
+                  StyleElements = [seFont, seClient, seBorder]
+                end
+                inherited dbleUF: TDBLabeledEdit
+                  StyleElements = [seFont, seClient, seBorder]
+                end
+              end
+              inherited Label8: TLabel
+                StyleElements = [seFont, seClient, seBorder]
+              end
+              inherited Label9: TLabel
+                StyleElements = [seFont, seClient, seBorder]
+              end
+              inherited Label11: TLabel
+                StyleElements = [seFont, seClient, seBorder]
+              end
+              inherited pnlCadastrar: TPanel
+                StyleElements = [seFont, seClient, seBorder]
+              end
+              inherited Label13: TLabel
+                StyleElements = [seFont, seClient, seBorder]
+              end
+              inherited GridPanel5: TGridPanel
+                ControlCollection = <
+                  item
+                    Column = 0
+                    Control = frameCrudClientes1.Label10
+                    Row = 0
                   end
-                end
-                inherited Label7: TLabel
-                  StyleElements = [seFont, seClient, seBorder]
-                end
-                inherited GridPanel4: TGridPanel
-                  ControlCollection = <
-                    item
-                      Column = 0
-                      Control = crudCli1.dbleCidade
-                      Row = 0
-                    end
-                    item
-                      Column = 1
-                      Control = crudCli1.dbleUF
-                      Row = 0
-                    end>
-                  StyleElements = [seFont, seClient, seBorder]
-                  inherited dbleCidade: TDBLabeledEdit
-                    StyleElements = [seFont, seClient, seBorder]
+                  item
+                    Column = 1
+                    Control = frameCrudClientes1.leSenha
+                    Row = 0
                   end
-                  inherited dbleUF: TDBLabeledEdit
-                    StyleElements = [seFont, seClient, seBorder]
-                  end
-                end
-                inherited pnlSelecionaFuncao: TPanel
-                  StyleElements = [seFont, seClient, seBorder]
-                  inherited lblSelecionaFuncao: TLabel
-                    StyleElements = [seFont, seClient, seBorder]
-                  end
-                  inherited DBComboBox1: TDBComboBox
-                    StyleElements = [seFont, seClient, seBorder]
-                  end
-                end
-                inherited Label9: TLabel
-                  StyleElements = [seFont, seClient, seBorder]
-                end
-                inherited Label8: TLabel
-                  StyleElements = [seFont, seClient, seBorder]
-                end
-                inherited dbleCPF: TDBLabeledEdit
-                  StyleElements = [seFont, seClient, seBorder]
-                  EditLabel.ExplicitLeft = 0
-                  EditLabel.ExplicitTop = -24
-                  EditLabel.ExplicitWidth = 57
-                end
+                  item
+                    Column = 2
+                    Control = frameCrudClientes1.cadeadoSenha
+                    Row = 0
+                  end>
+                StyleElements = [seFont, seClient, seBorder]
                 inherited Label10: TLabel
                   StyleElements = [seFont, seClient, seBorder]
                 end
-                inherited dbleRG: TDBLabeledEdit
-                  StyleElements = [seFont, seClient, seBorder]
-                  EditLabel.ExplicitLeft = 0
-                  EditLabel.ExplicitTop = -24
-                  EditLabel.ExplicitWidth = 51
-                end
-              end
-              inherited Panel2: TPanel
-                StyleElements = [seFont, seClient, seBorder]
-              end
-            end
-            inherited frameCadVeiculo1: TframeCadVeiculo
-              Left = 166
-              Top = 58
-              ExplicitLeft = 166
-              ExplicitTop = 58
-              inherited pnlSenhaFuncionario: TPanel
-                StyleElements = [seFont, seClient, seBorder]
-                inherited lblCadastrandoVeiculo: TLabel
+                inherited leSenha: TLabeledEdit
                   StyleElements = [seFont, seClient, seBorder]
                 end
-                inherited pnlDadosVeículo: TPanel
+                inherited cadeadoSenha: TImage
+                  OnClick = frameCrudClientes1cadeadoSenhaClick
+                end
+              end
+              inherited Label14: TLabel
+                StyleElements = [seFont, seClient, seBorder]
+              end
+              inherited GridPanel6: TGridPanel
+                ControlCollection = <
+                  item
+                    Column = 0
+                    Control = frameCrudClientes1.leConfSenha
+                    Row = 0
+                  end
+                  item
+                    Column = 1
+                    Control = frameCrudClientes1.cadeadoConfSenha
+                    Row = 0
+                  end>
+                StyleElements = [seFont, seClient, seBorder]
+                inherited leConfSenha: TLabeledEdit
                   StyleElements = [seFont, seClient, seBorder]
-                  inherited pnlInfoVeiculo: TPanel
-                    StyleElements = [seFont, seClient, seBorder]
-                    inherited GridPanel2: TGridPanel
-                      ControlCollection = <
-                        item
-                          Column = 0
-                          Control = crudCli1.frameCadVeiculo1.dbleModeloVeiculo
-                          Row = 0
-                        end
-                        item
-                          Column = 0
-                          Control = crudCli1.frameCadVeiculo1.Label1
-                          Row = 1
-                        end
-                        item
-                          Column = 0
-                          Control = crudCli1.frameCadVeiculo1.dbleMarcaVeiculo
-                          Row = 2
-                        end
-                        item
-                          Column = 0
-                          Control = crudCli1.frameCadVeiculo1.Label3
-                          Row = 3
-                        end
-                        item
-                          Column = 0
-                          Control = crudCli1.frameCadVeiculo1.dbleCorVeiculo
-                          Row = 4
-                        end
-                        item
-                          Column = 0
-                          Control = crudCli1.frameCadVeiculo1.Label4
-                          Row = 5
-                        end
-                        item
-                          Column = 0
-                          Control = crudCli1.frameCadVeiculo1.dbleAnoVeiculo
-                          Row = 6
-                        end>
-                      StyleElements = [seFont, seClient, seBorder]
-                      inherited dbleModeloVeiculo: TDBLabeledEdit
-                        StyleElements = [seFont, seClient, seBorder]
-                      end
-                      inherited Label1: TLabel
-                        StyleElements = [seFont, seClient, seBorder]
-                      end
-                      inherited dbleMarcaVeiculo: TDBLabeledEdit
-                        StyleElements = [seFont, seClient, seBorder]
-                      end
-                      inherited Label3: TLabel
-                        StyleElements = [seFont, seClient, seBorder]
-                      end
-                      inherited dbleCorVeiculo: TDBLabeledEdit
-                        StyleElements = [seFont, seClient, seBorder]
-                      end
-                      inherited Label4: TLabel
-                        StyleElements = [seFont, seClient, seBorder]
-                      end
-                      inherited dbleAnoVeiculo: TDBLabeledEdit
-                        StyleElements = [seFont, seClient, seBorder]
-                      end
-                    end
-                  end
-                  inherited Panel1: TPanel
-                    StyleElements = [seFont, seClient, seBorder]
-                    inherited GridPanel1: TGridPanel
-                      ControlCollection = <
-                        item
-                          Column = 0
-                          Control = crudCli1.frameCadVeiculo1.DBLabeledEdit2
-                          Row = 0
-                        end
-                        item
-                          Column = 0
-                          Control = crudCli1.frameCadVeiculo1.dbleChassiVeiculo
-                          Row = 2
-                        end
-                        item
-                          Column = 0
-                          Control = crudCli1.frameCadVeiculo1.Label2
-                          Row = 1
-                        end>
-                      StyleElements = [seFont, seClient, seBorder]
-                      inherited DBLabeledEdit2: TDBLabeledEdit
-                        StyleElements = [seFont, seClient, seBorder]
-                      end
-                      inherited dbleChassiVeiculo: TDBLabeledEdit
-                        StyleElements = [seFont, seClient, seBorder]
-                      end
-                      inherited Label2: TLabel
-                        StyleElements = [seFont, seClient, seBorder]
-                      end
-                    end
-                  end
-                  inherited pnlBotaoCadastrarVeiculo: TPanel
-                    StyleElements = [seFont, seClient, seBorder]
-                  end
                 end
               end
             end

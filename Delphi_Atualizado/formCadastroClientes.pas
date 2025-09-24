@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Mask, Vcl.ExtCtrls,
-  Vcl.DBCtrls, frameFormularioPedido, System.Hash, Vcl.Imaging.pngimage, frameCadastroVeiculo, DataModuleInicial;
+  Vcl.DBCtrls, frameFormularioPedido, System.Hash, Vcl.Imaging.pngimage, System.UITypes, frameCadastroVeiculo, DataModuleInicial;
 
 type
   TformCadastroDeClientes = class(TForm)
@@ -40,21 +40,20 @@ type
     GridPanel5: TGridPanel;
     Label14: TLabel;
     GridPanel6: TGridPanel;
-    leConfSenha: TLabeledEdit;
     Label10: TLabel;
     leSenha: TLabeledEdit;
     cadeadoSenha: TImage;
+    Label2: TLabel;
+    leConfSenha: TLabeledEdit;
     cadeadoConfSenha: TImage;
     procedure pnlCadastrarClick(Sender: TObject);
-    procedure cadeadoSenhaClick(Sender: TObject);
-    procedure cadeadoConfSenhaClick(Sender: TObject);
-    procedure FormCreate(Sender: TObject);
+
   private
     { Private declarations }
-    procedure HideShowSenha;
   public
     { Public declarations }
-
+    procedure cadeadoSenhaClick(Sender: TObject);
+    procedure cadeadoConfSenhaClick(Sender: TObject);
   end;
 
 var
@@ -64,22 +63,7 @@ implementation
 
 {$R *.dfm}
 
-procedure TformCadastroDeClientes.FormCreate(Sender: TObject);
-begin
-//    dtmInicial := TdtmInicial.Create(Self);
-//    dtmInicial.ConexaoPG.SQLHourGlass := True;
-//    dtmInicial.ConexaoPG.Protocol := 'postgresql';
-//    dtmInicial.ConexaoPG.LibraryLocation := 'C:\Projeto Delphi-JLA\Delphi_Atualizado\BancoDeDados\lib\libpq.dll';
-//    dtmInicial.ConexaoPG.HostName := 'localhost';
-//    dtmInicial.ConexaoPG.Port := 5432;
-//    dtmInicial.ConexaoPG.User := 'postgres';
-//    dtmInicial.ConexaoPG.Password := 'root';
-//    dtmInicial.ConexaoPG.Database := 'ProjetoDelphiJLA';
-//    dtmInicial.ConexaoPG.Connected := True;
-//    dtmInicial.ConexaoPG.ClientCodePage := 'UTF-8';
-end;
-
-procedure TformCadastroDeClientes.HideShowSenha;
+procedure TformCadastroDeClientes.cadeadoSenhaClick(Sender: TObject);
 begin
     if leSenha.PasswordChar = '*' then begin
     cadeadoSenha.Picture.LoadFromFile('C:\Users\Kamilly Souza\Desktop\Projeto Delphi-JLA\Delphi_Atualizado\Assets\cadeado azul desbloqueado.png');
@@ -101,21 +85,17 @@ begin
     end;
 end;
 
-procedure TformCadastroDeClientes.cadeadoSenhaClick(Sender: TObject);
-begin
-    HideShowSenha;
-end;
-
 procedure TformCadastroDeClientes.pnlCadastrarClick(Sender: TObject);
 begin
     if leConfSenha.Text = leSenha.Text then begin
       THashSHA1.GetHashString(leConfSenha.Text);
-      Edit15.Text := THashSHA1.GetHashString(leConfSenha.Text);
 
-      if MessageDlg('Cadastro finalizado com sucesso! Deseja incluir seu veículo?', mtConfirmation, [mbYes, mbNo], 0) = mrYes then
+      if MessageDlg('Cadastro finalizado com sucesso! Deseja incluir seu veículo?',
+      mtConfirmation, [mbYes, mbNo], 0) = mrYes then frameCadVeiculo.Show;
 
     end else begin
        ShowMessage('Senhas não compatíveis. Tente novamente');
     end;
       end;
+
 end.

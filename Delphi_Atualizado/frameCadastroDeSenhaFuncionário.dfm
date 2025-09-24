@@ -234,9 +234,9 @@ object frameCadSenhaFuncionario: TframeCadSenhaFuncionario
           end
           object cadeadoSenha: TImage
             Left = 339
-            Top = 22
+            Top = 24
             Width = 30
-            Height = 35
+            Height = 33
             Cursor = crHandPoint
             Align = alCustom
             Center = True
@@ -1754,9 +1754,9 @@ object frameCadSenhaFuncionario: TframeCadSenhaFuncionario
             end>
           TabOrder = 3
           object cadeadoConfSenha: TImage
-            Left = 335
-            Top = 16
-            Width = 38
+            Left = 341
+            Top = 17
+            Width = 29
             Height = 35
             Cursor = crHandPoint
             Align = alCustom

@@ -6,7 +6,8 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Mask, Vcl.ComCtrls,
   Vcl.ExtCtrls, Vcl.Imaging.jpeg, System.ImageList, Vcl.ImgList,
-  Vcl.Imaging.pngimage, Vcl.Skia, unitCrudClientes, Vcl.DBCtrls, formCadastroClientes, DataModuleInicial; //, BCrypt
+  Vcl.Imaging.pngimage, Vcl.Skia, unitCrudClientes, Vcl.DBCtrls, formCadastroClientes, DataModuleInicial,
+  Data.DB;
 
 type
   TformLogin = class(TForm)
@@ -19,7 +20,7 @@ type
     Panel2: TPanel;
     GridPanel3: TGridPanel;
     dbleSenha: TDBLabeledEdit;
-    imgCadeado: TImage;
+    cadeadoSenha: TImage;
     GridPanel2: TGridPanel;
     dbleUsuario: TDBLabeledEdit;
     lblVazio: TLabel;
@@ -35,11 +36,11 @@ type
     Image1: TImage;
     lblAvisoUsuario: TLabel;
     lblAvisoSenha: TLabel;
+    DSLogin: TDataSource;
     procedure pnlEntrarClick(Sender: TObject);
-    procedure imgCadeadoClick(Sender: TObject);
+    procedure cadeadoSenhaClick(Sender: TObject);
     procedure imgFecharClick(Sender: TObject);
     procedure lblCadastreAquiClick(Sender: TObject);
-    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
     procedure HideShowSenha;
@@ -52,29 +53,21 @@ var
   formLogin: TformLogin;
 
 implementation
-//uses BCrypt;
 
 {$R *.dfm}
-
-procedure TformLogin.FormCreate(Sender: TObject);
-begin
-//    dtmInicial := TdtmInicial.Create(Self);
-//    dtmInicial.ConexaoPG.SQLHourGlass := True;
-//    dtmInicial.ConexaoPG.Connected := True;
-end;
 
 procedure TformLogin.HideShowSenha;
 begin
     if dbleSenha.PasswordChar = '*' then begin
-    imgCadeado.Picture.LoadFromFile('C:\Users\Kamilly Souza\Desktop\Projeto Delphi-JLA\Delphi_Atualizado\Assets\cadeado azul desbloqueado.png');
+    cadeadoSenha.Picture.LoadFromFile('C:\Users\Kamilly Souza\Desktop\Projeto Delphi-JLA\Delphi_Atualizado\Assets\cadeado azul desbloqueado.png');
     dbleSenha.PasswordChar := #0;
     end else if dbleSenha.PasswordChar = #0 then begin
-    imgCadeado.Picture.LoadFromFile('C:\Users\Kamilly Souza\Desktop\Projeto Delphi-JLA\Delphi_Atualizado\Assets\cadeado azul bloqueado.png');
+    cadeadoSenha.Picture.LoadFromFile('C:\Users\Kamilly Souza\Desktop\Projeto Delphi-JLA\Delphi_Atualizado\Assets\cadeado azul bloqueado.png');
     dbleSenha.PasswordChar := '*';
     end;
 end;
 
-procedure TformLogin.imgCadeadoClick(Sender: TObject);
+procedure TformLogin.cadeadoSenhaClick(Sender: TObject);
 begin
      HideShowSenha;
 end;
@@ -90,8 +83,7 @@ begin
 end;
 
 procedure TformLogin.pnlEntrarClick(Sender: TObject);
-var senha, hash: String;
-
+//var senha, hash: String;
 begin
   if (dbleSenha.Text = '') or (dbleUsuario.Text = '') then begin
     ShowMessage('Preencha todos os campos.');
@@ -112,11 +104,8 @@ begin
         lblAvisoUsuario.Caption := '';
   end;
 
-  begin
-    if Trim(dbleSenha.Text) = '' then
-    senha := Trim(dbleSenha.Text);
-    //hash := TBCrypt.GenerateHash(Trim(dbleSenha.Text));
+  //if True then
 
 end;
-end;
+
 end.

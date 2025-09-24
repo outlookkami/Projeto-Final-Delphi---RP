@@ -24,18 +24,23 @@ nome_cliente VARCHAR(100) NOT NULL,
 telefone_cliente VARCHAR(9) NOT NULL,
 email_cliente VARCHAR(250) UNIQUE,
 cep_cliente VARCHAR(8),
-veiculo VARCHAR(7) NOT NULL,
 endereco_cliente VARCHAR(60),
 num_endereco VARCHAR(7),
 bairro VARCHAR(30),
 cidade VARCHAR(30),
 uf VARCHAR(2),
-funcao VARCHAR,
-rg_usuario(9) UNIQUE,
-cpf_usuario VARCHAR(11) UNIQUE,
+veiculo VARCHAR(7) NOT NULL,
 cliente_data_criacao TIMESTAMP
 )
 ;
+
+INSERT INTO Clientes (hash_senha_cli, nome_cliente, 
+telefone_cliente, email_cliente, cep_cliente, endereco_cliente, num_endereco, 
+bairro, cidade, uf, veiculo) VALUES ('a9993e364706816aba3e25717850c26c9cd0d89d', 
+'Kamilly', '41995937553', 'dkamillythauanny@gmail.com',
+'80740240', 'Rua Angela Ganz', '597', 
+'Campina do Siqueira', 'Curitiba', 'PR', 'AVL7532');
+
 
 
 CREATE TABLE IF NOT EXISTS public."Funcionarios"

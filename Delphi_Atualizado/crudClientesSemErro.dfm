@@ -31,6 +31,7 @@ object frameCrudClientes: TframeCrudClientes
       ParentBackground = False
       ParentFont = False
       TabOrder = 2
+      OnClick = btnIncluirCliClick
     end
     object pnlPesquisa: TPanel
       Left = 184
@@ -195,7 +196,7 @@ object frameCrudClientes: TframeCrudClientes
         end>
     end
   end
-  object pnlLogin: TPanel
+  object pnlCadastroCli: TPanel
     Left = 329
     Top = 24
     Width = 477
@@ -203,6 +204,7 @@ object frameCrudClientes: TframeCrudClientes
     Align = alCustom
     Anchors = [akLeft, akTop, akRight, akBottom]
     TabOrder = 1
+    Visible = False
     object Label1: TLabel
       Left = 1
       Top = 1
@@ -217,7 +219,7 @@ object frameCrudClientes: TframeCrudClientes
       Font.Name = 'Segoe UI'
       Font.Style = []
       ParentFont = False
-      ExplicitLeft = 8
+      ExplicitWidth = 147
     end
     object gridPanelLogin: TGridPanel
       Left = 8
@@ -713,6 +715,7 @@ object frameCrudClientes: TframeCrudClientes
         ParentBackground = False
         ParentFont = False
         TabOrder = 7
+        OnClick = pnlCadastrarClick
       end
       object Label13: TLabel
         Left = 230
@@ -805,7 +808,6 @@ object frameCrudClientes: TframeCrudClientes
           TabOrder = 0
           Text = ''
           TextHint = 'Crie uma senha'
-          ExplicitTop = 24
         end
         object cadeadoSenha: TImage
           Left = 414
@@ -2295,6 +2297,7 @@ object frameCrudClientes: TframeCrudClientes
             509011044110A40C4041461004419032E0FFD7B4FF8510FC0159000000004945
             4E44AE426082}
           Proportional = True
+          OnClick = cadeadoSenhaClick
         end
       end
       object Label14: TLabel
@@ -2344,9 +2347,9 @@ object frameCrudClientes: TframeCrudClientes
           end>
         TabOrder = 9
         object leConfSenha: TLabeledEdit
-          Left = 64
+          Left = 62
           Top = 29
-          Width = 345
+          Width = 347
           Height = 29
           Align = alCustom
           EditLabel.Width = 125
@@ -3857,11 +3860,12 @@ object frameCrudClientes: TframeCrudClientes
             509011044110A40C4041461004419032E0FFD7B4FF8510FC0159000000004945
             4E44AE426082}
           Proportional = True
+          OnClick = cadeadoConfSenhaClick
         end
       end
     end
   end
-  object DataSource1: TDataSource
+  object DSClientes: TDataSource
     Left = 112
     Top = 168
   end

@@ -11,24 +11,26 @@ uses
   FireDAC.Comp.Client, FireDAC.Comp.UI, Data.Win.ADODB, FireDAC.VCLUI.Wait;
 
 type
-  TDataModule1 = class(TDataModule)
+  TDM = class(TDataModule)
     ConexaoBanco: TFDConnection;
-    QueryCadastro: TFDQuery;
+    QueryClientes: TFDQuery;
     FDGUIxWaitCursor1: TFDGUIxWaitCursor;
-    FDPhysPgDriverLink1: TFDPhysPgDriverLink;
-    QueryCadastrocodigo_cliente: TIntegerField;
-    QueryCadastrohash_senha_cli: TStringField;
-    QueryCadastronome_cliente: TStringField;
-    QueryCadastrotelefone_cliente: TStringField;
-    QueryCadastroemail_cliente: TStringField;
-    QueryCadastrocep_cliente: TStringField;
-    QueryCadastroendereco_cliente: TStringField;
-    QueryCadastronum_endereco: TStringField;
-    QueryCadastrobairro: TStringField;
-    QueryCadastrocidade: TStringField;
-    QueryCadastrouf: TStringField;
-    QueryCadastroveiculo: TStringField;
-    procedure FDPhysPgDriverLink1DriverCreated(Sender: TObject);
+    QueryClientescodigo_cliente: TIntegerField;
+    QueryClienteshash_senha_cli: TStringField;
+    QueryClientesnome_cliente: TStringField;
+    QueryClientestelefone_cliente: TStringField;
+    QueryClientesemail_cliente: TStringField;
+    QueryClientescep_cliente: TStringField;
+    QueryClientesendereco_cliente: TStringField;
+    QueryClientesnum_endereco: TStringField;
+    QueryClientesbairro: TStringField;
+    QueryClientescidade: TStringField;
+    QueryClientesuf: TStringField;
+    QueryClientesveiculo: TStringField;
+    FDPhysPgDriverLink2: TFDPhysPgDriverLink;
+    QueryFuncionarios: TFDQuery;
+    QueryLogin: TFDQuery;
+    Perfil: TFDQuery;
   private
     { Private declarations }
   public
@@ -36,7 +38,7 @@ type
   end;
 
 var
-  DataModule1: TDataModule1;
+  DM: TDM;
 
 implementation
 

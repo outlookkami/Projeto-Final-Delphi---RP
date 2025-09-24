@@ -142,6 +142,7 @@ object crudCli: TcrudCli
       Width = 755
       Height = 537
       Anchors = [akLeft, akTop, akRight, akBottom]
+      DataSource = DSCadastro
       TabOrder = 1
       TitleFont.Charset = DEFAULT_CHARSET
       TitleFont.Color = clWindowText
@@ -195,7 +196,8 @@ object crudCli: TcrudCli
         end>
     end
   end
-  object DataSource1: TDataSource
+  object DSCadastro: TDataSource
+    DataSet = DM.QueryClientes
     Left = 112
     Top = 168
   end

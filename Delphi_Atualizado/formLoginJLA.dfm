@@ -10,7 +10,6 @@ object formLogin: TformLogin
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
-  OnCreate = FormCreate
   TextHeight = 15
   object pnlBaseLogin: TPanel
     Left = 0
@@ -187,7 +186,7 @@ object formLogin: TformLogin
             end
             item
               Column = 1
-              Control = imgCadeado
+              Control = cadeadoSenha
               Row = 0
             end
             item
@@ -212,6 +211,8 @@ object formLogin: TformLogin
             Width = 285
             Height = 29
             Anchors = []
+            DataField = 'senha_hash'
+            DataSource = DSLogin
             PasswordChar = '*'
             TabOrder = 0
             TextHint = 'Digite sua senha'
@@ -221,7 +222,7 @@ object formLogin: TformLogin
             EditLabel.ParentShowHint = False
             EditLabel.ShowHint = True
           end
-          object imgCadeado: TImage
+          object cadeadoSenha: TImage
             Left = 295
             Top = 0
             Width = 30
@@ -1709,7 +1710,7 @@ object formLogin: TformLogin
               509011044110A40C4041461004419032E0FFD7B4FF8510FC0159000000004945
               4E44AE426082}
             Proportional = True
-            OnClick = imgCadeadoClick
+            OnClick = cadeadoSenhaClick
             ExplicitLeft = 293
           end
           object lblAvisoSenha: TLabel
@@ -1777,6 +1778,8 @@ object formLogin: TformLogin
             Width = 284
             Height = 29
             Anchors = []
+            DataField = 'nome_usuario'
+            DataSource = DSLogin
             TabOrder = 0
             TextHint = 'Digite seu usu'#225'rio'
             EditLabel.Width = 57
@@ -46822,5 +46825,10 @@ object formLogin: TformLogin
         ExplicitTop = -1
       end
     end
+  end
+  object DSLogin: TDataSource
+    DataSet = DM.QueryLogin
+    Left = 646
+    Top = 143
   end
 end

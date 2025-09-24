@@ -10,7 +10,6 @@ object formCadastroDeClientes: TformCadastroDeClientes
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
-  OnCreate = FormCreate
   TextHeight = 15
   object GridPanel1: TGridPanel
     AlignWithMargins = True
@@ -45,7 +44,6 @@ object formCadastroDeClientes: TformCadastroDeClientes
     TabOrder = 0
     ExplicitLeft = 8
     ExplicitTop = -2
-    ExplicitWidth = 1161
     object pnlilustrativo: TPanel
       Left = 1
       Top = 1
@@ -55,8 +53,6 @@ object formCadastroDeClientes: TformCadastroDeClientes
       Color = clHighlight
       ParentBackground = False
       TabOrder = 0
-      ExplicitLeft = 0
-      ExplicitTop = -4
     end
     object pnlLogin: TPanel
       Left = 641
@@ -66,8 +62,6 @@ object formCadastroDeClientes: TformCadastroDeClientes
       Align = alCustom
       Anchors = [akLeft, akTop, akRight, akBottom]
       TabOrder = 1
-      ExplicitLeft = 639
-      ExplicitWidth = 476
       object Label1: TLabel
         Left = 1
         Top = 1
@@ -285,7 +279,6 @@ object formCadastroDeClientes: TformCadastroDeClientes
             SizeStyle = ssAuto
           end>
         TabOrder = 0
-        ExplicitWidth = 463
         DesignSize = (
           464
           598)
@@ -309,7 +302,6 @@ object formCadastroDeClientes: TformCadastroDeClientes
           EditLabel.Width = 118
           EditLabel.Height = 21
           EditLabel.Caption = 'Nome Completo:'
-          ExplicitLeft = 58
         end
         object lblV2: TLabel
           Left = 230
@@ -330,7 +322,6 @@ object formCadastroDeClientes: TformCadastroDeClientes
           EditLabel.Width = 115
           EditLabel.Height = 21
           EditLabel.Caption = 'Telefone/Celular:'
-          ExplicitLeft = 58
         end
         object Label3: TLabel
           Left = 230
@@ -352,7 +343,6 @@ object formCadastroDeClientes: TformCadastroDeClientes
           EditLabel.Width = 47
           EditLabel.Height = 21
           EditLabel.Caption = 'E-mail:'
-          ExplicitLeft = 59
         end
         object Label4: TLabel
           Left = 230
@@ -374,7 +364,6 @@ object formCadastroDeClientes: TformCadastroDeClientes
           EditLabel.Width = 30
           EditLabel.Height = 21
           EditLabel.Caption = 'CEP:'
-          ExplicitLeft = 59
         end
         object Label5: TLabel
           Left = 230
@@ -438,7 +427,6 @@ object formCadastroDeClientes: TformCadastroDeClientes
               Value = 100.000000000000000000
             end>
           TabOrder = 5
-          ExplicitLeft = 46
           DesignSize = (
             370
             56)
@@ -654,9 +642,9 @@ object formCadastroDeClientes: TformCadastroDeClientes
           end
           object leSenha: TLabeledEdit
             Left = 62
-            Top = 24
+            Top = 25
             Width = 346
-            Height = 30
+            Height = 29
             Anchors = []
             EditLabel.Width = 46
             EditLabel.Height = 21
@@ -677,13 +665,12 @@ object formCadastroDeClientes: TformCadastroDeClientes
             TabOrder = 0
             Text = ''
             TextHint = 'Crie uma senha'
-            ExplicitLeft = 56
           end
           object cadeadoSenha: TImage
             Left = 414
             Top = 24
             Width = 27
-            Height = 31
+            Height = 32
             Cursor = crHandPoint
             Align = alCustom
             Center = True
@@ -2167,7 +2154,7 @@ object formCadastroDeClientes: TformCadastroDeClientes
               509011044110A40C4041461004419032E0FFD7B4FF8510FC0159000000004945
               4E44AE426082}
             Proportional = True
-            OnClick = cadeadoConfSenhaClick
+            OnClick = cadeadoSenhaClick
           end
         end
         object Label14: TLabel
@@ -2203,11 +2190,16 @@ object formCadastroDeClientes: TformCadastroDeClientes
           ControlCollection = <
             item
               Column = 0
-              Control = leConfSenha
+              Control = Label2
               Row = 0
             end
             item
               Column = 1
+              Control = leConfSenha
+              Row = 0
+            end
+            item
+              Column = 2
               Control = cadeadoConfSenha
               Row = 0
             end>
@@ -2216,12 +2208,23 @@ object formCadastroDeClientes: TformCadastroDeClientes
               Value = 100.000000000000000000
             end>
           TabOrder = 9
+          DesignSize = (
+            457
+            58)
+          object Label2: TLabel
+            Left = 28
+            Top = 18
+            Width = 4
+            Height = 21
+            Anchors = []
+            ExplicitLeft = 7
+          end
           object leConfSenha: TLabeledEdit
-            Left = 64
-            Top = 29
-            Width = 345
+            Left = 61
+            Top = 26
+            Width = 347
             Height = 29
-            Align = alCustom
+            Anchors = []
             EditLabel.Width = 125
             EditLabel.Height = 21
             EditLabel.Caption = 'Confirme a senha:'
@@ -2241,12 +2244,13 @@ object formCadastroDeClientes: TformCadastroDeClientes
             TabOrder = 0
             Text = ''
             TextHint = 'Redigite a senha '
+            ExplicitLeft = 56
           end
           object cadeadoConfSenha: TImage
-            Left = 415
+            Left = 414
             Top = 24
-            Width = 26
-            Height = 32
+            Width = 27
+            Height = 33
             Cursor = crHandPoint
             Align = alCustom
             Center = True

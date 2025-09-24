@@ -100,9 +100,6 @@ Coordinates=281,10,130,58
 [crudCli1.Label1]
 Coordinates=10,214,104,58
 
-[crudCli1.btnIncluirCli]
-Coordinates=719,78,134,58
-
 [crudCli1.pnlSelecionaFuncao]
 Coordinates=10,10,182,58
 
@@ -117,12 +114,6 @@ Coordinates=443,464,154,36
 
 [crudCli1.Label2]
 Coordinates=695,214,104,58
-
-[crudCli1]
-Coordinates=371,464,62,36
-
-[crudCli1.DBGrid1]
-Coordinates=246,464,115,36
 
 [crudCli1.dbleUF]
 Coordinates=129,464,107,36
@@ -148,17 +139,8 @@ Coordinates=391,418,171,36
 [crudCli1.Label8]
 Coordinates=124,214,104,58
 
-[crudCli1.DBEdit1]
-Coordinates=268,418,113,36
-
-[crudCli1.Panel1]
-Coordinates=289,78,106,58
-
 [crudCli1.dbleCPF]
 Coordinates=142,418,116,36
-
-[crudCli1.pnlPesquisa]
-Coordinates=343,146,136,58
 
 [crudCli1.dbleEmail]
 Coordinates=10,418,122,36
@@ -171,9 +153,6 @@ Coordinates=327,214,104,58
 
 [crudCli1.dbleCEP]
 Coordinates=493,350,116,36
-
-[crudCli1.iconePesquisa]
-Coordinates=740,146,149,58
 
 [crudCli1.dbleTelefone]
 Coordinates=343,350,140,36

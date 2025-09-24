@@ -15,13 +15,12 @@ uses
   formPáginaDeInícioClientes in 'formPáginaDeInícioClientes.pas' {formPáginaInicialCli},
   formPáginaDeInícioADM in 'formPáginaDeInícioADM.pas' {formPáginaInicialADM},
   framePerfil in 'framePerfil.pas' {framePerfilUsuário: TFrame},
-  crudClientes in 'crudClientes.pas' {crudCli: TFrame},
   frameSobreNos in 'frameSobreNos.pas' {framePáginaSobreNos: TFrame},
   crudFuncionarios in 'crudFuncionarios.pas' {Frame2: TFrame},
   frameCadastroVeiculo in 'frameCadastroVeiculo.pas' {frameCadVeiculo: TFrame},
-  testandoHash in 'testandoHash.pas' {Form1},
-  dataModuleNormal in 'dataModuleNormal.pas' {DataModule1: TDataModule},
-  crudClientesSemErro in 'crudClientesSemErro.pas' {frameCrudClientes: TFrame};
+  dataModuleNormal in 'dataModuleNormal.pas' {DM: TDataModule},
+  crudClientesSemErro in 'crudClientesSemErro.pas' {frameCrudClientes: TFrame},
+  unitTestesDeProcedures in 'unitTestesDeProcedures.pas';
 
 {$R *.res}
 
@@ -29,17 +28,20 @@ begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
   Application.Title := 'Aviso';
-  Application.CreateForm(TformCadastroDeClientes, formCadastroDeClientes);
   Application.CreateForm(TformPáginaInicialFunc, formPáginaInicialFunc);
+  Application.CreateForm(TformCadastroDeClientes, formCadastroDeClientes);
   Application.CreateForm(TformLogin, formLogin);
   Application.CreateForm(TformCadastroFuncionarios, formCadastroFuncionarios);
   Application.CreateForm(TformPáginaInicialADM, formPáginaInicialADM);
   Application.CreateForm(TformPáginaInicialCli, formPáginaInicialCli);
-  Application.CreateForm(TForm1, Form1);
   Application.CreateForm(TdtmInicial, dtmInicial);
-  Application.CreateForm(TcrudCli, crudCli);
   Application.CreateForm(TframeCadastroFunc, frameCadastroFunc);
   Application.CreateForm(TframeCadVeiculo, frameCadVeiculo);
-  Application.CreateForm(TDataModule1, DataModule1);
+  Application.CreateForm(TDM, DM);
+  Application.CreateForm(TframeCrudClientes, frameCrudClientes);
+  Application.CreateForm(TframeFormularioDePedido, frameFormularioDePedido);
+  Application.CreateForm(TframeCadSenhaFuncionario, frameCadSenhaFuncionario);
+  Application.CreateForm(TframePerfilUsuário, framePerfilUsuário);
+  Application.CreateForm(TframePáginaSobreNos, framePáginaSobreNos);
   Application.Run;
 end.
