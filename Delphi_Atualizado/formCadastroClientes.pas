@@ -6,7 +6,8 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Mask, Vcl.ExtCtrls,
   Vcl.DBCtrls, frameFormularioPedido, System.Hash, Vcl.Imaging.pngimage, System.UITypes, DataModuleNormal, frameCadastroVeiculo,
-  EComponent, Data.DB;
+  EComponent, Data.DB, REST.Types, Data.Bind.Components, Data.Bind.ObjectScope,
+  REST.Client, System.Net.HttpClient, JSON;
 
 type
   TformCadastroDeClientes = class(TForm)
@@ -48,9 +49,13 @@ type
     Label9: TLabel;
     leSenha: TLabeledEdit;
     cadeadoSenha: TImage;
+    RESTClient1: TRESTClient;
+    RESTRequest1: TRESTRequest;
+    RESTResponse1: TRESTResponse;
     procedure pnlCadastrarClick(Sender: TObject);
-    procedure cadeadoSenhaERROClick(Sender: TObject);
+    procedure cadeadoSenhaClick(Sender: TObject);
     procedure cadeadoConfSenhaClick(Sender: TObject);
+    procedure leCEPChange(Sender: TObject);
 
   private
     { Private declarations }
@@ -59,8 +64,11 @@ type
 
   end;
 
+const urlConsultaCep = 'https://brasilapi.com.br/api/cep/v1/%s';
+
 var
   formCadastroDeClientes: TformCadastroDeClientes;
+  objetoJson: TJSONObject;
 
 implementation
 
@@ -68,7 +76,30 @@ implementation
 
 uses formPáginaDeInícioFunc;
 
-procedure TformCadastroDeClientes.cadeadoSenhaERROClick(Sender: TObject);
+procedure TformCadastroDeClientes.leCEPChange(Sender: TObject);
+var CEP: String;
+begin
+    CEP := trim(leCEP.Text);
+
+    RESTClient1.BaseURL := format (urlConsultaCep, [CEP]);
+    RESTClient1.SecureProtocols := [THTTPSecureProtocol.TLS12];
+
+    RESTRequest1.Method := rmGET;
+    RESTRequest1.Execute;
+
+    objetoJson := RESTRequest1.Response.JSONValue AS TJSONObject;
+
+    leEndereco.Text := (format('%d', [RESTResponse1.StatusCode]));
+    leEndereco.Text := objetoJson.Values['street'].Value;
+    leBairro.Text := objetoJson.Values['neighbourhood'].Value;
+    leCidade.Text := objetoJson.Values['city'].Value;
+    cbUF.Text := objetoJson.Values['state'].Value;
+
+    //leEndereco.Text := (format('%d', [RESTResponse1.StatusCode]));
+    //leEndereco.Text := (RESTResponse1.Content);
+end;
+
+procedure TformCadastroDeClientes.cadeadoSenhaClick(Sender: TObject);
 begin
     if leSenha.PasswordChar = '*' then begin
     cadeadoSenha.Picture.LoadFromFile('C:\Users\Kamilly Souza\Desktop\Projeto Delphi-JLA\Delphi_Atualizado\Assets\cadeado azul desbloqueado.png');
@@ -103,7 +134,5 @@ begin
     end;
     formPáginaInicialFunc.Show;
       end;
-
-
 
 end.

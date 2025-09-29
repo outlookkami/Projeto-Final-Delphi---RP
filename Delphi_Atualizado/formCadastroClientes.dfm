@@ -2200,6 +2200,7 @@ object formCadastroDeClientes: TformCadastroDeClientes
           TabOrder = 7
           Text = '     -   '
           TextHint = 'Informe seu CEP'
+          OnChange = leCEPChange
         end
         object leEndereco: TLabeledEdit
           Left = 59
@@ -3785,7 +3786,6 @@ object formCadastroDeClientes: TformCadastroDeClientes
               509011044110A40C4041461004419032E0FFD7B4FF8510FC0159000000004945
               4E44AE426082}
             Proportional = True
-            OnClick = cadeadoSenhaERROClick
           end
         end
       end
@@ -3799,5 +3799,23 @@ object formCadastroDeClientes: TformCadastroDeClientes
     DataSet = DM.QueryClientes
     Left = 668
     Top = 35
+  end
+  object RESTClient1: TRESTClient
+    Params = <>
+    SynchronizedEvents = False
+    Left = 108
+    Top = 340
+  end
+  object RESTRequest1: TRESTRequest
+    Client = RESTClient1
+    Params = <>
+    Response = RESTResponse1
+    SynchronizedEvents = False
+    Left = 220
+    Top = 340
+  end
+  object RESTResponse1: TRESTResponse
+    Left = 340
+    Top = 340
   end
 end
