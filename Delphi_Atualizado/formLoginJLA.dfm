@@ -56,11 +56,6 @@ object formLogin: TformLogin
             Row = 1
           end
           item
-            Column = 0
-            Control = Panel2
-            Row = 6
-          end
-          item
             Column = -1
             Row = -1
           end
@@ -71,8 +66,23 @@ object formLogin: TformLogin
           end
           item
             Column = 0
-            Control = GridPanel2
+            Control = Label2
             Row = 2
+          end
+          item
+            Column = 0
+            Control = GridPanel2
+            Row = 3
+          end
+          item
+            Column = 0
+            Control = lblEsqueceuSenha
+            Row = 5
+          end
+          item
+            Column = 0
+            Control = pnlEntrar
+            Row = 6
           end
           item
             Column = 0
@@ -115,6 +125,7 @@ object formLogin: TformLogin
             Value = 11.111111111111100000
           end>
         TabOrder = 0
+        ExplicitLeft = 0
         DesignSize = (
           582
           664)
@@ -143,31 +154,13 @@ object formLogin: TformLogin
           ExplicitLeft = 158
           ExplicitTop = 84
         end
-        object Panel2: TPanel
-          Left = 198
-          Top = 459
-          Width = 185
-          Height = 41
-          Cursor = crHandPoint
-          Anchors = []
-          Caption = 'Entrar'
-          Color = clHighlight
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWhite
-          Font.Height = -19
-          Font.Name = 'Segoe UI'
-          Font.Style = []
-          ParentBackground = False
-          ParentFont = False
-          TabOrder = 0
-          OnClick = pnlEntrarClick
-        end
         object GridPanel3: TGridPanel
-          Left = 125
-          Top = 295
+          Left = 141
+          Top = 296
           Width = 331
-          Height = 98
-          Anchors = []
+          Height = 106
+          Align = alCustom
+          Anchors = [akTop, akRight, akBottom]
           BevelOuter = bvNone
           ColumnCollection = <
             item
@@ -180,11 +173,6 @@ object formLogin: TformLogin
             end>
           ControlCollection = <
             item
-              Column = 0
-              Control = dbleSenha
-              Row = 0
-            end
-            item
               Column = 1
               Control = cadeadoSenha
               Row = 0
@@ -192,6 +180,16 @@ object formLogin: TformLogin
             item
               Column = 0
               Control = lblAvisoSenha
+              Row = 1
+            end
+            item
+              Column = 0
+              Control = leSenhaLogin
+              Row = 0
+            end
+            item
+              Column = 1
+              Control = Label1
               Row = 1
             end>
           RowCollection = <
@@ -201,27 +199,10 @@ object formLogin: TformLogin
             item
               Value = 50.000000000000000000
             end>
-          TabOrder = 1
+          TabOrder = 0
           DesignSize = (
             331
-            98)
-          object dbleSenha: TDBLabeledEdit
-            Left = 2
-            Top = 24
-            Width = 285
-            Height = 29
-            Anchors = []
-            DataField = 'senha_hash'
-            DataSource = DSLogin
-            PasswordChar = '*'
-            TabOrder = 0
-            TextHint = 'Digite sua senha'
-            EditLabel.Width = 46
-            EditLabel.Height = 21
-            EditLabel.Caption = 'Senha:'
-            EditLabel.ParentShowHint = False
-            EditLabel.ShowHint = True
-          end
+            106)
           object cadeadoSenha: TImage
             Left = 295
             Top = 0
@@ -1716,9 +1697,9 @@ object formLogin: TformLogin
           object lblAvisoSenha: TLabel
             AlignWithMargins = True
             Left = 3
-            Top = 52
+            Top = 56
             Width = 4
-            Height = 43
+            Height = 47
             Align = alLeft
             Font.Charset = DEFAULT_CHARSET
             Font.Color = clRed
@@ -1726,15 +1707,48 @@ object formLogin: TformLogin
             Font.Name = 'Segoe UI'
             Font.Style = []
             ParentFont = False
+            ExplicitTop = 52
             ExplicitHeight = 21
           end
+          object leSenhaLogin: TLabeledEdit
+            Left = 3
+            Top = 24
+            Width = 284
+            Height = 29
+            Anchors = []
+            EditLabel.Width = 46
+            EditLabel.Height = 21
+            EditLabel.Caption = 'Senha:'
+            TabOrder = 0
+            Text = ''
+            TextHint = 'Digite sua senha'
+            ExplicitLeft = 0
+          end
+          object Label1: TLabel
+            Left = 308
+            Top = 69
+            Width = 4
+            Height = 21
+            Anchors = []
+            ExplicitLeft = 290
+            ExplicitTop = 63
+          end
+        end
+        object Label2: TLabel
+          Left = 289
+          Top = 174
+          Width = 4
+          Height = 21
+          Anchors = []
+          ExplicitLeft = 268
         end
         object GridPanel2: TGridPanel
-          Left = 125
-          Top = 148
-          Width = 331
-          Height = 93
-          Anchors = []
+          Left = 140
+          Top = 201
+          Width = 333
+          Height = 92
+          Align = alCustom
+          Anchors = [akLeft, akTop, akRight, akBottom]
           BevelOuter = bvNone
           ColumnCollection = <
             item
@@ -1747,11 +1761,6 @@ object formLogin: TformLogin
             end>
           ControlCollection = <
             item
-              Column = 0
-              Control = dbleUsuario
-              Row = 0
-            end
-            item
               Column = 1
               Control = lblVazio
               Row = 0
@@ -1760,6 +1769,11 @@ object formLogin: TformLogin
               Column = 0
               Control = lblAvisoUsuario
               Row = 1
+            end
+            item
+              Column = 0
+              Control = leUsuario
+              Row = 0
             end>
           RowCollection = <
             item
@@ -1768,26 +1782,10 @@ object formLogin: TformLogin
             item
               Value = 50.000000000000000000
             end>
-          TabOrder = 2
+          TabOrder = 1
           DesignSize = (
-            331
-            93)
-          object dbleUsuario: TDBLabeledEdit
-            Left = 3
-            Top = 24
-            Width = 284
-            Height = 29
-            Anchors = []
-            DataField = 'nome_usuario'
-            DataSource = DSLogin
-            TabOrder = 0
-            TextHint = 'Digite seu usu'#225'rio'
-            EditLabel.Width = 57
-            EditLabel.Height = 21
-            EditLabel.Caption = 'Usu'#225'rio:'
-            EditLabel.ParentShowHint = False
-            EditLabel.ShowHint = True
-          end
+            333
+            92)
           object lblVazio: TLabel
             Left = 308
             Top = 12
@@ -1802,7 +1800,7 @@ object formLogin: TformLogin
             Left = 3
             Top = 49
             Width = 4
-            Height = 41
+            Height = 40
             Align = alLeft
             Font.Charset = DEFAULT_CHARSET
             Font.Color = clRed
@@ -1810,8 +1808,52 @@ object formLogin: TformLogin
             Font.Name = 'Segoe UI'
             Font.Style = []
             ParentFont = False
+            ExplicitTop = 23
             ExplicitHeight = 21
           end
+          object leUsuario: TLabeledEdit
+            Left = 3
+            Top = 24
+            Width = 284
+            Height = 29
+            Anchors = []
+            EditLabel.Width = 57
+            EditLabel.Height = 21
+            EditLabel.Caption = 'Usu'#225'rio:'
+            TabOrder = 0
+            Text = ''
+            TextHint = 'Digite seu email ou nome de usu'#225'rio'
+          end
+        end
+        object lblEsqueceuSenha: TLabel
+          Left = 176
+          Top = 415
+          Width = 225
+          Height = 21
+          Align = alCustom
+          Alignment = taCenter
+          Anchors = [akLeft, akTop, akRight, akBottom]
+          Caption = 'Esqueceu a senha? Troque aqui'
+        end
+        object pnlEntrar: TPanel
+          Left = 198
+          Top = 475
+          Width = 185
+          Height = 41
+          Cursor = crHandPoint
+          Align = alCustom
+          Anchors = [akLeft, akTop, akRight]
+          Caption = 'Entrar'
+          Color = clHighlight
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWhite
+          Font.Height = -19
+          Font.Name = 'Segoe UI'
+          Font.Style = []
+          ParentBackground = False
+          ParentFont = False
+          TabOrder = 2
+          OnClick = pnlEntrarClick
         end
         object lblCadastreAqui: TLabel
           Left = 152
@@ -1821,8 +1863,7 @@ object formLogin: TformLogin
           Anchors = []
           Caption = 'N'#227'o tem um cadastro? Cadastre-se aqui'
           OnClick = lblCadastreAquiClick
-          ExplicitLeft = 194
-          ExplicitTop = 651
+          ExplicitTop = 534
         end
       end
       object GridPanel4: TGridPanel

@@ -43,15 +43,11 @@ type
     leCidade: TLabeledEdit;
     GridPanel7: TGridPanel;
     Label12: TLabel;
-    ComboBox2: TComboBox;
-    GridPanel5: TGridPanel;
-    Label10: TLabel;
-    leSenha: TLabeledEdit;
-    cadeadoSenhaERRO: TImage;
+    cbUF: TComboBox;
     GridPanel2: TGridPanel;
     Label9: TLabel;
-    LabeledEdit1: TLabeledEdit;
-    Image1: TImage;
+    leSenha: TLabeledEdit;
+    cadeadoSenha: TImage;
     procedure pnlCadastrarClick(Sender: TObject);
     procedure cadeadoSenhaERROClick(Sender: TObject);
     procedure cadeadoConfSenhaClick(Sender: TObject);
@@ -75,10 +71,10 @@ uses formPáginaDeInícioFunc;
 procedure TformCadastroDeClientes.cadeadoSenhaERROClick(Sender: TObject);
 begin
     if leSenha.PasswordChar = '*' then begin
-    cadeadoSenhaERRO.Picture.LoadFromFile('C:\Users\Kamilly Souza\Desktop\Projeto Delphi-JLA\Delphi_Atualizado\Assets\cadeado azul desbloqueado.png');
+    cadeadoSenha.Picture.LoadFromFile('C:\Users\Kamilly Souza\Desktop\Projeto Delphi-JLA\Delphi_Atualizado\Assets\cadeado azul desbloqueado.png');
     leSenha.PasswordChar := #0;
     end else if leSenha.PasswordChar = #0 then begin
-    cadeadoSenhaERRO.Picture.LoadFromFile('C:\Users\Kamilly Souza\Desktop\Projeto Delphi-JLA\Delphi_Atualizado\Assets\cadeado azul bloqueado.png');
+    cadeadoSenha.Picture.LoadFromFile('C:\Users\Kamilly Souza\Desktop\Projeto Delphi-JLA\Delphi_Atualizado\Assets\cadeado azul bloqueado.png');
     leSenha.PasswordChar := '*';
     end;
 end;

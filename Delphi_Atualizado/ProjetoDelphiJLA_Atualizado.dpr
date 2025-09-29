@@ -42,10 +42,10 @@ begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
   Application.Title := 'Aviso';
+  Application.CreateForm(TformLogin, formLogin);
   Application.CreateForm(TformCadastroDeClientes, formCadastroDeClientes);
   Application.CreateForm(TframeCadSenhaFuncionario, frameCadSenhaFuncionario);
   Application.CreateForm(TformPáginaInicialFunc, formPáginaInicialFunc);
-  Application.CreateForm(TformLogin, formLogin);
   Application.CreateForm(TformCadastroFuncionarios, formCadastroFuncionarios);
   Application.CreateForm(TformPáginaInicialADM, formPáginaInicialADM);
   Application.CreateForm(TformPáginaInicialCli, formPáginaInicialCli);

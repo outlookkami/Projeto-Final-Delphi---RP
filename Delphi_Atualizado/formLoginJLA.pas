@@ -17,14 +17,8 @@ type
     GridPanel1: TGridPanel;
     Label3: TLabel;
     Label4: TLabel;
-    Panel2: TPanel;
     GridPanel3: TGridPanel;
-    dbleSenha: TDBLabeledEdit;
     cadeadoSenha: TImage;
-    GridPanel2: TGridPanel;
-    dbleUsuario: TDBLabeledEdit;
-    lblVazio: TLabel;
-    lblCadastreAqui: TLabel;
     GridPanel4: TGridPanel;
     lblVazio001: TLabel;
     lblVazio002: TLabel;
@@ -34,9 +28,18 @@ type
     lblVazio006: TLabel;
     imgFechar: TImage;
     Image1: TImage;
-    lblAvisoUsuario: TLabel;
     lblAvisoSenha: TLabel;
     DSLogin: TDataSource;
+    leSenhaLogin: TLabeledEdit;
+    Label1: TLabel;
+    Label2: TLabel;
+    GridPanel2: TGridPanel;
+    lblVazio: TLabel;
+    lblAvisoUsuario: TLabel;
+    leUsuario: TLabeledEdit;
+    lblEsqueceuSenha: TLabel;
+    pnlEntrar: TPanel;
+    lblCadastreAqui: TLabel;
     procedure pnlEntrarClick(Sender: TObject);
     procedure cadeadoSenhaClick(Sender: TObject);
     procedure imgFecharClick(Sender: TObject);
@@ -58,12 +61,12 @@ implementation
 
 procedure TformLogin.HideShowSenha;
 begin
-    if dbleSenha.PasswordChar = '*' then begin
+    if leSenhaLogin.PasswordChar = '*' then begin
     cadeadoSenha.Picture.LoadFromFile('C:\Users\Kamilly Souza\Desktop\Projeto Delphi-JLA\Delphi_Atualizado\Assets\cadeado azul desbloqueado.png');
-    dbleSenha.PasswordChar := #0;
-    end else if dbleSenha.PasswordChar = #0 then begin
+    leSenhaLogin.PasswordChar := #0;
+    end else if leSenhaLogin.PasswordChar = #0 then begin
     cadeadoSenha.Picture.LoadFromFile('C:\Users\Kamilly Souza\Desktop\Projeto Delphi-JLA\Delphi_Atualizado\Assets\cadeado azul bloqueado.png');
-    dbleSenha.PasswordChar := '*';
+    leSenhaLogin.PasswordChar := '*';
     end;
 end;
 
@@ -85,21 +88,21 @@ end;
 procedure TformLogin.pnlEntrarClick(Sender: TObject);
 //var senha, hash: String;
 begin
-  if (dbleSenha.Text = '') or (dbleUsuario.Text = '') then begin
+  if (leSenhaLogin.Text = '') or (leUsuario.Text = '') then begin
     ShowMessage('Preencha todos os campos.');
 
   end;
 
-  if dbleSenha.Text = '' then begin
+  if leSenhaLogin.Text = '' then begin
       lblAvisoSenha.Caption := 'Informe sua senha';
-      dbleSenha.SetFocus;
+      leSenhaLogin.SetFocus;
   end else begin
       lblAvisoSenha.Caption := '';
   end;
 
-  if dbleUsuario.Text = '' then begin
-      lblAvisoUsuario.Caption := 'Informe seu código de usuário';
-      dbleUsuario.SetFocus;
+  if leUsuario.Text = '' then begin
+      lblAvisoUsuario.Caption := 'Informe seu usuário';
+      leUsuario.SetFocus;
   end else begin
         lblAvisoUsuario.Caption := '';
   end;

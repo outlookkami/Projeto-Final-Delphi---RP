@@ -48,6 +48,7 @@ type
     procedure btnpPerfilClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure frameCrudClientes1cadeadoSenhaClick(Sender: TObject);
+    procedure CorMenu;
     //procedure crudClibtnIncluirCliClick(Sender: TObject);
   private
     { Private declarations }
@@ -117,27 +118,47 @@ end;
 procedure TformPáginaInicialFunc.btnpClientesClick(Sender: TObject);
 begin
     PageControl1.ActivePageIndex := 6;
-    btnpClientes.Font.Color := clRed;
+    CorMenu;
 end;
+
+
 
 procedure TformPáginaInicialFunc.btnpVeiculosClick(Sender: TObject);
 begin
     PageControl1.ActivePageIndex := 7;
+    CorMenu;
 end;
 
-//procedure TformPáginaInicialFunc.crudClibtnIncluirCliClick(Sender: TObject);
-//begin
-//  crudCli.btnIncluirCliClick(Sender);
-//end;
+
 
 procedure TformPáginaInicialFunc.btnpPerfilClick(Sender: TObject);
 begin
     PageControl1.ActivePageIndex := 8;
 end;
 
+procedure TformPáginaInicialFunc.CorMenu();
+begin
+    btnpDashboard.Color := ClHighlight;
+    btnpPedidos.Color := ClHighlight;
+    btnpOrcamentos.Color := ClHighlight;
+    btnpOS.Color := ClHighlight;
+    btnpEstoque.Color := ClHighlight;
+    btnpClientes.Color := ClHighlight;
+    btnpVeiculos.Color := ClHighlight;
+    btnpPerfil.Color := ClHighlight;
+    //clDarkBlue
+
+
+end;
+
 procedure TformPáginaInicialFunc.Image1Click(Sender: TObject);
 begin
     Close;
 end;
+
+//procedure TformPáginaInicialFunc.crudClibtnIncluirCliClick(Sender: TObject);
+//begin
+//  crudCli.btnIncluirCliClick(Sender);
+//end;
 
 end.
