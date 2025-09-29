@@ -5,7 +5,8 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Mask, Vcl.ExtCtrls,
-  Vcl.DBCtrls, frameFormularioPedido, System.Hash, Vcl.Imaging.pngimage, System.UITypes, frameCadastroVeiculo, DataModuleInicial;
+  Vcl.DBCtrls, frameFormularioPedido, System.Hash, Vcl.Imaging.pngimage, System.UITypes, DataModuleNormal, frameCadastroVeiculo,
+  EComponent, Data.DB;
 
 type
   TformCadastroDeClientes = class(TForm)
@@ -15,45 +16,51 @@ type
     Label1: TLabel;
     gridPanelLogin: TGridPanel;
     lblV1: TLabel;
-    dbleNomeCompleto: TDBLabeledEdit;
     lblV2: TLabel;
-    dbleTelefone: TDBLabeledEdit;
     Label3: TLabel;
-    dbleEmail: TDBLabeledEdit;
     Label4: TLabel;
-    dbleCEP: TDBLabeledEdit;
     Label5: TLabel;
-    dbleEndereco: TDBLabeledEdit;
     Label6: TLabel;
     GridPanel3: TGridPanel;
-    dbleNumero: TDBLabeledEdit;
-    dbleBairro: TDBLabeledEdit;
     Label7: TLabel;
     GridPanel4: TGridPanel;
-    dbleCidade: TDBLabeledEdit;
-    dbleUF: TDBLabeledEdit;
-    Label8: TLabel;
-    Label9: TLabel;
     Label11: TLabel;
     pnlCadastrar: TPanel;
     Label13: TLabel;
-    GridPanel5: TGridPanel;
-    Label14: TLabel;
     GridPanel6: TGridPanel;
-    Label10: TLabel;
-    leSenha: TLabeledEdit;
-    cadeadoSenha: TImage;
     Label2: TLabel;
     leConfSenha: TLabeledEdit;
     cadeadoConfSenha: TImage;
+    EurekaLogEvents1: TEurekaLogEvents;
+    DSClientesCad: TDataSource;
+    leNome: TLabeledEdit;
+    leTelefone: TLabeledEdit;
+    leEmail: TLabeledEdit;
+    leCEP: TLabeledEdit;
+    leEndereco: TLabeledEdit;
+    leNumero: TLabeledEdit;
+    leBairro: TLabeledEdit;
+    leCidade: TLabeledEdit;
+    GridPanel7: TGridPanel;
+    Label12: TLabel;
+    ComboBox2: TComboBox;
+    GridPanel5: TGridPanel;
+    Label10: TLabel;
+    leSenha: TLabeledEdit;
+    cadeadoSenhaERRO: TImage;
+    GridPanel2: TGridPanel;
+    Label9: TLabel;
+    LabeledEdit1: TLabeledEdit;
+    Image1: TImage;
     procedure pnlCadastrarClick(Sender: TObject);
+    procedure cadeadoSenhaERROClick(Sender: TObject);
+    procedure cadeadoConfSenhaClick(Sender: TObject);
 
   private
     { Private declarations }
   public
     { Public declarations }
-    procedure cadeadoSenhaClick(Sender: TObject);
-    procedure cadeadoConfSenhaClick(Sender: TObject);
+
   end;
 
 var
@@ -63,13 +70,15 @@ implementation
 
 {$R *.dfm}
 
-procedure TformCadastroDeClientes.cadeadoSenhaClick(Sender: TObject);
+uses formPáginaDeInícioFunc;
+
+procedure TformCadastroDeClientes.cadeadoSenhaERROClick(Sender: TObject);
 begin
     if leSenha.PasswordChar = '*' then begin
-    cadeadoSenha.Picture.LoadFromFile('C:\Users\Kamilly Souza\Desktop\Projeto Delphi-JLA\Delphi_Atualizado\Assets\cadeado azul desbloqueado.png');
+    cadeadoSenhaERRO.Picture.LoadFromFile('C:\Users\Kamilly Souza\Desktop\Projeto Delphi-JLA\Delphi_Atualizado\Assets\cadeado azul desbloqueado.png');
     leSenha.PasswordChar := #0;
     end else if leSenha.PasswordChar = #0 then begin
-    cadeadoSenha.Picture.LoadFromFile('C:\Users\Kamilly Souza\Desktop\Projeto Delphi-JLA\Delphi_Atualizado\Assets\cadeado azul bloqueado.png');
+    cadeadoSenhaERRO.Picture.LoadFromFile('C:\Users\Kamilly Souza\Desktop\Projeto Delphi-JLA\Delphi_Atualizado\Assets\cadeado azul bloqueado.png');
     leSenha.PasswordChar := '*';
     end;
 end;
@@ -88,7 +97,7 @@ end;
 procedure TformCadastroDeClientes.pnlCadastrarClick(Sender: TObject);
 begin
     if leConfSenha.Text = leSenha.Text then begin
-      THashSHA1.GetHashString(leConfSenha.Text);
+      DM.QueryClientes.SQL.Text := 'INSERT INTO TABLE "Clientes" (hash_senha_cli) VALUES (THashSHA1.GetHashString(leConfSenha.Text);)';
 
       if MessageDlg('Cadastro finalizado com sucesso! Deseja incluir seu veículo?',
       mtConfirmation, [mbYes, mbNo], 0) = mrYes then frameCadVeiculo.Show;
@@ -96,6 +105,9 @@ begin
     end else begin
        ShowMessage('Senhas não compatíveis. Tente novamente');
     end;
+    formPáginaInicialFunc.Show;
       end;
+
+
 
 end.

@@ -5,8 +5,8 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.ComCtrls,
-  Vcl.Imaging.pngimage, Vcl.StdCtrls, frameTESTEFormularioPedido, framePerfil, crudClientes,
-  Data.Bind.EngExt, Vcl.Bind.DBEngExt, Data.Bind.Components, crudClientesSemErro;
+  Vcl.Imaging.pngimage, Vcl.StdCtrls, Data.Bind.EngExt, Vcl.Bind.DBEngExt, Data.Bind.Components,
+  dataModuleNormal, crudClientesSemErro, frameTESTEFormularioPedido, framePerfil, crudClientes;
 
 type
   TformPáginaInicialFunc = class(TForm)

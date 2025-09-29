@@ -12450,6 +12450,7 @@
               StyleElements = [seFont, seClient, seBorder]
             end
             inherited gridPanelLogin: TGridPanel
+              Left = 1
               ControlCollection = <
                 item
                   Column = 0
@@ -12562,6 +12563,7 @@
                   Row = 18
                 end>
               StyleElements = [seFont, seClient, seBorder]
+              ExplicitLeft = 1
               inherited lblV1: TLabel
                 StyleElements = [seFont, seClient, seBorder]
               end

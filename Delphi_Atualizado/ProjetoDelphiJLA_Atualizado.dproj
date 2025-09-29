@@ -71,6 +71,9 @@
         <UWP_DelphiLogo44>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_44.png</UWP_DelphiLogo44>
         <UWP_DelphiLogo150>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_150.png</UWP_DelphiLogo150>
         <SanitizedProjectName>ProjetoDelphiJLA_Atualizado</SanitizedProjectName>
+        <DCC_Define>EUREKALOG_VER7;EUREKALOG;$(DCC_Define)</DCC_Define>
+        <DCC_MapFile>3</DCC_MapFile>
+        <DCC_GenerateStackFrames>true</DCC_GenerateStackFrames>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
         <DCC_UsePackage>vclwinx;fmx;vclie;DbxCommonDriver;bindengine;IndyIPCommon;VCLRESTComponents;FireDACCommonODBC;FireDACCommonDriver;appanalytics;IndyProtocols;vclx;Skia.Package.RTL;IndyIPClient;dbxcds;vcledge;bindcompvclwinx;FmxTeeUI;bindcompfmx;inetdb;ibmonitor;FireDACSqliteDriver;DbxClientDriver;Tee;soapmidas;vclactnband;TeeUI;fmxFireDAC;dbexpress;DBXMySQLDriver;VclSmp;inet;vcltouch;fmxase;dbrtl;Skia.Package.FMX;fmxdae;TeeDB;FireDACMSAccDriver;CustomIPTransport;vcldsnap;DBXInterBaseDriver;IndySystem;Skia.Package.VCL;vcldb;ibxbindings;vclFireDAC;bindcomp;FireDACCommon;IndyCore;RESTBackendComponents;bindcompdbx;rtl;FireDACMySQLDriver;FireDACADSDriver;RESTComponents;DBXSqliteDriver;vcl;IndyIPServer;dsnapxml;dsnapcon;adortl;vclimg;FireDACPgDriver;FireDAC;inetdbxpress;xmlrtl;tethering;ibxpress;bindcompvcl;dsnap;CloudService;vclib;fmxobj;bindcompvclsmp;FMXTee;soaprtl;soapserver;FireDACIBDriver;$(DCC_UsePackage)</DCC_UsePackage>
@@ -128,76 +131,60 @@
         </DelphiCompile>
         <DCCReference Include="formLoginJLA.pas">
             <Form>formLogin</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="formPáginaDeInícioFunc.pas">
             <Form>formPáginaInicialFunc</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="frameCadastroFuncionario.pas">
             <Form>frameCadastroFunc</Form>
-            <FormType>dfm</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
         <DCCReference Include="formCadastroFuncionario.pas">
             <Form>formCadastroFuncionarios</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="frameCadastroDeSenhaFuncionário.pas">
             <Form>frameCadSenhaFuncionario</Form>
-            <FormType>dfm</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
         <DCCReference Include="frameFormularioPedido.pas">
             <Form>frameFormularioDePedido</Form>
-            <FormType>dfm</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
         <DCCReference Include="formCadastroClientes.pas">
             <Form>formCadastroDeClientes</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="DataModuleInicial.pas">
             <Form>dtmInicial</Form>
-            <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
         <DCCReference Include="formPáginaDeInícioClientes.pas">
             <Form>formPáginaInicialCli</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="formPáginaDeInícioADM.pas">
             <Form>formPáginaInicialADM</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="framePerfil.pas">
             <Form>framePerfilUsuário</Form>
-            <FormType>dfm</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
         <DCCReference Include="frameSobreNos.pas">
             <Form>framePáginaSobreNos</Form>
-            <FormType>dfm</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
         <DCCReference Include="crudFuncionarios.pas">
             <Form>Frame2</Form>
-            <FormType>dfm</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
         <DCCReference Include="frameCadastroVeiculo.pas">
             <Form>frameCadVeiculo</Form>
-            <FormType>dfm</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
         <DCCReference Include="dataModuleNormal.pas">
             <Form>DM</Form>
-            <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
         <DCCReference Include="crudClientesSemErro.pas">
             <Form>frameCrudClientes</Form>
-            <FormType>dfm</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
         <DCCReference Include="unitTestesDeProcedures.pas"/>

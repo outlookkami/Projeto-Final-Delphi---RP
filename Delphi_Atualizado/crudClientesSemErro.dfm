@@ -139,10 +139,11 @@ object frameCrudClientes: TframeCrudClientes
     end
     object DBGrid1: TDBGrid
       Left = 184
-      Top = 161
+      Top = 165
       Width = 755
       Height = 537
       Anchors = [akLeft, akTop, akRight, akBottom]
+      DataSource = DSClientes
       TabOrder = 1
       TitleFont.Charset = DEFAULT_CHARSET
       TitleFont.Color = clWindowText
@@ -152,46 +153,57 @@ object frameCrudClientes: TframeCrudClientes
       Columns = <
         item
           Expanded = False
+          FieldName = 'codigo_cliente'
           Visible = True
         end
         item
           Expanded = False
+          FieldName = 'nome_cliente'
           Visible = True
         end
         item
           Expanded = False
+          FieldName = 'telefone_cliente'
           Visible = True
         end
         item
           Expanded = False
+          FieldName = 'email_cliente'
           Visible = True
         end
         item
           Expanded = False
+          FieldName = 'cep_cliente'
           Visible = True
         end
         item
           Expanded = False
+          FieldName = 'endereco_cliente'
           Visible = True
         end
         item
           Expanded = False
+          FieldName = 'num_endereco'
           Visible = True
         end
         item
           Expanded = False
+          FieldName = 'bairro'
           Visible = True
         end
         item
           Expanded = False
+          FieldName = 'cidade'
           Visible = True
         end
         item
           Expanded = False
+          FieldName = 'uf'
           Visible = True
         end
         item
           Expanded = False
+          FieldName = 'veiculo'
           Visible = True
         end>
     end
@@ -3866,6 +3878,7 @@ object frameCrudClientes: TframeCrudClientes
     end
   end
   object DSClientes: TDataSource
+    DataSet = DM.QueryClientes
     Left = 112
     Top = 168
   end

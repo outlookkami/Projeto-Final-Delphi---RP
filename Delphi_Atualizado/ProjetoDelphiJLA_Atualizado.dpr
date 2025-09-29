@@ -3,6 +3,20 @@ program ProjetoDelphiJLA_Atualizado;
 
 
 uses
+  {$IFDEF EurekaLog}
+  EMemLeaks,
+  EResLeaks,
+  EDebugJCL,
+  EDebugMap,
+  EDebugExports,
+  EFixSafeCallException,
+  EMapWin32,
+  EAppVCL,
+  EDialogWinAPIMSClassic,
+  EDialogWinAPIEurekaLogDetailed,
+  EDialogWinAPIStepsToReproduce,
+  ExceptionLog7,
+  {$ENDIF EurekaLog}
   Vcl.Forms,
   formLoginJLA in 'formLoginJLA.pas' {formLogin},
   formPáginaDeInícioFunc in 'formPáginaDeInícioFunc.pas' {formPáginaInicialFunc},
@@ -28,8 +42,9 @@ begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
   Application.Title := 'Aviso';
-  Application.CreateForm(TformPáginaInicialFunc, formPáginaInicialFunc);
   Application.CreateForm(TformCadastroDeClientes, formCadastroDeClientes);
+  Application.CreateForm(TframeCadSenhaFuncionario, frameCadSenhaFuncionario);
+  Application.CreateForm(TformPáginaInicialFunc, formPáginaInicialFunc);
   Application.CreateForm(TformLogin, formLogin);
   Application.CreateForm(TformCadastroFuncionarios, formCadastroFuncionarios);
   Application.CreateForm(TformPáginaInicialADM, formPáginaInicialADM);
@@ -40,8 +55,8 @@ begin
   Application.CreateForm(TDM, DM);
   Application.CreateForm(TframeCrudClientes, frameCrudClientes);
   Application.CreateForm(TframeFormularioDePedido, frameFormularioDePedido);
-  Application.CreateForm(TframeCadSenhaFuncionario, frameCadSenhaFuncionario);
   Application.CreateForm(TframePerfilUsuário, framePerfilUsuário);
   Application.CreateForm(TframePáginaSobreNos, framePáginaSobreNos);
   Application.Run;
 end.
+
