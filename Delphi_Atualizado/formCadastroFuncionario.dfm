@@ -617,4 +617,22 @@ object formCadastroFuncionarios: TformCadastroFuncionarios
       end
     end
   end
+  object RESTClient1: TRESTClient
+    Params = <>
+    SynchronizedEvents = False
+    Left = 76
+    Top = 332
+  end
+  object RESTRequest1: TRESTRequest
+    Client = RESTClient1
+    Params = <>
+    Response = RESTResponse1
+    SynchronizedEvents = False
+    Left = 180
+    Top = 332
+  end
+  object RESTResponse1: TRESTResponse
+    Left = 292
+    Top = 332
+  end
 end

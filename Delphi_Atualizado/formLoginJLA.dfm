@@ -125,7 +125,6 @@ object formLogin: TformLogin
             Value = 11.111111111111100000
           end>
         TabOrder = 0
-        ExplicitLeft = 0
         DesignSize = (
           582
           664)
@@ -1707,7 +1706,6 @@ object formLogin: TformLogin
             Font.Name = 'Segoe UI'
             Font.Style = []
             ParentFont = False
-            ExplicitTop = 52
             ExplicitHeight = 21
           end
           object leSenhaLogin: TLabeledEdit
@@ -1722,7 +1720,6 @@ object formLogin: TformLogin
             TabOrder = 0
             Text = ''
             TextHint = 'Digite sua senha'
-            ExplicitLeft = 0
           end
           object Label1: TLabel
             Left = 308
@@ -1808,7 +1805,6 @@ object formLogin: TformLogin
             Font.Name = 'Segoe UI'
             Font.Style = []
             ParentFont = False
-            ExplicitTop = 23
             ExplicitHeight = 21
           end
           object leUsuario: TLabeledEdit
@@ -1828,7 +1824,7 @@ object formLogin: TformLogin
         object lblEsqueceuSenha: TLabel
           Left = 176
           Top = 415
-          Width = 225
+          Width = 215
           Height = 21
           Align = alCustom
           Alignment = taCenter
@@ -46863,7 +46859,7 @@ object formLogin: TformLogin
           007440ADCBC3B93D8C000949B3D2D4FAB07A2D1184B804835FD5DD7E0F08D594
           AD29C7769DF0FF1542FD17098AE1CAD8DA74500000000049454E44AE426082}
         Stretch = True
-        ExplicitTop = -1
+        ExplicitLeft = -1
       end
     end
   end

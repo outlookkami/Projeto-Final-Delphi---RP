@@ -34,7 +34,9 @@ uses
   frameCadastroVeiculo in 'frameCadastroVeiculo.pas' {frameCadVeiculo: TFrame},
   dataModuleNormal in 'dataModuleNormal.pas' {DM: TDataModule},
   crudClientesSemErro in 'crudClientesSemErro.pas' {frameCrudClientes: TFrame},
-  unitTestesDeProcedures in 'unitTestesDeProcedures.pas';
+  unitTestesDeProcedures in 'unitTestesDeProcedures.pas',
+  frameTrocarSenhaUsuario in 'frameTrocarSenhaUsuario.pas' {Frame1: TFrame},
+  formPortfolio in 'formPortfolio.pas' {Form1};
 
 {$R *.res}
 
@@ -57,6 +59,7 @@ begin
   Application.CreateForm(TframeFormularioDePedido, frameFormularioDePedido);
   Application.CreateForm(TframePerfilUsuário, framePerfilUsuário);
   Application.CreateForm(TframePáginaSobreNos, framePáginaSobreNos);
+  Application.CreateForm(TForm1, Form1);
   Application.Run;
 end.
 

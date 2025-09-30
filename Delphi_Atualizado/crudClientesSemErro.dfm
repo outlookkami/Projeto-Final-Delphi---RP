@@ -138,7 +138,7 @@ object frameCrudClientes: TframeCrudClientes
     end
     object DBGrid1: TDBGrid
       Left = 184
-      Top = 165
+      Top = 144
       Width = 755
       Height = 537
       Anchors = [akLeft, akTop, akRight, akBottom]
@@ -158,6 +158,7 @@ object frameCrudClientes: TframeCrudClientes
         item
           Expanded = False
           FieldName = 'nome_cliente'
+          Width = 376
           Visible = True
         end
         item
@@ -198,6 +199,7 @@ object frameCrudClientes: TframeCrudClientes
         item
           Expanded = False
           FieldName = 'uf'
+          Width = 23
           Visible = True
         end
         item

@@ -171,6 +171,7 @@ object frameCadSenhaFuncionario: TframeCadSenhaFuncionario
           ParentBackground = False
           ParentFont = False
           TabOrder = 1
+          OnClick = pnlBotaoCadastrarSenhaClick
         end
         object GridPanel5: TGridPanel
           Left = 36

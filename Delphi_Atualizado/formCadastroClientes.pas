@@ -68,7 +68,7 @@ const urlConsultaCep = 'https://brasilapi.com.br/api/cep/v1/%s';
 
 var
   formCadastroDeClientes: TformCadastroDeClientes;
-  objetoJson: TJSONObject;
+
 
 implementation
 
@@ -77,7 +77,9 @@ implementation
 uses formPáginaDeInícioFunc;
 
 procedure TformCadastroDeClientes.leCEPChange(Sender: TObject);
-var CEP: String;
+var
+  CEP: String;
+  objetoJson: TJSONObject;
 begin
     CEP := trim(leCEP.Text);
 
@@ -133,6 +135,6 @@ begin
        ShowMessage('Senhas não compatíveis. Tente novamente');
     end;
     formPáginaInicialFunc.Show;
-      end;
+end;
 
 end.

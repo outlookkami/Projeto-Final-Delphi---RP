@@ -1,94 +1,44 @@
-object formCadastroDeClientes: TformCadastroDeClientes
+object Frame1: TFrame1
   Left = 0
   Top = 0
-  Caption = 'formCadastroDeClientes'
-  ClientHeight = 719
-  ClientWidth = 1168
-  Color = clBtnFace
-  Font.Charset = DEFAULT_CHARSET
-  Font.Color = clWindowText
-  Font.Height = -12
-  Font.Name = 'Segoe UI'
-  Font.Style = []
-  TextHeight = 15
-  object GridPanel1: TGridPanel
-    AlignWithMargins = True
-    Left = 3
-    Top = 3
-    Width = 1162
-    Height = 713
-    Align = alClient
-    ColumnCollection = <
-      item
-        Value = 50.000000000000000000
-      end
-      item
-        Value = 50.000000000000000000
-      end>
-    ControlCollection = <
-      item
-        Column = 0
-        Control = pnlilustrativo
-        Row = 0
-      end
-      item
-        Column = 1
-        Control = pnlLogin
-        Row = 0
-      end>
-    RowCollection = <
-      item
-        Value = 100.000000000000000000
-      end>
-    ShowCaption = False
+  Width = 640
+  Height = 480
+  TabOrder = 0
+  object pnlSenhaFuncionario: TPanel
+    Left = -33
+    Top = 40
+    Width = 673
+    Height = 433
+    Color = clHighlight
+    ParentBackground = False
     TabOrder = 0
-    ExplicitLeft = 8
-    ExplicitTop = -2
-    object pnlilustrativo: TPanel
+    object lblCrieNovaSenha: TLabel
       Left = 1
       Top = 1
-      Width = 580
-      Height = 711
-      Align = alClient
-      Color = clHighlight
-      ParentBackground = False
-      TabOrder = 0
-      ExplicitLeft = 0
-      ExplicitTop = -4
+      Width = 671
+      Height = 38
+      Align = alTop
+      Alignment = taCenter
+      Caption = 'Crie uma nova senha'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -28
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+      ExplicitWidth = 259
     end
-    object pnlLogin: TPanel
-      Left = 641
-      Top = 24
-      Width = 477
-      Height = 656
-      Align = alCustom
-      Anchors = [akLeft, akTop, akRight, akBottom]
-      TabOrder = 1
-      object Label1: TLabel
-        Left = 1
-        Top = 1
-        Width = 475
-        Height = 50
-        Align = alTop
-        Alignment = taCenter
-        Caption = 'Cadastro'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -37
-        Font.Name = 'Segoe UI'
-        Font.Style = []
-        ParentFont = False
-        ExplicitTop = 4
-      end
-      object gridPanelLogin: TGridPanel
-        Left = 8
-        Top = 57
-        Width = 464
-        Height = 598
-        Align = alCustom
-        Anchors = [akLeft, akTop, akRight, akBottom]
-        BevelEdges = []
-        BevelOuter = bvNone
+    object pnlCadSenhaFunc: TPanel
+      Left = 104
+      Top = 68
+      Width = 473
+      Height = 297
+      TabOrder = 0
+      object GridPanel1: TGridPanel
+        Left = 32
+        Top = 24
+        Width = 409
+        Height = 249
         ColumnCollection = <
           item
             Value = 100.000000000000000000
@@ -96,496 +46,144 @@ object formCadastroDeClientes: TformCadastroDeClientes
         ControlCollection = <
           item
             Column = 0
-            Control = lblV1
-            Row = 0
-          end
-          item
-            Column = 0
-            Control = lblV2
-            Row = 2
-          end
-          item
-            Column = 0
-            Control = Label3
-            Row = 4
-          end
-          item
-            Column = 0
-            Control = Label4
-            Row = 6
-          end
-          item
-            Column = 0
-            Control = Label5
-            Row = 8
-          end
-          item
-            Column = 0
-            Control = Label6
-            Row = 10
-          end
-          item
-            Column = 0
-            Control = GridPanel3
-            Row = 11
-          end
-          item
-            Column = 0
-            Control = Label7
-            Row = 12
-          end
-          item
-            Column = 0
-            Control = GridPanel4
-            Row = 13
-          end
-          item
-            Column = 0
-            Control = Label11
-            Row = 19
-          end
-          item
-            Column = 0
-            Control = pnlCadastrar
-            Row = 20
-          end
-          item
-            Column = 0
-            Control = Label13
-            Row = 21
-          end
-          item
-            Column = 0
-            Control = GridPanel6
-            Row = 18
-          end
-          item
-            Column = 0
-            Control = leNome
+            Control = Label2
             Row = 1
           end
           item
             Column = 0
-            Control = leTelefone
+            Control = dbleUsuarioNovaSenha
+            Row = 0
+          end
+          item
+            Column = 0
+            Control = Label1
             Row = 3
           end
           item
             Column = 0
-            Control = leEmail
+            Control = Label3
             Row = 5
           end
           item
             Column = 0
-            Control = leCEP
-            Row = 7
+            Control = pnlBotaoTrocarSenha
+            Row = 6
           end
           item
             Column = 0
-            Control = leEndereco
-            Row = 9
+            Control = GridPanel5
+            Row = 2
           end
           item
             Column = 0
-            Control = GridPanel2
-            Row = 14
+            Control = GridPanel6
+            Row = 4
           end>
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -16
-        Font.Name = 'Segoe UI'
-        Font.Style = []
-        ParentFont = False
         RowCollection = <
           item
-            Value = 4.545454545454546000
+            Value = 12.500000000000000000
           end
           item
-            Value = 4.545454545454546000
+            Value = 12.500000000000000000
           end
           item
-            Value = 4.545454545454546000
+            Value = 12.500000000000000000
           end
           item
-            Value = 4.545454545454546000
+            Value = 12.500000000000000000
           end
           item
-            Value = 4.545454545454546000
+            Value = 12.500000000000000000
           end
           item
-            Value = 4.545454545454546000
+            Value = 12.500000000000000000
           end
           item
-            Value = 4.545454545454546000
+            Value = 12.500000000000000000
           end
           item
-            Value = 4.545454545454546000
-          end
-          item
-            Value = 4.545454545454546000
-          end
-          item
-            Value = 4.545454545454546000
-          end
-          item
-            Value = 4.545454545454546000
-          end
-          item
-            Value = 4.545454545454546000
-          end
-          item
-            Value = 4.545454545454546000
-          end
-          item
-            Value = 4.545454545454546000
-          end
-          item
-            Value = 4.545454545454546000
-          end
-          item
-            Value = 4.545454545454546000
-          end
-          item
-            Value = 4.545454545454546000
-          end
-          item
-            Value = 4.545454545454546000
-          end
-          item
-            Value = 4.545454545454546000
-          end
-          item
-            Value = 4.545454545454546000
-          end
-          item
-            Value = 4.545454545454546000
-          end
-          item
-            Value = 4.545454545454532000
-          end
-          item
-            SizeStyle = ssAuto
+            Value = 12.500000000000000000
           end>
         TabOrder = 0
         DesignSize = (
-          464
-          598)
-        object lblV1: TLabel
-          Left = 230
-          Top = 3
-          Width = 4
-          Height = 21
+          409
+          249)
+        object Label2: TLabel
+          Left = 203
+          Top = 40
+          Width = 3
+          Height = 15
           Anchors = []
-          ExplicitLeft = 185
-          ExplicitTop = 4
+          ExplicitLeft = 187
         end
-        object lblV2: TLabel
-          Left = 230
-          Top = 57
-          Width = 4
-          Height = 21
+        object dbleUsuarioNovaSenha: TDBLabeledEdit
+          Left = 36
+          Top = 25
+          Width = 337
+          Height = 29
           Anchors = []
-          ExplicitLeft = 227
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -16
+          Font.Name = 'Segoe UI'
+          Font.Style = []
+          ParentFont = False
+          TabOrder = 0
+          EditLabel.Width = 57
+          EditLabel.Height = 21
+          EditLabel.Caption = 'Usu'#225'rio:'
+          EditLabel.Font.Charset = DEFAULT_CHARSET
+          EditLabel.Font.Color = clWindowText
+          EditLabel.Font.Height = -16
+          EditLabel.Font.Name = 'Segoe UI'
+          EditLabel.Font.Style = []
+          EditLabel.ParentFont = False
+        end
+        object Label1: TLabel
+          Left = 203
+          Top = 101
+          Width = 3
+          Height = 15
+          Anchors = []
+          ExplicitLeft = 187
         end
         object Label3: TLabel
-          Left = 230
-          Top = 112
-          Width = 4
-          Height = 21
+          Left = 203
+          Top = 163
+          Width = 3
+          Height = 15
           Anchors = []
-          ExplicitLeft = 193
-          ExplicitTop = 125
+          ExplicitLeft = 187
         end
-        object Label4: TLabel
-          Left = 230
-          Top = 166
-          Width = 4
-          Height = 21
-          Anchors = []
-          ExplicitLeft = 193
-          ExplicitTop = 185
-        end
-        object Label5: TLabel
-          Left = 230
-          Top = 220
-          Width = 4
-          Height = 21
-          Anchors = []
-          ExplicitLeft = 193
-          ExplicitTop = 250
-        end
-        object Label6: TLabel
-          Left = 230
-          Top = 275
-          Width = 4
-          Height = 21
-          Anchors = []
-          ExplicitLeft = 193
-          ExplicitTop = 311
-        end
-        object GridPanel3: TGridPanel
-          Left = 47
-          Top = 299
-          Width = 370
-          Height = 56
-          Anchors = []
-          BevelOuter = bvNone
-          ColumnCollection = <
-            item
-              Value = 40.735354790552790000
-            end
-            item
-              Value = 59.264645209447220000
-            end>
-          ControlCollection = <
-            item
-              Column = 0
-              Control = leNumero
-              Row = 0
-            end
-            item
-              Column = 1
-              Control = leBairro
-              Row = 0
-            end>
-          ParentBackground = False
-          ParentColor = True
-          RowCollection = <
-            item
-              Value = 100.000000000000000000
-            end>
-          TabOrder = 0
-          DesignSize = (
-            370
-            56)
-          object leNumero: TLabeledEdit
-            Left = 15
-            Top = 25
-            Width = 121
-            Height = 29
-            Anchors = []
-            EditLabel.Width = 18
-            EditLabel.Height = 21
-            EditLabel.Caption = 'N'#176
-            TabOrder = 0
-            Text = ''
-            TextHint = 'N'#250'mero do endere'#231'o'
-          end
-          object leBairro: TLabeledEdit
-            Left = 164
-            Top = 25
-            Width = 193
-            Height = 29
-            Anchors = []
-            EditLabel.Width = 45
-            EditLabel.Height = 21
-            EditLabel.Caption = 'Bairro:'
-            TabOrder = 1
-            Text = ''
-            TextHint = 'Informe o bairro'
-          end
-        end
-        object Label7: TLabel
-          Left = 230
-          Top = 329
-          Width = 4
-          Height = 21
-          Anchors = []
-          ExplicitLeft = 193
-          ExplicitTop = 373
-        end
-        object GridPanel4: TGridPanel
-          Left = 42
-          Top = 353
-          Width = 379
-          Height = 58
-          Anchors = []
-          BevelOuter = bvNone
-          ColumnCollection = <
-            item
-              Value = 69.309943023817620000
-            end
-            item
-              Value = 30.690056976182380000
-            end>
-          ControlCollection = <
-            item
-              Column = 0
-              Control = leCidade
-              Row = 0
-            end
-            item
-              Column = 1
-              Control = GridPanel7
-              Row = 0
-            end>
-          ParentBackground = False
-          ParentColor = True
-          RowCollection = <
-            item
-              Value = 100.000000000000000000
-            end
-            item
-              SizeStyle = ssAuto
-            end>
-          TabOrder = 1
-          DesignSize = (
-            379
-            58)
-          object leCidade: TLabeledEdit
-            Left = 19
-            Top = 26
-            Width = 225
-            Height = 29
-            Anchors = []
-            EditLabel.Width = 51
-            EditLabel.Height = 21
-            EditLabel.Caption = 'Cidade:'
-            TabOrder = 0
-            Text = ''
-            TextHint = 'Informe a cidade'
-          end
-          object GridPanel7: TGridPanel
-            Left = 263
-            Top = 0
-            Width = 107
-            Height = 58
-            Align = alLeft
-            BevelOuter = bvNone
-            ColumnCollection = <
-              item
-                Value = 100.000000000000000000
-              end>
-            ControlCollection = <
-              item
-                Column = 0
-                Control = Label12
-                Row = 0
-              end
-              item
-                Column = 0
-                Control = cbUF
-                Row = 1
-              end>
-            RowCollection = <
-              item
-                SizeStyle = ssAbsolute
-                Value = 20.000000000000000000
-              end
-              item
-                SizeStyle = ssAbsolute
-                Value = 100.000000000000000000
-              end>
-            TabOrder = 1
-            object Label12: TLabel
-              Left = 0
-              Top = 0
-              Width = 107
-              Height = 20
-              Align = alClient
-              Caption = 'UF:'
-              Font.Charset = DEFAULT_CHARSET
-              Font.Color = clWindowText
-              Font.Height = -16
-              Font.Name = 'Segoe UI'
-              Font.Style = []
-              ParentFont = False
-              ExplicitWidth = 22
-              ExplicitHeight = 21
-            end
-            object cbUF: TComboBox
-              Left = 0
-              Top = 25
-              Width = 98
-              Height = 29
-              Align = alCustom
-              BevelInner = bvNone
-              BevelOuter = bvNone
-              TabOrder = 0
-              Items.Strings = (
-                'AC'
-                'AL'
-                'AP'
-                'AM'
-                'BA'
-                'CE'
-                'DF'
-                'ES'
-                'GO'
-                'MA'
-                'MG'
-                'MS'
-                'MT'
-                'PA'
-                'PB'
-                'PE'
-                'PI'
-                'PR'
-                'RJ'
-                'RN'
-                'RO'
-                'RR'
-                'RS'
-                'SC'
-                'SE'
-                'SP'
-                'TO')
-            end
-          end
-        end
-        object Label11: TLabel
-          Left = 230
-          Top = 519
-          Width = 4
-          Height = 21
-          Anchors = []
-          ExplicitLeft = 198
-          ExplicitTop = 522
-        end
-        object pnlCadastrar: TPanel
-          Left = 141
-          Top = 529
+        object pnlBotaoTrocarSenha: TPanel
+          Left = 112
+          Top = 186
           Width = 185
           Height = 41
-          Cursor = crHandPoint
-          Align = alCustom
           Anchors = []
-          Caption = 'Cadastrar'
+          Caption = 'Trocar Senha'
           Color = clHighlight
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWhite
-          Font.Height = -19
+          Font.Height = -18
           Font.Name = 'Segoe UI'
           Font.Style = []
           ParentBackground = False
           ParentFont = False
-          TabOrder = 2
-          OnClick = pnlCadastrarClick
+          TabOrder = 1
+          OnClick = pnlBotaoTrocarSenhaClick
+          ExplicitTop = 194
         end
-        object Label13: TLabel
-          Left = 230
-          Top = 574
-          Width = 4
-          Height = 21
-          Anchors = []
-          ExplicitLeft = 205
-          ExplicitTop = 577
-        end
-        object GridPanel6: TGridPanel
-          Left = 0
-          Top = 465
-          Width = 457
+        object GridPanel5: TGridPanel
+          Left = 36
+          Top = 61
+          Width = 373
           Height = 58
           Align = alCustom
-          Anchors = []
-          BevelOuter = bvNone
           ColumnCollection = <
             item
               SizeStyle = ssAbsolute
-              Value = 60.000000000000000000
-            end
-            item
-              SizeStyle = ssAbsolute
-              Value = 350.000000000000000000
+              Value = 340.000000000000000000
             end
             item
               SizeStyle = ssAbsolute
@@ -594,44 +192,31 @@ object formCadastroDeClientes: TformCadastroDeClientes
           ControlCollection = <
             item
               Column = 0
-              Control = Label2
+              Control = leSenha
               Row = 0
             end
             item
               Column = 1
-              Control = leConfSenha
-              Row = 0
-            end
-            item
-              Column = 2
-              Control = cadeadoConfSenha
+              Control = cadeadoSenha
               Row = 0
             end>
           RowCollection = <
             item
               Value = 100.000000000000000000
+            end
+            item
+              SizeStyle = ssAuto
             end>
-          TabOrder = 3
-          DesignSize = (
-            457
-            58)
-          object Label2: TLabel
-            Left = 28
-            Top = 18
-            Width = 4
-            Height = 21
-            Anchors = []
-            ExplicitLeft = 7
-          end
-          object leConfSenha: TLabeledEdit
-            Left = 61
-            Top = 26
-            Width = 347
+          TabOrder = 2
+          object leSenha: TLabeledEdit
+            Left = 1
+            Top = 28
+            Width = 332
             Height = 29
-            Anchors = []
-            EditLabel.Width = 125
+            Align = alCustom
+            EditLabel.Width = 46
             EditLabel.Height = 21
-            EditLabel.Caption = 'Confirme a senha:'
+            EditLabel.Caption = 'Senha:'
             EditLabel.Font.Charset = DEFAULT_CHARSET
             EditLabel.Font.Color = clWindowText
             EditLabel.Font.Height = -16
@@ -647,12 +232,12 @@ object formCadastroDeClientes: TformCadastroDeClientes
             PasswordChar = '*'
             TabOrder = 0
             Text = ''
-            TextHint = 'Redigite a senha '
+            TextHint = 'Crie uma senha'
           end
-          object cadeadoConfSenha: TImage
-            Left = 414
+          object cadeadoSenha: TImage
+            Left = 339
             Top = 24
-            Width = 27
+            Width = 30
             Height = 33
             Cursor = crHandPoint
             Align = alCustom
@@ -2137,95 +1722,18 @@ object formCadastroDeClientes: TformCadastroDeClientes
               509011044110A40C4041461004419032E0FFD7B4FF8510FC0159000000004945
               4E44AE426082}
             Proportional = True
-            OnClick = cadeadoConfSenhaClick
           end
         end
-        object leNome: TLabeledEdit
-          Left = 59
-          Top = 51
-          Width = 345
-          Height = 29
-          Anchors = []
-          EditLabel.Width = 115
-          EditLabel.Height = 21
-          EditLabel.Caption = 'Nome completo:'
-          TabOrder = 4
-          Text = ''
-          TextHint = 'Digite seu nome completo'
-        end
-        object leTelefone: TLabeledEdit
-          Left = 59
-          Top = 106
-          Width = 345
-          Height = 29
-          Anchors = []
-          EditLabel.Width = 115
-          EditLabel.Height = 21
-          EditLabel.Caption = 'Telefone/Celular:'
-          EditMask = '!\(99\)00000-0000;1;_'
-          MaxLength = 14
-          TabOrder = 5
-          Text = '(  )     -    '
-          TextHint = 'Informe seu n'#250'mero de telefone'
-        end
-        object leEmail: TLabeledEdit
-          Left = 60
-          Top = 160
-          Width = 343
-          Height = 29
-          Anchors = []
-          EditLabel.Width = 44
-          EditLabel.Height = 21
-          EditLabel.Caption = 'E-mail'
-          TabOrder = 6
-          Text = ''
-          TextHint = 'Digite seu endere'#231'o de e-mail'
-        end
-        object leCEP: TLabeledEdit
-          Left = 59
-          Top = 214
-          Width = 345
-          Height = 29
-          Anchors = []
-          EditLabel.Width = 30
-          EditLabel.Height = 21
-          EditLabel.Caption = 'CEP:'
-          EditMask = '00000\-999;1;_'
-          MaxLength = 9
-          TabOrder = 7
-          Text = '     -   '
-          TextHint = 'Informe seu CEP'
-          OnChange = leCEPChange
-        end
-        object leEndereco: TLabeledEdit
-          Left = 59
-          Top = 269
-          Width = 346
-          Height = 29
-          Anchors = []
-          EditLabel.Width = 67
-          EditLabel.Height = 21
-          EditLabel.Caption = 'Endere'#231'o:'
-          TabOrder = 8
-          Text = ''
-          TextHint = 'Informe seu endere'#231'o'
-        end
-        object GridPanel2: TGridPanel
-          Left = 0
-          Top = 408
-          Width = 465
-          Height = 57
+        object GridPanel6: TGridPanel
+          Left = 36
+          Top = 124
+          Width = 373
+          Height = 56
           Align = alCustom
-          Anchors = []
-          BevelOuter = bvNone
           ColumnCollection = <
             item
               SizeStyle = ssAbsolute
-              Value = 60.000000000000000000
-            end
-            item
-              SizeStyle = ssAbsolute
-              Value = 350.000000000000000000
+              Value = 340.000000000000000000
             end
             item
               SizeStyle = ssAbsolute
@@ -2233,70 +1741,25 @@ object formCadastroDeClientes: TformCadastroDeClientes
             end>
           ControlCollection = <
             item
-              Column = 0
-              Control = Label9
-              Row = 0
-            end
-            item
               Column = 1
-              Control = leSenha
+              Control = cadeadoConfSenha
               Row = 0
             end
             item
-              Column = 2
-              Control = cadeadoSenha
+              Column = 0
+              Control = leConfSenha
               Row = 0
             end>
           RowCollection = <
             item
               Value = 100.000000000000000000
-            end
-            item
-              SizeStyle = ssAuto
             end>
-          TabOrder = 9
-          DesignSize = (
-            465
-            57)
-          object Label9: TLabel
-            Left = 28
-            Top = 18
-            Width = 4
-            Height = 21
-            Anchors = []
-            ExplicitTop = 13
-          end
-          object leSenha: TLabeledEdit
-            Left = 61
-            Top = 26
-            Width = 348
-            Height = 29
-            Anchors = []
-            EditLabel.Width = 46
-            EditLabel.Height = 21
-            EditLabel.Caption = 'Senha:'
-            EditLabel.Font.Charset = DEFAULT_CHARSET
-            EditLabel.Font.Color = clWindowText
-            EditLabel.Font.Height = -16
-            EditLabel.Font.Name = 'Segoe UI'
-            EditLabel.Font.Style = []
-            EditLabel.ParentFont = False
-            Font.Charset = DEFAULT_CHARSET
-            Font.Color = clWindowText
-            Font.Height = -16
-            Font.Name = 'Segoe UI'
-            Font.Style = []
-            ParentFont = False
-            PasswordChar = '*'
-            TabOrder = 0
-            Text = ''
-            TextHint = 'Crie uma senha'
-          end
-          object cadeadoSenha: TImage
-            Left = 415
-            Top = 19
-            Width = 27
-            Height = 32
+          TabOrder = 3
+          object cadeadoConfSenha: TImage
+            Left = 341
+            Top = 17
+            Width = 29
+            Height = 35
             Cursor = crHandPoint
             Align = alCustom
             Center = True
@@ -3781,35 +3244,34 @@ object formCadastroDeClientes: TformCadastroDeClientes
               4E44AE426082}
             Proportional = True
           end
+          object leConfSenha: TLabeledEdit
+            Left = 0
+            Top = 25
+            Width = 329
+            Height = 29
+            Align = alCustom
+            EditLabel.Width = 125
+            EditLabel.Height = 21
+            EditLabel.Caption = 'Confirme a senha:'
+            EditLabel.Font.Charset = DEFAULT_CHARSET
+            EditLabel.Font.Color = clWindowText
+            EditLabel.Font.Height = -16
+            EditLabel.Font.Name = 'Segoe UI'
+            EditLabel.Font.Style = []
+            EditLabel.ParentFont = False
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -16
+            Font.Name = 'Segoe UI'
+            Font.Style = []
+            ParentFont = False
+            PasswordChar = '*'
+            TabOrder = 0
+            Text = ''
+            TextHint = 'Redigite a senha '
+          end
         end
       end
     end
-  end
-  object EurekaLogEvents1: TEurekaLogEvents
-    Left = 320
-    Top = 112
-  end
-  object DSClientesCad: TDataSource
-    DataSet = DM.QueryClientes
-    Left = 668
-    Top = 35
-  end
-  object RESTClient1: TRESTClient
-    Params = <>
-    SynchronizedEvents = False
-    Left = 108
-    Top = 340
-  end
-  object RESTRequest1: TRESTRequest
-    Client = RESTClient1
-    Params = <>
-    Response = RESTResponse1
-    SynchronizedEvents = False
-    Left = 220
-    Top = 340
-  end
-  object RESTResponse1: TRESTResponse
-    Left = 340
-    Top = 340
   end
 end

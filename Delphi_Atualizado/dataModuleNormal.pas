@@ -29,8 +29,26 @@ type
     QueryClientesveiculo: TStringField;
     FDPhysPgDriverLink2: TFDPhysPgDriverLink;
     QueryFuncionarios: TFDQuery;
-    QueryLogin: TFDQuery;
     Perfil: TFDQuery;
+    QueryUsuarios: TFDQuery;
+    QueryUsuariosid_usuario: TIntegerField;
+    QueryUsuariostipo_usuario: TStringField;
+    QueryUsuariosnome_usuario: TStringField;
+    QueryUsuariossenha_hash: TStringField;
+    QueryFuncionarioscodigo_funcionario: TIntegerField;
+    QueryFuncionarioshash_senha_func: TStringField;
+    QueryFuncionariosnome_funcionario: TStringField;
+    QueryFuncionariostelefone_funcionario: TStringField;
+    QueryFuncionariosemail_funcionario: TStringField;
+    QueryFuncionarioscep_funcionario: TStringField;
+    QueryFuncionariosendereco_funcionario: TStringField;
+    QueryFuncionariosnum_endereco: TStringField;
+    QueryFuncionariosbairro: TStringField;
+    QueryFuncionarioscidade: TStringField;
+    QueryFuncionariosuf: TStringField;
+    QueryFuncionariosfuncao: TStringField;
+    QueryFuncionarioscpf_funcionario: TStringField;
+    QueryFuncionariosrg_funcionario: TStringField;
   private
     { Private declarations }
   public
