@@ -42,8 +42,6 @@ object formCadastroDeClientes: TformCadastroDeClientes
       end>
     ShowCaption = False
     TabOrder = 0
-    ExplicitLeft = 8
-    ExplicitTop = -2
     object pnlilustrativo: TPanel
       Left = 1
       Top = 1
@@ -55,6 +53,15 @@ object formCadastroDeClientes: TformCadastroDeClientes
       TabOrder = 0
       ExplicitLeft = 0
       ExplicitTop = -4
+      object edtStatusCode: TEdit
+        Left = 448
+        Top = 16
+        Width = 121
+        Height = 23
+        TabOrder = 0
+        Text = 'edtStatusCode'
+        Visible = False
+      end
     end
     object pnlLogin: TPanel
       Left = 641
@@ -78,7 +85,7 @@ object formCadastroDeClientes: TformCadastroDeClientes
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitTop = 4
+        ExplicitWidth = 147
       end
       object gridPanelLogin: TGridPanel
         Left = 8
@@ -2190,12 +2197,11 @@ object formCadastroDeClientes: TformCadastroDeClientes
           EditLabel.Width = 30
           EditLabel.Height = 21
           EditLabel.Caption = 'CEP:'
-          EditMask = '00000\-999;1;_'
-          MaxLength = 9
           TabOrder = 7
-          Text = '     -   '
+          Text = ''
           TextHint = 'Informe seu CEP'
-          OnChange = leCEPChange
+          OnExit = leCEPExit
+          ExplicitTop = 217
         end
         object leEndereco: TLabeledEdit
           Left = 59
@@ -2209,6 +2215,7 @@ object formCadastroDeClientes: TformCadastroDeClientes
           TabOrder = 8
           Text = ''
           TextHint = 'Informe seu endere'#231'o'
+          ExplicitTop = 264
         end
         object GridPanel2: TGridPanel
           Left = 0
@@ -3788,11 +3795,6 @@ object formCadastroDeClientes: TformCadastroDeClientes
   object EurekaLogEvents1: TEurekaLogEvents
     Left = 320
     Top = 112
-  end
-  object DSClientesCad: TDataSource
-    DataSet = DM.QueryClientes
-    Left = 668
-    Top = 35
   end
   object RESTClient1: TRESTClient
     Params = <>

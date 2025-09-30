@@ -5,9 +5,9 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Mask, Vcl.ExtCtrls,
-  Vcl.DBCtrls, frameFormularioPedido, System.Hash, Vcl.Imaging.pngimage, System.UITypes, DataModuleNormal, frameCadastroVeiculo,
+  Vcl.DBCtrls, frameFormularioPedido, System.Hash, Vcl.Imaging.pngimage, System.UITypes, DataModuleNormal,
   EComponent, Data.DB, REST.Types, Data.Bind.Components, Data.Bind.ObjectScope,
-  REST.Client, System.Net.HttpClient, JSON;
+  REST.Client;
 
 type
   TformCadastroDeClientes = class(TForm)
@@ -33,7 +33,6 @@ type
     leConfSenha: TLabeledEdit;
     cadeadoConfSenha: TImage;
     EurekaLogEvents1: TEurekaLogEvents;
-    DSClientesCad: TDataSource;
     leNome: TLabeledEdit;
     leTelefone: TLabeledEdit;
     leEmail: TLabeledEdit;
@@ -52,10 +51,11 @@ type
     RESTClient1: TRESTClient;
     RESTRequest1: TRESTRequest;
     RESTResponse1: TRESTResponse;
+    edtStatusCode: TEdit;
     procedure pnlCadastrarClick(Sender: TObject);
     procedure cadeadoSenhaClick(Sender: TObject);
     procedure cadeadoConfSenhaClick(Sender: TObject);
-    procedure leCEPChange(Sender: TObject);
+    procedure leCEPExit(Sender: TObject);
 
   private
     { Private declarations }
@@ -74,16 +74,19 @@ implementation
 
 {$R *.dfm}
 
-uses formPáginaDeInícioFunc;
+uses  formPáginaDeInícioFunc,
+      frameCadastroVeiculo,
+      System.Net.HttpClient,
+      System.JSON;
 
-procedure TformCadastroDeClientes.leCEPChange(Sender: TObject);
+procedure TformCadastroDeClientes.leCEPExit(Sender: TObject);
 var
   CEP: String;
   objetoJson: TJSONObject;
 begin
     CEP := trim(leCEP.Text);
 
-    RESTClient1.BaseURL := format (urlConsultaCep, [CEP]);
+    RESTClient1.BaseURL := format(urlConsultaCep, [CEP]);
     RESTClient1.SecureProtocols := [THTTPSecureProtocol.TLS12];
 
     RESTRequest1.Method := rmGET;
@@ -91,14 +94,13 @@ begin
 
     objetoJson := RESTRequest1.Response.JSONValue AS TJSONObject;
 
-    leEndereco.Text := (format('%d', [RESTResponse1.StatusCode]));
+    edtStatusCode.Text := format('%d', [RESTResponse1.StatusCode]);
     leEndereco.Text := objetoJson.Values['street'].Value;
-    leBairro.Text := objetoJson.Values['neighbourhood'].Value;
+    leBairro.Text := objetoJson.Values['neighborhood'].Value;
     leCidade.Text := objetoJson.Values['city'].Value;
     cbUF.Text := objetoJson.Values['state'].Value;
 
-    //leEndereco.Text := (format('%d', [RESTResponse1.StatusCode]));
-    //leEndereco.Text := (RESTResponse1.Content);
+    //if algumErro then
 end;
 
 procedure TformCadastroDeClientes.cadeadoSenhaClick(Sender: TObject);
@@ -126,15 +128,15 @@ end;
 procedure TformCadastroDeClientes.pnlCadastrarClick(Sender: TObject);
 begin
     if leConfSenha.Text = leSenha.Text then begin
-      DM.QueryClientes.SQL.Text := 'INSERT INTO TABLE "Clientes" (hash_senha_cli) VALUES (THashSHA1.GetHashString(leConfSenha.Text);)';
+      DM.QueryClientes.SQL.Text := 'INSERT INTO "Clientes" (nome_cliente, telefone_cliente, email_cliente, cep_cliente, endereco_cliente, num_endereco, bairro, cidade, uf) VALUES (leNome.Text, leTelefone.Text, leEmail.Text, leCEP.Text, leEndereco.Text, leNumero.Text, leBairro.Text, leCidade.Text, cbUF.Text);';
+      DM.QueryClientes.SQL.Text := 'INSERT INTO "Clientes" (hash_senha_cli) VALUES (THashSHA1.GetHashString(leConfSenha.Text);)';
 
       if MessageDlg('Cadastro finalizado com sucesso! Deseja incluir seu veículo?',
-      mtConfirmation, [mbYes, mbNo], 0) = mrYes then frameCadVeiculo.Show;
+      mtConfirmation, [mbYes, mbNo], 0) = mrYes then frameCadVeiculo.Visible := True;
 
     end else begin
        ShowMessage('Senhas não compatíveis. Tente novamente');
     end;
-    formPáginaInicialFunc.Show;
 end;
 
 end.

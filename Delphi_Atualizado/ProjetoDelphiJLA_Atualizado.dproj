@@ -189,12 +189,12 @@
         </DCCReference>
         <DCCReference Include="unitTestesDeProcedures.pas"/>
         <DCCReference Include="frameTrocarSenhaUsuario.pas">
-            <Form>Frame1</Form>
+            <Form>TrocarSenha</Form>
             <FormType>dfm</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
         <DCCReference Include="formPortfolio.pas">
-            <Form>Form1</Form>
+            <Form>formPortfólio</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <BuildConfiguration Include="Base">

@@ -8,7 +8,7 @@ uses
   Vcl.ExtCtrls, Vcl.StdCtrls, Vcl.Mask, Vcl.DBCtrls, DataModuleNormal;
 
 type
-  TFrame1 = class(TFrame)
+  TTrocarSenha = class(TFrame)
     pnlSenhaFuncionario: TPanel;
     lblCrieNovaSenha: TLabel;
     pnlCadSenhaFunc: TPanel;
@@ -35,7 +35,7 @@ implementation
 
 {$R *.dfm}
 
-procedure TFrame1.pnlBotaoTrocarSenhaClick(Sender: TObject);
+procedure TTrocarSenha.pnlBotaoTrocarSenhaClick(Sender: TObject);
 begin
     if leSenha.Text = leConfSenha.Text then begin
       DM.QueryFuncionarios.SQL.Text :='UPDATE Usuarios SET senha_hash = leConfSenha.Text';

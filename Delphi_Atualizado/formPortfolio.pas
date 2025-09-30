@@ -7,7 +7,7 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls;
 
 type
-  TForm1 = class(TForm)
+  TformPortfólio = class(TForm)
     pnlPortfolio: TPanel;
     lblPortfolio: TLabel;
     GridPanel1: TGridPanel;
@@ -45,7 +45,7 @@ type
   end;
 
 var
-  Form1: TForm1;
+  formPortfólio: TformPortfólio;
 
 implementation
 

@@ -1,4 +1,4 @@
-object Frame1: TFrame1
+object TrocarSenha: TTrocarSenha
   Left = 0
   Top = 0
   Width = 640
@@ -172,7 +172,6 @@ object Frame1: TFrame1
           ParentFont = False
           TabOrder = 1
           OnClick = pnlBotaoTrocarSenhaClick
-          ExplicitTop = 194
         end
         object GridPanel5: TGridPanel
           Left = 36

@@ -1,7 +1,7 @@
-object Form1: TForm1
+﻿object formPortfólio: TformPortfólio
   Left = 0
   Top = 0
-  Caption = 'Form1'
+  Caption = 'Portf'#243'lio'
   ClientHeight = 701
   ClientWidth = 1150
   Color = clBtnFace
@@ -18,8 +18,6 @@ object Form1: TForm1
     Height = 701
     Align = alClient
     TabOrder = 0
-    ExplicitLeft = 136
-    ExplicitTop = 8
     object lblPortfolio: TLabel
       Left = 544
       Top = 24
@@ -159,10 +157,6 @@ object Form1: TForm1
         Height = 300
         Align = alClient
         TabOrder = 0
-        ExplicitLeft = 78
-        ExplicitTop = 77
-        ExplicitWidth = 185
-        ExplicitHeight = 212
         object imgPort1: TImage
           Left = 48
           Top = 24
@@ -194,10 +188,6 @@ object Form1: TForm1
         Height = 300
         Align = alClient
         TabOrder = 1
-        ExplicitLeft = 78
-        ExplicitTop = 77
-        ExplicitWidth = 185
-        ExplicitHeight = 212
         object imgPort2: TImage
           Left = 48
           Top = 24
@@ -230,10 +220,6 @@ object Form1: TForm1
         Height = 300
         Align = alClient
         TabOrder = 2
-        ExplicitLeft = 78
-        ExplicitTop = 77
-        ExplicitWidth = 185
-        ExplicitHeight = 212
         object imgPort3: TImage
           Left = 48
           Top = 24
@@ -297,7 +283,6 @@ object Form1: TForm1
         Height = 300
         Align = alClient
         TabOrder = 3
-        ExplicitTop = 325
         object imgPort4: TImage
           Left = 48
           Top = 24
@@ -329,7 +314,6 @@ object Form1: TForm1
         Height = 300
         Align = alClient
         TabOrder = 4
-        ExplicitTop = 325
         object imgPort5: TImage
           Left = 48
           Top = 24
@@ -361,7 +345,6 @@ object Form1: TForm1
         Height = 300
         Align = alClient
         TabOrder = 5
-        ExplicitTop = 325
         object imgPort6: TImage
           Left = 48
           Top = 24

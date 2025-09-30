@@ -51,8 +51,6 @@ begin
     end;
 end;
 
-
-
 procedure TformPáginaInicialCli.Image3Click(Sender: TObject);
 begin
     Close;

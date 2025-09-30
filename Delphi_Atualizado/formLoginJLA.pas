@@ -4,10 +4,10 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Mask, Vcl.ComCtrls,
-  Vcl.ExtCtrls, Vcl.Imaging.jpeg, System.ImageList, Vcl.ImgList,
-  Vcl.Imaging.pngimage, Vcl.Skia, unitCrudClientes, Vcl.DBCtrls, formCadastroClientes, DataModuleInicial,
-  Data.DB;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Mask, Vcl.ComCtrls, System.Hash,
+  Vcl.ExtCtrls, Vcl.Imaging.jpeg, System.ImageList, Vcl.ImgList, System.UITypes,
+  Vcl.Imaging.pngimage, Vcl.Skia, unitCrudClientes, Vcl.DBCtrls, DataModuleNormal,
+  Data.DB, frameTrocarSenhaUsuario;
 
 type
   TformLogin = class(TForm)
@@ -40,10 +40,12 @@ type
     lblEsqueceuSenha: TLabel;
     pnlEntrar: TPanel;
     lblCadastreAqui: TLabel;
+    TrocarSenha1: TTrocarSenha;
     procedure pnlEntrarClick(Sender: TObject);
     procedure cadeadoSenhaClick(Sender: TObject);
     procedure imgFecharClick(Sender: TObject);
     procedure lblCadastreAquiClick(Sender: TObject);
+    procedure lblEsqueceuSenhaClick(Sender: TObject);
   private
     { Private declarations }
     procedure HideShowSenha;
@@ -58,6 +60,12 @@ var
 implementation
 
 {$R *.dfm}
+
+uses  frameTrocarSenhaUsuario,
+      formCadastroClientes,
+      formPáginaDeInícioClientes,
+      formPáginaDeInícioFunc,
+      formPáginaDeInícioADM;
 
 procedure TformLogin.HideShowSenha;
 begin
@@ -85,12 +93,17 @@ begin
     formCadastroDeClientes.ShowModal;
 end;
 
+procedure TformLogin.lblEsqueceuSenhaClick(Sender: TObject);
+begin
+    frameTrocarSenha.Visible := True;
+end;
+
 procedure TformLogin.pnlEntrarClick(Sender: TObject);
 //var senha, hash: String;
+var TipoUsuario: String;
 begin
   if (leSenhaLogin.Text = '') or (leUsuario.Text = '') then begin
     ShowMessage('Preencha todos os campos.');
-
   end;
 
   if leSenhaLogin.Text = '' then begin
@@ -107,8 +120,25 @@ begin
         lblAvisoUsuario.Caption := '';
   end;
 
-  //if True then
+  begin
+     DM.QueryUsuarios.SQL.Text := 'SELECT * FROM Usuarios WHERE nome_usuario = :usuario AND senha_hash = :senha';
 
+     DM.QueryUsuarios.ParamByName('usuario').AsString := leUsuario.Text;
+     DM.QueryUsuarios.ParamByName('senha').AsString := THashSHA1.GetHashString(leSenhaLogin.Text);;
+
+     DM.QueryUsuarios.Open;
+
+     if not DM.QueryUsuarios.IsEmpty then begin
+        TipoUsuario := DM.QueryUsuarios.FieldByName('tipo_usuario').AsString;
+        Self.Hide;
+       if TipoUsuario = 'Cliente' then begin
+         Application.CreateForm(TformPáginaInicialCli, formPáginaInicialCli);
+         formPáginaInicialCli.Show;
+       end else if TipoUsuario = 'Funcionario' then begin
+         Application.CreateForm(TformPáginaInicialFunc, formPáginaInicialFunc);
+         formPáginaInicialFunc.Show;
+     end;
+  end;
+  end;
 end;
-
 end.

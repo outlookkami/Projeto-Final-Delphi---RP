@@ -1717,6 +1717,7 @@ object formLogin: TformLogin
             EditLabel.Width = 46
             EditLabel.Height = 21
             EditLabel.Caption = 'Senha:'
+            PasswordChar = '*'
             TabOrder = 0
             Text = ''
             TextHint = 'Digite sua senha'
@@ -1826,10 +1827,12 @@ object formLogin: TformLogin
           Top = 415
           Width = 215
           Height = 21
+          Cursor = crHandPoint
           Align = alCustom
           Alignment = taCenter
           Anchors = [akLeft, akTop, akRight, akBottom]
           Caption = 'Esqueceu a senha? Troque aqui'
+          OnClick = lblEsqueceuSenhaClick
         end
         object pnlEntrar: TPanel
           Left = 198
@@ -1856,6 +1859,7 @@ object formLogin: TformLogin
           Top = 542
           Width = 277
           Height = 21
+          Cursor = crHandPoint
           Anchors = []
           Caption = 'N'#227'o tem um cadastro? Cadastre-se aqui'
           OnClick = lblCadastreAquiClick
@@ -46861,10 +46865,121 @@ object formLogin: TformLogin
         Stretch = True
         ExplicitLeft = -1
       end
+      inline TrocarSenha1: TTrocarSenha
+        Left = -56
+        Top = 234
+        Width = 640
+        Height = 480
+        TabOrder = 0
+        ExplicitLeft = -56
+        ExplicitTop = 234
+        inherited pnlSenhaFuncionario: TPanel
+          Left = 98
+          Top = 0
+          Visible = False
+          StyleElements = [seFont, seClient, seBorder]
+          ExplicitLeft = 98
+          ExplicitTop = 0
+          inherited lblCrieNovaSenha: TLabel
+            StyleElements = [seFont, seClient, seBorder]
+          end
+          inherited pnlCadSenhaFunc: TPanel
+            StyleElements = [seFont, seClient, seBorder]
+            inherited GridPanel1: TGridPanel
+              ControlCollection = <
+                item
+                  Column = 0
+                  Control = TrocarSenha1.Label2
+                  Row = 1
+                end
+                item
+                  Column = 0
+                  Control = TrocarSenha1.dbleUsuarioNovaSenha
+                  Row = 0
+                end
+                item
+                  Column = 0
+                  Control = TrocarSenha1.Label1
+                  Row = 3
+                end
+                item
+                  Column = 0
+                  Control = TrocarSenha1.Label3
+                  Row = 5
+                end
+                item
+                  Column = 0
+                  Control = TrocarSenha1.pnlBotaoTrocarSenha
+                  Row = 6
+                end
+                item
+                  Column = 0
+                  Control = TrocarSenha1.GridPanel5
+                  Row = 2
+                end
+                item
+                  Column = 0
+                  Control = TrocarSenha1.GridPanel6
+                  Row = 4
+                end>
+              StyleElements = [seFont, seClient, seBorder]
+              inherited Label2: TLabel
+                StyleElements = [seFont, seClient, seBorder]
+              end
+              inherited dbleUsuarioNovaSenha: TDBLabeledEdit
+                StyleElements = [seFont, seClient, seBorder]
+              end
+              inherited Label1: TLabel
+                StyleElements = [seFont, seClient, seBorder]
+              end
+              inherited Label3: TLabel
+                StyleElements = [seFont, seClient, seBorder]
+              end
+              inherited pnlBotaoTrocarSenha: TPanel
+                StyleElements = [seFont, seClient, seBorder]
+              end
+              inherited GridPanel5: TGridPanel
+                ControlCollection = <
+                  item
+                    Column = 0
+                    Control = TrocarSenha1.leSenha
+                    Row = 0
+                  end
+                  item
+                    Column = 1
+                    Control = TrocarSenha1.cadeadoSenha
+                    Row = 0
+                  end>
+                StyleElements = [seFont, seClient, seBorder]
+                inherited leSenha: TLabeledEdit
+                  StyleElements = [seFont, seClient, seBorder]
+                end
+              end
+              inherited GridPanel6: TGridPanel
+                ControlCollection = <
+                  item
+                    Column = 1
+                    Control = TrocarSenha1.cadeadoConfSenha
+                    Row = 0
+                  end
+                  item
+                    Column = 0
+                    Control = TrocarSenha1.leConfSenha
+                    Row = 0
+                  end>
+                StyleElements = [seFont, seClient, seBorder]
+                inherited leConfSenha: TLabeledEdit
+                  StyleElements = [seFont, seClient, seBorder]
+                end
+              end
+            end
+          end
+        end
+      end
     end
   end
   object DSLogin: TDataSource
-    DataSet = DM.QueryLogin
+    DataSet = DM.QueryUsuarios
     Left = 646
     Top = 143
   end
