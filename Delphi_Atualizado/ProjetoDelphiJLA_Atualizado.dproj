@@ -201,6 +201,14 @@
             <Form>formTrocaSenha</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="formCrudFuncionarios.pas">
+            <Form>formCrudFunc</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="formConfirmeEmail.pas">
+            <Form>Form1</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

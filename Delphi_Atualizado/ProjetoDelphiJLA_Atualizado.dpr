@@ -37,7 +37,9 @@ uses
   unitTestesDeProcedures in 'unitTestesDeProcedures.pas',
   frameTrocarSenhaUsuario in 'frameTrocarSenhaUsuario.pas' {TrocarSenha: TFrame},
   formPortfolio in 'formPortfolio.pas' {formPortfólio},
-  formTrocarSenha in 'formTrocarSenha.pas' {formTrocaSenha};
+  formTrocarSenha in 'formTrocarSenha.pas' {formTrocaSenha},
+  formCrudFuncionarios in 'formCrudFuncionarios.pas' {formCrudFunc},
+  formConfirmeEmail in 'formConfirmeEmail.pas' {Form1};
 
 {$R *.res}
 
@@ -45,16 +47,18 @@ begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
   Application.Title := 'Aviso';
-  Application.CreateForm(TformLogin, formLogin);
   Application.CreateForm(TformCadastroDeClientes, formCadastroDeClientes);
+  Application.CreateForm(TformPáginaInicialADM, formPáginaInicialADM);
+  Application.CreateForm(TformCrudFunc, formCrudFunc);
+  Application.CreateForm(TformLogin, formLogin);
   Application.CreateForm(TformPáginaInicialFunc, formPáginaInicialFunc);
   Application.CreateForm(TformCadastroFuncionarios, formCadastroFuncionarios);
-  Application.CreateForm(TformPáginaInicialADM, formPáginaInicialADM);
   Application.CreateForm(TformPáginaInicialCli, formPáginaInicialCli);
   Application.CreateForm(TdtmInicial, dtmInicial);
   Application.CreateForm(TDM, DM);
   Application.CreateForm(TformPortfólio, formPortfólio);
   Application.CreateForm(TformTrocaSenha, formTrocaSenha);
+  Application.CreateForm(TForm1, Form1);
   Application.Run;
 end.
 

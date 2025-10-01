@@ -89,7 +89,6 @@ begin
     PageControl1.ActivePageIndex := 0;
 end;
 
-
 procedure TformPáginaInicialFunc.btnpPedidosClick(Sender: TObject);
 begin
     PageControl1.ActivePageIndex := 1;

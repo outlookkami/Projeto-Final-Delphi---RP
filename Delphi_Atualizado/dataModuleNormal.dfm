@@ -117,6 +117,7 @@ object DM: TDM
     object QueryFuncionariostelefone_funcionario: TStringField
       FieldName = 'telefone_funcionario'
       Origin = 'telefone_funcionario'
+      EditMask = '!\(99\)00000-0000;1;_'
       Size = 11
     end
     object QueryFuncionariosemail_funcionario: TStringField
@@ -127,6 +128,7 @@ object DM: TDM
     object QueryFuncionarioscep_funcionario: TStringField
       FieldName = 'cep_funcionario'
       Origin = 'cep_funcionario'
+      EditMask = '00000\-999;1;_'
       Size = 8
     end
     object QueryFuncionariosendereco_funcionario: TStringField

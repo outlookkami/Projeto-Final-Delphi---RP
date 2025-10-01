@@ -139,9 +139,22 @@ end;
 procedure TformCadastroDeClientes.pnlCadastrarClick(Sender: TObject);
 begin
     if leConfSenha.Text = leSenha.Text then begin
-      DM.QueryClientes.SQL.Text := 'INSERT INTO "Clientes" (nome_cliente, telefone_cliente, email_cliente, cep_cliente, endereco_cliente, num_endereco, bairro, cidade, uf) VALUES (leNome.Text, leTelefone.Text, leEmail.Text, leCEP.Text, leEndereco.Text, leNumero.Text, leBairro.Text, leCidade.Text, cbUF.Text);';
-      DM.QueryClientes.SQL.Text := 'INSERT INTO "Clientes" (hash_senha_cli) VALUES (THashSHA1.GetHashString(leConfSenha.Text);)';
+//      DM.QueryClientes.SQL.Text := 'INSERT INTO "Clientes" (nome_cliente, telefone_cliente,
+//      email_cliente, cep_cliente, endereco_cliente, num_endereco, bairro, cidade, uf) VALUES (leNome.Text, leTelefone.Text, leEmail.Text, leCEP.Text, leEndereco.Text, leNumero.Text, leBairro.Text, leCidade.Text, cbUF.Text);';
+//      DM.QueryClientes.SQL.Text := 'INSERT INTO "Clientes" (hash_senha_cli) VALUES (THashSHA1.GetHashString(leConfSenha.Text);)';
 
+
+      DM.QueryClientes.FieldByName('nome_cliente').AsString := leNome.Text;
+      DM.QueryClientes.FieldByName('telefone_cliente').AsString := leTelefone.Text;
+      DM.QueryClientes.FieldByName('email_cliente').AsString := leEmail.Text;
+      DM.QueryClientes.FieldByName('cep_cliente').AsString := leCEP.Text;
+      DM.QueryClientes.FieldByName('endereco_cliente').AsString := leEndereco.Text;
+      DM.QueryClientes.FieldByName('numero_endereco').AsString := leNumero.Text;
+      DM.QueryClientes.FieldByName('bairro').AsString := leBairro.Text;
+      DM.QueryClientes.FieldByName('cidade').AsString := leCidade.Text;
+      DM.QueryClientes.FieldByName('uf').AsString := cbUf.Text;
+      DM.QueryClientes.FieldByName('hash_senha_cli').AsString := THashSHA1.GetHashString(leConfSenha.Text);
+      DM.QueryClientes.Post;
       if MessageDlg('Cadastro finalizado com sucesso! Deseja incluir seu veículo?',
       mtConfirmation, [mbYes, mbNo], 0) = mrYes then FrameVeiculo;
 

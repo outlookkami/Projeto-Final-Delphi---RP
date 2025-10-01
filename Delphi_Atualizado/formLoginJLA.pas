@@ -90,9 +90,9 @@ end;
 
 procedure TformLogin.lblCadastreAquiClick(Sender: TObject);
 begin
-    formCadastroDeClientes.Create(Self);
-    formCadastroDeClientes.Parent := Self;
-    formCadastroDeClientes.Align := alClient;
+//    formCadastroDeClientes.Create(Self);
+//    formCadastroDeClientes.Parent := Self;
+//    formCadastroDeClientes.Align := alClient;
     formCadastroDeClientes.Show;
 end;
 
