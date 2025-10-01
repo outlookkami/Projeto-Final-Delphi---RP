@@ -6,15 +6,15 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Mask, Vcl.ComCtrls, System.Hash,
   Vcl.ExtCtrls, Vcl.Imaging.jpeg, System.ImageList, Vcl.ImgList, System.UITypes,
-  Vcl.Imaging.pngimage, Vcl.Skia, unitCrudClientes, Vcl.DBCtrls, DataModuleNormal,
-  Data.DB, frameTrocarSenhaUsuario;
+  Vcl.Imaging.pngimage, Vcl.Skia, Vcl.DBCtrls, DataModuleNormal,
+  Data.DB, FireDAC.Stan.Param;
 
 type
   TformLogin = class(TForm)
     pnlLogin: TPanel;
     pnlBaseLogin: TPanel;
     pnlLayoutLogin: TPanel;
-    GridPanel1: TGridPanel;
+    GridPanelLogin: TGridPanel;
     Label3: TLabel;
     Label4: TLabel;
     GridPanel3: TGridPanel;
@@ -40,6 +40,7 @@ type
     lblEsqueceuSenha: TLabel;
     pnlEntrar: TPanel;
     lblCadastreAqui: TLabel;
+    BalloonHint1: TBalloonHint;
     procedure pnlEntrarClick(Sender: TObject);
     procedure cadeadoSenhaClick(Sender: TObject);
     procedure imgFecharClick(Sender: TObject);
@@ -89,12 +90,18 @@ end;
 
 procedure TformLogin.lblCadastreAquiClick(Sender: TObject);
 begin
-    formCadastroDeClientes.ShowModal;
+    formCadastroDeClientes.Create(Self);
+    formCadastroDeClientes.Parent := Self;
+    formCadastroDeClientes.Align := alClient;
+    formCadastroDeClientes.Show;
 end;
 
 procedure TformLogin.lblEsqueceuSenhaClick(Sender: TObject);
 begin
-    formTrocaSenha.ShowModal;
+//    formTrocaSenha.Create(Self);
+//    formTrocaSenha.Parent := Self;
+//    formTrocaSenha.Align := alClient;
+      formTrocaSenha.Show;
 end;
 
 procedure TformLogin.pnlEntrarClick(Sender: TObject);
@@ -123,11 +130,10 @@ begin
      DM.QueryUsuarios.SQL.Text := 'SELECT * FROM Usuarios WHERE nome_usuario = :usuario AND senha_hash = :senha';
 
      DM.QueryUsuarios.ParamByName('usuario').AsString := leUsuario.Text;
-     DM.QueryUsuarios.ParamByName('senha').AsString := THashSHA1.GetHashString(leSenhaLogin.Text);;
-
+     DM.QueryUsuarios.ParamByName('senha').AsString := THashSHA1.GetHashString(leSenhaLogin.Text);
      DM.QueryUsuarios.Open;
 
-     if not DM.QueryUsuarios.IsEmpty then begin
+      if not DM.QueryUsuarios.IsEmpty then begin
         TipoUsuario := DM.QueryUsuarios.FieldByName('tipo_usuario').AsString;
         Self.Hide;
        if TipoUsuario = 'Cliente' then begin
@@ -136,8 +142,10 @@ begin
        end else if TipoUsuario = 'Funcionario' then begin
          Application.CreateForm(TformPáginaInicialFunc, formPáginaInicialFunc);
          formPáginaInicialFunc.Show;
-     end;
-  end;
+                end;
+      end;
   end;
 end;
 end.
+
+// ShowMessage('Usuário ou senha incorretos. Tente novamente.');

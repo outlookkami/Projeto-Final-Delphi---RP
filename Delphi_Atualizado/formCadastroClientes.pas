@@ -11,11 +11,16 @@ uses
 
 type
   TformCadastroDeClientes = class(TForm)
-    GridPanel1: TGridPanel;
+    EurekaLogEvents1: TEurekaLogEvents;
+    RESTClient1: TRESTClient;
+    RESTRequest1: TRESTRequest;
+    RESTResponse1: TRESTResponse;
+    griPnlCadastro: TGridPanel;
     pnlilustrativo: TPanel;
+    edtStatusCode: TEdit;
     pnlLogin: TPanel;
     Label1: TLabel;
-    gridPanelLogin: TGridPanel;
+    gridPanelCad2: TGridPanel;
     lblV1: TLabel;
     lblV2: TLabel;
     Label3: TLabel;
@@ -23,8 +28,14 @@ type
     Label5: TLabel;
     Label6: TLabel;
     GridPanel3: TGridPanel;
+    leNumero: TLabeledEdit;
+    leBairro: TLabeledEdit;
     Label7: TLabel;
     GridPanel4: TGridPanel;
+    leCidade: TLabeledEdit;
+    GridPanel7: TGridPanel;
+    Label12: TLabel;
+    cbUF: TComboBox;
     Label11: TLabel;
     pnlCadastrar: TPanel;
     Label13: TLabel;
@@ -32,30 +43,20 @@ type
     Label2: TLabel;
     leConfSenha: TLabeledEdit;
     cadeadoConfSenha: TImage;
-    EurekaLogEvents1: TEurekaLogEvents;
     leNome: TLabeledEdit;
     leTelefone: TLabeledEdit;
     leEmail: TLabeledEdit;
     leCEP: TLabeledEdit;
     leEndereco: TLabeledEdit;
-    leNumero: TLabeledEdit;
-    leBairro: TLabeledEdit;
-    leCidade: TLabeledEdit;
-    GridPanel7: TGridPanel;
-    Label12: TLabel;
-    cbUF: TComboBox;
     GridPanel2: TGridPanel;
     Label9: TLabel;
     leSenha: TLabeledEdit;
     cadeadoSenha: TImage;
-    RESTClient1: TRESTClient;
-    RESTRequest1: TRESTRequest;
-    RESTResponse1: TRESTResponse;
-    edtStatusCode: TEdit;
     procedure pnlCadastrarClick(Sender: TObject);
     procedure cadeadoSenhaClick(Sender: TObject);
     procedure cadeadoConfSenhaClick(Sender: TObject);
     procedure leCEPExit(Sender: TObject);
+    procedure FrameVeiculo;
 
   private
     { Private declarations }
@@ -126,6 +127,15 @@ begin
     end;
 end;
 
+procedure TFormCadastroDeClientes.FrameVeiculo;
+var frameVeiculo: TframeCadVeiculo;
+begin
+   frameVeiculo := TframeCadVeiculo.Create(Self);
+   frameVeiculo.Parent := Self;
+   frameVeiculo.Align := alClient;
+   frameVeiculo.Show;
+end;
+
 procedure TformCadastroDeClientes.pnlCadastrarClick(Sender: TObject);
 begin
     if leConfSenha.Text = leSenha.Text then begin
@@ -133,7 +143,7 @@ begin
       DM.QueryClientes.SQL.Text := 'INSERT INTO "Clientes" (hash_senha_cli) VALUES (THashSHA1.GetHashString(leConfSenha.Text);)';
 
       if MessageDlg('Cadastro finalizado com sucesso! Deseja incluir seu veículo?',
-      mtConfirmation, [mbYes, mbNo], 0) = mrYes then frameCadVeiculo.Visible := True;
+      mtConfirmation, [mbYes, mbNo], 0) = mrYes then FrameVeiculo;
 
     end else begin
        ShowMessage('Senhas não compatíveis. Tente novamente');

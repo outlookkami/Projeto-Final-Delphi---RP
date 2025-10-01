@@ -11,7 +11,7 @@ object formCadastroDeClientes: TformCadastroDeClientes
   Font.Name = 'Segoe UI'
   Font.Style = []
   TextHeight = 15
-  object GridPanel1: TGridPanel
+  object griPnlCadastro: TGridPanel
     AlignWithMargins = True
     Left = 3
     Top = 3
@@ -63,7 +63,7 @@ object formCadastroDeClientes: TformCadastroDeClientes
     end
     object pnlLogin: TPanel
       Left = 641
-      Top = 24
+      Top = 29
       Width = 477
       Height = 656
       Align = alCustom
@@ -85,7 +85,7 @@ object formCadastroDeClientes: TformCadastroDeClientes
         ParentFont = False
         ExplicitWidth = 147
       end
-      object gridPanelLogin: TGridPanel
+      object gridPanelCad2: TGridPanel
         Left = 8
         Top = 57
         Width = 464
@@ -3783,14 +3783,15 @@ object formCadastroDeClientes: TformCadastroDeClientes
               509011044110A40C4041461004419032E0FFD7B4FF8510FC0159000000004945
               4E44AE426082}
             Proportional = True
+            OnClick = cadeadoSenhaClick
           end
         end
       end
     end
   end
   object EurekaLogEvents1: TEurekaLogEvents
-    Left = 320
-    Top = 112
+    Left = 328
+    Top = 192
   end
   object RESTClient1: TRESTClient
     Params = <>

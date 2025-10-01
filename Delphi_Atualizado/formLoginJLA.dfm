@@ -32,7 +32,7 @@ object formLogin: TformLogin
       Color = clWhite
       ParentBackground = False
       TabOrder = 0
-      object GridPanel1: TGridPanel
+      object GridPanelLogin: TGridPanel
         Left = 1
         Top = 43
         Width = 582
@@ -46871,5 +46871,9 @@ object formLogin: TformLogin
     DataSet = DM.QueryUsuarios
     Left = 646
     Top = 143
+  end
+  object BalloonHint1: TBalloonHint
+    Left = 441
+    Top = 265
   end
 end

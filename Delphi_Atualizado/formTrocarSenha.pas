@@ -9,7 +9,7 @@ uses
 
 type
   TformTrocaSenha = class(TForm)
-    pnlSenhaFuncionario: TPanel;
+    //pnlSenhaFuncionario: TPanel;
     lblCrieNovaSenha: TLabel;
     pnlCadSenhaFunc: TPanel;
     GridPanel1: TGridPanel;
@@ -25,9 +25,11 @@ type
     leConfSenha: TLabeledEdit;
     leUsuarioTS: TLabeledEdit;
     lblEspacamento: TLabel;
+    Image1: TImage;
     procedure pnlBotaoTrocarSenhaClick(Sender: TObject);
     procedure cadeadoSenhaClick(Sender: TObject);
     procedure cadeadoConfSenhaClick(Sender: TObject);
+    procedure Image1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -61,6 +63,11 @@ begin
     cadeadoSenha.Picture.LoadFromFile('C:\Users\Kamilly Souza\Desktop\Projeto Delphi-JLA\Delphi_Atualizado\Assets\cadeado azul bloqueado.png');
     leSenha.PasswordChar := '*';
     end;
+end;
+
+procedure TformTrocaSenha.Image1Click(Sender: TObject);
+begin
+  formTrocaSenha.Hide;
 end;
 
 procedure TformTrocaSenha.cadeadoConfSenhaClick(Sender: TObject);
