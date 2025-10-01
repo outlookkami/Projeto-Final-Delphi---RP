@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Mask, Vcl.ExtCtrls,
-  Vcl.DBCtrls, frameFormularioPedido, System.Hash, Vcl.Imaging.pngimage, System.UITypes, DataModuleNormal,
+  Vcl.DBCtrls, frameFormularioPedido, Vcl.Imaging.pngimage, System.UITypes, DataModuleNormal,
   EComponent, Data.DB, REST.Types, Data.Bind.Components, Data.Bind.ObjectScope,
   REST.Client;
 
@@ -74,7 +74,8 @@ implementation
 
 {$R *.dfm}
 
-uses  formPáginaDeInícioFunc,
+uses  System.Hash,
+      formPáginaDeInícioFunc,
       frameCadastroVeiculo,
       System.Net.HttpClient,
       System.JSON;

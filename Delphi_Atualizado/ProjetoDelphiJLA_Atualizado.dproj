@@ -197,6 +197,10 @@
             <Form>formPortfólio</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="formTrocarSenha.pas">
+            <Form>formTrocaSenha</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

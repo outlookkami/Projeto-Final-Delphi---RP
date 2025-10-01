@@ -40,7 +40,6 @@ type
     lblEsqueceuSenha: TLabel;
     pnlEntrar: TPanel;
     lblCadastreAqui: TLabel;
-    TrocarSenha1: TTrocarSenha;
     procedure pnlEntrarClick(Sender: TObject);
     procedure cadeadoSenhaClick(Sender: TObject);
     procedure imgFecharClick(Sender: TObject);
@@ -61,7 +60,7 @@ implementation
 
 {$R *.dfm}
 
-uses  frameTrocarSenhaUsuario,
+uses  formTrocarSenha,
       formCadastroClientes,
       formPáginaDeInícioClientes,
       formPáginaDeInícioFunc,
@@ -95,7 +94,7 @@ end;
 
 procedure TformLogin.lblEsqueceuSenhaClick(Sender: TObject);
 begin
-    frameTrocarSenha.Visible := True;
+    formTrocaSenha.ShowModal;
 end;
 
 procedure TformLogin.pnlEntrarClick(Sender: TObject);

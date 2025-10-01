@@ -36,7 +36,8 @@ uses
   crudClientesSemErro in 'crudClientesSemErro.pas' {frameCrudClientes: TFrame},
   unitTestesDeProcedures in 'unitTestesDeProcedures.pas',
   frameTrocarSenhaUsuario in 'frameTrocarSenhaUsuario.pas' {TrocarSenha: TFrame},
-  formPortfolio in 'formPortfolio.pas' {formPortfólio};
+  formPortfolio in 'formPortfolio.pas' {formPortfólio},
+  formTrocarSenha in 'formTrocarSenha.pas' {formTrocaSenha};
 
 {$R *.res}
 
@@ -53,6 +54,7 @@ begin
   Application.CreateForm(TdtmInicial, dtmInicial);
   Application.CreateForm(TDM, DM);
   Application.CreateForm(TformPortfólio, formPortfólio);
+  Application.CreateForm(TformTrocaSenha, formTrocaSenha);
   Application.Run;
 end.
 
