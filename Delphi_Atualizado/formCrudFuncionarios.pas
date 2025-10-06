@@ -5,7 +5,8 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.Grids, Vcl.DBGrids,
-  Vcl.StdCtrls, Vcl.Mask, Vcl.ExtCtrls, Vcl.DBCtrls, Vcl.Imaging.pngimage, DataModuleNormal;
+  Vcl.StdCtrls, Vcl.Mask, Vcl.ExtCtrls, Vcl.DBCtrls, Vcl.Imaging.pngimage, DataModuleNormal,
+  Datasnap.DBClient;
 
 type
   TformCrudFunc = class(TForm)
@@ -46,6 +47,11 @@ type
     LabeledEdit1: TLabeledEdit;
     LabeledEdit2: TLabeledEdit;
     edtPesquisa: TEdit;
+    btnInativFunc: TPanel;
+    btnExcluFunc: TPanel;
+    ClientDataSet1: TClientDataSet;
+    procedure btnExcluFuncClick(Sender: TObject);
+    procedure iconePesquisaClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -58,5 +64,21 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TformCrudFunc.btnExcluFuncClick(Sender: TObject);
+begin
+//    DM.QueryFuncionarios.SQL.Text := 'SELECT * FROM "Funcionarios" WHERE ativo_in = True';
+//    if Funcionario.ativo_in <> true then begin
+//      ShowMessage('O funcionário deve estar inativo antes de ser excluído.');
+//    end;
+end;
+
+
+
+
+procedure TformCrudFunc.iconePesquisaClick(Sender: TObject);
+begin
+    DM.QueryFuncionarios
+end;
 
 end.

@@ -62,6 +62,7 @@ implementation
 {$R *.dfm}
 
 uses  formTrocarSenha,
+      frameTrocarSenhaUsuario,
       formCadastroClientes,
       formPáginaDeInícioClientes,
       formPáginaDeInícioFunc,
@@ -97,11 +98,12 @@ begin
 end;
 
 procedure TformLogin.lblEsqueceuSenhaClick(Sender: TObject);
+var frameTrocarSenhaUsuario: TTrocarSenha;
 begin
-//    formTrocaSenha.Create(Self);
-//    formTrocaSenha.Parent := Self;
-//    formTrocaSenha.Align := alClient;
-      formTrocaSenha.Show;
+    frameTrocarSenhaUsuario := TTrocarSenha.Create(Self);
+    frameTrocarSenhaUsuario.Parent := Self;
+    frameTrocarSenhaUsuario.Align := alClient;
+    frameTrocarSenhaUsuario.Show;
 end;
 
 procedure TformLogin.pnlEntrarClick(Sender: TObject);

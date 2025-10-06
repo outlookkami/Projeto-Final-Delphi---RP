@@ -18,10 +18,6 @@ object formProdutos: TformProdutos
     Height = 719
     Align = alClient
     TabOrder = 0
-    ExplicitLeft = 8
-    ExplicitTop = 8
-    ExplicitWidth = 1150
-    ExplicitHeight = 701
     DesignSize = (
       1168
       719)
@@ -43,7 +39,7 @@ object formProdutos: TformProdutos
     end
     object btnIncluirProd: TPanel
       Left = 609
-      Top = 79
+      Top = 74
       Width = 152
       Height = 43
       Cursor = crHandPoint
@@ -58,7 +54,6 @@ object formProdutos: TformProdutos
       ParentBackground = False
       ParentFont = False
       TabOrder = 2
-      ExplicitLeft = 591
     end
     object pnlPesquisa: TPanel
       Left = 48
@@ -71,7 +66,6 @@ object formProdutos: TformProdutos
       Color = clBtnHighlight
       ParentBackground = False
       TabOrder = 0
-      ExplicitWidth = 695
       DesignSize = (
         709
         37)
@@ -176,56 +170,76 @@ object formProdutos: TformProdutos
         item
           Expanded = False
           FieldName = 'codigo_produto'
+          Title.Caption = 'C'#243'digo Int.'
+          Width = 65
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'codigo_barras'
+          Title.Caption = 'C'#243'digo de barras'
+          Width = 140
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'nome_produto'
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'categoria'
+          Title.Caption = 'Nome do produto'
+          Width = 380
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'unidade_medida'
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'quant_estoque'
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'quant_est_prevista'
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'preco_compra'
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'preco_venda'
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'foto_produto'
+          Title.Caption = 'Unidade de Medida'
+          Width = 110
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'marca'
+          Title.Caption = 'Marca'
+          Width = 200
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'categoria'
+          Title.Caption = 'Categoria'
+          Width = 200
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'quant_estoque'
+          Title.Caption = 'Quant. Est.'
+          Width = 80
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'quant_est_prevista'
+          Title.Caption = 'Quant. Est. Prev.'
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'preco_compra'
+          Title.Caption = 'Pre'#231'o Compra'
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'preco_venda'
+          Title.Caption = 'Pre'#231'o Venda'
+          Width = 80
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'foto_produto'
+          Title.Caption = 'Imagem do produto'
+          Width = 360
           Visible = True
         end>
     end
@@ -244,11 +258,10 @@ object formProdutos: TformProdutos
       ParentFont = False
       TabOrder = 3
       TextHint = 'Pesquise'
-      ExplicitWidth = 637
     end
     object gridPanelLogin: TGridPanel
       Left = 783
-      Top = 52
+      Top = 56
       Width = 372
       Height = 655
       Align = alCustom
@@ -352,12 +365,12 @@ object formProdutos: TformProdutos
         end
         item
           Column = 0
-          Control = LabeledEdit1
+          Control = lblImagem
           Row = 17
         end
         item
           Column = 0
-          Control = LabeledEdit2
+          Control = DBImage1
           Row = 19
         end>
       Font.Charset = DEFAULT_CHARSET
@@ -434,8 +447,6 @@ object formProdutos: TformProdutos
           Value = 4.545454545454532000
         end>
       TabOrder = 4
-      ExplicitLeft = 765
-      ExplicitHeight = 637
       DesignSize = (
         372
         655)
@@ -523,7 +534,6 @@ object formProdutos: TformProdutos
             Value = 100.000000000000000000
           end>
         TabOrder = 0
-        ExplicitTop = 319
         DesignSize = (
           370
           56)
@@ -573,11 +583,11 @@ object formProdutos: TformProdutos
         ColumnCollection = <
           item
             SizeStyle = ssAbsolute
-            Value = 220.000000000000000000
+            Value = 180.000000000000000000
           end
           item
             SizeStyle = ssAbsolute
-            Value = 50.000000000000000000
+            Value = 200.000000000000000000
           end>
         ControlCollection = <
           item
@@ -600,15 +610,13 @@ object formProdutos: TformProdutos
             SizeStyle = ssAuto
           end>
         TabOrder = 1
-        ExplicitLeft = 16
-        ExplicitTop = 390
         DesignSize = (
           379
           58)
         object leQuantEst: TLabeledEdit
-          Left = 17
+          Left = 16
           Top = 26
-          Width = 185
+          Width = 147
           Height = 29
           Anchors = []
           EditLabel.Width = 143
@@ -619,7 +627,7 @@ object formProdutos: TformProdutos
           TextHint = 'Informe a quantidade'
         end
         object GridPanel7: TGridPanel
-          Left = 220
+          Left = 180
           Top = 0
           Width = 185
           Height = 58
@@ -632,12 +640,12 @@ object formProdutos: TformProdutos
           ControlCollection = <
             item
               Column = 0
-              Control = Label12
+              Control = lblQuantEstPrev
               Row = 0
             end
             item
               Column = 0
-              Control = cbCategoria
+              Control = edtQuantEstPrev
               Row = 1
             end>
           RowCollection = <
@@ -650,61 +658,29 @@ object formProdutos: TformProdutos
               Value = 100.000000000000000000
             end>
           TabOrder = 1
-          ExplicitLeft = 263
-          object Label12: TLabel
+          object lblQuantEstPrev: TLabel
             Left = 0
             Top = 0
             Width = 185
             Height = 20
             Align = alClient
-            Caption = 'Categoria:'
+            Caption = 'Quant. Estoque prevista'
             Font.Charset = DEFAULT_CHARSET
             Font.Color = clWindowText
             Font.Height = -16
             Font.Name = 'Segoe UI'
             Font.Style = []
             ParentFont = False
-            ExplicitWidth = 70
+            ExplicitWidth = 164
             ExplicitHeight = 21
           end
-          object cbCategoria: TComboBox
+          object edtQuantEstPrev: TEdit
             Left = 0
-            Top = 25
-            Width = 137
+            Top = 26
+            Width = 177
             Height = 29
             Align = alCustom
-            BevelInner = bvNone
-            BevelOuter = bvNone
             TabOrder = 0
-            TextHint = 'Selecione a categoria'
-            Items.Strings = (
-              'AC'
-              'AL'
-              'AP'
-              'AM'
-              'BA'
-              'CE'
-              'DF'
-              'ES'
-              'GO'
-              'MA'
-              'MG'
-              'MS'
-              'MT'
-              'PA'
-              'PB'
-              'PE'
-              'PI'
-              'PR'
-              'RJ'
-              'RN'
-              'RO'
-              'RR'
-              'RS'
-              'SC'
-              'SE'
-              'SP'
-              'TO')
           end
         end
       end
@@ -716,13 +692,12 @@ object formProdutos: TformProdutos
         Anchors = []
         BevelOuter = bvNone
         TabOrder = 2
-        ExplicitTop = 434
-        object lblSelecionaFuncao: TLabel
-          Left = 24
+        object lblSelecionaCategoria: TLabel
+          Left = 16
           Top = 3
-          Width = 132
+          Width = 70
           Height = 21
-          Caption = 'Selecione a fun'#231#227'o:'
+          Caption = 'Categoria:'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
           Font.Height = -16
@@ -730,19 +705,13 @@ object formProdutos: TformProdutos
           Font.Style = []
           ParentFont = False
         end
-        object cbFuncao: TComboBox
+        object ComboBox1: TComboBox
           Left = 16
           Top = 30
-          Width = 345
+          Width = 337
           Height = 29
-          BevelInner = bvNone
-          BevelOuter = bvNone
           TabOrder = 0
-          Items.Strings = (
-            'Funileiro'
-            'Montador/Desmontador'
-            'PintorAutomotivo'
-            'Preparador de pintura')
+          TextHint = 'Selecione a categoria'
         end
       end
       object Label9: TLabel
@@ -784,7 +753,6 @@ object formProdutos: TformProdutos
         TabOrder = 3
         Text = ''
         TextHint = 'Informe a marca do produto'
-        ExplicitTop = 239
       end
       object leEmail: TLabeledEdit
         Left = 13
@@ -798,7 +766,6 @@ object formProdutos: TformProdutos
         TabOrder = 4
         Text = ''
         TextHint = 'Digite o c'#243'digo de barras do produto'
-        ExplicitTop = 169
       end
       object leCodInt: TLabeledEdit
         Left = 14
@@ -812,7 +779,6 @@ object formProdutos: TformProdutos
         TabOrder = 5
         Text = ''
         TextHint = 'Informe o c'#243'digo interno do produto'
-        ExplicitTop = 111
       end
       object leNomeProd: TLabeledEdit
         Left = 15
@@ -826,7 +792,6 @@ object formProdutos: TformProdutos
         TabOrder = 6
         Text = ''
         TextHint = 'Digite o nome do produto'
-        ExplicitTop = 53
       end
       object leEndereco: TLabeledEdit
         Left = 14
@@ -840,39 +805,64 @@ object formProdutos: TformProdutos
         TabOrder = 7
         Text = ''
         TextHint = 'Informe a unidade de medida L, Kg, ml etc.'
-        ExplicitTop = 285
       end
-      object LabeledEdit1: TLabeledEdit
-        Left = 15
-        Top = 530
-        Width = 342
-        Height = 29
-        Anchors = []
-        EditLabel.Width = 30
-        EditLabel.Height = 21
-        EditLabel.Caption = 'CPF:'
+      object lblImagem: TLabel
+        Left = 19
+        Top = 512
+        Width = 60
+        Height = 21
+        Align = alCustom
+        Caption = 'Imagem:'
+      end
+      object DBImage1: TDBImage
+        Left = 125
+        Top = 512
+        Width = 105
+        Height = 105
+        Align = alCustom
         TabOrder = 8
-        Text = ''
-        ExplicitTop = 516
       end
-      object LabeledEdit2: TLabeledEdit
-        Left = 15
-        Top = 590
-        Width = 341
-        Height = 29
-        Anchors = []
-        EditLabel.Width = 24
-        EditLabel.Height = 21
-        EditLabel.Caption = 'RG:'
-        TabOrder = 9
-        Text = ''
-        ExplicitTop = 574
-      end
+    end
+    object btnInativProd: TPanel
+      Left = 451
+      Top = 74
+      Width = 152
+      Height = 43
+      Cursor = crHandPoint
+      Anchors = [akTop, akRight]
+      Caption = 'Inativar Produto'
+      Color = clHighlight
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -13
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentBackground = False
+      ParentFont = False
+      TabOrder = 5
+    end
+    object btnExcluirProduto: TPanel
+      Left = 293
+      Top = 74
+      Width = 152
+      Height = 43
+      Cursor = crHandPoint
+      Anchors = [akTop, akRight]
+      Caption = 'Excluir Produto'
+      Color = clHighlight
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -13
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentBackground = False
+      ParentFont = False
+      TabOrder = 6
     end
   end
   object DSProdutos: TDataSource
     DataSet = DM.QueryProdutos
-    Left = 464
+    Left = 64
     Top = 80
   end
 end

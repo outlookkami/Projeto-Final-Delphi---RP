@@ -4,7 +4,7 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.DBCtrls;
 
 type
   TformPortfólio = class(TForm)
@@ -16,7 +16,6 @@ type
     MemoInfoPort1: TMemo;
     lblV1: TLabel;
     Panel1: TPanel;
-    imgPort2: TImage;
     MemoInfoPort2: TMemo;
     lblV2: TLabel;
     Panel2: TPanel;
@@ -38,6 +37,8 @@ type
     Panel5: TPanel;
     imgPort6: TImage;
     MemoInfoPort6: TMemo;
+    DBImage1: TDBImage;
+    DBImage2: TDBImage;
   private
     { Private declarations }
   public

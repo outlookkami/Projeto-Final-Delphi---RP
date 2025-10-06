@@ -40,7 +40,8 @@ uses
   formTrocarSenha in 'formTrocarSenha.pas' {formTrocaSenha},
   formCrudFuncionarios in 'formCrudFuncionarios.pas' {formCrudFunc},
   formConfirmeEmail in 'formConfirmeEmail.pas' {Form1},
-  formCrudProdutos in 'formCrudProdutos.pas' {formProdutos};
+  formCrudProdutos in 'formCrudProdutos.pas' {formProdutos},
+  formCrudClientes in 'formCrudClientes.pas' {Form2};
 
 {$R *.res}
 
@@ -61,6 +62,7 @@ begin
   Application.CreateForm(TformTrocaSenha, formTrocaSenha);
   Application.CreateForm(TForm1, Form1);
   Application.CreateForm(TformProdutos, formProdutos);
+  Application.CreateForm(TForm2, Form2);
   Application.Run;
 end.
 

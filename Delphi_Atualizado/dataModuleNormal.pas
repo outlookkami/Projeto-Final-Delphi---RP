@@ -61,6 +61,9 @@ type
     QueryProdutospreco_venda: TBCDField;
     QueryProdutosfoto_produto: TStringField;
     QueryProdutosmarca: TStringField;
+    FDTransaction1: TFDTransaction;
+    QueryFuncionariosativo_in: TBooleanField;
+    QueryClientesativo_in: TBooleanField;
   private
     { Private declarations }
   public

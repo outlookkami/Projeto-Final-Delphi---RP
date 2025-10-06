@@ -14,7 +14,6 @@ object DM: TDM
     Top = 104
   end
   object QueryClientes: TFDQuery
-    Active = True
     Connection = ConexaoBanco
     SQL.Strings = (
       'SELECT * FROM "Clientes";')
@@ -79,6 +78,10 @@ object DM: TDM
       FieldName = 'veiculo'
       Origin = 'veiculo'
       Size = 7
+    end
+    object QueryClientesativo_in: TBooleanField
+      FieldName = 'ativo_in'
+      Origin = 'ativo_in'
     end
   end
   object FDGUIxWaitCursor1: TFDGUIxWaitCursor
@@ -171,6 +174,10 @@ object DM: TDM
       FieldName = 'rg_funcionario'
       Origin = 'rg_funcionario'
       Size = 9
+    end
+    object QueryFuncionariosativo_in: TBooleanField
+      FieldName = 'ativo_in'
+      Origin = 'ativo_in'
     end
   end
   object Perfil: TFDQuery
@@ -265,5 +272,10 @@ object DM: TDM
       Origin = 'marca'
       Size = 40
     end
+  end
+  object FDTransaction1: TFDTransaction
+    Connection = ConexaoBanco
+    Left = 184
+    Top = 56
   end
 end

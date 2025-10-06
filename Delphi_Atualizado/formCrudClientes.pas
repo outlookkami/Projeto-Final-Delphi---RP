@@ -1,18 +1,17 @@
-unit formCrudProdutos;
+unit formCrudClientes;
 
 interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls, Data.DB,
-  Vcl.Mask, Vcl.Grids, Vcl.DBGrids, Vcl.Imaging.pngimage, dataModuleNormal,
-  Vcl.DBCtrls;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.StdCtrls, Vcl.Mask,
+  Vcl.ExtCtrls, Vcl.Grids, Vcl.DBGrids, Vcl.Imaging.pngimage;
 
 type
-  TformProdutos = class(TForm)
+  TForm2 = class(TForm)
     Panel1: TPanel;
-    lblDadosProd: TLabel;
-    btnIncluirProd: TPanel;
+    lblDadosCli: TLabel;
+    btnIncluirFunc: TPanel;
     pnlPesquisa: TPanel;
     iconePesquisa: TImage;
     DBGrid1: TDBGrid;
@@ -29,26 +28,24 @@ type
     leBairro: TLabeledEdit;
     Label7: TLabel;
     GridPanel4: TGridPanel;
-    leQuantEst: TLabeledEdit;
+    leCidade: TLabeledEdit;
     GridPanel7: TGridPanel;
-    lblQuantEstPrev: TLabel;
+    Label12: TLabel;
+    cbUF: TComboBox;
     pnlSelecionaFuncao: TPanel;
-    lblSelecionaCategoria: TLabel;
     Label9: TLabel;
     Label8: TLabel;
     Label10: TLabel;
     leCEP: TLabeledEdit;
     leEmail: TLabeledEdit;
-    leCodInt: TLabeledEdit;
-    leNomeProd: TLabeledEdit;
+    leTelefone: TLabeledEdit;
+    leNome: TLabeledEdit;
     leEndereco: TLabeledEdit;
-    DSProdutos: TDataSource;
-    ComboBox1: TComboBox;
-    edtQuantEstPrev: TEdit;
-    lblImagem: TLabel;
-    DBImage1: TDBImage;
-    btnInativProd: TPanel;
-    btnExcluirProduto: TPanel;
+    LabeledEdit1: TLabeledEdit;
+    btnInativCli: TPanel;
+    btnExcluCli: TPanel;
+    DSCliente: TDataSource;
+    leSenha: TLabeledEdit;
   private
     { Private declarations }
   public
@@ -56,10 +53,16 @@ type
   end;
 
 var
-  formProdutos: TformProdutos;
+  Form2: TForm2;
+
+
 
 implementation
 
 {$R *.dfm}
+
+uses dataModuleNormal;
+
+
 
 end.

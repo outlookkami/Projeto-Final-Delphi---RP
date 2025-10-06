@@ -46,6 +46,8 @@ object formCadastroFuncionarios: TformCadastroFuncionarios
       end>
     ShowCaption = False
     TabOrder = 0
+    ExplicitLeft = -2
+    ExplicitTop = 8
     object pnlLogin: TPanel
       Left = 641
       Top = 5
@@ -603,6 +605,7 @@ object formCadastroFuncionarios: TformCadastroFuncionarios
           Text = ''
           TextHint = 'Informe seu CEP'
           OnExit = leCEPExit
+          ExplicitTop = 233
         end
         object leEmail: TLabeledEdit
           Left = 52
@@ -615,7 +618,7 @@ object formCadastroFuncionarios: TformCadastroFuncionarios
           EditLabel.Caption = 'E-mail'
           TabOrder = 4
           Text = ''
-          TextHint = 'Digite seu endere'#231'o de e-mail'
+          TextHint = 'Digite o endere'#231'o de e-mail'
         end
         object leTelefone: TLabeledEdit
           Left = 53
@@ -643,7 +646,7 @@ object formCadastroFuncionarios: TformCadastroFuncionarios
           EditLabel.Caption = 'Nome completo:'
           TabOrder = 6
           Text = ''
-          TextHint = 'Digite seu nome completo'
+          TextHint = 'Digite o nome completo'
         end
         object leEndereco: TLabeledEdit
           Left = 53
@@ -656,7 +659,7 @@ object formCadastroFuncionarios: TformCadastroFuncionarios
           EditLabel.Caption = 'Endere'#231'o:'
           TabOrder = 7
           Text = ''
-          TextHint = 'Informe seu endere'#231'o'
+          TextHint = 'Informe o endere'#231'o'
         end
         object LabeledEdit1: TLabeledEdit
           Left = 58
@@ -712,6 +715,8 @@ object formCadastroFuncionarios: TformCadastroFuncionarios
       Color = clHighlight
       ParentBackground = False
       TabOrder = 1
+      ExplicitLeft = 0
+      ExplicitTop = -2
     end
   end
   object RESTClient1: TRESTClient

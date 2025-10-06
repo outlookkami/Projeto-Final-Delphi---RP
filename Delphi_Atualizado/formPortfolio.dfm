@@ -172,6 +172,13 @@
             'MemoInfoPort1')
           TabOrder = 0
         end
+        object DBImage1: TDBImage
+          Left = 48
+          Top = 24
+          Width = 241
+          Height = 201
+          TabOrder = 1
+        end
       end
       object lblV1: TLabel
         Left = 359
@@ -188,20 +195,21 @@
         Height = 300
         Align = alClient
         TabOrder = 1
-        object imgPort2: TImage
-          Left = 48
-          Top = 24
-          Width = 241
-          Height = 201
-        end
         object MemoInfoPort2: TMemo
-          Left = 48
+          Left = 40
           Top = 239
-          Width = 241
+          Width = 257
           Height = 48
           Lines.Strings = (
             'MemoInfoPort1')
           TabOrder = 0
+        end
+        object DBImage2: TDBImage
+          Left = 40
+          Top = 24
+          Width = 257
+          Height = 201
+          TabOrder = 1
         end
       end
       object lblV2: TLabel
