@@ -17,15 +17,8 @@ type
     GridPanel1: TGridPanel;
     Label2: TLabel;
     Label1: TLabel;
-    Label3: TLabel;
-    pnlBotaoTrocarSenha: TPanel;
-    GridPanel5: TGridPanel;
-    leSenha: TLabeledEdit;
-    cadeadoSenha: TImage;
-    GridPanel6: TGridPanel;
-    cadeadoConfSenha: TImage;
-    leConfSenha: TLabeledEdit;
     leEmail: TLabeledEdit;
+    pnlBotaoConfEmail: TPanel;
   private
     { Private declarations }
   public

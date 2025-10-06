@@ -1,7 +1,7 @@
 object formCadastroDeClientes: TformCadastroDeClientes
   Left = 0
   Top = 0
-  Caption = 'formCadastroDeClientes'
+  Caption = 'Form Cadastro Clientes'
   ClientHeight = 719
   ClientWidth = 1168
   Color = clBtnFace
@@ -506,6 +506,7 @@ object formCadastroDeClientes: TformCadastroDeClientes
               BevelInner = bvNone
               BevelOuter = bvNone
               TabOrder = 0
+              TextHint = 'Selecione a UF'
               Items.Strings = (
                 'AC'
                 'AL'
@@ -3810,5 +3811,10 @@ object formCadastroDeClientes: TformCadastroDeClientes
   object RESTResponse1: TRESTResponse
     Left = 340
     Top = 340
+  end
+  object DSCadCli: TDataSource
+    DataSet = DM.QueryClientes
+    Left = 532
+    Top = 100
   end
 end

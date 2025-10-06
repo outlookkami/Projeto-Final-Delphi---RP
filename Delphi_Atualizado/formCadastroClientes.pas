@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Mask, Vcl.ExtCtrls,
-  Vcl.DBCtrls, frameFormularioPedido, Vcl.Imaging.pngimage, System.UITypes, DataModuleNormal,
+  Vcl.DBCtrls, frameFormularioPedido, Vcl.Imaging.pngimage, System.UITypes, dataModuleNormal,
   EComponent, Data.DB, REST.Types, Data.Bind.Components, Data.Bind.ObjectScope,
   REST.Client;
 
@@ -52,6 +52,7 @@ type
     Label9: TLabel;
     leSenha: TLabeledEdit;
     cadeadoSenha: TImage;
+    DSCadCli: TDataSource;
     procedure pnlCadastrarClick(Sender: TObject);
     procedure cadeadoSenhaClick(Sender: TObject);
     procedure cadeadoConfSenhaClick(Sender: TObject);
@@ -139,10 +140,9 @@ end;
 procedure TformCadastroDeClientes.pnlCadastrarClick(Sender: TObject);
 begin
     if leConfSenha.Text = leSenha.Text then begin
-//      DM.QueryClientes.SQL.Text := 'INSERT INTO "Clientes" (nome_cliente, telefone_cliente,
-//      email_cliente, cep_cliente, endereco_cliente, num_endereco, bairro, cidade, uf) VALUES (leNome.Text, leTelefone.Text, leEmail.Text, leCEP.Text, leEndereco.Text, leNumero.Text, leBairro.Text, leCidade.Text, cbUF.Text);';
-//      DM.QueryClientes.SQL.Text := 'INSERT INTO "Clientes" (hash_senha_cli) VALUES (THashSHA1.GetHashString(leConfSenha.Text);)';
 
+      if DM.QueryClientes.State in [dsInsert, dsEdit] then begin
+      DM.QueryClientes.SQL.Text := 'SELECT * FROM "Clientes"';
 
       DM.QueryClientes.FieldByName('nome_cliente').AsString := leNome.Text;
       DM.QueryClientes.FieldByName('telefone_cliente').AsString := leTelefone.Text;
@@ -154,7 +154,12 @@ begin
       DM.QueryClientes.FieldByName('cidade').AsString := leCidade.Text;
       DM.QueryClientes.FieldByName('uf').AsString := cbUf.Text;
       DM.QueryClientes.FieldByName('hash_senha_cli').AsString := THashSHA1.GetHashString(leConfSenha.Text);
+
+      DM.QueryClientes.SQL.Text := 'INSERT INTO "Clientes" (nome_cliente, telefone_cliente, email_cliente, cep_cliente, endereco_cliente, num_endereco, bairro, cidade, uf) VALUES (leNome.Text, leTelefone.Text, leEmail.Text, leCEP.Text, leEndereco.Text, leNumero.Text, leBairro.Text, leCidade.Text, cbUF.Text);';
+      DM.QueryClientes.SQL.Text := 'INSERT INTO "Clientes" (hash_senha_cli) VALUES (THashSHA1.GetHashString(leConfSenha.Text);)';
+
       DM.QueryClientes.Post;
+      end;
       if MessageDlg('Cadastro finalizado com sucesso! Deseja incluir seu veículo?',
       mtConfirmation, [mbYes, mbNo], 0) = mrYes then FrameVeiculo;
 

@@ -18,6 +18,7 @@ object formCadastroFuncionarios: TformCadastroFuncionarios
     Width = 1161
     Height = 713
     Align = alClient
+    Caption = 'Selecione a UF'
     ColumnCollection = <
       item
         Value = 50.000000000000000000
@@ -376,7 +377,6 @@ object formCadastroFuncionarios: TformCadastroFuncionarios
             TabOrder = 1
             Text = ''
             TextHint = 'Informe o bairro'
-            ExplicitLeft = 176
           end
         end
         object Label7: TLabel
@@ -438,7 +438,6 @@ object formCadastroFuncionarios: TformCadastroFuncionarios
             TabOrder = 0
             Text = ''
             TextHint = 'Informe a cidade'
-            ExplicitLeft = 0
           end
           object GridPanel7: TGridPanel
             Left = 263
@@ -472,7 +471,6 @@ object formCadastroFuncionarios: TformCadastroFuncionarios
                 Value = 100.000000000000000000
               end>
             TabOrder = 1
-            ExplicitLeft = 194
             object Label12: TLabel
               Left = 0
               Top = 0
@@ -558,6 +556,7 @@ object formCadastroFuncionarios: TformCadastroFuncionarios
             BevelInner = bvNone
             BevelOuter = bvNone
             TabOrder = 0
+            TextHint = 'Selecione a fun'#231#227'o'
             Items.Strings = (
               'Funileiro'
               'Montador/Desmontador'
@@ -604,7 +603,6 @@ object formCadastroFuncionarios: TformCadastroFuncionarios
           Text = ''
           TextHint = 'Informe seu CEP'
           OnExit = leCEPExit
-          ExplicitLeft = 24
         end
         object leEmail: TLabeledEdit
           Left = 52
@@ -618,7 +616,6 @@ object formCadastroFuncionarios: TformCadastroFuncionarios
           TabOrder = 4
           Text = ''
           TextHint = 'Digite seu endere'#231'o de e-mail'
-          ExplicitLeft = 48
         end
         object leTelefone: TLabeledEdit
           Left = 53
@@ -634,7 +631,6 @@ object formCadastroFuncionarios: TformCadastroFuncionarios
           TabOrder = 5
           Text = '(  )     -    '
           TextHint = 'Informe seu n'#250'mero de telefone'
-          ExplicitLeft = 24
         end
         object leNome: TLabeledEdit
           Left = 55
@@ -648,7 +644,6 @@ object formCadastroFuncionarios: TformCadastroFuncionarios
           TabOrder = 6
           Text = ''
           TextHint = 'Digite seu nome completo'
-          ExplicitLeft = 48
         end
         object leEndereco: TLabeledEdit
           Left = 53
@@ -662,7 +657,6 @@ object formCadastroFuncionarios: TformCadastroFuncionarios
           TabOrder = 7
           Text = ''
           TextHint = 'Informe seu endere'#231'o'
-          ExplicitLeft = 16
         end
         object LabeledEdit1: TLabeledEdit
           Left = 58
@@ -675,7 +669,7 @@ object formCadastroFuncionarios: TformCadastroFuncionarios
           EditLabel.Caption = 'CPF:'
           TabOrder = 8
           Text = ''
-          ExplicitLeft = 56
+          TextHint = 'Informe o CPF'
         end
         object LabeledEdit2: TLabeledEdit
           Left = 59
@@ -688,7 +682,7 @@ object formCadastroFuncionarios: TformCadastroFuncionarios
           EditLabel.Caption = 'RG:'
           TabOrder = 9
           Text = ''
-          ExplicitLeft = 24
+          TextHint = 'Informe o RG'
         end
       end
       object pnlCadastrarFunc: TPanel
@@ -718,10 +712,6 @@ object formCadastroFuncionarios: TformCadastroFuncionarios
       Color = clHighlight
       ParentBackground = False
       TabOrder = 1
-      ExplicitLeft = 198
-      ExplicitTop = 336
-      ExplicitWidth = 185
-      ExplicitHeight = 41
     end
   end
   object RESTClient1: TRESTClient

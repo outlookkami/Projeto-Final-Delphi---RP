@@ -94,6 +94,7 @@ object DM: TDM
     Top = 104
   end
   object QueryFuncionarios: TFDQuery
+    Active = True
     Connection = ConexaoBanco
     SQL.Strings = (
       'SELECT * FROM "Funcionarios";')
@@ -178,6 +179,7 @@ object DM: TDM
     Top = 352
   end
   object QueryUsuarios: TFDQuery
+    Active = True
     Connection = ConexaoBanco
     SQL.Strings = (
       'SELECT * FROM Usuarios;')
@@ -202,6 +204,66 @@ object DM: TDM
       FieldName = 'senha_hash'
       Origin = 'senha_hash'
       Size = 255
+    end
+  end
+  object QueryProdutos: TFDQuery
+    Active = True
+    Connection = ConexaoBanco
+    SQL.Strings = (
+      'SELECT * FROM produtos;')
+    Left = 456
+    Top = 192
+    object QueryProdutoscodigo_produto: TIntegerField
+      FieldName = 'codigo_produto'
+      Origin = 'codigo_produto'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+    end
+    object QueryProdutoscodigo_barras: TStringField
+      FieldName = 'codigo_barras'
+      Origin = 'codigo_barras'
+    end
+    object QueryProdutosnome_produto: TStringField
+      FieldName = 'nome_produto'
+      Origin = 'nome_produto'
+      Size = 80
+    end
+    object QueryProdutoscategoria: TStringField
+      FieldName = 'categoria'
+      Origin = 'categoria'
+    end
+    object QueryProdutosunidade_medida: TStringField
+      FieldName = 'unidade_medida'
+      Origin = 'unidade_medida'
+    end
+    object QueryProdutosquant_estoque: TIntegerField
+      FieldName = 'quant_estoque'
+      Origin = 'quant_estoque'
+    end
+    object QueryProdutosquant_est_prevista: TIntegerField
+      FieldName = 'quant_est_prevista'
+      Origin = 'quant_est_prevista'
+    end
+    object QueryProdutospreco_compra: TBCDField
+      FieldName = 'preco_compra'
+      Origin = 'preco_compra'
+      Precision = 7
+      Size = 2
+    end
+    object QueryProdutospreco_venda: TBCDField
+      FieldName = 'preco_venda'
+      Origin = 'preco_venda'
+      Precision = 7
+      Size = 2
+    end
+    object QueryProdutosfoto_produto: TStringField
+      FieldName = 'foto_produto'
+      Origin = 'foto_produto'
+      Size = 255
+    end
+    object QueryProdutosmarca: TStringField
+      FieldName = 'marca'
+      Origin = 'marca'
+      Size = 40
     end
   end
 end

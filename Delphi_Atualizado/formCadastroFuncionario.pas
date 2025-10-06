@@ -82,14 +82,13 @@ begin
 
     objetoJson := RESTRequest1.Response.JSONValue AS TJSONObject;
 
-    //edtStatusCode.Text := format('%d', [RESTResponse1.StatusCode]);
     leEndereco.Text := objetoJson.Values['street'].Value;
     leBairro.Text := objetoJson.Values['neighborhood'].Value;
     leCidade.Text := objetoJson.Values['city'].Value;
     cbUF.Text := objetoJson.Values['state'].Value;
-
-    //if algumErro then
 end;
+
+
 
 
 end.

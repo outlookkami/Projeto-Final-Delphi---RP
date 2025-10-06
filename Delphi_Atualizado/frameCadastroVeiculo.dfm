@@ -4,14 +4,21 @@
   Width = 824
   Height = 653
   TabOrder = 0
+  DesignSize = (
+    824
+    653)
   object pnlSenhaFuncionario: TPanel
     Left = 83
     Top = 32
     Width = 673
     Height = 569
+    Anchors = [akLeft, akTop, akRight, akBottom]
     Color = clHighlight
     ParentBackground = False
     TabOrder = 0
+    DesignSize = (
+      673
+      569)
     object lblCadastrandoVeiculo: TLabel
       Left = 1
       Top = 1
@@ -33,6 +40,10 @@
       Top = 60
       Width = 561
       Height = 469
+      Anchors = [akLeft, akTop, akRight, akBottom]
+      BevelOuter = bvNone
+      Color = clHighlight
+      ParentBackground = False
       TabOrder = 0
       DesignSize = (
         561
@@ -42,12 +53,20 @@
         Top = 140
         Width = 481
         Height = 261
+        Color = clHighlight
+        ParentBackground = False
         TabOrder = 0
+        DesignSize = (
+          481
+          261)
         object GridPanel2: TGridPanel
           Left = 0
           Top = 11
           Width = 481
           Height = 250
+          Anchors = [akTop]
+          BevelOuter = bvNone
+          Color = clHighlight
           ColumnCollection = <
             item
               Value = 100.000000000000000000
@@ -88,6 +107,7 @@
               Control = dbleAnoVeiculo
               Row = 6
             end>
+          ParentBackground = False
           RowCollection = <
             item
               Value = 12.500000000000000000
@@ -119,7 +139,7 @@
             250)
           object dbleModeloVeiculo: TDBLabeledEdit
             Left = 72
-            Top = 25
+            Top = 24
             Width = 337
             Height = 29
             Anchors = []
@@ -134,15 +154,16 @@
             EditLabel.Height = 21
             EditLabel.Caption = 'Modelo:'
             EditLabel.Font.Charset = DEFAULT_CHARSET
-            EditLabel.Font.Color = clWindowText
+            EditLabel.Font.Color = clWhite
             EditLabel.Font.Height = -16
             EditLabel.Font.Name = 'Segoe UI'
             EditLabel.Font.Style = []
             EditLabel.ParentFont = False
+            ExplicitTop = 25
           end
           object Label1: TLabel
             Left = 239
-            Top = 40
+            Top = 39
             Width = 3
             Height = 15
             Anchors = []
@@ -166,7 +187,7 @@
             EditLabel.Height = 21
             EditLabel.Caption = 'Marca:'
             EditLabel.Font.Charset = DEFAULT_CHARSET
-            EditLabel.Font.Color = clWindowText
+            EditLabel.Font.Color = clWhite
             EditLabel.Font.Height = -16
             EditLabel.Font.Name = 'Segoe UI'
             EditLabel.Font.Style = []
@@ -198,7 +219,7 @@
             EditLabel.Height = 21
             EditLabel.Caption = 'Cor:'
             EditLabel.Font.Charset = DEFAULT_CHARSET
-            EditLabel.Font.Color = clWindowText
+            EditLabel.Font.Color = clWhite
             EditLabel.Font.Height = -16
             EditLabel.Font.Name = 'Segoe UI'
             EditLabel.Font.Style = []
@@ -215,7 +236,7 @@
           end
           object dbleAnoVeiculo: TDBLabeledEdit
             Left = 71
-            Top = 211
+            Top = 212
             Width = 338
             Height = 29
             Anchors = []
@@ -230,11 +251,12 @@
             EditLabel.Height = 21
             EditLabel.Caption = 'Ano:'
             EditLabel.Font.Charset = DEFAULT_CHARSET
-            EditLabel.Font.Color = clWindowText
+            EditLabel.Font.Color = clWhite
             EditLabel.Font.Height = -16
             EditLabel.Font.Name = 'Segoe UI'
             EditLabel.Font.Style = []
             EditLabel.ParentFont = False
+            ExplicitTop = 211
           end
         end
       end
@@ -244,11 +266,17 @@
         Width = 481
         Height = 129
         TabOrder = 1
+        DesignSize = (
+          481
+          129)
         object GridPanel1: TGridPanel
           Left = 0
           Top = 0
           Width = 481
           Height = 129
+          Anchors = [akTop]
+          BevelOuter = bvNone
+          Color = clHighlight
           ColumnCollection = <
             item
               Value = 100.000000000000000000
@@ -269,6 +297,7 @@
               Control = Label2
               Row = 1
             end>
+          ParentBackground = False
           RowCollection = <
             item
               Value = 25.000000000000000000
@@ -288,7 +317,7 @@
             129)
           object DBLabeledEdit2: TDBLabeledEdit
             Left = 72
-            Top = 25
+            Top = 24
             Width = 337
             Height = 29
             Anchors = []
@@ -303,15 +332,16 @@
             EditLabel.Height = 21
             EditLabel.Caption = 'Placa:'
             EditLabel.Font.Charset = DEFAULT_CHARSET
-            EditLabel.Font.Color = clWindowText
+            EditLabel.Font.Color = clWhite
             EditLabel.Font.Height = -16
             EditLabel.Font.Name = 'Segoe UI'
             EditLabel.Font.Style = []
             EditLabel.ParentFont = False
+            ExplicitTop = 25
           end
           object dbleChassiVeiculo: TDBLabeledEdit
             Left = 73
-            Top = 89
+            Top = 88
             Width = 335
             Height = 29
             Anchors = []
@@ -326,20 +356,20 @@
             EditLabel.Height = 21
             EditLabel.Caption = 'Chassi:'
             EditLabel.Font.Charset = DEFAULT_CHARSET
-            EditLabel.Font.Color = clWindowText
+            EditLabel.Font.Color = clWhite
             EditLabel.Font.Height = -16
             EditLabel.Font.Name = 'Segoe UI'
             EditLabel.Font.Style = []
             EditLabel.ParentFont = False
+            ExplicitTop = 89
           end
           object Label2: TLabel
             Left = 239
-            Top = 41
+            Top = 40
             Width = 3
             Height = 15
             Anchors = []
             ExplicitLeft = 208
-            ExplicitTop = 40
           end
         end
       end
@@ -353,7 +383,7 @@
         Color = clHighlight
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWhite
-        Font.Height = -18
+        Font.Height = -19
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentBackground = False

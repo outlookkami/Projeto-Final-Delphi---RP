@@ -1,9 +1,9 @@
-object formCrudFunc: TformCrudFunc
+object formProdutos: TformProdutos
   Left = 0
   Top = 0
-  Caption = 'Crud Funcion'#225'rios'
-  ClientHeight = 701
-  ClientWidth = 1150
+  Caption = 'Crud Produtos'
+  ClientHeight = 719
+  ClientWidth = 1168
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -14,22 +14,26 @@ object formCrudFunc: TformCrudFunc
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 1150
-    Height = 701
+    Width = 1168
+    Height = 719
     Align = alClient
     TabOrder = 0
+    ExplicitLeft = 8
+    ExplicitTop = 8
+    ExplicitWidth = 1150
+    ExplicitHeight = 701
     DesignSize = (
-      1150
-      701)
-    object lblDadosFunc: TLabel
-      Left = 875
-      Top = 32
-      Width = 182
+      1168
+      719)
+    object lblDadosProd: TLabel
+      Left = 898
+      Top = 25
+      Width = 153
       Height = 25
       Align = alCustom
       Alignment = taRightJustify
       Anchors = [akLeft, akTop, akRight, akBottom]
-      Caption = 'Dados do funcion'#225'rio'
+      Caption = 'Dados do produto'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -19
@@ -37,14 +41,14 @@ object formCrudFunc: TformCrudFunc
       Font.Style = []
       ParentFont = False
     end
-    object btnIncluirFunc: TPanel
-      Left = 591
+    object btnIncluirProd: TPanel
+      Left = 609
       Top = 79
       Width = 152
       Height = 43
       Cursor = crHandPoint
       Anchors = [akTop, akRight]
-      Caption = 'Incluir Funcion'#225'rio'
+      Caption = 'Incluir Produto'
       Color = clHighlight
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWhite
@@ -54,11 +58,12 @@ object formCrudFunc: TformCrudFunc
       ParentBackground = False
       ParentFont = False
       TabOrder = 2
+      ExplicitLeft = 591
     end
     object pnlPesquisa: TPanel
       Left = 48
       Top = 27
-      Width = 695
+      Width = 713
       Height = 41
       Anchors = [akLeft, akTop, akRight]
       BevelKind = bkFlat
@@ -66,11 +71,12 @@ object formCrudFunc: TformCrudFunc
       Color = clBtnHighlight
       ParentBackground = False
       TabOrder = 0
+      ExplicitWidth = 695
       DesignSize = (
-        691
+        709
         37)
       object iconePesquisa: TImage
-        Left = 649
+        Left = 667
         Top = -2
         Width = 34
         Height = 41
@@ -150,15 +156,16 @@ object formCrudFunc: TformCrudFunc
           4BEF29ACE3371500429A3BCD7492B23D7FFD5FA5F0C973C979C5F50000000049
           454E44AE426082}
         Proportional = True
+        ExplicitLeft = 649
       end
     end
     object DBGrid1: TDBGrid
       Left = 48
       Top = 137
-      Width = 695
-      Height = 528
+      Width = 713
+      Height = 546
       Anchors = [akLeft, akTop, akRight, akBottom]
-      DataSource = DSFuncionarios
+      DataSource = DSProdutos
       TabOrder = 1
       TitleFont.Charset = DEFAULT_CHARSET
       TitleFont.Color = clWindowText
@@ -168,75 +175,64 @@ object formCrudFunc: TformCrudFunc
       Columns = <
         item
           Expanded = False
-          FieldName = 'codigo_funcionario'
-          Width = 108
+          FieldName = 'codigo_produto'
           Visible = True
         end
         item
           Expanded = False
-          FieldName = 'nome_funcionario'
+          FieldName = 'codigo_barras'
           Visible = True
         end
         item
           Expanded = False
-          FieldName = 'telefone_funcionario'
+          FieldName = 'nome_produto'
           Visible = True
         end
         item
           Expanded = False
-          FieldName = 'email_funcionario'
+          FieldName = 'categoria'
           Visible = True
         end
         item
           Expanded = False
-          FieldName = 'cep_funcionario'
+          FieldName = 'unidade_medida'
           Visible = True
         end
         item
           Expanded = False
-          FieldName = 'endereco_funcionario'
+          FieldName = 'quant_estoque'
           Visible = True
         end
         item
           Expanded = False
-          FieldName = 'num_endereco'
+          FieldName = 'quant_est_prevista'
           Visible = True
         end
         item
           Expanded = False
-          FieldName = 'bairro'
+          FieldName = 'preco_compra'
           Visible = True
         end
         item
           Expanded = False
-          FieldName = 'cidade'
+          FieldName = 'preco_venda'
           Visible = True
         end
         item
           Expanded = False
-          FieldName = 'uf'
+          FieldName = 'foto_produto'
           Visible = True
         end
         item
           Expanded = False
-          FieldName = 'funcao'
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'cpf_funcionario'
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'rg_funcionario'
+          FieldName = 'marca'
           Visible = True
         end>
     end
     object edtPesquisa: TEdit
       Left = 56
       Top = 32
-      Width = 637
+      Width = 655
       Height = 28
       Anchors = [akLeft, akTop, akRight]
       BorderStyle = bsNone
@@ -248,12 +244,13 @@ object formCrudFunc: TformCrudFunc
       ParentFont = False
       TabOrder = 3
       TextHint = 'Pesquise'
+      ExplicitWidth = 637
     end
     object gridPanelLogin: TGridPanel
-      Left = 765
+      Left = 783
       Top = 52
       Width = 372
-      Height = 637
+      Height = 655
       Align = alCustom
       Anchors = [akTop, akRight, akBottom]
       BevelEdges = []
@@ -340,12 +337,12 @@ object formCrudFunc: TformCrudFunc
         end
         item
           Column = 0
-          Control = leTelefone
+          Control = leCodInt
           Row = 3
         end
         item
           Column = 0
-          Control = leNome
+          Control = leNomeProd
           Row = 1
         end
         item
@@ -437,9 +434,11 @@ object formCrudFunc: TformCrudFunc
           Value = 4.545454545454532000
         end>
       TabOrder = 4
+      ExplicitLeft = 765
+      ExplicitHeight = 637
       DesignSize = (
         372
-        637)
+        655)
       object lblVazio5: TLabel
         Left = 184
         Top = 4
@@ -450,16 +449,15 @@ object formCrudFunc: TformCrudFunc
       end
       object Label2: TLabel
         Left = 184
-        Top = 62
+        Top = 64
         Width = 4
         Height = 21
         Anchors = []
         ExplicitLeft = 193
-        ExplicitTop = 64
       end
       object Label3: TLabel
         Left = 184
-        Top = 120
+        Top = 123
         Width = 4
         Height = 21
         Anchors = []
@@ -468,7 +466,7 @@ object formCrudFunc: TformCrudFunc
       end
       object Label4: TLabel
         Left = 184
-        Top = 178
+        Top = 183
         Width = 4
         Height = 21
         Anchors = []
@@ -477,7 +475,7 @@ object formCrudFunc: TformCrudFunc
       end
       object Label5: TLabel
         Left = 184
-        Top = 236
+        Top = 242
         Width = 4
         Height = 21
         Anchors = []
@@ -486,7 +484,7 @@ object formCrudFunc: TformCrudFunc
       end
       object Label6: TLabel
         Left = 184
-        Top = 294
+        Top = 302
         Width = 4
         Height = 21
         Anchors = []
@@ -495,7 +493,7 @@ object formCrudFunc: TformCrudFunc
       end
       object GridPanel3: TGridPanel
         Left = 1
-        Top = 319
+        Top = 328
         Width = 370
         Height = 56
         Anchors = []
@@ -525,6 +523,7 @@ object formCrudFunc: TformCrudFunc
             Value = 100.000000000000000000
           end>
         TabOrder = 0
+        ExplicitTop = 319
         DesignSize = (
           370
           56)
@@ -534,12 +533,12 @@ object formCrudFunc: TformCrudFunc
           Width = 121
           Height = 29
           Anchors = []
-          EditLabel.Width = 18
+          EditLabel.Width = 99
           EditLabel.Height = 21
-          EditLabel.Caption = 'N'#176
+          EditLabel.Caption = 'Pre'#231'o compra:'
           TabOrder = 0
           Text = ''
-          TextHint = 'N'#250'mero do endere'#231'o'
+          TextHint = '$'
         end
         object leBairro: TLabeledEdit
           Left = 164
@@ -547,17 +546,17 @@ object formCrudFunc: TformCrudFunc
           Width = 193
           Height = 29
           Anchors = []
-          EditLabel.Width = 45
+          EditLabel.Width = 109
           EditLabel.Height = 21
-          EditLabel.Caption = 'Bairro:'
+          EditLabel.Caption = 'Pre'#231'o de venda:'
           TabOrder = 1
           Text = ''
-          TextHint = 'Informe o bairro'
+          TextHint = '$'
         end
       end
       object Label7: TLabel
         Left = 184
-        Top = 351
+        Top = 361
         Width = 4
         Height = 21
         Anchors = []
@@ -566,22 +565,24 @@ object formCrudFunc: TformCrudFunc
       end
       object GridPanel4: TGridPanel
         Left = 0
-        Top = 376
+        Top = 387
         Width = 379
         Height = 58
         Anchors = []
         BevelOuter = bvNone
         ColumnCollection = <
           item
-            Value = 69.309943023817620000
+            SizeStyle = ssAbsolute
+            Value = 220.000000000000000000
           end
           item
-            Value = 30.690056976182380000
+            SizeStyle = ssAbsolute
+            Value = 50.000000000000000000
           end>
         ControlCollection = <
           item
             Column = 0
-            Control = leCidade
+            Control = leQuantEst
             Row = 0
           end
           item
@@ -599,24 +600,26 @@ object formCrudFunc: TformCrudFunc
             SizeStyle = ssAuto
           end>
         TabOrder = 1
+        ExplicitLeft = 16
+        ExplicitTop = 390
         DesignSize = (
           379
           58)
-        object leCidade: TLabeledEdit
-          Left = 18
+        object leQuantEst: TLabeledEdit
+          Left = 17
           Top = 26
-          Width = 227
+          Width = 185
           Height = 29
           Anchors = []
-          EditLabel.Width = 51
+          EditLabel.Width = 143
           EditLabel.Height = 21
-          EditLabel.Caption = 'Cidade:'
+          EditLabel.Caption = 'Quantidade estoque:'
           TabOrder = 0
           Text = ''
-          TextHint = 'Informe a cidade'
+          TextHint = 'Informe a quantidade'
         end
         object GridPanel7: TGridPanel
-          Left = 263
+          Left = 220
           Top = 0
           Width = 185
           Height = 58
@@ -634,7 +637,7 @@ object formCrudFunc: TformCrudFunc
             end
             item
               Column = 0
-              Control = cbUF
+              Control = cbCategoria
               Row = 1
             end>
           RowCollection = <
@@ -647,32 +650,33 @@ object formCrudFunc: TformCrudFunc
               Value = 100.000000000000000000
             end>
           TabOrder = 1
+          ExplicitLeft = 263
           object Label12: TLabel
             Left = 0
             Top = 0
             Width = 185
             Height = 20
             Align = alClient
-            Caption = 'UF:'
+            Caption = 'Categoria:'
             Font.Charset = DEFAULT_CHARSET
             Font.Color = clWindowText
             Font.Height = -16
             Font.Name = 'Segoe UI'
             Font.Style = []
             ParentFont = False
-            ExplicitWidth = 22
+            ExplicitWidth = 70
             ExplicitHeight = 21
           end
-          object cbUF: TComboBox
+          object cbCategoria: TComboBox
             Left = 0
             Top = 25
-            Width = 98
+            Width = 137
             Height = 29
             Align = alCustom
             BevelInner = bvNone
             BevelOuter = bvNone
             TabOrder = 0
-            TextHint = 'Selecione a UF'
+            TextHint = 'Selecione a categoria'
             Items.Strings = (
               'AC'
               'AL'
@@ -706,12 +710,13 @@ object formCrudFunc: TformCrudFunc
       end
       object pnlSelecionaFuncao: TPanel
         Left = 0
-        Top = 434
+        Top = 447
         Width = 384
         Height = 64
         Anchors = []
         BevelOuter = bvNone
         TabOrder = 2
+        ExplicitTop = 434
         object lblSelecionaFuncao: TLabel
           Left = 24
           Top = 3
@@ -742,7 +747,7 @@ object formCrudFunc: TformCrudFunc
       end
       object Label9: TLabel
         Left = 184
-        Top = 467
+        Top = 480
         Width = 4
         Height = 21
         Anchors = []
@@ -751,7 +756,7 @@ object formCrudFunc: TformCrudFunc
       end
       object Label8: TLabel
         Left = 184
-        Top = 409
+        Top = 421
         Width = 4
         Height = 21
         Anchors = []
@@ -760,7 +765,7 @@ object formCrudFunc: TformCrudFunc
       end
       object Label10: TLabel
         Left = 184
-        Top = 525
+        Top = 540
         Width = 4
         Height = 21
         Anchors = []
@@ -769,76 +774,77 @@ object formCrudFunc: TformCrudFunc
       end
       object leCEP: TLabeledEdit
         Left = 14
-        Top = 227
+        Top = 232
         Width = 343
         Height = 29
         Anchors = []
-        EditLabel.Width = 30
+        EditLabel.Width = 46
         EditLabel.Height = 21
-        EditLabel.Caption = 'CEP:'
-        EditMask = '00000\-999;1;_'
-        MaxLength = 9
+        EditLabel.Caption = 'Marca:'
         TabOrder = 3
-        Text = '     -   '
-        TextHint = 'Informe o CEP'
+        Text = ''
+        TextHint = 'Informe a marca do produto'
+        ExplicitTop = 239
       end
       object leEmail: TLabeledEdit
         Left = 13
-        Top = 169
+        Top = 173
         Width = 346
         Height = 29
         Anchors = []
-        EditLabel.Width = 44
+        EditLabel.Width = 122
         EditLabel.Height = 21
-        EditLabel.Caption = 'E-mail'
+        EditLabel.Caption = 'C'#243'digo de barras:'
         TabOrder = 4
         Text = ''
-        TextHint = 'Digite o endere'#231'o de e-mail'
+        TextHint = 'Digite o c'#243'digo de barras do produto'
+        ExplicitTop = 169
       end
-      object leTelefone: TLabeledEdit
+      object leCodInt: TLabeledEdit
         Left = 14
-        Top = 111
+        Top = 113
         Width = 344
         Height = 29
         Anchors = []
-        EditLabel.Width = 115
+        EditLabel.Width = 107
         EditLabel.Height = 21
-        EditLabel.Caption = 'Telefone/Celular:'
-        EditMask = '!\(99\)00000-0000;1;_'
-        MaxLength = 14
+        EditLabel.Caption = 'C'#243'digo interno:'
         TabOrder = 5
-        Text = '(  )     -    '
-        TextHint = 'Informe seu n'#250'mero de telefone'
+        Text = ''
+        TextHint = 'Informe o c'#243'digo interno do produto'
+        ExplicitTop = 111
       end
-      object leNome: TLabeledEdit
+      object leNomeProd: TLabeledEdit
         Left = 15
-        Top = 53
+        Top = 54
         Width = 341
         Height = 29
         Anchors = []
-        EditLabel.Width = 115
+        EditLabel.Width = 128
         EditLabel.Height = 21
-        EditLabel.Caption = 'Nome completo:'
+        EditLabel.Caption = 'Nome do produto:'
         TabOrder = 6
         Text = ''
-        TextHint = 'Digite seu nome completo'
+        TextHint = 'Digite o nome do produto'
+        ExplicitTop = 53
       end
       object leEndereco: TLabeledEdit
         Left = 14
-        Top = 285
+        Top = 292
         Width = 344
         Height = 29
         Anchors = []
-        EditLabel.Width = 67
+        EditLabel.Width = 138
         EditLabel.Height = 21
-        EditLabel.Caption = 'Endere'#231'o:'
+        EditLabel.Caption = 'Unidade de medida:'
         TabOrder = 7
         Text = ''
-        TextHint = 'Informe o endere'#231'o'
+        TextHint = 'Informe a unidade de medida L, Kg, ml etc.'
+        ExplicitTop = 285
       end
       object LabeledEdit1: TLabeledEdit
         Left = 15
-        Top = 516
+        Top = 530
         Width = 342
         Height = 29
         Anchors = []
@@ -847,10 +853,11 @@ object formCrudFunc: TformCrudFunc
         EditLabel.Caption = 'CPF:'
         TabOrder = 8
         Text = ''
+        ExplicitTop = 516
       end
       object LabeledEdit2: TLabeledEdit
         Left = 15
-        Top = 574
+        Top = 590
         Width = 341
         Height = 29
         Anchors = []
@@ -859,12 +866,13 @@ object formCrudFunc: TformCrudFunc
         EditLabel.Caption = 'RG:'
         TabOrder = 9
         Text = ''
+        ExplicitTop = 574
       end
     end
   end
-  object DSFuncionarios: TDataSource
-    DataSet = DM.QueryFuncionarios
-    Left = 456
+  object DSProdutos: TDataSource
+    DataSet = DM.QueryProdutos
+    Left = 464
     Top = 80
   end
 end

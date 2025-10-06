@@ -49,6 +49,18 @@ type
     QueryFuncionariosfuncao: TStringField;
     QueryFuncionarioscpf_funcionario: TStringField;
     QueryFuncionariosrg_funcionario: TStringField;
+    QueryProdutos: TFDQuery;
+    QueryProdutoscodigo_produto: TIntegerField;
+    QueryProdutoscodigo_barras: TStringField;
+    QueryProdutosnome_produto: TStringField;
+    QueryProdutoscategoria: TStringField;
+    QueryProdutosunidade_medida: TStringField;
+    QueryProdutosquant_estoque: TIntegerField;
+    QueryProdutosquant_est_prevista: TIntegerField;
+    QueryProdutospreco_compra: TBCDField;
+    QueryProdutospreco_venda: TBCDField;
+    QueryProdutosfoto_produto: TStringField;
+    QueryProdutosmarca: TStringField;
   private
     { Private declarations }
   public
