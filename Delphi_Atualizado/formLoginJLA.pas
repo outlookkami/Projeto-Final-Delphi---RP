@@ -144,6 +144,8 @@ begin
        end else if TipoUsuario = 'Funcionario' then begin
          Application.CreateForm(TformPáginaInicialFunc, formPáginaInicialFunc);
          formPáginaInicialFunc.Show;
+                end else begin
+                  ShowMessage('Usuário ou senha incorretos. Tente novamente.');
                 end;
       end;
   end;

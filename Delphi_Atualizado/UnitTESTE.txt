@@ -1,0 +1,62 @@
+unit UnitTESTE;
+
+interface
+
+uses Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Mask, Vcl.ExtCtrls,
+  Vcl.DBCtrls, frameFormularioPedido, Vcl.Imaging.pngimage, System.UITypes,
+  EComponent, Data.DB,REST.Types, Data.Bind.Components, Data.Bind.ObjectScope,
+  REST.Client, Vcl.Buttons, Datasnap.Provider, Datasnap.DBClient
+
+
+type
+  TFormCEP = class(TForm)
+    leCEP: TLabeledEdit;
+    leEndereco: TLabeledEdit;
+    leNumero: TLabeledEdit;
+    leBairro: TLabeledEdit;
+    leCidade: TLabeledEdit;
+    cbUF: TComboBox;
+    procedure ConsultaDeCEP;
+    private
+    { Private declarations }
+    public
+    { Public declarations }
+end;
+
+const urlConsultaCep = 'https://brasilapi.com.br/api/cep/v1/%s';
+
+var Unit1: TUnit1;
+
+implementation
+
+{$R *.dfm}
+
+uses  System.Hash,
+      dataModuleNormal,
+      System.Net.HttpClient,
+      System.JSON;
+
+procedure TUnit1.CosultaDeCEP;
+var
+  CEP: String;
+  objetoJson: TJSONObject;
+begin
+    CEP := trim(leCEP.Text);
+
+    RESTClient1.BaseURL := format(urlConsultaCep, [CEP]);
+    RESTClient1.SecureProtocols := [THTTPSecureProtocol.TLS12];
+
+    RESTRequest1.Method := rmGET;
+    RESTRequest1.Execute;
+
+    objetoJson := RESTRequest1.Response.JSONValue AS TJSONObject;
+
+    edtStatusCode.Text := format('%d', [RESTResponse1.StatusCode]);
+    leEndereco.Text := objetoJson.Values['street'].Value;
+    leBairro.Text := objetoJson.Values['neighborhood'].Value;
+    leCidade.Text := objetoJson.Values['city'].Value;
+    cbUF.Text := objetoJson.Values['state'].Value;
+end;
+
+end.

@@ -37,6 +37,7 @@ object DM: TDM
     object QueryClientestelefone_cliente: TStringField
       FieldName = 'telefone_cliente'
       Origin = 'telefone_cliente'
+      EditMask = '!\(99\)00000-0000;0;_'
       Size = 11
     end
     object QueryClientesemail_cliente: TStringField
@@ -97,7 +98,6 @@ object DM: TDM
     Top = 104
   end
   object QueryFuncionarios: TFDQuery
-    Active = True
     Connection = ConexaoBanco
     SQL.Strings = (
       'SELECT * FROM "Funcionarios";')
@@ -186,7 +186,6 @@ object DM: TDM
     Top = 352
   end
   object QueryUsuarios: TFDQuery
-    Active = True
     Connection = ConexaoBanco
     SQL.Strings = (
       'SELECT * FROM Usuarios;')
@@ -214,7 +213,6 @@ object DM: TDM
     end
   end
   object QueryProdutos: TFDQuery
-    Active = True
     Connection = ConexaoBanco
     SQL.Strings = (
       'SELECT * FROM produtos;')

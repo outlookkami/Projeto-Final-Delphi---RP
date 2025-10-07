@@ -10,6 +10,7 @@ object formCrudFunc: TformCrudFunc
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  OnCreate = FormCreate
   TextHeight = 15
   object Panel1: TPanel
     Left = 0
@@ -54,6 +55,7 @@ object formCrudFunc: TformCrudFunc
       ParentBackground = False
       ParentFont = False
       TabOrder = 2
+      OnClick = btnIncluirFuncClick
     end
     object pnlPesquisa: TPanel
       Left = 48
@@ -176,66 +178,92 @@ object formCrudFunc: TformCrudFunc
         item
           Expanded = False
           FieldName = 'nome_funcionario'
+          Title.Caption = 'Nome'
+          Width = 300
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'telefone_funcionario'
+          Title.Caption = 'Telefone'
+          Width = 100
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'email_funcionario'
+          Title.Caption = 'Email'
+          Width = 400
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'cep_funcionario'
+          Title.Caption = 'CEP'
+          Width = 100
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'endereco_funcionario'
+          Title.Caption = 'Endere'#231'o'
+          Width = 300
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'num_endereco'
+          Title.Caption = 'N'#176
+          Width = 70
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'bairro'
+          Title.Caption = 'Bairro'
+          Width = 250
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'cidade'
+          Title.Caption = 'Cidade'
+          Width = 250
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'uf'
+          Title.Caption = 'UF'
+          Width = 40
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'funcao'
+          Title.Caption = 'Fun'#231#227'o'
+          Width = 200
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'cpf_funcionario'
+          Title.Caption = 'CPF'
+          Width = 140
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'rg_funcionario'
+          Title.Caption = 'RG'
+          Width = 120
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'ativo_in'
+          Title.Caption = 'Ativo'
+          Width = 50
           Visible = True
         end>
     end
@@ -720,7 +748,7 @@ object formCrudFunc: TformCrudFunc
         BevelOuter = bvNone
         TabOrder = 2
         object lblSelecionaFuncao: TLabel
-          Left = 24
+          Left = 16
           Top = 3
           Width = 132
           Height = 21
@@ -829,6 +857,7 @@ object formCrudFunc: TformCrudFunc
         TabOrder = 6
         Text = ''
         TextHint = 'Digite seu nome completo'
+        ExplicitTop = 59
       end
       object leEndereco: TLabeledEdit
         Left = 14
@@ -868,8 +897,27 @@ object formCrudFunc: TformCrudFunc
         Text = ''
       end
     end
-    object btnInativFunc: TPanel
+    object btnEditFunc: TPanel
       Left = 433
+      Top = 74
+      Width = 152
+      Height = 43
+      Cursor = crHandPoint
+      Anchors = [akTop, akRight]
+      Caption = 'Editar Funcion'#225'rio'
+      Color = clHighlight
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -13
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentBackground = False
+      ParentFont = False
+      TabOrder = 5
+      OnClick = btnEditFuncClick
+    end
+    object btnInativFunc: TPanel
+      Left = 275
       Top = 74
       Width = 152
       Height = 43
@@ -884,10 +932,11 @@ object formCrudFunc: TformCrudFunc
       Font.Style = []
       ParentBackground = False
       ParentFont = False
-      TabOrder = 5
+      TabOrder = 6
+      OnClick = btnInativFuncClick
     end
     object btnExcluFunc: TPanel
-      Left = 275
+      Left = 117
       Top = 74
       Width = 152
       Height = 43
@@ -902,20 +951,13 @@ object formCrudFunc: TformCrudFunc
       Font.Style = []
       ParentBackground = False
       ParentFont = False
-      TabOrder = 6
-      OnClick = btnExcluFuncClick
+      TabOrder = 7
+      OnClick = btnInativFuncClick
     end
   end
   object DSFuncionarios: TDataSource
     DataSet = DM.QueryFuncionarios
-    Left = 88
-    Top = 80
-  end
-  object ClientDataSet1: TClientDataSet
-    Aggregates = <>
-    Params = <>
-    ProviderName = 'DSFuncionarios'
-    Left = 200
-    Top = 80
+    Left = 24
+    Top = 176
   end
 end

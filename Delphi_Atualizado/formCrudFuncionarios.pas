@@ -6,7 +6,7 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.Grids, Vcl.DBGrids,
   Vcl.StdCtrls, Vcl.Mask, Vcl.ExtCtrls, Vcl.DBCtrls, Vcl.Imaging.pngimage, DataModuleNormal,
-  Datasnap.DBClient;
+  Datasnap.DBClient, Vcl.Buttons;
 
 type
   TformCrudFunc = class(TForm)
@@ -47,11 +47,14 @@ type
     LabeledEdit1: TLabeledEdit;
     LabeledEdit2: TLabeledEdit;
     edtPesquisa: TEdit;
+    btnEditFunc: TPanel;
     btnInativFunc: TPanel;
     btnExcluFunc: TPanel;
-    ClientDataSet1: TClientDataSet;
-    procedure btnExcluFuncClick(Sender: TObject);
+    procedure btnInativFuncClick(Sender: TObject);
     procedure iconePesquisaClick(Sender: TObject);
+    procedure btnEditFuncClick(Sender: TObject);
+    procedure btnIncluirFuncClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -65,7 +68,13 @@ implementation
 
 {$R *.dfm}
 
-procedure TformCrudFunc.btnExcluFuncClick(Sender: TObject);
+procedure TformCrudFunc.FormCreate(Sender: TObject);
+begin
+//      DM.QueryFuncionarios.Close;
+//      DM.QueryFuncionarios.Open;
+end;
+
+procedure TformCrudFunc.btnInativFuncClick(Sender: TObject);
 begin
 //    DM.QueryFuncionarios.SQL.Text := 'SELECT * FROM "Funcionarios" WHERE ativo_in = True';
 //    if Funcionario.ativo_in <> true then begin
@@ -74,11 +83,30 @@ begin
 end;
 
 
+procedure TformCrudFunc.btnIncluirFuncClick(Sender: TObject);
+begin
+    DM.QueryFuncionarios.Open;
+    DM.QueryFuncionarios.Insert;
+end;
 
+
+procedure TformCrudFunc.btnEditFuncClick(Sender: TObject);
+begin
+    DM.QueryFuncionarios.Open;
+    DM.QueryFuncionarios.Edit;
+
+    DM.QueryFuncionarios.SQL.Text := 'SET ativo_in = false';
+end;
 
 procedure TformCrudFunc.iconePesquisaClick(Sender: TObject);
 begin
-    DM.QueryFuncionarios
+    //DM.QueryFuncionarios
 end;
+
+//procedure TformCrudFunc.spdbtnIncluFuncClick(Sender: TObject);
+//begin
+//    DM.QueryFuncionarios.Open;
+//    DM.QueryFuncionarios.Insert;
+//end;
 
 end.

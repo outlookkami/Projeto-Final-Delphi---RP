@@ -39,9 +39,14 @@ object formCadastroDeClientes: TformCadastroDeClientes
     RowCollection = <
       item
         Value = 100.000000000000000000
+      end
+      item
+        SizeStyle = ssAuto
       end>
     ShowCaption = False
     TabOrder = 0
+    ExplicitLeft = -2
+    ExplicitTop = -2
     object pnlilustrativo: TPanel
       Left = 1
       Top = 1
@@ -51,6 +56,7 @@ object formCadastroDeClientes: TformCadastroDeClientes
       Color = clHighlight
       ParentBackground = False
       TabOrder = 0
+      ExplicitLeft = 0
       object edtStatusCode: TEdit
         Left = 448
         Top = 16
@@ -193,6 +199,21 @@ object formCadastroDeClientes: TformCadastroDeClientes
             Column = 0
             Control = GridPanel2
             Row = 14
+          end
+          item
+            Column = 0
+            Control = Label10
+            Row = 15
+          end
+          item
+            Column = 0
+            Control = Label16
+            Row = 16
+          end
+          item
+            Column = 0
+            Control = Label17
+            Row = 17
           end>
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
@@ -359,6 +380,7 @@ object formCadastroDeClientes: TformCadastroDeClientes
               Value = 100.000000000000000000
             end>
           TabOrder = 0
+          ExplicitTop = 288
           DesignSize = (
             370
             56)
@@ -566,6 +588,7 @@ object formCadastroDeClientes: TformCadastroDeClientes
           ParentFont = False
           TabOrder = 2
           OnClick = pnlCadastrarClick
+          ExplicitTop = 509
         end
         object Label13: TLabel
           Left = 230
@@ -612,26 +635,41 @@ object formCadastroDeClientes: TformCadastroDeClientes
               Column = 2
               Control = cadeadoConfSenha
               Row = 0
+            end
+            item
+              Column = 0
+              Control = Label14
+              Row = 1
+            end
+            item
+              Column = 1
+              Control = Label15
+              Row = 1
             end>
           RowCollection = <
             item
               Value = 100.000000000000000000
+            end
+            item
+              SizeStyle = ssAuto
             end>
           TabOrder = 3
+          ExplicitTop = 447
           DesignSize = (
             457
             58)
           object Label2: TLabel
             Left = 28
-            Top = 18
+            Top = 8
             Width = 4
             Height = 21
             Anchors = []
             ExplicitLeft = 7
+            ExplicitTop = 18
           end
           object leConfSenha: TLabeledEdit
             Left = 61
-            Top = 26
+            Top = 24
             Width = 347
             Height = 29
             Anchors = []
@@ -654,6 +692,7 @@ object formCadastroDeClientes: TformCadastroDeClientes
             TabOrder = 0
             Text = ''
             TextHint = 'Redigite a senha '
+            ExplicitTop = 26
           end
           object cadeadoConfSenha: TImage
             Left = 414
@@ -2145,6 +2184,22 @@ object formCadastroDeClientes: TformCadastroDeClientes
             Proportional = True
             OnClick = cadeadoConfSenhaClick
           end
+          object Label14: TLabel
+            Left = 28
+            Top = 37
+            Width = 4
+            Height = 21
+            Anchors = []
+            ExplicitLeft = 2
+          end
+          object Label15: TLabel
+            Left = 233
+            Top = 37
+            Width = 4
+            Height = 21
+            Anchors = []
+            ExplicitLeft = 207
+          end
         end
         object leNome: TLabeledEdit
           Left = 59
@@ -2158,6 +2213,7 @@ object formCadastroDeClientes: TformCadastroDeClientes
           TabOrder = 4
           Text = ''
           TextHint = 'Digite seu nome completo'
+          ExplicitTop = 50
         end
         object leTelefone: TLabeledEdit
           Left = 59
@@ -2168,11 +2224,10 @@ object formCadastroDeClientes: TformCadastroDeClientes
           EditLabel.Width = 115
           EditLabel.Height = 21
           EditLabel.Caption = 'Telefone/Celular:'
-          EditMask = '!\(99\)00000-0000;1;_'
-          MaxLength = 14
           TabOrder = 5
-          Text = '(  )     -    '
+          Text = ''
           TextHint = 'Informe seu n'#250'mero de telefone'
+          ExplicitTop = 103
         end
         object leEmail: TLabeledEdit
           Left = 60
@@ -2186,6 +2241,7 @@ object formCadastroDeClientes: TformCadastroDeClientes
           TabOrder = 6
           Text = ''
           TextHint = 'Digite seu endere'#231'o de e-mail'
+          ExplicitTop = 155
         end
         object leCEP: TLabeledEdit
           Left = 59
@@ -2200,6 +2256,7 @@ object formCadastroDeClientes: TformCadastroDeClientes
           Text = ''
           TextHint = 'Informe seu CEP'
           OnExit = leCEPExit
+          ExplicitTop = 207
         end
         object leEndereco: TLabeledEdit
           Left = 59
@@ -2213,10 +2270,11 @@ object formCadastroDeClientes: TformCadastroDeClientes
           TabOrder = 8
           Text = ''
           TextHint = 'Informe seu endere'#231'o'
+          ExplicitTop = 260
         end
         object GridPanel2: TGridPanel
           Left = 0
-          Top = 408
+          Top = 413
           Width = 465
           Height = 57
           Align = alCustom
@@ -2250,6 +2308,11 @@ object formCadastroDeClientes: TformCadastroDeClientes
               Column = 2
               Control = cadeadoSenha
               Row = 0
+            end
+            item
+              Column = 0
+              Control = Label8
+              Row = 1
             end>
           RowCollection = <
             item
@@ -2259,12 +2322,13 @@ object formCadastroDeClientes: TformCadastroDeClientes
               SizeStyle = ssAuto
             end>
           TabOrder = 9
+          ExplicitTop = 397
           DesignSize = (
             465
             57)
           object Label9: TLabel
             Left = 28
-            Top = 18
+            Top = 7
             Width = 4
             Height = 21
             Anchors = []
@@ -2272,7 +2336,7 @@ object formCadastroDeClientes: TformCadastroDeClientes
           end
           object leSenha: TLabeledEdit
             Left = 61
-            Top = 26
+            Top = 24
             Width = 348
             Height = 29
             Anchors = []
@@ -2295,6 +2359,7 @@ object formCadastroDeClientes: TformCadastroDeClientes
             TabOrder = 0
             Text = ''
             TextHint = 'Crie uma senha'
+            ExplicitTop = 26
           end
           object cadeadoSenha: TImage
             Left = 415
@@ -3786,6 +3851,39 @@ object formCadastroDeClientes: TformCadastroDeClientes
             Proportional = True
             OnClick = cadeadoSenhaClick
           end
+          object Label8: TLabel
+            Left = 28
+            Top = 36
+            Width = 4
+            Height = 21
+            Anchors = []
+            ExplicitLeft = 7
+          end
+        end
+        object Label10: TLabel
+          Left = 230
+          Top = 411
+          Width = 4
+          Height = 21
+          Anchors = []
+          ExplicitLeft = 204
+        end
+        object Label16: TLabel
+          Left = 230
+          Top = 438
+          Width = 4
+          Height = 21
+          Anchors = []
+          ExplicitLeft = 204
+          ExplicitTop = 435
+        end
+        object Label17: TLabel
+          Left = 230
+          Top = 465
+          Width = 4
+          Height = 21
+          Anchors = []
+          ExplicitLeft = 204
         end
       end
     end
@@ -3808,13 +3906,65 @@ object formCadastroDeClientes: TformCadastroDeClientes
     Left = 220
     Top = 340
   end
+  object cdsClientesCad: TClientDataSet
+    Aggregates = <>
+    Params = <>
+    ProviderName = 'dspClientesCad'
+    Left = 484
+    Top = 252
+    object cdsClientesCadhash_senha_cli: TStringField
+      FieldName = 'hash_senha_cli'
+      Size = 255
+    end
+    object cdsClientesCadnome_cliente: TStringField
+      FieldName = 'nome_cliente'
+      Size = 100
+    end
+    object cdsClientesCadtelefone_cliente: TStringField
+      FieldName = 'telefone_cliente'
+      Size = 11
+    end
+    object cdsClientesCademail_cliente: TStringField
+      FieldName = 'email_cliente'
+      Size = 250
+    end
+    object cdsClientesCadcep_cliente: TStringField
+      FieldName = 'cep_cliente'
+      Size = 8
+    end
+    object cdsClientesCadendereco_cliente: TStringField
+      FieldName = 'endereco_cliente'
+      Size = 60
+    end
+    object cdsClientesCadnum_endereco: TStringField
+      FieldName = 'num_endereco'
+      Size = 7
+    end
+    object cdsClientesCadbairro: TStringField
+      FieldName = 'bairro'
+      Size = 30
+    end
+    object cdsClientesCadcidade: TStringField
+      FieldName = 'cidade'
+      Size = 30
+    end
+    object cdsClientesCaduf: TStringField
+      FieldName = 'uf'
+      Size = 2
+    end
+  end
+  object dspClientesCad: TDataSetProvider
+    DataSet = DM.QueryClientes
+    Left = 484
+    Top = 180
+  end
   object RESTResponse1: TRESTResponse
     Left = 340
     Top = 340
   end
-  object DSCadCli: TDataSource
+  object DSClientesCad: TDataSource
     DataSet = DM.QueryClientes
-    Left = 532
+    Left = 476
     Top = 100
   end
 end

@@ -7,14 +7,13 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Mask, Vcl.ExtCtrls,
   Vcl.DBCtrls, frameFormularioPedido, Vcl.Imaging.pngimage, System.UITypes,
   EComponent, Data.DB, REST.Types, Data.Bind.Components, Data.Bind.ObjectScope,
-  REST.Client;
+  REST.Client, Vcl.Buttons, Datasnap.Provider, Datasnap.DBClient;
 
 type
   TformCadastroDeClientes = class(TForm)
     EurekaLogEvents1: TEurekaLogEvents;
     RESTClient1: TRESTClient;
     RESTRequest1: TRESTRequest;
-    RESTResponse1: TRESTResponse;
     griPnlCadastro: TGridPanel;
     pnlilustrativo: TPanel;
     edtStatusCode: TEdit;
@@ -52,7 +51,26 @@ type
     Label9: TLabel;
     leSenha: TLabeledEdit;
     cadeadoSenha: TImage;
-    DSCadCli: TDataSource;
+    Label8: TLabel;
+    Label10: TLabel;
+    Label14: TLabel;
+    Label15: TLabel;
+    Label16: TLabel;
+    Label17: TLabel;
+    cdsClientesCad: TClientDataSet;
+    dspClientesCad: TDataSetProvider;
+    cdsClientesCadhash_senha_cli: TStringField;
+    cdsClientesCadnome_cliente: TStringField;
+    cdsClientesCadtelefone_cliente: TStringField;
+    cdsClientesCademail_cliente: TStringField;
+    cdsClientesCadcep_cliente: TStringField;
+    cdsClientesCadendereco_cliente: TStringField;
+    cdsClientesCadnum_endereco: TStringField;
+    cdsClientesCadbairro: TStringField;
+    cdsClientesCadcidade: TStringField;
+    cdsClientesCaduf: TStringField;
+    RESTResponse1: TRESTResponse;
+    DSClientesCad: TDataSource;
     procedure pnlCadastrarClick(Sender: TObject);
     procedure cadeadoSenhaClick(Sender: TObject);
     procedure cadeadoConfSenhaClick(Sender: TObject);
@@ -103,8 +121,6 @@ begin
     leBairro.Text := objetoJson.Values['neighborhood'].Value;
     leCidade.Text := objetoJson.Values['city'].Value;
     cbUF.Text := objetoJson.Values['state'].Value;
-
-    //if algumErro then
 end;
 
 procedure TformCadastroDeClientes.cadeadoSenhaClick(Sender: TObject);
@@ -139,34 +155,70 @@ begin
 end;
 
 procedure TformCadastroDeClientes.pnlCadastrarClick(Sender: TObject);
+var hash: String;
 begin
+
+    pnlCadastrar.Enabled := True;
+    hash := THashSHA1.GetHashString(leConfSenha.Text);
     if leConfSenha.Text = leSenha.Text then begin
 
-      if DM.QueryClientes.State in [dsInsert, dsEdit] then begin
-      DM.QueryClientes.SQL.Text := 'SELECT * FROM "Clientes"';
+      with DM.QueryClientes do begin
 
-      DM.QueryClientes.FieldByName('nome_cliente').AsString := leNome.Text;
-      DM.QueryClientes.FieldByName('telefone_cliente').AsString := leTelefone.Text;
-      DM.QueryClientes.FieldByName('email_cliente').AsString := leEmail.Text;
-      DM.QueryClientes.FieldByName('cep_cliente').AsString := leCEP.Text;
-      DM.QueryClientes.FieldByName('endereco_cliente').AsString := leEndereco.Text;
-      DM.QueryClientes.FieldByName('numero_endereco').AsString := leNumero.Text;
-      DM.QueryClientes.FieldByName('bairro').AsString := leBairro.Text;
-      DM.QueryClientes.FieldByName('cidade').AsString := leCidade.Text;
-      DM.QueryClientes.FieldByName('uf').AsString := cbUf.Text;
-      DM.QueryClientes.FieldByName('hash_senha_cli').AsString := THashSHA1.GetHashString(leConfSenha.Text);
+      SQL.Text := 'INSERT INTO "Clientes" (nome_cliente, telefone_cliente, email_cliente, cep_cliente, endereco_cliente, num_endereco, bairro, cidade, uf, hash_senha_cli) VALUES (:Nome, :Telefone, :Email, :CEP, :Endereco, :Numero, :Bairro, :Cidade, :UF, :SenhaHash);';
 
-      DM.QueryClientes.SQL.Text := 'INSERT INTO "Clientes" (nome_cliente, telefone_cliente, email_cliente, cep_cliente, endereco_cliente, num_endereco, bairro, cidade, uf) VALUES (leNome.Text, leTelefone.Text, leEmail.Text, leCEP.Text, leEndereco.Text, leNumero.Text, leBairro.Text, leCidade.Text, cbUF.Text);';
-      DM.QueryClientes.SQL.Text := 'INSERT INTO "Clientes" (hash_senha_cli) VALUES (THashSHA1.GetHashString(leConfSenha.Text);)';
+      ParamByName('Nome').AsString := leNome.Text;
+      ParamByName('Telefone').AsString := leTelefone.Text;
+      ParamByName('Email').AsString := leEmail.Text;
+      ParamByName('CEP').AsString := leCEP.Text;
+      ParamByName('Endereco').AsString := leEndereco.Text;
+      ParamByName('Numero').AsString := leNumero.Text;
+      ParamByName('Bairro').AsString := leBairro.Text;
+      ParamByName('Cidade').AsString := leCidade.Text;
+      ParamByName('UF').AsString := cbUf.Text;
+      ParamByName('SenhaHash').AsString := hash;
 
-      DM.QueryClientes.Post;
+      ExecSQL;
       end;
       if MessageDlg('Cadastro finalizado com sucesso! Deseja incluir seu veículo?',
-      mtConfirmation, [mbYes, mbNo], 0) = mrYes then FrameVeiculo;
+      mtConfirmation, [mbYes, mbNo], 0) = mrYes then FrameVeiculo else Close;
 
     end else begin
        ShowMessage('Senhas não compatíveis. Tente novamente');
     end;
 end;
+
+
+//procedure TformCadastroDeClientes.pnlCadastrarClick(Sender: TObject);
+//var nome_cliente, telefone_cliente, email_cliente, cep_cliente, endereco_cliente, num_endereco, bairro, cidade, uf, hash_senha_cli: String;
+//begin
+//    pnlCadastrar.Enabled := True;
+//    hash_senha_cli := THashSHA1.GetHashString(leConfSenha.Text);
+//    if leConfSenha.Text = leSenha.Text then begin
+//
+//      cdsClientesCad.Open;
+//      cdsClientesCad.Edit;
+//
+//      cdsClientesCad.FieldByName('nome_cliente').AsString := leNome.Text;
+//      cdsClientesCad.FieldByName('telefone_cliente').AsString := leTelefone.Text;
+//      cdsClientesCad.FieldByName('email_cliente').AsString := leEmail.Text;
+//      cdsClientesCad.FieldByName('cep_cliente').AsString := leCEP.Text;
+//      cdsClientesCad.FieldByName('endereco_cliente').AsString := leEndereco.Text;
+//      cdsClientesCad.FieldByName('num_endereco').AsString := leNumero.Text;
+//      cdsClientesCad.FieldByName('bairro').AsString := leBairro.Text;
+//      cdsClientesCad.FieldByName('cidade').AsString := leCidade.Text;
+//      cdsClientesCad.FieldByName('uf').AsString := cbUf.Text;
+//      cdsClientesCad.FieldByName('hash_senha_cli').AsString := THashSHA1.GetHashString(leConfSenha.Text);
+//
+//
+//      cdsClientesCad.Insert;
+//      cdsClientesCad.Post;
+//
+//      if MessageDlg('Cadastro finalizado com sucesso! Deseja incluir seu veículo?',
+//      mtConfirmation, [mbYes, mbNo], 0) = mrYes then FrameVeiculo;
+//
+//    end else begin
+//       ShowMessage('Senhas não compatíveis. Tente novamente');
+//    end;
+//end;
 
 end.
