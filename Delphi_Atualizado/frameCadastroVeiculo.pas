@@ -12,21 +12,20 @@ type
     pnlSenhaFuncionario: TPanel;
     lblCadastrandoVeiculo: TLabel;
     pnlDadosVeículo: TPanel;
-    GridPanel2: TGridPanel;
-    dbleModeloVeiculo: TDBLabeledEdit;
-    Label1: TLabel;
-    dbleMarcaVeiculo: TDBLabeledEdit;
-    Label3: TLabel;
-    Panel1: TPanel;
-    GridPanel1: TGridPanel;
-    DBLabeledEdit2: TDBLabeledEdit;
-    dbleChassiVeiculo: TDBLabeledEdit;
-    dbleCorVeiculo: TDBLabeledEdit;
-    Label4: TLabel;
-    dbleAnoVeiculo: TDBLabeledEdit;
-    pnlInfoVeiculo: TPanel;
-    Label2: TLabel;
     pnlBotaoCadastrarVeiculo: TPanel;
+    Panel1: TPanel;
+    gridPanelCad2: TGridPanel;
+    Label5: TLabel;
+    Label6: TLabel;
+    GridPanel3: TGridPanel;
+    leAno: TLabeledEdit;
+    leCor: TLabeledEdit;
+    lePlaca: TLabeledEdit;
+    leChassi: TLabeledEdit;
+    leMarca: TLabeledEdit;
+    leModelo: TLabeledEdit;
+    GridPanel2: TGridPanel;
+    Label3: TLabel;
   private
     { Private declarations }
   public

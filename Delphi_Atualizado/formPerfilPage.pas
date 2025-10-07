@@ -1,14 +1,14 @@
-unit framePerfil;
+unit formPerfilPage;
 
 interface
 
 uses
-  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes,
-  Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls,
-  Vcl.Mask, Vcl.DBCtrls;
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.StdCtrls, Vcl.Mask,
+  Vcl.DBCtrls;
 
 type
-  TframePerfilUsuário = class(TFrame)
+  TformPerfil = class(TForm)
     Panel1: TPanel;
     Label1: TLabel;
     gridPanelLogin: TGridPanel;
@@ -37,20 +37,30 @@ type
     Label11: TLabel;
     pnlAtualizar: TPanel;
     dbleConfSenha: TLabeledEdit;
+    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
   public
     { Public declarations }
+    //procedure dadosPerfil;
   end;
 
-  var framePerfilUsuário: TframePerfilUsuário;
+var
+  formPerfil: TformPerfil;
 
 implementation
 
 {$R *.dfm}
-
 uses formLoginJLA;
 
+procedure dadosPerfil;
+begin
+    //formLogin.pnlEntrarClick:=TipoUsuario
+end;
 
+procedure TformPerfil.FormCreate(Sender: TObject);
+begin
+    dadosPerfil;
+end;
 
 end.

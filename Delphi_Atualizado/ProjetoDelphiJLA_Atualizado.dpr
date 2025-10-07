@@ -41,7 +41,8 @@ uses
   formCrudFuncionarios in 'formCrudFuncionarios.pas' {formCrudFunc},
   formConfirmeEmail in 'formConfirmeEmail.pas' {Form1},
   formCrudProdutos in 'formCrudProdutos.pas' {formProdutos},
-  formCrudClientes in 'formCrudClientes.pas' {Form2};
+  formCrudClientes in 'formCrudClientes.pas' {formCrudCli},
+  formPerfilPage in 'formPerfilPage.pas' {formPerfil};
 
 {$R *.res}
 
@@ -49,11 +50,11 @@ begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
   Application.Title := 'Aviso';
-  Application.CreateForm(TformLogin, formLogin);
+  Application.CreateForm(TformCrudCli, formCrudCli);
+  Application.CreateForm(TformPáginaInicialFunc, formPáginaInicialFunc);
   Application.CreateForm(TformCrudFunc, formCrudFunc);
   Application.CreateForm(TformCadastroDeClientes, formCadastroDeClientes);
   Application.CreateForm(TformPáginaInicialADM, formPáginaInicialADM);
-  Application.CreateForm(TformPáginaInicialFunc, formPáginaInicialFunc);
   Application.CreateForm(TformCadastroFuncionarios, formCadastroFuncionarios);
   Application.CreateForm(TformPáginaInicialCli, formPáginaInicialCli);
   Application.CreateForm(TdtmInicial, dtmInicial);
@@ -62,7 +63,7 @@ begin
   Application.CreateForm(TformTrocaSenha, formTrocaSenha);
   Application.CreateForm(TForm1, Form1);
   Application.CreateForm(TformProdutos, formProdutos);
-  Application.CreateForm(TForm2, Form2);
+  Application.CreateForm(TformPerfil, formPerfil);
   Application.Run;
 end.
 

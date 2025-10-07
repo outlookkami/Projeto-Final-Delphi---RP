@@ -11,14 +11,14 @@
     Left = 83
     Top = 32
     Width = 673
-    Height = 569
+    Height = 618
     Anchors = [akLeft, akTop, akRight, akBottom]
     Color = clHighlight
     ParentBackground = False
     TabOrder = 0
     DesignSize = (
       673
-      569)
+      618)
     object lblCadastrandoVeiculo: TLabel
       Left = 1
       Top = 1
@@ -37,9 +37,9 @@
     end
     object pnlDadosVeículo: TPanel
       Left = 56
-      Top = 60
+      Top = 72
       Width = 561
-      Height = 469
+      Height = 506
       Anchors = [akLeft, akTop, akRight, akBottom]
       BevelOuter = bvNone
       Color = clHighlight
@@ -47,335 +47,10 @@
       TabOrder = 0
       DesignSize = (
         561
-        469)
-      object pnlInfoVeiculo: TPanel
-        Left = 40
-        Top = 140
-        Width = 481
-        Height = 261
-        Color = clHighlight
-        ParentBackground = False
-        TabOrder = 0
-        DesignSize = (
-          481
-          261)
-        object GridPanel2: TGridPanel
-          Left = 0
-          Top = 11
-          Width = 481
-          Height = 250
-          Anchors = [akTop]
-          BevelOuter = bvNone
-          Color = clHighlight
-          ColumnCollection = <
-            item
-              Value = 100.000000000000000000
-            end>
-          ControlCollection = <
-            item
-              Column = 0
-              Control = dbleModeloVeiculo
-              Row = 0
-            end
-            item
-              Column = 0
-              Control = Label1
-              Row = 1
-            end
-            item
-              Column = 0
-              Control = dbleMarcaVeiculo
-              Row = 2
-            end
-            item
-              Column = 0
-              Control = Label3
-              Row = 3
-            end
-            item
-              Column = 0
-              Control = dbleCorVeiculo
-              Row = 4
-            end
-            item
-              Column = 0
-              Control = Label4
-              Row = 5
-            end
-            item
-              Column = 0
-              Control = dbleAnoVeiculo
-              Row = 6
-            end>
-          ParentBackground = False
-          RowCollection = <
-            item
-              Value = 12.500000000000000000
-            end
-            item
-              Value = 12.500000000000000000
-            end
-            item
-              Value = 12.500000000000000000
-            end
-            item
-              Value = 12.500000000000000000
-            end
-            item
-              Value = 12.500000000000000000
-            end
-            item
-              Value = 12.500000000000000000
-            end
-            item
-              Value = 12.500000000000000000
-            end
-            item
-              Value = 12.500000000000000000
-            end>
-          TabOrder = 0
-          DesignSize = (
-            481
-            250)
-          object dbleModeloVeiculo: TDBLabeledEdit
-            Left = 72
-            Top = 24
-            Width = 337
-            Height = 29
-            Anchors = []
-            Font.Charset = DEFAULT_CHARSET
-            Font.Color = clWindowText
-            Font.Height = -16
-            Font.Name = 'Segoe UI'
-            Font.Style = []
-            ParentFont = False
-            TabOrder = 0
-            EditLabel.Width = 56
-            EditLabel.Height = 21
-            EditLabel.Caption = 'Modelo:'
-            EditLabel.Font.Charset = DEFAULT_CHARSET
-            EditLabel.Font.Color = clWhite
-            EditLabel.Font.Height = -16
-            EditLabel.Font.Name = 'Segoe UI'
-            EditLabel.Font.Style = []
-            EditLabel.ParentFont = False
-            ExplicitTop = 25
-          end
-          object Label1: TLabel
-            Left = 239
-            Top = 39
-            Width = 3
-            Height = 15
-            Anchors = []
-            ExplicitLeft = 187
-            ExplicitTop = 101
-          end
-          object dbleMarcaVeiculo: TDBLabeledEdit
-            Left = 72
-            Top = 87
-            Width = 337
-            Height = 29
-            Anchors = []
-            Font.Charset = DEFAULT_CHARSET
-            Font.Color = clWindowText
-            Font.Height = -16
-            Font.Name = 'Segoe UI'
-            Font.Style = []
-            ParentFont = False
-            TabOrder = 1
-            EditLabel.Width = 46
-            EditLabel.Height = 21
-            EditLabel.Caption = 'Marca:'
-            EditLabel.Font.Charset = DEFAULT_CHARSET
-            EditLabel.Font.Color = clWhite
-            EditLabel.Font.Height = -16
-            EditLabel.Font.Name = 'Segoe UI'
-            EditLabel.Font.Style = []
-            EditLabel.ParentFont = False
-          end
-          object Label3: TLabel
-            Left = 239
-            Top = 102
-            Width = 3
-            Height = 15
-            Anchors = []
-            ExplicitLeft = 223
-            ExplicitTop = 118
-          end
-          object dbleCorVeiculo: TDBLabeledEdit
-            Left = 73
-            Top = 149
-            Width = 335
-            Height = 29
-            Anchors = []
-            Font.Charset = DEFAULT_CHARSET
-            Font.Color = clWindowText
-            Font.Height = -16
-            Font.Name = 'Segoe UI'
-            Font.Style = []
-            ParentFont = False
-            TabOrder = 2
-            EditLabel.Width = 28
-            EditLabel.Height = 21
-            EditLabel.Caption = 'Cor:'
-            EditLabel.Font.Charset = DEFAULT_CHARSET
-            EditLabel.Font.Color = clWhite
-            EditLabel.Font.Height = -16
-            EditLabel.Font.Name = 'Segoe UI'
-            EditLabel.Font.Style = []
-            EditLabel.ParentFont = False
-          end
-          object Label4: TLabel
-            Left = 239
-            Top = 164
-            Width = 3
-            Height = 15
-            Anchors = []
-            ExplicitLeft = 223
-            ExplicitTop = 167
-          end
-          object dbleAnoVeiculo: TDBLabeledEdit
-            Left = 71
-            Top = 212
-            Width = 338
-            Height = 29
-            Anchors = []
-            Font.Charset = DEFAULT_CHARSET
-            Font.Color = clWindowText
-            Font.Height = -16
-            Font.Name = 'Segoe UI'
-            Font.Style = []
-            ParentFont = False
-            TabOrder = 3
-            EditLabel.Width = 31
-            EditLabel.Height = 21
-            EditLabel.Caption = 'Ano:'
-            EditLabel.Font.Charset = DEFAULT_CHARSET
-            EditLabel.Font.Color = clWhite
-            EditLabel.Font.Height = -16
-            EditLabel.Font.Name = 'Segoe UI'
-            EditLabel.Font.Style = []
-            EditLabel.ParentFont = False
-            ExplicitTop = 211
-          end
-        end
-      end
-      object Panel1: TPanel
-        Left = 40
-        Top = 16
-        Width = 481
-        Height = 129
-        TabOrder = 1
-        DesignSize = (
-          481
-          129)
-        object GridPanel1: TGridPanel
-          Left = 0
-          Top = 0
-          Width = 481
-          Height = 129
-          Anchors = [akTop]
-          BevelOuter = bvNone
-          Color = clHighlight
-          ColumnCollection = <
-            item
-              Value = 100.000000000000000000
-            end>
-          ControlCollection = <
-            item
-              Column = 0
-              Control = DBLabeledEdit2
-              Row = 0
-            end
-            item
-              Column = 0
-              Control = dbleChassiVeiculo
-              Row = 2
-            end
-            item
-              Column = 0
-              Control = Label2
-              Row = 1
-            end>
-          ParentBackground = False
-          RowCollection = <
-            item
-              Value = 25.000000000000000000
-            end
-            item
-              Value = 25.000000000000000000
-            end
-            item
-              Value = 25.000000000000000000
-            end
-            item
-              Value = 25.000000000000000000
-            end>
-          TabOrder = 0
-          DesignSize = (
-            481
-            129)
-          object DBLabeledEdit2: TDBLabeledEdit
-            Left = 72
-            Top = 24
-            Width = 337
-            Height = 29
-            Anchors = []
-            Font.Charset = DEFAULT_CHARSET
-            Font.Color = clWindowText
-            Font.Height = -16
-            Font.Name = 'Segoe UI'
-            Font.Style = []
-            ParentFont = False
-            TabOrder = 0
-            EditLabel.Width = 39
-            EditLabel.Height = 21
-            EditLabel.Caption = 'Placa:'
-            EditLabel.Font.Charset = DEFAULT_CHARSET
-            EditLabel.Font.Color = clWhite
-            EditLabel.Font.Height = -16
-            EditLabel.Font.Name = 'Segoe UI'
-            EditLabel.Font.Style = []
-            EditLabel.ParentFont = False
-            ExplicitTop = 25
-          end
-          object dbleChassiVeiculo: TDBLabeledEdit
-            Left = 73
-            Top = 88
-            Width = 335
-            Height = 29
-            Anchors = []
-            Font.Charset = DEFAULT_CHARSET
-            Font.Color = clWindowText
-            Font.Height = -16
-            Font.Name = 'Segoe UI'
-            Font.Style = []
-            ParentFont = False
-            TabOrder = 1
-            EditLabel.Width = 48
-            EditLabel.Height = 21
-            EditLabel.Caption = 'Chassi:'
-            EditLabel.Font.Charset = DEFAULT_CHARSET
-            EditLabel.Font.Color = clWhite
-            EditLabel.Font.Height = -16
-            EditLabel.Font.Name = 'Segoe UI'
-            EditLabel.Font.Style = []
-            EditLabel.ParentFont = False
-            ExplicitTop = 89
-          end
-          object Label2: TLabel
-            Left = 239
-            Top = 40
-            Width = 3
-            Height = 15
-            Anchors = []
-            ExplicitLeft = 208
-          end
-        end
-      end
+        506)
       object pnlBotaoCadastrarVeiculo: TPanel
-        Left = 180
-        Top = 420
+        Left = 182
+        Top = 452
         Width = 185
         Height = 41
         Anchors = [akLeft, akTop, akRight]
@@ -388,7 +63,288 @@
         Font.Style = []
         ParentBackground = False
         ParentFont = False
-        TabOrder = 2
+        TabOrder = 0
+      end
+      object Panel1: TPanel
+        Left = 32
+        Top = 0
+        Width = 497
+        Height = 433
+        TabOrder = 1
+        object gridPanelCad2: TGridPanel
+          Left = 16
+          Top = -173
+          Width = 464
+          Height = 598
+          Align = alCustom
+          Anchors = [akLeft, akTop, akRight, akBottom]
+          BevelEdges = []
+          BevelOuter = bvNone
+          ColumnCollection = <
+            item
+              Value = 100.000000000000000000
+            end>
+          ControlCollection = <
+            item
+              Column = 0
+              Control = Label5
+              Row = 4
+            end
+            item
+              Column = 0
+              Control = Label6
+              Row = 6
+            end
+            item
+              Column = 0
+              Control = GridPanel3
+              Row = 7
+            end
+            item
+              Column = 0
+              Control = lePlaca
+              Row = 0
+            end
+            item
+              Column = 0
+              Control = leChassi
+              Row = 1
+            end
+            item
+              Column = 0
+              Control = leMarca
+              Row = 3
+            end
+            item
+              Column = 0
+              Control = leModelo
+              Row = 5
+            end
+            item
+              Column = 0
+              Control = GridPanel2
+              Row = 8
+            end
+            item
+              Column = 0
+              Control = Label3
+              Row = 2
+            end>
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -16
+          Font.Name = 'Segoe UI'
+          Font.Style = []
+          ParentFont = False
+          RowCollection = <
+            item
+              Value = 11.111111111111110000
+            end
+            item
+              Value = 11.111111111111110000
+            end
+            item
+              Value = 11.111111111111110000
+            end
+            item
+              Value = 11.111111111111110000
+            end
+            item
+              Value = 11.111111111111110000
+            end
+            item
+              Value = 11.111111111111110000
+            end
+            item
+              Value = 11.111111111111110000
+            end
+            item
+              Value = 11.111111111111110000
+            end
+            item
+              Value = 11.111111111111100000
+            end>
+          TabOrder = 0
+          DesignSize = (
+            464
+            598)
+          object Label5: TLabel
+            Left = 230
+            Top = 288
+            Width = 4
+            Height = 21
+            Anchors = []
+            ExplicitLeft = 193
+            ExplicitTop = 250
+          end
+          object Label6: TLabel
+            Left = 230
+            Top = 421
+            Width = 4
+            Height = 21
+            Anchors = []
+            ExplicitLeft = 193
+            ExplicitTop = 311
+          end
+          object GridPanel3: TGridPanel
+            Left = 35
+            Top = 470
+            Width = 394
+            Height = 56
+            Anchors = []
+            BevelOuter = bvNone
+            ColumnCollection = <
+              item
+                Value = 40.735354790552790000
+              end
+              item
+                Value = 59.264645209447220000
+              end>
+            ControlCollection = <
+              item
+                Column = 0
+                Control = leAno
+                Row = 0
+              end
+              item
+                Column = 1
+                Control = leCor
+                Row = 0
+              end>
+            ParentBackground = False
+            ParentColor = True
+            RowCollection = <
+              item
+                Value = 100.000000000000000000
+              end>
+            TabOrder = 0
+            ExplicitLeft = 47
+            ExplicitTop = 480
+            DesignSize = (
+              394
+              56)
+            object leAno: TLabeledEdit
+              Left = 24
+              Top = 25
+              Width = 129
+              Height = 29
+              Align = alCustom
+              EditLabel.Width = 31
+              EditLabel.Height = 21
+              EditLabel.Caption = 'Ano:'
+              TabOrder = 0
+              Text = ''
+              TextHint = 'Ano de fabrica'#231#227'o'
+            end
+            object leCor: TLabeledEdit
+              Left = 164
+              Top = 25
+              Width = 226
+              Height = 29
+              Anchors = []
+              EditLabel.Width = 28
+              EditLabel.Height = 21
+              EditLabel.Caption = 'Cor:'
+              TabOrder = 1
+              Text = ''
+              TextHint = 'Informe a cor'
+              ExplicitLeft = 167
+            end
+          end
+          object lePlaca: TLabeledEdit
+            Left = 59
+            Top = 231
+            Width = 366
+            Height = 29
+            Align = alCustom
+            EditLabel.Width = 39
+            EditLabel.Height = 21
+            EditLabel.Caption = 'Placa:'
+            TabOrder = 1
+            Text = ''
+            TextHint = 'Informe a placa do seu ve'#237'culo'
+          end
+          object leChassi: TLabeledEdit
+            Left = 59
+            Top = 298
+            Width = 366
+            Height = 29
+            Align = alCustom
+            EditLabel.Width = 48
+            EditLabel.Height = 21
+            EditLabel.Caption = 'Chassi:'
+            TabOrder = 2
+            Text = ''
+            TextHint = 'Informe o chassi do ve'#237'culo'
+          end
+          object leMarca: TLabeledEdit
+            Left = 59
+            Top = 362
+            Width = 366
+            Height = 29
+            Align = alCustom
+            EditLabel.Width = 46
+            EditLabel.Height = 21
+            EditLabel.Caption = 'Marca:'
+            TabOrder = 3
+            Text = ''
+            TextHint = 'Informe a marca do ve'#237'culo'
+          end
+          object leModelo: TLabeledEdit
+            Left = 59
+            Top = 428
+            Width = 366
+            Height = 29
+            Align = alCustom
+            EditLabel.Width = 56
+            EditLabel.Height = 21
+            EditLabel.Caption = 'Modelo:'
+            TabOrder = 4
+            Text = ''
+            TextHint = 'Informe o modelo do ve'#237'culo'
+          end
+          object GridPanel2: TGridPanel
+            Left = 0
+            Top = 1050
+            Width = 465
+            Height = 57
+            Align = alCustom
+            Anchors = []
+            BevelOuter = bvNone
+            ColumnCollection = <
+              item
+                SizeStyle = ssAbsolute
+                Value = 60.000000000000000000
+              end
+              item
+                SizeStyle = ssAbsolute
+                Value = 350.000000000000000000
+              end
+              item
+                SizeStyle = ssAbsolute
+                Value = 50.000000000000000000
+              end>
+            ControlCollection = <>
+            RowCollection = <
+              item
+                Value = 100.000000000000000000
+              end
+              item
+                SizeStyle = ssAuto
+              end>
+            TabOrder = 5
+            ExplicitTop = 413
+          end
+          object Label3: TLabel
+            Left = 230
+            Top = 155
+            Width = 4
+            Height = 21
+            Anchors = []
+            ExplicitLeft = 193
+            ExplicitTop = 125
+          end
+        end
       end
     end
   end

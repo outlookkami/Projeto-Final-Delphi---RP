@@ -103,10 +103,6 @@ begin
     //DM.QueryFuncionarios
 end;
 
-//procedure TformCrudFunc.spdbtnIncluFuncClick(Sender: TObject);
-//begin
-//    DM.QueryFuncionarios.Open;
-//    DM.QueryFuncionarios.Insert;
-//end;
+
 
 end.

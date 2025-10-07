@@ -8,10 +8,10 @@ uses
   Vcl.ExtCtrls, Vcl.Grids, Vcl.DBGrids, Vcl.Imaging.pngimage;
 
 type
-  TForm2 = class(TForm)
+  TformCrudCli = class(TForm)
     Panel1: TPanel;
     lblDadosCli: TLabel;
-    btnIncluirFunc: TPanel;
+    btnIncluirCli: TPanel;
     pnlPesquisa: TPanel;
     iconePesquisa: TImage;
     DBGrid1: TDBGrid;
@@ -46,6 +46,7 @@ type
     btnExcluCli: TPanel;
     DSCliente: TDataSource;
     leSenha: TLabeledEdit;
+    btnEditCli: TPanel;
   private
     { Private declarations }
   public
@@ -53,7 +54,7 @@ type
   end;
 
 var
-  Form2: TForm2;
+  formCrudCli: TformCrudCli;
 
 
 

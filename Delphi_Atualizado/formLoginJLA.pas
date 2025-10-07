@@ -41,17 +41,18 @@ type
     pnlEntrar: TPanel;
     lblCadastreAqui: TLabel;
     BalloonHint1: TBalloonHint;
-    procedure pnlEntrarClick(Sender: TObject);
     procedure cadeadoSenhaClick(Sender: TObject);
     procedure imgFecharClick(Sender: TObject);
     procedure lblCadastreAquiClick(Sender: TObject);
     procedure lblEsqueceuSenhaClick(Sender: TObject);
+
+    procedure HideShowSenha;
   private
     { Private declarations }
-    procedure HideShowSenha;
+
   public
     { Public declarations }
-
+    procedure pnlEntrarClick(Sender: TObject);
   end;
 
 var

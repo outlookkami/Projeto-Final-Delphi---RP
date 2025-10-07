@@ -214,7 +214,11 @@
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="formCrudClientes.pas">
-            <Form>Form2</Form>
+            <Form>formCrudCli</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="formPerfilPage.pas">
+            <Form>formPerfil</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <BuildConfiguration Include="Base">

@@ -1,7 +1,7 @@
-object Form2: TForm2
+object formCrudCli: TformCrudCli
   Left = 0
   Top = 0
-  Caption = 'Form2'
+  Caption = 'formCrudCli'
   ClientHeight = 719
   ClientWidth = 1168
   Color = clBtnFace
@@ -18,10 +18,6 @@ object Form2: TForm2
     Height = 719
     Align = alClient
     TabOrder = 0
-    ExplicitLeft = 8
-    ExplicitTop = 8
-    ExplicitWidth = 1150
-    ExplicitHeight = 701
     DesignSize = (
       1168
       719)
@@ -41,14 +37,14 @@ object Form2: TForm2
       Font.Style = []
       ParentFont = False
     end
-    object btnIncluirFunc: TPanel
+    object btnIncluirCli: TPanel
       Left = 609
       Top = 74
       Width = 152
       Height = 43
       Cursor = crHandPoint
       Anchors = [akTop, akRight]
-      Caption = 'Incluir Funcion'#225'rio'
+      Caption = 'Incluir Cliente'
       Color = clHighlight
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWhite
@@ -58,7 +54,6 @@ object Form2: TForm2
       ParentBackground = False
       ParentFont = False
       TabOrder = 2
-      ExplicitLeft = 591
     end
     object pnlPesquisa: TPanel
       Left = 48
@@ -71,7 +66,6 @@ object Form2: TForm2
       Color = clBtnHighlight
       ParentBackground = False
       TabOrder = 0
-      ExplicitWidth = 695
       DesignSize = (
         709
         37)
@@ -261,7 +255,6 @@ object Form2: TForm2
       ParentFont = False
       TabOrder = 3
       TextHint = 'Pesquise'
-      ExplicitWidth = 637
     end
     object gridPanelLogin: TGridPanel
       Left = 783
@@ -446,8 +439,6 @@ object Form2: TForm2
           Value = 4.545454545454532000
         end>
       TabOrder = 4
-      ExplicitLeft = 765
-      ExplicitHeight = 637
       DesignSize = (
         372
         655)
@@ -535,7 +526,6 @@ object Form2: TForm2
             Value = 100.000000000000000000
           end>
         TabOrder = 0
-        ExplicitTop = 319
         DesignSize = (
           370
           56)
@@ -610,7 +600,6 @@ object Form2: TForm2
             SizeStyle = ssAuto
           end>
         TabOrder = 1
-        ExplicitTop = 376
         DesignSize = (
           379
           58)
@@ -724,7 +713,6 @@ object Form2: TForm2
         Anchors = []
         BevelOuter = bvNone
         TabOrder = 2
-        ExplicitTop = 434
         DesignSize = (
           384
           64)
@@ -783,7 +771,6 @@ object Form2: TForm2
         TabOrder = 3
         Text = '     -   '
         TextHint = 'Informe o CEP'
-        ExplicitTop = 227
       end
       object leEmail: TLabeledEdit
         Left = 13
@@ -797,7 +784,6 @@ object Form2: TForm2
         TabOrder = 4
         Text = ''
         TextHint = 'Digite o endere'#231'o de e-mail'
-        ExplicitTop = 169
       end
       object leTelefone: TLabeledEdit
         Left = 14
@@ -813,7 +799,6 @@ object Form2: TForm2
         TabOrder = 5
         Text = '(  )     -    '
         TextHint = 'Informe seu n'#250'mero de telefone'
-        ExplicitTop = 111
       end
       object leNome: TLabeledEdit
         Left = 15
@@ -827,7 +812,6 @@ object Form2: TForm2
         TabOrder = 6
         Text = ''
         TextHint = 'Digite o nome completo'
-        ExplicitTop = 53
       end
       object leEndereco: TLabeledEdit
         Left = 14
@@ -841,7 +825,6 @@ object Form2: TForm2
         TabOrder = 7
         Text = ''
         TextHint = 'Informe o endere'#231'o'
-        ExplicitTop = 285
       end
       object LabeledEdit1: TLabeledEdit
         Left = 15
@@ -855,11 +838,10 @@ object Form2: TForm2
         TabOrder = 8
         Text = ''
         TextHint = 'Confirme a senha padr'#227'o'
-        ExplicitTop = 516
       end
     end
     object btnInativCli: TPanel
-      Left = 451
+      Left = 293
       Top = 74
       Width = 152
       Height = 43
@@ -875,10 +857,9 @@ object Form2: TForm2
       ParentBackground = False
       ParentFont = False
       TabOrder = 5
-      ExplicitLeft = 433
     end
     object btnExcluCli: TPanel
-      Left = 293
+      Left = 135
       Top = 74
       Width = 152
       Height = 43
@@ -894,7 +875,24 @@ object Form2: TForm2
       ParentBackground = False
       ParentFont = False
       TabOrder = 6
-      ExplicitLeft = 275
+    end
+    object btnEditCli: TPanel
+      Left = 451
+      Top = 74
+      Width = 152
+      Height = 43
+      Cursor = crHandPoint
+      Anchors = [akTop, akRight]
+      Caption = 'Editar Cliente'
+      Color = clHighlight
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -13
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentBackground = False
+      ParentFont = False
+      TabOrder = 7
     end
   end
   object DSCliente: TDataSource

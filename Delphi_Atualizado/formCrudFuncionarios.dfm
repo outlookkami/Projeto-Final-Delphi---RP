@@ -957,7 +957,7 @@ object formCrudFunc: TformCrudFunc
   end
   object DSFuncionarios: TDataSource
     DataSet = DM.QueryFuncionarios
-    Left = 24
-    Top = 176
+    Left = 16
+    Top = 80
   end
 end
