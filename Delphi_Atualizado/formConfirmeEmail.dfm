@@ -1,7 +1,7 @@
-object Form1: TForm1
+object formConfEmail: TformConfEmail
   Left = 0
   Top = 0
-  Caption = 'Form1'
+  Caption = 'formConfEmail'
   ClientHeight = 441
   ClientWidth = 624
   Color = clBtnFace
@@ -732,7 +732,6 @@ object Form1: TForm1
           ParentBackground = False
           ParentFont = False
           TabOrder = 1
-          ExplicitLeft = 116
         end
       end
     end

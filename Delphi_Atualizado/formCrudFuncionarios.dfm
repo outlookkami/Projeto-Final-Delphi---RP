@@ -816,6 +816,7 @@ object formCrudFunc: TformCrudFunc
         TabOrder = 3
         Text = '     -   '
         TextHint = 'Informe o CEP'
+        OnExit = leCEPExit
       end
       object leEmail: TLabeledEdit
         Left = 13
@@ -857,7 +858,6 @@ object formCrudFunc: TformCrudFunc
         TabOrder = 6
         Text = ''
         TextHint = 'Digite seu nome completo'
-        ExplicitTop = 59
       end
       object leEndereco: TLabeledEdit
         Left = 14
@@ -959,5 +959,23 @@ object formCrudFunc: TformCrudFunc
     DataSet = DM.QueryFuncionarios
     Left = 16
     Top = 80
+  end
+  object RESTClient1: TRESTClient
+    Params = <>
+    SynchronizedEvents = False
+    Left = 16
+    Top = 240
+  end
+  object RESTRequest1: TRESTRequest
+    Client = RESTClient1
+    Params = <>
+    Response = RESTResponse1
+    SynchronizedEvents = False
+    Left = 16
+    Top = 288
+  end
+  object RESTResponse1: TRESTResponse
+    Left = 16
+    Top = 352
   end
 end

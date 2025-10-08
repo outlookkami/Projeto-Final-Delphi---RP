@@ -71,20 +71,17 @@ type
     cdsClientesCaduf: TStringField;
     RESTResponse1: TRESTResponse;
     DSClientesCad: TDataSource;
-    procedure pnlCadastrarClick(Sender: TObject);
     procedure cadeadoSenhaClick(Sender: TObject);
     procedure cadeadoConfSenhaClick(Sender: TObject);
     procedure leCEPExit(Sender: TObject);
-    procedure FrameVeiculo;
 
   private
     { Private declarations }
   public
     { Public declarations }
-
+    procedure FrameVeiculo;
+    procedure pnlCadastrarClick(Sender: TObject);
   end;
-
-const urlConsultaCep = 'https://brasilapi.com.br/api/cep/v1/%s';
 
 var
   formCadastroDeClientes: TformCadastroDeClientes;
@@ -98,29 +95,11 @@ uses  System.Hash,
       dataModuleNormal,
       formPáginaDeInícioFunc,
       frameCadastroVeiculo,
-      System.Net.HttpClient,
-      System.JSON;
+      unitCEPConsultor;
 
 procedure TformCadastroDeClientes.leCEPExit(Sender: TObject);
-var
-  CEP: String;
-  objetoJson: TJSONObject;
 begin
-    CEP := trim(leCEP.Text);
-
-    RESTClient1.BaseURL := format(urlConsultaCep, [CEP]);
-    RESTClient1.SecureProtocols := [THTTPSecureProtocol.TLS12];
-
-    RESTRequest1.Method := rmGET;
-    RESTRequest1.Execute;
-
-    objetoJson := RESTRequest1.Response.JSONValue AS TJSONObject;
-
-    edtStatusCode.Text := format('%d', [RESTResponse1.StatusCode]);
-    leEndereco.Text := objetoJson.Values['street'].Value;
-    leBairro.Text := objetoJson.Values['neighborhood'].Value;
-    leCidade.Text := objetoJson.Values['city'].Value;
-    cbUF.Text := objetoJson.Values['state'].Value;
+      unitCEPConsultor.ConsultaCEP(leCEP.Text, TCustomEdit(leEndereco), TCustomEdit(leBairro), TCustomEdit(leCidade), cbUF, RESTClient1, RESTRequest1, RESTResponse1);
 end;
 
 procedure TformCadastroDeClientes.cadeadoSenhaClick(Sender: TObject);
@@ -158,7 +137,6 @@ procedure TformCadastroDeClientes.pnlCadastrarClick(Sender: TObject);
 var hash: String;
 begin
 
-    pnlCadastrar.Enabled := True;
     hash := THashSHA1.GetHashString(leConfSenha.Text);
     if leConfSenha.Text = leSenha.Text then begin
 
@@ -186,39 +164,4 @@ begin
        ShowMessage('Senhas não compatíveis. Tente novamente');
     end;
 end;
-
-
-//procedure TformCadastroDeClientes.pnlCadastrarClick(Sender: TObject);
-//var nome_cliente, telefone_cliente, email_cliente, cep_cliente, endereco_cliente, num_endereco, bairro, cidade, uf, hash_senha_cli: String;
-//begin
-//    pnlCadastrar.Enabled := True;
-//    hash_senha_cli := THashSHA1.GetHashString(leConfSenha.Text);
-//    if leConfSenha.Text = leSenha.Text then begin
-//
-//      cdsClientesCad.Open;
-//      cdsClientesCad.Edit;
-//
-//      cdsClientesCad.FieldByName('nome_cliente').AsString := leNome.Text;
-//      cdsClientesCad.FieldByName('telefone_cliente').AsString := leTelefone.Text;
-//      cdsClientesCad.FieldByName('email_cliente').AsString := leEmail.Text;
-//      cdsClientesCad.FieldByName('cep_cliente').AsString := leCEP.Text;
-//      cdsClientesCad.FieldByName('endereco_cliente').AsString := leEndereco.Text;
-//      cdsClientesCad.FieldByName('num_endereco').AsString := leNumero.Text;
-//      cdsClientesCad.FieldByName('bairro').AsString := leBairro.Text;
-//      cdsClientesCad.FieldByName('cidade').AsString := leCidade.Text;
-//      cdsClientesCad.FieldByName('uf').AsString := cbUf.Text;
-//      cdsClientesCad.FieldByName('hash_senha_cli').AsString := THashSHA1.GetHashString(leConfSenha.Text);
-//
-//
-//      cdsClientesCad.Insert;
-//      cdsClientesCad.Post;
-//
-//      if MessageDlg('Cadastro finalizado com sucesso! Deseja incluir seu veículo?',
-//      mtConfirmation, [mbYes, mbNo], 0) = mrYes then FrameVeiculo;
-//
-//    end else begin
-//       ShowMessage('Senhas não compatíveis. Tente novamente');
-//    end;
-//end;
-
 end.

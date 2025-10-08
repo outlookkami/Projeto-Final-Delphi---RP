@@ -25,24 +25,22 @@ uses
   frameCadastroDeSenhaFuncionário in 'frameCadastroDeSenhaFuncionário.pas' {frameCadSenhaFuncionario: TFrame},
   frameFormularioPedido in 'frameFormularioPedido.pas' {frameFormularioDePedido: TFrame},
   formCadastroClientes in 'formCadastroClientes.pas' {formCadastroDeClientes},
-  DataModuleInicial in 'DataModuleInicial.pas' {dtmInicial: TDataModule},
   formPáginaDeInícioClientes in 'formPáginaDeInícioClientes.pas' {formPáginaInicialCli},
   formPáginaDeInícioADM in 'formPáginaDeInícioADM.pas' {formPáginaInicialADM},
   framePerfil in 'framePerfil.pas' {framePerfilUsuário: TFrame},
   frameSobreNos in 'frameSobreNos.pas' {framePáginaSobreNos: TFrame},
-  crudFuncionarios in 'crudFuncionarios.pas' {Frame2: TFrame},
   frameCadastroVeiculo in 'frameCadastroVeiculo.pas' {frameCadVeiculo: TFrame},
   dataModuleNormal in 'dataModuleNormal.pas' {DM: TDataModule},
-  crudClientesSemErro in 'crudClientesSemErro.pas' {frameCrudClientes: TFrame},
   unitTestesDeProcedures in 'unitTestesDeProcedures.pas',
   frameTrocarSenhaUsuario in 'frameTrocarSenhaUsuario.pas' {TrocarSenha: TFrame},
   formPortfolio in 'formPortfolio.pas' {formPortfólio},
   formTrocarSenha in 'formTrocarSenha.pas' {formTrocaSenha},
   formCrudFuncionarios in 'formCrudFuncionarios.pas' {formCrudFunc},
-  formConfirmeEmail in 'formConfirmeEmail.pas' {Form1},
+  formConfirmeEmail in 'formConfirmeEmail.pas' {formConfEmail},
   formCrudProdutos in 'formCrudProdutos.pas' {formProdutos},
   formCrudClientes in 'formCrudClientes.pas' {formCrudCli},
-  formPerfilPage in 'formPerfilPage.pas' {formPerfil};
+  formPerfilPage in 'formPerfilPage.pas' {formPerfil},
+  unitCEPConsultor in 'unitCEPConsultor.pas';
 
 {$R *.res}
 
@@ -52,18 +50,13 @@ begin
   Application.Title := 'Aviso';
   Application.CreateForm(TformCrudCli, formCrudCli);
   Application.CreateForm(TformPáginaInicialFunc, formPáginaInicialFunc);
-  Application.CreateForm(TformCrudFunc, formCrudFunc);
-  Application.CreateForm(TformCadastroDeClientes, formCadastroDeClientes);
   Application.CreateForm(TformPáginaInicialADM, formPáginaInicialADM);
-  Application.CreateForm(TformCadastroFuncionarios, formCadastroFuncionarios);
   Application.CreateForm(TformPáginaInicialCli, formPáginaInicialCli);
-  Application.CreateForm(TdtmInicial, dtmInicial);
   Application.CreateForm(TDM, DM);
   Application.CreateForm(TformPortfólio, formPortfólio);
   Application.CreateForm(TformTrocaSenha, formTrocaSenha);
-  Application.CreateForm(TForm1, Form1);
+  Application.CreateForm(TformConfEmail, formConfEmail);
   Application.CreateForm(TformProdutos, formProdutos);
-  Application.CreateForm(TformPerfil, formPerfil);
   Application.Run;
 end.
 

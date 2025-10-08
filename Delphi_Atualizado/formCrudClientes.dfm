@@ -54,6 +54,7 @@ object formCrudCli: TformCrudCli
       ParentBackground = False
       ParentFont = False
       TabOrder = 2
+      OnClick = btnIncluirCliClick
     end
     object pnlPesquisa: TPanel
       Left = 48
@@ -183,60 +184,70 @@ object formCrudCli: TformCrudCli
           Expanded = False
           FieldName = 'telefone_cliente'
           Title.Caption = 'Telefone'
+          Width = 64
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'email_cliente'
           Title.Caption = 'Email'
+          Width = 64
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'cep_cliente'
           Title.Caption = 'CEP'
+          Width = 64
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'endereco_cliente'
           Title.Caption = 'Endere'#231'o'
+          Width = 64
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'num_endereco'
           Title.Caption = 'N'#176
+          Width = 64
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'bairro'
           Title.Caption = 'Bairro'
+          Width = 64
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'cidade'
           Title.Caption = 'Cidade'
+          Width = 64
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'uf'
           Title.Caption = 'UF'
+          Width = 64
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'veiculo'
           Title.Caption = 'Ve'#237'culo'
+          Width = 64
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'ativo_in'
           Title.Caption = 'Ativo'
+          Width = 64
           Visible = True
         end>
     end
@@ -362,8 +373,13 @@ object formCrudCli: TformCrudCli
         end
         item
           Column = 0
-          Control = LabeledEdit1
+          Control = leConfSenha
           Row = 17
+        end
+        item
+          Column = 0
+          Control = pnlCadastraCliCrud
+          Row = 19
         end>
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
@@ -771,6 +787,8 @@ object formCrudCli: TformCrudCli
         TabOrder = 3
         Text = '     -   '
         TextHint = 'Informe o CEP'
+        OnExit = leCEPExit
+        ExplicitTop = 239
       end
       object leEmail: TLabeledEdit
         Left = 13
@@ -826,7 +844,7 @@ object formCrudCli: TformCrudCli
         Text = ''
         TextHint = 'Informe o endere'#231'o'
       end
-      object LabeledEdit1: TLabeledEdit
+      object leConfSenha: TLabeledEdit
         Left = 15
         Top = 530
         Width = 342
@@ -838,6 +856,27 @@ object formCrudCli: TformCrudCli
         TabOrder = 8
         Text = ''
         TextHint = 'Confirme a senha padr'#227'o'
+      end
+      object pnlCadastraCliCrud: TPanel
+        Left = 93
+        Top = 566
+        Width = 185
+        Height = 41
+        Cursor = crHandPoint
+        Align = alCustom
+        Anchors = []
+        Caption = 'Cadastrar'
+        Color = clHighlight
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWhite
+        Font.Height = -19
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentBackground = False
+        ParentFont = False
+        TabOrder = 9
+        Visible = False
+        OnClick = pnlCadastraCliCrudClick
       end
     end
     object btnInativCli: TPanel
@@ -899,5 +938,23 @@ object formCrudCli: TformCrudCli
     DataSet = DM.QueryClientes
     Left = 88
     Top = 80
+  end
+  object RESTRequest1: TRESTRequest
+    Client = RESTClient1
+    Params = <>
+    Response = RESTResponse1
+    SynchronizedEvents = False
+    Left = 8
+    Top = 232
+  end
+  object RESTResponse1: TRESTResponse
+    Left = 8
+    Top = 168
+  end
+  object RESTClient1: TRESTClient
+    Params = <>
+    SynchronizedEvents = False
+    Left = 8
+    Top = 304
   end
 end

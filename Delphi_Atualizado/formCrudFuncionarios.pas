@@ -6,7 +6,8 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.Grids, Vcl.DBGrids,
   Vcl.StdCtrls, Vcl.Mask, Vcl.ExtCtrls, Vcl.DBCtrls, Vcl.Imaging.pngimage, DataModuleNormal,
-  Datasnap.DBClient, Vcl.Buttons;
+  Datasnap.DBClient, Vcl.Buttons, REST.Types, REST.Client, Data.Bind.Components,
+  Data.Bind.ObjectScope;
 
 type
   TformCrudFunc = class(TForm)
@@ -50,11 +51,15 @@ type
     btnEditFunc: TPanel;
     btnInativFunc: TPanel;
     btnExcluFunc: TPanel;
+    RESTClient1: TRESTClient;
+    RESTRequest1: TRESTRequest;
+    RESTResponse1: TRESTResponse;
     procedure btnInativFuncClick(Sender: TObject);
     procedure iconePesquisaClick(Sender: TObject);
     procedure btnEditFuncClick(Sender: TObject);
     procedure btnIncluirFuncClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure leCEPExit(Sender: TObject);
   private
     { Private declarations }
   public
@@ -67,6 +72,8 @@ var
 implementation
 
 {$R *.dfm}
+
+uses unitCEPConsultor;
 
 procedure TformCrudFunc.FormCreate(Sender: TObject);
 begin
@@ -103,6 +110,10 @@ begin
     //DM.QueryFuncionarios
 end;
 
+procedure TformCrudFunc.leCEPExit(Sender: TObject);
+begin
+      unitCEPConsultor.ConsultaCEP(leCEP.Text, TCustomEdit(leEndereco), TCustomEdit(leBairro), TCustomEdit(leCidade), cbUF, RESTClient1, RESTRequest1, RESTResponse1);
+end;
 
 
 end.

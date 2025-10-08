@@ -1,4 +1,4 @@
-object Frame2: TFrame2
+object crudFuncANTIGO: TcrudFuncANTIGO
   Left = 0
   Top = 0
   Width = 1166
@@ -11,7 +11,6 @@ object Frame2: TFrame2
     Height = 740
     Align = alClient
     TabOrder = 0
-    ExplicitLeft = 3
     DesignSize = (
       1166
       740)

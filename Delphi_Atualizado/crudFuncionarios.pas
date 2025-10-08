@@ -9,7 +9,7 @@ uses
   Vcl.Imaging.pngimage;
 
 type
-  TFrame2 = class(TFrame)
+  TcrudFuncANTIGO = class(TFrame)
     Panel1: TPanel;
     btnIncluirFunc: TPanel;
     pnlPesquisa: TPanel;

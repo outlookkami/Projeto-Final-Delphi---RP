@@ -8,7 +8,7 @@ uses
   Vcl.Imaging.pngimage;
 
 type
-  TForm1 = class(TForm)
+  TformConfEmail = class(TForm)
     pnlSenhaFuncionario: TPanel;
     lblConfirmeEmail: TLabel;
     lblEspacamento: TLabel;
@@ -26,7 +26,7 @@ type
   end;
 
 var
-  Form1: TForm1;
+  formConfEmail: TformConfEmail;
 
 implementation
 

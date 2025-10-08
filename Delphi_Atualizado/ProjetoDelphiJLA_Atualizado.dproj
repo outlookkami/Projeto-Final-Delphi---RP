@@ -153,10 +153,6 @@
         <DCCReference Include="formCadastroClientes.pas">
             <Form>formCadastroDeClientes</Form>
         </DCCReference>
-        <DCCReference Include="DataModuleInicial.pas">
-            <Form>dtmInicial</Form>
-            <DesignClass>TDataModule</DesignClass>
-        </DCCReference>
         <DCCReference Include="formPáginaDeInícioClientes.pas">
             <Form>formPáginaInicialCli</Form>
         </DCCReference>
@@ -171,10 +167,6 @@
             <Form>framePáginaSobreNos</Form>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
-        <DCCReference Include="crudFuncionarios.pas">
-            <Form>Frame2</Form>
-            <DesignClass>TFrame</DesignClass>
-        </DCCReference>
         <DCCReference Include="frameCadastroVeiculo.pas">
             <Form>frameCadVeiculo</Form>
             <DesignClass>TFrame</DesignClass>
@@ -182,10 +174,6 @@
         <DCCReference Include="dataModuleNormal.pas">
             <Form>DM</Form>
             <DesignClass>TDataModule</DesignClass>
-        </DCCReference>
-        <DCCReference Include="crudClientesSemErro.pas">
-            <Form>frameCrudClientes</Form>
-            <DesignClass>TFrame</DesignClass>
         </DCCReference>
         <DCCReference Include="unitTestesDeProcedures.pas"/>
         <DCCReference Include="frameTrocarSenhaUsuario.pas">
@@ -206,7 +194,7 @@
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="formConfirmeEmail.pas">
-            <Form>Form1</Form>
+            <Form>formConfEmail</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="formCrudProdutos.pas">
@@ -221,6 +209,7 @@
             <Form>formPerfil</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="unitCEPConsultor.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

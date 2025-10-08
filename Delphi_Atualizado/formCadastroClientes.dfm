@@ -45,8 +45,6 @@ object formCadastroDeClientes: TformCadastroDeClientes
       end>
     ShowCaption = False
     TabOrder = 0
-    ExplicitLeft = -2
-    ExplicitTop = -2
     object pnlilustrativo: TPanel
       Left = 1
       Top = 1
@@ -56,7 +54,6 @@ object formCadastroDeClientes: TformCadastroDeClientes
       Color = clHighlight
       ParentBackground = False
       TabOrder = 0
-      ExplicitLeft = 0
       object edtStatusCode: TEdit
         Left = 448
         Top = 16
@@ -380,7 +377,6 @@ object formCadastroDeClientes: TformCadastroDeClientes
               Value = 100.000000000000000000
             end>
           TabOrder = 0
-          ExplicitTop = 288
           DesignSize = (
             370
             56)
@@ -588,7 +584,6 @@ object formCadastroDeClientes: TformCadastroDeClientes
           ParentFont = False
           TabOrder = 2
           OnClick = pnlCadastrarClick
-          ExplicitTop = 509
         end
         object Label13: TLabel
           Left = 230
@@ -654,7 +649,6 @@ object formCadastroDeClientes: TformCadastroDeClientes
               SizeStyle = ssAuto
             end>
           TabOrder = 3
-          ExplicitTop = 447
           DesignSize = (
             457
             58)
@@ -692,7 +686,7 @@ object formCadastroDeClientes: TformCadastroDeClientes
             TabOrder = 0
             Text = ''
             TextHint = 'Redigite a senha '
-            ExplicitTop = 26
+            ExplicitTop = 19
           end
           object cadeadoConfSenha: TImage
             Left = 414
@@ -2213,7 +2207,6 @@ object formCadastroDeClientes: TformCadastroDeClientes
           TabOrder = 4
           Text = ''
           TextHint = 'Digite seu nome completo'
-          ExplicitTop = 50
         end
         object leTelefone: TLabeledEdit
           Left = 59
@@ -2227,7 +2220,6 @@ object formCadastroDeClientes: TformCadastroDeClientes
           TabOrder = 5
           Text = ''
           TextHint = 'Informe seu n'#250'mero de telefone'
-          ExplicitTop = 103
         end
         object leEmail: TLabeledEdit
           Left = 60
@@ -2241,7 +2233,6 @@ object formCadastroDeClientes: TformCadastroDeClientes
           TabOrder = 6
           Text = ''
           TextHint = 'Digite seu endere'#231'o de e-mail'
-          ExplicitTop = 155
         end
         object leCEP: TLabeledEdit
           Left = 59
@@ -2256,7 +2247,6 @@ object formCadastroDeClientes: TformCadastroDeClientes
           Text = ''
           TextHint = 'Informe seu CEP'
           OnExit = leCEPExit
-          ExplicitTop = 207
         end
         object leEndereco: TLabeledEdit
           Left = 59
@@ -2270,7 +2260,6 @@ object formCadastroDeClientes: TformCadastroDeClientes
           TabOrder = 8
           Text = ''
           TextHint = 'Informe seu endere'#231'o'
-          ExplicitTop = 260
         end
         object GridPanel2: TGridPanel
           Left = 0
@@ -2322,7 +2311,6 @@ object formCadastroDeClientes: TformCadastroDeClientes
               SizeStyle = ssAuto
             end>
           TabOrder = 9
-          ExplicitTop = 397
           DesignSize = (
             465
             57)
@@ -2359,7 +2347,6 @@ object formCadastroDeClientes: TformCadastroDeClientes
             TabOrder = 0
             Text = ''
             TextHint = 'Crie uma senha'
-            ExplicitTop = 26
           end
           object cadeadoSenha: TImage
             Left = 415
