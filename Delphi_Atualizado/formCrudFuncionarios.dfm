@@ -740,9 +740,9 @@ object formCrudFunc: TformCrudFunc
         object lblSelecionaFuncao: TLabel
           Left = 16
           Top = 3
-          Width = 132
+          Width = 139
           Height = 21
-          Caption = 'Selecione a fun'#231#227'o:'
+          Caption = '*Selecione a fun'#231#227'o:'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
           Font.Height = -16
@@ -814,9 +814,9 @@ object formCrudFunc: TformCrudFunc
         Width = 346
         Height = 29
         Anchors = []
-        EditLabel.Width = 44
+        EditLabel.Width = 54
         EditLabel.Height = 21
-        EditLabel.Caption = 'E-mail'
+        EditLabel.Caption = '*E-mail:'
         TabOrder = 4
         Text = ''
         TextHint = 'Digite o endere'#231'o de e-mail'
@@ -835,7 +835,7 @@ object formCrudFunc: TformCrudFunc
         TabOrder = 5
         Text = ''
         TextHint = 'Informe seu n'#250'mero de telefone'
-        ExplicitLeft = 15
+        ExplicitTop = 85
       end
       object leNome: TLabeledEdit
         Left = 15
@@ -843,9 +843,9 @@ object formCrudFunc: TformCrudFunc
         Width = 341
         Height = 29
         Anchors = []
-        EditLabel.Width = 115
+        EditLabel.Width = 122
         EditLabel.Height = 21
-        EditLabel.Caption = 'Nome completo:'
+        EditLabel.Caption = '*Nome completo:'
         TabOrder = 6
         Text = ''
         TextHint = 'Digite seu nome completo'
@@ -869,9 +869,9 @@ object formCrudFunc: TformCrudFunc
         Width = 346
         Height = 29
         Align = alCustom
-        EditLabel.Width = 30
+        EditLabel.Width = 37
         EditLabel.Height = 21
-        EditLabel.Caption = 'CPF:'
+        EditLabel.Caption = '*CPF:'
         TabOrder = 8
         Text = ''
       end
