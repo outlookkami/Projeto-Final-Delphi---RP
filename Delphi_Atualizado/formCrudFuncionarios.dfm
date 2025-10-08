@@ -23,8 +23,8 @@ object formCrudFunc: TformCrudFunc
       1150
       701)
     object lblDadosFunc: TLabel
-      Left = 875
-      Top = 32
+      Left = 866
+      Top = 21
       Width = 182
       Height = 25
       Align = alCustom
@@ -288,7 +288,7 @@ object formCrudFunc: TformCrudFunc
       Left = 765
       Top = 52
       Width = 372
-      Height = 637
+      Height = 612
       Align = alCustom
       Anchors = [akTop, akRight, akBottom]
       BevelEdges = []
@@ -300,102 +300,102 @@ object formCrudFunc: TformCrudFunc
       ControlCollection = <
         item
           Column = 0
-          Control = lblVazio5
-          Row = 0
-        end
-        item
-          Column = 0
           Control = Label2
-          Row = 2
-        end
-        item
-          Column = 0
-          Control = Label3
-          Row = 4
-        end
-        item
-          Column = 0
-          Control = Label4
-          Row = 6
-        end
-        item
-          Column = 0
-          Control = Label5
-          Row = 8
-        end
-        item
-          Column = 0
-          Control = Label6
-          Row = 10
-        end
-        item
-          Column = 0
-          Control = GridPanel3
-          Row = 11
-        end
-        item
-          Column = 0
-          Control = Label7
-          Row = 12
-        end
-        item
-          Column = 0
-          Control = GridPanel4
-          Row = 13
-        end
-        item
-          Column = 0
-          Control = pnlSelecionaFuncao
-          Row = 15
-        end
-        item
-          Column = 0
-          Control = Label9
-          Row = 16
-        end
-        item
-          Column = 0
-          Control = Label8
-          Row = 14
-        end
-        item
-          Column = 0
-          Control = Label10
-          Row = 18
-        end
-        item
-          Column = 0
-          Control = leCEP
-          Row = 7
-        end
-        item
-          Column = 0
-          Control = leEmail
-          Row = 5
-        end
-        item
-          Column = 0
-          Control = leTelefone
-          Row = 3
-        end
-        item
-          Column = 0
-          Control = leNome
           Row = 1
         end
         item
           Column = 0
-          Control = leEndereco
+          Control = Label3
+          Row = 3
+        end
+        item
+          Column = 0
+          Control = Label4
+          Row = 5
+        end
+        item
+          Column = 0
+          Control = Label5
+          Row = 7
+        end
+        item
+          Column = 0
+          Control = Label6
           Row = 9
         end
         item
           Column = 0
-          Control = LabeledEdit1
+          Control = GridPanel3
+          Row = 10
+        end
+        item
+          Column = 0
+          Control = Label7
+          Row = 11
+        end
+        item
+          Column = 0
+          Control = GridPanel4
+          Row = 12
+        end
+        item
+          Column = 0
+          Control = pnlSelecionaFuncao
+          Row = 14
+        end
+        item
+          Column = 0
+          Control = Label9
+          Row = 15
+        end
+        item
+          Column = 0
+          Control = Label8
+          Row = 13
+        end
+        item
+          Column = 0
+          Control = Label10
           Row = 17
         end
         item
           Column = 0
-          Control = LabeledEdit2
+          Control = leCEP
+          Row = 6
+        end
+        item
+          Column = 0
+          Control = leEmail
+          Row = 4
+        end
+        item
+          Column = 0
+          Control = leTelefone
+          Row = 2
+        end
+        item
+          Column = 0
+          Control = leNome
+          Row = 0
+        end
+        item
+          Column = 0
+          Control = leEndereco
+          Row = 8
+        end
+        item
+          Column = 0
+          Control = leCPF
+          Row = 16
+        end
+        item
+          Column = 0
+          Control = leRG
+          Row = 18
+        end
+        item
+          Column = 0
+          Control = pnlCadastrar
           Row = 19
         end>
       Font.Charset = DEFAULT_CHARSET
@@ -406,86 +406,76 @@ object formCrudFunc: TformCrudFunc
       ParentFont = False
       RowCollection = <
         item
-          Value = 4.545454545454546000
+          Value = 5.000000000000003000
         end
         item
-          Value = 4.545454545454546000
+          Value = 5.000000000000003000
         end
         item
-          Value = 4.545454545454546000
+          Value = 5.000000000000003000
         end
         item
-          Value = 4.545454545454546000
+          Value = 5.000000000000003000
         end
         item
-          Value = 4.545454545454546000
+          Value = 5.000000000000003000
         end
         item
-          Value = 4.545454545454546000
+          Value = 5.000000000000003000
         end
         item
-          Value = 4.545454545454546000
+          Value = 5.000000000000003000
         end
         item
-          Value = 4.545454545454546000
+          Value = 5.000000000000003000
         end
         item
-          Value = 4.545454545454546000
+          Value = 5.000000000000003000
         end
         item
-          Value = 4.545454545454546000
+          Value = 5.000000000000003000
         end
         item
-          Value = 4.545454545454546000
+          Value = 5.000000000000003000
         end
         item
-          Value = 4.545454545454546000
+          Value = 5.000000000000003000
         end
         item
-          Value = 4.545454545454546000
+          Value = 5.000000000000003000
         end
         item
-          Value = 4.545454545454546000
+          Value = 5.000000000000003000
         end
         item
-          Value = 4.545454545454546000
+          Value = 5.000000000000003000
         end
         item
-          Value = 4.545454545454546000
+          Value = 5.000000000000003000
         end
         item
-          Value = 4.545454545454546000
+          Value = 5.000000000000003000
         end
         item
-          Value = 4.545454545454546000
+          Value = 5.000000000000003000
         end
         item
-          Value = 4.545454545454546000
+          Value = 5.000000000000003000
         end
         item
-          Value = 4.545454545454546000
+          Value = 5.000000000000003000
         end
         item
-          Value = 4.545454545454546000
-        end
-        item
-          Value = 4.545454545454532000
+          SizeStyle = ssAbsolute
+          Value = 45.000000000000000000
         end>
       TabOrder = 4
       DesignSize = (
         372
-        637)
-      object lblVazio5: TLabel
-        Left = 184
-        Top = 4
-        Width = 4
-        Height = 21
-        Anchors = []
-        ExplicitLeft = 185
-      end
+        612)
       object Label2: TLabel
         Left = 184
-        Top = 62
+        Top = 32
         Width = 4
         Height = 21
         Anchors = []
@@ -494,7 +484,7 @@ object formCrudFunc: TformCrudFunc
       end
       object Label3: TLabel
         Left = 184
-        Top = 120
+        Top = 88
         Width = 4
         Height = 21
         Anchors = []
@@ -503,7 +493,7 @@ object formCrudFunc: TformCrudFunc
       end
       object Label4: TLabel
         Left = 184
-        Top = 178
+        Top = 145
         Width = 4
         Height = 21
         Anchors = []
@@ -512,7 +502,7 @@ object formCrudFunc: TformCrudFunc
       end
       object Label5: TLabel
         Left = 184
-        Top = 236
+        Top = 202
         Width = 4
         Height = 21
         Anchors = []
@@ -521,7 +511,7 @@ object formCrudFunc: TformCrudFunc
       end
       object Label6: TLabel
         Left = 184
-        Top = 294
+        Top = 259
         Width = 4
         Height = 21
         Anchors = []
@@ -530,7 +520,7 @@ object formCrudFunc: TformCrudFunc
       end
       object GridPanel3: TGridPanel
         Left = 1
-        Top = 319
+        Top = 284
         Width = 370
         Height = 56
         Anchors = []
@@ -592,7 +582,7 @@ object formCrudFunc: TformCrudFunc
       end
       object Label7: TLabel
         Left = 184
-        Top = 351
+        Top = 315
         Width = 4
         Height = 21
         Anchors = []
@@ -601,7 +591,7 @@ object formCrudFunc: TformCrudFunc
       end
       object GridPanel4: TGridPanel
         Left = 0
-        Top = 376
+        Top = 340
         Width = 379
         Height = 58
         Anchors = []
@@ -701,7 +691,7 @@ object formCrudFunc: TformCrudFunc
           object cbUF: TComboBox
             Left = 0
             Top = 25
-            Width = 98
+            Width = 97
             Height = 29
             Align = alCustom
             BevelInner = bvNone
@@ -741,7 +731,7 @@ object formCrudFunc: TformCrudFunc
       end
       object pnlSelecionaFuncao: TPanel
         Left = 0
-        Top = 434
+        Top = 397
         Width = 384
         Height = 64
         Anchors = []
@@ -771,13 +761,13 @@ object formCrudFunc: TformCrudFunc
           Items.Strings = (
             'Funileiro'
             'Montador/Desmontador'
-            'PintorAutomotivo'
+            'Pintor Automotivo'
             'Preparador de pintura')
         end
       end
       object Label9: TLabel
         Left = 184
-        Top = 467
+        Top = 429
         Width = 4
         Height = 21
         Anchors = []
@@ -786,7 +776,7 @@ object formCrudFunc: TformCrudFunc
       end
       object Label8: TLabel
         Left = 184
-        Top = 409
+        Top = 372
         Width = 4
         Height = 21
         Anchors = []
@@ -795,7 +785,7 @@ object formCrudFunc: TformCrudFunc
       end
       object Label10: TLabel
         Left = 184
-        Top = 525
+        Top = 485
         Width = 4
         Height = 21
         Anchors = []
@@ -803,24 +793,24 @@ object formCrudFunc: TformCrudFunc
         ExplicitTop = 520
       end
       object leCEP: TLabeledEdit
-        Left = 14
-        Top = 227
-        Width = 343
+        Left = 15
+        Top = 194
+        Width = 341
         Height = 29
         Anchors = []
         EditLabel.Width = 30
         EditLabel.Height = 21
         EditLabel.Caption = 'CEP:'
-        EditMask = '00000\-999;1;_'
+        EditMask = '00000\-999;0;_'
         MaxLength = 9
         TabOrder = 3
-        Text = '     -   '
+        Text = ''
         TextHint = 'Informe o CEP'
         OnExit = leCEPExit
       end
       object leEmail: TLabeledEdit
         Left = 13
-        Top = 169
+        Top = 137
         Width = 346
         Height = 29
         Anchors = []
@@ -832,23 +822,24 @@ object formCrudFunc: TformCrudFunc
         TextHint = 'Digite o endere'#231'o de e-mail'
       end
       object leTelefone: TLabeledEdit
-        Left = 14
-        Top = 111
-        Width = 344
+        Left = 16
+        Top = 81
+        Width = 340
         Height = 29
         Anchors = []
         EditLabel.Width = 115
         EditLabel.Height = 21
         EditLabel.Caption = 'Telefone/Celular:'
-        EditMask = '!\(99\)00000-0000;1;_'
+        EditMask = '!\(99\)00000-0000;0;_'
         MaxLength = 14
         TabOrder = 5
-        Text = '(  )     -    '
+        Text = ''
         TextHint = 'Informe seu n'#250'mero de telefone'
+        ExplicitLeft = 15
       end
       object leNome: TLabeledEdit
         Left = 15
-        Top = 53
+        Top = 24
         Width = 341
         Height = 29
         Anchors = []
@@ -861,7 +852,7 @@ object formCrudFunc: TformCrudFunc
       end
       object leEndereco: TLabeledEdit
         Left = 14
-        Top = 285
+        Top = 251
         Width = 344
         Height = 29
         Anchors = []
@@ -872,22 +863,22 @@ object formCrudFunc: TformCrudFunc
         Text = ''
         TextHint = 'Informe o endere'#231'o'
       end
-      object LabeledEdit1: TLabeledEdit
-        Left = 15
-        Top = 516
-        Width = 342
+      object leCPF: TLabeledEdit
+        Left = 13
+        Top = 482
+        Width = 346
         Height = 29
-        Anchors = []
+        Align = alCustom
         EditLabel.Width = 30
         EditLabel.Height = 21
         EditLabel.Caption = 'CPF:'
         TabOrder = 8
         Text = ''
       end
-      object LabeledEdit2: TLabeledEdit
-        Left = 15
-        Top = 574
-        Width = 341
+      object leRG: TLabeledEdit
+        Left = 13
+        Top = 534
+        Width = 346
         Height = 29
         Anchors = []
         EditLabel.Width = 24
@@ -895,6 +886,27 @@ object formCrudFunc: TformCrudFunc
         EditLabel.Caption = 'RG:'
         TabOrder = 9
         Text = ''
+      end
+      object pnlCadastrar: TPanel
+        Left = 101
+        Top = 569
+        Width = 185
+        Height = 40
+        Cursor = crHandPoint
+        Align = alCustom
+        Anchors = []
+        Caption = 'Cadastrar'
+        Color = clHighlight
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWhite
+        Font.Height = -19
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentBackground = False
+        ParentFont = False
+        TabOrder = 10
+        Visible = False
+        OnClick = pnlCadastrarClick
       end
     end
     object btnEditFunc: TPanel
@@ -957,7 +969,7 @@ object formCrudFunc: TformCrudFunc
   end
   object DSFuncionarios: TDataSource
     DataSet = DM.QueryFuncionarios
-    Left = 16
+    Left = 40
     Top = 80
   end
   object RESTClient1: TRESTClient

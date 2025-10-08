@@ -1,7 +1,4 @@
-﻿[lblVazio5]
-Coordinates=73,544,67,58
-
-[Label8]
+﻿[Label8]
 Coordinates=1042,476,53,58
 
 [leBairro]
@@ -58,9 +55,6 @@ Coordinates=676,10,101,124
 [Label7]
 Coordinates=361,476,53,58
 
-[LabeledEdit2]
-Coordinates=105,476,90,58
-
 [leEmail]
 Coordinates=519,476,57,58
 
@@ -87,9 +81,6 @@ Coordinates=758,476,96,58
 
 [btnEditFunc]
 Coordinates=205,476,83,58
-
-[LabeledEdit1]
-Coordinates=88,408,90,58
 
 [leEndereco]
 Coordinates=965,408,80,58
@@ -131,9 +122,15 @@ Coordinates=1055,408,131,58
 Coordinates=902,408,53,58
 
 []
-Coordinates=65,886,91,36
+Coordinates=73,544,67,58
 
 [btnExcluFunc]
 Coordinates=787,10,55,58
 Visible=True
+
+[leCPF]
+Coordinates=88,408,90,58
+
+[leRG]
+Coordinates=105,476,90,58
 

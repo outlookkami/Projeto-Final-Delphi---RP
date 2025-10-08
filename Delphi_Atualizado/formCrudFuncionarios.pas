@@ -19,7 +19,6 @@ type
     DSFuncionarios: TDataSource;
     lblDadosFunc: TLabel;
     gridPanelLogin: TGridPanel;
-    lblVazio5: TLabel;
     Label2: TLabel;
     Label3: TLabel;
     Label4: TLabel;
@@ -45,8 +44,8 @@ type
     leTelefone: TLabeledEdit;
     leNome: TLabeledEdit;
     leEndereco: TLabeledEdit;
-    LabeledEdit1: TLabeledEdit;
-    LabeledEdit2: TLabeledEdit;
+    leCPF: TLabeledEdit;
+    leRG: TLabeledEdit;
     edtPesquisa: TEdit;
     btnEditFunc: TPanel;
     btnInativFunc: TPanel;
@@ -54,12 +53,16 @@ type
     RESTClient1: TRESTClient;
     RESTRequest1: TRESTRequest;
     RESTResponse1: TRESTResponse;
+    pnlCadastrar: TPanel;
     procedure btnInativFuncClick(Sender: TObject);
     procedure iconePesquisaClick(Sender: TObject);
     procedure btnEditFuncClick(Sender: TObject);
     procedure btnIncluirFuncClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure leCEPExit(Sender: TObject);
+    procedure SenhaFunc;
+    procedure pnlCadastrarClick(Sender: TObject);
+    procedure FunciClien(Sender: TObject);
   private
     { Private declarations }
   public
@@ -73,7 +76,8 @@ implementation
 
 {$R *.dfm}
 
-uses unitCEPConsultor;
+uses  unitCEPConsultor,
+      frameCadastroDeSenhaFuncionário;
 
 procedure TformCrudFunc.FormCreate(Sender: TObject);
 begin
@@ -89,9 +93,20 @@ begin
 //    end;
 end;
 
+procedure TformCrudFunc.SenhaFunc;
+var SenhaFuncionario: TframeCadSenhaFuncionario;
+begin
+    frameCadSenhaFuncionario := TframeCadSenhaFuncionario.Create(Self);
+    frameCadSenhaFuncionario.Parent := Self;
+    frameCadSenhaFuncionario.Align := alClient;
+    frameCadSenhaFuncionario.Show;
+end;
+
 
 procedure TformCrudFunc.btnIncluirFuncClick(Sender: TObject);
 begin
+    pnlCadastrar.Visible := True;
+
     DM.QueryFuncionarios.Open;
     DM.QueryFuncionarios.Insert;
 end;
@@ -115,5 +130,59 @@ begin
       unitCEPConsultor.ConsultaCEP(leCEP.Text, TCustomEdit(leEndereco), TCustomEdit(leBairro), TCustomEdit(leCidade), cbUF, RESTClient1, RESTRequest1, RESTResponse1);
 end;
 
+procedure TformCrudFunc.FunciClien(Sender: TObject);
+var hash: String;
+begin
+    with DM.QueryClientes do begin
+    DM.QueryClientes.SQL.Text := 'INSERT INTO "Clientes" (nome_cliente, telefone_cliente, email_cliente, cep_cliente, endereco_cliente, num_endereco, bairro, cidade, uf) VALUES(:Nome, :Telefone, :Email, :CEP, :Endereco, :Numero, :Bairro, :Cidade, :UF);';
 
+    ParamByName('Nome').AsString := leNome.Text;
+    ParamByName('Telefone').AsString := leTelefone.Text;
+    ParamByName('Email').AsString := leEmail.Text;
+    ParamByName('CEP').AsString := leCEP.Text;
+    ParamByName('Endereco').AsString := leEndereco.Text;
+    ParamByName('Numero').AsString := leNumero.Text;
+    ParamByName('Bairro').AsString := leBairro.Text;
+    ParamByName('Cidade').AsString := leCidade.Text;
+    ParamByName('UF').AsString := cbUf.Text;
+    //ParamByName('SenhaHash').AsString := hash;
+
+    ExecSQL;
+    end;
+end;
+
+
+procedure TformCrudFunc.pnlCadastrarClick(Sender: TObject);
+var hash: String;
+begin
+    if (leNome.Text = '') or (leEmail.Text = '') or (leCPF.Text = '') then begin
+        ShowMessage('Preencha os campos obrigatórios');
+        Exit;
+    end else begin
+
+        with DM.QueryFuncionarios do begin
+
+        SQL.Text := 'INSERT INTO "Funcionarios" (nome_funcionario, telefone_funcionario, email_funcionario, cep_funcionario, endereco_funcionario, num_endereco, bairro, cidade, uf, funcao, cpf_funcionario, rg_funcionario) VALUES (:Nome, :Telefone, :Email, :CEP, :Endereco, :Numero, :Bairro, :Cidade, :UF, :Funcao, :CPF, :RG);';
+
+        ParamByName('Nome').AsString := leNome.Text;
+        ParamByName('Telefone').AsString := leTelefone.Text;
+        ParamByName('Email').AsString := leEmail.Text;
+        ParamByName('CEP').AsString := leCEP.Text;
+        ParamByName('Endereco').AsString := leEndereco.Text;
+        ParamByName('Numero').AsString := leNumero.Text;
+        ParamByName('Bairro').AsString := leBairro.Text;
+        ParamByName('Cidade').AsString := leCidade.Text;
+        ParamByName('UF').AsString := cbUf.Text;
+        //ParamByName('SenhaHash').AsString := hash;  // Senha só é recebida no frame/form de Cadastro de Senha de Funcionário
+        ParamByName('Funcao').AsString := cbFuncao.Text;
+        ParamByName('CPF').AsString := leCPF.Text;
+        ParamByName('RG').AsString := leRG.Text;
+
+        ExecSQL;
+
+        if MessageDlg('Cadastro finalizado com sucesso! Deseja incluir o funcionário como cliente?',
+        mtConfirmation, [mbYes, mbNo], 0) = mrYes then FunciClien(leEmail);
+          end;
+    end;
+end;
 end.

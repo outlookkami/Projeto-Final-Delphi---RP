@@ -82,7 +82,6 @@ begin
     btnEditCli.Enabled := False;
     pnlCadastraCliCrud.Visible := True;
     leNome.SetFocus;
-    DM.QueryClientes.Open;
 end;
 
 procedure TformCrudCli.leCEPExit(Sender: TObject);
@@ -93,7 +92,6 @@ end;
 procedure TformCrudCli.pnlCadastraCliCrudClick(Sender: TObject);
 begin
     formCadastroDeClientes.pnlCadastrarClick(pnlCadastraCliCrud);
-
 end;
 
 

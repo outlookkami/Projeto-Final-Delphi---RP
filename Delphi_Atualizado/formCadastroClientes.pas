@@ -74,13 +74,14 @@ type
     procedure cadeadoSenhaClick(Sender: TObject);
     procedure cadeadoConfSenhaClick(Sender: TObject);
     procedure leCEPExit(Sender: TObject);
+    procedure pnlCadastrarClick(Sender: TObject);
 
   private
     { Private declarations }
   public
     { Public declarations }
     procedure FrameVeiculo;
-    procedure pnlCadastrarClick(Sender: TObject);
+    //procedure pnlCadastrarClick(Sender: TObject);
   end;
 
 var
@@ -133,35 +134,42 @@ begin
    frameVeiculo.Show;
 end;
 
+
 procedure TformCadastroDeClientes.pnlCadastrarClick(Sender: TObject);
 var hash: String;
 begin
-
     hash := THashSHA1.GetHashString(leConfSenha.Text);
-    if leConfSenha.Text = leSenha.Text then begin
-
-      with DM.QueryClientes do begin
-
-      SQL.Text := 'INSERT INTO "Clientes" (nome_cliente, telefone_cliente, email_cliente, cep_cliente, endereco_cliente, num_endereco, bairro, cidade, uf, hash_senha_cli) VALUES (:Nome, :Telefone, :Email, :CEP, :Endereco, :Numero, :Bairro, :Cidade, :UF, :SenhaHash);';
-
-      ParamByName('Nome').AsString := leNome.Text;
-      ParamByName('Telefone').AsString := leTelefone.Text;
-      ParamByName('Email').AsString := leEmail.Text;
-      ParamByName('CEP').AsString := leCEP.Text;
-      ParamByName('Endereco').AsString := leEndereco.Text;
-      ParamByName('Numero').AsString := leNumero.Text;
-      ParamByName('Bairro').AsString := leBairro.Text;
-      ParamByName('Cidade').AsString := leCidade.Text;
-      ParamByName('UF').AsString := cbUf.Text;
-      ParamByName('SenhaHash').AsString := hash;
-
-      ExecSQL;
-      end;
-      if MessageDlg('Cadastro finalizado com sucesso! Deseja incluir seu veículo?',
-      mtConfirmation, [mbYes, mbNo], 0) = mrYes then FrameVeiculo else Close;
-
+    if (leNome.Text = '') or (leEmail.Text = '') or (leSenha.Text = '') or (leConfSenha.Text = '') then begin
+        ShowMessage('Preencha os campos obrigatórios');
+        Exit;
     end else begin
-       ShowMessage('Senhas não compatíveis. Tente novamente');
+          ShowMessage('Senhas não compatíveis. Tente novamente');
+      end;
+
+      if leConfSenha.Text = leSenha.Text then begin
+
+        with DM.QueryClientes do begin
+
+        SQL.Text := 'INSERT INTO "Clientes" (nome_cliente, telefone_cliente, email_cliente, cep_cliente, endereco_cliente, num_endereco, bairro, cidade, uf, hash_senha_cli) VALUES (:Nome, :Telefone, :Email, :CEP, :Endereco, :Numero, :Bairro, :Cidade, :UF, :SenhaHash);';
+
+        ParamByName('Nome').AsString := leNome.Text;
+        ParamByName('Telefone').AsString := leTelefone.Text;
+        ParamByName('Email').AsString := leEmail.Text;
+        ParamByName('CEP').AsString := leCEP.Text;
+        ParamByName('Endereco').AsString := leEndereco.Text;
+        ParamByName('Numero').AsString := leNumero.Text;
+        ParamByName('Bairro').AsString := leBairro.Text;
+        ParamByName('Cidade').AsString := leCidade.Text;
+        ParamByName('UF').AsString := cbUf.Text;
+        ParamByName('SenhaHash').AsString := hash;
+
+        ExecSQL;
+
+        if MessageDlg('Cadastro finalizado com sucesso! Deseja incluir seu veículo?',
+        mtConfirmation, [mbYes, mbNo], 0) = mrYes then FrameVeiculo else Close; Self.Close;
+          end;
+
     end;
 end;
+
 end.

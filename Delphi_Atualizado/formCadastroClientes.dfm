@@ -45,6 +45,8 @@ object formCadastroDeClientes: TformCadastroDeClientes
       end>
     ShowCaption = False
     TabOrder = 0
+    ExplicitLeft = 8
+    ExplicitTop = -2
     object pnlilustrativo: TPanel
       Left = 1
       Top = 1
@@ -567,7 +569,7 @@ object formCadastroDeClientes: TformCadastroDeClientes
         end
         object pnlCadastrar: TPanel
           Left = 141
-          Top = 529
+          Top = 527
           Width = 185
           Height = 41
           Cursor = crHandPoint
@@ -667,9 +669,9 @@ object formCadastroDeClientes: TformCadastroDeClientes
             Width = 347
             Height = 29
             Anchors = []
-            EditLabel.Width = 125
+            EditLabel.Width = 132
             EditLabel.Height = 21
-            EditLabel.Caption = 'Confirme a senha:'
+            EditLabel.Caption = '*Confirme a senha:'
             EditLabel.Font.Charset = DEFAULT_CHARSET
             EditLabel.Font.Color = clWindowText
             EditLabel.Font.Height = -16
@@ -686,7 +688,6 @@ object formCadastroDeClientes: TformCadastroDeClientes
             TabOrder = 0
             Text = ''
             TextHint = 'Redigite a senha '
-            ExplicitTop = 19
           end
           object cadeadoConfSenha: TImage
             Left = 414
@@ -2201,12 +2202,13 @@ object formCadastroDeClientes: TformCadastroDeClientes
           Width = 345
           Height = 29
           Anchors = []
-          EditLabel.Width = 115
+          EditLabel.Width = 122
           EditLabel.Height = 21
-          EditLabel.Caption = 'Nome completo:'
+          EditLabel.Caption = '*Nome completo:'
           TabOrder = 4
           Text = ''
           TextHint = 'Digite seu nome completo'
+          ExplicitTop = 54
         end
         object leTelefone: TLabeledEdit
           Left = 59
@@ -2227,9 +2229,9 @@ object formCadastroDeClientes: TformCadastroDeClientes
           Width = 343
           Height = 29
           Anchors = []
-          EditLabel.Width = 44
+          EditLabel.Width = 54
           EditLabel.Height = 21
-          EditLabel.Caption = 'E-mail'
+          EditLabel.Caption = '*E-mail:'
           TabOrder = 6
           Text = ''
           TextHint = 'Digite seu endere'#231'o de e-mail'
@@ -2328,9 +2330,9 @@ object formCadastroDeClientes: TformCadastroDeClientes
             Width = 348
             Height = 29
             Anchors = []
-            EditLabel.Width = 46
+            EditLabel.Width = 53
             EditLabel.Height = 21
-            EditLabel.Caption = 'Senha:'
+            EditLabel.Caption = '*Senha:'
             EditLabel.Font.Charset = DEFAULT_CHARSET
             EditLabel.Font.Color = clWindowText
             EditLabel.Font.Height = -16

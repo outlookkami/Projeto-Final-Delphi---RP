@@ -47,12 +47,13 @@ type
     procedure lblEsqueceuSenhaClick(Sender: TObject);
 
     procedure HideShowSenha;
+    procedure pnlEntrarClick(Sender: TObject);
   private
     { Private declarations }
 
   public
     { Public declarations }
-    procedure pnlEntrarClick(Sender: TObject);
+    //procedure pnlEntrarClick(Sender: TObject);
   end;
 
 var
@@ -108,8 +109,7 @@ begin
 end;
 
 procedure TformLogin.pnlEntrarClick(Sender: TObject);
-//var senha, hash: String;
-var TipoUsuario: String;
+ var TipoUsuario: String;
 begin
   if (leSenhaLogin.Text = '') or (leUsuario.Text = '') then begin
     ShowMessage('Preencha todos os campos.');

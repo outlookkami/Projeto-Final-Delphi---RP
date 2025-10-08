@@ -184,70 +184,60 @@ object formCrudCli: TformCrudCli
           Expanded = False
           FieldName = 'telefone_cliente'
           Title.Caption = 'Telefone'
-          Width = 64
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'email_cliente'
           Title.Caption = 'Email'
-          Width = 64
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'cep_cliente'
           Title.Caption = 'CEP'
-          Width = 64
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'endereco_cliente'
           Title.Caption = 'Endere'#231'o'
-          Width = 64
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'num_endereco'
           Title.Caption = 'N'#176
-          Width = 64
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'bairro'
           Title.Caption = 'Bairro'
-          Width = 64
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'cidade'
           Title.Caption = 'Cidade'
-          Width = 64
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'uf'
           Title.Caption = 'UF'
-          Width = 64
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'veiculo'
           Title.Caption = 'Ve'#237'culo'
-          Width = 64
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'ativo_in'
           Title.Caption = 'Ativo'
-          Width = 64
           Visible = True
         end>
     end
@@ -738,9 +728,9 @@ object formCrudCli: TformCrudCli
           Width = 341
           Height = 29
           Anchors = []
-          EditLabel.Width = 46
+          EditLabel.Width = 53
           EditLabel.Height = 21
-          EditLabel.Caption = 'Senha:'
+          EditLabel.Caption = '*Senha:'
           TabOrder = 0
           Text = ''
           TextHint = 'Informe uma senha padr'#227'o que dever'#225' ser alterada'
@@ -788,7 +778,6 @@ object formCrudCli: TformCrudCli
         Text = '     -   '
         TextHint = 'Informe o CEP'
         OnExit = leCEPExit
-        ExplicitTop = 239
       end
       object leEmail: TLabeledEdit
         Left = 13
@@ -796,9 +785,9 @@ object formCrudCli: TformCrudCli
         Width = 346
         Height = 29
         Anchors = []
-        EditLabel.Width = 44
+        EditLabel.Width = 54
         EditLabel.Height = 21
-        EditLabel.Caption = 'E-mail'
+        EditLabel.Caption = '*E-mail:'
         TabOrder = 4
         Text = ''
         TextHint = 'Digite o endere'#231'o de e-mail'
@@ -824,9 +813,9 @@ object formCrudCli: TformCrudCli
         Width = 341
         Height = 29
         Anchors = []
-        EditLabel.Width = 115
+        EditLabel.Width = 122
         EditLabel.Height = 21
-        EditLabel.Caption = 'Nome completo:'
+        EditLabel.Caption = '*Nome completo:'
         TabOrder = 6
         Text = ''
         TextHint = 'Digite o nome completo'
@@ -850,9 +839,9 @@ object formCrudCli: TformCrudCli
         Width = 342
         Height = 29
         Anchors = []
-        EditLabel.Width = 125
+        EditLabel.Width = 132
         EditLabel.Height = 21
-        EditLabel.Caption = 'Confirme a senha:'
+        EditLabel.Caption = '*Confirme a senha:'
         TabOrder = 8
         Text = ''
         TextHint = 'Confirme a senha padr'#227'o'

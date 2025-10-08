@@ -14,6 +14,7 @@ object DM: TDM
     Top = 104
   end
   object QueryClientes: TFDQuery
+    Active = True
     Connection = ConexaoBanco
     SQL.Strings = (
       'SELECT * FROM "Clientes";')
@@ -98,6 +99,7 @@ object DM: TDM
     Top = 104
   end
   object QueryFuncionarios: TFDQuery
+    Active = True
     Connection = ConexaoBanco
     SQL.Strings = (
       'SELECT * FROM "Funcionarios";')
