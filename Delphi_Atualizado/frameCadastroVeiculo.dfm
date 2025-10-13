@@ -64,6 +64,7 @@
         ParentBackground = False
         ParentFont = False
         TabOrder = 0
+        OnClick = pnlBotaoCadastrarVeiculoClick
       end
       object Panel1: TPanel
         Left = 32
@@ -345,6 +346,7 @@
     end
   end
   object DSVeiculos: TDataSource
+    DataSet = DM.QueryVeiculos
     Left = 115
     Top = 80
   end

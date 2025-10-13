@@ -27,6 +27,7 @@ type
     GridPanel2: TGridPanel;
     Label3: TLabel;
     DSVeiculos: TDataSource;
+    procedure pnlBotaoCadastrarVeiculoClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -39,4 +40,32 @@ implementation
 
 {$R *.dfm}
 
+procedure TframeCadVeiculo.pnlBotaoCadastrarVeiculoClick(Sender: TObject);
+begin
+    if (lePlaca.Text = '') or (leMarca.Text = '') or (leModelo.Text = '') then begin
+        ShowMessage('Preencha os campos obrigatórios');
+        Exit;
+    end else begin
+
+
+
+
+        with DM.QueryVeiculos do begin
+
+        SQL.Text := 'INSERT INTO Veiculos(placa_veiculo, chassi, modelo, marca, cor, ano_fab) VALUES (:Placa, :Chassi, :Modelo, :Marca, :AnoFab);';
+
+        ParamByName('Placa').AsString := lePlaca.Text;
+        ParamByName('Chassi').AsString := leChassi.Text;
+        ParamByName('Marca').AsString := leMarca.Text;
+        ParamByName('Modelo').AsString := leModelo.Text;
+        ParamByName('AnoFab').AsString := leAno.Text;
+        ParamByName('Cor').AsString := leCor.Text;
+
+        ExecSQL;
+
+//        if MessageDlg('Veículo cadastrado com sucesso!',
+//        mtConfirmation, [mbYes, mbNo], 0) = mrYes then FrameVeiculo else Close; Self.Close;
+          end;
+end;
+end;
 end.
