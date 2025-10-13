@@ -1047,4 +1047,8 @@
       end
     end
   end
+  object DSPedido: TDataSource
+    Left = 144
+    Top = 32
+  end
 end

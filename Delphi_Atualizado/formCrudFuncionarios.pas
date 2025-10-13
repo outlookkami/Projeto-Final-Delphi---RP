@@ -77,7 +77,8 @@ implementation
 {$R *.dfm}
 
 uses  unitCEPConsultor,
-      frameCadastroDeSenhaFuncionário;
+      frameCadastroDeSenhaFuncionário,
+      System.Hash;
 
 procedure TformCrudFunc.FormCreate(Sender: TObject);
 begin
@@ -95,11 +96,13 @@ end;
 
 procedure TformCrudFunc.SenhaFunc;
 var SenhaFuncionario: TframeCadSenhaFuncionario;
+senhaFunci: String;
 begin
     frameCadSenhaFuncionario := TframeCadSenhaFuncionario.Create(Self);
     frameCadSenhaFuncionario.Parent := Self;
     frameCadSenhaFuncionario.Align := alClient;
     frameCadSenhaFuncionario.Show;
+    senhaFunci := frameCadSenhaFuncionario.SenhaFunc;
 end;
 
 
@@ -153,16 +156,17 @@ end;
 
 
 procedure TformCrudFunc.pnlCadastrarClick(Sender: TObject);
-var hash: String;
+var hash, senhaFunci: String;
 begin
     if (leNome.Text = '') or (leEmail.Text = '') or (leCPF.Text = '') then begin
         ShowMessage('Preencha os campos obrigatórios');
         Exit;
     end else begin
+        SenhaFunc;
 
         with DM.QueryFuncionarios do begin
 
-        SQL.Text := 'INSERT INTO "Funcionarios" (nome_funcionario, telefone_funcionario, email_funcionario, cep_funcionario, endereco_funcionario, num_endereco, bairro, cidade, uf, funcao, cpf_funcionario, rg_funcionario) VALUES (:Nome, :Telefone, :Email, :CEP, :Endereco, :Numero, :Bairro, :Cidade, :UF, :Funcao, :CPF, :RG);';
+        SQL.Text := 'INSERT INTO "Funcionarios" (nome_funcionario, telefone_funcionario, email_funcionario, cep_funcionario, endereco_funcionario, num_endereco, bairro, cidade, uf, funcao, cpf_funcionario, rg_funcionario, senha_hash_func) VALUES (:Nome, :Telefone, :Email, :CEP, :Endereco, :Numero, :Bairro, :Cidade, :UF, :Funcao, :CPF, :RG, :Senha);';
 
         ParamByName('Nome').AsString := leNome.Text;
         ParamByName('Telefone').AsString := leTelefone.Text;
@@ -173,10 +177,10 @@ begin
         ParamByName('Bairro').AsString := leBairro.Text;
         ParamByName('Cidade').AsString := leCidade.Text;
         ParamByName('UF').AsString := cbUf.Text;
-        //ParamByName('SenhaHash').AsString := hash;  // Senha só é recebida no frame/form de Cadastro de Senha de Funcionário
         ParamByName('Funcao').AsString := cbFuncao.Text;
         ParamByName('CPF').AsString := leCPF.Text;
         ParamByName('RG').AsString := leRG.Text;
+        ParamByName('Senha').AsString := senhaFunci;  // Senha só é recebida no frame/form de Cadastro de Senha de Funcionário
 
         ExecSQL;
 

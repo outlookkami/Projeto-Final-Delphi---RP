@@ -162,6 +162,7 @@ object formCrudFunc: TformCrudFunc
       Height = 528
       Anchors = [akLeft, akTop, akRight, akBottom]
       DataSource = DSFuncionarios
+      ReadOnly = True
       TabOrder = 1
       TitleFont.Charset = DEFAULT_CHARSET
       TitleFont.Color = clWindowText
@@ -835,7 +836,6 @@ object formCrudFunc: TformCrudFunc
         TabOrder = 5
         Text = ''
         TextHint = 'Informe seu n'#250'mero de telefone'
-        ExplicitTop = 85
       end
       object leNome: TLabeledEdit
         Left = 15

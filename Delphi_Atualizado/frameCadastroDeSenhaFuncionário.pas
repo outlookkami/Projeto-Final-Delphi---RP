@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes,
   Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Mask,
-  Vcl.ExtCtrls, Vcl.DBCtrls, Vcl.Imaging.pngimage, dataModuleNormal, formPáginaDeInícioADM;
+  Vcl.ExtCtrls, Vcl.DBCtrls, Vcl.Imaging.pngimage, dataModuleNormal;
 
 type
   TframeCadSenhaFuncionario = class(TFrame)
@@ -27,8 +27,10 @@ type
     procedure pnlBotaoCadastrarSenhaClick(Sender: TObject);
   private
     { Private declarations }
+    PriSenhaFunc: String;
   public
     { Public declarations }
+    property SenhaFunc: String read PriSenhaFunc;
   end;
 
   var frameCadSenhaFuncionario: TframeCadSenhaFuncionario;
@@ -37,16 +39,17 @@ implementation
 
 {$R *.dfm}
 
-
+uses System.Hash;
 
 procedure TframeCadSenhaFuncionario.pnlBotaoCadastrarSenhaClick(Sender: TObject);
+var hash: String;
 begin
     if leConfSenha.Text = leSenha.Text then begin
-      DM.QueryFuncionarios.SQL.Text := 'INSERT INTO TABLE "Funcionarios" (hash_senha_func) VALUES (THashSHA1.GetHashString(leConfSenha.Text);)';
-
+      hash := THashSHA1.GetHashString(leConfSenha.Text);
+      PriSenhaFunc := hash;
+      //DM.QueryFuncionarios.SQL.Text := 'INSERT INTO TABLE "Funcionarios" (hash_senha_func) VALUES (:Senha;)';
     end else begin
        ShowMessage('Senhas não compatíveis. Tente novamente');
     end;
-    formPáginaInicialADM.Show;
 end;
 end.
