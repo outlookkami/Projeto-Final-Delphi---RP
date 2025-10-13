@@ -166,7 +166,7 @@ begin
         ExecSQL;
 
         if MessageDlg('Cadastro finalizado com sucesso! Deseja incluir seu veículo?',
-        mtConfirmation, [mbYes, mbNo], 0) = mrYes then FrameVeiculo else Close; Self.Close;
+        mtConfirmation, [mbYes, mbNo], 0) = mrYes then FrameVeiculo else Close;
           end;
 
     end;

@@ -33,7 +33,8 @@
       Font.Name = 'Segoe UI'
       Font.Style = []
       ParentFont = False
-      ExplicitWidth = 226
+      ExplicitLeft = 0
+      ExplicitTop = 0
     end
     object pnlDadosVeículo: TPanel
       Left = 56
@@ -71,6 +72,9 @@
         Top = 0
         Width = 497
         Height = 433
+        Align = alCustom
+        Anchors = [akLeft, akTop, akRight]
+        BevelOuter = bvNone
         TabOrder = 1
         object gridPanelCad2: TGridPanel
           Left = 16
@@ -78,7 +82,7 @@
           Width = 464
           Height = 598
           Align = alCustom
-          Anchors = [akLeft, akTop, akRight, akBottom]
+          Anchors = []
           BevelEdges = []
           BevelOuter = bvNone
           ColumnCollection = <
@@ -194,6 +198,7 @@
             Height = 56
             Anchors = []
             BevelOuter = bvNone
+            Color = clHighlight
             ColumnCollection = <
               item
                 Value = 40.735354790552790000
@@ -213,12 +218,12 @@
                 Row = 0
               end>
             ParentBackground = False
-            ParentColor = True
             RowCollection = <
               item
                 Value = 100.000000000000000000
               end>
             TabOrder = 0
+            ExplicitTop = 463
             DesignSize = (
               394
               56)
@@ -231,6 +236,12 @@
               EditLabel.Width = 31
               EditLabel.Height = 21
               EditLabel.Caption = 'Ano:'
+              EditLabel.Font.Charset = DEFAULT_CHARSET
+              EditLabel.Font.Color = clWhite
+              EditLabel.Font.Height = -16
+              EditLabel.Font.Name = 'Segoe UI'
+              EditLabel.Font.Style = []
+              EditLabel.ParentFont = False
               TabOrder = 0
               Text = ''
               TextHint = 'Ano de fabrica'#231#227'o'
@@ -244,6 +255,12 @@
               EditLabel.Width = 28
               EditLabel.Height = 21
               EditLabel.Caption = 'Cor:'
+              EditLabel.Font.Charset = DEFAULT_CHARSET
+              EditLabel.Font.Color = clWhite
+              EditLabel.Font.Height = -16
+              EditLabel.Font.Name = 'Segoe UI'
+              EditLabel.Font.Style = []
+              EditLabel.ParentFont = False
               TabOrder = 1
               Text = ''
               TextHint = 'Informe a cor'
@@ -258,6 +275,12 @@
             EditLabel.Width = 39
             EditLabel.Height = 21
             EditLabel.Caption = 'Placa:'
+            EditLabel.Font.Charset = DEFAULT_CHARSET
+            EditLabel.Font.Color = clWhite
+            EditLabel.Font.Height = -16
+            EditLabel.Font.Name = 'Segoe UI'
+            EditLabel.Font.Style = []
+            EditLabel.ParentFont = False
             TabOrder = 1
             Text = ''
             TextHint = 'Informe a placa do seu ve'#237'culo'
@@ -271,6 +294,12 @@
             EditLabel.Width = 48
             EditLabel.Height = 21
             EditLabel.Caption = 'Chassi:'
+            EditLabel.Font.Charset = DEFAULT_CHARSET
+            EditLabel.Font.Color = clWhite
+            EditLabel.Font.Height = -16
+            EditLabel.Font.Name = 'Segoe UI'
+            EditLabel.Font.Style = []
+            EditLabel.ParentFont = False
             TabOrder = 2
             Text = ''
             TextHint = 'Informe o chassi do ve'#237'culo'
@@ -284,6 +313,12 @@
             EditLabel.Width = 46
             EditLabel.Height = 21
             EditLabel.Caption = 'Marca:'
+            EditLabel.Font.Charset = DEFAULT_CHARSET
+            EditLabel.Font.Color = clWhite
+            EditLabel.Font.Height = -16
+            EditLabel.Font.Name = 'Segoe UI'
+            EditLabel.Font.Style = []
+            EditLabel.ParentFont = False
             TabOrder = 3
             Text = ''
             TextHint = 'Informe a marca do ve'#237'culo'
@@ -297,6 +332,12 @@
             EditLabel.Width = 56
             EditLabel.Height = 21
             EditLabel.Caption = 'Modelo:'
+            EditLabel.Font.Charset = DEFAULT_CHARSET
+            EditLabel.Font.Color = clWhite
+            EditLabel.Font.Height = -16
+            EditLabel.Font.Name = 'Segoe UI'
+            EditLabel.Font.Style = []
+            EditLabel.ParentFont = False
             TabOrder = 4
             Text = ''
             TextHint = 'Informe o modelo do ve'#237'culo'

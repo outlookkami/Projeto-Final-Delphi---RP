@@ -1045,6 +1045,7 @@
         ParentBackground = False
         ParentFont = False
         TabOrder = 0
+        OnClick = Panel2Click
       end
       object Label9: TLabel
         Left = 238

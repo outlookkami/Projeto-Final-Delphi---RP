@@ -47,12 +47,9 @@ begin
         Exit;
     end else begin
 
-
-
-
         with DM.QueryVeiculos do begin
 
-        SQL.Text := 'INSERT INTO Veiculos(placa_veiculo, chassi, modelo, marca, cor, ano_fab) VALUES (:Placa, :Chassi, :Modelo, :Marca, :AnoFab);';
+        SQL.Text := 'INSERT INTO Veiculos(placa_veiculo, chassi, modelo, marca, cor, ano_fab) VALUES (:Placa, :Chassi, :Modelo, :Marca, :Cor, :AnoFab);';
 
         ParamByName('Placa').AsString := lePlaca.Text;
         ParamByName('Chassi').AsString := leChassi.Text;

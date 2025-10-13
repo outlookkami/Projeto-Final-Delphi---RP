@@ -64,6 +64,7 @@ type
     leModelo: TLabeledEdit;
     leCor: TLabeledEdit;
     procedure TmemoDescricaoDoServiçoOnCreate(Sender: TObject);
+    procedure Panel2Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -76,6 +77,32 @@ type
 implementation
 
 {$R *.dfm}
+
+procedure TframeFormularioDePedido.Panel2Click(Sender: TObject);
+begin
+    if (lePlaca.Text = '') or (leMarca.Text = '') or (leModelo.Text = '') then begin
+        ShowMessage('Preencha os campos obrigatórios');
+        Exit;
+    end else begin
+
+        with DM.QueryVeiculos do begin
+
+        SQL.Text := 'INSERT INTO Veiculos(placa_veiculo, chassi, modelo, marca, cor, ano_fab) VALUES (:Placa, :Chassi, :Modelo, :Marca, :AnoFab);';
+
+        ParamByName('Placa').AsString := lePlaca.Text;
+        //ParamByName('Chassi').AsString := leChassi.Text;
+        ParamByName('Marca').AsString := leMarca.Text;
+        ParamByName('Modelo').AsString := leModelo.Text;
+        //ParamByName('AnoFab').AsString := leAno.Text;
+        ParamByName('Cor').AsString := leCor.Text;
+
+        ExecSQL;
+
+//        if MessageDlg('Pedido finalizado! Aguarde a resposta da oficina. O orçamento estará disponível na aba Orçamentos.',
+//        mtConfirmation, [mbYes, mbNo], 0) = mrYes then FrameVeiculo else Close; Self.Close;
+          end;
+end;
+end;
 
 procedure TframeFormularioDePedido.TmemoDescricaoDoServiçoOnCreate(Sender: TObject);
 var TmemoDescricaoDoServiço: Tmemo;
