@@ -64,6 +64,19 @@ type
     FDTransaction1: TFDTransaction;
     QueryFuncionariosativo_in: TBooleanField;
     QueryClientesativo_in: TBooleanField;
+    QueryPedidos: TFDQuery;
+    QueryPedidoscodigo_pedido: TIntegerField;
+    QueryPedidoscodigo_cliente: TIntegerField;
+    QueryPedidosnome_cliente: TStringField;
+    QueryPedidosdata_pedido: TDateField;
+    QueryPedidoscontato: TStringField;
+    QueryPedidosendereco_cliente: TStringField;
+    QueryPedidoscep_cliente: TStringField;
+    QueryPedidosplaca_veiculo: TStringField;
+    QueryPedidosmarca: TStringField;
+    QueryPedidosmodelo: TStringField;
+    QueryPedidoscor: TStringField;
+    QueryPedidosdescricao_pedido: TMemoField;
   private
     { Private declarations }
   public

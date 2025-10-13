@@ -45,8 +45,6 @@ object formCadastroDeClientes: TformCadastroDeClientes
       end>
     ShowCaption = False
     TabOrder = 0
-    ExplicitLeft = 8
-    ExplicitTop = -2
     object pnlilustrativo: TPanel
       Left = 1
       Top = 1
@@ -2208,7 +2206,6 @@ object formCadastroDeClientes: TformCadastroDeClientes
           TabOrder = 4
           Text = ''
           TextHint = 'Digite seu nome completo'
-          ExplicitTop = 54
         end
         object leTelefone: TLabeledEdit
           Left = 59
@@ -2216,9 +2213,9 @@ object formCadastroDeClientes: TformCadastroDeClientes
           Width = 345
           Height = 29
           Anchors = []
-          EditLabel.Width = 115
+          EditLabel.Width = 122
           EditLabel.Height = 21
-          EditLabel.Caption = 'Telefone/Celular:'
+          EditLabel.Caption = '*Telefone/Celular:'
           TabOrder = 5
           Text = ''
           TextHint = 'Informe seu n'#250'mero de telefone'

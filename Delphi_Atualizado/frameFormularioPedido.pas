@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes,
   Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls,
-  Vcl.ComCtrls, Vcl.StdCtrls, Vcl.Mask, Vcl.DBCtrls, Data.DB;
+  Vcl.ComCtrls, Vcl.StdCtrls, Vcl.Mask, Vcl.DBCtrls, Data.DB, dataModuleNormal;
 
 type
   TframeFormularioDePedido = class(TFrame)
@@ -36,11 +36,8 @@ type
     lblDescServico: TLabel;
     GridPanel4: TGridPanel;
     GridPanel5: TGridPanel;
-    DBLabeledEdit1: TDBLabeledEdit;
     Label1: TLabel;
-    DBLabeledEdit2: TDBLabeledEdit;
     Label2: TLabel;
-    DBLabeledEdit3: TDBLabeledEdit;
     Label3: TLabel;
     DBLabeledEdit4: TDBLabeledEdit;
     GridPanel6: TGridPanel;
@@ -50,19 +47,22 @@ type
     Label5: TLabel;
     DBLabeledEdit7: TDBLabeledEdit;
     GridPanel7: TGridPanel;
-    DBLabeledEdit8: TDBLabeledEdit;
     Label6: TLabel;
-    DBLabeledEdit9: TDBLabeledEdit;
     Label7: TLabel;
-    DBLabeledEdit10: TDBLabeledEdit;
     Label8: TLabel;
-    DBLabeledEdit11: TDBLabeledEdit;
     GridPanel8: TGridPanel;
     Panel2: TPanel;
     Label9: TLabel;
     Panel3: TPanel;
     memoDescricaoDoServiço: TMemo;
     DSPedido: TDataSource;
+    leCliente: TLabeledEdit;
+    leCodigoCliente: TLabeledEdit;
+    leCodigoPedido: TLabeledEdit;
+    lePlaca: TLabeledEdit;
+    leMarca: TLabeledEdit;
+    leModelo: TLabeledEdit;
+    leCor: TLabeledEdit;
     procedure TmemoDescricaoDoServiçoOnCreate(Sender: TObject);
   private
     { Private declarations }

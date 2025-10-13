@@ -188,6 +188,7 @@ object DM: TDM
     Top = 352
   end
   object QueryUsuarios: TFDQuery
+    Active = True
     Connection = ConexaoBanco
     SQL.Strings = (
       'SELECT * FROM Usuarios;')
@@ -215,6 +216,7 @@ object DM: TDM
     end
   end
   object QueryProdutos: TFDQuery
+    Active = True
     Connection = ConexaoBanco
     SQL.Strings = (
       'SELECT * FROM produtos;')
@@ -277,5 +279,68 @@ object DM: TDM
     Connection = ConexaoBanco
     Left = 184
     Top = 56
+  end
+  object QueryPedidos: TFDQuery
+    Active = True
+    Connection = ConexaoBanco
+    SQL.Strings = (
+      'SELECT * FROM Pedidos;')
+    Left = 112
+    Top = 264
+    object QueryPedidoscodigo_pedido: TIntegerField
+      FieldName = 'codigo_pedido'
+      Origin = 'codigo_pedido'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+    end
+    object QueryPedidoscodigo_cliente: TIntegerField
+      FieldName = 'codigo_cliente'
+      Origin = 'codigo_cliente'
+    end
+    object QueryPedidosnome_cliente: TStringField
+      FieldName = 'nome_cliente'
+      Origin = 'nome_cliente'
+      Size = 100
+    end
+    object QueryPedidosdata_pedido: TDateField
+      FieldName = 'data_pedido'
+      Origin = 'data_pedido'
+    end
+    object QueryPedidoscontato: TStringField
+      FieldName = 'contato'
+      Origin = 'contato'
+      Size = 15
+    end
+    object QueryPedidosendereco_cliente: TStringField
+      FieldName = 'endereco_cliente'
+      Origin = 'endereco_cliente'
+      Size = 60
+    end
+    object QueryPedidoscep_cliente: TStringField
+      FieldName = 'cep_cliente'
+      Origin = 'cep_cliente'
+      Size = 8
+    end
+    object QueryPedidosplaca_veiculo: TStringField
+      FieldName = 'placa_veiculo'
+      Origin = 'placa_veiculo'
+      Size = 7
+    end
+    object QueryPedidosmarca: TStringField
+      FieldName = 'marca'
+      Origin = 'marca'
+    end
+    object QueryPedidosmodelo: TStringField
+      FieldName = 'modelo'
+      Origin = 'modelo'
+    end
+    object QueryPedidoscor: TStringField
+      FieldName = 'cor'
+      Origin = 'cor'
+    end
+    object QueryPedidosdescricao_pedido: TMemoField
+      FieldName = 'descricao_pedido'
+      Origin = 'descricao_pedido'
+      BlobType = ftMemo
+    end
   end
 end

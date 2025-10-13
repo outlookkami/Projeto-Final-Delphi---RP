@@ -139,7 +139,7 @@ procedure TformCadastroDeClientes.pnlCadastrarClick(Sender: TObject);
 var hash: String;
 begin
     hash := THashSHA1.GetHashString(leConfSenha.Text);
-    if (leNome.Text = '') or (leEmail.Text = '') or (leSenha.Text = '') or (leConfSenha.Text = '') then begin
+    if (leNome.Text = '') or (leEmail.Text = '') or (leTelefone.Text = '') or (leSenha.Text = '') or (leConfSenha.Text = '') then begin
         ShowMessage('Preencha os campos obrigatórios');
         Exit;
     end else begin
