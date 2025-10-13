@@ -343,4 +343,63 @@ object DM: TDM
       BlobType = ftMemo
     end
   end
+  object QueryVeiculos: TFDQuery
+    Active = True
+    Connection = ConexaoBanco
+    SQL.Strings = (
+      'SELECT * FROM Veiculos;')
+    Left = 232
+    Top = 264
+    object QueryVeiculoscodigo_veiculo: TIntegerField
+      FieldName = 'codigo_veiculo'
+      Origin = 'codigo_veiculo'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+    end
+    object QueryVeiculosplaca_veiculo: TStringField
+      FieldName = 'placa_veiculo'
+      Origin = 'placa_veiculo'
+      Size = 7
+    end
+    object QueryVeiculoschassi: TStringField
+      FieldName = 'chassi'
+      Origin = 'chassi'
+      Size = 17
+    end
+    object QueryVeiculosmodelo: TStringField
+      FieldName = 'modelo'
+      Origin = 'modelo'
+      Size = 40
+    end
+    object QueryVeiculosmarca: TStringField
+      FieldName = 'marca'
+      Origin = 'marca'
+      Size = 40
+    end
+    object QueryVeiculoscor: TStringField
+      FieldName = 'cor'
+      Origin = 'cor'
+    end
+    object QueryVeiculosano_fab: TSmallintField
+      FieldName = 'ano_fab'
+      Origin = 'ano_fab'
+    end
+    object QueryVeiculosano_mod: TSmallintField
+      FieldName = 'ano_mod'
+      Origin = 'ano_mod'
+    end
+    object QueryVeiculosnome_cliente: TStringField
+      FieldName = 'nome_cliente'
+      Origin = 'nome_cliente'
+      Size = 100
+    end
+    object QueryVeiculosnome_usuario_cliente: TStringField
+      FieldName = 'nome_usuario_cliente'
+      Origin = 'nome_usuario_cliente'
+      Size = 255
+    end
+    object QueryVeiculoscodigo_cliente: TIntegerField
+      FieldName = 'codigo_cliente'
+      Origin = 'codigo_cliente'
+    end
+  end
 end

@@ -40,7 +40,8 @@ uses
   formCrudProdutos in 'formCrudProdutos.pas' {formProdutos},
   formCrudClientes in 'formCrudClientes.pas' {formCrudCli},
   formPerfilPage in 'formPerfilPage.pas' {formPerfil},
-  unitCEPConsultor in 'unitCEPConsultor.pas';
+  unitCEPConsultor in 'unitCEPConsultor.pas',
+  formCrudVeiculos in 'formCrudVeiculos.pas' {Form1};
 
 {$R *.res}
 
@@ -60,6 +61,7 @@ begin
   Application.CreateForm(TformTrocaSenha, formTrocaSenha);
   Application.CreateForm(TformConfEmail, formConfEmail);
   Application.CreateForm(TformProdutos, formProdutos);
+  Application.CreateForm(TForm1, Form1);
   Application.Run;
 end.
 

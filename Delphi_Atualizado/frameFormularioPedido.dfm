@@ -545,23 +545,23 @@
           end
           item
             SizeStyle = ssAbsolute
-            Value = 40.000000000000000000
+            Value = 30.000000000000000000
           end
           item
             SizeStyle = ssAbsolute
-            Value = 125.000000000000000000
+            Value = 140.000000000000000000
           end
           item
             SizeStyle = ssAbsolute
-            Value = 40.000000000000000000
+            Value = 30.000000000000000000
           end
           item
             SizeStyle = ssAbsolute
-            Value = 125.000000000000000000
+            Value = 140.000000000000000000
           end
           item
             SizeStyle = ssAbsolute
-            Value = 40.000000000000000000
+            Value = 30.000000000000000000
           end
           item
             Value = 100.000000000000000000
@@ -617,11 +617,12 @@
           713
           56)
         object Label1: TLabel
-          Left = 248
+          Left = 243
           Top = 18
           Width = 4
           Height = 20
           Anchors = []
+          ExplicitLeft = 248
           ExplicitTop = 19
         end
         object Label2: TLabel
@@ -633,23 +634,25 @@
           ExplicitTop = 19
         end
         object Label3: TLabel
-          Left = 578
+          Left = 583
           Top = 18
           Width = 4
           Height = 20
           Anchors = []
+          ExplicitLeft = 578
           ExplicitTop = 19
         end
         object DBLabeledEdit4: TDBLabeledEdit
-          Left = 602
+          Left = 604
           Top = 25
-          Width = 108
+          Width = 105
           Height = 28
           Anchors = []
           TabOrder = 0
           EditLabel.Width = 35
           EditLabel.Height = 20
           EditLabel.Caption = 'Data:'
+          ExplicitLeft = 616
         end
         object leCliente: TLabeledEdit
           Left = 3
@@ -665,9 +668,9 @@
           ExplicitLeft = -3
         end
         object leCodigoCliente: TLabeledEdit
-          Left = 270
+          Left = 262
           Top = 25
-          Width = 121
+          Width = 135
           Height = 28
           Anchors = []
           EditLabel.Width = 124
@@ -675,13 +678,12 @@
           EditLabel.Caption = 'C'#243'digo do Cliente:'
           TabOrder = 2
           Text = ''
-          ExplicitLeft = 273
-          ExplicitTop = 26
+          ExplicitLeft = 267
         end
         object leCodigoPedido: TLabeledEdit
           Left = 435
           Top = 25
-          Width = 121
+          Width = 130
           Height = 28
           Anchors = []
           EditLabel.Width = 124
@@ -689,8 +691,7 @@
           EditLabel.Caption = 'C'#243'digo do Pedido:'
           TabOrder = 3
           Text = ''
-          ExplicitLeft = 446
-          ExplicitTop = 26
+          ExplicitLeft = 432
         end
       end
       object GridPanel6: TGridPanel
@@ -707,7 +708,7 @@
           end
           item
             SizeStyle = ssAbsolute
-            Value = 40.000000000000000000
+            Value = 30.000000000000000000
           end
           item
             SizeStyle = ssAbsolute
@@ -715,7 +716,7 @@
           end
           item
             SizeStyle = ssAbsolute
-            Value = 40.000000000000000000
+            Value = 30.000000000000000000
           end
           item
             SizeStyle = ssAbsolute
@@ -773,15 +774,16 @@
           EditLabel.Caption = 'Contato:'
         end
         object Label4: TLabel
-          Left = 248
+          Left = 243
           Top = 20
           Width = 4
           Height = 20
           Anchors = []
+          ExplicitLeft = 248
           ExplicitTop = 21
         end
         object DBLabeledEdit6: TDBLabeledEdit
-          Left = 273
+          Left = 263
           Top = 27
           Width = 284
           Height = 28
@@ -790,21 +792,23 @@
           EditLabel.Width = 65
           EditLabel.Height = 20
           EditLabel.Caption = 'Endere'#231'o:'
+          ExplicitLeft = 273
         end
         object Label5: TLabel
-          Left = 578
+          Left = 563
           Top = 20
           Width = 4
           Height = 20
           Anchors = []
+          ExplicitLeft = 578
           ExplicitTop = 21
         end
         object DBLabeledEdit7: TDBLabeledEdit
-          Left = 604
+          Left = 583
           Top = 27
-          Width = 111
+          Width = 130
           Height = 28
-          Anchors = []
+          Align = alCustom
           TabOrder = 2
           EditLabel.Width = 28
           EditLabel.Height = 20
@@ -825,7 +829,7 @@
           end
           item
             SizeStyle = ssAbsolute
-            Value = 40.000000000000000000
+            Value = 30.000000000000000000
           end
           item
             SizeStyle = ssAbsolute
@@ -833,7 +837,7 @@
           end
           item
             SizeStyle = ssAbsolute
-            Value = 40.000000000000000000
+            Value = 30.000000000000000000
           end
           item
             SizeStyle = ssAbsolute
@@ -841,11 +845,11 @@
           end
           item
             SizeStyle = ssAbsolute
-            Value = 40.000000000000000000
+            Value = 30.000000000000000000
           end
           item
             SizeStyle = ssAbsolute
-            Value = 120.000000000000000000
+            Value = 140.000000000000000000
           end>
         ControlCollection = <
           item
@@ -901,27 +905,30 @@
           712
           55)
         object Label6: TLabel
-          Left = 143
+          Left = 138
           Top = 17
           Width = 4
           Height = 20
           Anchors = []
+          ExplicitLeft = 143
           ExplicitTop = 19
         end
         object Label7: TLabel
-          Left = 363
+          Left = 348
           Top = 17
           Width = 4
           Height = 20
           Anchors = []
+          ExplicitLeft = 363
           ExplicitTop = 19
         end
         object Label8: TLabel
-          Left = 578
+          Left = 553
           Top = 17
           Width = 4
           Height = 20
           Anchors = []
+          ExplicitLeft = 578
           ExplicitTop = 19
         end
         object lePlaca: TLabeledEdit
@@ -939,7 +946,7 @@
           ExplicitTop = 16
         end
         object leMarca: TLabeledEdit
-          Left = 171
+          Left = 161
           Top = 25
           Width = 167
           Height = 28
@@ -952,7 +959,7 @@
           ExplicitLeft = 148
         end
         object leModelo: TLabeledEdit
-          Left = 387
+          Left = 367
           Top = 25
           Width = 170
           Height = 28
@@ -965,17 +972,16 @@
           ExplicitLeft = 412
         end
         object leCor: TLabeledEdit
-          Left = 605
+          Left = 573
           Top = 25
-          Width = 110
+          Width = 139
           Height = 28
-          Anchors = []
+          Align = alCustom
           EditLabel.Width = 26
           EditLabel.Height = 20
           EditLabel.Caption = 'Cor:'
           TabOrder = 3
           Text = ''
-          ExplicitLeft = 602
         end
       end
     end

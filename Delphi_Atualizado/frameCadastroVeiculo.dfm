@@ -218,8 +218,6 @@
                 Value = 100.000000000000000000
               end>
             TabOrder = 0
-            ExplicitLeft = 47
-            ExplicitTop = 480
             DesignSize = (
               394
               56)
@@ -248,7 +246,6 @@
               TabOrder = 1
               Text = ''
               TextHint = 'Informe a cor'
-              ExplicitLeft = 167
             end
           end
           object lePlaca: TLabeledEdit
@@ -333,7 +330,6 @@
                 SizeStyle = ssAuto
               end>
             TabOrder = 5
-            ExplicitTop = 413
           end
           object Label3: TLabel
             Left = 230
@@ -347,5 +343,9 @@
         end
       end
     end
+  end
+  object DSVeiculos: TDataSource
+    Left = 115
+    Top = 80
   end
 end

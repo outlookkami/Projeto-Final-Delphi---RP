@@ -77,6 +77,18 @@ type
     QueryPedidosmodelo: TStringField;
     QueryPedidoscor: TStringField;
     QueryPedidosdescricao_pedido: TMemoField;
+    QueryVeiculos: TFDQuery;
+    QueryVeiculoscodigo_veiculo: TIntegerField;
+    QueryVeiculosplaca_veiculo: TStringField;
+    QueryVeiculoschassi: TStringField;
+    QueryVeiculosmodelo: TStringField;
+    QueryVeiculosmarca: TStringField;
+    QueryVeiculoscor: TStringField;
+    QueryVeiculosano_fab: TSmallintField;
+    QueryVeiculosano_mod: TSmallintField;
+    QueryVeiculosnome_cliente: TStringField;
+    QueryVeiculosnome_usuario_cliente: TStringField;
+    QueryVeiculoscodigo_cliente: TIntegerField;
   private
     { Private declarations }
   public
