@@ -90,6 +90,11 @@
           Column = 0
           Control = GridPanel7
           Row = 2
+        end
+        item
+          Column = 0
+          Control = GridPanel8
+          Row = 3
         end>
       RowCollection = <
         item
@@ -470,6 +475,106 @@
           Height = 17
           Align = alCustom
           Caption = 'emailCliente'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -13
+          Font.Name = 'Segoe UI'
+          Font.Style = []
+          ParentFont = False
+        end
+      end
+      object GridPanel8: TGridPanel
+        Left = 14
+        Top = 224
+        Width = 913
+        Height = 57
+        Anchors = []
+        ColumnCollection = <
+          item
+            SizeStyle = ssAbsolute
+            Value = 150.000000000000000000
+          end
+          item
+            SizeStyle = ssAbsolute
+            Value = 200.000000000000000000
+          end
+          item
+            SizeStyle = ssAbsolute
+            Value = 150.000000000000000000
+          end
+          item
+            SizeStyle = ssAbsolute
+            Value = 300.000000000000000000
+          end>
+        ControlCollection = <
+          item
+            Column = 0
+            Control = lblCódigo
+            Row = 0
+          end
+          item
+            Column = 1
+            Control = lblCódigoCliente
+            Row = 0
+          end
+          item
+            Column = 2
+            Control = lblCEP
+            Row = 0
+          end
+          item
+            Column = 3
+            Control = lblCEPCliente
+            Row = 0
+          end>
+        RowCollection = <
+          item
+            Value = 100.000000000000000000
+          end>
+        TabOrder = 3
+        ExplicitTop = 232
+        DesignSize = (
+          913
+          57)
+        object lblCódigo: TLabel
+          Left = 29
+          Top = 21
+          Width = 93
+          Height = 15
+          Anchors = []
+          Caption = 'C'#211'DIGO CLIENTE'
+          ExplicitLeft = 48
+        end
+        object lblCódigoCliente: TLabel
+          Left = 166
+          Top = 16
+          Width = 80
+          Height = 17
+          Align = alCustom
+          Caption = 'c'#243'digoCliente'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -13
+          Font.Name = 'Segoe UI'
+          Font.Style = []
+          ParentFont = False
+        end
+        object lblCEP: TLabel
+          Left = 415
+          Top = 21
+          Width = 21
+          Height = 15
+          Anchors = []
+          Caption = 'CEP'
+          ExplicitLeft = 409
+        end
+        object lblCEPCliente: TLabel
+          Left = 512
+          Top = 20
+          Width = 141
+          Height = 17
+          Align = alCustom
+          Caption = 'CEPCliente'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
           Font.Height = -13

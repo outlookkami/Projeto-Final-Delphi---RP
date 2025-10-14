@@ -49,20 +49,28 @@ begin
 
         with DM.QueryVeiculos do begin
 
-        SQL.Text := 'INSERT INTO Veiculos(placa_veiculo, chassi, modelo, marca, cor, ano_fab) VALUES (:Placa, :Chassi, :Modelo, :Marca, :Cor, :AnoFab);';
+          SQL.Text := 'INSERT INTO Veiculos(placa_veiculo, chassi, modelo, marca, cor, ano_fab) VALUES (:Placa, :Chassi, :Modelo, :Marca, :Cor, :AnoFab);';
 
-        ParamByName('Placa').AsString := lePlaca.Text;
-        ParamByName('Chassi').AsString := leChassi.Text;
-        ParamByName('Marca').AsString := leMarca.Text;
-        ParamByName('Modelo').AsString := leModelo.Text;
-        ParamByName('AnoFab').AsInteger := StrToInt(leAno.Text);
-        ParamByName('Cor').AsString := leCor.Text;
+          ParamByName('Placa').AsString := lePlaca.Text;
+          ParamByName('Chassi').AsString := leChassi.Text;
+          ParamByName('Marca').AsString := leMarca.Text;
+          ParamByName('Modelo').AsString := leModelo.Text;
+          ParamByName('AnoFab').AsInteger := StrToInt(leAno.Text);
+          ParamByName('Cor').AsString := leCor.Text;
 
-        ExecSQL;
+           with DM.QueryClientes do begin
+          SQL.Text := 'INSERT INTO Clientes(veiculo) VALUES(:Veiculo)';
+          ParamByName('Veiculo').AsString := lePlaca.Text;
 
+          end;
+
+          ExecSQL;
+
+          ShowMessage('Veículo cadastrado com sucesso!');
 //        if MessageDlg('Veículo cadastrado com sucesso!',
 //        mtConfirmation, [mbYes, mbNo], 0) = mrYes then FrameVeiculo else Close; Self.Close;
-          end;
+        end;
+
 end;
 end;
 end.

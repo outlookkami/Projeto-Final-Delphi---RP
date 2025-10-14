@@ -33,6 +33,11 @@ type
     lblTelefoneCliente: TLabel;
     lblEmail: TLabel;
     lblEmailCliente: TLabel;
+    GridPanel8: TGridPanel;
+    lblCódigo: TLabel;
+    lblCódigoCliente: TLabel;
+    lblCEP: TLabel;
+    lblCEPCliente: TLabel;
   private
     { Private declarations }
   public

@@ -143,8 +143,6 @@ begin
         ShowMessage('Preencha os campos obrigatórios');
         Exit;
     end else begin
-          ShowMessage('Senhas não compatíveis. Tente novamente');
-      end;
 
       if leConfSenha.Text = leSenha.Text then begin
 
@@ -169,6 +167,9 @@ begin
         mtConfirmation, [mbYes, mbNo], 0) = mrYes then FrameVeiculo else Close;
           end;
 
+      end else begin
+      ShowMessage('Senhas não compatíveis. Tente novamente');
+      end;
     end;
 end;
 
