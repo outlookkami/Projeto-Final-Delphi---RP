@@ -4781,6 +4781,7 @@
         ParentBackground = False
         ParentFont = False
         TabOrder = 0
+        OnClick = btnpPedidosClick
       end
       object btnpOrcamentos: TPanel
         Left = 239
@@ -4800,6 +4801,7 @@
         ParentBackground = False
         ParentFont = False
         TabOrder = 1
+        OnClick = btnpOrcamentosClick
       end
       object btnpOS: TPanel
         Left = 407
@@ -4819,6 +4821,7 @@
         ParentBackground = False
         ParentFont = False
         TabOrder = 2
+        OnClick = btnpOSClick
       end
       object btnpSobreNos: TPanel
         Left = 581
@@ -4839,6 +4842,7 @@
         ParentBackground = False
         ParentFont = False
         TabOrder = 3
+        OnClick = btnpSobreNosClick
       end
       object btnpPortfolio: TPanel
         Left = 759
@@ -4859,6 +4863,7 @@
         ParentBackground = False
         ParentFont = False
         TabOrder = 4
+        OnClick = btnpPortfolioClick
       end
       object btnpPerfil: TPanel
         Left = 924
@@ -4878,6 +4883,7 @@
         ParentBackground = False
         ParentFont = False
         TabOrder = 5
+        OnClick = btnpPerfilClick
       end
       object GridPanel3: TGridPanel
         Left = 1099
@@ -12294,7 +12300,7 @@
       Top = 58
       Width = 1148
       Height = 646
-      ActivePage = TabSheet2
+      ActivePage = TabSheet1
       Align = alClient
       TabOrder = 1
       object TabSheet1: TTabSheet

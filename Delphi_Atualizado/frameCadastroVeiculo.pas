@@ -55,7 +55,7 @@ begin
         ParamByName('Chassi').AsString := leChassi.Text;
         ParamByName('Marca').AsString := leMarca.Text;
         ParamByName('Modelo').AsString := leModelo.Text;
-        ParamByName('AnoFab').AsString := leAno.Text;
+        ParamByName('AnoFab').AsInteger := StrToInt(leAno.Text);
         ParamByName('Cor').AsString := leCor.Text;
 
         ExecSQL;

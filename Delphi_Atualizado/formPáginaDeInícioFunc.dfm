@@ -12419,31 +12419,6 @@
       object TabSheet7: TTabSheet
         Caption = 'Clientes'
         ImageIndex = 6
-        DesignSize = (
-          1140
-          712)
-        inline frameCrudClientes1: TframeCrudClientes
-          Left = -26
-          Top = -28
-          Width = 1166
-          Height = 740
-          Anchors = [akLeft, akTop, akRight, akBottom]
-          TabOrder = 0
-          ExplicitLeft = -26
-          ExplicitTop = -28
-          inherited Panel1: TPanel
-            StyleElements = [seFont, seClient, seBorder]
-            inherited btnIncluirCli: TPanel
-              StyleElements = [seFont, seClient, seBorder]
-            end
-            inherited pnlPesquisa: TPanel
-              StyleElements = [seFont, seClient, seBorder]
-              inherited DBEdit1: TDBEdit
-                StyleElements = [seFont, seClient, seBorder]
-              end
-            end
-          end
-        end
       end
       object TabSheet8: TTabSheet
         Caption = 'Ve'#237'culos'

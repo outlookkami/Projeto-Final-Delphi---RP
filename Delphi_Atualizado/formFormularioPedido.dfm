@@ -1,24 +1,34 @@
-﻿object frameFormularioDePedido: TframeFormularioDePedido
+﻿object FormPedido: TFormPedido
   Left = 0
   Top = 0
-  Width = 890
-  Height = 711
-  TabOrder = 0
+  Caption = 'Formul'#225'rio de pedido'
+  ClientHeight = 701
+  ClientWidth = 1150
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -12
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  TextHeight = 15
   object pnlFrameFormPedido: TPanel
     Left = 0
     Top = 0
-    Width = 890
-    Height = 711
+    Width = 1150
+    Height = 701
     Align = alClient
     ParentBackground = False
     TabOrder = 0
+    ExplicitTop = -10
+    ExplicitWidth = 890
+    ExplicitHeight = 711
     DesignSize = (
-      890
-      711)
+      1150
+      701)
     object lblDescServico: TLabel
       Left = 99
       Top = 315
-      Width = 140
+      Width = 400
       Height = 20
       Anchors = [akLeft, akTop, akRight]
       Caption = 'Descri'#231#227'o do servi'#231'o:'
@@ -28,22 +38,24 @@
       Font.Name = 'Segoe UI'
       Font.Style = []
       ParentFont = False
+      ExplicitWidth = 140
     end
     object Panel1: TPanel
       Left = 331
       Top = 16
-      Width = 281
+      Width = 541
       Height = 65
       Anchors = [akLeft, akTop, akRight]
       Caption = 'INSERIR LOGO'
       Color = clHighlight
       ParentBackground = False
       TabOrder = 0
+      ExplicitWidth = 281
     end
     object GridPanel1: TGridPanel
       Left = 94
       Top = 183
-      Width = 721
+      Width = 981
       Height = 49
       Anchors = [akLeft, akTop, akRight]
       BevelOuter = bvNone
@@ -105,8 +117,9 @@
           Value = 100.000000000000000000
         end>
       TabOrder = 1
+      ExplicitWidth = 721
       DesignSize = (
-        721
+        981
         49)
       object dbleContato: TDBLabeledEdit
         Left = 2
@@ -163,7 +176,7 @@
     object GridPanel2: TGridPanel
       Left = 94
       Top = 129
-      Width = 721
+      Width = 981
       Height = 48
       Anchors = [akLeft, akTop, akRight]
       BevelOuter = bvNone
@@ -242,8 +255,9 @@
           Value = 100.000000000000000000
         end>
       TabOrder = 2
+      ExplicitWidth = 721
       DesignSize = (
-        721
+        981
         48)
       object dbleCliente: TDBLabeledEdit
         Left = 2
@@ -306,7 +320,7 @@
         ExplicitTop = 16
       end
       object dbleData: TDBLabeledEdit
-        Left = 603
+        Left = 733
         Top = 21
         Width = 115
         Height = 25
@@ -315,12 +329,13 @@
         EditLabel.Width = 30
         EditLabel.Height = 17
         EditLabel.Caption = 'Data:'
+        ExplicitLeft = 603
       end
     end
     object GridPanel3: TGridPanel
       Left = 94
       Top = 238
-      Width = 721
+      Width = 981
       Height = 49
       Anchors = [akLeft, akTop, akRight]
       BevelOuter = bvNone
@@ -400,8 +415,9 @@
           Value = 100.000000000000000000
         end>
       TabOrder = 3
+      ExplicitWidth = 721
       DesignSize = (
-        721
+        981
         49)
       object dblePlaca: TDBLabeledEdit
         Left = 2
@@ -476,10 +492,10 @@
       end
     end
     object memoDescricaoDoServiço: TMemo
-      Left = 102
-      Top = 345
-      Width = 718
-      Height = 225
+      Left = 99
+      Top = 341
+      Width = 978
+      Height = 215
       Anchors = [akLeft, akTop, akRight, akBottom]
       BevelInner = bvNone
       BevelOuter = bvNone
@@ -489,11 +505,13 @@
         'memoDescricaoDoServi'#231'o')
       TabOrder = 4
       StyleName = 'Windows'
+      ExplicitWidth = 718
+      ExplicitHeight = 225
     end
     object GridPanel4: TGridPanel
       Left = 96
       Top = 118
-      Width = 719
+      Width = 979
       Height = 183
       Anchors = [akLeft, akTop, akRight]
       ColumnCollection = <
@@ -527,11 +545,12 @@
           Value = 33.333333333333310000
         end>
       TabOrder = 5
+      ExplicitWidth = 719
       DesignSize = (
-        719
+        979
         183)
       object GridPanel5: TGridPanel
-        Left = 3
+        Left = 133
         Top = 1
         Width = 713
         Height = 56
@@ -690,7 +709,7 @@
         end
       end
       object GridPanel6: TGridPanel
-        Left = 3
+        Left = 133
         Top = 61
         Width = 713
         Height = 60
@@ -810,7 +829,7 @@
         end
       end
       object GridPanel7: TGridPanel
-        Left = 3
+        Left = 133
         Top = 122
         Width = 712
         Height = 55
@@ -976,8 +995,8 @@
       end
     end
     object GridPanel8: TGridPanel
-      Left = 223
-      Top = 609
+      Left = 359
+      Top = 599
       Width = 484
       Height = 56
       Anchors = [akBottom]
@@ -1016,6 +1035,8 @@
           Value = 100.000000000000000000
         end>
       TabOrder = 6
+      ExplicitLeft = 223
+      ExplicitTop = 609
       DesignSize = (
         484
         56)

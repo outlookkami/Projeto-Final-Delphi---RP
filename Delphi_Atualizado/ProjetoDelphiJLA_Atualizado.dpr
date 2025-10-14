@@ -41,7 +41,9 @@ uses
   formCrudClientes in 'formCrudClientes.pas' {formCrudCli},
   formPerfilPage in 'formPerfilPage.pas' {formPerfil},
   unitCEPConsultor in 'unitCEPConsultor.pas',
-  formCrudVeiculos in 'formCrudVeiculos.pas' {Form1};
+  formCrudVeiculos in 'formCrudVeiculos.pas' {Form1},
+  formFormularioPedido in 'formFormularioPedido.pas' {FormPedido},
+  formOrcamento in 'formOrcamento.pas' {Form2};
 
 {$R *.res}
 
@@ -49,9 +51,9 @@ begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
   Application.Title := 'Aviso';
+  Application.CreateForm(TformLogin, formLogin);
   Application.CreateForm(TformCadastroDeClientes, formCadastroDeClientes);
   Application.CreateForm(TformCrudFunc, formCrudFunc);
-  Application.CreateForm(TformLogin, formLogin);
   Application.CreateForm(TformCrudCli, formCrudCli);
   Application.CreateForm(TformPáginaInicialFunc, formPáginaInicialFunc);
   Application.CreateForm(TformPáginaInicialADM, formPáginaInicialADM);
@@ -62,6 +64,8 @@ begin
   Application.CreateForm(TformConfEmail, formConfEmail);
   Application.CreateForm(TformProdutos, formProdutos);
   Application.CreateForm(TForm1, Form1);
+  Application.CreateForm(TFormPedido, FormPedido);
+  Application.CreateForm(TForm2, Form2);
   Application.Run;
 end.
 

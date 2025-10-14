@@ -35,7 +35,6 @@ type
     TabSheet7: TTabSheet;
     TabSheet8: TTabSheet;
     TabSheet9: TTabSheet;
-    frameCrudClientes1: TframeCrudClientes;
     procedure btnpDashboardClick(Sender: TObject);
     procedure btnpPedidosClick(Sender: TObject);
     procedure Image1Click(Sender: TObject);
