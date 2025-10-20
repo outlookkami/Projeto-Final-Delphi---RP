@@ -19,16 +19,13 @@
     Align = alClient
     ParentBackground = False
     TabOrder = 0
-    ExplicitTop = -10
-    ExplicitWidth = 890
-    ExplicitHeight = 711
     DesignSize = (
       1150
       701)
     object lblDescServico: TLabel
       Left = 99
       Top = 315
-      Width = 400
+      Width = 140
       Height = 20
       Anchors = [akLeft, akTop, akRight]
       Caption = 'Descri'#231#227'o do servi'#231'o:'
@@ -38,7 +35,6 @@
       Font.Name = 'Segoe UI'
       Font.Style = []
       ParentFont = False
-      ExplicitWidth = 140
     end
     object Panel1: TPanel
       Left = 331
@@ -50,7 +46,6 @@
       Color = clHighlight
       ParentBackground = False
       TabOrder = 0
-      ExplicitWidth = 281
     end
     object GridPanel1: TGridPanel
       Left = 94
@@ -117,7 +112,6 @@
           Value = 100.000000000000000000
         end>
       TabOrder = 1
-      ExplicitWidth = 721
       DesignSize = (
         981
         49)
@@ -255,7 +249,6 @@
           Value = 100.000000000000000000
         end>
       TabOrder = 2
-      ExplicitWidth = 721
       DesignSize = (
         981
         48)
@@ -329,7 +322,6 @@
         EditLabel.Width = 30
         EditLabel.Height = 17
         EditLabel.Caption = 'Data:'
-        ExplicitLeft = 603
       end
     end
     object GridPanel3: TGridPanel
@@ -415,7 +407,6 @@
           Value = 100.000000000000000000
         end>
       TabOrder = 3
-      ExplicitWidth = 721
       DesignSize = (
         981
         49)
@@ -505,8 +496,6 @@
         'memoDescricaoDoServi'#231'o')
       TabOrder = 4
       StyleName = 'Windows'
-      ExplicitWidth = 718
-      ExplicitHeight = 225
     end
     object GridPanel4: TGridPanel
       Left = 96
@@ -545,7 +534,6 @@
           Value = 33.333333333333310000
         end>
       TabOrder = 5
-      ExplicitWidth = 719
       DesignSize = (
         979
         183)
@@ -601,11 +589,6 @@
             Row = 0
           end
           item
-            Column = 6
-            Control = DBLabeledEdit4
-            Row = 0
-          end
-          item
             Column = 0
             Control = leCliente
             Row = 0
@@ -619,6 +602,11 @@
             Column = 4
             Control = leCodigoPedido
             Row = 0
+          end
+          item
+            Column = 6
+            Control = GridPanel10
+            Row = 0
           end>
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
@@ -629,6 +617,9 @@
         RowCollection = <
           item
             Value = 100.000000000000000000
+          end
+          item
+            SizeStyle = ssAuto
           end>
         TabOrder = 0
         DesignSize = (
@@ -660,17 +651,6 @@
           ExplicitLeft = 578
           ExplicitTop = 19
         end
-        object DBLabeledEdit4: TDBLabeledEdit
-          Left = 603
-          Top = 25
-          Width = 105
-          Height = 28
-          Anchors = []
-          TabOrder = 0
-          EditLabel.Width = 35
-          EditLabel.Height = 20
-          EditLabel.Caption = 'Data:'
-        end
         object leCliente: TLabeledEdit
           Left = 3
           Top = 25
@@ -680,7 +660,7 @@
           EditLabel.Width = 49
           EditLabel.Height = 20
           EditLabel.Caption = 'Cliente:'
-          TabOrder = 1
+          TabOrder = 0
           Text = ''
         end
         object leCodigoCliente: TLabeledEdit
@@ -692,7 +672,7 @@
           EditLabel.Width = 124
           EditLabel.Height = 20
           EditLabel.Caption = 'C'#243'digo do Cliente:'
-          TabOrder = 2
+          TabOrder = 1
           Text = ''
         end
         object leCodigoPedido: TLabeledEdit
@@ -704,8 +684,69 @@
           EditLabel.Width = 124
           EditLabel.Height = 20
           EditLabel.Caption = 'C'#243'digo do Pedido:'
-          TabOrder = 3
+          TabOrder = 2
           Text = ''
+        end
+        object GridPanel10: TGridPanel
+          Left = 600
+          Top = -1
+          Width = 113
+          Height = 59
+          Align = alCustom
+          BevelOuter = bvNone
+          ColumnCollection = <
+            item
+              Value = 100.000000000000000000
+            end>
+          ControlCollection = <
+            item
+              Column = 0
+              Control = Label10
+              Row = 0
+            end
+            item
+              Column = 0
+              Control = dtData
+              Row = 1
+            end>
+          ParentBackground = False
+          RowCollection = <
+            item
+              SizeStyle = ssAbsolute
+              Value = 20.000000000000000000
+            end
+            item
+              SizeStyle = ssAbsolute
+              Value = 100.000000000000000000
+            end
+            item
+              SizeStyle = ssAuto
+            end>
+          TabOrder = 3
+          object Label10: TLabel
+            Left = 6
+            Top = 0
+            Width = 35
+            Height = 20
+            Align = alCustom
+            Caption = 'Data:'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clBlack
+            Font.Height = -15
+            Font.Name = 'Segoe UI'
+            Font.Style = []
+            ParentFont = False
+          end
+          object dtData: TDateTimePicker
+            Left = 8
+            Top = 26
+            Width = 105
+            Height = 31
+            Align = alCustom
+            Date = 45950.000000000000000000
+            Time = 0.594754340279905600
+            TabOrder = 0
+          end
         end
       end
       object GridPanel6: TGridPanel
@@ -955,6 +996,7 @@
           EditLabel.Caption = 'Placa:'
           TabOrder = 0
           Text = ''
+          ExplicitLeft = -6
         end
         object leMarca: TLabeledEdit
           Left = 161
@@ -1035,8 +1077,6 @@
           Value = 100.000000000000000000
         end>
       TabOrder = 6
-      ExplicitLeft = 223
-      ExplicitTop = 609
       DesignSize = (
         484
         56)

@@ -43,7 +43,8 @@ uses
   unitCEPConsultor in 'unitCEPConsultor.pas',
   formCrudVeiculos in 'formCrudVeiculos.pas' {Form1},
   formFormularioPedido in 'formFormularioPedido.pas' {FormPedido},
-  formOrcamento in 'formOrcamento.pas' {Form2};
+  formOrcamento in 'formOrcamento.pas' {Form2},
+  unitPlacaConsultor in 'unitPlacaConsultor.pas';
 
 {$R *.res}
 

@@ -19,15 +19,13 @@
     Align = alClient
     ParentBackground = False
     TabOrder = 0
-    ExplicitLeft = 8
-    ExplicitTop = 8
     DesignSize = (
       1150
       701)
     object lblDescServico: TLabel
       Left = 99
       Top = 573
-      Width = 400
+      Width = 140
       Height = 20
       Anchors = [akLeft, akTop, akRight]
       Caption = 'Descri'#231#227'o do servi'#231'o:'
@@ -48,7 +46,6 @@
       Color = clHighlight
       ParentBackground = False
       TabOrder = 0
-      ExplicitWidth = 281
     end
     object memoDescricaoDoServiço: TMemo
       Left = 99
@@ -131,7 +128,7 @@
             Value = 33.333333333333340000
           end
           item
-            Value = 33.333333333333340000
+            Value = 33.333333333333310000
           end>
         ControlCollection = <
           item
@@ -154,7 +151,6 @@
             Value = 100.000000000000000000
           end>
         TabOrder = 0
-        ExplicitLeft = 0
         object GridPanel3: TGridPanel
           Left = 1
           Top = 1
@@ -184,15 +180,11 @@
               Value = 100.000000000000000000
             end>
           TabOrder = 0
-          ExplicitLeft = 0
-          ExplicitTop = 8
-          ExplicitWidth = 246
-          ExplicitHeight = 41
           object lblOrcamento: TLabel
             Left = 53
             Top = 16
-            Width = 94
-            Height = 25
+            Width = 88
+            Height = 17
             Align = alCustom
             Alignment = taCenter
             Caption = 'Or'#231'amento n'#176': '
@@ -206,9 +198,10 @@
           object numeroOrcamento: TLabel
             Left = 153
             Top = 1
-            Width = 144
+            Width = 3
             Height = 53
             Align = alLeft
+            ExplicitHeight = 15
           end
         end
         object GridPanel4: TGridPanel
@@ -240,10 +233,6 @@
               Value = 100.000000000000000000
             end>
           TabOrder = 1
-          ExplicitLeft = 0
-          ExplicitTop = 8
-          ExplicitWidth = 246
-          ExplicitHeight = 41
           object lblEmissao: TLabel
             Left = 53
             Top = 16
@@ -297,7 +286,6 @@
               Value = 100.000000000000000000
             end>
           TabOrder = 2
-          ExplicitLeft = 617
           object lblValidoate: TLabel
             Left = 53
             Top = 16
@@ -354,7 +342,6 @@
             Value = 100.000000000000000000
           end>
         TabOrder = 1
-        ExplicitLeft = 12
         DesignSize = (
           915
           58)
@@ -431,8 +418,6 @@
             Value = 100.000000000000000000
           end>
         TabOrder = 2
-        ExplicitLeft = 13
-        ExplicitTop = 144
         DesignSize = (
           914
           57)
@@ -449,7 +434,7 @@
           Left = 166
           Top = 16
           Width = 86
-          Height = 25
+          Height = 17
           Align = alCustom
           Caption = 'telefoneCliente'
           Font.Charset = DEFAULT_CHARSET
@@ -471,7 +456,7 @@
         object lblEmailCliente: TLabel
           Left = 592
           Top = 20
-          Width = 144
+          Width = 70
           Height = 17
           Align = alCustom
           Caption = 'emailCliente'
@@ -532,7 +517,6 @@
             Value = 100.000000000000000000
           end>
         TabOrder = 3
-        ExplicitTop = 232
         DesignSize = (
           913
           57)
@@ -571,7 +555,7 @@
         object lblCEPCliente: TLabel
           Left = 512
           Top = 20
-          Width = 141
+          Width = 61
           Height = 17
           Align = alCustom
           Caption = 'CEPCliente'
@@ -588,6 +572,10 @@
   object DSPedido: TDataSource
     DataSet = DM.QueryPedidos
     Left = 144
+    Top = 32
+  end
+  object DSOrcamento: TDataSource
+    Left = 216
     Top = 32
   end
 end

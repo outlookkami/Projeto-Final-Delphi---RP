@@ -494,4 +494,22 @@
     Left = 115
     Top = 80
   end
+  object RESTClient2: TRESTClient
+    Params = <>
+    SynchronizedEvents = False
+    Left = 24
+    Top = 152
+  end
+  object RESTRequest2: TRESTRequest
+    Client = RESTClient2
+    Params = <>
+    Response = RESTResponse2
+    SynchronizedEvents = False
+    Left = 24
+    Top = 224
+  end
+  object RESTResponse2: TRESTResponse
+    Left = 24
+    Top = 304
+  end
 end

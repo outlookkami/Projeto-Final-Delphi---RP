@@ -5,7 +5,8 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes,
   Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Mask,
-  Vcl.ExtCtrls, Vcl.DBCtrls, Data.DB, dataModuleNormal;
+  Vcl.ExtCtrls, Vcl.DBCtrls, Data.DB, dataModuleNormal, REST.Types, REST.Client,
+  Data.Bind.Components, Data.Bind.ObjectScope;
 
 type
   TframeCadVeiculo = class(TFrame)
@@ -29,6 +30,9 @@ type
     GridPanel1: TGridPanel;
     lblAno: TLabel;
     cbAno: TComboBox;
+    RESTClient2: TRESTClient;
+    RESTRequest2: TRESTRequest;
+    RESTResponse2: TRESTResponse;
     procedure pnlBotaoCadastrarVeiculoClick(Sender: TObject);
   private
     { Private declarations }
@@ -74,12 +78,8 @@ begin
           ExecSQL;
 
           ShowMessage('Veículo cadastrado com sucesso!');
-
           Sleep(3000);
-
           Close;
-//        if MessageDlg('Veículo cadastrado com sucesso!',
-//        mtConfirmation, [mbYes, mbNo], 0) = mrYes then FrameVeiculo else Close; Self.Close;
         end;
 
 end;

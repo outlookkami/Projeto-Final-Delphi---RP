@@ -38,6 +38,7 @@ type
     lblCódigoCliente: TLabel;
     lblCEP: TLabel;
     lblCEPCliente: TLabel;
+    DSOrcamento: TDataSource;
   private
     { Private declarations }
   public
@@ -50,5 +51,31 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure recebeDados;
+begin
+
+//    with DM.QueryPedidos do begin
+//      SQL.Text := 'SELECT FROM Pedidos(codigo_pedido)'
+//    end;
+//
+//    with DM.QueryOrcamentos do begin
+//
+//
+//        SQL.Text := 'INSERT INTO Orcamentos(placa_veiculo, chassi, modelo, marca, cor, ano_fab) VALUES (:Placa, :Chassi, :Modelo, :Marca, :AnoFab);';
+//
+//        ParamByName('Placa').AsString := lePlaca.Text;
+//        //ParamByName('Chassi').AsString := leChassi.Text;
+//        ParamByName('Marca').AsString := leMarca.Text;
+//        ParamByName('Modelo').AsString := leModelo.Text;
+//        //ParamByName('AnoFab').AsString := leAno.Text;
+//        ParamByName('Cor').AsString := leCor.Text;
+//
+//        ExecSQL;
+//
+////        if MessageDlg('Pedido finalizado! Aguarde a resposta da oficina. O orçamento estará disponível na aba Orçamentos.',
+////        mtConfirmation, [mbYes, mbNo], 0) = mrYes then FrameVeiculo else Close; Self.Close;
+//          end;
+end;
 
 end.

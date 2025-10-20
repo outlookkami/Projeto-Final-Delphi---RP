@@ -3,9 +3,12 @@ unit formFormularioPedido;
 interface
 
 uses
+
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.ExtCtrls, Vcl.StdCtrls,
-  Vcl.Mask, Vcl.DBCtrls, dataModuleNormal;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Mask, Vcl.ExtCtrls,
+  Vcl.DBCtrls, Vcl.Imaging.pngimage, System.UITypes,
+  EComponent, Data.DB, REST.Types, Data.Bind.Components, Data.Bind.ObjectScope,
+  REST.Client, Vcl.Buttons, Datasnap.Provider, Datasnap.DBClient, Vcl.ComCtrls;
 
 type
   TFormPedido = class(TForm)
@@ -40,7 +43,6 @@ type
     Label1: TLabel;
     Label2: TLabel;
     Label3: TLabel;
-    DBLabeledEdit4: TDBLabeledEdit;
     leCliente: TLabeledEdit;
     leCodigoCliente: TLabeledEdit;
     leCodigoPedido: TLabeledEdit;
@@ -63,6 +65,9 @@ type
     Label9: TLabel;
     Panel3: TPanel;
     DSPedido: TDataSource;
+    GridPanel10: TGridPanel;
+    Label10: TLabel;
+    dtData: TDateTimePicker;
     procedure Panel2Click(Sender: TObject);
     procedure TmemoDescricaoDoServiçoOnCreate(Sender: TObject);
 
