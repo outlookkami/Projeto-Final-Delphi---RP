@@ -54,6 +54,7 @@ type
   public
     { Public declarations }
     //procedure pnlEntrarClick(Sender: TObject);
+
   end;
 
 var

@@ -97,6 +97,8 @@ var
 implementation
 
 {$R *.dfm}
+
+// Controle das páginas do PageControl
 procedure TformPáginaInicialADM.FormShow(Sender: TObject);
 var pages: Integer;
 begin
@@ -160,5 +162,6 @@ procedure TformPáginaInicialADM.btnpPerfilClick(Sender: TObject);
 begin
     PageControl1.ActivePageIndex := 8;
 end;
+
 
 end.

@@ -167,6 +167,9 @@
             end
             item
               Value = 11.111111111111100000
+            end
+            item
+              SizeStyle = ssAuto
             end>
           TabOrder = 0
           DesignSize = (
@@ -207,13 +210,13 @@
               end>
             ControlCollection = <
               item
-                Column = 0
-                Control = leAno
+                Column = 1
+                Control = leCor
                 Row = 0
               end
               item
-                Column = 1
-                Control = leCor
+                Column = 0
+                Control = GridPanel1
                 Row = 0
               end>
             ParentBackground = False
@@ -225,25 +228,6 @@
             DesignSize = (
               394
               56)
-            object leAno: TLabeledEdit
-              Left = 24
-              Top = 25
-              Width = 129
-              Height = 29
-              Align = alCustom
-              EditLabel.Width = 31
-              EditLabel.Height = 21
-              EditLabel.Caption = 'Ano:'
-              EditLabel.Font.Charset = DEFAULT_CHARSET
-              EditLabel.Font.Color = clWhite
-              EditLabel.Font.Height = -16
-              EditLabel.Font.Name = 'Segoe UI'
-              EditLabel.Font.Style = []
-              EditLabel.ParentFont = False
-              TabOrder = 0
-              Text = ''
-              TextHint = 'Ano de fabrica'#231#227'o'
-            end
             object leCor: TLabeledEdit
               Left = 164
               Top = 25
@@ -259,9 +243,130 @@
               EditLabel.Font.Name = 'Segoe UI'
               EditLabel.Font.Style = []
               EditLabel.ParentFont = False
-              TabOrder = 1
+              TabOrder = 0
               Text = ''
               TextHint = 'Informe a cor'
+            end
+            object GridPanel1: TGridPanel
+              Left = 16
+              Top = 1
+              Width = 142
+              Height = 54
+              Align = alCustom
+              BevelOuter = bvNone
+              Color = clHighlight
+              ColumnCollection = <
+                item
+                  Value = 100.000000000000000000
+                end>
+              ControlCollection = <
+                item
+                  Column = 0
+                  Control = lblAno
+                  Row = 0
+                end
+                item
+                  Column = 0
+                  Control = cbAno
+                  Row = 1
+                end>
+              ParentBackground = False
+              RowCollection = <
+                item
+                  SizeStyle = ssAbsolute
+                  Value = 20.000000000000000000
+                end
+                item
+                  SizeStyle = ssAbsolute
+                  Value = 100.000000000000000000
+                end>
+              TabOrder = 1
+              object lblAno: TLabel
+                Left = 14
+                Top = 0
+                Width = 31
+                Height = 21
+                Align = alCustom
+                Caption = 'Ano:'
+                Font.Charset = DEFAULT_CHARSET
+                Font.Color = clWhite
+                Font.Height = -16
+                Font.Name = 'Segoe UI'
+                Font.Style = []
+                ParentFont = False
+              end
+              object cbAno: TComboBox
+                Left = 8
+                Top = 24
+                Width = 126
+                Height = 29
+                Align = alCustom
+                TabOrder = 0
+                TextHint = 'Ano do modelo'
+                Items.Strings = (
+                  '2026'
+                  '2025'
+                  '2024'
+                  '2023'
+                  '2022'
+                  '2021'
+                  '2020'
+                  '2019'
+                  '2018'
+                  '2017'
+                  '2016'
+                  '2015'
+                  '2014'
+                  '2013'
+                  '2012'
+                  '2011'
+                  '2010'
+                  '2009'
+                  '2008'
+                  '2007'
+                  '2006'
+                  '2005'
+                  '2004'
+                  '2003'
+                  '2002'
+                  '2001'
+                  '2000'
+                  '1999'
+                  '1998'
+                  '1997'
+                  '1996'
+                  '1995'
+                  '1994'
+                  '1993'
+                  '1992'
+                  '1991'
+                  '1990'
+                  '1989'
+                  '1988'
+                  '1987'
+                  '1986'
+                  '1985'
+                  '1984'
+                  '1983'
+                  '1982'
+                  '1981'
+                  '1980'
+                  '1979'
+                  '1978'
+                  '1977'
+                  '1976'
+                  '1975'
+                  '1974'
+                  '1973'
+                  '1972'
+                  '1971'
+                  '1970'
+                  '1969'
+                  '1968'
+                  '1967'
+                  '1966'
+                  '1965')
+              end
             end
           end
           object lePlaca: TLabeledEdit

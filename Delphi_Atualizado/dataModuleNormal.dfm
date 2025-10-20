@@ -182,10 +182,10 @@ object DM: TDM
       Origin = 'ativo_in'
     end
   end
-  object Perfil: TFDQuery
+  object QueryPerfil: TFDQuery
     Connection = ConexaoBanco
-    Left = 56
-    Top = 352
+    Left = 112
+    Top = 344
   end
   object QueryUsuarios: TFDQuery
     Active = True
@@ -344,7 +344,6 @@ object DM: TDM
     end
   end
   object QueryVeiculos: TFDQuery
-    Active = True
     Connection = ConexaoBanco
     SQL.Strings = (
       'SELECT * FROM Veiculos;')
@@ -400,6 +399,33 @@ object DM: TDM
     object QueryVeiculoscodigo_cliente: TIntegerField
       FieldName = 'codigo_cliente'
       Origin = 'codigo_cliente'
+    end
+  end
+  object QueryLogin: TFDQuery
+    Connection = ConexaoBanco
+    SQL.Strings = (
+      'SELECT * FROM Usuarios;')
+    Left = 352
+    Top = 264
+    object QueryLoginid_usuario: TIntegerField
+      FieldName = 'id_usuario'
+      Origin = 'id_usuario'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+    end
+    object QueryLogintipo_usuario: TStringField
+      FieldName = 'tipo_usuario'
+      Origin = 'tipo_usuario'
+      Size = 15
+    end
+    object QueryLoginnome_usuario: TStringField
+      FieldName = 'nome_usuario'
+      Origin = 'nome_usuario'
+      Size = 255
+    end
+    object QueryLoginsenha_hash: TStringField
+      FieldName = 'senha_hash'
+      Origin = 'senha_hash'
+      Size = 255
     end
   end
 end

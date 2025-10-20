@@ -29,7 +29,7 @@ type
     QueryClientesveiculo: TStringField;
     FDPhysPgDriverLink2: TFDPhysPgDriverLink;
     QueryFuncionarios: TFDQuery;
-    Perfil: TFDQuery;
+    QueryPerfil: TFDQuery;
     QueryUsuarios: TFDQuery;
     QueryUsuariosid_usuario: TIntegerField;
     QueryUsuariostipo_usuario: TStringField;
@@ -89,6 +89,11 @@ type
     QueryVeiculosnome_cliente: TStringField;
     QueryVeiculosnome_usuario_cliente: TStringField;
     QueryVeiculoscodigo_cliente: TIntegerField;
+    QueryLogin: TFDQuery;
+    QueryLoginid_usuario: TIntegerField;
+    QueryLogintipo_usuario: TStringField;
+    QueryLoginnome_usuario: TStringField;
+    QueryLoginsenha_hash: TStringField;
   private
     { Private declarations }
   public

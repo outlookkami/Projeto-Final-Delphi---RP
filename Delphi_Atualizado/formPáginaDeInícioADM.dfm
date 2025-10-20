@@ -19,7 +19,6 @@
     Height = 761
     Align = alClient
     TabOrder = 0
-    ExplicitHeight = 701
     object GridPanel1: TGridPanel
       Left = 1
       Top = 1
@@ -12462,7 +12461,6 @@
           Height = 672
           Align = alClient
           TabOrder = 0
-          ExplicitHeight = 612
           DesignSize = (
             1140
             672)
@@ -12470,7 +12468,7 @@
             Left = 851
             Top = 14
             Width = 182
-            Height = 43
+            Height = 25
             Align = alCustom
             Alignment = taRightJustify
             Anchors = [akLeft, akTop, akRight, akBottom]
@@ -12954,7 +12952,6 @@
                   Value = 100.000000000000000000
                 end>
               TabOrder = 0
-              ExplicitTop = 325
               DesignSize = (
                 370
                 56)
@@ -13029,7 +13026,6 @@
                   SizeStyle = ssAuto
                 end>
               TabOrder = 1
-              ExplicitTop = 384
               DesignSize = (
                 379
                 58)
@@ -13142,7 +13138,6 @@
               Anchors = []
               BevelOuter = bvNone
               TabOrder = 2
-              ExplicitTop = 443
               object lblSelecionaFuncao: TLabel
                 Left = 24
                 Top = 3
@@ -13210,7 +13205,6 @@
               TabOrder = 3
               Text = ''
               TextHint = 'Informe o CEP'
-              ExplicitTop = 231
             end
             object leEmail: TLabeledEdit
               Left = 13
@@ -13224,7 +13218,6 @@
               TabOrder = 4
               Text = ''
               TextHint = 'Digite o endere'#231'o de e-mail'
-              ExplicitTop = 172
             end
             object leTelefone: TLabeledEdit
               Left = 14
@@ -13240,7 +13233,6 @@
               TabOrder = 5
               Text = '(  )     -    '
               TextHint = 'Informe seu n'#250'mero de telefone'
-              ExplicitTop = 113
             end
             object leNome: TLabeledEdit
               Left = 15
@@ -13254,7 +13246,6 @@
               TabOrder = 6
               Text = ''
               TextHint = 'Digite seu nome completo'
-              ExplicitTop = 54
             end
             object leEndereco: TLabeledEdit
               Left = 14
@@ -13268,7 +13259,6 @@
               TabOrder = 7
               Text = ''
               TextHint = 'Informe o endere'#231'o'
-              ExplicitTop = 290
             end
             object LabeledEdit1: TLabeledEdit
               Left = 15
@@ -13281,7 +13271,6 @@
               EditLabel.Caption = 'CPF:'
               TabOrder = 8
               Text = ''
-              ExplicitTop = 526
             end
             object LabeledEdit2: TLabeledEdit
               Left = 15
@@ -13294,7 +13283,6 @@
               EditLabel.Caption = 'RG:'
               TabOrder = 9
               Text = ''
-              ExplicitTop = 585
             end
           end
         end
