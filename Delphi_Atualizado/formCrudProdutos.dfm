@@ -511,9 +511,11 @@ object formProdutos: TformProdutos
         BevelOuter = bvNone
         ColumnCollection = <
           item
-            Value = 40.735354790552790000
+            SizeStyle = ssAbsolute
+            Value = 180.000000000000000000
           end
           item
+            SizeStyle = ssAbsolute
             Value = 59.264645209447220000
           end>
         ControlCollection = <
@@ -532,15 +534,19 @@ object formProdutos: TformProdutos
         RowCollection = <
           item
             Value = 100.000000000000000000
+          end
+          item
+            SizeStyle = ssAuto
           end>
         TabOrder = 0
+        ExplicitTop = 329
         DesignSize = (
           370
           56)
         object leNumero: TLabeledEdit
           Left = 15
           Top = 25
-          Width = 121
+          Width = 150
           Height = 29
           Anchors = []
           EditLabel.Width = 99
@@ -549,11 +555,12 @@ object formProdutos: TformProdutos
           TabOrder = 0
           Text = ''
           TextHint = '$'
+          ExplicitLeft = 0
         end
         object leBairro: TLabeledEdit
-          Left = 164
+          Left = 221
           Top = 25
-          Width = 193
+          Width = 136
           Height = 29
           Anchors = []
           EditLabel.Width = 109
@@ -562,6 +569,7 @@ object formProdutos: TformProdutos
           TabOrder = 1
           Text = ''
           TextHint = '$'
+          ExplicitLeft = 216
         end
       end
       object Label7: TLabel

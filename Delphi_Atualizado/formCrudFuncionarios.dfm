@@ -2,7 +2,7 @@ object formCrudFunc: TformCrudFunc
   Left = 0
   Top = 0
   Caption = 'Crud Funcion'#225'rios'
-  ClientHeight = 701
+  ClientHeight = 734
   ClientWidth = 1150
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -16,17 +16,18 @@ object formCrudFunc: TformCrudFunc
     Left = 0
     Top = 0
     Width = 1150
-    Height = 701
+    Height = 734
     Align = alClient
     TabOrder = 0
+    ExplicitHeight = 701
     DesignSize = (
       1150
-      701)
+      734)
     object lblDadosFunc: TLabel
       Left = 866
       Top = 21
       Width = 182
-      Height = 25
+      Height = 58
       Align = alCustom
       Alignment = taRightJustify
       Anchors = [akLeft, akTop, akRight, akBottom]
@@ -37,6 +38,7 @@ object formCrudFunc: TformCrudFunc
       Font.Name = 'Segoe UI'
       Font.Style = []
       ParentFont = False
+      ExplicitHeight = 25
     end
     object btnIncluirFunc: TPanel
       Left = 591
@@ -159,7 +161,7 @@ object formCrudFunc: TformCrudFunc
       Left = 48
       Top = 136
       Width = 695
-      Height = 528
+      Height = 561
       Anchors = [akLeft, akTop, akRight, akBottom]
       DataSource = DSFuncionarios
       ReadOnly = True
@@ -289,7 +291,7 @@ object formCrudFunc: TformCrudFunc
       Left = 765
       Top = 52
       Width = 372
-      Height = 612
+      Height = 645
       Align = alCustom
       Anchors = [akTop, akRight, akBottom]
       BevelEdges = []
@@ -386,11 +388,6 @@ object formCrudFunc: TformCrudFunc
         end
         item
           Column = 0
-          Control = leCPF
-          Row = 16
-        end
-        item
-          Column = 0
           Control = leRG
           Row = 18
         end
@@ -398,6 +395,11 @@ object formCrudFunc: TformCrudFunc
           Column = 0
           Control = pnlCadastrar
           Row = 19
+        end
+        item
+          Column = 0
+          Control = leCPF
+          Row = 16
         end>
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
@@ -473,10 +475,10 @@ object formCrudFunc: TformCrudFunc
       TabOrder = 4
       DesignSize = (
         372
-        612)
+        645)
       object Label2: TLabel
         Left = 184
-        Top = 32
+        Top = 34
         Width = 4
         Height = 21
         Anchors = []
@@ -485,7 +487,7 @@ object formCrudFunc: TformCrudFunc
       end
       object Label3: TLabel
         Left = 184
-        Top = 88
+        Top = 94
         Width = 4
         Height = 21
         Anchors = []
@@ -494,7 +496,7 @@ object formCrudFunc: TformCrudFunc
       end
       object Label4: TLabel
         Left = 184
-        Top = 145
+        Top = 154
         Width = 4
         Height = 21
         Anchors = []
@@ -503,7 +505,7 @@ object formCrudFunc: TformCrudFunc
       end
       object Label5: TLabel
         Left = 184
-        Top = 202
+        Top = 214
         Width = 4
         Height = 21
         Anchors = []
@@ -512,7 +514,7 @@ object formCrudFunc: TformCrudFunc
       end
       object Label6: TLabel
         Left = 184
-        Top = 259
+        Top = 274
         Width = 4
         Height = 21
         Anchors = []
@@ -521,7 +523,7 @@ object formCrudFunc: TformCrudFunc
       end
       object GridPanel3: TGridPanel
         Left = 1
-        Top = 284
+        Top = 300
         Width = 370
         Height = 56
         Anchors = []
@@ -551,6 +553,7 @@ object formCrudFunc: TformCrudFunc
             Value = 100.000000000000000000
           end>
         TabOrder = 0
+        ExplicitTop = 298
         DesignSize = (
           370
           56)
@@ -583,7 +586,7 @@ object formCrudFunc: TformCrudFunc
       end
       object Label7: TLabel
         Left = 184
-        Top = 315
+        Top = 334
         Width = 4
         Height = 21
         Anchors = []
@@ -592,9 +595,9 @@ object formCrudFunc: TformCrudFunc
       end
       object GridPanel4: TGridPanel
         Left = 0
-        Top = 340
+        Top = 360
         Width = 379
-        Height = 58
+        Height = 56
         Anchors = []
         BevelOuter = bvNone
         ColumnCollection = <
@@ -625,12 +628,13 @@ object formCrudFunc: TformCrudFunc
             SizeStyle = ssAuto
           end>
         TabOrder = 1
+        ExplicitTop = 362
         DesignSize = (
           379
-          58)
+          56)
         object leCidade: TLabeledEdit
           Left = 18
-          Top = 26
+          Top = 25
           Width = 227
           Height = 29
           Anchors = []
@@ -640,12 +644,13 @@ object formCrudFunc: TformCrudFunc
           TabOrder = 0
           Text = ''
           TextHint = 'Informe a cidade'
+          ExplicitTop = 26
         end
         object GridPanel7: TGridPanel
           Left = 263
           Top = 0
           Width = 185
-          Height = 58
+          Height = 56
           Align = alLeft
           BevelOuter = bvNone
           ColumnCollection = <
@@ -673,6 +678,7 @@ object formCrudFunc: TformCrudFunc
               Value = 100.000000000000000000
             end>
           TabOrder = 1
+          ExplicitHeight = 58
           object Label12: TLabel
             Left = 0
             Top = 0
@@ -732,9 +738,9 @@ object formCrudFunc: TformCrudFunc
       end
       object pnlSelecionaFuncao: TPanel
         Left = 0
-        Top = 397
+        Top = 420
         Width = 384
-        Height = 64
+        Height = 51
         Anchors = []
         BevelOuter = bvNone
         TabOrder = 2
@@ -753,7 +759,7 @@ object formCrudFunc: TformCrudFunc
         end
         object cbFuncao: TComboBox
           Left = 16
-          Top = 30
+          Top = 22
           Width = 345
           Height = 29
           BevelInner = bvNone
@@ -768,7 +774,7 @@ object formCrudFunc: TformCrudFunc
       end
       object Label9: TLabel
         Left = 184
-        Top = 429
+        Top = 454
         Width = 4
         Height = 21
         Anchors = []
@@ -777,7 +783,7 @@ object formCrudFunc: TformCrudFunc
       end
       object Label8: TLabel
         Left = 184
-        Top = 372
+        Top = 394
         Width = 4
         Height = 21
         Anchors = []
@@ -786,7 +792,7 @@ object formCrudFunc: TformCrudFunc
       end
       object Label10: TLabel
         Left = 184
-        Top = 485
+        Top = 514
         Width = 4
         Height = 21
         Anchors = []
@@ -795,7 +801,7 @@ object formCrudFunc: TformCrudFunc
       end
       object leCEP: TLabeledEdit
         Left = 15
-        Top = 194
+        Top = 204
         Width = 341
         Height = 29
         Anchors = []
@@ -808,10 +814,11 @@ object formCrudFunc: TformCrudFunc
         Text = ''
         TextHint = 'Informe o CEP'
         OnExit = leCEPExit
+        ExplicitTop = 194
       end
       object leEmail: TLabeledEdit
         Left = 13
-        Top = 137
+        Top = 144
         Width = 346
         Height = 29
         Anchors = []
@@ -821,10 +828,11 @@ object formCrudFunc: TformCrudFunc
         TabOrder = 4
         Text = ''
         TextHint = 'Digite o endere'#231'o de e-mail'
+        ExplicitTop = 137
       end
       object leTelefone: TLabeledEdit
         Left = 16
-        Top = 81
+        Top = 84
         Width = 340
         Height = 29
         Anchors = []
@@ -836,6 +844,7 @@ object formCrudFunc: TformCrudFunc
         TabOrder = 5
         Text = ''
         TextHint = 'Informe seu n'#250'mero de telefone'
+        ExplicitTop = 81
       end
       object leNome: TLabeledEdit
         Left = 15
@@ -852,7 +861,7 @@ object formCrudFunc: TformCrudFunc
       end
       object leEndereco: TLabeledEdit
         Left = 14
-        Top = 251
+        Top = 264
         Width = 344
         Height = 29
         Anchors = []
@@ -862,34 +871,23 @@ object formCrudFunc: TformCrudFunc
         TabOrder = 7
         Text = ''
         TextHint = 'Informe o endere'#231'o'
-      end
-      object leCPF: TLabeledEdit
-        Left = 13
-        Top = 482
-        Width = 346
-        Height = 29
-        Align = alCustom
-        EditLabel.Width = 37
-        EditLabel.Height = 21
-        EditLabel.Caption = '*CPF:'
-        TabOrder = 8
-        Text = ''
+        ExplicitTop = 251
       end
       object leRG: TLabeledEdit
-        Left = 13
-        Top = 534
-        Width = 346
+        Left = 14
+        Top = 564
+        Width = 343
         Height = 29
-        Anchors = []
+        Anchors = [akLeft, akTop, akRight]
         EditLabel.Width = 24
         EditLabel.Height = 21
         EditLabel.Caption = 'RG:'
-        TabOrder = 9
+        TabOrder = 8
         Text = ''
       end
       object pnlCadastrar: TPanel
         Left = 101
-        Top = 569
+        Top = 607
         Width = 185
         Height = 40
         Cursor = crHandPoint
@@ -904,9 +902,22 @@ object formCrudFunc: TformCrudFunc
         Font.Style = []
         ParentBackground = False
         ParentFont = False
-        TabOrder = 10
+        TabOrder = 9
         Visible = False
         OnClick = pnlCadastrarClick
+      end
+      object leCPF: TLabeledEdit
+        Left = 16
+        Top = 506
+        Width = 345
+        Height = 29
+        Align = alCustom
+        Anchors = [akLeft, akTop, akRight]
+        EditLabel.Width = 37
+        EditLabel.Height = 21
+        EditLabel.Caption = '*CPF:'
+        TabOrder = 10
+        Text = ''
       end
     end
     object btnEditFunc: TPanel

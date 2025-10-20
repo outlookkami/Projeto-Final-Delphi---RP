@@ -1,0 +1,41 @@
+SQL base para alterações que serão necessárias
+
+
+SELECT * FROM "Clientes";
+SELECT * FROM "Funcionarios";
+SELECT * FROM Produtos;
+SELECT * FROM Usuarios;
+SELECT * FROM Veiculos;
+SELECT * FROM Pedidos;
+
+    SHOW INDEXES FROM "Funcionarios";
+
+DROP TABLE Veiculos;
+
+ALTER TABLE "Funcionarios" ALTER COLUMN hash_senha_func DROP NOT NULL;
+
+ALTER TABLE "Funcionarios" DROP CONSTRAINT rg_funcionario;
+
+CREATE TABLE IF NOT EXISTS public.veiculos
+(
+codigo_veiculo INTEGER GENERATED ALWAYS AS IDENTITY,
+placa_veiculo CHAR(7) UNIQUE,
+chassi CHAR(17),
+modelo VARCHAR(40),
+marca VARCHAR(40),
+cor VARCHAR(20),
+ano_fab SMALLINT,
+ano_mod SMALLINT,
+nome_cliente VARCHAR(100),
+nome_usuario_cliente VARCHAR(255),
+codigo_cliente INTEGER,
+
+ADD CONSTRAINT
+FOREIGN KEY (codigo_cliente)
+REFERENCES clientes(codigo_cliente),
+
+ADD CONSTRAINT 
+FOREIGN KEY (nome_usuario_cliente)
+REFERENCES clientes(email_cliente)
+)
+;

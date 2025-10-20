@@ -2,7 +2,7 @@
   Left = 0
   Top = 0
   Caption = 'Form2'
-  ClientHeight = 701
+  ClientHeight = 1015
   ClientWidth = 1150
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -15,16 +15,19 @@
     Left = 0
     Top = 0
     Width = 1150
-    Height = 701
+    Height = 1015
     Align = alClient
     ParentBackground = False
     TabOrder = 0
+    ExplicitLeft = -8
+    ExplicitTop = -8
+    ExplicitHeight = 827
     DesignSize = (
       1150
-      701)
+      1015)
     object lblDescServico: TLabel
-      Left = 99
-      Top = 573
+      Left = 103
+      Top = 439
       Width = 140
       Height = 20
       Anchors = [akLeft, akTop, akRight]
@@ -37,9 +40,9 @@
       ParentFont = False
     end
     object Panel1: TPanel
-      Left = 331
-      Top = 16
-      Width = 541
+      Left = 11
+      Top = 8
+      Width = 86
       Height = 65
       Anchors = [akLeft, akTop, akRight]
       Caption = 'INSERIR LOGO'
@@ -48,10 +51,10 @@
       TabOrder = 0
     end
     object memoDescricaoDoServiço: TMemo
-      Left = 99
-      Top = 599
-      Width = 978
-      Height = 217
+      Left = 103
+      Top = 465
+      Width = 954
+      Height = 131
       Anchors = [akLeft, akTop, akRight, akBottom]
       BevelInner = bvNone
       BevelOuter = bvNone
@@ -61,13 +64,13 @@
         'memoDescricaoDoServi'#231'o')
       TabOrder = 1
       StyleName = 'Windows'
+      ExplicitHeight = 72
     end
     object GridPanel1: TGridPanel
-      Left = 99
-      Top = 103
-      Width = 942
-      Height = 362
-      Caption = 'GridPanel1'
+      Left = 103
+      Top = 8
+      Width = 954
+      Height = 425
       ColumnCollection = <
         item
           Value = 100.000000000000000000
@@ -95,27 +98,30 @@
         end>
       RowCollection = <
         item
-          Value = 20.000000000000000000
+          Value = 16.666666666666670000
         end
         item
-          Value = 20.000000000000000000
+          Value = 16.666666666666670000
         end
         item
-          Value = 20.000000000000000000
+          Value = 16.666666666666670000
         end
         item
-          Value = 20.000000000000000000
+          Value = 16.666666666666670000
         end
         item
-          Value = 20.000000000000000000
+          Value = 16.666666666666670000
+        end
+        item
+          Value = 16.666666666666650000
         end>
       TabOrder = 2
       DesignSize = (
-        942
-        362)
+        954
+        425)
       object GridPanel2: TGridPanel
-        Left = 12
-        Top = 8
+        Left = 18
+        Top = 7
         Width = 917
         Height = 57
         Anchors = []
@@ -151,6 +157,8 @@
             Value = 100.000000000000000000
           end>
         TabOrder = 0
+        ExplicitLeft = 12
+        ExplicitTop = 8
         object GridPanel3: TGridPanel
           Left = 1
           Top = 1
@@ -180,8 +188,10 @@
               Value = 100.000000000000000000
             end>
           TabOrder = 0
+          ExplicitLeft = 0
+          ExplicitWidth = 306
           object lblOrcamento: TLabel
-            Left = 53
+            Left = 35
             Top = 16
             Width = 88
             Height = 17
@@ -312,9 +322,9 @@
         end
       end
       object GridPanel6: TGridPanel
-        Left = 13
-        Top = 80
-        Width = 915
+        Left = 19
+        Top = 77
+        Width = 916
         Height = 58
         Anchors = []
         ColumnCollection = <
@@ -342,8 +352,9 @@
             Value = 100.000000000000000000
           end>
         TabOrder = 1
+        ExplicitLeft = 18
         DesignSize = (
-          915
+          916
           58)
         object lblCliente: TLabel
           Left = 53
@@ -370,9 +381,9 @@
         end
       end
       object GridPanel7: TGridPanel
-        Left = 14
-        Top = 152
-        Width = 914
+        Left = 19
+        Top = 148
+        Width = 916
         Height = 57
         Anchors = []
         ColumnCollection = <
@@ -418,8 +429,9 @@
             Value = 100.000000000000000000
           end>
         TabOrder = 2
+        ExplicitLeft = 18
         DesignSize = (
-          914
+          916
           57)
         object lblTelefone: TLabel
           Left = 48
@@ -469,9 +481,9 @@
         end
       end
       object GridPanel8: TGridPanel
-        Left = 14
-        Top = 224
-        Width = 913
+        Left = 19
+        Top = 219
+        Width = 916
         Height = 57
         Anchors = []
         ColumnCollection = <
@@ -515,10 +527,13 @@
         RowCollection = <
           item
             Value = 100.000000000000000000
+          end
+          item
+            SizeStyle = ssAuto
           end>
         TabOrder = 3
         DesignSize = (
-          913
+          916
           57)
         object lblCódigo: TLabel
           Left = 29
@@ -568,14 +583,335 @@
         end
       end
     end
+    object GridPanel9: TGridPanel
+      Left = 122
+      Top = 298
+      Width = 916
+      Height = 54
+      ColumnCollection = <
+        item
+          Value = 16.666666666666670000
+        end
+        item
+          Value = 16.666666666666670000
+        end
+        item
+          Value = 16.666666666666670000
+        end
+        item
+          Value = 16.666666666666670000
+        end
+        item
+          Value = 16.666666666666670000
+        end
+        item
+          Value = 16.666666666666650000
+        end>
+      ControlCollection = <
+        item
+          Column = 0
+          Control = lblPlaca
+          Row = 0
+        end
+        item
+          Column = 1
+          Control = lblPlacaVeic
+          Row = 0
+        end
+        item
+          Column = 2
+          Control = lblMarcaMod
+          Row = 0
+        end
+        item
+          Column = 3
+          Control = lblMarcaModelo
+          Row = 0
+        end
+        item
+          Column = 4
+          Control = lblCor
+          Row = 0
+        end
+        item
+          Column = 5
+          Control = lblCorVeic
+          Row = 0
+        end>
+      RowCollection = <
+        item
+          Value = 100.000000000000000000
+        end
+        item
+          SizeStyle = ssAuto
+        end>
+      TabOrder = 3
+      DesignSize = (
+        916
+        54)
+      object lblPlaca: TLabel
+        Left = 58
+        Top = 19
+        Width = 37
+        Height = 15
+        Anchors = []
+        Caption = 'PLACA'
+        ExplicitLeft = 33
+        ExplicitTop = 25
+      end
+      object lblPlacaVeic: TLabel
+        Left = 203
+        Top = 16
+        Width = 72
+        Height = 17
+        Align = alCustom
+        Caption = 'placaVeiculo'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
+      end
+      object lblMarcaMod: TLabel
+        Left = 343
+        Top = 19
+        Width = 78
+        Height = 15
+        Anchors = []
+        Caption = 'MARCA/MOD.'
+        ExplicitLeft = 374
+        ExplicitTop = 25
+      end
+      object lblMarcaModelo: TLabel
+        Left = 517
+        Top = 16
+        Width = 82
+        Height = 17
+        Align = alCustom
+        Caption = 'marcaModelo'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
+      end
+      object lblCor: TLabel
+        Left = 674
+        Top = 19
+        Width = 24
+        Height = 15
+        Anchors = []
+        Caption = 'COR'
+        ExplicitLeft = 667
+        ExplicitTop = 25
+      end
+      object lblCorVeic: TLabel
+        Left = 830
+        Top = 16
+        Width = 60
+        Height = 17
+        Align = alCustom
+        Caption = 'corVeiculo'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
+      end
+    end
+    object GridPanel10: TGridPanel
+      Left = 122
+      Top = 375
+      Width = 916
+      Height = 58
+      ColumnCollection = <
+        item
+          Value = 16.666666666666670000
+        end
+        item
+          Value = 16.666666666666670000
+        end
+        item
+          Value = 16.666666666666670000
+        end
+        item
+          Value = 16.666666666666670000
+        end
+        item
+          Value = 16.666666666666670000
+        end
+        item
+          Value = 16.666666666666650000
+        end>
+      ControlCollection = <
+        item
+          Column = 0
+          Control = lblAnoFab
+          Row = 0
+        end
+        item
+          Column = 1
+          Control = lblAnoFabricacao
+          Row = 0
+        end
+        item
+          Column = 2
+          Control = lblAnoMod
+          Row = 0
+        end
+        item
+          Column = 3
+          Control = lblAnoModelo
+          Row = 0
+        end>
+      RowCollection = <
+        item
+          Value = 100.000000000000000000
+        end>
+      TabOrder = 4
+      DesignSize = (
+        916
+        58)
+      object lblAnoFab: TLabel
+        Left = 51
+        Top = 21
+        Width = 52
+        Height = 15
+        Anchors = []
+        Caption = 'ANO FAB.'
+        ExplicitLeft = 61
+        ExplicitTop = 25
+      end
+      object lblAnoFabricacao: TLabel
+        Left = 203
+        Top = 16
+        Width = 85
+        Height = 17
+        Align = alCustom
+        Caption = 'anoFabrica'#231#227'o'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
+      end
+      object lblAnoMod: TLabel
+        Left = 352
+        Top = 21
+        Width = 60
+        Height = 15
+        Anchors = []
+        Caption = 'ANO MOD.'
+        ExplicitLeft = 366
+        ExplicitTop = 25
+      end
+      object lblAnoModelo: TLabel
+        Left = 517
+        Top = 16
+        Width = 68
+        Height = 17
+        Align = alCustom
+        Caption = 'anoModelo'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
+      end
+    end
+    object GridPanel11: TGridPanel
+      Left = 103
+      Top = 551
+      Width = 954
+      Height = 338
+      ColumnCollection = <
+        item
+          SizeStyle = ssAbsolute
+          Value = 25.000000000000000000
+        end
+        item
+          SizeStyle = ssAbsolute
+          Value = 20.000000000000000000
+        end
+        item
+          SizeStyle = ssAbsolute
+          Value = 33.333333333333340000
+        end
+        item
+          SizeStyle = ssAbsolute
+          Value = 50.000000000000000000
+        end
+        item
+          SizeStyle = ssAbsolute
+          Value = 100.000000000000000000
+        end>
+      ControlCollection = <>
+      RowCollection = <
+        item
+          Value = 11.111111111111110000
+        end
+        item
+          Value = 11.111111111111110000
+        end
+        item
+          Value = 11.111111111111110000
+        end
+        item
+          Value = 11.111111111111110000
+        end
+        item
+          Value = 11.111111111111110000
+        end
+        item
+          Value = 11.111111111111110000
+        end
+        item
+          Value = 11.111111111111110000
+        end
+        item
+          Value = 11.111111111111110000
+        end
+        item
+          Value = 11.111111111111110000
+        end>
+      TabOrder = 5
+    end
+    object GridPanel12: TGridPanel
+      Left = 103
+      Top = 912
+      Width = 954
+      Height = 81
+      Caption = 'GridPanel12'
+      ColumnCollection = <
+        item
+          Value = 50.000000000000000000
+        end
+        item
+          Value = 50.000000000000000000
+        end>
+      ControlCollection = <>
+      RowCollection = <
+        item
+          Value = 50.000000000000000000
+        end
+        item
+          Value = 50.000000000000000000
+        end>
+      TabOrder = 6
+    end
   end
   object DSPedido: TDataSource
     DataSet = DM.QueryPedidos
-    Left = 144
-    Top = 32
+    Left = 40
+    Top = 168
   end
   object DSOrcamento: TDataSource
-    Left = 216
-    Top = 32
+    Left = 48
+    Top = 216
   end
 end

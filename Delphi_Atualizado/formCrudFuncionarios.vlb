@@ -122,14 +122,11 @@ Coordinates=1055,408,131,58
 Coordinates=902,408,53,58
 
 []
-Coordinates=73,544,67,58
+Coordinates=88,408,90,58
 
 [btnExcluFunc]
 Coordinates=787,10,55,58
 Visible=True
-
-[leCPF]
-Coordinates=88,408,90,58
 
 [leRG]
 Coordinates=105,476,90,58

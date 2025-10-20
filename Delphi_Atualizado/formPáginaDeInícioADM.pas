@@ -37,42 +37,6 @@ type
     TabSheet8: TTabSheet;
     TabSheet9: TTabSheet;
     TabSheet10: TTabSheet;
-    Panel1: TPanel;
-    lblDadosFunc: TLabel;
-    btnIncluirFunc: TPanel;
-    pnlPesquisa: TPanel;
-    iconePesquisa: TImage;
-    DBGrid1: TDBGrid;
-    edtPesquisa: TEdit;
-    gridPanelLogin: TGridPanel;
-    Label2: TLabel;
-    Label3: TLabel;
-    Label4: TLabel;
-    Label5: TLabel;
-    Label6: TLabel;
-    GridPanel3: TGridPanel;
-    leNumero: TLabeledEdit;
-    leBairro: TLabeledEdit;
-    Label7: TLabel;
-    GridPanel4: TGridPanel;
-    leCidade: TLabeledEdit;
-    GridPanel7: TGridPanel;
-    Label12: TLabel;
-    cbUF: TComboBox;
-    pnlSelecionaFuncao: TPanel;
-    lblSelecionaFuncao: TLabel;
-    cbFuncao: TComboBox;
-    Label9: TLabel;
-    Label8: TLabel;
-    Label10: TLabel;
-    leCEP: TLabeledEdit;
-    leEmail: TLabeledEdit;
-    leTelefone: TLabeledEdit;
-    leNome: TLabeledEdit;
-    leEndereco: TLabeledEdit;
-    LabeledEdit1: TLabeledEdit;
-    LabeledEdit2: TLabeledEdit;
-    DSFuncionarios: TDataSource;
     procedure FormShow(Sender: TObject);
     procedure Image1Click(Sender: TObject);
     procedure btnpDashboardClick(Sender: TObject);
@@ -98,6 +62,8 @@ implementation
 
 {$R *.dfm}
 
+uses formCrudFuncionarios;
+
 // Controle das páginas do PageControl
 procedure TformPáginaInicialADM.FormShow(Sender: TObject);
 var pages: Integer;
@@ -105,7 +71,6 @@ begin
     for pages := 0 to PageControl1.PageCount - 1 do begin
         PageControl1.Pages[pages].TabVisible := False;
     end;
-
 end;
 
 procedure TformPáginaInicialADM.Image1Click(Sender: TObject);
@@ -156,6 +121,10 @@ end;
 procedure TformPáginaInicialADM.btnpFuncionariosClick(Sender: TObject);
 begin
     PageControl1.ActivePageIndex := 8;
+    FormCrudFunc := TformCrudFunc.Create(Application);
+    FormCrudFunc.Parent := PageControl1.Pages[8];
+    FormCrudFunc.Align := AlClient;
+    FormCrudFunc.Show;
 end;
 
 procedure TformPáginaInicialADM.btnpPerfilClick(Sender: TObject);

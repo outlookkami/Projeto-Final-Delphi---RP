@@ -44,7 +44,6 @@ type
     leTelefone: TLabeledEdit;
     leNome: TLabeledEdit;
     leEndereco: TLabeledEdit;
-    leCPF: TLabeledEdit;
     leRG: TLabeledEdit;
     edtPesquisa: TEdit;
     btnEditFunc: TPanel;
@@ -54,6 +53,7 @@ type
     RESTRequest1: TRESTRequest;
     RESTResponse1: TRESTResponse;
     pnlCadastrar: TPanel;
+    leCPF: TLabeledEdit;
     procedure btnInativFuncClick(Sender: TObject);
     procedure iconePesquisaClick(Sender: TObject);
     procedure btnEditFuncClick(Sender: TObject);
@@ -154,7 +154,6 @@ begin
     end;
 end;
 
-
 procedure TformCrudFunc.pnlCadastrarClick(Sender: TObject);
 var hash, senhaFunci: String;
 begin
@@ -166,7 +165,7 @@ begin
 
         with DM.QueryFuncionarios do begin
 
-        SQL.Text := 'INSERT INTO "Funcionarios" (nome_funcionario, telefone_funcionario, email_funcionario, cep_funcionario, endereco_funcionario, num_endereco, bairro, cidade, uf, funcao, cpf_funcionario, rg_funcionario, senha_hash_func) VALUES (:Nome, :Telefone, :Email, :CEP, :Endereco, :Numero, :Bairro, :Cidade, :UF, :Funcao, :CPF, :RG, :Senha);';
+        SQL.Text := 'INSERT INTO "Funcionarios" (nome_funcionario, telefone_funcionario, email_funcionario, cep_funcionario, endereco_funcionario, num_endereco, bairro, cidade, uf, funcao, cpf_funcionario, rg_funcionario, hash_senha_func) VALUES (:Nome, :Telefone, :Email, :CEP, :Endereco, :Numero, :Bairro, :Cidade, :UF, :Funcao, :CPF, :RG, :Senha);';
 
         ParamByName('Nome').AsString := leNome.Text;
         ParamByName('Telefone').AsString := leTelefone.Text;
@@ -181,6 +180,10 @@ begin
         ParamByName('CPF').AsString := leCPF.Text;
         ParamByName('RG').AsString := leRG.Text;
         ParamByName('Senha').AsString := senhaFunci;  // Senha só é recebida no frame/form de Cadastro de Senha de Funcionário
+
+        if senhaFunci = '' then begin
+          senhaFunci := 'senha1234';
+        end;
 
         ExecSQL;
 

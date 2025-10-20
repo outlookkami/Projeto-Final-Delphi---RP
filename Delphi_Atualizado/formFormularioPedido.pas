@@ -84,6 +84,8 @@ implementation
 
 {$R *.dfm}
 
+uses dataModuleNormal;
+
 procedure TformPedido.Panel2Click(Sender: TObject);
 begin
     if (lePlaca.Text = '') or (leMarca.Text = '') or (leModelo.Text = '') then begin
@@ -93,7 +95,8 @@ begin
 
         with DM.QueryVeiculos do begin
 
-        SQL.Text := 'INSERT INTO Veiculos(placa_veiculo, chassi, modelo, marca, cor, ano_fab) VALUES (:Placa, :Chassi, :Modelo, :Marca, :AnoFab);';
+        SQL.Text := 'INSERT INTO Veiculos(placa_veiculo, modelo, marca, cor) VALUES (:Placa, :Modelo, :Marca);';
+        //SQL.Text := 'INSERT INTO Veiculos(placa_veiculo, chassi, modelo, marca, cor, ano_fab) VALUES (:Placa, :Chassi, :Modelo, :Marca, :AnoFab);';
 
         ParamByName('Placa').AsString := lePlaca.Text;
         //ParamByName('Chassi').AsString := leChassi.Text;

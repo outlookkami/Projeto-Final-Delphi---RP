@@ -39,6 +39,20 @@ type
     lblCEP: TLabel;
     lblCEPCliente: TLabel;
     DSOrcamento: TDataSource;
+    GridPanel9: TGridPanel;
+    GridPanel10: TGridPanel;
+    lblPlaca: TLabel;
+    lblPlacaVeic: TLabel;
+    lblMarcaMod: TLabel;
+    lblMarcaModelo: TLabel;
+    lblCor: TLabel;
+    lblCorVeic: TLabel;
+    lblAnoFab: TLabel;
+    lblAnoFabricacao: TLabel;
+    lblAnoMod: TLabel;
+    lblAnoModelo: TLabel;
+    GridPanel11: TGridPanel;
+    GridPanel12: TGridPanel;
   private
     { Private declarations }
   public

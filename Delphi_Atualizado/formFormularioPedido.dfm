@@ -843,10 +843,12 @@
           Width = 284
           Height = 28
           Anchors = []
+          DataSource = DSPedido
           TabOrder = 1
           EditLabel.Width = 65
           EditLabel.Height = 20
           EditLabel.Caption = 'Endere'#231'o:'
+          ExplicitLeft = 262
         end
         object Label5: TLabel
           Left = 563
