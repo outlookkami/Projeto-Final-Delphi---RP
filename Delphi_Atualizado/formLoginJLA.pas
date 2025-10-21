@@ -110,7 +110,9 @@ begin
 end;
 
 procedure TformLogin.pnlEntrarClick(Sender: TObject);
- var TipoUsuario: String;
+ var
+ TipoUsuario: String;
+ funcionarioAdm: Boolean;
 begin
   if (leSenhaLogin.Text = '') or (leUsuario.Text = '') then begin
     ShowMessage('Preencha todos os campos.');
@@ -131,6 +133,10 @@ begin
   end;
 
   begin
+     if (DM.QueryFuncionarios.FieldByName('funcao').AsString = 'Administrador') then begin
+       funcionarioAdm := true;
+     end;
+
      DM.QueryUsuarios.SQL.Text := 'SELECT * FROM Usuarios WHERE nome_usuario = :usuario AND senha_hash = :senha';
 
      DM.QueryUsuarios.ParamByName('usuario').AsString := leUsuario.Text;
@@ -146,6 +152,9 @@ begin
        end else if TipoUsuario = 'Funcionario' then begin
          Application.CreateForm(TformPáginaInicialFunc, formPáginaInicialFunc);
          formPáginaInicialFunc.Show;
+         end else if (TipoUsuario = 'Administrador') or (funcionarioAdm = true) then begin
+            Application.CreateForm(TformPáginaInicialADM, formPáginaInicialADM);
+            formPáginaInicialADM.Show;
                 end else begin
                   ShowMessage('Usuário ou senha incorretos. Tente novamente.');
                 end;

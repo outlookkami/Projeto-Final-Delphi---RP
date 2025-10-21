@@ -162,7 +162,6 @@ begin
         Exit;
     end else begin
         SenhaFunc;
-
         with DM.QueryFuncionarios do begin
 
         SQL.Text := 'INSERT INTO "Funcionarios" (nome_funcionario, telefone_funcionario, email_funcionario, cep_funcionario, endereco_funcionario, num_endereco, bairro, cidade, uf, funcao, cpf_funcionario, rg_funcionario, hash_senha_func) VALUES (:Nome, :Telefone, :Email, :CEP, :Endereco, :Numero, :Bairro, :Cidade, :UF, :Funcao, :CPF, :RG, :Senha);';
@@ -181,15 +180,37 @@ begin
         ParamByName('RG').AsString := leRG.Text;
         ParamByName('Senha').AsString := senhaFunci;  // Senha só é recebida no frame/form de Cadastro de Senha de Funcionário
 
-        if senhaFunci = '' then begin
+          if senhaFunci = '' then begin
           senhaFunci := 'senha1234';
-        end;
+          end;
+
+          if cbFuncao.Text = 'Administrador' then begin
+            if MessageDlg('Tem certeza que deseja adicionar funcionário com a função de "Administrador"? Esse usuário terá acesso à todas as permissões de um administrador.',
+            mtConfirmation, [mbYes, mbNo], 0) = mrYes then
+
 
         ExecSQL;
 
         if MessageDlg('Cadastro finalizado com sucesso! Deseja incluir o funcionário como cliente?',
         mtConfirmation, [mbYes, mbNo], 0) = mrYes then FunciClien(leEmail);
-          end;
+          end else begin
+                ShowMessage('Funcionário não incluído. Aguarde o retorno à tela.');
+                Sleep(4000);
+            end;
+        end;
     end;
 end;
 end.
+
+
+if cbFuncao.Text = 'Administrador' then begin
+          if MessageDlg('Tem certeza que deseja adicionar funcionário com a função de "Administrador"? Esse usuário terá acesso à todas as permissões de um administrador.',
+          mtConfirmation, [mbYes, mbNo], 0) = mrYes then
+
+        ExecSQL;
+
+
+          end else
+        end;
+        if MessageDlg('Cadastro finalizado com sucesso! Deseja incluir o funcionário como cliente?',
+        mtConfirmation, [mbYes, mbNo], 0) = mrYes then FunciClien(leEmail);

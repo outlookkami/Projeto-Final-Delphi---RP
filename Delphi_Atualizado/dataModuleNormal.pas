@@ -94,6 +94,7 @@ type
     QueryLogintipo_usuario: TStringField;
     QueryLoginnome_usuario: TStringField;
     QueryLoginsenha_hash: TStringField;
+    FDMemTable1: TFDMemTable;
   private
     { Private declarations }
   public

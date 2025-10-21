@@ -19,7 +19,6 @@ object formCrudFunc: TformCrudFunc
     Height = 734
     Align = alClient
     TabOrder = 0
-    ExplicitHeight = 701
     DesignSize = (
       1150
       734)
@@ -27,7 +26,7 @@ object formCrudFunc: TformCrudFunc
       Left = 866
       Top = 21
       Width = 182
-      Height = 58
+      Height = 25
       Align = alCustom
       Alignment = taRightJustify
       Anchors = [akLeft, akTop, akRight, akBottom]
@@ -38,7 +37,6 @@ object formCrudFunc: TformCrudFunc
       Font.Name = 'Segoe UI'
       Font.Style = []
       ParentFont = False
-      ExplicitHeight = 25
     end
     object btnIncluirFunc: TPanel
       Left = 591
@@ -553,7 +551,6 @@ object formCrudFunc: TformCrudFunc
             Value = 100.000000000000000000
           end>
         TabOrder = 0
-        ExplicitTop = 298
         DesignSize = (
           370
           56)
@@ -628,7 +625,6 @@ object formCrudFunc: TformCrudFunc
             SizeStyle = ssAuto
           end>
         TabOrder = 1
-        ExplicitTop = 362
         DesignSize = (
           379
           56)
@@ -644,7 +640,6 @@ object formCrudFunc: TformCrudFunc
           TabOrder = 0
           Text = ''
           TextHint = 'Informe a cidade'
-          ExplicitTop = 26
         end
         object GridPanel7: TGridPanel
           Left = 263
@@ -678,7 +673,6 @@ object formCrudFunc: TformCrudFunc
               Value = 100.000000000000000000
             end>
           TabOrder = 1
-          ExplicitHeight = 58
           object Label12: TLabel
             Left = 0
             Top = 0
@@ -769,7 +763,8 @@ object formCrudFunc: TformCrudFunc
             'Funileiro'
             'Montador/Desmontador'
             'Pintor Automotivo'
-            'Preparador de pintura')
+            'Preparador de pintura'
+            'Administrador')
         end
       end
       object Label9: TLabel
@@ -814,7 +809,6 @@ object formCrudFunc: TformCrudFunc
         Text = ''
         TextHint = 'Informe o CEP'
         OnExit = leCEPExit
-        ExplicitTop = 194
       end
       object leEmail: TLabeledEdit
         Left = 13
@@ -828,7 +822,6 @@ object formCrudFunc: TformCrudFunc
         TabOrder = 4
         Text = ''
         TextHint = 'Digite o endere'#231'o de e-mail'
-        ExplicitTop = 137
       end
       object leTelefone: TLabeledEdit
         Left = 16
@@ -844,7 +837,6 @@ object formCrudFunc: TformCrudFunc
         TabOrder = 5
         Text = ''
         TextHint = 'Informe seu n'#250'mero de telefone'
-        ExplicitTop = 81
       end
       object leNome: TLabeledEdit
         Left = 15
@@ -871,7 +863,6 @@ object formCrudFunc: TformCrudFunc
         TabOrder = 7
         Text = ''
         TextHint = 'Informe o endere'#231'o'
-        ExplicitTop = 251
       end
       object leRG: TLabeledEdit
         Left = 14
