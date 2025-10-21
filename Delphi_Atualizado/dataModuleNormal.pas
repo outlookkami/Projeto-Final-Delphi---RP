@@ -95,6 +95,7 @@ type
     QueryLoginnome_usuario: TStringField;
     QueryLoginsenha_hash: TStringField;
     FDMemTable1: TFDMemTable;
+    QueryFuncionariosfuncionario_data_criacao: TSQLTimeStampField;
   private
     { Private declarations }
   public

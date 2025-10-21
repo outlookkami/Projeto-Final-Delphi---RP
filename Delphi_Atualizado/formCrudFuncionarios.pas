@@ -54,15 +54,17 @@ type
     RESTResponse1: TRESTResponse;
     pnlCadastrar: TPanel;
     leCPF: TLabeledEdit;
-    procedure btnInativFuncClick(Sender: TObject);
     procedure iconePesquisaClick(Sender: TObject);
+    procedure btnExcluFuncClick(Sender: TObject);
     procedure btnEditFuncClick(Sender: TObject);
     procedure btnIncluirFuncClick(Sender: TObject);
+    procedure btnInativFuncClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure leCEPExit(Sender: TObject);
     procedure SenhaFunc;
     procedure pnlCadastrarClick(Sender: TObject);
     procedure FunciClien(Sender: TObject);
+    procedure DBGrid1CellClick(Column: TColumn);
   private
     { Private declarations }
   public
@@ -85,15 +87,50 @@ begin
 //      DM.QueryFuncionarios.Close;
 //      DM.QueryFuncionarios.Open;
 end;
-
-procedure TformCrudFunc.btnInativFuncClick(Sender: TObject);
+var codigoFuncionario: String;
+procedure TformCrudFunc.DBGrid1CellClick(Column: TColumn);
 begin
-//    DM.QueryFuncionarios.SQL.Text := 'SELECT * FROM "Funcionarios" WHERE ativo_in = True';
-//    if Funcionario.ativo_in <> true then begin
-//      ShowMessage('O funcionário deve estar inativo antes de ser excluído.');
-//    end;
+    codigoFuncionario :=  DBGrid1.Fields[0].Value;
 end;
 
+// Incluir funcionário
+procedure TformCrudFunc.btnIncluirFuncClick(Sender: TObject);
+begin
+    pnlCadastrar.Visible := True;
+
+    DM.QueryFuncionarios.Open;
+    DM.QueryFuncionarios.Insert;
+end;
+
+// Editar funcionário
+procedure TformCrudFunc.btnEditFuncClick(Sender: TObject);
+begin
+    DM.QueryFuncionarios.Open;
+    DM.QueryFuncionarios.Edit;
+end;
+
+// Inativar funcionário
+procedure TformCrudFunc.btnInativFuncClick(Sender: TObject);
+begin
+    DM.QueryFuncionarios.SQL.Text := 'UPDATE "Funcionarios" SET ativo_in = :boolAtivo WHERE codigo_funcionario = :codFunc';
+    DM.QueryFuncionarios.ParamByName('boolAtivo').AsBoolean := False;
+    DM.QueryFuncionarios.ParamByName('codFunc').AsInteger := StrToInt(codigoFuncionario);
+    DM.QueryFuncionarios.ExecSQL;
+    DM.QueryFuncionarios.Close;
+end;
+
+// Excluir funcionário
+procedure TformCrudFunc.btnExcluFuncClick(Sender: TObject);
+begin
+    if (DM.QueryFuncionarios.FieldByName('ativo_in').AsBoolean = True) then begin
+      ShowMessage('O funcionário deve estar inativo antes de ser excluído.');
+    end else begin
+      DM.QueryFuncionarios.Delete;
+    end;
+    DM.QueryFuncionarios.Open;
+end;
+
+// Mostrar frame para cadastrar a senha do funcionário
 procedure TformCrudFunc.SenhaFunc;
 var SenhaFuncionario: TframeCadSenhaFuncionario;
 senhaFunci: String;
@@ -105,34 +142,19 @@ begin
     senhaFunci := frameCadSenhaFuncionario.SenhaFunc;
 end;
 
-
-procedure TformCrudFunc.btnIncluirFuncClick(Sender: TObject);
-begin
-    pnlCadastrar.Visible := True;
-
-    DM.QueryFuncionarios.Open;
-    DM.QueryFuncionarios.Insert;
-end;
-
-
-procedure TformCrudFunc.btnEditFuncClick(Sender: TObject);
-begin
-    DM.QueryFuncionarios.Open;
-    DM.QueryFuncionarios.Edit;
-
-    DM.QueryFuncionarios.SQL.Text := 'SET ativo_in = false';
-end;
-
+// ???Pesquisa???
 procedure TformCrudFunc.iconePesquisaClick(Sender: TObject);
 begin
     //DM.QueryFuncionarios
 end;
 
+// Consulta da API de CEP  (unitCEPConsultor)
 procedure TformCrudFunc.leCEPExit(Sender: TObject);
 begin
       unitCEPConsultor.ConsultaCEP(leCEP.Text, TCustomEdit(leEndereco), TCustomEdit(leBairro), TCustomEdit(leCidade), cbUF, RESTClient1, RESTRequest1, RESTResponse1);
 end;
 
+// Incluindo funcionário como Cliente
 procedure TformCrudFunc.FunciClien(Sender: TObject);
 var hash: String;
 begin
@@ -154,6 +176,7 @@ begin
     end;
 end;
 
+// Cadastrando funcionário no banco de dados
 procedure TformCrudFunc.pnlCadastrarClick(Sender: TObject);
 var hash, senhaFunci: String;
 begin
@@ -188,11 +211,10 @@ begin
             if MessageDlg('Tem certeza que deseja adicionar funcionário com a função de "Administrador"? Esse usuário terá acesso à todas as permissões de um administrador.',
             mtConfirmation, [mbYes, mbNo], 0) = mrYes then
 
+            ExecSQL;
 
-        ExecSQL;
-
-        if MessageDlg('Cadastro finalizado com sucesso! Deseja incluir o funcionário como cliente?',
-        mtConfirmation, [mbYes, mbNo], 0) = mrYes then FunciClien(leEmail);
+            if MessageDlg('Cadastro finalizado com sucesso! Deseja incluir o funcionário como cliente?',
+            mtConfirmation, [mbYes, mbNo], 0) = mrYes then FunciClien(leEmail);
           end else begin
                 ShowMessage('Funcionário não incluído. Aguarde o retorno à tela.');
                 Sleep(4000);
@@ -201,16 +223,3 @@ begin
     end;
 end;
 end.
-
-
-if cbFuncao.Text = 'Administrador' then begin
-          if MessageDlg('Tem certeza que deseja adicionar funcionário com a função de "Administrador"? Esse usuário terá acesso à todas as permissões de um administrador.',
-          mtConfirmation, [mbYes, mbNo], 0) = mrYes then
-
-        ExecSQL;
-
-
-          end else
-        end;
-        if MessageDlg('Cadastro finalizado com sucesso! Deseja incluir o funcionário como cliente?',
-        mtConfirmation, [mbYes, mbNo], 0) = mrYes then FunciClien(leEmail);

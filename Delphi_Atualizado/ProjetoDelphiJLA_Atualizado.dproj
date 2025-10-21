@@ -223,6 +223,7 @@
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="unitPlacaConsultor.pas"/>
+        <None Include="login.ini"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
@@ -252,6 +253,12 @@
                 <DeployFile LocalName="Win32\Debug\ProjetoDelphiJLA_Atualizado.exe" Configuration="Debug" Class="ProjectOutput">
                     <Platform Name="Win32">
                         <RemoteName>ProjetoDelphiJLA_Atualizado.exe</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="login.ini" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>

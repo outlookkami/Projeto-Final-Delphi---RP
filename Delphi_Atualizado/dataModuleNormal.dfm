@@ -38,7 +38,7 @@ object DM: TDM
     object QueryClientestelefone_cliente: TStringField
       FieldName = 'telefone_cliente'
       Origin = 'telefone_cliente'
-      EditMask = '!\(99\)00000-0000;0;_'
+      EditMask = '(00)00000-0000;0;_'
       Size = 11
     end
     object QueryClientesemail_cliente: TStringField
@@ -49,6 +49,7 @@ object DM: TDM
     object QueryClientescep_cliente: TStringField
       FieldName = 'cep_cliente'
       Origin = 'cep_cliente'
+      EditMask = '00000-000;0;_'
       Size = 8
     end
     object QueryClientesendereco_cliente: TStringField
@@ -79,6 +80,7 @@ object DM: TDM
     object QueryClientesveiculo: TStringField
       FieldName = 'veiculo'
       Origin = 'veiculo'
+      EditMask = 'aaa-0a00;0;_'
       Size = 7
     end
     object QueryClientesativo_in: TBooleanField
@@ -123,7 +125,7 @@ object DM: TDM
     object QueryFuncionariostelefone_funcionario: TStringField
       FieldName = 'telefone_funcionario'
       Origin = 'telefone_funcionario'
-      EditMask = '!\(99\)00000-0000;1;_'
+      EditMask = '(00)00000-0000;0;_'
       Size = 11
     end
     object QueryFuncionariosemail_funcionario: TStringField
@@ -134,7 +136,7 @@ object DM: TDM
     object QueryFuncionarioscep_funcionario: TStringField
       FieldName = 'cep_funcionario'
       Origin = 'cep_funcionario'
-      EditMask = '00000\-999;1;_'
+      EditMask = '00000-000;0;_'
       Size = 8
     end
     object QueryFuncionariosendereco_funcionario: TStringField
@@ -170,22 +172,29 @@ object DM: TDM
     object QueryFuncionarioscpf_funcionario: TStringField
       FieldName = 'cpf_funcionario'
       Origin = 'cpf_funcionario'
+      EditMask = '000.000.000-00;0;_'
       Size = 11
     end
     object QueryFuncionariosrg_funcionario: TStringField
       FieldName = 'rg_funcionario'
       Origin = 'rg_funcionario'
+      EditMask = '00.000.000-0;0;_'
       Size = 9
     end
     object QueryFuncionariosativo_in: TBooleanField
       FieldName = 'ativo_in'
       Origin = 'ativo_in'
     end
+    object QueryFuncionariosfuncionario_data_criacao: TSQLTimeStampField
+      FieldName = 'funcionario_data_criacao'
+      Origin = 'funcionario_data_criacao'
+      ProviderFlags = [pfInUpdate]
+    end
   end
   object QueryPerfil: TFDQuery
     Connection = ConexaoBanco
-    Left = 112
-    Top = 344
+    Left = 128
+    Top = 408
   end
   object QueryUsuarios: TFDQuery
     Active = True
@@ -255,12 +264,14 @@ object DM: TDM
     object QueryProdutospreco_compra: TBCDField
       FieldName = 'preco_compra'
       Origin = 'preco_compra'
+      currency = True
       Precision = 7
       Size = 2
     end
     object QueryProdutospreco_venda: TBCDField
       FieldName = 'preco_venda'
       Origin = 'preco_venda'
+      currency = True
       Precision = 7
       Size = 2
     end
@@ -304,10 +315,12 @@ object DM: TDM
     object QueryPedidosdata_pedido: TDateField
       FieldName = 'data_pedido'
       Origin = 'data_pedido'
+      EditMask = '!99/99/0000;0;_'
     end
     object QueryPedidoscontato: TStringField
       FieldName = 'contato'
       Origin = 'contato'
+      EditMask = '(00)00000-0000;0;_'
       Size = 15
     end
     object QueryPedidosendereco_cliente: TStringField
@@ -318,6 +331,7 @@ object DM: TDM
     object QueryPedidoscep_cliente: TStringField
       FieldName = 'cep_cliente'
       Origin = 'cep_cliente'
+      EditMask = '00000-000;0;_'
       Size = 8
     end
     object QueryPedidosplaca_veiculo: TStringField
@@ -402,6 +416,7 @@ object DM: TDM
     end
   end
   object QueryLogin: TFDQuery
+    Active = True
     Connection = ConexaoBanco
     SQL.Strings = (
       'SELECT * FROM Usuarios;')
@@ -436,7 +451,7 @@ object DM: TDM
     UpdateOptions.AssignedValues = [uvCheckRequired, uvAutoCommitUpdates]
     UpdateOptions.CheckRequired = False
     UpdateOptions.AutoCommitUpdates = True
-    Left = 296
-    Top = 344
+    Left = 208
+    Top = 408
   end
 end

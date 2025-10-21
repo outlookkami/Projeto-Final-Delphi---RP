@@ -45,16 +45,16 @@ type
     procedure imgFecharClick(Sender: TObject);
     procedure lblCadastreAquiClick(Sender: TObject);
     procedure lblEsqueceuSenhaClick(Sender: TObject);
-
     procedure HideShowSenha;
     procedure pnlEntrarClick(Sender: TObject);
+    procedure registDadosLogin;
+    procedure lerDadosLogin;
   private
     { Private declarations }
 
   public
     { Public declarations }
     //procedure pnlEntrarClick(Sender: TObject);
-
   end;
 
 var
@@ -69,7 +69,28 @@ uses  formTrocarSenha,
       formCadastroClientes,
       formPáginaDeInícioClientes,
       formPáginaDeInícioFunc,
-      formPáginaDeInícioADM;
+      formPáginaDeInícioADM,
+      IniFiles;
+
+var iniArq: TIniFile;
+
+procedure TformLogin.registDadosLogin;
+
+begin
+    iniArq := TIniFile.Create(ExtractFilePath(ParamStr(0)) + 'login.ini');
+    try
+      iniArq.WriteString('Login', 'Usuario', leUsuario.Text);
+    finally
+       iniArq.Free;
+    end;
+end;
+
+procedure TformLogin.lerDadosLogin;
+begin
+    iniArq := TIniFile.Create(ExtractFilePath(ParamStr(0)) + 'login.ini');
+    leUsuario.Text := iniArq.ReadString('Login', 'Usuario', '');
+    iniArq.Free;
+end;
 
 procedure TformLogin.HideShowSenha;
 begin

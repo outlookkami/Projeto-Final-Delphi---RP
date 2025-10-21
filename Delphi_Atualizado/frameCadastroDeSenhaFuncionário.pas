@@ -47,7 +47,8 @@ begin
     if leConfSenha.Text = leSenha.Text then begin
       hash := THashSHA1.GetHashString(leConfSenha.Text);
       PriSenhaFunc := hash;
-      //DM.QueryFuncionarios.SQL.Text := 'INSERT INTO TABLE "Funcionarios" (hash_senha_func) VALUES (:Senha;)';
+//      DM.QueryFuncionarios.SQL.Text := 'INSERT INTO TABLE "Funcionarios" (hash_senha_func) VALUES (:Senha)';
+//      ParamByName.('Senha').AsString := PriSenhaFunc;
     end else begin
        ShowMessage('Senhas não compatíveis. Tente novamente');
     end;
