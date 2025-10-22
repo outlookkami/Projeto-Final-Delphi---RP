@@ -51,7 +51,7 @@ object frameCadSenhaFuncionario: TframeCadSenhaFuncionario
           end
           item
             Column = 0
-            Control = DBLabeledEdit2
+            Control = dbleFunc
             Row = 0
           end
           item
@@ -116,7 +116,7 @@ object frameCadSenhaFuncionario: TframeCadSenhaFuncionario
           Anchors = []
           ExplicitLeft = 187
         end
-        object DBLabeledEdit2: TDBLabeledEdit
+        object dbleFunc: TDBLabeledEdit
           Left = 36
           Top = 25
           Width = 337
@@ -129,6 +129,7 @@ object frameCadSenhaFuncionario: TframeCadSenhaFuncionario
           Font.Style = []
           ParentFont = False
           TabOrder = 0
+          OnEnter = dbleFuncEnter
           EditLabel.Width = 85
           EditLabel.Height = 21
           EditLabel.Caption = 'Funcion'#225'rio:'

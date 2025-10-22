@@ -19,7 +19,6 @@ object formCrudFunc: TformCrudFunc
     Height = 734
     Align = alClient
     TabOrder = 0
-    ExplicitLeft = -8
     DesignSize = (
       1150
       734)
@@ -475,6 +474,11 @@ object formCrudFunc: TformCrudFunc
           Column = 0
           Control = leCPF
           Row = 16
+        end
+        item
+          Column = 0
+          Control = pnlSalvar
+          Row = 20
         end>
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
@@ -835,6 +839,7 @@ object formCrudFunc: TformCrudFunc
           Height = 29
           BevelInner = bvNone
           BevelOuter = bvNone
+          ItemIndex = 0
           TabOrder = 0
           Items.Strings = (
             'Funileiro'
@@ -954,13 +959,13 @@ object formCrudFunc: TformCrudFunc
         Text = ''
       end
       object pnlCadastrar: TPanel
-        Left = 101
-        Top = 607
+        Left = 97
+        Top = 602
         Width = 185
         Height = 40
         Cursor = crHandPoint
         Align = alCustom
-        Anchors = []
+        Anchors = [akLeft, akBottom]
         Caption = 'Cadastrar'
         Color = clHighlight
         Font.Charset = DEFAULT_CHARSET
@@ -973,6 +978,8 @@ object formCrudFunc: TformCrudFunc
         TabOrder = 9
         Visible = False
         OnClick = pnlCadastrarClick
+        ExplicitLeft = 94
+        ExplicitTop = 599
       end
       object leCPF: TLabeledEdit
         Left = 16
@@ -986,6 +993,29 @@ object formCrudFunc: TformCrudFunc
         EditLabel.Caption = '*CPF:'
         TabOrder = 10
         Text = ''
+      end
+      object pnlSalvar: TPanel
+        AlignWithMargins = True
+        Left = 93
+        Top = 603
+        Width = 185
+        Height = 41
+        Cursor = crHandPoint
+        Anchors = []
+        Caption = 'Salvar'
+        Color = clHighlight
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWhite
+        Font.Height = -19
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentBackground = False
+        ParentFont = False
+        TabOrder = 11
+        Visible = False
+        OnClick = pnlSalvarClick
+        ExplicitLeft = 0
+        ExplicitTop = 624
       end
     end
     object btnEditFunc: TPanel

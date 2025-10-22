@@ -292,7 +292,6 @@ object DM: TDM
     Top = 56
   end
   object QueryPedidos: TFDQuery
-    Active = True
     Connection = ConexaoBanco
     SQL.Strings = (
       'SELECT * FROM Pedidos;')
@@ -306,22 +305,6 @@ object DM: TDM
     object QueryPedidoscodigo_cliente: TIntegerField
       FieldName = 'codigo_cliente'
       Origin = 'codigo_cliente'
-    end
-    object QueryPedidosnome_cliente: TStringField
-      FieldName = 'nome_cliente'
-      Origin = 'nome_cliente'
-      Size = 100
-    end
-    object QueryPedidosdata_pedido: TDateField
-      FieldName = 'data_pedido'
-      Origin = 'data_pedido'
-      EditMask = '!99/99/0000;0;_'
-    end
-    object QueryPedidoscontato: TStringField
-      FieldName = 'contato'
-      Origin = 'contato'
-      EditMask = '(00)00000-0000;0;_'
-      Size = 15
     end
     object QueryPedidosendereco_cliente: TStringField
       FieldName = 'endereco_cliente'
@@ -355,6 +338,25 @@ object DM: TDM
       FieldName = 'descricao_pedido'
       Origin = 'descricao_pedido'
       BlobType = ftMemo
+    end
+    object QueryPedidoscodigo_funcionario: TIntegerField
+      FieldName = 'codigo_funcionario'
+      Origin = 'codigo_funcionario'
+    end
+    object QueryPedidoscontato_cliente: TStringField
+      FieldName = 'contato_cliente'
+      Origin = 'contato_cliente'
+      Size = 11
+    end
+    object QueryPedidosdata_pedido: TSQLTimeStampField
+      FieldName = 'data_pedido'
+      Origin = 'data_pedido'
+      ProviderFlags = [pfInUpdate]
+    end
+    object QueryPedidosnome_cliente: TStringField
+      FieldName = 'nome_cliente'
+      Origin = 'nome_cliente'
+      Size = 100
     end
   end
   object QueryVeiculos: TFDQuery

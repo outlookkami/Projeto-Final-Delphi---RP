@@ -67,9 +67,6 @@ type
     QueryPedidos: TFDQuery;
     QueryPedidoscodigo_pedido: TIntegerField;
     QueryPedidoscodigo_cliente: TIntegerField;
-    QueryPedidosnome_cliente: TStringField;
-    QueryPedidosdata_pedido: TDateField;
-    QueryPedidoscontato: TStringField;
     QueryPedidosendereco_cliente: TStringField;
     QueryPedidoscep_cliente: TStringField;
     QueryPedidosplaca_veiculo: TStringField;
@@ -96,6 +93,10 @@ type
     QueryLoginsenha_hash: TStringField;
     FDMemTable1: TFDMemTable;
     QueryFuncionariosfuncionario_data_criacao: TSQLTimeStampField;
+    QueryPedidoscodigo_funcionario: TIntegerField;
+    QueryPedidoscontato_cliente: TStringField;
+    QueryPedidosdata_pedido: TSQLTimeStampField;
+    QueryPedidosnome_cliente: TStringField;
   private
     { Private declarations }
   public

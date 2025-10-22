@@ -44,7 +44,8 @@ uses
   formCrudVeiculos in 'formCrudVeiculos.pas' {Form1},
   formFormularioPedido in 'formFormularioPedido.pas' {FormPedido},
   formOrcamento in 'formOrcamento.pas' {Form2},
-  unitPlacaConsultor in 'unitPlacaConsultor.pas';
+  unitPlacaConsultor in 'unitPlacaConsultor.pas',
+  unitSessao in 'unitSessao.pas';
 
 {$R *.res}
 

@@ -55,6 +55,7 @@ type
     procedure leCEPExit(Sender: TObject);
     procedure pnlCadastraCliCrudClick(Sender: TObject);
     procedure btnIncluirCliClick(Sender: TObject);
+    procedure DBGrid1CellClick(Column: TColumn);
   private
     { Private declarations }
 
@@ -75,6 +76,23 @@ uses  System.Hash,
       formCadastroClientes,
       unitCEPConsultor;
 
+// Mostrar dados nos campos do formulário lateral
+procedure TformCrudCli.DBGrid1CellClick(Column: TColumn);
+begin
+    //codigoFuncionario :=  DBGrid1.Fields[0].Value;
+    leNome.Text := DM.QueryClientes.FieldByName('nome_funcionario').AsString;
+    leTelefone.Text := DM.QueryClientes.FieldByName('telefone_funcionario').AsString;
+    leEmail.Text := DM.QueryClientes.FieldByName('email_funcionario').AsString;
+    leCEP.Text := DM.QueryClientes.FieldByName('cep_funcionario').AsString;
+    leEndereco.Text := DM.QueryClientes.FieldByName('endereco_funcionario').AsString;
+    leBairro.Text := DM.QueryClientes.FieldByName('bairro').AsString;
+    leNumero.Text := DM.QueryClientes.FieldByName('num_endereco').AsString;
+    leCidade.Text := DM.QueryClientes.FieldByName('cidade').AsString;
+    cbUF.Text := DM.QueryClientes.FieldByName('uf').AsString;
+
+
+end;
+
 procedure TformCrudCli.btnIncluirCliClick(Sender: TObject);
 begin
     btnExcluCli.Enabled := False;
@@ -83,6 +101,7 @@ begin
     pnlCadastraCliCrud.Visible := True;
     leNome.SetFocus;
 end;
+
 
 procedure TformCrudCli.leCEPExit(Sender: TObject);
 begin

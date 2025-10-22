@@ -37,8 +37,8 @@
       ParentFont = False
     end
     object Panel1: TPanel
-      Left = 331
-      Top = 16
+      Left = 329
+      Top = 24
       Width = 541
       Height = 65
       Anchors = [akLeft, akTop, akRight]
@@ -484,7 +484,7 @@
     end
     object memoDescricaoDoServiço: TMemo
       Left = 99
-      Top = 341
+      Top = 357
       Width = 978
       Height = 215
       Anchors = [akLeft, akTop, akRight, akBottom]
@@ -848,7 +848,6 @@
           EditLabel.Width = 65
           EditLabel.Height = 20
           EditLabel.Caption = 'Endere'#231'o:'
-          ExplicitLeft = 262
         end
         object Label5: TLabel
           Left = 563
@@ -998,7 +997,6 @@
           EditLabel.Caption = 'Placa:'
           TabOrder = 0
           Text = ''
-          ExplicitLeft = -6
         end
         object leMarca: TLabeledEdit
           Left = 161

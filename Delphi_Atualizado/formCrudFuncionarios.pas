@@ -54,6 +54,7 @@ type
     RESTResponse1: TRESTResponse;
     pnlCadastrar: TPanel;
     leCPF: TLabeledEdit;
+    pnlSalvar: TPanel;
     procedure iconePesquisaClick(Sender: TObject);
     procedure btnExcluFuncClick(Sender: TObject);
     procedure btnEditFuncClick(Sender: TObject);
@@ -65,6 +66,7 @@ type
     procedure pnlCadastrarClick(Sender: TObject);
     procedure FunciClien(Sender: TObject);
     procedure DBGrid1CellClick(Column: TColumn);
+    procedure pnlSalvarClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -88,30 +90,57 @@ begin
 //      DM.QueryFuncionarios.Open;
 end;
 var codigoFuncionario: String;
+
+// Mostrar dados nos campos do formulário lateral
 procedure TformCrudFunc.DBGrid1CellClick(Column: TColumn);
 begin
     codigoFuncionario :=  DBGrid1.Fields[0].Value;
+
+    leNome.Text := DM.QueryFuncionarios.FieldByName('nome_funcionario').AsString;
+    leTelefone.Text := DM.QueryFuncionarios.FieldByName('telefone_funcionario').AsString;
+    leEmail.Text := DM.QueryFuncionarios.FieldByName('email_funcionario').AsString;
+    leCEP.Text := DM.QueryFuncionarios.FieldByName('cep_funcionario').AsString;
+    leEndereco.Text := DM.QueryFuncionarios.FieldByName('endereco_funcionario').AsString;
+    leBairro.Text := DM.QueryFuncionarios.FieldByName('bairro').AsString;
+    leNumero.Text := DM.QueryFuncionarios.FieldByName('num_endereco').AsString;
+    leCidade.Text := DM.QueryFuncionarios.FieldByName('cidade').AsString;
+    cbUF.Text := DM.QueryFuncionarios.FieldByName('uf').AsString;
+    cbFuncao.Text := DM.QueryFuncionarios.FieldByName('funcao').AsString;
+    leCPF.Text := DM.QueryFuncionarios.FieldByName('cpf_funcionario').AsString;
+    leRG.Text := DM.QueryFuncionarios.FieldByName('rg_funcionario').AsString;
 end;
 
 // Incluir funcionário
 procedure TformCrudFunc.btnIncluirFuncClick(Sender: TObject);
 begin
+    pnlSalvar.Visible := False;
     pnlCadastrar.Visible := True;
 
     DM.QueryFuncionarios.Open;
     DM.QueryFuncionarios.Insert;
+
 end;
 
 // Editar funcionário
 procedure TformCrudFunc.btnEditFuncClick(Sender: TObject);
 begin
+    pnlCadastrar.Visible := False;
+    pnlSalvar.Visible := True;
+
     DM.QueryFuncionarios.Open;
     DM.QueryFuncionarios.Edit;
+end;
+
+procedure TformCrudFunc.pnlSalvarClick(Sender: TObject);
+begin
+    DM.QueryFuncionarios.Open;
+    DM.QueryFuncionarios.Post;
 end;
 
 // Inativar funcionário
 procedure TformCrudFunc.btnInativFuncClick(Sender: TObject);
 begin
+    DM.QueryFuncionarios.Open;
     DM.QueryFuncionarios.SQL.Text := 'UPDATE "Funcionarios" SET ativo_in = :boolAtivo WHERE codigo_funcionario = :codFunc';
     DM.QueryFuncionarios.ParamByName('boolAtivo').AsBoolean := False;
     DM.QueryFuncionarios.ParamByName('codFunc').AsInteger := StrToInt(codigoFuncionario);
@@ -139,7 +168,8 @@ begin
     frameCadSenhaFuncionario.Parent := Self;
     frameCadSenhaFuncionario.Align := alClient;
     frameCadSenhaFuncionario.Show;
-    senhaFunci := frameCadSenhaFuncionario.SenhaFunc;
+    senhaFunci := frameCadSenhaFuncionario.senhaFuncionario;
+    //senhaFunci := frameCadSenhaFuncionario.SenhaFunc;
 end;
 
 // ???Pesquisa???
@@ -184,7 +214,7 @@ begin
         ShowMessage('Preencha os campos obrigatórios');
         Exit;
     end else begin
-        SenhaFunc;
+
         with DM.QueryFuncionarios do begin
 
         SQL.Text := 'INSERT INTO "Funcionarios" (nome_funcionario, telefone_funcionario, email_funcionario, cep_funcionario, endereco_funcionario, num_endereco, bairro, cidade, uf, funcao, cpf_funcionario, rg_funcionario, hash_senha_func) VALUES (:Nome, :Telefone, :Email, :CEP, :Endereco, :Numero, :Bairro, :Cidade, :UF, :Funcao, :CPF, :RG, :Senha);';
@@ -201,7 +231,8 @@ begin
         ParamByName('Funcao').AsString := cbFuncao.Text;
         ParamByName('CPF').AsString := leCPF.Text;
         ParamByName('RG').AsString := leRG.Text;
-        ParamByName('Senha').AsString := senhaFunci;  // Senha só é recebida no frame/form de Cadastro de Senha de Funcionário
+        SenhaFunc;
+          // Senha só é recebida no frame/form de Cadastro de Senha de Funcionário
 
           if senhaFunci = '' then begin
           senhaFunci := 'senha1234';
@@ -209,17 +240,20 @@ begin
 
           if cbFuncao.Text = 'Administrador' then begin
             if MessageDlg('Tem certeza que deseja adicionar funcionário com a função de "Administrador"? Esse usuário terá acesso à todas as permissões de um administrador.',
-            mtConfirmation, [mbYes, mbNo], 0) = mrYes then
+            mtConfirmation, [mbYes, mbNo], 0) = mrYes then begin
 
             ExecSQL;
 
-            if MessageDlg('Cadastro finalizado com sucesso! Deseja incluir o funcionário como cliente?',
-            mtConfirmation, [mbYes, mbNo], 0) = mrYes then FunciClien(leEmail);
-          end else begin
+              if MessageDlg('Cadastro finalizado com sucesso! Deseja incluir o funcionário como cliente?',
+              mtConfirmation, [mbYes, mbNo], 0) = mrYes then FunciClien(leEmail);
+            end else begin
                 ShowMessage('Funcionário não incluído. Aguarde o retorno à tela.');
                 Sleep(4000);
-            end;
+                Close;
+              end;
+          end;
         end;
     end;
 end;
+
 end.

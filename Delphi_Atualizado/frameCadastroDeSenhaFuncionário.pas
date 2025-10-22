@@ -4,8 +4,8 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes,
-  Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Mask,
-  Vcl.ExtCtrls, Vcl.DBCtrls, Vcl.Imaging.pngimage, dataModuleNormal;
+  Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.StdCtrls, Vcl.Mask,
+  Vcl.ExtCtrls, Vcl.DBCtrls, Vcl.Imaging.pngimage, Datasnap.DBClient;
 
 type
   TframeCadSenhaFuncionario = class(TFrame)
@@ -14,7 +14,7 @@ type
     pnlCadSenhaFunc: TPanel;
     GridPanel1: TGridPanel;
     Label2: TLabel;
-    DBLabeledEdit2: TDBLabeledEdit;
+    dbleFunc: TDBLabeledEdit;
     Label1: TLabel;
     Label3: TLabel;
     pnlBotaoCadastrarSenha: TPanel;
@@ -25,12 +25,14 @@ type
     cadeadoConfSenha: TImage;
     leConfSenha: TLabeledEdit;
     procedure pnlBotaoCadastrarSenhaClick(Sender: TObject);
+    procedure dbleFuncEnter(Sender: TObject);
   private
     { Private declarations }
-    PriSenhaFunc: String;
+    priSenhaFunc: String;
   public
     { Public declarations }
     property SenhaFunc: String read PriSenhaFunc;
+    var senhaFuncionario: String;
   end;
 
   var frameCadSenhaFuncionario: TframeCadSenhaFuncionario;
@@ -39,18 +41,31 @@ implementation
 
 {$R *.dfm}
 
-uses System.Hash;
+uses System.Hash,
+     dataModuleNormal;
+
+procedure TframeCadSenhaFuncionario.dbleFuncEnter(Sender: TObject);
+begin
+    DM.QueryFuncionarios.SQL.Text := 'SELECT email_funcionario FROM "Funcionarios"';
+end;
+
 
 procedure TframeCadSenhaFuncionario.pnlBotaoCadastrarSenhaClick(Sender: TObject);
 var hash: String;
 begin
+
     if leConfSenha.Text = leSenha.Text then begin
       hash := THashSHA1.GetHashString(leConfSenha.Text);
       PriSenhaFunc := hash;
 //      DM.QueryFuncionarios.SQL.Text := 'INSERT INTO TABLE "Funcionarios" (hash_senha_func) VALUES (:Senha)';
 //      ParamByName.('Senha').AsString := PriSenhaFunc;
+      senhaFuncionario := PriSenhaFunc;
+      DM.QueryFuncionarios.SQL.Text := 'INSERT INTO "Funcionarios" (hash_senha_func) VALUES (:Senha)';
+      //ParamByName('Senha') := senhaFuncionario;
     end else begin
        ShowMessage('Senhas não compatíveis. Tente novamente');
     end;
 end;
+
+
 end.

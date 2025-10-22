@@ -223,6 +223,7 @@
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="unitPlacaConsultor.pas"/>
+        <DCCReference Include="unitSessao.pas"/>
         <None Include="login.ini"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>

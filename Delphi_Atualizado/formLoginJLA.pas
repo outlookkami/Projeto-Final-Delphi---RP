@@ -64,7 +64,8 @@ implementation
 
 {$R *.dfm}
 
-uses  formTrocarSenha,
+uses  unitSessao,
+      formTrocarSenha,
       frameTrocarSenhaUsuario,
       formCadastroClientes,
       formPáginaDeInícioClientes,
