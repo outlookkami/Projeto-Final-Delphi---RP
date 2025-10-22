@@ -3,11 +3,11 @@ unit formLoginJLA;
 interface
 
 uses
-  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Mask, Vcl.ComCtrls, System.Hash,
-  Vcl.ExtCtrls, Vcl.Imaging.jpeg, System.ImageList, Vcl.ImgList, System.UITypes,
-  Vcl.Imaging.pngimage, Vcl.Skia, Vcl.DBCtrls, DataModuleNormal,
-  Data.DB, FireDAC.Stan.Param;
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes,
+  Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Mask,
+  Vcl.ComCtrls, System.Hash, Vcl.ExtCtrls, Vcl.Imaging.jpeg, System.ImageList,
+  Vcl.ImgList, System.UITypes, Vcl.Imaging.pngimage, Vcl.Skia, Vcl.DBCtrls,
+  DataModuleNormal, Data.DB, FireDAC.Stan.Param;
 
 type
   TformLogin = class(TForm)
@@ -76,7 +76,6 @@ uses  unitSessao,
 var iniArq: TIniFile;
 
 procedure TformLogin.registDadosLogin;
-
 begin
     iniArq := TIniFile.Create(ExtractFilePath(ParamStr(0)) + 'login.ini');
     try
@@ -123,17 +122,20 @@ begin
 end;
 
 procedure TformLogin.lblEsqueceuSenhaClick(Sender: TObject);
-var frameTrocarSenhaUsuario: TTrocarSenha;
+var formTrocaSenha: TformTrocaSenha;
 begin
-    frameTrocarSenhaUsuario := TTrocarSenha.Create(Self);
-    frameTrocarSenhaUsuario.Parent := Self;
-    frameTrocarSenhaUsuario.Align := alClient;
-    frameTrocarSenhaUsuario.Show;
+    formTrocaSenha := TformTrocaSenha.Create(Self);
+    try
+      formTrocaSenha.loginTrocaSenha := leUsuario.Text;
+      formTrocaSenha.ShowModal;
+    finally
+      formTrocaSenha.Free;
+    end;
 end;
 
 procedure TformLogin.pnlEntrarClick(Sender: TObject);
  var
- TipoUsuario: String;
+ tipoUsuario: String;
  funcionarioAdm: Boolean;
 begin
   if (leSenhaLogin.Text = '') or (leUsuario.Text = '') then begin
@@ -166,20 +168,20 @@ begin
      DM.QueryUsuarios.Open;
 
       if not DM.QueryUsuarios.IsEmpty then begin
-        TipoUsuario := DM.QueryUsuarios.FieldByName('tipo_usuario').AsString;
+        tipoUsuario := DM.QueryUsuarios.FieldByName('tipo_usuario').AsString;
         Self.Hide;
-       if TipoUsuario = 'Cliente' then begin
+       if tipoUsuario = 'Cliente' then begin
          Application.CreateForm(TformPáginaInicialCli, formPáginaInicialCli);
          formPáginaInicialCli.Show;
-       end else if TipoUsuario = 'Funcionario' then begin
+       end else if tipoUsuario = 'Funcionario' then begin
          Application.CreateForm(TformPáginaInicialFunc, formPáginaInicialFunc);
          formPáginaInicialFunc.Show;
-         end else if (TipoUsuario = 'Administrador') or (funcionarioAdm = true) then begin
+         end else if (tipoUsuario = 'Administrador') or (funcionarioAdm = true) then begin
             Application.CreateForm(TformPáginaInicialADM, formPáginaInicialADM);
             formPáginaInicialADM.Show;
-                end else begin
-                  ShowMessage('Usuário ou senha incorretos. Tente novamente.');
-                end;
+            end else begin
+              ShowMessage('Usuário ou senha incorretos. Tente novamente.');
+              end;
       end;
   end;
 end;

@@ -7,7 +7,7 @@ type
 
   TSessao = record
     codigo: Integer;
-    nome, email: String;
+    nome, email, funcao, telefone: String;
     acesso: TTipoUsuario;
   end;
 

@@ -200,7 +200,7 @@ begin
     ParamByName('Bairro').AsString := leBairro.Text;
     ParamByName('Cidade').AsString := leCidade.Text;
     ParamByName('UF').AsString := cbUf.Text;
-    //ParamByName('SenhaHash').AsString := hash;
+    ParamByName('SenhaHash').AsString := hash;
 
     ExecSQL;
     end;
@@ -210,6 +210,7 @@ end;
 procedure TformCrudFunc.pnlCadastrarClick(Sender: TObject);
 var hash, senhaFunci: String;
 begin
+    hash := THashSHA1.GetHashString(leCPF.Text);
     if (leNome.Text = '') or (leEmail.Text = '') or (leCPF.Text = '') then begin
         ShowMessage('Preencha os campos obrigatórios');
         Exit;
@@ -231,12 +232,12 @@ begin
         ParamByName('Funcao').AsString := cbFuncao.Text;
         ParamByName('CPF').AsString := leCPF.Text;
         ParamByName('RG').AsString := leRG.Text;
-        SenhaFunc;
-          // Senha só é recebida no frame/form de Cadastro de Senha de Funcionário
+        ParamByName('Senha').AsString := hash;
+        //SenhaFunc; //Senha só é recebida no frame/form de Cadastro de Senha de Funcionário
 
-          if senhaFunci = '' then begin
-          senhaFunci := 'senha1234';
-          end;
+//          if senhaFunci = '' then begin
+//          senhaFunci := 'senha1234';
+//          end;
 
           if cbFuncao.Text = 'Administrador' then begin
             if MessageDlg('Tem certeza que deseja adicionar funcionário com a função de "Administrador"? Esse usuário terá acesso à todas as permissões de um administrador.',

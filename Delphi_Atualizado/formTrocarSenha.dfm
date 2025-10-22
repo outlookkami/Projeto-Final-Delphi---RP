@@ -20,7 +20,6 @@ object formTrocaSenha: TformTrocaSenha
     Color = clHighlight
     ParentBackground = False
     TabOrder = 0
-    ExplicitLeft = 8
     object lblCrieNovaSenha: TLabel
       Left = 1
       Top = 16
@@ -36,7 +35,6 @@ object formTrocaSenha: TformTrocaSenha
       Font.Name = 'Segoe UI'
       Font.Style = []
       ParentFont = False
-      ExplicitTop = 33
       ExplicitWidth = 259
     end
     object lblEspacamento: TLabel
@@ -3865,8 +3863,14 @@ object formTrocaSenha: TformTrocaSenha
           ParentFont = False
           TabOrder = 3
           Text = ''
+          TextHint = 'Informe seu usu'#225'rio'
         end
       end
     end
+  end
+  object DSLoginTrocaSenha: TDataSource
+    DataSet = DM.QueryLogin
+    Left = 96
+    Top = 24
   end
 end
