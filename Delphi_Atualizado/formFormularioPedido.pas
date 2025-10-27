@@ -84,7 +84,8 @@ implementation
 
 {$R *.dfm}
 
-uses dataModuleNormal;
+uses  dataModuleNormal,
+      unitSessao;
 
 procedure TformPedido.Panel2Click(Sender: TObject);
 begin
@@ -93,11 +94,12 @@ begin
         Exit;
     end else begin
 
-        with DM.QueryVeiculos do begin
+        with DM.QueryPedidos do begin
 
-        SQL.Text := 'INSERT INTO Veiculos(placa_veiculo, modelo, marca, cor) VALUES (:Placa, :Modelo, :Marca);';
-        //SQL.Text := 'INSERT INTO Veiculos(placa_veiculo, chassi, modelo, marca, cor, ano_fab) VALUES (:Placa, :Chassi, :Modelo, :Marca, :AnoFab);';
+        //SQL.Text := 'INSERT INTO Veiculos(placa_veiculo, modelo, marca, cor) VALUES (:Placa, :Modelo, :Marca);';
+        SQL.Text := 'INSERT INTO Pedidos(codigo_cliente, data_pedido, contato_cliente, endereco_cliente, cep_cliente, placa_veiculo, modelo, marca, cor, descricao_pedido, nome_cliente, status_pedido) VALUES (:codCli, :Data, :Contato, :Endereco, :CEP, :Placa, :Modelo, :Marca, :Cor, :Descricao, :NomeCli, :Status);';
 
+        //ParamByName('codCli').AsString := ;
         ParamByName('Placa').AsString := lePlaca.Text;
         //ParamByName('Chassi').AsString := leChassi.Text;
         ParamByName('Marca').AsString := leMarca.Text;
@@ -106,6 +108,8 @@ begin
         ParamByName('Cor').AsString := leCor.Text;
 
         ExecSQL;
+
+        ShowMessage('Pedido finalizado! Aguarde a resposta da oficina. O orçamento estará disponível na aba Orçamentos.');
 
 //        if MessageDlg('Pedido finalizado! Aguarde a resposta da oficina. O orçamento estará disponível na aba Orçamentos.',
 //        mtConfirmation, [mbYes, mbNo], 0) = mrYes then FrameVeiculo else Close; Self.Close;

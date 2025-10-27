@@ -886,6 +886,7 @@ object formCrudCli: TformCrudCli
       ParentBackground = False
       ParentFont = False
       TabOrder = 5
+      OnClick = btnInativCliClick
     end
     object btnExcluCli: TPanel
       Left = 135

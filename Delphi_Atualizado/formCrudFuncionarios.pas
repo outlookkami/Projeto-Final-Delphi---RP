@@ -117,8 +117,8 @@ begin
     pnlCadastrar.Visible := True;
 
     DM.QueryFuncionarios.Open;
-    DM.QueryFuncionarios.Insert;
-
+    if not (DM.QueryFuncionarios.State in [dsInsert, dsEdit]) then
+      DM.QueryFuncionarios.Insert;
 end;
 
 // Editar funcionário
@@ -127,13 +127,14 @@ begin
     pnlCadastrar.Visible := False;
     pnlSalvar.Visible := True;
 
-    DM.QueryFuncionarios.Open;
+    if not (DM.QueryFuncionarios.State in [dsInsert, dsEdit]) then
     DM.QueryFuncionarios.Edit;
 end;
 
 procedure TformCrudFunc.pnlSalvarClick(Sender: TObject);
 begin
-    DM.QueryFuncionarios.Open;
+    if not (DM.QueryFuncionarios.State in [dsInsert, dsEdit]) then
+//    DM.QueryFuncionarios.Open;
     DM.QueryFuncionarios.Post;
 end;
 
@@ -145,7 +146,7 @@ begin
     DM.QueryFuncionarios.ParamByName('boolAtivo').AsBoolean := False;
     DM.QueryFuncionarios.ParamByName('codFunc').AsInteger := StrToInt(codigoFuncionario);
     DM.QueryFuncionarios.ExecSQL;
-    DM.QueryFuncionarios.Close;
+    //DM.QueryFuncionarios.Close;
 end;
 
 // Excluir funcionário

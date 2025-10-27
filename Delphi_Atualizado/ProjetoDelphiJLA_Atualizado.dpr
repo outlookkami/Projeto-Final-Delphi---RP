@@ -54,19 +54,19 @@ begin
   Application.MainFormOnTaskbar := True;
   Application.Title := 'Aviso';
   Application.CreateForm(TformLogin, formLogin);
+  Application.CreateForm(TFormPedido, FormPedido);
+  Application.CreateForm(TformCrudCli, formCrudCli);
+  Application.CreateForm(TformCrudFunc, formCrudFunc);
   Application.CreateForm(TformPáginaInicialADM, formPáginaInicialADM);
   Application.CreateForm(TformCadastroDeClientes, formCadastroDeClientes);
-  Application.CreateForm(TformCrudCli, formCrudCli);
   Application.CreateForm(TformPáginaInicialFunc, formPáginaInicialFunc);
   Application.CreateForm(TformPáginaInicialCli, formPáginaInicialCli);
   Application.CreateForm(TDM, DM);
   Application.CreateForm(TformPortfólio, formPortfólio);
   Application.CreateForm(TformTrocaSenha, formTrocaSenha);
-  Application.CreateForm(TformCrudFunc, formCrudFunc);
   Application.CreateForm(TformConfEmail, formConfEmail);
   Application.CreateForm(TformProdutos, formProdutos);
   Application.CreateForm(TForm1, Form1);
-  Application.CreateForm(TFormPedido, FormPedido);
   Application.CreateForm(TForm2, Form2);
   Application.Run;
 end.

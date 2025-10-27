@@ -56,6 +56,7 @@ type
     procedure pnlCadastraCliCrudClick(Sender: TObject);
     procedure btnIncluirCliClick(Sender: TObject);
     procedure DBGrid1CellClick(Column: TColumn);
+    procedure btnInativCliClick(Sender: TObject);
   private
     { Private declarations }
 
@@ -76,21 +77,22 @@ uses  System.Hash,
       formCadastroClientes,
       unitCEPConsultor;
 
+var codigoCliente: String;
+
 // Mostrar dados nos campos do formulário lateral
 procedure TformCrudCli.DBGrid1CellClick(Column: TColumn);
 begin
-    //codigoFuncionario :=  DBGrid1.Fields[0].Value;
-    leNome.Text := DM.QueryClientes.FieldByName('nome_funcionario').AsString;
-    leTelefone.Text := DM.QueryClientes.FieldByName('telefone_funcionario').AsString;
-    leEmail.Text := DM.QueryClientes.FieldByName('email_funcionario').AsString;
-    leCEP.Text := DM.QueryClientes.FieldByName('cep_funcionario').AsString;
-    leEndereco.Text := DM.QueryClientes.FieldByName('endereco_funcionario').AsString;
+    codigoCliente :=  DBGrid1.Fields[0].Value;
+
+    leNome.Text := DM.QueryClientes.FieldByName('nome_cliente').AsString;
+    leTelefone.Text := DM.QueryClientes.FieldByName('telefone_cliente').AsString;
+    leEmail.Text := DM.QueryClientes.FieldByName('email_cliente').AsString;
+    leCEP.Text := DM.QueryClientes.FieldByName('cep_cliente').AsString;
+    leEndereco.Text := DM.QueryClientes.FieldByName('endereco_cliente').AsString;
     leBairro.Text := DM.QueryClientes.FieldByName('bairro').AsString;
     leNumero.Text := DM.QueryClientes.FieldByName('num_endereco').AsString;
     leCidade.Text := DM.QueryClientes.FieldByName('cidade').AsString;
     cbUF.Text := DM.QueryClientes.FieldByName('uf').AsString;
-
-
 end;
 
 procedure TformCrudCli.btnIncluirCliClick(Sender: TObject);
@@ -103,6 +105,18 @@ begin
 end;
 
 
+// Inativar Cliente
+procedure TformCrudCli.btnInativCliClick(Sender: TObject);
+begin
+    //DM.QueryClientes.Open;
+    DM.QueryClientes.SQL.Text := 'UPDATE "Clientes" SET ativo_in = :boolAtivo WHERE codigo_cliente = :codCli';
+    DM.QueryClientes.ParamByName('boolAtivo').AsBoolean := False;
+    DM.QueryClientes.ParamByName('codCli').AsInteger := StrToInt(codigoCliente);
+    DM.QueryClientes.ExecSQL;
+    //DM.QueryClientes.Open;
+end;
+
+
 procedure TformCrudCli.leCEPExit(Sender: TObject);
 begin
     unitCEPConsultor.ConsultaCEP(leCEP.Text, TCustomEdit(leEndereco), TCustomEdit(leBairro), TCustomEdit(leCidade), cbUF, RESTClient1, RESTRequest1, RESTResponse1);
@@ -112,6 +126,8 @@ procedure TformCrudCli.pnlCadastraCliCrudClick(Sender: TObject);
 begin
     formCadastroDeClientes.pnlCadastrarClick(pnlCadastraCliCrud);
 end;
+
+
 
 
 end.

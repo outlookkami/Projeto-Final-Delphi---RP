@@ -2,12 +2,15 @@ unit formLoginJLA;
 
 interface
 
+
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes,
   Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Mask,
   Vcl.ComCtrls, System.Hash, Vcl.ExtCtrls, Vcl.Imaging.jpeg, System.ImageList,
   Vcl.ImgList, System.UITypes, Vcl.Imaging.pngimage, Vcl.Skia, Vcl.DBCtrls,
   DataModuleNormal, Data.DB, FireDAC.Stan.Param;
+
+
 
 type
   TformLogin = class(TForm)
@@ -48,7 +51,6 @@ type
     procedure HideShowSenha;
     procedure pnlEntrarClick(Sender: TObject);
     procedure registDadosLogin;
-    procedure lerDadosLogin;
   private
     { Private declarations }
 
@@ -64,8 +66,7 @@ implementation
 
 {$R *.dfm}
 
-uses  unitSessao,
-      formTrocarSenha,
+uses  formTrocarSenha,
       frameTrocarSenhaUsuario,
       formCadastroClientes,
       formPáginaDeInícioClientes,
@@ -75,23 +76,22 @@ uses  unitSessao,
 
 var iniArq: TIniFile;
 
+
+// Registra os dados do login no arquivo ini
 procedure TformLogin.registDadosLogin;
+var tipoUsuario: String;
 begin
+    tipoUsuario := DM.QueryUsuarios.FieldByName('tipo_usuario').AsString;
     iniArq := TIniFile.Create(ExtractFilePath(ParamStr(0)) + 'login.ini');
     try
       iniArq.WriteString('Login', 'Usuario', leUsuario.Text);
+      iniArq.WriteString('Login', 'TipoUsuario', tipoUsuario);
     finally
        iniArq.Free;
     end;
 end;
 
-procedure TformLogin.lerDadosLogin;
-begin
-    iniArq := TIniFile.Create(ExtractFilePath(ParamStr(0)) + 'login.ini');
-    leUsuario.Text := iniArq.ReadString('Login', 'Usuario', '');
-    iniArq.Free;
-end;
-
+// Procedures para o funcionamento do botão de mostrar senha
 procedure TformLogin.HideShowSenha;
 begin
     if leSenhaLogin.PasswordChar = '*' then begin
@@ -108,11 +108,13 @@ begin
      HideShowSenha;
 end;
 
+// Botão de fechar no canto superior direito da tela
 procedure TformLogin.imgFecharClick(Sender: TObject);
 begin
     Close;
 end;
 
+// Redireciona para a página de cadastro
 procedure TformLogin.lblCadastreAquiClick(Sender: TObject);
 begin
 //    formCadastroDeClientes.Create(Self);
@@ -121,6 +123,7 @@ begin
     formCadastroDeClientes.Show;
 end;
 
+// Redireciona para a página de trocar senha
 procedure TformLogin.lblEsqueceuSenhaClick(Sender: TObject);
 var formTrocaSenha: TformTrocaSenha;
 begin
@@ -133,6 +136,8 @@ begin
     end;
 end;
 
+
+// Verificações do Login
 procedure TformLogin.pnlEntrarClick(Sender: TObject);
  var
  tipoUsuario: String;
@@ -165,10 +170,12 @@ begin
 
      DM.QueryUsuarios.ParamByName('usuario').AsString := leUsuario.Text;
      DM.QueryUsuarios.ParamByName('senha').AsString := THashSHA1.GetHashString(leSenhaLogin.Text);
+
      DM.QueryUsuarios.Open;
 
       if not DM.QueryUsuarios.IsEmpty then begin
         tipoUsuario := DM.QueryUsuarios.FieldByName('tipo_usuario').AsString;
+        registDadosLogin;
         Self.Hide;
        if tipoUsuario = 'Cliente' then begin
          Application.CreateForm(TformPáginaInicialCli, formPáginaInicialCli);
@@ -179,12 +186,11 @@ begin
          end else if (tipoUsuario = 'Administrador') or (funcionarioAdm = true) then begin
             Application.CreateForm(TformPáginaInicialADM, formPáginaInicialADM);
             formPáginaInicialADM.Show;
-            end else begin
-              ShowMessage('Usuário ou senha incorretos. Tente novamente.');
-              end;
+            end;
+
+      end else begin
+         ShowMessage('Usuário ou senha incorretos. Tente novamente.');
       end;
   end;
 end;
 end.
-
-// ShowMessage('Usuário ou senha incorretos. Tente novamente.');

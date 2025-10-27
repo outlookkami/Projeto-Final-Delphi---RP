@@ -978,8 +978,6 @@ object formCrudFunc: TformCrudFunc
         TabOrder = 9
         Visible = False
         OnClick = pnlCadastrarClick
-        ExplicitLeft = 94
-        ExplicitTop = 599
       end
       object leCPF: TLabeledEdit
         Left = 16
@@ -1014,8 +1012,6 @@ object formCrudFunc: TformCrudFunc
         TabOrder = 11
         Visible = False
         OnClick = pnlSalvarClick
-        ExplicitLeft = 0
-        ExplicitTop = 624
       end
     end
     object btnEditFunc: TPanel
