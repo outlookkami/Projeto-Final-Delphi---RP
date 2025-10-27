@@ -37,7 +37,7 @@ type
     dbleModelo: TDBLabeledEdit;
     lblVazio3: TLabel;
     dbleCor: TDBLabeledEdit;
-    memoDescricaoDoServiço: TMemo;
+    memoDescricaoDoServico: TMemo;
     GridPanel4: TGridPanel;
     GridPanel5: TGridPanel;
     Label1: TLabel;
@@ -47,11 +47,11 @@ type
     leCodigoCliente: TLabeledEdit;
     leCodigoPedido: TLabeledEdit;
     GridPanel6: TGridPanel;
-    DBLabeledEdit5: TDBLabeledEdit;
+    dbleTelefone: TDBLabeledEdit;
     Label4: TLabel;
-    DBLabeledEdit6: TDBLabeledEdit;
+    dbleRua: TDBLabeledEdit;
     Label5: TLabel;
-    DBLabeledEdit7: TDBLabeledEdit;
+    dbleCEPendereco: TDBLabeledEdit;
     GridPanel7: TGridPanel;
     Label6: TLabel;
     Label7: TLabel;
@@ -67,9 +67,11 @@ type
     DSPedido: TDataSource;
     GridPanel10: TGridPanel;
     Label10: TLabel;
+
     dtData: TDateTimePicker;
     procedure Panel2Click(Sender: TObject);
     procedure TmemoDescricaoDoServiçoOnCreate(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
 
   private
     { Private declarations }
@@ -87,8 +89,29 @@ implementation
 uses  dataModuleNormal,
       unitSessao;
 
-procedure TformPedido.Panel2Click(Sender: TObject);
+
+
+procedure TFormPedido.FormCreate(Sender: TObject);
+var codigoCli: Integer;
+    nomeCli, Contato, Endereco, CEP, Status: String;
 begin
+    dadosCliente(codigoCli, nomeCli, Contato, Endereco, CEP);
+
+    leCliente.Text := nomeCli;
+    leCodigoCliente.Text := IntToStr(codigoCli);
+    dtData.Date := Date;
+    dbleContato.Text := Contato;
+    dbleRua.Text := Endereco;
+    dbleCEPendereco.Text := CEP;
+end;
+
+procedure TformPedido.Panel2Click(Sender: TObject);
+var codigoCli: Integer;
+    nomeCli, Contato, Endereco, CEP, Status: String;
+begin
+    dadosCliente(codigoCli, nomeCli, Contato, Endereco, CEP);
+    Status := 'Orçamento pendente';
+
     if (lePlaca.Text = '') or (leMarca.Text = '') or (leModelo.Text = '') then begin
         ShowMessage('Preencha os campos obrigatórios');
         Exit;
@@ -99,13 +122,21 @@ begin
         //SQL.Text := 'INSERT INTO Veiculos(placa_veiculo, modelo, marca, cor) VALUES (:Placa, :Modelo, :Marca);';
         SQL.Text := 'INSERT INTO Pedidos(codigo_cliente, data_pedido, contato_cliente, endereco_cliente, cep_cliente, placa_veiculo, modelo, marca, cor, descricao_pedido, nome_cliente, status_pedido) VALUES (:codCli, :Data, :Contato, :Endereco, :CEP, :Placa, :Modelo, :Marca, :Cor, :Descricao, :NomeCli, :Status);';
 
-        //ParamByName('codCli').AsString := ;
+        ParamByName('codCli').AsInteger := codigoCli;
+        ParamByName('Data').AsDate := dtData.Date;
+        ParamByName('Contato').AsString := Contato;
+        ParamByName('Endereco').AsString := Endereco;
+        ParamByName('CEP').AsString := CEP;
         ParamByName('Placa').AsString := lePlaca.Text;
-        //ParamByName('Chassi').AsString := leChassi.Text;
-        ParamByName('Marca').AsString := leMarca.Text;
         ParamByName('Modelo').AsString := leModelo.Text;
-        //ParamByName('AnoFab').AsString := leAno.Text;
+        ParamByName('Marca').AsString := leMarca.Text;
         ParamByName('Cor').AsString := leCor.Text;
+        ParamByName('Descricao').AsString := memoDescricaoDoServico.Text;
+        ParamByName('NomeCli').AsString := nomeCli;
+        ParamByName('Status').AsString := Status;
+
+        //ParamByName('Chassi').AsString := leChassi.Text;
+        //ParamByName('AnoFab').AsString := leAno.Text;
 
         ExecSQL;
 

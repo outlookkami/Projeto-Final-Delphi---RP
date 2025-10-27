@@ -1,4 +1,4 @@
-﻿object FormPedido: TFormPedido
+object FormPedido: TFormPedido
   Left = 0
   Top = 0
   Caption = 'Formul'#225'rio de pedido'
@@ -10,6 +10,7 @@
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  OnCreate = FormCreate
   TextHeight = 15
   object pnlFrameFormPedido: TPanel
     Left = 0
@@ -482,7 +483,7 @@
         EditLabel.Caption = 'Cor:'
       end
     end
-    object memoDescricaoDoServiço: TMemo
+    object memoDescricaoDoServico: TMemo
       Left = 99
       Top = 357
       Width = 978
@@ -662,6 +663,8 @@
           EditLabel.Caption = 'Cliente:'
           TabOrder = 0
           Text = ''
+          ExplicitLeft = 4
+          ExplicitTop = 26
         end
         object leCodigoCliente: TLabeledEdit
           Left = 262
@@ -780,7 +783,7 @@
         ControlCollection = <
           item
             Column = 0
-            Control = DBLabeledEdit5
+            Control = dbleTelefone
             Row = 0
           end
           item
@@ -790,7 +793,7 @@
           end
           item
             Column = 2
-            Control = DBLabeledEdit6
+            Control = dbleRua
             Row = 0
           end
           item
@@ -800,7 +803,7 @@
           end
           item
             Column = 4
-            Control = DBLabeledEdit7
+            Control = dbleCEPendereco
             Row = 0
           end>
         Font.Charset = DEFAULT_CHARSET
@@ -817,7 +820,7 @@
         DesignSize = (
           713
           60)
-        object DBLabeledEdit5: TDBLabeledEdit
+        object dbleTelefone: TDBLabeledEdit
           Left = 2
           Top = 27
           Width = 226
@@ -837,7 +840,7 @@
           ExplicitLeft = 248
           ExplicitTop = 21
         end
-        object DBLabeledEdit6: TDBLabeledEdit
+        object dbleRua: TDBLabeledEdit
           Left = 263
           Top = 27
           Width = 284
@@ -858,7 +861,7 @@
           ExplicitLeft = 578
           ExplicitTop = 21
         end
-        object DBLabeledEdit7: TDBLabeledEdit
+        object dbleCEPendereco: TDBLabeledEdit
           Left = 583
           Top = 27
           Width = 130

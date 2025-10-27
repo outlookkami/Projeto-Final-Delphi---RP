@@ -67,7 +67,6 @@ begin
     formPedido.Parent := PageControl1.Pages[0];
     formPedido.Align := AlClient;
     formPedido.Show;
-
 end;
 
 procedure TformPáginaInicialCli.btnpOrcamentosClick(Sender: TObject);

@@ -34,9 +34,6 @@ Coordinates=949,476,79,58
 [lblVazio6]
 Coordinates=367,544,67,58
 
-[memoDescricaoDoServiço]
-Coordinates=1110,408,166,58
-
 [dbleMarca]
 Coordinates=140,612,74,36
 
@@ -85,9 +82,6 @@ Coordinates=1201,544,84,36
 [lblVazio8]
 Coordinates=790,408,67,58
 
-[DBLabeledEdit7]
-Coordinates=1084,544,107,36
-
 [lblVazio7]
 Coordinates=417,408,67,58
 
@@ -118,9 +112,6 @@ Coordinates=555,476,67,58
 [lblVazio3]
 Coordinates=494,408,67,58
 
-[DBLabeledEdit6]
-Coordinates=782,544,107,36
-
 [dbleModelo]
 Coordinates=691,544,81,36
 
@@ -132,9 +123,6 @@ Coordinates=406,476,139,58
 
 [lblVazio]
 Coordinates=946,10,60,58
-
-[DBLabeledEdit5]
-Coordinates=574,544,107,36
 
 [GridPanel5]
 Coordinates=10,476,79,58
@@ -169,4 +157,16 @@ Coordinates=294,408,113,58
 [dtData]
 Coordinates=1240,10,113,58
 Visible=True
+
+[memoDescricaoDoServico]
+Coordinates=1110,408,166,58
+
+[dbleTelefone]
+Coordinates=574,544,107,36
+
+[dbleRua]
+Coordinates=782,544,107,36
+
+[dbleCEPendereco]
+Coordinates=1084,544,107,36
 
