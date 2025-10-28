@@ -9,7 +9,8 @@ uses
   Vcl.ExtCtrls, Vcl.Grids, Vcl.DBGrids, Vcl.Imaging.pngimage, dataModuleNormal;
 
 type
-  TForm1 = class(TForm)
+  //TformCrudVeiculo = class(TForm)
+  TCrudVeiculos = class(TForm)
     Panel1: TPanel;
     lblVeiculos: TLabel;
     btnIncluirVeic: TPanel;
@@ -53,6 +54,7 @@ type
     RESTClient1: TRESTClient;
     RESTRequest1: TRESTRequest;
     RESTResponse1: TRESTResponse;
+    procedure DBGrid1CellClick(Column: TColumn);
   private
     { Private declarations }
   public
@@ -60,10 +62,32 @@ type
   end;
 
 var
-  Form1: TForm1;
+    CrudVeiculos: TCrudVeiculos;
+  //formCrudVeiculo: TformCrudVeiculo;
 
 implementation
 
 {$R *.dfm}
+
+procedure TCrudVeiculos.DBGrid1CellClick(Column: TColumn);
+var codigoVeiculo: String;
+begin
+    codigoVeiculo :=  DBGrid1.Fields[0].Value;
+
+    with DM.QueryVeiculos do begin
+
+    lePlaca.Text := FieldByName('placa_veiculo').AsString;
+    leChassi.Text := FieldByName('chassi').AsString;
+    leModelo.Text := FieldByName('modelo').AsString;
+    leMarca.Text := FieldByName('marca').AsString;
+    leCor.Text := FieldByName('cor').AsString;
+    leAnoFab.Text := FieldByName('ano_fab').AsString;
+    leAnoMod.Text := FieldByName('ano_mod').AsString;
+    leCidade.Text := FieldByName('quant_estoque').AsString;
+    cbUF.Text := FieldByName('quant_est_prevista').AsString;
+    cbDonoCli.Text := FieldByName('nome_usuario_cliente').AsString;
+    leCodigoVeiculo.Text := FieldByName('codigo_veiculo').AsString;
+    end;
+end;
 
 end.

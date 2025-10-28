@@ -41,11 +41,12 @@ uses
   formCrudClientes in 'formCrudClientes.pas' {formCrudCli},
   formPerfilPage in 'formPerfilPage.pas' {formPerfil},
   unitCEPConsultor in 'unitCEPConsultor.pas',
-  formCrudVeiculos in 'formCrudVeiculos.pas' {Form1},
+  formCrudVeiculos in 'formCrudVeiculos.pas' {CrudVeiculos},
   formFormularioPedido in 'formFormularioPedido.pas' {FormPedido},
   formOrcamento in 'formOrcamento.pas' {Form2},
   unitPlacaConsultor in 'unitPlacaConsultor.pas',
-  unitSessao in 'unitSessao.pas';
+  unitSessao in 'unitSessao.pas',
+  formCrudPedidos in 'formCrudPedidos.pas' {crudPedidos};
 
 {$R *.res}
 
@@ -66,7 +67,8 @@ begin
   Application.CreateForm(TformTrocaSenha, formTrocaSenha);
   Application.CreateForm(TformConfEmail, formConfEmail);
   Application.CreateForm(TformProdutos, formProdutos);
-  Application.CreateForm(TForm1, Form1);
+  Application.CreateForm(TcrudPedidos, crudPedidos);
+  Application.CreateForm(TCrudVeiculos, CrudVeiculos);
   Application.CreateForm(TForm2, Form2);
   Application.Run;
 end.

@@ -42,7 +42,6 @@ type
     leCEP: TLabeledEdit;
     leEmail: TLabeledEdit;
     leTelefone: TLabeledEdit;
-    leNome: TLabeledEdit;
     leEndereco: TLabeledEdit;
     leRG: TLabeledEdit;
     edtPesquisa: TEdit;
@@ -55,6 +54,7 @@ type
     pnlCadastrar: TPanel;
     leCPF: TLabeledEdit;
     pnlSalvar: TPanel;
+    leNome: TLabeledEdit;
     procedure iconePesquisaClick(Sender: TObject);
     procedure btnExcluFuncClick(Sender: TObject);
     procedure btnEditFuncClick(Sender: TObject);

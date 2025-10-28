@@ -10,7 +10,6 @@ object FormPedido: TFormPedido
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
-  OnCreate = FormCreate
   TextHeight = 15
   object pnlFrameFormPedido: TPanel
     Left = 0
@@ -663,8 +662,6 @@ object FormPedido: TFormPedido
           EditLabel.Caption = 'Cliente:'
           TabOrder = 0
           Text = ''
-          ExplicitLeft = 4
-          ExplicitTop = 26
         end
         object leCodigoCliente: TLabeledEdit
           Left = 262

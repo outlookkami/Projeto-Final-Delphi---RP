@@ -85,9 +85,6 @@ Coordinates=205,476,83,58
 [leEndereco]
 Coordinates=965,408,80,58
 
-[leNome]
-Coordinates=213,544,59,58
-
 [gridPanelLogin]
 Coordinates=791,408,101,58
 
@@ -122,7 +119,7 @@ Coordinates=1055,408,131,58
 Coordinates=902,408,53,58
 
 []
-Coordinates=88,408,90,58
+Coordinates=213,544,59,58
 
 [btnExcluFunc]
 Coordinates=787,10,55,58

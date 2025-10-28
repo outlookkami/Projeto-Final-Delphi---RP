@@ -5,45 +5,55 @@ type
     TDadosLogin = record
       emailUsuario: String;
       tipoUsuario: String;
+      codigoUsuario: String;
     end;
 //    TDadosCliente = record
 //      codigoCli: Integer;
 //      nomeCli, Contato, Endereco, CEP: String
 //    end;
 
-procedure lerDadosLogin(var emailUsuario, tipoUsuario: String);
+var dadosLogin: TDadosLogin;
+
+procedure lerDadosLogin;
 procedure dadosCliente(var codigoCli: Integer; var nomeCli, Contato, Endereco, CEP: String);
 procedure dadosFuncionario(codigoFunc: Integer; nomeFunc, funcao: String);
 
-var dadosLogin: TDadosLogin;
-
 implementation
 
-uses dataModuleNormal, IniFiles, SysUtils;
-
-var  iniArq: TIniFile;
+uses dataModuleNormal, IniFiles, SysUtils, Vcl.Dialogs;
 
 // Faz a leitura do arquivo ini com os dados de login
 //reutilizável
-procedure lerDadosLogin(var emailUsuario, tipoUsuario: String);
+procedure lerDadosLogin;//(var emailUsuario, tipoUsuario: String);
+var iniArq: TIniFile;
+    caminhoIni: String;
 begin
-    iniArq := TIniFile.Create(ExtractFilePath(ParamStr(0)) + 'login.ini');
+    caminhoIni := ExtractFilePath(ParamStr(0)) + 'login.ini';
+    iniArq := TIniFile.Create(caminhoIni);
     try
       dadosLogin.emailUsuario := iniArq.ReadString('Login', 'Usuario', '');
       dadosLogin.tipoUsuario := iniArq.ReadString('Login', 'TipoUsuario', '');
+      dadosLogin.codigoUsuario := iniArq.ReadString('Login', 'CodigoUsuario', '');
     finally
       iniArq.Free;
     end;
+    ShowMessage(
+  'INI encontrado!' + sLineBreak +
+  'Usuario: ' + dadosLogin.emailUsuario + sLineBreak +
+  'TipoUsuario: ' + dadosLogin.tipoUsuario);
 end;
 
 procedure dadosCliente(var codigoCli: Integer; var nomeCli, Contato, Endereco, CEP: String);
-//var emailUsuario: String;
 begin
+    //lerDadosLogin(dadosLogin.emailUsuario, dadosLogin.tipoUsuario);
     //DM.QueryClientes.Open;
+
     with DM.QueryClientes do begin
-      SQL.Text := 'SELECT * FROM "Clientes" WHERE email_cliente = :Email_Cli';
+      Close;
+      SQL.Text := 'SELECT email_cliente, codigo_cliente, nome_cliente, telefone_cliente, endereco_cliente, cep_cliente FROM "Clientes" WHERE email_cliente = :Email_Cli';
       ParamByName('Email_Cli').AsString := dadosLogin.emailUsuario;
-      if not DM.QueryClientes.IsEmpty then begin
+      Open;
+      if not IsEmpty then begin
       codigoCli := FieldByName('codigo_cliente').AsInteger;
       nomeCli := FieldByName('nome_cliente').AsString;
       Contato := FieldByName('telefone_cliente').AsString;

@@ -20,73 +20,6 @@ object DM: TDM
       'SELECT * FROM "Clientes";')
     Left = 112
     Top = 192
-    object QueryClientescodigo_cliente: TIntegerField
-      FieldName = 'codigo_cliente'
-      Origin = 'codigo_cliente'
-      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
-    end
-    object QueryClienteshash_senha_cli: TStringField
-      FieldName = 'hash_senha_cli'
-      Origin = 'hash_senha_cli'
-      Size = 255
-    end
-    object QueryClientesnome_cliente: TStringField
-      FieldName = 'nome_cliente'
-      Origin = 'nome_cliente'
-      Size = 100
-    end
-    object QueryClientestelefone_cliente: TStringField
-      FieldName = 'telefone_cliente'
-      Origin = 'telefone_cliente'
-      EditMask = '(00)00000-0000;0;_'
-      Size = 11
-    end
-    object QueryClientesemail_cliente: TStringField
-      FieldName = 'email_cliente'
-      Origin = 'email_cliente'
-      Size = 250
-    end
-    object QueryClientescep_cliente: TStringField
-      FieldName = 'cep_cliente'
-      Origin = 'cep_cliente'
-      EditMask = '00000-000;0;_'
-      Size = 8
-    end
-    object QueryClientesendereco_cliente: TStringField
-      FieldName = 'endereco_cliente'
-      Origin = 'endereco_cliente'
-      Size = 60
-    end
-    object QueryClientesnum_endereco: TStringField
-      FieldName = 'num_endereco'
-      Origin = 'num_endereco'
-      Size = 7
-    end
-    object QueryClientesbairro: TStringField
-      FieldName = 'bairro'
-      Origin = 'bairro'
-      Size = 30
-    end
-    object QueryClientescidade: TStringField
-      FieldName = 'cidade'
-      Origin = 'cidade'
-      Size = 30
-    end
-    object QueryClientesuf: TStringField
-      FieldName = 'uf'
-      Origin = 'uf'
-      Size = 2
-    end
-    object QueryClientesveiculo: TStringField
-      FieldName = 'veiculo'
-      Origin = 'veiculo'
-      EditMask = 'aaa-0a00;0;_'
-      Size = 7
-    end
-    object QueryClientesativo_in: TBooleanField
-      FieldName = 'ativo_in'
-      Origin = 'ativo_in'
-    end
   end
   object FDGUIxWaitCursor1: TFDGUIxWaitCursor
     Provider = 'Console'
@@ -339,10 +272,6 @@ object DM: TDM
       Origin = 'descricao_pedido'
       BlobType = ftMemo
     end
-    object QueryPedidoscodigo_funcionario: TIntegerField
-      FieldName = 'codigo_funcionario'
-      Origin = 'codigo_funcionario'
-    end
     object QueryPedidoscontato_cliente: TStringField
       FieldName = 'contato_cliente'
       Origin = 'contato_cliente'
@@ -357,6 +286,10 @@ object DM: TDM
       FieldName = 'nome_cliente'
       Origin = 'nome_cliente'
       Size = 100
+    end
+    object QueryPedidosstatus_pedido: TStringField
+      FieldName = 'status_pedido'
+      Origin = 'status_pedido'
     end
   end
   object QueryVeiculos: TFDQuery

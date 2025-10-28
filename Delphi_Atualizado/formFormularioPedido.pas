@@ -72,7 +72,6 @@ type
     procedure Panel2Click(Sender: TObject);
     procedure TmemoDescricaoDoServiçoOnCreate(Sender: TObject);
     procedure FormCreate(Sender: TObject);
-
   private
     { Private declarations }
   public
@@ -89,8 +88,6 @@ implementation
 uses  dataModuleNormal,
       unitSessao;
 
-
-
 procedure TFormPedido.FormCreate(Sender: TObject);
 var codigoCli: Integer;
     nomeCli, Contato, Endereco, CEP, Status: String;
@@ -105,10 +102,12 @@ begin
     dbleCEPendereco.Text := CEP;
 end;
 
-procedure TformPedido.Panel2Click(Sender: TObject);
+// Envio do pedido
+procedure TFormPedido.Panel2Click(Sender: TObject);
 var codigoCli: Integer;
     nomeCli, Contato, Endereco, CEP, Status: String;
 begin
+
     dadosCliente(codigoCli, nomeCli, Contato, Endereco, CEP);
     Status := 'Orçamento pendente';
 
@@ -120,9 +119,8 @@ begin
         with DM.QueryPedidos do begin
 
         //SQL.Text := 'INSERT INTO Veiculos(placa_veiculo, modelo, marca, cor) VALUES (:Placa, :Modelo, :Marca);';
-        SQL.Text := 'INSERT INTO Pedidos(codigo_cliente, data_pedido, contato_cliente, endereco_cliente, cep_cliente, placa_veiculo, modelo, marca, cor, descricao_pedido, nome_cliente, status_pedido) VALUES (:codCli, :Data, :Contato, :Endereco, :CEP, :Placa, :Modelo, :Marca, :Cor, :Descricao, :NomeCli, :Status);';
+        SQL.Text := 'INSERT INTO Pedidos(data_pedido, contato_cliente, endereco_cliente, cep_cliente, placa_veiculo, modelo, marca, cor, descricao_pedido, nome_cliente, status_pedido) VALUES (:Data, :Contato, :Endereco, :CEP, :Placa, :Modelo, :Marca, :Cor, :Descricao, :NomeCli, :Status);';
 
-        ParamByName('codCli').AsInteger := codigoCli;
         ParamByName('Data').AsDate := dtData.Date;
         ParamByName('Contato').AsString := Contato;
         ParamByName('Endereco').AsString := Endereco;
@@ -145,10 +143,10 @@ begin
 //        if MessageDlg('Pedido finalizado! Aguarde a resposta da oficina. O orçamento estará disponível na aba Orçamentos.',
 //        mtConfirmation, [mbYes, mbNo], 0) = mrYes then FrameVeiculo else Close; Self.Close;
           end;
-end;
+      end;
 end;
 
-procedure TformPedido.TmemoDescricaoDoServiçoOnCreate(Sender: TObject);
+procedure TFormPedido.TmemoDescricaoDoServiçoOnCreate(Sender: TObject);
 var TmemoDescricaoDoServiço: Tmemo;
 begin
 //      if TmemoDescricaoDoServiço.StyleName then

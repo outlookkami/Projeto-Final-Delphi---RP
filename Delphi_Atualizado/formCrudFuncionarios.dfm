@@ -452,11 +452,6 @@ object formCrudFunc: TformCrudFunc
         end
         item
           Column = 0
-          Control = leNome
-          Row = 0
-        end
-        item
-          Column = 0
           Control = leEndereco
           Row = 8
         end
@@ -479,6 +474,11 @@ object formCrudFunc: TformCrudFunc
           Column = 0
           Control = pnlSalvar
           Row = 20
+        end
+        item
+          Column = 0
+          Control = leNome
+          Row = 0
         end>
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
@@ -920,19 +920,6 @@ object formCrudFunc: TformCrudFunc
         Text = ''
         TextHint = 'Informe seu n'#250'mero de telefone'
       end
-      object leNome: TLabeledEdit
-        Left = 15
-        Top = 24
-        Width = 341
-        Height = 29
-        Anchors = []
-        EditLabel.Width = 122
-        EditLabel.Height = 21
-        EditLabel.Caption = '*Nome completo:'
-        TabOrder = 6
-        Text = ''
-        TextHint = 'Digite seu nome completo'
-      end
       object leEndereco: TLabeledEdit
         Left = 14
         Top = 264
@@ -942,7 +929,7 @@ object formCrudFunc: TformCrudFunc
         EditLabel.Width = 67
         EditLabel.Height = 21
         EditLabel.Caption = 'Endere'#231'o:'
-        TabOrder = 7
+        TabOrder = 6
         Text = ''
         TextHint = 'Informe o endere'#231'o'
       end
@@ -955,7 +942,7 @@ object formCrudFunc: TformCrudFunc
         EditLabel.Width = 24
         EditLabel.Height = 21
         EditLabel.Caption = 'RG:'
-        TabOrder = 8
+        TabOrder = 7
         Text = ''
       end
       object pnlCadastrar: TPanel
@@ -975,7 +962,7 @@ object formCrudFunc: TformCrudFunc
         Font.Style = []
         ParentBackground = False
         ParentFont = False
-        TabOrder = 9
+        TabOrder = 8
         Visible = False
         OnClick = pnlCadastrarClick
       end
@@ -989,7 +976,7 @@ object formCrudFunc: TformCrudFunc
         EditLabel.Width = 37
         EditLabel.Height = 21
         EditLabel.Caption = '*CPF:'
-        TabOrder = 10
+        TabOrder = 9
         Text = ''
       end
       object pnlSalvar: TPanel
@@ -1009,9 +996,23 @@ object formCrudFunc: TformCrudFunc
         Font.Style = []
         ParentBackground = False
         ParentFont = False
-        TabOrder = 11
+        TabOrder = 10
         Visible = False
         OnClick = pnlSalvarClick
+      end
+      object leNome: TLabeledEdit
+        Left = 18
+        Top = 24
+        Width = 336
+        Height = 29
+        Anchors = []
+        EditLabel.Width = 122
+        EditLabel.Height = 21
+        EditLabel.Caption = '*Nome completo:'
+        TabOrder = 11
+        Text = ''
+        TextHint = 'Digite seu nome completo'
+        ExplicitLeft = 16
       end
     end
     object btnEditFunc: TPanel

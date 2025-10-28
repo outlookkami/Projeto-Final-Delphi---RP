@@ -79,13 +79,28 @@ var iniArq: TIniFile;
 
 // Registra os dados do login no arquivo ini
 procedure TformLogin.registDadosLogin;
-var tipoUsuario: String;
+var tipoUsuario, emailUsuario, codigoUsuario: String;
+    codigoCliente: String;
 begin
     tipoUsuario := DM.QueryUsuarios.FieldByName('tipo_usuario').AsString;
+    //emailUsuario := DM.QueryUsuarios.FieldByName('nome_usuario').AsString;
+    codigoUsuario := DM.QueryUsuarios.FieldByName('id_usuario').AsString;
+    //codigoCliente := DM.QueryClientes.FieldByName('codigo_cliente').AsString;
+
     iniArq := TIniFile.Create(ExtractFilePath(ParamStr(0)) + 'login.ini');
     try
       iniArq.WriteString('Login', 'Usuario', leUsuario.Text);
       iniArq.WriteString('Login', 'TipoUsuario', tipoUsuario);
+      iniArq.WriteString('Login', 'CodigoUsuario', codigoUsuario);
+//      iniArq.WriteString('Cliente', 'CodigoCliente', codigoCliente);
+//      if tipoUsuario = 'Cliente' then begin
+//          DM.QueryClientes.SQL.Text := 'SELECT codigo_cliente FROM "Clientes" WHERE email_cliente = :Email';
+//          DM.QueryClientes.ParamByName('Email').AsString := leUsuario.Text;
+//          codigoCliente := DM.QueryClientes.FieldByName('codigo_cliente').AsInteger;
+//          iniArq.WriteString('Login', 'Codigo', IntToStr(codigoCliente));
+//          end;
+//
+//      end else begin
     finally
        iniArq.Free;
     end;

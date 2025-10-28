@@ -1,7 +1,7 @@
-object Form1: TForm1
+object CrudVeiculos: TCrudVeiculos
   Left = 0
   Top = 0
-  Caption = 'Form1'
+  Caption = 'CrudVeiculos'
   ClientHeight = 701
   ClientWidth = 1150
   Color = clBtnFace
@@ -154,7 +154,7 @@ object Form1: TForm1
     end
     object DBGrid1: TDBGrid
       Left = 48
-      Top = 136
+      Top = 123
       Width = 695
       Height = 528
       Anchors = [akLeft, akTop, akRight, akBottom]
@@ -166,6 +166,7 @@ object Form1: TForm1
       TitleFont.Height = -12
       TitleFont.Name = 'Segoe UI'
       TitleFont.Style = []
+      OnCellClick = DBGrid1CellClick
       Columns = <
         item
           Expanded = False
@@ -547,7 +548,6 @@ object Form1: TForm1
             Value = 100.000000000000000000
           end>
         TabOrder = 0
-        ExplicitTop = 286
         DesignSize = (
           370
           56)
@@ -563,7 +563,6 @@ object Form1: TForm1
           TabOrder = 0
           Text = ''
           TextHint = 'Informe o ano de fabrica'#231#227'o'
-          ExplicitLeft = 9
         end
         object leAnoMod: TLabeledEdit
           Left = 200
@@ -577,7 +576,6 @@ object Form1: TForm1
           TabOrder = 1
           Text = ''
           TextHint = 'Informe o ano do modelo'
-          ExplicitLeft = 224
         end
       end
       object Label7: TLabel
@@ -624,6 +622,7 @@ object Form1: TForm1
             SizeStyle = ssAuto
           end>
         TabOrder = 1
+        ExplicitTop = 342
         DesignSize = (
           379
           58)
@@ -819,7 +818,6 @@ object Form1: TForm1
         TabOrder = 4
         Text = ''
         TextHint = 'Digite o modelo do ve'#237'culo'
-        ExplicitTop = 142
       end
       object leChassi: TLabeledEdit
         Left = 16

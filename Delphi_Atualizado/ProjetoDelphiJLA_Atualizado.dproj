@@ -211,7 +211,7 @@
         </DCCReference>
         <DCCReference Include="unitCEPConsultor.pas"/>
         <DCCReference Include="formCrudVeiculos.pas">
-            <Form>Form1</Form>
+            <Form>CrudVeiculos</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="formFormularioPedido.pas">
@@ -224,6 +224,10 @@
         </DCCReference>
         <DCCReference Include="unitPlacaConsultor.pas"/>
         <DCCReference Include="unitSessao.pas"/>
+        <DCCReference Include="formCrudPedidos.pas">
+            <Form>crudPedidos</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <None Include="login.ini"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>

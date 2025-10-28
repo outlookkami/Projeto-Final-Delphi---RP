@@ -15,18 +15,6 @@ type
     ConexaoBanco: TFDConnection;
     QueryClientes: TFDQuery;
     FDGUIxWaitCursor1: TFDGUIxWaitCursor;
-    QueryClientescodigo_cliente: TIntegerField;
-    QueryClienteshash_senha_cli: TStringField;
-    QueryClientesnome_cliente: TStringField;
-    QueryClientestelefone_cliente: TStringField;
-    QueryClientesemail_cliente: TStringField;
-    QueryClientescep_cliente: TStringField;
-    QueryClientesendereco_cliente: TStringField;
-    QueryClientesnum_endereco: TStringField;
-    QueryClientesbairro: TStringField;
-    QueryClientescidade: TStringField;
-    QueryClientesuf: TStringField;
-    QueryClientesveiculo: TStringField;
     FDPhysPgDriverLink2: TFDPhysPgDriverLink;
     QueryFuncionarios: TFDQuery;
     QueryPerfil: TFDQuery;
@@ -63,7 +51,6 @@ type
     QueryProdutosmarca: TStringField;
     FDTransaction1: TFDTransaction;
     QueryFuncionariosativo_in: TBooleanField;
-    QueryClientesativo_in: TBooleanField;
     QueryPedidos: TFDQuery;
     QueryPedidoscodigo_pedido: TIntegerField;
     QueryPedidoscodigo_cliente: TIntegerField;
@@ -93,10 +80,10 @@ type
     QueryLoginsenha_hash: TStringField;
     FDMemTable1: TFDMemTable;
     QueryFuncionariosfuncionario_data_criacao: TSQLTimeStampField;
-    QueryPedidoscodigo_funcionario: TIntegerField;
     QueryPedidoscontato_cliente: TStringField;
     QueryPedidosdata_pedido: TSQLTimeStampField;
     QueryPedidosnome_cliente: TStringField;
+    QueryPedidosstatus_pedido: TStringField;
   private
     { Private declarations }
   public

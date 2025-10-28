@@ -57,6 +57,7 @@ type
     procedure btnIncluirCliClick(Sender: TObject);
     procedure DBGrid1CellClick(Column: TColumn);
     procedure btnInativCliClick(Sender: TObject);
+    procedure btnExcluCliClick(Sender: TObject);
   private
     { Private declarations }
 
@@ -95,6 +96,7 @@ begin
     cbUF.Text := DM.QueryClientes.FieldByName('uf').AsString;
 end;
 
+// Incluir Cliente
 procedure TformCrudCli.btnIncluirCliClick(Sender: TObject);
 begin
     btnExcluCli.Enabled := False;
@@ -102,21 +104,42 @@ begin
     btnEditCli.Enabled := False;
     pnlCadastraCliCrud.Visible := True;
     leNome.SetFocus;
+    DM.QueryClientes.Open;
+    DM.QueryClientes.Insert;
 end;
 
+
+// Excluir Cliente
+procedure TformCrudCli.btnExcluCliClick(Sender: TObject);
+begin
+    if (DM.QueryClientes.FieldByName('ativo_in').AsBoolean = True) then begin
+      ShowMessage('O cliente deve estar inativo antes de ser excluído.');
+    end else begin
+      DM.QueryClientes.Delete;
+    end;
+    DM.QueryClientes.Open;
+end;
 
 // Inativar Cliente
 procedure TformCrudCli.btnInativCliClick(Sender: TObject);
 begin
-    //DM.QueryClientes.Open;
+    DM.QueryClientes.Open;
     DM.QueryClientes.SQL.Text := 'UPDATE "Clientes" SET ativo_in = :boolAtivo WHERE codigo_cliente = :codCli';
     DM.QueryClientes.ParamByName('boolAtivo').AsBoolean := False;
     DM.QueryClientes.ParamByName('codCli').AsInteger := StrToInt(codigoCliente);
     DM.QueryClientes.ExecSQL;
-    //DM.QueryClientes.Open;
+    DM.QueryClientes.Post;
+//    if (DM.QueryFuncionarios.State in [dsInsert, dsEdit]) then begin
+//    DM.QueryClientes.Post;
+//    end;
+//    DM.QueryFuncionarios.Open;
+//    DM.QueryFuncionarios.SQL.Text := 'UPDATE "Funcionarios" SET ativo_in = :boolAtivo WHERE codigo_funcionario = :codFunc';
+//    DM.QueryFuncionarios.ParamByName('boolAtivo').AsBoolean := False;
+//    DM.QueryFuncionarios.ParamByName('codFunc').AsInteger := StrToInt(codigoFuncionario);
+//    DM.QueryFuncionarios.ExecSQL;
 end;
 
-
+// Consulta CEP
 procedure TformCrudCli.leCEPExit(Sender: TObject);
 begin
     unitCEPConsultor.ConsultaCEP(leCEP.Text, TCustomEdit(leEndereco), TCustomEdit(leBairro), TCustomEdit(leCidade), cbUF, RESTClient1, RESTRequest1, RESTResponse1);

@@ -25,8 +25,8 @@ type
     Label5: TLabel;
     Label6: TLabel;
     GridPanel3: TGridPanel;
-    leNumero: TLabeledEdit;
-    leBairro: TLabeledEdit;
+    lePrecoComp: TLabeledEdit;
+    lePrecoVenda: TLabeledEdit;
     Label7: TLabel;
     GridPanel4: TGridPanel;
     leQuantEst: TLabeledEdit;
@@ -37,18 +37,19 @@ type
     Label9: TLabel;
     Label8: TLabel;
     Label10: TLabel;
-    leCEP: TLabeledEdit;
-    leEmail: TLabeledEdit;
+    leMarcaProd: TLabeledEdit;
+    leCodBar: TLabeledEdit;
     leCodInt: TLabeledEdit;
     leNomeProd: TLabeledEdit;
-    leEndereco: TLabeledEdit;
+    leUnidade: TLabeledEdit;
     DSProdutos: TDataSource;
-    ComboBox1: TComboBox;
+    cbCategoriaProd: TComboBox;
     edtQuantEstPrev: TEdit;
     lblImagem: TLabel;
     DBImage1: TDBImage;
     btnInativProd: TPanel;
     btnExcluirProduto: TPanel;
+    procedure DBGrid1CellClick(Column: TColumn);
   private
     { Private declarations }
   public
@@ -61,5 +62,28 @@ var
 implementation
 
 {$R *.dfm}
+
+
+
+procedure TformProdutos.DBGrid1CellClick(Column: TColumn);
+var codigoProduto: String;
+begin
+    codigoProduto :=  DBGrid1.Fields[0].Value;
+
+    with DM.QueryProdutos do begin
+
+    leNomeProd.Text := FieldByName('nome_produto').AsString;
+    leCodInt.Text := FieldByName('codigo_produto').AsString;
+    leCodBar.Text := FieldByName('codigo_barras').AsString;
+    leMarcaProd.Text := FieldByName('marca').AsString;
+    leUnidade.Text := FieldByName('unidade_medida').AsString;
+    lePrecoComp.Text := FieldByName('preco_compra').AsString;
+    lePrecoVenda.Text := FieldByName('preco_venda').AsString;
+    leQuantEst.Text := FieldByName('quant_estoque').AsString;
+    edtQuantEstPrev.Text := FieldByName('quant_est_prevista').AsString;
+    cbCategoriaProd.Text := FieldByName('categoria').AsString;
+    //leRG.Text := FieldByName('rg_funcionario').AsString;
+    end;
+end;
 
 end.
