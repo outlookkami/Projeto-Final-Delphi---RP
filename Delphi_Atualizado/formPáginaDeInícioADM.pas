@@ -62,7 +62,13 @@ implementation
 
 {$R *.dfm}
 
-uses formCrudFuncionarios;
+uses formCrudFuncionarios,
+      formCrudPedidos,
+      formCrudOrcamentos,
+      formCrudProdutos,
+      formCrudClientes,
+      formCrudVeiculos,
+      formPortfolio;
 
 // Controle das páginas do PageControl
 procedure TformPáginaInicialADM.FormShow(Sender: TObject);
@@ -86,11 +92,19 @@ end;
 procedure TformPáginaInicialADM.btnpPedidosClick(Sender: TObject);
 begin
     PageControl1.ActivePageIndex := 1;
+    crudPedidos := TcrudPedidos.Create(Self);
+    crudPedidos.Parent := PageControl1.Pages[1];
+    crudPedidos.Align := AlClient;
+    crudPedidos.Show;
 end;
 
 procedure TformPáginaInicialADM.btnpOrcamentosClick(Sender: TObject);
 begin
     PageControl1.ActivePageIndex := 2;
+    crudOrcamentos := TcrudOrcamentos.Create(Self);
+    crudOrcamentos.Parent := PageControl1.Pages[2];
+    crudOrcamentos.Align := AlClient;
+    crudOrcamentos.Show;
 end;
 
 procedure TformPáginaInicialADM.btnpOSClick(Sender: TObject);
@@ -101,21 +115,37 @@ end;
 procedure TformPáginaInicialADM.btnpEstoqueClick(Sender: TObject);
 begin
     PageControl1.ActivePageIndex := 4;
+    formProdutos := TformProdutos.Create(Self);
+    formProdutos.Parent := PageControl1.Pages[4];
+    formProdutos.Align := AlClient;
+    formProdutos.Show;
 end;
 
 procedure TformPáginaInicialADM.btnpPortfolioClick(Sender: TObject);
 begin
     PageControl1.ActivePageIndex := 5;
+    formVerPortfolio := TformVerPortfolio.Create(Self);
+    formVerPortfolio.Parent := PageControl1.Pages[5];
+    formVerPortfolio.Align := AlClient;
+    formVerPortfolio.Show;
 end;
 
 procedure TformPáginaInicialADM.btnpClientesClick(Sender: TObject);
 begin
     PageControl1.ActivePageIndex := 6;
+    formCrudCli := TformCrudCli.Create(Self);
+    formCrudCli.Parent := PageControl1.Pages[6];
+    formCrudCli.Align := AlClient;
+    formCrudCli.Show;
 end;
 
 procedure TformPáginaInicialADM.btnpVeiculosClick(Sender: TObject);
 begin
     PageControl1.ActivePageIndex := 7;
+    crudVeiculos := TcrudVeiculos.Create(Self);
+    crudVeiculos.Parent := PageControl1.Pages[7];
+    crudVeiculos.Align := AlClient;
+    crudVeiculos.Show;
 end;
 
 procedure TformPáginaInicialADM.btnpFuncionariosClick(Sender: TObject);

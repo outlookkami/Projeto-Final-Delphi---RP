@@ -8,7 +8,7 @@ uses
   Vcl.Mask, Vcl.DBCtrls;
 
 type
-  TframePerfilUsuário = class(TFrame)
+  TframePerfilUsuario = class(TFrame)
     Panel1: TPanel;
     Label1: TLabel;
     gridPanelLogin: TGridPanel;
@@ -37,20 +37,44 @@ type
     Label11: TLabel;
     pnlAtualizar: TPanel;
     dbleConfSenha: TLabeledEdit;
+    procedure mostrarDadosPerfil;
   private
     { Private declarations }
   public
     { Public declarations }
   end;
 
-  var framePerfilUsuário: TframePerfilUsuário;
+  var framePerfilUsuario: TframePerfilUsuario;
 
 implementation
 
 {$R *.dfm}
 
-uses formLoginJLA;
+uses  dataModuleNormal,
+      formLoginJLA,
+      unitSessao;
 
+procedure TframePerfilUsuario.mostrarDadosPerfil;
+var TipoUsuario: String;
+begin
+    with DM.QueryUsuarios do begin
+      SQL.Text := 'SELECT * FROM Usuarios';
+      if TipoUsuario = 'Cliente' then begin
+        DM.QueryClientes.SQL.Text := 'SELECT * FROM "Clientes" where email_cliente = :EmailCli';
+      end else begin
+        DM.QueryFuncionarios.SQL.Text := 'SELECT * FROM "Funcionarios" where email_funcionario = :EmailFunc';;
+        end;
+    end;
 
+//    dbleNome.Text :=  ;
+//    dbleTelefone.Text := ;
+//    dbleEmail.Text := ;
+//    dbleCEP.Text := ;
+//    dbleEndereco.Text := ;
+//    dbleNumero.Text := ;
+//    dbleBairro.Text := ;
+//    dbleCidade.Text := ;
+//    dbleUF.Text :=;
 
+end;
 end.

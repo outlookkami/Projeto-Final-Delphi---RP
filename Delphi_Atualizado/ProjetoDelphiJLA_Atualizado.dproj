@@ -160,7 +160,7 @@
             <Form>formPáginaInicialADM</Form>
         </DCCReference>
         <DCCReference Include="framePerfil.pas">
-            <Form>framePerfilUsuário</Form>
+            <Form>framePerfilUsuario</Form>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
         <DCCReference Include="frameSobreNos.pas">
@@ -182,7 +182,7 @@
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
         <DCCReference Include="formPortfolio.pas">
-            <Form>formPortfólio</Form>
+            <Form>formVerPortfolio</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="formTrocarSenha.pas">
@@ -219,7 +219,7 @@
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="formOrcamento.pas">
-            <Form>Form2</Form>
+            <Form>formVerOrcamento</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="unitPlacaConsultor.pas"/>

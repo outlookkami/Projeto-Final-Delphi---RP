@@ -49,7 +49,9 @@ implementation
 
 {$R *.dfm}
 
-uses formFormularioPedido;
+uses  formFormularioPedido,
+      formOrcamento,
+      formPortfolio;
 
 procedure TformPáginaInicialCli.FormShow(Sender: TObject);
 var pages: Integer;
@@ -72,6 +74,10 @@ end;
 procedure TformPáginaInicialCli.btnpOrcamentosClick(Sender: TObject);
 begin
     PageControl1.ActivePageIndex := 1;
+    formVerOrcamento := TformVerOrcamento.Create(Self);
+    formVerOrcamento.Parent := PageControl1.Pages[1];
+    formVerOrcamento.Align := AlClient;
+    formVerOrcamento.Show;
 end;
 
 procedure TformPáginaInicialCli.btnpOSClick(Sender: TObject);
@@ -87,6 +93,10 @@ end;
 procedure TformPáginaInicialCli.btnpPortfolioClick(Sender: TObject);
 begin
     PageControl1.ActivePageIndex := 4;
+    formVerPortfolio := TformVerPortfolio.Create(Self);
+    formVerPortfolio.Parent := PageControl1.Pages[4];
+    formVerPortfolio.Align := AlClient;
+    formVerPortfolio.Show;
 end;
 
 procedure TformPáginaInicialCli.btnpPerfilClick(Sender: TObject);

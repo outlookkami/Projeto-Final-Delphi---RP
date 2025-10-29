@@ -67,4 +67,6 @@ implementation
 
 {$R *.dfm}
 
+uses formOrcamento;
+
 end.

@@ -1,4 +1,4 @@
-﻿object formPortfólio: TformPortfólio
+object formVerPortfolio: TformVerPortfolio
   Left = 0
   Top = 0
   Caption = 'Portf'#243'lio'

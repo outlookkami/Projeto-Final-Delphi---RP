@@ -156,6 +156,11 @@ object DM: TDM
       Origin = 'senha_hash'
       Size = 255
     end
+    object QueryUsuariosusuario_data_criacao: TSQLTimeStampField
+      FieldName = 'usuario_data_criacao'
+      Origin = 'usuario_data_criacao'
+      ProviderFlags = [pfInUpdate]
+    end
   end
   object QueryProdutos: TFDQuery
     Active = True

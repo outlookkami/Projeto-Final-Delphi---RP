@@ -1,4 +1,4 @@
-﻿object framePerfilUsuário: TframePerfilUsuário
+object framePerfilUsuario: TframePerfilUsuario
   Left = 0
   Top = 0
   Width = 1101

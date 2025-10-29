@@ -62,6 +62,13 @@ implementation
 
 {$R *.dfm}
 
+uses  formCrudPedidos,
+      formCrudOrcamentos,
+      formCrudProdutos,
+      formCrudClientes,
+      formCrudVeiculos,
+      formPortfolio;
+
 procedure TformPáginaInicialFunc.FormShow(Sender: TObject);
 var pages: Integer;
 begin
@@ -91,11 +98,19 @@ end;
 procedure TformPáginaInicialFunc.btnpPedidosClick(Sender: TObject);
 begin
     PageControl1.ActivePageIndex := 1;
+    crudPedidos := TcrudPedidos.Create(Self);
+    crudPedidos.Parent := PageControl1.Pages[1];
+    crudPedidos.Align := AlClient;
+    crudPedidos.Show;
 end;
 
 procedure TformPáginaInicialFunc.btnpOrcamentosClick(Sender: TObject);
 begin
     PageControl1.ActivePageIndex := 2;
+    crudOrcamentos := TcrudOrcamentos.Create(Self);
+    crudOrcamentos.Parent := PageControl1.Pages[2];
+    crudOrcamentos.Align := AlClient;
+    crudOrcamentos.Show;
 end;
 
 procedure TformPáginaInicialFunc.btnpOSClick(Sender: TObject);
@@ -106,28 +121,40 @@ end;
 procedure TformPáginaInicialFunc.btnpEstoqueClick(Sender: TObject);
 begin
     PageControl1.ActivePageIndex := 4;
+    formProdutos := TformProdutos.Create(Self);
+    formProdutos.Parent := PageControl1.Pages[4];
+    formProdutos.Align := AlClient;
+    formProdutos.Show;
 end;
 
 procedure TformPáginaInicialFunc.btnpPortfolioClick(Sender: TObject);
 begin
     PageControl1.ActivePageIndex := 5;
+    formVerPortfolio := TformVerPortfolio.Create(Self);
+    formVerPortfolio.Parent := PageControl1.Pages[5];
+    formVerPortfolio.Align := AlClient;
+    formVerPortfolio.Show;
 end;
 
 procedure TformPáginaInicialFunc.btnpClientesClick(Sender: TObject);
 begin
     PageControl1.ActivePageIndex := 6;
     CorMenu;
+    formCrudCli := TformCrudCli.Create(Self);
+    formCrudCli.Parent := PageControl1.Pages[6];
+    formCrudCli.Align := AlClient;
+    formCrudCli.Show;
 end;
-
-
 
 procedure TformPáginaInicialFunc.btnpVeiculosClick(Sender: TObject);
 begin
     PageControl1.ActivePageIndex := 7;
     CorMenu;
+    crudVeiculos := TcrudVeiculos.Create(Self);
+    crudVeiculos.Parent := PageControl1.Pages[7];
+    crudVeiculos.Align := AlClient;
+    crudVeiculos.Show;
 end;
-
-
 
 procedure TformPáginaInicialFunc.btnpPerfilClick(Sender: TObject);
 begin
@@ -145,8 +172,6 @@ begin
     btnpVeiculos.Color := ClHighlight;
     btnpPerfil.Color := ClHighlight;
     //clDarkBlue
-
-
 end;
 
 procedure TformPáginaInicialFunc.Image1Click(Sender: TObject);

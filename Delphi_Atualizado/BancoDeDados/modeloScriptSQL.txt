@@ -2,6 +2,33 @@
 -- Please log an issue at https://github.com/pgadmin-org/pgadmin4/issues/new/choose if you find any bugs, including reproduction steps.
 BEGIN;
 
+SELECTS:
+
+SELECT * FROM "Clientes";
+SELECT * FROM "Funcionarios";
+SELECT * FROM Produtos;
+SELECT * FROM Usuarios;
+SELECT * FROM Veiculos;
+SELECT * FROM Pedidos;
+
+
+CREATE TABLE IF NOT EXISTS Orcamentos(
+codigo_pedido SERIAL PRIMARY KEY,
+data_emissao DATE,
+validade DATE,
+nome cliente VARCHAR(100),
+telefone cliente VARCHAR(11),
+email_cliente VARCHAR(255),
+codigo_cliente INT,
+cep_cliente VARCHAR(8),
+placa VARCHAR(7),
+marca VARCHAR(40),
+modelo VARCHAR(40),
+cor VARCHAR(20),
+ano_mod VARCHAR(4),
+ano_fab VARCHAR(4),
+)
+
 
 CREATE EXTENSION IF NOT EXISTS pgcrypto;
 
@@ -12,16 +39,15 @@ CREATE TABLE IF NOT EXISTS public."Usuarios"
 codigo_usuario SERIAL PRIMARY KEY,
 nome_usuario VARCHAR(255) UNIQUE NOT NULL,
 hash_senha_usuario VARCHAR(255) NOT NULL,
-
 );
 
 
 CREATE TABLE IF NOT EXISTS public."Clientes"
 (
 codigo_cliente SERIAL PRIMARY KEY,
-hash_senha_cli VARCHAR(255) NOT NULL,
+hash_senha_cli VARCHAR(255),
 nome_cliente VARCHAR(100) NOT NULL,
-telefone_cliente VARCHAR(9) NOT NULL,
+telefone_cliente VARCHAR(11) NOT NULL,
 email_cliente VARCHAR(250) UNIQUE,
 cep_cliente VARCHAR(8),
 endereco_cliente VARCHAR(60),
@@ -29,7 +55,7 @@ num_endereco VARCHAR(7),
 bairro VARCHAR(30),
 cidade VARCHAR(30),
 uf VARCHAR(2),
-veiculo VARCHAR(7) NOT NULL,
+veiculo VARCHAR(7),
 cliente_data_criacao TIMESTAMP
 )
 ;
@@ -46,13 +72,13 @@ bairro, cidade, uf, veiculo) VALUES ('a9993e364706816aba3e25717850c26c9cd0d89d',
 CREATE TABLE IF NOT EXISTS public."Funcionarios"
 (
 codigo_funcionario SERIAL PRIMARY KEY,
-hash_senha_func VARCHAR(255) NOT NULL,
-nome funcionário VARCHAR(100) UNIQUE NOT NULL,
-telefone_funcionario VARCHAR(9) NOT NULL,
+hash_senha_func VARCHAR(255),
+nome funcionario VARCHAR(100) UNIQUE NOT NULL,
+telefone_funcionario VARCHAR(11) NOT NULL,
 email_funcionario VARCHAR(255) UNIQUE NOT NULL,
 funcao VARCHAR,
 rg_funcionario(9) UNIQUE,
-cpf_funcionario VARCHAR(11) UNIQUE,
+cpf_funcionario VARCHAR(11) UNIQUE NOT NULL,
 cep_funcionario VARCHAR(8),
 endereco_funcionario VARCHAR(60),
 num_endereco VARCHAR(7),
@@ -63,32 +89,47 @@ funcionario_data_criacao TIMESTAMP
 )
 ;
 
-
-CREATE TABLE IF NOT EXISTS public.tenant_oficina
-(
-)
-;
-
 CREATE TABLE IF NOT EXISTS public.veiculos
 (
-placa_veiculo VARCHAR(7) PRIMARY KEY,
+codigo_veiculo INTEGER GENERATED ALWAYS AS IDENTITY,
+placa_veiculo VARCHAR(7) UNIQUE,
 chassi VARCHAR(17) UNIQUE,
-modelo VARCHAR(20),
-marca VARCHAR(20),
+modelo VARCHAR(40),
+marca VARCHAR(40),
 cor VARCHAR(20),
-ano SMALLINT,
-nome_cliente FOREIGN KEY,
-codigo_cliente FOREIGN KEY,
-
-ADD CONSTRAINT
-FOREIGN KEY (nome_cliente)
-REFERENCES clientes(nome_cliente),
+ano_fab SMALLINT,
+ano_mod SMALLINT,
+nome_cliente VARCHAR(100),
+nome_usuario_cliente VARCHAR(255),
+codigo_cliente INTEGER,
 
 ADD CONSTRAINT
 FOREIGN KEY (codigo_cliente)
-REFERENCES clientes(codigo_cliente)
+REFERENCES clientes(codigo_cliente),
+
+ADD CONSTRAINT 
+FOREIGN KEY (nome_usuario_cliente)
+REFERENCES clientes(email_cliente)
 )
 ;
+
+CREATE TABLE IF NOT EXISTS public.produtos
+(
+codigo_produto SERIAL PRIMARY KEY,
+codigo_barras VARCHAR(20),
+nome_produto VARCHAR(80) NOT NULL,
+categoria VARCHAR(20),
+unidade_medida VARCHAR(20) NOT NULL,
+quant_estoque  INT NOT NULL,
+quant_est_prevista INT,
+preco_compra NUMERIC(7, 2) NOT NULL,
+preco_venda NUMERIC(7, 2) ,
+foto_produto VARCHAR(255),
+)
+
+/* Regra de negócio: se não houver preço de venda definido é considerado o preco de compra para fins de orçamento
+OBS: na inclusão de produtos na tabela --> caso o produto esteja sem preço de venda definido mostrar aviso explicando a regra de negócio e pedindo confirmação se deseja realmente incluir o produto sem preço de venda ou não.
+*/
 
 CREATE TABLE IF NOT EXISTS public.pedidos
 (

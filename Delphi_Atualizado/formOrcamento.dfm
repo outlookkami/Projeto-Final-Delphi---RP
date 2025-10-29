@@ -1,7 +1,7 @@
-﻿object Form2: TForm2
+﻿object formVerOrcamento: TformVerOrcamento
   Left = 0
   Top = 0
-  Caption = 'Form2'
+  Caption = 'Ver Or'#231'amento'
   ClientHeight = 1015
   ClientWidth = 1150
   Color = clBtnFace

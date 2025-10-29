@@ -27,13 +27,13 @@ uses
   formCadastroClientes in 'formCadastroClientes.pas' {formCadastroDeClientes},
   formPáginaDeInícioClientes in 'formPáginaDeInícioClientes.pas' {formPáginaInicialCli},
   formPáginaDeInícioADM in 'formPáginaDeInícioADM.pas' {formPáginaInicialADM},
-  framePerfil in 'framePerfil.pas' {framePerfilUsuário: TFrame},
+  framePerfil in 'framePerfil.pas' {framePerfilUsuario: TFrame},
   frameSobreNos in 'frameSobreNos.pas' {framePáginaSobreNos: TFrame},
   frameCadastroVeiculo in 'frameCadastroVeiculo.pas' {frameCadVeiculo: TFrame},
   dataModuleNormal in 'dataModuleNormal.pas' {DM: TDataModule},
   unitTestesDeProcedures in 'unitTestesDeProcedures.pas',
   frameTrocarSenhaUsuario in 'frameTrocarSenhaUsuario.pas' {TrocarSenha: TFrame},
-  formPortfolio in 'formPortfolio.pas' {formPortfólio},
+  formPortfolio in 'formPortfolio.pas' {formVerPortfolio},
   formTrocarSenha in 'formTrocarSenha.pas' {formTrocaSenha},
   formCrudFuncionarios in 'formCrudFuncionarios.pas' {formCrudFunc},
   formConfirmeEmail in 'formConfirmeEmail.pas' {formConfEmail},
@@ -43,7 +43,7 @@ uses
   unitCEPConsultor in 'unitCEPConsultor.pas',
   formCrudVeiculos in 'formCrudVeiculos.pas' {CrudVeiculos},
   formFormularioPedido in 'formFormularioPedido.pas' {FormPedido},
-  formOrcamento in 'formOrcamento.pas' {Form2},
+  formOrcamento in 'formOrcamento.pas' {formVerOrcamento},
   unitPlacaConsultor in 'unitPlacaConsultor.pas',
   unitSessao in 'unitSessao.pas',
   formCrudPedidos in 'formCrudPedidos.pas' {crudPedidos},
@@ -64,13 +64,13 @@ begin
   Application.CreateForm(TformPáginaInicialFunc, formPáginaInicialFunc);
   Application.CreateForm(TformPáginaInicialCli, formPáginaInicialCli);
   Application.CreateForm(TDM, DM);
-  Application.CreateForm(TformPortfólio, formPortfólio);
+  Application.CreateForm(TformVerPortfolio, formVerPortfolio);
   Application.CreateForm(TformTrocaSenha, formTrocaSenha);
   Application.CreateForm(TformConfEmail, formConfEmail);
   Application.CreateForm(TformProdutos, formProdutos);
   Application.CreateForm(TcrudPedidos, crudPedidos);
   Application.CreateForm(TCrudVeiculos, CrudVeiculos);
-  Application.CreateForm(TForm2, Form2);
+  Application.CreateForm(TformVerOrcamento, formVerOrcamento);
   Application.CreateForm(TcrudOrcamentos, crudOrcamentos);
   Application.Run;
 end.

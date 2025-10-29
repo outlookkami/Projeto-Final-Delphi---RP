@@ -84,6 +84,7 @@ type
     QueryPedidosdata_pedido: TSQLTimeStampField;
     QueryPedidosnome_cliente: TStringField;
     QueryPedidosstatus_pedido: TStringField;
+    QueryUsuariosusuario_data_criacao: TSQLTimeStampField;
   private
     { Private declarations }
   public

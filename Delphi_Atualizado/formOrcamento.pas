@@ -8,7 +8,7 @@ uses
   Vcl.Mask, Vcl.DBCtrls;
 
 type
-  TForm2 = class(TForm)
+  TformVerOrcamento = class(TForm)
     pnlFrameFormPedido: TPanel;
     lblDescServico: TLabel;
     Panel1: TPanel;
@@ -62,7 +62,7 @@ type
   end;
 
 var
-  Form2: TForm2;
+  formVerOrcamento: TformVerOrcamento;
 
 implementation
 
