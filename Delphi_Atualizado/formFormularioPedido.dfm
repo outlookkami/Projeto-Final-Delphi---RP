@@ -493,7 +493,7 @@ object FormPedido: TFormPedido
       BorderStyle = bsNone
       ImeMode = imDisable
       Lines.Strings = (
-        'memoDescricaoDoServi'#231'o')
+        '')
       TabOrder = 4
       StyleName = 'Windows'
     end

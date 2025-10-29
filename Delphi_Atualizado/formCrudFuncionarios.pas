@@ -67,6 +67,7 @@ type
     procedure FunciClien(Sender: TObject);
     procedure DBGrid1CellClick(Column: TColumn);
     procedure pnlSalvarClick(Sender: TObject);
+    procedure LimparCampos;
   private
     { Private declarations }
   public
@@ -110,15 +111,37 @@ begin
     leRG.Text := DM.QueryFuncionarios.FieldByName('rg_funcionario').AsString;
 end;
 
+// Limpar campos do formulário lateral
+procedure TformCrudFunc.LimparCampos;
+begin
+    leNome.Clear;
+    leTelefone.Clear;
+    leEmail.Clear;
+    leCEP.Clear;
+    leEndereco.Clear;
+    leBairro.Clear;
+    leNumero.Clear;
+    leCidade.Clear;
+    cbUF.Clear;
+    cbFuncao.ItemIndex:= -1;
+    leCPF.Clear;
+    leRG.Clear;
+end;
+
 // Incluir funcionário
 procedure TformCrudFunc.btnIncluirFuncClick(Sender: TObject);
 begin
     pnlSalvar.Visible := False;
     pnlCadastrar.Visible := True;
+    DM.QueryFuncionarios.Close;
 
     DM.QueryFuncionarios.Open;
-    if not (DM.QueryFuncionarios.State in [dsInsert, dsEdit]) then
+    LimparCampos;
+    if not (DM.QueryFuncionarios.State in [dsInsert, dsEdit]) then begin
       DM.QueryFuncionarios.Insert;
+    end;
+//      DM.QueryFuncionarios.Close;
+//      DM.QueryFuncionarios.Open;
 end;
 
 // Editar funcionário
@@ -127,6 +150,22 @@ begin
     pnlCadastrar.Visible := False;
     pnlSalvar.Visible := True;
 
+//    if (DM.QueryFuncionarios.FieldByName('ativo_in') = False) begin
+//        if MessageDlg('Funcionário deve estar ativo para realizar edição! Deseja tornar o funcionário ativo?',
+//              mtConfirmation, [mbYes, mbNo], 0) = mrYes then DM.QueryFuncionarios.SQL.Text := 'UPDATE "Funcionarios" SET ativo_in = :boolAtivo WHERE codigo_funcionario = :codFunc';
+//              ParamByName('boolAtivo').AsBoolean := False;
+//              ParamByName('codFunc').AsInteger := StrToInt(codigoFuncionario);
+//      end;
+
+//    with DM.QueryFuncionarios do begin
+//    Open;
+//
+//
+//
+//
+//    ExecSQL;
+//    end;
+
     if not (DM.QueryFuncionarios.State in [dsInsert, dsEdit]) then
     DM.QueryFuncionarios.Edit;
 end;
@@ -134,8 +173,10 @@ end;
 procedure TformCrudFunc.pnlSalvarClick(Sender: TObject);
 begin
     if not (DM.QueryFuncionarios.State in [dsInsert, dsEdit]) then
-//    DM.QueryFuncionarios.Open;
+    DM.QueryFuncionarios.Open;
     DM.QueryFuncionarios.Post;
+    DM.QueryFuncionarios.Close;
+    DM.QueryFuncionarios.Open;
 end;
 
 // Inativar funcionário
@@ -155,7 +196,7 @@ begin
     if (DM.QueryFuncionarios.FieldByName('ativo_in').AsBoolean = True) then begin
       ShowMessage('O funcionário deve estar inativo antes de ser excluído.');
     end else begin
-      DM.QueryFuncionarios.Delete;
+     if MessageDlg('Tem certeza de que deseja excluir o funcionário? Essa ação não poderá ser revertida.', mtConfirmation, [mbYes, mbNo], 0) = mrYes then DM.QueryFuncionarios.Delete;;
     end;
     DM.QueryFuncionarios.Open;
 end;
@@ -189,6 +230,8 @@ end;
 procedure TformCrudFunc.FunciClien(Sender: TObject);
 var hash: String;
 begin
+    hash := THashSHA1.GetHashString(leCPF.Text);
+
     with DM.QueryClientes do begin
     DM.QueryClientes.SQL.Text := 'INSERT INTO "Clientes" (nome_cliente, telefone_cliente, email_cliente, cep_cliente, endereco_cliente, num_endereco, bairro, cidade, uf) VALUES(:Nome, :Telefone, :Email, :CEP, :Endereco, :Numero, :Bairro, :Cidade, :UF);';
 
@@ -218,7 +261,8 @@ begin
     end else begin
 
         with DM.QueryFuncionarios do begin
-
+        DM.QueryFuncionarios.Close;
+        DM.QueryFuncionarios.Open;
         SQL.Text := 'INSERT INTO "Funcionarios" (nome_funcionario, telefone_funcionario, email_funcionario, cep_funcionario, endereco_funcionario, num_endereco, bairro, cidade, uf, funcao, cpf_funcionario, rg_funcionario, hash_senha_func) VALUES (:Nome, :Telefone, :Email, :CEP, :Endereco, :Numero, :Bairro, :Cidade, :UF, :Funcao, :CPF, :RG, :Senha);';
 
         ParamByName('Nome').AsString := leNome.Text;
@@ -234,11 +278,7 @@ begin
         ParamByName('CPF').AsString := leCPF.Text;
         ParamByName('RG').AsString := leRG.Text;
         ParamByName('Senha').AsString := hash;
-        //SenhaFunc; //Senha só é recebida no frame/form de Cadastro de Senha de Funcionário
-
-//          if senhaFunci = '' then begin
-//          senhaFunci := 'senha1234';
-//          end;
+        // Senha inicial será o CPF do funcionário
 
           if cbFuncao.Text = 'Administrador' then begin
             if MessageDlg('Tem certeza que deseja adicionar funcionário com a função de "Administrador"? Esse usuário terá acesso à todas as permissões de um administrador.',
@@ -249,11 +289,15 @@ begin
               if MessageDlg('Cadastro finalizado com sucesso! Deseja incluir o funcionário como cliente?',
               mtConfirmation, [mbYes, mbNo], 0) = mrYes then FunciClien(leEmail);
             end else begin
-                ShowMessage('Funcionário não incluído. Aguarde o retorno à tela.');
+                ShowMessage('Funcionário não registrado como cliente. Aguarde o retorno à tela.');
                 Sleep(4000);
                 Close;
               end;
           end;
+          ExecSQL;
+          DM.QueryFuncionarios.Close;
+          DM.QueryFuncionarios.Open;
+//          DM.QueryFuncionarios.Insert;
         end;
     end;
 end;

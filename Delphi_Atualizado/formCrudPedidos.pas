@@ -6,7 +6,7 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, REST.Types, REST.Client,
   Data.Bind.Components, Data.Bind.ObjectScope, Vcl.StdCtrls, Vcl.Mask,
-  Vcl.ExtCtrls, Vcl.Grids, Vcl.DBGrids, Vcl.Imaging.pngimage;
+  Vcl.ExtCtrls, Vcl.Grids, Vcl.DBGrids, Vcl.Imaging.pngimage, dataModuleNormal;
 
 type
   TcrudPedidos = class(TForm)
@@ -40,7 +40,7 @@ type
     GridPanel2: TGridPanel;
     leContato: TLabeledEdit;
     leCEP: TLabeledEdit;
-    LabeledEdit1: TLabeledEdit;
+    leEndereco: TLabeledEdit;
     GridPanel5: TGridPanel;
     lePlaca: TLabeledEdit;
     leCorVeiculo: TLabeledEdit;
@@ -52,6 +52,10 @@ type
     Label9: TLabel;
     lblStatus: TLabel;
     cbStatus: TComboBox;
+    pnlFazerOrcPedido: TPanel;
+    pnlIncluirPedido: TPanel;
+    procedure DBGrid1CellClick(Column: TColumn);
+    procedure btnIncluirPediClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -64,5 +68,48 @@ var
 implementation
 
 {$R *.dfm}
+var codigoPedido: String;
+
+procedure TcrudPedidos.DBGrid1CellClick(Column: TColumn);
+begin
+    codigoPedido :=  DBGrid1.Fields[0].Value;
+
+    with DM.QueryPedidos do begin
+      leData.Text := FieldByName('data_pedido').AsString;
+      leContato.Text := FieldByName('contato_cliente').AsString;
+      leCEP.Text := FieldByName('cep_cliente').AsString;
+      leEmailCliente.Text := FieldByName('email_cliente').AsString;
+      leEndereco.Text := FieldByName('endereco_cliente').AsString;
+      lePlaca.Text := FieldByName('placa_veiculo').AsString;
+      leCorVeiculo.Text := FieldByName('cor').AsString;
+      leMarca.Text := FieldByName('marca').AsString;
+      leModelo.Text := FieldByName('modelo').AsString;
+      descPedido.Text := FieldByName('descricao_pedido').AsString;
+      cbStatus.Text := FieldByName('status_pedido').AsString;
+    end;
+end;
+
+// Mostrar dados nos campos do formulário lateral
+procedure TcrudPedidos.btnIncluirPediClick(Sender: TObject);
+begin
+      with DM.QueryPedidos do begin
+        DM.QueryPedidos.Close;
+        DM.QueryPedidos.Open;
+        SQL.Text := 'INSERT INTO Pedidos (data_pedido, contato_cliente, endereco_cliente, cep_cliente, placa_veiculo, modelo, marca, cor, descricao_pedido, nome_cliente, email_cliente, status_pedido) VALUES (:Data, :Contato, :Endereco, :CEP, :Placa, :Modelo, :Marca, :Cor, :DescPedido, :NomeCli, :EmailCli, :Status);';
+
+        ParamByName('Data').AsString := leData.Text;
+        ParamByName('Contato').AsString := leContato.Text;
+        ParamByName('Endereco').AsString := leEndereco.Text;
+        ParamByName('CEP').AsString := leCEP.Text;
+        ParamByName('Placa').AsString := lePlaca.Text;
+        ParamByName('Modelo').AsString := leModelo.Text;
+        ParamByName('Marca').AsString := leMarca.Text;
+        ParamByName('Cor').AsString := leCorVeiculo.Text;
+        ParamByName('DescPedido').AsString := descPedido.Text;
+        //ParamByName('NomeCli').AsString := NomeCli.Text;
+        ParamByName('EmailCli').AsString := leEmailCliente.Text;
+        ParamByName('Status').AsString := cbStatus.Text;
+      end;
+end;
 
 end.

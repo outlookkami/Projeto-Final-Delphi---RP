@@ -811,7 +811,6 @@ object formProdutos: TformProdutos
         TabOrder = 7
         Text = ''
         TextHint = 'Informe a unidade de medida L, Kg, ml etc.'
-        ExplicitTop = 293
       end
       object lblImagem: TLabel
         Left = 19
@@ -831,7 +830,7 @@ object formProdutos: TformProdutos
       end
     end
     object btnInativProd: TPanel
-      Left = 451
+      Left = 293
       Top = 74
       Width = 152
       Height = 43
@@ -849,7 +848,7 @@ object formProdutos: TformProdutos
       TabOrder = 5
     end
     object btnExcluirProduto: TPanel
-      Left = 293
+      Left = 135
       Top = 74
       Width = 152
       Height = 43
@@ -866,10 +865,28 @@ object formProdutos: TformProdutos
       ParentFont = False
       TabOrder = 6
     end
+    object btnEditVeic: TPanel
+      Left = 451
+      Top = 74
+      Width = 152
+      Height = 43
+      Cursor = crHandPoint
+      Anchors = [akTop, akRight]
+      Caption = 'Editar Ve'#237'culo'
+      Color = clHighlight
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -13
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentBackground = False
+      ParentFont = False
+      TabOrder = 7
+    end
   end
   object DSProdutos: TDataSource
     DataSet = DM.QueryProdutos
-    Left = 64
-    Top = 80
+    Left = 8
+    Top = 24
   end
 end

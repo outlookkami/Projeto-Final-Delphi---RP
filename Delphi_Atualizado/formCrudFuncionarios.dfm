@@ -1012,7 +1012,6 @@ object formCrudFunc: TformCrudFunc
         TabOrder = 11
         Text = ''
         TextHint = 'Digite seu nome completo'
-        ExplicitLeft = 16
       end
     end
     object btnEditFunc: TPanel

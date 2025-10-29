@@ -19,9 +19,6 @@
     Align = alClient
     ParentBackground = False
     TabOrder = 0
-    ExplicitLeft = -8
-    ExplicitTop = -8
-    ExplicitHeight = 827
     DesignSize = (
       1150
       1015)
@@ -54,17 +51,16 @@
       Left = 103
       Top = 465
       Width = 954
-      Height = 131
+      Height = 97
       Anchors = [akLeft, akTop, akRight, akBottom]
       BevelInner = bvNone
       BevelOuter = bvNone
       BorderStyle = bsNone
       ImeMode = imDisable
       Lines.Strings = (
-        'memoDescricaoDoServi'#231'o')
+        '')
       TabOrder = 1
       StyleName = 'Windows'
-      ExplicitHeight = 72
     end
     object GridPanel1: TGridPanel
       Left = 103
@@ -121,7 +117,7 @@
         425)
       object GridPanel2: TGridPanel
         Left = 18
-        Top = 7
+        Top = 8
         Width = 917
         Height = 57
         Anchors = []
@@ -157,8 +153,6 @@
             Value = 100.000000000000000000
           end>
         TabOrder = 0
-        ExplicitLeft = 12
-        ExplicitTop = 8
         object GridPanel3: TGridPanel
           Left = 1
           Top = 1
@@ -188,8 +182,6 @@
               Value = 100.000000000000000000
             end>
           TabOrder = 0
-          ExplicitLeft = 0
-          ExplicitWidth = 306
           object lblOrcamento: TLabel
             Left = 35
             Top = 16
@@ -323,7 +315,7 @@
       end
       object GridPanel6: TGridPanel
         Left = 19
-        Top = 77
+        Top = 78
         Width = 916
         Height = 58
         Anchors = []
@@ -352,7 +344,6 @@
             Value = 100.000000000000000000
           end>
         TabOrder = 1
-        ExplicitLeft = 18
         DesignSize = (
           916
           58)
@@ -382,7 +373,7 @@
       end
       object GridPanel7: TGridPanel
         Left = 19
-        Top = 148
+        Top = 149
         Width = 916
         Height = 57
         Anchors = []
@@ -429,7 +420,6 @@
             Value = 100.000000000000000000
           end>
         TabOrder = 2
-        ExplicitLeft = 18
         DesignSize = (
           916
           57)
@@ -620,22 +610,22 @@
         end
         item
           Column = 2
-          Control = lblMarcaMod
+          Control = lblMarc
           Row = 0
         end
         item
           Column = 3
-          Control = lblMarcaModelo
+          Control = lblMarca
           Row = 0
         end
         item
           Column = 4
-          Control = lblCor
+          Control = lblMod
           Row = 0
         end
         item
           Column = 5
-          Control = lblCorVeic
+          Control = lblModelo
           Row = 0
         end>
       RowCollection = <
@@ -660,7 +650,7 @@
         ExplicitTop = 25
       end
       object lblPlacaVeic: TLabel
-        Left = 203
+        Left = 196
         Top = 16
         Width = 72
         Height = 17
@@ -673,23 +663,22 @@
         Font.Style = []
         ParentFont = False
       end
-      object lblMarcaMod: TLabel
-        Left = 343
+      object lblMarc: TLabel
+        Left = 361
         Top = 19
-        Width = 78
+        Width = 42
         Height = 15
         Anchors = []
-        Caption = 'MARCA/MOD.'
-        ExplicitLeft = 374
-        ExplicitTop = 25
+        Caption = 'MARCA'
+        ExplicitLeft = 343
       end
-      object lblMarcaModelo: TLabel
+      object lblMarca: TLabel
         Left = 517
         Top = 16
-        Width = 82
+        Width = 36
         Height = 17
         Align = alCustom
-        Caption = 'marcaModelo'
+        Caption = 'marca'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -13
@@ -697,23 +686,22 @@
         Font.Style = []
         ParentFont = False
       end
-      object lblCor: TLabel
-        Left = 674
+      object lblMod: TLabel
+        Left = 662
         Top = 19
-        Width = 24
+        Width = 49
         Height = 15
         Anchors = []
-        Caption = 'COR'
-        ExplicitLeft = 667
-        ExplicitTop = 25
+        Caption = 'MODELO'
+        ExplicitLeft = 647
       end
-      object lblCorVeic: TLabel
-        Left = 830
-        Top = 16
-        Width = 60
+      object lblModelo: TLabel
+        Left = 822
+        Top = 18
+        Width = 45
         Height = 17
         Align = alCustom
-        Caption = 'corVeiculo'
+        Caption = 'modelo'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -13
@@ -723,7 +711,7 @@
       end
     end
     object GridPanel10: TGridPanel
-      Left = 122
+      Left = 121
       Top = 375
       Width = 916
       Height = 58
@@ -748,16 +736,6 @@
         end>
       ControlCollection = <
         item
-          Column = 0
-          Control = lblAnoFab
-          Row = 0
-        end
-        item
-          Column = 1
-          Control = lblAnoFabricacao
-          Row = 0
-        end
-        item
           Column = 2
           Control = lblAnoMod
           Row = 0
@@ -765,6 +743,26 @@
         item
           Column = 3
           Control = lblAnoModelo
+          Row = 0
+        end
+        item
+          Column = 4
+          Control = Label1
+          Row = 0
+        end
+        item
+          Column = 5
+          Control = Label2
+          Row = 0
+        end
+        item
+          Column = 0
+          Control = Label3
+          Row = 0
+        end
+        item
+          Column = 1
+          Control = Label4
           Row = 0
         end>
       RowCollection = <
@@ -775,30 +773,6 @@
       DesignSize = (
         916
         58)
-      object lblAnoFab: TLabel
-        Left = 51
-        Top = 21
-        Width = 52
-        Height = 15
-        Anchors = []
-        Caption = 'ANO FAB.'
-        ExplicitLeft = 61
-        ExplicitTop = 25
-      end
-      object lblAnoFabricacao: TLabel
-        Left = 203
-        Top = 16
-        Width = 85
-        Height = 17
-        Align = alCustom
-        Caption = 'anoFabrica'#231#227'o'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -13
-        Font.Name = 'Segoe UI'
-        Font.Style = []
-        ParentFont = False
-      end
       object lblAnoMod: TLabel
         Left = 352
         Top = 21
@@ -810,7 +784,7 @@
         ExplicitTop = 25
       end
       object lblAnoModelo: TLabel
-        Left = 517
+        Left = 506
         Top = 16
         Width = 68
         Height = 17
@@ -823,10 +797,58 @@
         Font.Style = []
         ParentFont = False
       end
+      object Label1: TLabel
+        Left = 660
+        Top = 21
+        Width = 52
+        Height = 15
+        Anchors = []
+        Caption = 'ANO FAB.'
+        ExplicitLeft = 654
+        ExplicitTop = 20
+      end
+      object Label2: TLabel
+        Left = 806
+        Top = 20
+        Width = 85
+        Height = 17
+        Align = alCustom
+        Caption = 'anoFabrica'#231#227'o'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
+      end
+      object Label3: TLabel
+        Left = 65
+        Top = 21
+        Width = 24
+        Height = 15
+        Anchors = []
+        Caption = 'COR'
+        ExplicitLeft = 44
+        ExplicitTop = 20
+      end
+      object Label4: TLabel
+        Left = 197
+        Top = 20
+        Width = 60
+        Height = 17
+        Align = alCustom
+        Caption = 'corVeiculo'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
+      end
     end
     object GridPanel11: TGridPanel
       Left = 103
-      Top = 551
+      Top = 568
       Width = 954
       Height = 338
       ColumnCollection = <
@@ -840,7 +862,7 @@
         end
         item
           SizeStyle = ssAbsolute
-          Value = 33.333333333333340000
+          Value = 33.000000000000000000
         end
         item
           SizeStyle = ssAbsolute
@@ -877,13 +899,13 @@
           Value = 11.111111111111110000
         end
         item
-          Value = 11.111111111111110000
+          Value = 11.111111111111100000
         end>
       TabOrder = 5
     end
     object GridPanel12: TGridPanel
       Left = 103
-      Top = 912
+      Top = 928
       Width = 954
       Height = 81
       Caption = 'GridPanel12'

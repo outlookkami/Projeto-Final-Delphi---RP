@@ -192,19 +192,19 @@ begin
         tipoUsuario := DM.QueryUsuarios.FieldByName('tipo_usuario').AsString;
         registDadosLogin;
         Self.Hide;
-       if tipoUsuario = 'Cliente' then begin
+        if tipoUsuario = 'Cliente' then begin
          Application.CreateForm(TformPáginaInicialCli, formPáginaInicialCli);
          formPáginaInicialCli.Show;
-       end else if tipoUsuario = 'Funcionario' then begin
-         Application.CreateForm(TformPáginaInicialFunc, formPáginaInicialFunc);
-         formPáginaInicialFunc.Show;
-         end else if (tipoUsuario = 'Administrador') or (funcionarioAdm = true) then begin
+        end else if (tipoUsuario = 'Administrador') or (funcionarioAdm = true) then begin
             Application.CreateForm(TformPáginaInicialADM, formPáginaInicialADM);
             formPáginaInicialADM.Show;
-            end;
+          end else if (tipoUsuario = 'Funcionario') and (funcionarioAdm = False) then begin
+         Application.CreateForm(TformPáginaInicialFunc, formPáginaInicialFunc);
+         formPáginaInicialFunc.Show;
 
-      end else begin
-         ShowMessage('Usuário ou senha incorretos. Tente novamente.');
+            end else begin
+            ShowMessage('Usuário ou senha incorretos. Tente novamente.');
+              end;
       end;
   end;
 end;

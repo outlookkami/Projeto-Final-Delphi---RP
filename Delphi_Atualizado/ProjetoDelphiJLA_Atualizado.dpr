@@ -46,7 +46,8 @@ uses
   formOrcamento in 'formOrcamento.pas' {Form2},
   unitPlacaConsultor in 'unitPlacaConsultor.pas',
   unitSessao in 'unitSessao.pas',
-  formCrudPedidos in 'formCrudPedidos.pas' {crudPedidos};
+  formCrudPedidos in 'formCrudPedidos.pas' {crudPedidos},
+  formCrudOrcamentos in 'formCrudOrcamentos.pas' {crudOrcamentos};
 
 {$R *.res}
 
@@ -54,10 +55,10 @@ begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
   Application.Title := 'Aviso';
+  Application.CreateForm(TformCrudFunc, formCrudFunc);
   Application.CreateForm(TformLogin, formLogin);
   Application.CreateForm(TFormPedido, FormPedido);
   Application.CreateForm(TformCrudCli, formCrudCli);
-  Application.CreateForm(TformCrudFunc, formCrudFunc);
   Application.CreateForm(TformPáginaInicialADM, formPáginaInicialADM);
   Application.CreateForm(TformCadastroDeClientes, formCadastroDeClientes);
   Application.CreateForm(TformPáginaInicialFunc, formPáginaInicialFunc);
@@ -70,6 +71,7 @@ begin
   Application.CreateForm(TcrudPedidos, crudPedidos);
   Application.CreateForm(TCrudVeiculos, CrudVeiculos);
   Application.CreateForm(TForm2, Form2);
+  Application.CreateForm(TcrudOrcamentos, crudOrcamentos);
   Application.Run;
 end.
 

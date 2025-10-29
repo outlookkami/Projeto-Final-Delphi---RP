@@ -3,7 +3,7 @@ object crudPedidos: TcrudPedidos
   Top = 0
   Caption = 'Ver Pedidos'
   ClientHeight = 701
-  ClientWidth = 1150
+  ClientWidth = 1151
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -14,20 +14,19 @@ object crudPedidos: TcrudPedidos
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 1150
+    Width = 1151
     Height = 701
     Align = alClient
     TabOrder = 0
-    ExplicitTop = -33
-    ExplicitHeight = 734
+    ExplicitWidth = 1150
     DesignSize = (
-      1150
+      1151
       701)
     object lblDadosFunc: TLabel
       Left = 866
       Top = 21
-      Width = 182
-      Height = -8
+      Width = 183
+      Height = 25
       Align = alCustom
       Alignment = taRightJustify
       Anchors = [akLeft, akTop, akRight, akBottom]
@@ -38,10 +37,10 @@ object crudPedidos: TcrudPedidos
       Font.Name = 'Segoe UI'
       Font.Style = []
       ParentFont = False
-      ExplicitHeight = 25
+      ExplicitWidth = 182
     end
     object btnIncluirPedi: TPanel
-      Left = 591
+      Left = 592
       Top = 74
       Width = 152
       Height = 43
@@ -57,11 +56,13 @@ object crudPedidos: TcrudPedidos
       ParentBackground = False
       ParentFont = False
       TabOrder = 2
+      OnClick = btnIncluirPediClick
+      ExplicitLeft = 591
     end
     object pnlPesquisa: TPanel
       Left = 48
       Top = 27
-      Width = 695
+      Width = 696
       Height = 41
       Anchors = [akLeft, akTop, akRight]
       BevelKind = bkFlat
@@ -69,11 +70,12 @@ object crudPedidos: TcrudPedidos
       Color = clBtnHighlight
       ParentBackground = False
       TabOrder = 0
+      ExplicitWidth = 695
       DesignSize = (
-        691
+        692
         37)
       object iconePesquisa: TImage
-        Left = 649
+        Left = 650
         Top = -2
         Width = 34
         Height = 41
@@ -153,12 +155,13 @@ object crudPedidos: TcrudPedidos
           4BEF29ACE3371500429A3BCD7492B23D7FFD5FA5F0C973C979C5F50000000049
           454E44AE426082}
         Proportional = True
+        ExplicitLeft = 649
       end
     end
     object DBGrid1: TDBGrid
       Left = 48
       Top = 138
-      Width = 695
+      Width = 696
       Height = 528
       Anchors = [akLeft, akTop, akRight, akBottom]
       DataSource = DSPedidos
@@ -169,184 +172,78 @@ object crudPedidos: TcrudPedidos
       TitleFont.Height = -12
       TitleFont.Name = 'Segoe UI'
       TitleFont.Style = []
+      OnCellClick = DBGrid1CellClick
       Columns = <
         item
           Expanded = False
-          FieldName = 'codigo_funcionario'
-          Title.Caption = 'C'#243'digo'
+          FieldName = 'codigo_pedido'
           Visible = True
         end
         item
           Expanded = False
-          FieldName = 'nome_funcionario'
-          Title.Caption = 'Nome'
-          Width = 300
+          FieldName = 'codigo_cliente'
           Visible = True
         end
         item
           Expanded = False
-          FieldName = 'telefone_funcionario'
-          Title.Caption = 'Telefone'
-          Width = 100
+          FieldName = 'endereco_cliente'
           Visible = True
         end
         item
           Expanded = False
-          FieldName = 'email_funcionario'
-          Title.Caption = 'Email'
-          Width = 400
+          FieldName = 'cep_cliente'
           Visible = True
         end
         item
           Expanded = False
-          FieldName = 'cep_funcionario'
-          Title.Caption = 'CEP'
-          Width = 100
+          FieldName = 'placa_veiculo'
           Visible = True
         end
         item
           Expanded = False
-          FieldName = 'endereco_funcionario'
-          Title.Caption = 'Endere'#231'o'
-          Width = 300
+          FieldName = 'marca'
           Visible = True
         end
         item
           Expanded = False
-          FieldName = 'num_endereco'
-          Title.Caption = 'N'#176
-          Width = 70
+          FieldName = 'modelo'
           Visible = True
         end
         item
           Expanded = False
-          FieldName = 'bairro'
-          Title.Caption = 'Bairro'
-          Width = 250
+          FieldName = 'cor'
           Visible = True
         end
         item
           Expanded = False
-          FieldName = 'cidade'
-          Title.Caption = 'Cidade'
-          Width = 250
+          FieldName = 'descricao_pedido'
           Visible = True
         end
         item
           Expanded = False
-          FieldName = 'uf'
-          Title.Caption = 'UF'
-          Width = 40
+          FieldName = 'contato_cliente'
           Visible = True
         end
         item
           Expanded = False
-          FieldName = 'funcao'
-          Title.Caption = 'Fun'#231#227'o'
-          Width = 200
+          FieldName = 'data_pedido'
           Visible = True
         end
         item
           Expanded = False
-          FieldName = 'cpf_funcionario'
-          Title.Caption = 'CPF'
-          Width = 140
+          FieldName = 'nome_cliente'
           Visible = True
         end
         item
           Expanded = False
-          FieldName = 'rg_funcionario'
-          Title.Caption = 'RG'
-          Width = 120
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'ativo_in'
-          Title.Caption = 'Ativo'
-          Width = 50
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'codigo_funcionario'
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'hash_senha_func'
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'nome_funcionario'
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'telefone_funcionario'
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'email_funcionario'
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'cep_funcionario'
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'endereco_funcionario'
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'num_endereco'
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'bairro'
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'cidade'
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'uf'
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'funcao'
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'cpf_funcionario'
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'rg_funcionario'
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'ativo_in'
+          FieldName = 'status_pedido'
           Visible = True
         end>
     end
     object edtPesquisa: TEdit
       Left = 56
       Top = 32
-      Width = 637
+      Width = 638
       Height = 28
       Anchors = [akLeft, akTop, akRight]
       BorderStyle = bsNone
@@ -358,9 +255,10 @@ object crudPedidos: TcrudPedidos
       ParentFont = False
       TabOrder = 3
       TextHint = 'Pesquise'
+      ExplicitWidth = 637
     end
     object gridPanelLogin: TGridPanel
-      Left = 760
+      Left = 761
       Top = 19
       Width = 361
       Height = 647
@@ -430,7 +328,7 @@ object crudPedidos: TcrudPedidos
         end
         item
           Column = 0
-          Control = LabeledEdit1
+          Control = leEndereco
           Row = 6
         end
         item
@@ -477,6 +375,16 @@ object crudPedidos: TcrudPedidos
           Column = 0
           Control = cbStatus
           Row = 20
+        end
+        item
+          Column = 0
+          Control = pnlFazerOrcPedido
+          Row = 21
+        end
+        item
+          Column = 0
+          Control = pnlIncluirPedido
+          Row = 22
         end>
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
@@ -551,14 +459,18 @@ object crudPedidos: TcrudPedidos
         end
         item
           Value = 4.761904761904762000
+        end
+        item
+          SizeStyle = ssAuto
         end>
       TabOrder = 4
+      ExplicitLeft = 760
       DesignSize = (
         361
         647)
       object Label2: TLabel
         Left = 178
-        Top = 32
+        Top = 29
         Width = 4
         Height = 21
         Anchors = []
@@ -567,7 +479,7 @@ object crudPedidos: TcrudPedidos
       end
       object Label3: TLabel
         Left = 178
-        Top = 90
+        Top = 83
         Width = 4
         Height = 21
         Anchors = []
@@ -576,7 +488,7 @@ object crudPedidos: TcrudPedidos
       end
       object Label4: TLabel
         Left = 178
-        Top = 147
+        Top = 136
         Width = 4
         Height = 21
         Anchors = []
@@ -585,7 +497,7 @@ object crudPedidos: TcrudPedidos
       end
       object Label5: TLabel
         Left = 178
-        Top = 204
+        Top = 190
         Width = 4
         Height = 21
         Anchors = []
@@ -594,7 +506,7 @@ object crudPedidos: TcrudPedidos
       end
       object Label6: TLabel
         Left = 178
-        Top = 262
+        Top = 243
         Width = 4
         Height = 21
         Anchors = []
@@ -603,7 +515,7 @@ object crudPedidos: TcrudPedidos
       end
       object Label7: TLabel
         Left = 178
-        Top = 319
+        Top = 297
         Width = 4
         Height = 21
         Anchors = []
@@ -612,7 +524,7 @@ object crudPedidos: TcrudPedidos
       end
       object Label8: TLabel
         Left = 178
-        Top = 376
+        Top = 350
         Width = 4
         Height = 21
         Anchors = []
@@ -621,7 +533,7 @@ object crudPedidos: TcrudPedidos
       end
       object Label10: TLabel
         Left = 178
-        Top = 491
+        Top = 457
         Width = 4
         Height = 21
         Anchors = []
@@ -630,7 +542,7 @@ object crudPedidos: TcrudPedidos
       end
       object leEmailCliente: TLabeledEdit
         Left = 10
-        Top = 139
+        Top = 131
         Width = 341
         Height = 29
         Anchors = []
@@ -640,14 +552,13 @@ object crudPedidos: TcrudPedidos
         TabOrder = 0
         Text = ''
         TextHint = 'Digite o endere'#231'o de e-mail'
-        ExplicitLeft = 8
-        ExplicitTop = 137
+        ExplicitTop = 139
       end
       object GridPanel1: TGridPanel
         Left = 1
         Top = 0
         Width = 358
-        Height = 52
+        Height = 65
         Anchors = []
         BevelOuter = bvNone
         ColumnCollection = <
@@ -682,38 +593,36 @@ object crudPedidos: TcrudPedidos
         TabOrder = 1
         DesignSize = (
           358
-          52)
+          65)
         object leCodPedido: TLabeledEdit
           Left = 11
-          Top = 25
+          Top = 29
           Width = 157
-          Height = 25
+          Height = 30
           Anchors = []
           EditLabel.Width = 126
           EditLabel.Height = 21
           EditLabel.Caption = 'C'#243'digo do Pedido:'
           TabOrder = 0
           Text = ''
-          TextHint = '$'
-          ExplicitLeft = 8
         end
         object leData: TLabeledEdit
           Left = 180
-          Top = 25
+          Top = 30
           Width = 165
-          Height = 25
+          Height = 29
           Anchors = []
           EditLabel.Width = 108
           EditLabel.Height = 21
           EditLabel.Caption = 'Data do Pedido:'
           TabOrder = 1
           Text = ''
-          TextHint = '$'
+          ExplicitTop = 29
         end
       end
       object GridPanel2: TGridPanel
         Left = 2
-        Top = 57
+        Top = 53
         Width = 356
         Height = 53
         Anchors = []
@@ -748,42 +657,38 @@ object crudPedidos: TcrudPedidos
             SizeStyle = ssAuto
           end>
         TabOrder = 2
-        ExplicitTop = 56
+        ExplicitTop = 57
         DesignSize = (
           356
           53)
         object leContato: TLabeledEdit
           Left = 7
-          Top = 26
+          Top = 24
           Width = 165
-          Height = 25
+          Height = 29
           Anchors = []
           EditLabel.Width = 129
           EditLabel.Height = 21
           EditLabel.Caption = 'Contato do cliente:'
           TabOrder = 0
           Text = ''
-          TextHint = '$'
-          ExplicitTop = 24
         end
         object leCEP: TLabeledEdit
           Left = 180
-          Top = 26
+          Top = 24
           Width = 165
-          Height = 25
+          Height = 29
           Anchors = []
           EditLabel.Width = 101
           EditLabel.Height = 21
           EditLabel.Caption = 'CEP do cliente:'
           TabOrder = 1
           Text = ''
-          TextHint = '$'
-          ExplicitTop = 24
         end
       end
-      object LabeledEdit1: TLabeledEdit
+      object leEndereco: TLabeledEdit
         Left = 10
-        Top = 196
+        Top = 184
         Width = 341
         Height = 29
         Anchors = []
@@ -793,14 +698,13 @@ object crudPedidos: TcrudPedidos
         TabOrder = 3
         Text = ''
         TextHint = 'Informe o endere'#231'o'
-        ExplicitLeft = 8
-        ExplicitTop = 193
+        ExplicitTop = 196
       end
       object GridPanel5: TGridPanel
         Left = 0
-        Top = 229
+        Top = 214
         Width = 360
-        Height = 52
+        Height = 60
         Anchors = []
         BevelOuter = bvNone
         ColumnCollection = <
@@ -828,42 +732,42 @@ object crudPedidos: TcrudPedidos
             Value = 100.000000000000000000
           end>
         TabOrder = 4
-        ExplicitTop = 226
+        ExplicitTop = 229
         DesignSize = (
           360
-          52)
+          60)
         object lePlaca: TLabeledEdit
           Left = 10
-          Top = 25
+          Top = 27
           Width = 126
-          Height = 25
+          Height = 29
           Anchors = []
           EditLabel.Width = 114
           EditLabel.Height = 21
           EditLabel.Caption = 'Placa do ve'#237'culo:'
           TabOrder = 0
           Text = ''
-          TextHint = 'N'#250'mero do endere'#231'o'
+          TextHint = 'Placa do ve'#237'culo'
           ExplicitTop = 24
         end
         object leCorVeiculo: TLabeledEdit
           Left = 157
-          Top = 25
+          Top = 27
           Width = 193
-          Height = 25
+          Height = 29
           Anchors = []
           EditLabel.Width = 103
           EditLabel.Height = 21
           EditLabel.Caption = 'Cor do ve'#237'culo:'
           TabOrder = 1
           Text = ''
-          TextHint = 'Informe o bairro'
+          TextHint = 'Cor do ve'#237'culo'
           ExplicitTop = 24
         end
       end
       object leMarca: TLabeledEdit
         Left = 13
-        Top = 311
+        Top = 291
         Width = 334
         Height = 29
         Anchors = []
@@ -872,12 +776,12 @@ object crudPedidos: TcrudPedidos
         EditLabel.Caption = 'Marca do ve'#237'culo:'
         TabOrder = 5
         Text = ''
-        TextHint = 'Digite o endere'#231'o de e-mail'
-        ExplicitTop = 303
+        TextHint = 'Marca do ve'#237'culo'
+        ExplicitTop = 311
       end
       object leModelo: TLabeledEdit
         Left = 14
-        Top = 368
+        Top = 345
         Width = 332
         Height = 29
         Anchors = []
@@ -886,13 +790,12 @@ object crudPedidos: TcrudPedidos
         EditLabel.Caption = 'Modelo do ve'#237'culo:'
         TabOrder = 6
         Text = ''
-        TextHint = 'Digite o endere'#231'o de e-mail'
-        ExplicitLeft = 8
-        ExplicitTop = 362
+        TextHint = 'Modelo do ve'#237'culo'
+        ExplicitTop = 368
       end
       object lblDescricaoPedido: TLabel
         Left = 16
-        Top = 398
+        Top = 380
         Width = 143
         Height = 21
         Align = alCustom
@@ -900,18 +803,18 @@ object crudPedidos: TcrudPedidos
       end
       object descPedido: TMemo
         Left = 15
-        Top = 430
+        Top = 401
         Width = 331
-        Height = 109
+        Height = 114
         Anchors = []
         Lines.Strings = (
-          'Memo1')
+          '')
         TabOrder = 7
-        ExplicitTop = 423
+        ExplicitTop = 407
       end
       object Label1: TLabel
         Left = 178
-        Top = 462
+        Top = 430
         Width = 4
         Height = 21
         Anchors = []
@@ -920,7 +823,7 @@ object crudPedidos: TcrudPedidos
       end
       object Label9: TLabel
         Left = 178
-        Top = 520
+        Top = 484
         Width = 4
         Height = 21
         Anchors = []
@@ -928,37 +831,71 @@ object crudPedidos: TcrudPedidos
         ExplicitTop = 511
       end
       object lblStatus: TLabel
-        Left = 20
-        Top = 548
-        Width = 321
+        Left = 14
+        Top = 516
+        Width = 317
         Height = 21
-        Anchors = []
+        Align = alCustom
         Caption = 'Status:'
-        ExplicitLeft = 0
-        ExplicitTop = 539
       end
       object cbStatus: TComboBox
-        Left = 17
-        Top = 581
-        Width = 326
+        Left = 16
+        Top = 543
+        Width = 329
         Height = 29
+        Align = alCustom
         BevelInner = bvNone
         BevelOuter = bvNone
-        Anchors = []
-        ItemIndex = 0
         TabOrder = 8
         Items.Strings = (
-          'Funileiro'
-          'Montador/Desmontador'
-          'Pintor Automotivo'
-          'Preparador de pintura'
-          'Administrador')
-        ExplicitLeft = 8
-        ExplicitTop = 572
+          'Or'#231'amento Pendente'
+          'Or'#231'amento Aprovado'
+          'Realizando Servi'#231'o'
+          'Pedido Finalizado')
+      end
+      object pnlFazerOrcPedido: TPanel
+        Left = 183
+        Top = 590
+        Width = 162
+        Height = 41
+        Cursor = crHandPoint
+        Align = alCustom
+        Anchors = []
+        Caption = 'Fazer Or'#231'amento'
+        Color = clHighlight
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWhite
+        Font.Height = -19
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentBackground = False
+        ParentFont = False
+        TabOrder = 9
+        Visible = False
+      end
+      object pnlIncluirPedido: TPanel
+        Left = 0
+        Top = 590
+        Width = 161
+        Height = 41
+        Cursor = crHandPoint
+        Align = alCustom
+        Anchors = []
+        Caption = 'Incluir Pedido'
+        Color = clHighlight
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWhite
+        Font.Height = -19
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentBackground = False
+        ParentFont = False
+        TabOrder = 10
+        Visible = False
       end
     end
     object btnEditPedi: TPanel
-      Left = 433
+      Left = 434
       Top = 74
       Width = 152
       Height = 43
@@ -974,9 +911,10 @@ object crudPedidos: TcrudPedidos
       ParentBackground = False
       ParentFont = False
       TabOrder = 5
+      ExplicitLeft = 433
     end
     object btnInativPedi: TPanel
-      Left = 275
+      Left = 276
       Top = 74
       Width = 152
       Height = 43
@@ -992,9 +930,10 @@ object crudPedidos: TcrudPedidos
       ParentBackground = False
       ParentFont = False
       TabOrder = 6
+      ExplicitLeft = 275
     end
     object btnExcluPedi: TPanel
-      Left = 117
+      Left = 118
       Top = 74
       Width = 152
       Height = 43
@@ -1010,6 +949,7 @@ object crudPedidos: TcrudPedidos
       ParentBackground = False
       ParentFont = False
       TabOrder = 7
+      ExplicitLeft = 117
     end
   end
   object DSPedidos: TDataSource

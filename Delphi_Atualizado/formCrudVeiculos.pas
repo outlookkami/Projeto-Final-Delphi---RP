@@ -48,13 +48,14 @@ type
     leRG: TLabeledEdit;
     pnlCadastrar: TPanel;
     btnEditVeic: TPanel;
-    btnInativFunc: TPanel;
+    btnInativVeic: TPanel;
     btnExcluVeic: TPanel;
     DSVeiculos: TDataSource;
     RESTClient1: TRESTClient;
     RESTRequest1: TRESTRequest;
     RESTResponse1: TRESTResponse;
     procedure DBGrid1CellClick(Column: TColumn);
+    procedure btnIncluirVeicClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -68,6 +69,8 @@ var
 implementation
 
 {$R *.dfm}
+
+
 
 procedure TCrudVeiculos.DBGrid1CellClick(Column: TColumn);
 var codigoVeiculo: String;
@@ -88,6 +91,26 @@ begin
     cbDonoCli.Text := FieldByName('nome_usuario_cliente').AsString;
     leCodigoVeiculo.Text := FieldByName('codigo_veiculo').AsString;
     end;
+end;
+
+// Mostrar dados nos campos do formulário lateral
+procedure TcrudVeiculos.btnIncluirVeicClick(Sender: TObject);
+begin
+      with DM.QueryPedidos do begin
+        DM.QueryPedidos.Close;
+        DM.QueryPedidos.Open;
+        SQL.Text := 'INSERT INTO Veiculos (placa_veiculo, chassi, modelo, marca, cor, ano_fab, ano_mod) VALUES (:Placa, :Chassi, :Modelo, :Marca, :Cor, :AnoFab, :AnoMod);';
+        // Informações que o banco requere mas que provavelmente serão excluídas:
+        //nome_usuario_cliente, nome_cliente, codigo_cliente
+
+        ParamByName('Placa').AsString := lePlaca.Text;
+        ParamByName('Chassi').AsString := leChassi.Text;
+        ParamByName('Modelo').AsString := leModelo.Text;
+        ParamByName('Marca').AsString := leMarca.Text;
+        ParamByName('Cor').AsString := leCor.Text;
+        ParamByName('AnoFab').AsString := leAnoFab.Text;
+        ParamByName('AnoMod').AsString := leAnoMod.Text;
+      end;
 end;
 
 end.

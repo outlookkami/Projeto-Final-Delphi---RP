@@ -43,16 +43,18 @@ type
     GridPanel10: TGridPanel;
     lblPlaca: TLabel;
     lblPlacaVeic: TLabel;
-    lblMarcaMod: TLabel;
-    lblMarcaModelo: TLabel;
-    lblCor: TLabel;
-    lblCorVeic: TLabel;
-    lblAnoFab: TLabel;
-    lblAnoFabricacao: TLabel;
+    lblMarc: TLabel;
+    lblMarca: TLabel;
     lblAnoMod: TLabel;
     lblAnoModelo: TLabel;
     GridPanel11: TGridPanel;
     GridPanel12: TGridPanel;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    lblMod: TLabel;
+    lblModelo: TLabel;
   private
     { Private declarations }
   public

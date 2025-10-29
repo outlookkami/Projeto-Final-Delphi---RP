@@ -228,6 +228,10 @@
             <Form>crudPedidos</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="formCrudOrcamentos.pas">
+            <Form>crudOrcamentos</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <None Include="login.ini"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>

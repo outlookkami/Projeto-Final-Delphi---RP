@@ -150,7 +150,4 @@ begin
     formCadastroDeClientes.pnlCadastrarClick(pnlCadastraCliCrud);
 end;
 
-
-
-
 end.

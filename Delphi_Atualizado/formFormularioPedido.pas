@@ -67,10 +67,8 @@ type
     DSPedido: TDataSource;
     GridPanel10: TGridPanel;
     Label10: TLabel;
-
     dtData: TDateTimePicker;
     procedure Panel2Click(Sender: TObject);
-    procedure TmemoDescricaoDoServiçoOnCreate(Sender: TObject);
     procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
@@ -107,8 +105,7 @@ procedure TFormPedido.Panel2Click(Sender: TObject);
 var codigoCli: Integer;
     nomeCli, Contato, Endereco, CEP, Status: String;
 begin
-
-    dadosCliente(codigoCli, nomeCli, Contato, Endereco, CEP);
+    //dadosCliente(codigoCli, nomeCli, Contato, Endereco, CEP);
     Status := 'Orçamento pendente';
 
     if (lePlaca.Text = '') or (leMarca.Text = '') or (leModelo.Text = '') then begin
@@ -122,15 +119,15 @@ begin
         SQL.Text := 'INSERT INTO Pedidos(data_pedido, contato_cliente, endereco_cliente, cep_cliente, placa_veiculo, modelo, marca, cor, descricao_pedido, nome_cliente, status_pedido) VALUES (:Data, :Contato, :Endereco, :CEP, :Placa, :Modelo, :Marca, :Cor, :Descricao, :NomeCli, :Status);';
 
         ParamByName('Data').AsDate := dtData.Date;
-        ParamByName('Contato').AsString := Contato;
-        ParamByName('Endereco').AsString := Endereco;
-        ParamByName('CEP').AsString := CEP;
+        ParamByName('Contato').AsString := dbleContato.Text;
+        ParamByName('Endereco').AsString := dbleRua.Text;
+        ParamByName('CEP').AsString := dbleCEPEndereco.Text;
         ParamByName('Placa').AsString := lePlaca.Text;
         ParamByName('Modelo').AsString := leModelo.Text;
         ParamByName('Marca').AsString := leMarca.Text;
         ParamByName('Cor').AsString := leCor.Text;
         ParamByName('Descricao').AsString := memoDescricaoDoServico.Text;
-        ParamByName('NomeCli').AsString := nomeCli;
+        ParamByName('NomeCli').AsString := leCliente.Text;
         ParamByName('Status').AsString := Status;
 
         //ParamByName('Chassi').AsString := leChassi.Text;
@@ -144,13 +141,6 @@ begin
 //        mtConfirmation, [mbYes, mbNo], 0) = mrYes then FrameVeiculo else Close; Self.Close;
           end;
       end;
-end;
-
-procedure TFormPedido.TmemoDescricaoDoServiçoOnCreate(Sender: TObject);
-var TmemoDescricaoDoServiço: Tmemo;
-begin
-//      if TmemoDescricaoDoServiço.StyleName then
-        TmemoDescricaoDoServiço.Clear;
 end;
 
 end.

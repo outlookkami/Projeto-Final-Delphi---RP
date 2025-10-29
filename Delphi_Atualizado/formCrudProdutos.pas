@@ -49,6 +49,7 @@ type
     DBImage1: TDBImage;
     btnInativProd: TPanel;
     btnExcluirProduto: TPanel;
+    btnEditVeic: TPanel;
     procedure DBGrid1CellClick(Column: TColumn);
   private
     { Private declarations }

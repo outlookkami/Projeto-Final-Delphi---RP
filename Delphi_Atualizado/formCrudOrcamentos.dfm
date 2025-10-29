@@ -1,7 +1,7 @@
-object CrudVeiculos: TCrudVeiculos
+object crudOrcamentos: TcrudOrcamentos
   Left = 0
   Top = 0
-  Caption = 'CrudVeiculos'
+  Caption = 'Crud Or'#231'amentos'
   ClientHeight = 701
   ClientWidth = 1150
   Color = clBtnFace
@@ -18,33 +18,36 @@ object CrudVeiculos: TCrudVeiculos
     Height = 701
     Align = alClient
     TabOrder = 0
+    ExplicitLeft = -1
+    ExplicitWidth = 1151
     DesignSize = (
       1150
       701)
-    object lblVeiculos: TLabel
-      Left = 901
+    object lblDadosFunc: TLabel
+      Left = 867
       Top = 21
-      Width = 147
+      Width = 181
       Height = 25
       Align = alCustom
       Alignment = taRightJustify
       Anchors = [akLeft, akTop, akRight, akBottom]
-      Caption = 'Dados do Ve'#237'culo'
+      Caption = 'Dados do funcion'#225'rio'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -19
       Font.Name = 'Segoe UI'
       Font.Style = []
       ParentFont = False
+      ExplicitWidth = 182
     end
-    object btnIncluirVeic: TPanel
+    object btnIncluirOrc: TPanel
       Left = 591
       Top = 74
       Width = 152
       Height = 43
       Cursor = crHandPoint
       Anchors = [akTop, akRight]
-      Caption = 'Incluir Ve'#237'culo'
+      Caption = 'Incluir Or'#231'amento'
       Color = clHighlight
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWhite
@@ -54,7 +57,7 @@ object CrudVeiculos: TCrudVeiculos
       ParentBackground = False
       ParentFont = False
       TabOrder = 2
-      OnClick = btnIncluirVeicClick
+      ExplicitLeft = 592
     end
     object pnlPesquisa: TPanel
       Left = 48
@@ -67,6 +70,7 @@ object CrudVeiculos: TCrudVeiculos
       Color = clBtnHighlight
       ParentBackground = False
       TabOrder = 0
+      ExplicitWidth = 696
       DesignSize = (
         691
         37)
@@ -155,73 +159,189 @@ object CrudVeiculos: TCrudVeiculos
     end
     object DBGrid1: TDBGrid
       Left = 48
-      Top = 123
+      Top = 138
       Width = 695
       Height = 528
       Anchors = [akLeft, akTop, akRight, akBottom]
-      DataSource = DSVeiculos
-      ReadOnly = True
+      DataSource = DSPedidos
+      Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
       TabOrder = 1
       TitleFont.Charset = DEFAULT_CHARSET
       TitleFont.Color = clWindowText
       TitleFont.Height = -12
       TitleFont.Name = 'Segoe UI'
       TitleFont.Style = []
-      OnCellClick = DBGrid1CellClick
       Columns = <
         item
           Expanded = False
-          FieldName = 'codigo_veiculo'
+          FieldName = 'codigo_funcionario'
+          Title.Caption = 'C'#243'digo'
           Visible = True
         end
         item
           Expanded = False
-          FieldName = 'placa_veiculo'
+          FieldName = 'nome_funcionario'
+          Title.Caption = 'Nome'
+          Width = 300
           Visible = True
         end
         item
           Expanded = False
-          FieldName = 'chassi'
+          FieldName = 'telefone_funcionario'
+          Title.Caption = 'Telefone'
+          Width = 100
           Visible = True
         end
         item
           Expanded = False
-          FieldName = 'modelo'
+          FieldName = 'email_funcionario'
+          Title.Caption = 'Email'
+          Width = 400
           Visible = True
         end
         item
           Expanded = False
-          FieldName = 'marca'
+          FieldName = 'cep_funcionario'
+          Title.Caption = 'CEP'
+          Width = 100
           Visible = True
         end
         item
           Expanded = False
-          FieldName = 'cor'
+          FieldName = 'endereco_funcionario'
+          Title.Caption = 'Endere'#231'o'
+          Width = 300
           Visible = True
         end
         item
           Expanded = False
-          FieldName = 'ano_fab'
+          FieldName = 'num_endereco'
+          Title.Caption = 'N'#176
+          Width = 70
           Visible = True
         end
         item
           Expanded = False
-          FieldName = 'ano_mod'
+          FieldName = 'bairro'
+          Title.Caption = 'Bairro'
+          Width = 250
           Visible = True
         end
         item
           Expanded = False
-          FieldName = 'nome_cliente'
+          FieldName = 'cidade'
+          Title.Caption = 'Cidade'
+          Width = 250
           Visible = True
         end
         item
           Expanded = False
-          FieldName = 'nome_usuario_cliente'
+          FieldName = 'uf'
+          Title.Caption = 'UF'
+          Width = 40
           Visible = True
         end
         item
           Expanded = False
-          FieldName = 'codigo_cliente'
+          FieldName = 'funcao'
+          Title.Caption = 'Fun'#231#227'o'
+          Width = 200
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'cpf_funcionario'
+          Title.Caption = 'CPF'
+          Width = 140
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'rg_funcionario'
+          Title.Caption = 'RG'
+          Width = 120
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'ativo_in'
+          Title.Caption = 'Ativo'
+          Width = 50
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'codigo_funcionario'
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'hash_senha_func'
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'nome_funcionario'
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'telefone_funcionario'
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'email_funcionario'
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'cep_funcionario'
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'endereco_funcionario'
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'num_endereco'
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'bairro'
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'cidade'
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'uf'
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'funcao'
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'cpf_funcionario'
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'rg_funcionario'
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'ativo_in'
           Visible = True
         end>
     end
@@ -240,12 +360,13 @@ object CrudVeiculos: TCrudVeiculos
       ParentFont = False
       TabOrder = 3
       TextHint = 'Pesquise'
+      ExplicitWidth = 638
     end
     object gridPanelLogin: TGridPanel
-      Left = 765
-      Top = 52
-      Width = 372
-      Height = 612
+      Left = 760
+      Top = 19
+      Width = 361
+      Height = 647
       Align = alCustom
       Anchors = [akTop, akRight, akBottom]
       BevelEdges = []
@@ -282,28 +403,8 @@ object CrudVeiculos: TCrudVeiculos
         end
         item
           Column = 0
-          Control = GridPanel3
-          Row = 10
-        end
-        item
-          Column = 0
           Control = Label7
           Row = 11
-        end
-        item
-          Column = 0
-          Control = GridPanel4
-          Row = 12
-        end
-        item
-          Column = 0
-          Control = pnlSelecionaFuncao
-          Row = 14
-        end
-        item
-          Column = 0
-          Control = Label9
-          Row = 15
         end
         item
           Column = 0
@@ -317,43 +418,78 @@ object CrudVeiculos: TCrudVeiculos
         end
         item
           Column = 0
-          Control = leMarca
-          Row = 6
-        end
-        item
-          Column = 0
-          Control = leModelo
+          Control = leEmailCliente
           Row = 4
         end
         item
           Column = 0
-          Control = leChassi
-          Row = 2
-        end
-        item
-          Column = 0
-          Control = lePlaca
+          Control = GridPanel1
           Row = 0
         end
         item
           Column = 0
-          Control = leCor
+          Control = GridPanel2
+          Row = 2
+        end
+        item
+          Column = 0
+          Control = leEndereco
+          Row = 6
+        end
+        item
+          Column = 0
+          Control = GridPanel5
           Row = 8
         end
         item
           Column = 0
-          Control = leCodigoVeiculo
+          Control = leMarca
+          Row = 10
+        end
+        item
+          Column = 0
+          Control = leModelo
+          Row = 12
+        end
+        item
+          Column = 0
+          Control = lblDescricaoPedido
+          Row = 14
+        end
+        item
+          Column = 0
+          Control = descPedido
+          Row = 15
+        end
+        item
+          Column = 0
+          Control = Label1
           Row = 16
         end
         item
           Column = 0
-          Control = leRG
+          Control = Label9
           Row = 18
         end
         item
           Column = 0
-          Control = pnlCadastrar
+          Control = lblStatus
           Row = 19
+        end
+        item
+          Column = 0
+          Control = cbStatus
+          Row = 20
+        end
+        item
+          Column = 0
+          Control = pnlFazerOrcPedido
+          Row = 21
+        end
+        item
+          Column = 0
+          Control = pnlIncluirPedido
+          Row = 22
         end>
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
@@ -363,76 +499,82 @@ object CrudVeiculos: TCrudVeiculos
       ParentFont = False
       RowCollection = <
         item
-          Value = 5.000000000000003000
+          Value = 4.761904761904762000
         end
         item
-          Value = 5.000000000000003000
+          Value = 4.761904761904762000
         end
         item
-          Value = 5.000000000000003000
+          Value = 4.761904761904762000
         end
         item
-          Value = 5.000000000000003000
+          Value = 4.761904761904762000
         end
         item
-          Value = 5.000000000000003000
+          Value = 4.761904761904762000
         end
         item
-          Value = 5.000000000000003000
+          Value = 4.761904761904762000
         end
         item
-          Value = 5.000000000000003000
+          Value = 4.761904761904762000
         end
         item
-          Value = 5.000000000000003000
+          Value = 4.761904761904762000
         end
         item
-          Value = 5.000000000000003000
+          Value = 4.761904761904762000
         end
         item
-          Value = 5.000000000000003000
+          Value = 4.761904761904762000
         end
         item
-          Value = 5.000000000000003000
+          Value = 4.761904761904762000
         end
         item
-          Value = 5.000000000000003000
+          Value = 4.761904761904762000
         end
         item
-          Value = 5.000000000000003000
+          Value = 4.761904761904762000
         end
         item
-          Value = 5.000000000000003000
+          Value = 4.761904761904762000
         end
         item
-          Value = 5.000000000000003000
+          Value = 4.761904761904762000
         end
         item
-          Value = 5.000000000000003000
+          Value = 4.761904761904762000
         end
         item
-          Value = 5.000000000000003000
+          Value = 4.761904761904762000
         end
         item
-          Value = 5.000000000000003000
+          Value = 4.761904761904762000
         end
         item
-          Value = 5.000000000000003000
+          Value = 4.761904761904762000
         end
         item
-          Value = 5.000000000000003000
+          Value = 4.761904761904762000
         end
         item
           SizeStyle = ssAbsolute
           Value = 45.000000000000000000
+        end
+        item
+          Value = 4.761904761904762000
+        end
+        item
+          SizeStyle = ssAuto
         end>
       TabOrder = 4
       DesignSize = (
-        372
-        612)
+        361
+        647)
       object Label2: TLabel
-        Left = 184
-        Top = 32
+        Left = 178
+        Top = 29
         Width = 4
         Height = 21
         Anchors = []
@@ -440,8 +582,8 @@ object CrudVeiculos: TCrudVeiculos
         ExplicitTop = 64
       end
       object Label3: TLabel
-        Left = 184
-        Top = 88
+        Left = 178
+        Top = 83
         Width = 4
         Height = 21
         Anchors = []
@@ -449,8 +591,8 @@ object CrudVeiculos: TCrudVeiculos
         ExplicitTop = 125
       end
       object Label4: TLabel
-        Left = 184
-        Top = 145
+        Left = 178
+        Top = 136
         Width = 4
         Height = 21
         Anchors = []
@@ -458,8 +600,8 @@ object CrudVeiculos: TCrudVeiculos
         ExplicitTop = 185
       end
       object Label5: TLabel
-        Left = 184
-        Top = 202
+        Left = 178
+        Top = 190
         Width = 4
         Height = 21
         Anchors = []
@@ -467,108 +609,79 @@ object CrudVeiculos: TCrudVeiculos
         ExplicitTop = 250
       end
       object Label6: TLabel
-        Left = 184
-        Top = 259
+        Left = 178
+        Top = 243
         Width = 4
         Height = 21
         Anchors = []
         ExplicitLeft = 193
         ExplicitTop = 311
       end
-      object GridPanel3: TGridPanel
-        Left = 1
-        Top = 284
-        Width = 370
-        Height = 56
-        Anchors = []
-        BevelOuter = bvNone
-        ColumnCollection = <
-          item
-            Value = 50.761046613977110000
-          end
-          item
-            Value = 49.238953386022890000
-          end>
-        ControlCollection = <
-          item
-            Column = 0
-            Control = leAnoFab
-            Row = 0
-          end
-          item
-            Column = 1
-            Control = leAnoMod
-            Row = 0
-          end>
-        ParentBackground = False
-        ParentColor = True
-        RowCollection = <
-          item
-            Value = 100.000000000000000000
-          end>
-        TabOrder = 0
-        DesignSize = (
-          370
-          56)
-        object leAnoFab: TLabeledEdit
-          Left = 14
-          Top = 25
-          Width = 160
-          Height = 29
-          Anchors = []
-          EditLabel.Width = 127
-          EditLabel.Height = 21
-          EditLabel.Caption = 'Ano de fabrica'#231#227'o:'
-          TabOrder = 0
-          Text = ''
-          TextHint = 'Informe o ano de fabrica'#231#227'o'
-        end
-        object leAnoMod: TLabeledEdit
-          Left = 200
-          Top = 25
-          Width = 157
-          Height = 29
-          Anchors = []
-          EditLabel.Width = 110
-          EditLabel.Height = 21
-          EditLabel.Caption = 'Ano do modelo:'
-          TabOrder = 1
-          Text = ''
-          TextHint = 'Informe o ano do modelo'
-        end
-      end
       object Label7: TLabel
-        Left = 184
-        Top = 315
+        Left = 178
+        Top = 297
         Width = 4
         Height = 21
         Anchors = []
         ExplicitLeft = 193
         ExplicitTop = 373
       end
-      object GridPanel4: TGridPanel
-        Left = 0
-        Top = 340
-        Width = 379
-        Height = 58
+      object Label8: TLabel
+        Left = 178
+        Top = 350
+        Width = 4
+        Height = 21
+        Anchors = []
+        ExplicitLeft = 202
+        ExplicitTop = 411
+      end
+      object Label10: TLabel
+        Left = 178
+        Top = 457
+        Width = 4
+        Height = 21
+        Anchors = []
+        ExplicitLeft = 198
+        ExplicitTop = 520
+      end
+      object leEmailCliente: TLabeledEdit
+        Left = 10
+        Top = 131
+        Width = 341
+        Height = 29
+        Anchors = []
+        EditLabel.Width = 54
+        EditLabel.Height = 21
+        EditLabel.Caption = '*E-mail:'
+        TabOrder = 0
+        Text = ''
+        TextHint = 'Digite o endere'#231'o de e-mail'
+      end
+      object GridPanel1: TGridPanel
+        Left = 1
+        Top = 0
+        Width = 358
+        Height = 57
         Anchors = []
         BevelOuter = bvNone
         ColumnCollection = <
           item
-            Value = 69.309943023817620000
+            SizeStyle = ssAbsolute
+            Value = 180.000000000000000000
           end
           item
-            Value = 30.690056976182380000
+            SizeStyle = ssAbsolute
+            Value = 59.000000000000000000
           end>
         ControlCollection = <
           item
             Column = 0
-            Control = leCidade
+            Control = leCodPedido
             Row = 0
           end
           item
             Column = 1
-            Control = GridPanel7
+            Control = leCodOrcamento
             Row = 0
           end>
         ParentBackground = False
@@ -582,274 +695,298 @@ object CrudVeiculos: TCrudVeiculos
           end>
         TabOrder = 1
         DesignSize = (
-          379
-          58)
-        object leCidade: TLabeledEdit
-          Left = 18
+          358
+          57)
+        object leCodPedido: TLabeledEdit
+          Left = 11
           Top = 26
-          Width = 227
+          Width = 157
           Height = 29
           Anchors = []
-          EditLabel.Width = 51
+          EditLabel.Width = 126
           EditLabel.Height = 21
-          EditLabel.Caption = 'Cidade:'
+          EditLabel.Caption = 'C'#243'digo do Pedido:'
           TabOrder = 0
           Text = ''
-          TextHint = 'Informe a cidade'
+          TextHint = '$'
+          ExplicitTop = 29
         end
-        object GridPanel7: TGridPanel
-          Left = 263
-          Top = 0
-          Width = 185
-          Height = 58
-          Align = alLeft
-          BevelOuter = bvNone
-          ColumnCollection = <
-            item
-              Value = 100.000000000000000000
-            end>
-          ControlCollection = <
-            item
-              Column = 0
-              Control = Label12
-              Row = 0
-            end
-            item
-              Column = 0
-              Control = cbUF
-              Row = 1
-            end>
-          RowCollection = <
-            item
-              SizeStyle = ssAbsolute
-              Value = 20.000000000000000000
-            end
-            item
-              SizeStyle = ssAbsolute
-              Value = 100.000000000000000000
-            end>
+        object leCodOrcamento: TLabeledEdit
+          Left = 180
+          Top = 26
+          Width = 165
+          Height = 29
+          Anchors = []
+          EditLabel.Width = 108
+          EditLabel.Height = 21
+          EditLabel.Caption = 'Data do Pedido:'
           TabOrder = 1
-          object Label12: TLabel
-            Left = 0
-            Top = 0
-            Width = 185
-            Height = 20
-            Align = alClient
-            Caption = 'UF:'
-            Font.Charset = DEFAULT_CHARSET
-            Font.Color = clWindowText
-            Font.Height = -16
-            Font.Name = 'Segoe UI'
-            Font.Style = []
-            ParentFont = False
-            ExplicitWidth = 22
-            ExplicitHeight = 21
-          end
-          object cbUF: TComboBox
-            Left = 0
-            Top = 25
-            Width = 97
-            Height = 29
-            Align = alCustom
-            BevelInner = bvNone
-            BevelOuter = bvNone
-            TabOrder = 0
-            TextHint = 'Selecione a UF'
-            Items.Strings = (
-              'AC'
-              'AL'
-              'AP'
-              'AM'
-              'BA'
-              'CE'
-              'DF'
-              'ES'
-              'GO'
-              'MA'
-              'MG'
-              'MS'
-              'MT'
-              'PA'
-              'PB'
-              'PE'
-              'PI'
-              'PR'
-              'RJ'
-              'RN'
-              'RO'
-              'RR'
-              'RS'
-              'SC'
-              'SE'
-              'SP'
-              'TO')
-          end
+          Text = ''
+          TextHint = '$'
+          ExplicitTop = 31
         end
       end
-      object pnlSelecionaFuncao: TPanel
-        Left = 0
-        Top = 397
-        Width = 384
-        Height = 64
+      object GridPanel2: TGridPanel
+        Left = 2
+        Top = 53
+        Width = 356
+        Height = 53
         Anchors = []
         BevelOuter = bvNone
+        ColumnCollection = <
+          item
+            SizeStyle = ssAbsolute
+            Value = 180.000000000000000000
+          end
+          item
+            SizeStyle = ssAbsolute
+            Value = 59.000000000000000000
+          end>
+        ControlCollection = <
+          item
+            Column = 0
+            Control = leContato
+            Row = 0
+          end
+          item
+            Column = 1
+            Control = leCEP
+            Row = 0
+          end>
+        ParentBackground = False
+        ParentColor = True
+        RowCollection = <
+          item
+            Value = 100.000000000000000000
+          end
+          item
+            SizeStyle = ssAuto
+          end>
         TabOrder = 2
-        object lblSelecionaFuncao: TLabel
-          Left = 16
-          Top = 3
-          Width = 173
-          Height = 21
-          Caption = 'Selecione o dono/cliente:'
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -16
-          Font.Name = 'Segoe UI'
-          Font.Style = []
-          ParentFont = False
-        end
-        object cbDonoCli: TComboBox
-          Left = 16
-          Top = 30
-          Width = 345
+        DesignSize = (
+          356
+          53)
+        object leContato: TLabeledEdit
+          Left = 7
+          Top = 24
+          Width = 165
           Height = 29
-          BevelInner = bvNone
-          BevelOuter = bvNone
+          Anchors = []
+          EditLabel.Width = 129
+          EditLabel.Height = 21
+          EditLabel.Caption = 'Contato do cliente:'
           TabOrder = 0
-          Text = 'Selecione o dono ou cliente'
-          TextHint = 'Selecione o dono ou cliente'
-          Items.Strings = (
-            'Funileiro'
-            'Montador/Desmontador'
-            'Pintor Automotivo'
-            'Preparador de pintura')
+          Text = ''
+          TextHint = '$'
+          ExplicitLeft = 9
+        end
+        object leCEP: TLabeledEdit
+          Left = 180
+          Top = 24
+          Width = 165
+          Height = 29
+          Anchors = []
+          EditLabel.Width = 101
+          EditLabel.Height = 21
+          EditLabel.Caption = 'CEP do cliente:'
+          TabOrder = 1
+          Text = ''
+          TextHint = '$'
         end
       end
-      object Label9: TLabel
-        Left = 184
-        Top = 429
-        Width = 4
-        Height = 21
-        Anchors = []
-        ExplicitLeft = 202
-        ExplicitTop = 504
-      end
-      object Label8: TLabel
-        Left = 184
-        Top = 372
-        Width = 4
-        Height = 21
-        Anchors = []
-        ExplicitLeft = 202
-        ExplicitTop = 411
-      end
-      object Label10: TLabel
-        Left = 184
-        Top = 485
-        Width = 4
-        Height = 21
-        Anchors = []
-        ExplicitLeft = 198
-        ExplicitTop = 520
-      end
-      object leMarca: TLabeledEdit
-        Left = 15
-        Top = 194
+      object leEndereco: TLabeledEdit
+        Left = 10
+        Top = 184
         Width = 341
         Height = 29
         Anchors = []
-        EditLabel.Width = 46
+        EditLabel.Width = 67
         EditLabel.Height = 21
-        EditLabel.Caption = 'Marca:'
+        EditLabel.Caption = 'Endere'#231'o:'
         TabOrder = 3
         Text = ''
-        TextHint = 'Informe a marca'
+        TextHint = 'Informe o endere'#231'o'
       end
-      object leModelo: TLabeledEdit
-        Left = 13
-        Top = 137
-        Width = 346
-        Height = 29
+      object GridPanel5: TGridPanel
+        Left = 0
+        Top = 214
+        Width = 360
+        Height = 60
         Anchors = []
-        EditLabel.Width = 56
-        EditLabel.Height = 21
-        EditLabel.Caption = 'Modelo:'
+        BevelOuter = bvNone
+        ColumnCollection = <
+          item
+            Value = 40.735354790552790000
+          end
+          item
+            Value = 59.264645209447220000
+          end>
+        ControlCollection = <
+          item
+            Column = 0
+            Control = lePlaca
+            Row = 0
+          end
+          item
+            Column = 1
+            Control = leCorVeiculo
+            Row = 0
+          end>
+        ParentBackground = False
+        ParentColor = True
+        RowCollection = <
+          item
+            Value = 100.000000000000000000
+          end>
         TabOrder = 4
-        Text = ''
-        TextHint = 'Digite o modelo do ve'#237'culo'
+        DesignSize = (
+          360
+          60)
+        object lePlaca: TLabeledEdit
+          Left = 10
+          Top = 27
+          Width = 126
+          Height = 29
+          Anchors = []
+          EditLabel.Width = 114
+          EditLabel.Height = 21
+          EditLabel.Caption = 'Placa do ve'#237'culo:'
+          TabOrder = 0
+          Text = ''
+          TextHint = 'N'#250'mero do endere'#231'o'
+        end
+        object leCorVeiculo: TLabeledEdit
+          Left = 157
+          Top = 27
+          Width = 193
+          Height = 29
+          Anchors = []
+          EditLabel.Width = 103
+          EditLabel.Height = 21
+          EditLabel.Caption = 'Cor do ve'#237'culo:'
+          TabOrder = 1
+          Text = ''
+          TextHint = 'Informe o bairro'
+        end
       end
-      object leChassi: TLabeledEdit
-        Left = 16
-        Top = 81
-        Width = 340
+      object leMarca: TLabeledEdit
+        Left = 13
+        Top = 291
+        Width = 334
         Height = 29
         Anchors = []
-        EditLabel.Width = 48
+        EditLabel.Width = 121
         EditLabel.Height = 21
-        EditLabel.Caption = 'Chassi:'
+        EditLabel.Caption = 'Marca do ve'#237'culo:'
         TabOrder = 5
         Text = ''
-        TextHint = 'Digite o chassi'
+        TextHint = 'Digite o endere'#231'o de e-mail'
       end
-      object lePlaca: TLabeledEdit
-        Left = 15
-        Top = 24
-        Width = 341
+      object leModelo: TLabeledEdit
+        Left = 14
+        Top = 345
+        Width = 332
         Height = 29
         Anchors = []
-        EditLabel.Width = 46
+        EditLabel.Width = 131
         EditLabel.Height = 21
-        EditLabel.Caption = '*Placa:'
+        EditLabel.Caption = 'Modelo do ve'#237'culo:'
         TabOrder = 6
         Text = ''
-        TextHint = 'Digite a placa'
+        TextHint = 'Digite o endere'#231'o de e-mail'
       end
-      object leCor: TLabeledEdit
-        Left = 14
-        Top = 251
-        Width = 344
-        Height = 29
+      object lblDescricaoPedido: TLabel
+        Left = 16
+        Top = 380
+        Width = 143
+        Height = 21
+        Align = alCustom
+        Caption = 'Descri'#231#227'o do Pedido:'
+      end
+      object descPedido: TMemo
+        Left = 15
+        Top = 401
+        Width = 331
+        Height = 114
         Anchors = []
-        EditLabel.Width = 28
-        EditLabel.Height = 21
-        EditLabel.Caption = 'Cor:'
+        Lines.Strings = (
+          '')
         TabOrder = 7
-        Text = ''
-        TextHint = 'Informe a cor'
-        ExplicitTop = 249
+        ExplicitTop = 407
       end
-      object leCodigoVeiculo: TLabeledEdit
-        Left = 13
-        Top = 482
-        Width = 346
+      object Label1: TLabel
+        Left = 178
+        Top = 430
+        Width = 4
+        Height = 21
+        Anchors = []
+        ExplicitLeft = 157
+        ExplicitTop = 454
+      end
+      object Label9: TLabel
+        Left = 178
+        Top = 484
+        Width = 4
+        Height = 21
+        Anchors = []
+        ExplicitLeft = 157
+        ExplicitTop = 511
+      end
+      object lblStatus: TLabel
+        Left = 14
+        Top = 516
+        Width = 45
+        Height = 21
+        Align = alCustom
+        Caption = 'Status:'
+      end
+      object cbStatus: TComboBox
+        Left = 16
+        Top = 543
+        Width = 329
         Height = 29
         Align = alCustom
-        EditLabel.Width = 128
-        EditLabel.Height = 21
-        EditLabel.Caption = 'C'#243'digo do ve'#237'culo:'
+        BevelInner = bvNone
+        BevelOuter = bvNone
+        ItemIndex = 0
         TabOrder = 8
-        Text = ''
+        Text = 'Funileiro'
+        Items.Strings = (
+          'Funileiro'
+          'Montador/Desmontador'
+          'Pintor Automotivo'
+          'Preparador de pintura'
+          'Administrador')
       end
-      object leRG: TLabeledEdit
-        Left = 13
-        Top = 534
-        Width = 346
-        Height = 29
-        Anchors = []
-        EditLabel.Width = 24
-        EditLabel.Height = 21
-        EditLabel.Caption = 'RG:'
-        TabOrder = 9
-        Text = ''
-      end
-      object pnlCadastrar: TPanel
-        Left = 101
-        Top = 569
-        Width = 185
-        Height = 40
+      object pnlFazerOrcPedido: TPanel
+        Left = 183
+        Top = 590
+        Width = 162
+        Height = 41
         Cursor = crHandPoint
         Align = alCustom
         Anchors = []
-        Caption = 'Cadastrar'
+        Caption = 'Fazer Or'#231'amento'
+        Color = clHighlight
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWhite
+        Font.Height = -19
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentBackground = False
+        ParentFont = False
+        TabOrder = 9
+        Visible = False
+      end
+      object pnlIncluirPedido: TPanel
+        Left = 0
+        Top = 590
+        Width = 161
+        Height = 41
+        Cursor = crHandPoint
+        Align = alCustom
+        Anchors = []
+        Caption = 'Incluir Pedido'
         Color = clHighlight
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWhite
@@ -862,14 +999,14 @@ object CrudVeiculos: TCrudVeiculos
         Visible = False
       end
     end
-    object btnEditVeic: TPanel
+    object btnEditOrc: TPanel
       Left = 433
       Top = 74
       Width = 152
       Height = 43
       Cursor = crHandPoint
       Anchors = [akTop, akRight]
-      Caption = 'Editar Ve'#237'culo'
+      Caption = 'Editar Or'#231'amento'
       Color = clHighlight
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWhite
@@ -879,15 +1016,16 @@ object CrudVeiculos: TCrudVeiculos
       ParentBackground = False
       ParentFont = False
       TabOrder = 5
+      ExplicitLeft = 434
     end
-    object btnInativVeic: TPanel
+    object btnInativOrc: TPanel
       Left = 275
       Top = 74
       Width = 152
       Height = 43
       Cursor = crHandPoint
       Anchors = [akTop, akRight]
-      Caption = 'Inativar Ve'#237'culo'
+      Caption = 'Inativar Or'#231'amento'
       Color = clHighlight
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWhite
@@ -897,16 +1035,16 @@ object CrudVeiculos: TCrudVeiculos
       ParentBackground = False
       ParentFont = False
       TabOrder = 6
-      Visible = False
+      ExplicitLeft = 276
     end
-    object btnExcluVeic: TPanel
+    object btnExcluOrc: TPanel
       Left = 117
       Top = 74
       Width = 152
       Height = 43
       Cursor = crHandPoint
       Anchors = [akTop, akRight]
-      Caption = 'Excluir Ve'#237'culo'
+      Caption = 'Excluir Or'#231'amento'
       Color = clHighlight
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWhite
@@ -916,10 +1054,11 @@ object CrudVeiculos: TCrudVeiculos
       ParentBackground = False
       ParentFont = False
       TabOrder = 7
+      ExplicitLeft = 118
     end
   end
-  object DSVeiculos: TDataSource
-    DataSet = DM.QueryVeiculos
+  object DSPedidos: TDataSource
+    DataSet = DM.QueryPedidos
     Left = 40
     Top = 80
   end
