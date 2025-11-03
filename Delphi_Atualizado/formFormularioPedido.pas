@@ -105,8 +105,8 @@ procedure TFormPedido.Panel2Click(Sender: TObject);
 var codigoCli: Integer;
     nomeCli, Contato, Endereco, CEP, Status: String;
 begin
-    //dadosCliente(codigoCli, nomeCli, Contato, Endereco, CEP);
-    Status := 'Orçamento pendente';
+    dadosCliente(codigoCli, nomeCli, Contato, Endereco, CEP);
+    Status := 'Aguardando orçamento';
 
     if (lePlaca.Text = '') or (leMarca.Text = '') or (leModelo.Text = '') then begin
         ShowMessage('Preencha os campos obrigatórios');
@@ -116,8 +116,9 @@ begin
         with DM.QueryPedidos do begin
 
         //SQL.Text := 'INSERT INTO Veiculos(placa_veiculo, modelo, marca, cor) VALUES (:Placa, :Modelo, :Marca);';
-        SQL.Text := 'INSERT INTO Pedidos(data_pedido, contato_cliente, endereco_cliente, cep_cliente, placa_veiculo, modelo, marca, cor, descricao_pedido, nome_cliente, status_pedido) VALUES (:Data, :Contato, :Endereco, :CEP, :Placa, :Modelo, :Marca, :Cor, :Descricao, :NomeCli, :Status);';
+        SQL.Text := 'INSERT INTO Pedidos(codigo_cliente, data_pedido, contato_cliente, endereco_cliente, cep_cliente, placa_veiculo, modelo, marca, cor, descricao_pedido, nome_cliente, status_pedido) VALUES (:CodCli, :Data, :Contato, :Endereco, :CEP, :Placa, :Modelo, :Marca, :Cor, :Descricao, :NomeCli, :Status);';
 
+        ParamByName('CodCli').AsString := leCodigoCliente.Text;
         ParamByName('Data').AsDate := dtData.Date;
         ParamByName('Contato').AsString := dbleContato.Text;
         ParamByName('Endereco').AsString := dbleRua.Text;
@@ -134,12 +135,12 @@ begin
         //ParamByName('AnoFab').AsString := leAno.Text;
 
         ExecSQL;
-
+        end;
         ShowMessage('Pedido finalizado! Aguarde a resposta da oficina. O orçamento estará disponível na aba Orçamentos.');
 
 //        if MessageDlg('Pedido finalizado! Aguarde a resposta da oficina. O orçamento estará disponível na aba Orçamentos.',
 //        mtConfirmation, [mbYes, mbNo], 0) = mrYes then FrameVeiculo else Close; Self.Close;
-          end;
+
       end;
 end;
 

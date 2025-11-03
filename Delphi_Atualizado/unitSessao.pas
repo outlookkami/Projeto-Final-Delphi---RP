@@ -37,10 +37,9 @@ begin
     finally
       iniArq.Free;
     end;
-    ShowMessage(
-  'INI encontrado!' + sLineBreak +
-  'Usuario: ' + dadosLogin.emailUsuario + sLineBreak +
-  'TipoUsuario: ' + dadosLogin.tipoUsuario);
+    // if dadosLogin.tipoUsuario = Cliente
+    // criar outro ini que grave as informações do cliente
+    // nos outros forms pegar as informações do cliente diretamente do arquivo ini com os dados de cliente
 end;
 
 procedure dadosCliente(var codigoCli: Integer; var nomeCli, Contato, Endereco, CEP: String);

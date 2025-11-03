@@ -53,7 +53,6 @@ type
     QueryFuncionariosativo_in: TBooleanField;
     QueryPedidos: TFDQuery;
     QueryPedidoscodigo_pedido: TIntegerField;
-    QueryPedidoscodigo_cliente: TIntegerField;
     QueryPedidosendereco_cliente: TStringField;
     QueryPedidoscep_cliente: TStringField;
     QueryPedidosplaca_veiculo: TStringField;
@@ -85,6 +84,38 @@ type
     QueryPedidosnome_cliente: TStringField;
     QueryPedidosstatus_pedido: TStringField;
     QueryUsuariosusuario_data_criacao: TSQLTimeStampField;
+    QueryUsuariosativo_in: TBooleanField;
+    QueryPedidosemail_cliente: TStringField;
+    QueryOrcamentos: TFDQuery;
+    QueryOrcamentoscodigo_orcamento: TIntegerField;
+    QueryOrcamentoscodigo_pedido: TIntegerField;
+    QueryOrcamentosdata_emissao: TDateField;
+    QueryOrcamentosvalidade: TDateField;
+    QueryOrcamentoscontato_cliente: TStringField;
+    QueryOrcamentosemail_cliente: TStringField;
+    QueryOrcamentosnome_cliente: TStringField;
+    QueryOrcamentoscep_cliente: TStringField;
+    QueryOrcamentosplaca_veiculo: TStringField;
+    QueryOrcamentosmarca: TStringField;
+    QueryOrcamentosmodelo: TStringField;
+    QueryOrcamentoscor: TStringField;
+    QueryOrcamentosdescricao_pedido: TMemoField;
+    QueryOrcamentosstatus_orcamento: TStringField;
+    QueryClientescodigo_cliente: TIntegerField;
+    QueryClienteshash_senha_cli: TStringField;
+    QueryClientesnome_cliente: TStringField;
+    QueryClientestelefone_cliente: TStringField;
+    QueryClientesemail_cliente: TStringField;
+    QueryClientescep_cliente: TStringField;
+    QueryClientesendereco_cliente: TStringField;
+    QueryClientesnum_endereco: TStringField;
+    QueryClientesbairro: TStringField;
+    QueryClientescidade: TStringField;
+    QueryClientesuf: TStringField;
+    QueryClientesveiculo: TStringField;
+    QueryClientescliente_data_criacao: TSQLTimeStampField;
+    QueryClientesativo_in: TBooleanField;
+
   private
     { Private declarations }
   public

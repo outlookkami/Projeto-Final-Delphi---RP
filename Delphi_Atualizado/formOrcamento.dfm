@@ -10,6 +10,7 @@
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  OnCreate = FormCreate
   TextHeight = 15
   object pnlFrameFormPedido: TPanel
     Left = 0
@@ -47,7 +48,7 @@
       ParentBackground = False
       TabOrder = 0
     end
-    object memoDescricaoDoServiço: TMemo
+    object memoDescricaoDoServico: TMemo
       Left = 103
       Top = 465
       Width = 954
@@ -501,7 +502,7 @@
           end
           item
             Column = 1
-            Control = lblCódigoCliente
+            Control = lblCodigoCliente
             Row = 0
           end
           item
@@ -534,7 +535,7 @@
           Caption = 'C'#211'DIGO CLIENTE'
           ExplicitLeft = 48
         end
-        object lblCódigoCliente: TLabel
+        object lblCodigoCliente: TLabel
           Left = 166
           Top = 16
           Width = 80
@@ -762,7 +763,7 @@
         end
         item
           Column = 1
-          Control = Label4
+          Control = lblCorVeic
           Row = 0
         end>
       RowCollection = <
@@ -831,7 +832,7 @@
         ExplicitLeft = 44
         ExplicitTop = 20
       end
-      object Label4: TLabel
+      object lblCorVeic: TLabel
         Left = 197
         Top = 20
         Width = 60
@@ -848,29 +849,29 @@
     end
     object GridPanel11: TGridPanel
       Left = 103
-      Top = 568
+      Top = 584
       Width = 954
       Height = 338
       ColumnCollection = <
         item
           SizeStyle = ssAbsolute
-          Value = 25.000000000000000000
+          Value = 80.000000000000000000
         end
         item
           SizeStyle = ssAbsolute
-          Value = 20.000000000000000000
+          Value = 500.000000000000000000
         end
         item
           SizeStyle = ssAbsolute
-          Value = 33.000000000000000000
+          Value = 80.000000000000000000
         end
         item
           SizeStyle = ssAbsolute
-          Value = 50.000000000000000000
+          Value = 140.000000000000000000
         end
         item
           SizeStyle = ssAbsolute
-          Value = 100.000000000000000000
+          Value = 140.000000000000000000
         end>
       ControlCollection = <>
       RowCollection = <
@@ -933,7 +934,7 @@
     Top = 168
   end
   object DSOrcamento: TDataSource
-    Left = 48
-    Top = 216
+    Left = 40
+    Top = 240
   end
 end

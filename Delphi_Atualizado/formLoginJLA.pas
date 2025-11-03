@@ -81,10 +81,13 @@ var iniArq: TIniFile;
 procedure TformLogin.registDadosLogin;
 var tipoUsuario, emailUsuario, codigoUsuario: String;
     codigoCliente: String;
+    status: String;
 begin
     tipoUsuario := DM.QueryUsuarios.FieldByName('tipo_usuario').AsString;
     //emailUsuario := DM.QueryUsuarios.FieldByName('nome_usuario').AsString;
     codigoUsuario := DM.QueryUsuarios.FieldByName('id_usuario').AsString;
+    status := DM.QueryUsuarios.FieldByName('ativo_in').AsString;
+
     //codigoCliente := DM.QueryClientes.FieldByName('codigo_cliente').AsString;
 
     iniArq := TIniFile.Create(ExtractFilePath(ParamStr(0)) + 'login.ini');
@@ -92,6 +95,7 @@ begin
       iniArq.WriteString('Login', 'Usuario', leUsuario.Text);
       iniArq.WriteString('Login', 'TipoUsuario', tipoUsuario);
       iniArq.WriteString('Login', 'CodigoUsuario', codigoUsuario);
+      iniArq.WriteString('Login', 'Status', status);
 //      iniArq.WriteString('Cliente', 'CodigoCliente', codigoCliente);
 //      if tipoUsuario = 'Cliente' then begin
 //          DM.QueryClientes.SQL.Text := 'SELECT codigo_cliente FROM "Clientes" WHERE email_cliente = :Email';
@@ -156,7 +160,7 @@ end;
 procedure TformLogin.pnlEntrarClick(Sender: TObject);
  var
  tipoUsuario: String;
- funcionarioAdm: Boolean;
+ funcionarioAdm, status: Boolean;
 begin
   if (leSenhaLogin.Text = '') or (leUsuario.Text = '') then begin
     ShowMessage('Preencha todos os campos.');
@@ -190,22 +194,27 @@ begin
 
       if not DM.QueryUsuarios.IsEmpty then begin
         tipoUsuario := DM.QueryUsuarios.FieldByName('tipo_usuario').AsString;
+        status := DM.QueryUsuarios.FieldByName('ativo_in').AsBoolean;
         registDadosLogin;
         Self.Hide;
-        if tipoUsuario = 'Cliente' then begin
-         Application.CreateForm(TformPáginaInicialCli, formPáginaInicialCli);
-         formPáginaInicialCli.Show;
-        end else if (tipoUsuario = 'Administrador') or (funcionarioAdm = true) then begin
-            Application.CreateForm(TformPáginaInicialADM, formPáginaInicialADM);
-            formPáginaInicialADM.Show;
-          end else if (tipoUsuario = 'Funcionario') and (funcionarioAdm = False) then begin
-         Application.CreateForm(TformPáginaInicialFunc, formPáginaInicialFunc);
-         formPáginaInicialFunc.Show;
+        if (status = False) then begin
+          ShowMessage('Usuário está inativo, entre em contato com um administrador para retomar o acesso.');
+          Exit;
+        end;
+          if (tipoUsuario = 'Cliente') then begin
+          Application.CreateForm(TformPáginaInicialCli, formPáginaInicialCli);
+          formPáginaInicialCli.Show;
+            end else if (tipoUsuario = 'Administrador') or (funcionarioAdm = true) then begin
+                Application.CreateForm(TformPáginaInicialADM, formPáginaInicialADM);
+                formPáginaInicialADM.Show;
+              end else if (tipoUsuario = 'Funcionario') and (funcionarioAdm = False) then begin
+             Application.CreateForm(TformPáginaInicialFunc, formPáginaInicialFunc);
+             formPáginaInicialFunc.Show;
+                end;
 
-            end else begin
-            ShowMessage('Usuário ou senha incorretos. Tente novamente.');
-              end;
-      end;
+      end else begin
+      ShowMessage('Usuário ou senha incorretos. Tente novamente.');
+        end;
   end;
 end;
 end.

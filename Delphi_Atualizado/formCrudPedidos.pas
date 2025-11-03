@@ -56,6 +56,8 @@ type
     pnlIncluirPedido: TPanel;
     procedure DBGrid1CellClick(Column: TColumn);
     procedure btnIncluirPediClick(Sender: TObject);
+    procedure pnlFazerOrcPedidoClick(Sender: TObject);
+
   private
     { Private declarations }
   public
@@ -89,9 +91,19 @@ begin
     end;
 end;
 
+
+procedure TcrudPedidos.pnlFazerOrcPedidoClick(Sender: TObject);
+begin
+    DM.QueryPedidos.SQL.Text := 'SELECT FROM Pedidos WHERE codigo_pedido = :CodPedido';
+    DM.QueryPedidos.ParamByName('CodPedido').AsString := codigoPedido;
+
+end;
+
 // Mostrar dados nos campos do formulário lateral
 procedure TcrudPedidos.btnIncluirPediClick(Sender: TObject);
 begin
+      pnlIncluirPedido.Visible := True;
+
       with DM.QueryPedidos do begin
         DM.QueryPedidos.Close;
         DM.QueryPedidos.Open;
@@ -111,5 +123,7 @@ begin
         ParamByName('Status').AsString := cbStatus.Text;
       end;
 end;
+
+
 
 end.

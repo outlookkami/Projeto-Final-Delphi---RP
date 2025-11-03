@@ -13,7 +13,7 @@ type
     lblDescServico: TLabel;
     Panel1: TPanel;
     DSPedido: TDataSource;
-    memoDescricaoDoServiço: TMemo;
+    memoDescricaoDoServico: TMemo;
     GridPanel1: TGridPanel;
     GridPanel2: TGridPanel;
     GridPanel3: TGridPanel;
@@ -35,7 +35,7 @@ type
     lblEmailCliente: TLabel;
     GridPanel8: TGridPanel;
     lblCódigo: TLabel;
-    lblCódigoCliente: TLabel;
+    lblCodigoCliente: TLabel;
     lblCEP: TLabel;
     lblCEPCliente: TLabel;
     DSOrcamento: TDataSource;
@@ -52,9 +52,11 @@ type
     Label1: TLabel;
     Label2: TLabel;
     Label3: TLabel;
-    Label4: TLabel;
+    lblCorVeic: TLabel;
     lblMod: TLabel;
     lblModelo: TLabel;
+
+    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -92,6 +94,26 @@ begin
 ////        if MessageDlg('Pedido finalizado! Aguarde a resposta da oficina. O orçamento estará disponível na aba Orçamentos.',
 ////        mtConfirmation, [mbYes, mbNo], 0) = mrYes then FrameVeiculo else Close; Self.Close;
 //          end;
+end;
+
+
+
+procedure TformVerOrcamento.FormCreate(Sender: TObject);
+begin
+// Recebe as informações presentes no Crud de Orçamentos
+//    numeroOrcamento.Caption := codigo_orcamento;
+//    dataEmissao.Caption:= ;
+//    validoAte.Caption:= ;
+//    lblNomeCliente.Caption:= ;
+//    lblTelefoneCliente.Caption := ;
+//    lblEmailCliente.Caption := ;
+//    lblCodigoCliente.Caption := ;
+//    lblCEPCliente.Caption := ;
+//    lblPlacaVeic.Caption := ;
+//    lblMarca.Caption :=;
+//    lblModelo.Caption := ;
+//    lblCorVeic.Caption := ;
+//    memoDescricaoDoServico.Text := ;
 end;
 
 end.

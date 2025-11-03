@@ -18,15 +18,13 @@ object crudOrcamentos: TcrudOrcamentos
     Height = 701
     Align = alClient
     TabOrder = 0
-    ExplicitLeft = -1
-    ExplicitWidth = 1151
     DesignSize = (
       1150
       701)
     object lblDadosFunc: TLabel
-      Left = 867
+      Left = 866
       Top = 21
-      Width = 181
+      Width = 182
       Height = 25
       Align = alCustom
       Alignment = taRightJustify
@@ -38,7 +36,6 @@ object crudOrcamentos: TcrudOrcamentos
       Font.Name = 'Segoe UI'
       Font.Style = []
       ParentFont = False
-      ExplicitWidth = 182
     end
     object btnIncluirOrc: TPanel
       Left = 591
@@ -57,7 +54,6 @@ object crudOrcamentos: TcrudOrcamentos
       ParentBackground = False
       ParentFont = False
       TabOrder = 2
-      ExplicitLeft = 592
     end
     object pnlPesquisa: TPanel
       Left = 48
@@ -70,7 +66,6 @@ object crudOrcamentos: TcrudOrcamentos
       Color = clBtnHighlight
       ParentBackground = False
       TabOrder = 0
-      ExplicitWidth = 696
       DesignSize = (
         691
         37)
@@ -163,7 +158,7 @@ object crudOrcamentos: TcrudOrcamentos
       Width = 695
       Height = 528
       Anchors = [akLeft, akTop, akRight, akBottom]
-      DataSource = DSPedidos
+      DataSource = formVerOrcamento.DSPedido
       Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
       TabOrder = 1
       TitleFont.Charset = DEFAULT_CHARSET
@@ -360,11 +355,10 @@ object crudOrcamentos: TcrudOrcamentos
       ParentFont = False
       TabOrder = 3
       TextHint = 'Pesquise'
-      ExplicitWidth = 638
     end
     object gridPanelLogin: TGridPanel
       Left = 760
-      Top = 19
+      Top = 25
       Width = 361
       Height = 647
       Align = alCustom
@@ -418,11 +412,6 @@ object crudOrcamentos: TcrudOrcamentos
         end
         item
           Column = 0
-          Control = leEmailCliente
-          Row = 4
-        end
-        item
-          Column = 0
           Control = GridPanel1
           Row = 0
         end
@@ -430,26 +419,6 @@ object crudOrcamentos: TcrudOrcamentos
           Column = 0
           Control = GridPanel2
           Row = 2
-        end
-        item
-          Column = 0
-          Control = leEndereco
-          Row = 6
-        end
-        item
-          Column = 0
-          Control = GridPanel5
-          Row = 8
-        end
-        item
-          Column = 0
-          Control = leMarca
-          Row = 10
-        end
-        item
-          Column = 0
-          Control = leModelo
-          Row = 12
         end
         item
           Column = 0
@@ -490,6 +459,16 @@ object crudOrcamentos: TcrudOrcamentos
           Column = 0
           Control = pnlIncluirPedido
           Row = 22
+        end
+        item
+          Column = 0
+          Control = leMarca
+          Row = 4
+        end
+        item
+          Column = 0
+          Control = leModelo
+          Row = 6
         end>
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
@@ -644,19 +623,6 @@ object crudOrcamentos: TcrudOrcamentos
         ExplicitLeft = 198
         ExplicitTop = 520
       end
-      object leEmailCliente: TLabeledEdit
-        Left = 10
-        Top = 131
-        Width = 341
-        Height = 29
-        Anchors = []
-        EditLabel.Width = 54
-        EditLabel.Height = 21
-        EditLabel.Caption = '*E-mail:'
-        TabOrder = 0
-        Text = ''
-        TextHint = 'Digite o endere'#231'o de e-mail'
-      end
       object GridPanel1: TGridPanel
         Left = 1
         Top = 0
@@ -681,7 +647,7 @@ object crudOrcamentos: TcrudOrcamentos
           end
           item
             Column = 1
-            Control = leCodOrcamento
+            Control = leDataEmissao
             Row = 0
           end>
         ParentBackground = False
@@ -693,7 +659,7 @@ object crudOrcamentos: TcrudOrcamentos
           item
             SizeStyle = ssAuto
           end>
-        TabOrder = 1
+        TabOrder = 0
         DesignSize = (
           358
           57)
@@ -708,29 +674,28 @@ object crudOrcamentos: TcrudOrcamentos
           EditLabel.Caption = 'C'#243'digo do Pedido:'
           TabOrder = 0
           Text = ''
-          TextHint = '$'
-          ExplicitTop = 29
+          TextHint = 'C'#243'digo do pedido'
         end
-        object leCodOrcamento: TLabeledEdit
+        object leDataEmissao: TLabeledEdit
           Left = 180
           Top = 26
           Width = 165
           Height = 29
           Anchors = []
-          EditLabel.Width = 108
+          EditLabel.Width = 117
           EditLabel.Height = 21
-          EditLabel.Caption = 'Data do Pedido:'
+          EditLabel.Caption = 'Data de Emiss'#227'o:'
           TabOrder = 1
           Text = ''
-          TextHint = '$'
-          ExplicitTop = 31
+          TextHint = 'Data de Emiss'#227'o'
+          ExplicitLeft = 187
         end
       end
       object GridPanel2: TGridPanel
         Left = 2
         Top = 53
         Width = 356
-        Height = 53
+        Height = 56
         Anchors = []
         BevelOuter = bvNone
         ColumnCollection = <
@@ -750,7 +715,7 @@ object crudOrcamentos: TcrudOrcamentos
           end
           item
             Column = 1
-            Control = leCEP
+            Control = leDataValidade
             Row = 0
           end>
         ParentBackground = False
@@ -762,14 +727,15 @@ object crudOrcamentos: TcrudOrcamentos
           item
             SizeStyle = ssAuto
           end>
-        TabOrder = 2
+        TabOrder = 1
+        ExplicitTop = 74
         DesignSize = (
           356
-          53)
+          56)
         object leContato: TLabeledEdit
-          Left = 7
-          Top = 24
-          Width = 165
+          Left = 14
+          Top = 25
+          Width = 151
           Height = 29
           Anchors = []
           EditLabel.Width = 129
@@ -777,123 +743,23 @@ object crudOrcamentos: TcrudOrcamentos
           EditLabel.Caption = 'Contato do cliente:'
           TabOrder = 0
           Text = ''
-          TextHint = '$'
-          ExplicitLeft = 9
+          TextHint = 'Contato do cliente'
+          ExplicitLeft = 19
         end
-        object leCEP: TLabeledEdit
+        object leDataValidade: TLabeledEdit
           Left = 180
-          Top = 24
+          Top = 25
           Width = 165
           Height = 29
           Anchors = []
-          EditLabel.Width = 101
+          EditLabel.Width = 119
           EditLabel.Height = 21
-          EditLabel.Caption = 'CEP do cliente:'
+          EditLabel.Caption = 'Data de Validade:'
           TabOrder = 1
           Text = ''
-          TextHint = '$'
+          TextHint = 'Validade do or'#231'amento'
+          ExplicitLeft = 186
         end
-      end
-      object leEndereco: TLabeledEdit
-        Left = 10
-        Top = 184
-        Width = 341
-        Height = 29
-        Anchors = []
-        EditLabel.Width = 67
-        EditLabel.Height = 21
-        EditLabel.Caption = 'Endere'#231'o:'
-        TabOrder = 3
-        Text = ''
-        TextHint = 'Informe o endere'#231'o'
-      end
-      object GridPanel5: TGridPanel
-        Left = 0
-        Top = 214
-        Width = 360
-        Height = 60
-        Anchors = []
-        BevelOuter = bvNone
-        ColumnCollection = <
-          item
-            Value = 40.735354790552790000
-          end
-          item
-            Value = 59.264645209447220000
-          end>
-        ControlCollection = <
-          item
-            Column = 0
-            Control = lePlaca
-            Row = 0
-          end
-          item
-            Column = 1
-            Control = leCorVeiculo
-            Row = 0
-          end>
-        ParentBackground = False
-        ParentColor = True
-        RowCollection = <
-          item
-            Value = 100.000000000000000000
-          end>
-        TabOrder = 4
-        DesignSize = (
-          360
-          60)
-        object lePlaca: TLabeledEdit
-          Left = 10
-          Top = 27
-          Width = 126
-          Height = 29
-          Anchors = []
-          EditLabel.Width = 114
-          EditLabel.Height = 21
-          EditLabel.Caption = 'Placa do ve'#237'culo:'
-          TabOrder = 0
-          Text = ''
-          TextHint = 'N'#250'mero do endere'#231'o'
-        end
-        object leCorVeiculo: TLabeledEdit
-          Left = 157
-          Top = 27
-          Width = 193
-          Height = 29
-          Anchors = []
-          EditLabel.Width = 103
-          EditLabel.Height = 21
-          EditLabel.Caption = 'Cor do ve'#237'culo:'
-          TabOrder = 1
-          Text = ''
-          TextHint = 'Informe o bairro'
-        end
-      end
-      object leMarca: TLabeledEdit
-        Left = 13
-        Top = 291
-        Width = 334
-        Height = 29
-        Anchors = []
-        EditLabel.Width = 121
-        EditLabel.Height = 21
-        EditLabel.Caption = 'Marca do ve'#237'culo:'
-        TabOrder = 5
-        Text = ''
-        TextHint = 'Digite o endere'#231'o de e-mail'
-      end
-      object leModelo: TLabeledEdit
-        Left = 14
-        Top = 345
-        Width = 332
-        Height = 29
-        Anchors = []
-        EditLabel.Width = 131
-        EditLabel.Height = 21
-        EditLabel.Caption = 'Modelo do ve'#237'culo:'
-        TabOrder = 6
-        Text = ''
-        TextHint = 'Digite o endere'#231'o de e-mail'
       end
       object lblDescricaoPedido: TLabel
         Left = 16
@@ -911,8 +777,7 @@ object crudOrcamentos: TcrudOrcamentos
         Anchors = []
         Lines.Strings = (
           '')
-        TabOrder = 7
-        ExplicitTop = 407
+        TabOrder = 2
       end
       object Label1: TLabel
         Left = 178
@@ -948,15 +813,13 @@ object crudOrcamentos: TcrudOrcamentos
         Align = alCustom
         BevelInner = bvNone
         BevelOuter = bvNone
-        ItemIndex = 0
-        TabOrder = 8
-        Text = 'Funileiro'
+        TabOrder = 3
+        TextHint = 'Selecione o status do or'#231'amento'
         Items.Strings = (
-          'Funileiro'
-          'Montador/Desmontador'
-          'Pintor Automotivo'
-          'Preparador de pintura'
-          'Administrador')
+          'Aguardando Or'#231'amento'
+          'Or'#231'amento Aprovado'
+          'Or'#231'amento Reprovado'
+          'Servi'#231'o em andamento')
       end
       object pnlFazerOrcPedido: TPanel
         Left = 183
@@ -975,7 +838,7 @@ object crudOrcamentos: TcrudOrcamentos
         Font.Style = []
         ParentBackground = False
         ParentFont = False
-        TabOrder = 9
+        TabOrder = 4
         Visible = False
       end
       object pnlIncluirPedido: TPanel
@@ -995,8 +858,36 @@ object crudOrcamentos: TcrudOrcamentos
         Font.Style = []
         ParentBackground = False
         ParentFont = False
-        TabOrder = 10
+        TabOrder = 5
         Visible = False
+      end
+      object leMarca: TLabeledEdit
+        Left = 15
+        Top = 131
+        Width = 331
+        Height = 29
+        Anchors = []
+        EditLabel.Width = 121
+        EditLabel.Height = 21
+        EditLabel.Caption = 'Marca do ve'#237'culo:'
+        TabOrder = 6
+        Text = ''
+        TextHint = 'Marca do ve'#237'culo:'
+        ExplicitLeft = 0
+      end
+      object leModelo: TLabeledEdit
+        Left = 18
+        Top = 184
+        Width = 325
+        Height = 29
+        Anchors = []
+        EditLabel.Width = 131
+        EditLabel.Height = 21
+        EditLabel.Caption = 'Modelo do ve'#237'culo:'
+        TabOrder = 7
+        Text = ''
+        TextHint = 'Modelo do ve'#237'culo'
+        ExplicitLeft = 8
       end
     end
     object btnEditOrc: TPanel
@@ -1016,7 +907,6 @@ object crudOrcamentos: TcrudOrcamentos
       ParentBackground = False
       ParentFont = False
       TabOrder = 5
-      ExplicitLeft = 434
     end
     object btnInativOrc: TPanel
       Left = 275
@@ -1035,7 +925,6 @@ object crudOrcamentos: TcrudOrcamentos
       ParentBackground = False
       ParentFont = False
       TabOrder = 6
-      ExplicitLeft = 276
     end
     object btnExcluOrc: TPanel
       Left = 117
@@ -1054,7 +943,32 @@ object crudOrcamentos: TcrudOrcamentos
       ParentBackground = False
       ParentFont = False
       TabOrder = 7
-      ExplicitLeft = 118
+    end
+    object listaProdutos: TListView
+      Left = 778
+      Top = 249
+      Width = 325
+      Height = 150
+      Checkboxes = True
+      Columns = <
+        item
+          Caption = 'C'#243'digo'
+        end
+        item
+          Caption = 'Produto'
+        end
+        item
+          Caption = 'Marca'
+        end
+        item
+          Caption = 'Pre'#231'o'
+        end
+        item
+          Caption = 'Estoque'
+        end>
+      GridLines = True
+      TabOrder = 8
+      ViewStyle = vsReport
     end
   end
   object DSPedidos: TDataSource

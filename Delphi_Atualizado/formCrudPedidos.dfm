@@ -18,14 +18,13 @@ object crudPedidos: TcrudPedidos
     Height = 701
     Align = alClient
     TabOrder = 0
-    ExplicitWidth = 1150
     DesignSize = (
       1151
       701)
     object lblDadosFunc: TLabel
-      Left = 866
+      Left = 867
       Top = 21
-      Width = 183
+      Width = 182
       Height = 25
       Align = alCustom
       Alignment = taRightJustify
@@ -37,7 +36,6 @@ object crudPedidos: TcrudPedidos
       Font.Name = 'Segoe UI'
       Font.Style = []
       ParentFont = False
-      ExplicitWidth = 182
     end
     object btnIncluirPedi: TPanel
       Left = 592
@@ -57,7 +55,6 @@ object crudPedidos: TcrudPedidos
       ParentFont = False
       TabOrder = 2
       OnClick = btnIncluirPediClick
-      ExplicitLeft = 591
     end
     object pnlPesquisa: TPanel
       Left = 48
@@ -70,7 +67,6 @@ object crudPedidos: TcrudPedidos
       Color = clBtnHighlight
       ParentBackground = False
       TabOrder = 0
-      ExplicitWidth = 695
       DesignSize = (
         692
         37)
@@ -238,6 +234,11 @@ object crudPedidos: TcrudPedidos
           Expanded = False
           FieldName = 'status_pedido'
           Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'email_cliente'
+          Visible = True
         end>
     end
     object edtPesquisa: TEdit
@@ -255,7 +256,6 @@ object crudPedidos: TcrudPedidos
       ParentFont = False
       TabOrder = 3
       TextHint = 'Pesquise'
-      ExplicitWidth = 637
     end
     object gridPanelLogin: TGridPanel
       Left = 761
@@ -464,7 +464,6 @@ object crudPedidos: TcrudPedidos
           SizeStyle = ssAuto
         end>
       TabOrder = 4
-      ExplicitLeft = 760
       DesignSize = (
         361
         647)
@@ -552,7 +551,7 @@ object crudPedidos: TcrudPedidos
         TabOrder = 0
         Text = ''
         TextHint = 'Digite o endere'#231'o de e-mail'
-        ExplicitTop = 139
+        ExplicitTop = 133
       end
       object GridPanel1: TGridPanel
         Left = 1
@@ -596,9 +595,9 @@ object crudPedidos: TcrudPedidos
           65)
         object leCodPedido: TLabeledEdit
           Left = 11
-          Top = 29
+          Top = 30
           Width = 157
-          Height = 30
+          Height = 29
           Anchors = []
           EditLabel.Width = 126
           EditLabel.Height = 21
@@ -617,7 +616,6 @@ object crudPedidos: TcrudPedidos
           EditLabel.Caption = 'Data do Pedido:'
           TabOrder = 1
           Text = ''
-          ExplicitTop = 29
         end
       end
       object GridPanel2: TGridPanel
@@ -657,7 +655,6 @@ object crudPedidos: TcrudPedidos
             SizeStyle = ssAuto
           end>
         TabOrder = 2
-        ExplicitTop = 57
         DesignSize = (
           356
           53)
@@ -672,6 +669,8 @@ object crudPedidos: TcrudPedidos
           EditLabel.Caption = 'Contato do cliente:'
           TabOrder = 0
           Text = ''
+          ExplicitLeft = 9
+          ExplicitTop = 18
         end
         object leCEP: TLabeledEdit
           Left = 180
@@ -698,7 +697,6 @@ object crudPedidos: TcrudPedidos
         TabOrder = 3
         Text = ''
         TextHint = 'Informe o endere'#231'o'
-        ExplicitTop = 196
       end
       object GridPanel5: TGridPanel
         Left = 0
@@ -732,7 +730,6 @@ object crudPedidos: TcrudPedidos
             Value = 100.000000000000000000
           end>
         TabOrder = 4
-        ExplicitTop = 229
         DesignSize = (
           360
           60)
@@ -748,7 +745,6 @@ object crudPedidos: TcrudPedidos
           TabOrder = 0
           Text = ''
           TextHint = 'Placa do ve'#237'culo'
-          ExplicitTop = 24
         end
         object leCorVeiculo: TLabeledEdit
           Left = 157
@@ -762,7 +758,6 @@ object crudPedidos: TcrudPedidos
           TabOrder = 1
           Text = ''
           TextHint = 'Cor do ve'#237'culo'
-          ExplicitTop = 24
         end
       end
       object leMarca: TLabeledEdit
@@ -777,7 +772,6 @@ object crudPedidos: TcrudPedidos
         TabOrder = 5
         Text = ''
         TextHint = 'Marca do ve'#237'culo'
-        ExplicitTop = 311
       end
       object leModelo: TLabeledEdit
         Left = 14
@@ -791,7 +785,6 @@ object crudPedidos: TcrudPedidos
         TabOrder = 6
         Text = ''
         TextHint = 'Modelo do ve'#237'culo'
-        ExplicitTop = 368
       end
       object lblDescricaoPedido: TLabel
         Left = 16
@@ -805,12 +798,18 @@ object crudPedidos: TcrudPedidos
         Left = 15
         Top = 401
         Width = 331
-        Height = 114
+        Height = 115
         Anchors = []
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Segoe UI'
+        Font.Style = []
         Lines.Strings = (
           '')
+        ParentFont = False
         TabOrder = 7
-        ExplicitTop = 407
+        ExplicitTop = 400
       end
       object Label1: TLabel
         Left = 178
@@ -833,7 +832,7 @@ object crudPedidos: TcrudPedidos
       object lblStatus: TLabel
         Left = 14
         Top = 516
-        Width = 317
+        Width = 45
         Height = 21
         Align = alCustom
         Caption = 'Status:'
@@ -855,7 +854,7 @@ object crudPedidos: TcrudPedidos
       end
       object pnlFazerOrcPedido: TPanel
         Left = 183
-        Top = 590
+        Top = 578
         Width = 162
         Height = 41
         Cursor = crHandPoint
@@ -871,11 +870,11 @@ object crudPedidos: TcrudPedidos
         ParentBackground = False
         ParentFont = False
         TabOrder = 9
-        Visible = False
+        OnClick = pnlFazerOrcPedidoClick
       end
       object pnlIncluirPedido: TPanel
         Left = 0
-        Top = 590
+        Top = 578
         Width = 161
         Height = 41
         Cursor = crHandPoint
@@ -911,7 +910,6 @@ object crudPedidos: TcrudPedidos
       ParentBackground = False
       ParentFont = False
       TabOrder = 5
-      ExplicitLeft = 433
     end
     object btnInativPedi: TPanel
       Left = 276
@@ -930,7 +928,6 @@ object crudPedidos: TcrudPedidos
       ParentBackground = False
       ParentFont = False
       TabOrder = 6
-      ExplicitLeft = 275
     end
     object btnExcluPedi: TPanel
       Left = 118
@@ -949,7 +946,6 @@ object crudPedidos: TcrudPedidos
       ParentBackground = False
       ParentFont = False
       TabOrder = 7
-      ExplicitLeft = 117
     end
   end
   object DSPedidos: TDataSource

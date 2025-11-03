@@ -10,7 +10,6 @@ object formCrudFunc: TformCrudFunc
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
-  OnCreate = FormCreate
   TextHeight = 15
   object Panel1: TPanel
     Left = 0
@@ -266,81 +265,6 @@ object formCrudFunc: TformCrudFunc
           FieldName = 'ativo_in'
           Title.Caption = 'Ativo'
           Width = 50
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'codigo_funcionario'
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'hash_senha_func'
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'nome_funcionario'
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'telefone_funcionario'
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'email_funcionario'
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'cep_funcionario'
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'endereco_funcionario'
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'num_endereco'
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'bairro'
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'cidade'
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'uf'
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'funcao'
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'cpf_funcionario'
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'rg_funcionario'
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'ativo_in'
           Visible = True
         end>
     end
@@ -1070,6 +994,33 @@ object formCrudFunc: TformCrudFunc
       ParentFont = False
       TabOrder = 7
       OnClick = btnExcluFuncClick
+    end
+    object bitbtnInativFunc: TBitBtn
+      Left = 72
+      Top = 80
+      Width = 75
+      Height = 25
+      Caption = 'Inativar Funcion'#225'rio'
+      TabOrder = 8
+      OnClick = bitbtnInativFuncClick
+    end
+    object bitbtnAtualizar: TBitBtn
+      Left = 152
+      Top = 112
+      Width = 75
+      Height = 25
+      Caption = 'Atualizar'
+      TabOrder = 9
+      OnClick = bitbtnAtualizarClick
+    end
+    object bitbtnAtivarFunc: TBitBtn
+      Left = 320
+      Top = 107
+      Width = 75
+      Height = 25
+      Caption = 'Ativar Funcion'#225'rio'
+      TabOrder = 10
+      OnClick = bitbtnAtivarFuncClick
     end
   end
   object DSFuncionarios: TDataSource

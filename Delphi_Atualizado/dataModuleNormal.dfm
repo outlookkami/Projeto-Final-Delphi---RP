@@ -20,6 +20,75 @@ object DM: TDM
       'SELECT * FROM "Clientes";')
     Left = 112
     Top = 192
+    object QueryClientescodigo_cliente: TIntegerField
+      FieldName = 'codigo_cliente'
+      Origin = 'codigo_cliente'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+    end
+    object QueryClienteshash_senha_cli: TStringField
+      FieldName = 'hash_senha_cli'
+      Origin = 'hash_senha_cli'
+      Size = 255
+    end
+    object QueryClientesnome_cliente: TStringField
+      FieldName = 'nome_cliente'
+      Origin = 'nome_cliente'
+      Size = 100
+    end
+    object QueryClientestelefone_cliente: TStringField
+      FieldName = 'telefone_cliente'
+      Origin = 'telefone_cliente'
+      Size = 11
+    end
+    object QueryClientesemail_cliente: TStringField
+      FieldName = 'email_cliente'
+      Origin = 'email_cliente'
+      Size = 250
+    end
+    object QueryClientescep_cliente: TStringField
+      FieldName = 'cep_cliente'
+      Origin = 'cep_cliente'
+      Size = 8
+    end
+    object QueryClientesendereco_cliente: TStringField
+      FieldName = 'endereco_cliente'
+      Origin = 'endereco_cliente'
+      Size = 60
+    end
+    object QueryClientesnum_endereco: TStringField
+      FieldName = 'num_endereco'
+      Origin = 'num_endereco'
+      Size = 7
+    end
+    object QueryClientesbairro: TStringField
+      FieldName = 'bairro'
+      Origin = 'bairro'
+      Size = 30
+    end
+    object QueryClientescidade: TStringField
+      FieldName = 'cidade'
+      Origin = 'cidade'
+      Size = 30
+    end
+    object QueryClientesuf: TStringField
+      FieldName = 'uf'
+      Origin = 'uf'
+      Size = 2
+    end
+    object QueryClientesveiculo: TStringField
+      FieldName = 'veiculo'
+      Origin = 'veiculo'
+      Size = 7
+    end
+    object QueryClientescliente_data_criacao: TSQLTimeStampField
+      FieldName = 'cliente_data_criacao'
+      Origin = 'cliente_data_criacao'
+      ProviderFlags = [pfInUpdate]
+    end
+    object QueryClientesativo_in: TBooleanField
+      FieldName = 'ativo_in'
+      Origin = 'ativo_in'
+    end
   end
   object FDGUIxWaitCursor1: TFDGUIxWaitCursor
     Provider = 'Console'
@@ -161,6 +230,10 @@ object DM: TDM
       Origin = 'usuario_data_criacao'
       ProviderFlags = [pfInUpdate]
     end
+    object QueryUsuariosativo_in: TBooleanField
+      FieldName = 'ativo_in'
+      Origin = 'ativo_in'
+    end
   end
   object QueryProdutos: TFDQuery
     Active = True
@@ -230,6 +303,7 @@ object DM: TDM
     Top = 56
   end
   object QueryPedidos: TFDQuery
+    Active = True
     Connection = ConexaoBanco
     SQL.Strings = (
       'SELECT * FROM Pedidos;')
@@ -239,10 +313,6 @@ object DM: TDM
       FieldName = 'codigo_pedido'
       Origin = 'codigo_pedido'
       ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
-    end
-    object QueryPedidoscodigo_cliente: TIntegerField
-      FieldName = 'codigo_cliente'
-      Origin = 'codigo_cliente'
     end
     object QueryPedidosendereco_cliente: TStringField
       FieldName = 'endereco_cliente'
@@ -295,6 +365,11 @@ object DM: TDM
     object QueryPedidosstatus_pedido: TStringField
       FieldName = 'status_pedido'
       Origin = 'status_pedido'
+    end
+    object QueryPedidosemail_cliente: TStringField
+      FieldName = 'email_cliente'
+      Origin = 'email_cliente'
+      Size = 255
     end
   end
   object QueryVeiculos: TFDQuery
@@ -393,5 +468,78 @@ object DM: TDM
     UpdateOptions.AutoCommitUpdates = True
     Left = 208
     Top = 408
+  end
+  object QueryOrcamentos: TFDQuery
+    Connection = ConexaoBanco
+    SQL.Strings = (
+      'SELECT * FROM Orcamentos;')
+    Left = 464
+    Top = 264
+    object QueryOrcamentoscodigo_orcamento: TIntegerField
+      FieldName = 'codigo_orcamento'
+      Origin = 'codigo_orcamento'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+    end
+    object QueryOrcamentoscodigo_pedido: TIntegerField
+      FieldName = 'codigo_pedido'
+      Origin = 'codigo_pedido'
+    end
+    object QueryOrcamentosdata_emissao: TDateField
+      FieldName = 'data_emissao'
+      Origin = 'data_emissao'
+    end
+    object QueryOrcamentosvalidade: TDateField
+      FieldName = 'validade'
+      Origin = 'validade'
+    end
+    object QueryOrcamentoscontato_cliente: TStringField
+      FieldName = 'contato_cliente'
+      Origin = 'contato_cliente'
+      Size = 11
+    end
+    object QueryOrcamentosemail_cliente: TStringField
+      FieldName = 'email_cliente'
+      Origin = 'email_cliente'
+      Size = 255
+    end
+    object QueryOrcamentosnome_cliente: TStringField
+      FieldName = 'nome_cliente'
+      Origin = 'nome_cliente'
+      Size = 100
+    end
+    object QueryOrcamentoscep_cliente: TStringField
+      FieldName = 'cep_cliente'
+      Origin = 'cep_cliente'
+      Size = 8
+    end
+    object QueryOrcamentosplaca_veiculo: TStringField
+      FieldName = 'placa_veiculo'
+      Origin = 'placa_veiculo'
+      Size = 7
+    end
+    object QueryOrcamentosmarca: TStringField
+      FieldName = 'marca'
+      Origin = 'marca'
+      Size = 40
+    end
+    object QueryOrcamentosmodelo: TStringField
+      FieldName = 'modelo'
+      Origin = 'modelo'
+      Size = 40
+    end
+    object QueryOrcamentoscor: TStringField
+      FieldName = 'cor'
+      Origin = 'cor'
+    end
+    object QueryOrcamentosdescricao_pedido: TMemoField
+      FieldName = 'descricao_pedido'
+      Origin = 'descricao_pedido'
+      BlobType = ftMemo
+    end
+    object QueryOrcamentosstatus_orcamento: TStringField
+      FieldName = 'status_orcamento'
+      Origin = 'status_orcamento'
+      Size = 25
+    end
   end
 end

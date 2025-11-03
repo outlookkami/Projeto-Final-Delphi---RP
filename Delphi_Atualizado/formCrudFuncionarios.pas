@@ -55,12 +55,15 @@ type
     leCPF: TLabeledEdit;
     pnlSalvar: TPanel;
     leNome: TLabeledEdit;
+    bitbtnInativFunc: TBitBtn;
+    bitbtnAtualizar: TBitBtn;
+    bitbtnAtivarFunc: TBitBtn;
     procedure iconePesquisaClick(Sender: TObject);
     procedure btnExcluFuncClick(Sender: TObject);
     procedure btnEditFuncClick(Sender: TObject);
     procedure btnIncluirFuncClick(Sender: TObject);
     procedure btnInativFuncClick(Sender: TObject);
-    procedure FormCreate(Sender: TObject);
+
     procedure leCEPExit(Sender: TObject);
     procedure SenhaFunc;
     procedure pnlCadastrarClick(Sender: TObject);
@@ -68,6 +71,9 @@ type
     procedure DBGrid1CellClick(Column: TColumn);
     procedure pnlSalvarClick(Sender: TObject);
     procedure LimparCampos;
+    procedure bitbtnInativFuncClick(Sender: TObject);
+    procedure bitbtnAtualizarClick(Sender: TObject);
+    procedure bitbtnAtivarFuncClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -85,11 +91,6 @@ uses  unitCEPConsultor,
       frameCadastroDeSenhaFuncionário,
       System.Hash;
 
-procedure TformCrudFunc.FormCreate(Sender: TObject);
-begin
-//      DM.QueryFuncionarios.Close;
-//      DM.QueryFuncionarios.Open;
-end;
 var codigoFuncionario: String;
 
 // Mostrar dados nos campos do formulário lateral
@@ -128,6 +129,25 @@ begin
     leRG.Clear;
 end;
 
+// Atualizar DBGrid
+procedure TformCrudFunc.bitbtnAtivarFuncClick(Sender: TObject);
+begin
+    DM.QueryFuncionarios.Close;
+    DM.QueryFuncionarios.SQL.Text := 'UPDATE "Funcionarios" SET ativo_in = :boolAtivo WHERE codigo_funcionario = :codFunc';
+    DM.QueryFuncionarios.ParamByName('boolAtivo').AsBoolean := True;
+    DM.QueryFuncionarios.ParamByName('codFunc').AsInteger := StrToInt(codigoFuncionario);
+    DM.QueryFuncionarios.ExecSQL;
+end;
+
+procedure TformCrudFunc.bitbtnAtualizarClick(Sender: TObject);
+begin
+    with DM.QueryFuncionarios do begin
+      Close;
+      SQL.Text := 'SELECT codigo_funcionario, nome_funcionario, telefone_funcionario, email_funcionario, cep_funcionario, endereco_funcionario, num_endereco, bairro, cidade, uf, funcao, cpf_funcionario, rg_funcionario, ativo_in ORDER BY nome_funcionario';
+      Open;
+    end;
+end;
+
 // Incluir funcionário
 procedure TformCrudFunc.btnIncluirFuncClick(Sender: TObject);
 begin
@@ -144,7 +164,17 @@ begin
 //      DM.QueryFuncionarios.Open;
 end;
 
-// Editar funcionário
+// Inativar funcionário
+procedure TformCrudFunc.bitbtnInativFuncClick(Sender: TObject);
+begin
+    DM.QueryFuncionarios.Close;
+    DM.QueryFuncionarios.SQL.Text := 'UPDATE "Funcionarios" SET ativo_in = :boolAtivo WHERE codigo_funcionario = :codFunc';
+    DM.QueryFuncionarios.ParamByName('boolAtivo').AsBoolean := False;
+    DM.QueryFuncionarios.ParamByName('codFunc').AsInteger := StrToInt(codigoFuncionario);
+    DM.QueryFuncionarios.ExecSQL;
+end;
+
+//Editar Funcionário
 procedure TformCrudFunc.btnEditFuncClick(Sender: TObject);
 begin
     pnlCadastrar.Visible := False;
@@ -170,6 +200,7 @@ begin
     DM.QueryFuncionarios.Edit;
 end;
 
+// Salvar
 procedure TformCrudFunc.pnlSalvarClick(Sender: TObject);
 begin
     if not (DM.QueryFuncionarios.State in [dsInsert, dsEdit]) then
@@ -182,12 +213,10 @@ end;
 // Inativar funcionário
 procedure TformCrudFunc.btnInativFuncClick(Sender: TObject);
 begin
-    DM.QueryFuncionarios.Open;
     DM.QueryFuncionarios.SQL.Text := 'UPDATE "Funcionarios" SET ativo_in = :boolAtivo WHERE codigo_funcionario = :codFunc';
     DM.QueryFuncionarios.ParamByName('boolAtivo').AsBoolean := False;
     DM.QueryFuncionarios.ParamByName('codFunc').AsInteger := StrToInt(codigoFuncionario);
     DM.QueryFuncionarios.ExecSQL;
-    //DM.QueryFuncionarios.Close;
 end;
 
 // Excluir funcionário
