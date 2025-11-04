@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Data.DB, Vcl.ExtCtrls,
-  Vcl.Mask, Vcl.DBCtrls;
+  Vcl.Mask, Vcl.DBCtrls, dataModuleNormal;
 
 type
   TformVerOrcamento = class(TForm)
@@ -39,24 +39,31 @@ type
     lblCEP: TLabel;
     lblCEPCliente: TLabel;
     DSOrcamento: TDataSource;
-    GridPanel9: TGridPanel;
-    GridPanel10: TGridPanel;
-    lblPlaca: TLabel;
-    lblPlacaVeic: TLabel;
-    lblMarc: TLabel;
-    lblMarca: TLabel;
-    lblAnoMod: TLabel;
-    lblAnoModelo: TLabel;
     GridPanel11: TGridPanel;
     GridPanel12: TGridPanel;
-    Label1: TLabel;
-    Label2: TLabel;
-    Label3: TLabel;
-    lblCorVeic: TLabel;
-    lblMod: TLabel;
-    lblModelo: TLabel;
+    GridPanel13: TGridPanel;
+    GridPanel14: TGridPanel;
+    lblTotal: TLabel;
+    lblValorTotal: TLabel;
+    pnlAprovar: TPanel;
+    pnlRecusar: TPanel;
+    GridPanel15: TGridPanel;
+    Label4: TLabel;
+    Label5: TLabel;
+    Label6: TLabel;
+    Label7: TLabel;
+    Label8: TLabel;
+    Label9: TLabel;
+    GridPanel16: TGridPanel;
+    Label10: TLabel;
+    Label11: TLabel;
+    Label12: TLabel;
+    Label13: TLabel;
+    Label14: TLabel;
+    Label15: TLabel;
 
     procedure FormCreate(Sender: TObject);
+    procedure pnlAprovarClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -114,6 +121,14 @@ begin
 //    lblModelo.Caption := ;
 //    lblCorVeic.Caption := ;
 //    memoDescricaoDoServico.Text := ;
+end;
+
+procedure TformVerOrcamento.pnlAprovarClick(Sender: TObject);
+begin
+    with DM.QueryOrcamentos do begin
+       SQL.Text := 'INSERT INTO Orcamentos (status_orcamento) VALUES (:status)';
+       ParamByName('status').AsString := 'Orçamento Aprovado';
+    end;
 end;
 
 end.

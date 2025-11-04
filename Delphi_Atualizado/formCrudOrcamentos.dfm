@@ -154,11 +154,11 @@ object crudOrcamentos: TcrudOrcamentos
     end
     object DBGrid1: TDBGrid
       Left = 48
-      Top = 138
+      Top = 128
       Width = 695
       Height = 528
       Anchors = [akLeft, akTop, akRight, akBottom]
-      DataSource = formVerOrcamento.DSPedido
+      DataSource = DSOrcamentos
       Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
       TabOrder = 1
       TitleFont.Charset = DEFAULT_CHARSET
@@ -169,174 +169,92 @@ object crudOrcamentos: TcrudOrcamentos
       Columns = <
         item
           Expanded = False
-          FieldName = 'codigo_funcionario'
-          Title.Caption = 'C'#243'digo'
+          FieldName = 'codigo_orcamento'
+          Title.Caption = 'C'#243'd. Or'#231'amento'
           Visible = True
         end
         item
           Expanded = False
-          FieldName = 'nome_funcionario'
-          Title.Caption = 'Nome'
-          Width = 300
+          FieldName = 'codigo_pedido'
+          Title.Caption = 'C'#243'd. Pedido'
           Visible = True
         end
         item
           Expanded = False
-          FieldName = 'telefone_funcionario'
-          Title.Caption = 'Telefone'
-          Width = 100
+          FieldName = 'data_emissao'
+          Title.Caption = 'Data de emiss'#227'o'
           Visible = True
         end
         item
           Expanded = False
-          FieldName = 'email_funcionario'
-          Title.Caption = 'Email'
-          Width = 400
+          FieldName = 'validade'
+          Title.Caption = 'Validade'
           Visible = True
         end
         item
           Expanded = False
-          FieldName = 'cep_funcionario'
-          Title.Caption = 'CEP'
-          Width = 100
+          FieldName = 'contato_cliente'
+          Title.Caption = 'Contato Cliente'
+          Width = 128
           Visible = True
         end
         item
           Expanded = False
-          FieldName = 'endereco_funcionario'
-          Title.Caption = 'Endere'#231'o'
-          Width = 300
+          FieldName = 'email_cliente'
+          Title.Caption = 'Email Cliente'
+          Width = 210
           Visible = True
         end
         item
           Expanded = False
-          FieldName = 'num_endereco'
-          Title.Caption = 'N'#176
-          Width = 70
+          FieldName = 'nome_cliente'
+          Title.Caption = 'Nome Cliente'
+          Width = 210
           Visible = True
         end
         item
           Expanded = False
-          FieldName = 'bairro'
-          Title.Caption = 'Bairro'
-          Width = 250
+          FieldName = 'cep_cliente'
+          Title.Caption = 'CEP Cliente'
+          Width = 116
           Visible = True
         end
         item
           Expanded = False
-          FieldName = 'cidade'
-          Title.Caption = 'Cidade'
-          Width = 250
+          FieldName = 'placa_veiculo'
+          Title.Caption = 'Placa Ve'#237'culo'
           Visible = True
         end
         item
           Expanded = False
-          FieldName = 'uf'
-          Title.Caption = 'UF'
-          Width = 40
+          FieldName = 'marca'
+          Title.Caption = 'Marca'
+          Width = 162
           Visible = True
         end
         item
           Expanded = False
-          FieldName = 'funcao'
-          Title.Caption = 'Fun'#231#227'o'
-          Width = 200
+          FieldName = 'modelo'
+          Title.Caption = 'Modelo'
+          Width = 197
           Visible = True
         end
         item
           Expanded = False
-          FieldName = 'cpf_funcionario'
-          Title.Caption = 'CPF'
-          Width = 140
+          FieldName = 'cor'
+          Title.Caption = 'Cor Ve'#237'culo'
           Visible = True
         end
         item
           Expanded = False
-          FieldName = 'rg_funcionario'
-          Title.Caption = 'RG'
-          Width = 120
+          FieldName = 'descricao_pedido'
+          Title.Caption = 'Descri'#231#227'o do Pedido'
           Visible = True
         end
         item
           Expanded = False
-          FieldName = 'ativo_in'
-          Title.Caption = 'Ativo'
-          Width = 50
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'codigo_funcionario'
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'hash_senha_func'
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'nome_funcionario'
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'telefone_funcionario'
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'email_funcionario'
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'cep_funcionario'
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'endereco_funcionario'
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'num_endereco'
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'bairro'
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'cidade'
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'uf'
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'funcao'
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'cpf_funcionario'
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'rg_funcionario'
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'ativo_in'
+          FieldName = 'status_orcamento'
+          Title.Caption = 'Status or'#231'amento'
           Visible = True
         end>
     end
@@ -389,11 +307,6 @@ object crudOrcamentos: TcrudOrcamentos
           Column = 0
           Control = Label5
           Row = 7
-        end
-        item
-          Column = 0
-          Control = Label6
-          Row = 9
         end
         item
           Column = 0
@@ -469,6 +382,26 @@ object crudOrcamentos: TcrudOrcamentos
           Column = 0
           Control = leModelo
           Row = 6
+        end
+        item
+          Column = 0
+          Control = Label11
+          Row = 8
+        end
+        item
+          Column = 0
+          Control = ListView1
+          Row = 9
+        end
+        item
+          Column = 0
+          Control = Label6
+          Row = 10
+        end
+        item
+          Column = 0
+          Control = leMaoDeObra
+          Row = 12
         end>
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
@@ -546,6 +479,9 @@ object crudOrcamentos: TcrudOrcamentos
         end
         item
           SizeStyle = ssAuto
+        end
+        item
+          SizeStyle = ssAuto
         end>
       TabOrder = 4
       DesignSize = (
@@ -586,15 +522,6 @@ object crudOrcamentos: TcrudOrcamentos
         Anchors = []
         ExplicitLeft = 193
         ExplicitTop = 250
-      end
-      object Label6: TLabel
-        Left = 178
-        Top = 243
-        Width = 4
-        Height = 21
-        Anchors = []
-        ExplicitLeft = 193
-        ExplicitTop = 311
       end
       object Label7: TLabel
         Left = 178
@@ -688,7 +615,6 @@ object crudOrcamentos: TcrudOrcamentos
           TabOrder = 1
           Text = ''
           TextHint = 'Data de Emiss'#227'o'
-          ExplicitLeft = 187
         end
       end
       object GridPanel2: TGridPanel
@@ -728,7 +654,6 @@ object crudOrcamentos: TcrudOrcamentos
             SizeStyle = ssAuto
           end>
         TabOrder = 1
-        ExplicitTop = 74
         DesignSize = (
           356
           56)
@@ -744,7 +669,6 @@ object crudOrcamentos: TcrudOrcamentos
           TabOrder = 0
           Text = ''
           TextHint = 'Contato do cliente'
-          ExplicitLeft = 19
         end
         object leDataValidade: TLabeledEdit
           Left = 180
@@ -758,7 +682,6 @@ object crudOrcamentos: TcrudOrcamentos
           TabOrder = 1
           Text = ''
           TextHint = 'Validade do or'#231'amento'
-          ExplicitLeft = 186
         end
       end
       object lblDescricaoPedido: TLabel
@@ -873,7 +796,6 @@ object crudOrcamentos: TcrudOrcamentos
         TabOrder = 6
         Text = ''
         TextHint = 'Marca do ve'#237'culo:'
-        ExplicitLeft = 0
       end
       object leModelo: TLabeledEdit
         Left = 18
@@ -887,6 +809,64 @@ object crudOrcamentos: TcrudOrcamentos
         TabOrder = 7
         Text = ''
         TextHint = 'Modelo do ve'#237'culo'
+        ExplicitTop = 181
+      end
+      object Label11: TLabel
+        Left = 25
+        Top = 216
+        Width = 311
+        Height = 21
+        Anchors = []
+        Caption = 'Materiais:'
+        ExplicitLeft = 16
+      end
+      object ListView1: TListView
+        Left = 19
+        Top = 240
+        Width = 323
+        Height = 78
+        Anchors = []
+        Checkboxes = True
+        Columns = <
+          item
+            Caption = 'C'#243'digo'
+          end
+          item
+            Caption = 'Produto'
+          end
+          item
+            Caption = 'Marca'
+          end
+          item
+            Caption = 'Pre'#231'o'
+          end
+          item
+            Caption = 'Estoque'
+          end>
+        GridLines = True
+        TabOrder = 8
+        ViewStyle = vsReport
+      end
+      object Label6: TLabel
+        Left = 178
+        Top = 270
+        Width = 4
+        Height = 21
+        Anchors = []
+        ExplicitLeft = 157
+      end
+      object leMaoDeObra: TLabeledEdit
+        Left = 18
+        Top = 345
+        Width = 325
+        Height = 29
+        Anchors = []
+        EditLabel.Width = 134
+        EditLabel.Height = 21
+        EditLabel.Caption = 'Valor M'#227'o de Obra:'
+        TabOrder = 9
+        Text = ''
+        TextHint = 'Informe o custo de m'#227'o de obra'
         ExplicitLeft = 8
       end
     end
@@ -944,35 +924,9 @@ object crudOrcamentos: TcrudOrcamentos
       ParentFont = False
       TabOrder = 7
     end
-    object listaProdutos: TListView
-      Left = 778
-      Top = 249
-      Width = 325
-      Height = 150
-      Checkboxes = True
-      Columns = <
-        item
-          Caption = 'C'#243'digo'
-        end
-        item
-          Caption = 'Produto'
-        end
-        item
-          Caption = 'Marca'
-        end
-        item
-          Caption = 'Pre'#231'o'
-        end
-        item
-          Caption = 'Estoque'
-        end>
-      GridLines = True
-      TabOrder = 8
-      ViewStyle = vsReport
-    end
   end
-  object DSPedidos: TDataSource
-    DataSet = DM.QueryPedidos
+  object DSOrcamentos: TDataSource
+    DataSet = DM.QueryOrcamentos
     Left = 40
     Top = 80
   end

@@ -96,6 +96,19 @@ procedure TcrudPedidos.pnlFazerOrcPedidoClick(Sender: TObject);
 begin
     DM.QueryPedidos.SQL.Text := 'SELECT FROM Pedidos WHERE codigo_pedido = :CodPedido';
     DM.QueryPedidos.ParamByName('CodPedido').AsString := codigoPedido;
+    with DM.QueryOrcamentos do begin
+      SQL.Text :=  'INSERT INTO Orcamentos (codigo_pedido, contato_cliente, email_cliente, cep_cliente, placa_veiculo, marca, modelo, cor, descricao_pedido, status_orcamento) VALUES (:CodPedido, :Contato, :Email, :CEP, :Placa, :Marca, :Modelo, :Cor, :DescPedido, :StatusOrc)';
+      ParamByName('CodPedido').AsString := codigoPedido;
+      ParamByName('Contato').AsString := leContato.Text;
+      ParamByName('Email').AsString := leEmailCliente.Text;
+      ParamByName('CEP').AsString := leCEP.Text;
+      ParamByName('Placa').AsString := lePlaca.Text;
+      ParamByName('Marca').AsString := leMarca.Text;
+      ParamByName('Modelo').AsString := leModelo.Text;
+      ParamByName('Cor').AsString := leCorVeiculo.Text;
+      ParamByName('DescPedido').AsString := descPedido.Text;
+      ParamByName('StatusOrc').AsString := cbStatus.Text;
+    end;
 
 end;
 
@@ -118,7 +131,7 @@ begin
         ParamByName('Marca').AsString := leMarca.Text;
         ParamByName('Cor').AsString := leCorVeiculo.Text;
         ParamByName('DescPedido').AsString := descPedido.Text;
-        //ParamByName('NomeCli').AsString := NomeCli.Text;
+        //ParamByName('NomeCli').AsString := nomeCli; //puxar o nome pelo código do cliente
         ParamByName('EmailCli').AsString := leEmailCliente.Text;
         ParamByName('Status').AsString := cbStatus.Text;
       end;

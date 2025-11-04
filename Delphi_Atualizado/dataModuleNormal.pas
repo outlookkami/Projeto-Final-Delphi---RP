@@ -115,6 +115,7 @@ type
     QueryClientesveiculo: TStringField;
     QueryClientescliente_data_criacao: TSQLTimeStampField;
     QueryClientesativo_in: TBooleanField;
+    QueryClientesLogin: TFDQuery;
 
   private
     { Private declarations }

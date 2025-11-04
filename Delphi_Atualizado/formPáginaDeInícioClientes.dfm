@@ -2,7 +2,7 @@
   Left = 0
   Top = 0
   Caption = 'Sistema JLA - Clientes'
-  ClientHeight = 701
+  ClientHeight = 1061
   ClientWidth = 1150
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -16,7 +16,7 @@
     Left = 0
     Top = 0
     Width = 1150
-    Height = 705
+    Height = 1065
     Align = alTop
     TabOrder = 0
     object GridPanel1: TGridPanel
@@ -12299,10 +12299,11 @@
       Left = 1
       Top = 58
       Width = 1148
-      Height = 646
-      ActivePage = TabSheet1
+      Height = 1006
+      ActivePage = TabSheet2
       Align = alClient
       TabOrder = 1
+      ExplicitHeight = 782
       object TabSheet1: TTabSheet
         Caption = 'Pedidos'
       end

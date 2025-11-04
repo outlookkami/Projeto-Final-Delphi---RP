@@ -179,60 +179,70 @@ object formCrudCli: TformCrudCli
           Expanded = False
           FieldName = 'nome_cliente'
           Title.Caption = 'Nome'
+          Width = 250
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'telefone_cliente'
           Title.Caption = 'Telefone'
+          Width = 75
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'email_cliente'
           Title.Caption = 'Email'
+          Width = 240
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'cep_cliente'
           Title.Caption = 'CEP'
+          Width = 60
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'endereco_cliente'
           Title.Caption = 'Endere'#231'o'
+          Width = 337
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'num_endereco'
           Title.Caption = 'N'#176
+          Width = 40
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'bairro'
           Title.Caption = 'Bairro'
+          Width = 173
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'cidade'
           Title.Caption = 'Cidade'
+          Width = 153
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'uf'
           Title.Caption = 'UF'
+          Width = 25
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'veiculo'
           Title.Caption = 'Ve'#237'culo'
+          Width = 55
           Visible = True
         end
         item

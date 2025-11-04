@@ -376,7 +376,7 @@ object DM: TDM
     Connection = ConexaoBanco
     SQL.Strings = (
       'SELECT * FROM Veiculos;')
-    Left = 232
+    Left = 216
     Top = 264
     object QueryVeiculoscodigo_veiculo: TIntegerField
       FieldName = 'codigo_veiculo'
@@ -435,7 +435,7 @@ object DM: TDM
     Connection = ConexaoBanco
     SQL.Strings = (
       'SELECT * FROM Usuarios;')
-    Left = 352
+    Left = 312
     Top = 264
     object QueryLoginid_usuario: TIntegerField
       FieldName = 'id_usuario'
@@ -470,10 +470,11 @@ object DM: TDM
     Top = 408
   end
   object QueryOrcamentos: TFDQuery
+    Active = True
     Connection = ConexaoBanco
     SQL.Strings = (
       'SELECT * FROM Orcamentos;')
-    Left = 464
+    Left = 424
     Top = 264
     object QueryOrcamentoscodigo_orcamento: TIntegerField
       FieldName = 'codigo_orcamento'
@@ -541,5 +542,12 @@ object DM: TDM
       Origin = 'status_orcamento'
       Size = 25
     end
+  end
+  object QueryClientesLogin: TFDQuery
+    Connection = ConexaoBanco
+    SQL.Strings = (
+      'SELECT * FROM "Clientes";')
+    Left = 112
+    Top = 336
   end
 end

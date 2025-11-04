@@ -173,71 +173,83 @@ object crudPedidos: TcrudPedidos
         item
           Expanded = False
           FieldName = 'codigo_pedido'
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'codigo_cliente'
+          Title.Caption = 'C'#243'd. Pedido'
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'endereco_cliente'
+          Title.Caption = 'Endere'#231'o Cliente'
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'cep_cliente'
+          Title.Caption = 'CEP Cliente'
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'placa_veiculo'
+          Title.Caption = 'Placa Ve'#237'culo'
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'marca'
+          Title.Caption = 'Marca'
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'modelo'
+          Title.Caption = 'Modelo'
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'cor'
+          Title.Caption = 'Cor'
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'descricao_pedido'
+          Title.Caption = 'Descri'#231#227'o do Pedido'
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'contato_cliente'
+          Title.Caption = 'Contato Cliente'
+          Width = 115
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'data_pedido'
+          Title.Caption = 'Data Pedido'
+          Width = 75
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'nome_cliente'
+          Title.Caption = 'Nome do cliente'
+          Width = 280
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'status_pedido'
+          Title.Caption = 'Status do pedido'
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'email_cliente'
+          Title.Caption = 'Email Cliente'
+          Width = 280
           Visible = True
         end>
     end
@@ -551,7 +563,6 @@ object crudPedidos: TcrudPedidos
         TabOrder = 0
         Text = ''
         TextHint = 'Digite o endere'#231'o de e-mail'
-        ExplicitTop = 133
       end
       object GridPanel1: TGridPanel
         Left = 1
@@ -669,8 +680,6 @@ object crudPedidos: TcrudPedidos
           EditLabel.Caption = 'Contato do cliente:'
           TabOrder = 0
           Text = ''
-          ExplicitLeft = 9
-          ExplicitTop = 18
         end
         object leCEP: TLabeledEdit
           Left = 180
@@ -809,7 +818,6 @@ object crudPedidos: TcrudPedidos
           '')
         ParentFont = False
         TabOrder = 7
-        ExplicitTop = 400
       end
       object Label1: TLabel
         Left = 178

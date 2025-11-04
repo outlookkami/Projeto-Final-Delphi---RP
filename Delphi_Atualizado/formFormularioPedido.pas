@@ -88,16 +88,14 @@ uses  dataModuleNormal,
 
 procedure TFormPedido.FormCreate(Sender: TObject);
 var codigoCli: Integer;
-    nomeCli, Contato, Endereco, CEP, Status: String;
+    nomeCli, contatoCli, emailCli, cepCli, enderecoCli, numEnderecoCli, bairroCli, cidadeCli, ufCli, veiculoCli: String;
 begin
-    dadosCliente(codigoCli, nomeCli, Contato, Endereco, CEP);
-
     leCliente.Text := nomeCli;
     leCodigoCliente.Text := IntToStr(codigoCli);
     dtData.Date := Date;
-    dbleContato.Text := Contato;
-    dbleRua.Text := Endereco;
-    dbleCEPendereco.Text := CEP;
+    dbleContato.Text := contatoCli;
+    dbleRua.Text := enderecoCli;
+    dbleCEPendereco.Text := cepCli;
 end;
 
 // Envio do pedido
@@ -105,7 +103,7 @@ procedure TFormPedido.Panel2Click(Sender: TObject);
 var codigoCli: Integer;
     nomeCli, Contato, Endereco, CEP, Status: String;
 begin
-    dadosCliente(codigoCli, nomeCli, Contato, Endereco, CEP);
+
     Status := 'Aguardando orçamento';
 
     if (lePlaca.Text = '') or (leMarca.Text = '') or (leModelo.Text = '') then begin

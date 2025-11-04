@@ -22,7 +22,6 @@ type
     Label3: TLabel;
     Label4: TLabel;
     Label5: TLabel;
-    Label6: TLabel;
     Label7: TLabel;
     Label8: TLabel;
     Label10: TLabel;
@@ -41,7 +40,7 @@ type
     btnEditOrc: TPanel;
     btnInativOrc: TPanel;
     btnExcluOrc: TPanel;
-    DSPedidos: TDataSource;
+    DSOrcamentos: TDataSource;
     RESTClient1: TRESTClient;
     RESTRequest1: TRESTRequest;
     RESTResponse1: TRESTResponse;
@@ -49,7 +48,10 @@ type
     leDataValidade: TLabeledEdit;
     leMarca: TLabeledEdit;
     leModelo: TLabeledEdit;
-    listaProdutos: TListView;
+    Label11: TLabel;
+    ListView1: TListView;
+    Label6: TLabel;
+    leMaoDeObra: TLabeledEdit;
   private
     { Private declarations }
   public
