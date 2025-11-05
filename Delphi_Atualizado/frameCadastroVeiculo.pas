@@ -16,10 +16,7 @@ type
     pnlBotaoCadastrarVeiculo: TPanel;
     Panel1: TPanel;
     gridPanelCad2: TGridPanel;
-    Label5: TLabel;
     Label6: TLabel;
-    GridPanel3: TGridPanel;
-    leCor: TLabeledEdit;
     lePlaca: TLabeledEdit;
     leChassi: TLabeledEdit;
     leMarca: TLabeledEdit;
@@ -27,12 +24,21 @@ type
     GridPanel2: TGridPanel;
     Label3: TLabel;
     DSVeiculos: TDataSource;
-    GridPanel1: TGridPanel;
-    lblAno: TLabel;
-    cbAno: TComboBox;
     RESTClient2: TRESTClient;
     RESTRequest2: TRESTRequest;
     RESTResponse2: TRESTResponse;
+    GridPanel4: TGridPanel;
+    leCor: TLabeledEdit;
+    GridPanel5: TGridPanel;
+    Label1: TLabel;
+    cbAnoMod: TComboBox;
+    Label2: TLabel;
+    Label4: TLabel;
+    GridPanel6: TGridPanel;
+    leEmailCliente: TLabeledEdit;
+    GridPanel7: TGridPanel;
+    Label7: TLabel;
+    cbAnoFab: TComboBox;
     procedure pnlBotaoCadastrarVeiculoClick(Sender: TObject);
   private
     { Private declarations }
@@ -57,22 +63,23 @@ begin
 
         with DM.QueryVeiculos do begin
 
-          SQL.Text := 'INSERT INTO Veiculos(placa_veiculo, chassi, modelo, marca, cor, ano_mod, nome_usuario_cliente, codigo_cliente, nome_cliente) VALUES (:Placa, :Chassi, :Modelo, :Marca, :Cor, :AnoMod, :UsuarioCli, :CodigoCli, :NomeCli);';
+          SQL.Text := 'INSERT INTO Veiculos(placa_veiculo, chassi, marca, modelo, ano_mod, cor, ano_fab, nome_usuario_cliente, codigo_cliente, nome_cliente) VALUES (:Placa, :Chassi, :Marca, :Modelo, :AnoMod, :Cor, :AnoFab, :EmailCli, :CodigoCli, :NomeCli);';
 
           ParamByName('Placa').AsString := lePlaca.Text;
           ParamByName('Chassi').AsString := leChassi.Text;
           ParamByName('Marca').AsString := leMarca.Text;
           ParamByName('Modelo').AsString := leModelo.Text;
-          ParamByName('AnoMod').AsInteger := StrToInt(cbAno.Text);
+          ParamByName('AnoMod').AsInteger := StrToInt(cbAnoMod.Text);
           ParamByName('Cor').AsString := leCor.Text;
-          ParamByName('UsuarioCli').AsString := userCli;
+          ParamByName('AnoFab').AsInteger := StrToInt(cbAnoFab.Text);
+          ParamByName('EmailCli').AsString := userCli;
           ParamByName('CodigoCli').AsString := codCli;
           ParamByName('NomeCli').AsString := nomeCli;
 
           with DM.QueryClientes do begin
-          SQL.Text := 'INSERT INTO Clientes(veiculo) VALUES(:Veiculo)';
+          SQL.Text := 'INSERT INTO "Clientes"(veiculo) VALUES(:Veiculo) WHERE email_cliente = :EmailCli';
           ParamByName('Veiculo').AsString := lePlaca.Text;
-
+          ParamByName('EmailCli').AsString := leEmailCliente.Text;
           end;
 
           ExecSQL;

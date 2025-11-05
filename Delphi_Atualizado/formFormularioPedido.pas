@@ -69,7 +69,8 @@ type
     Label10: TLabel;
     dtData: TDateTimePicker;
     procedure Panel2Click(Sender: TObject);
-    procedure FormCreate(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+    procedure memoDescricaoDoServicoEnter(Sender: TObject);
   private
     { Private declarations }
   public
@@ -86,27 +87,41 @@ implementation
 uses  dataModuleNormal,
       unitSessao;
 
-procedure TFormPedido.FormCreate(Sender: TObject);
+procedure TFormPedido.FormShow(Sender: TObject);
 var codigoCli: Integer;
-    nomeCli, contatoCli, emailCli, cepCli, enderecoCli, numEnderecoCli, bairroCli, cidadeCli, ufCli, veiculoCli: String;
+     codCli: String;
+    //codCli, nomeCli, contatoCli, emailCli, cepCli, enderecoCli, numEnderecoCli, bairroCli, cidadeCli, ufCli, veiculoCli: String;
 begin
-    leCliente.Text := nomeCli;
-    leCodigoCliente.Text := IntToStr(codigoCli);
+    lerDadosCliente;
+    leCliente.Text := dadosCliente.nomeCli;
+    codCli := IntToStr(dadosCliente.codigoCli);
+    leCodigoCliente.Text := codCli;
     dtData.Date := Date;
-    dbleContato.Text := contatoCli;
-    dbleRua.Text := enderecoCli;
-    dbleCEPendereco.Text := cepCli;
+    dbleTelefone.Text := dadosCliente.contatoCli;
+    dbleRua.Text := dadosCliente.enderecoCli;
+    dbleCEPendereco.Text := dadosCliente.cepCli;
+    lePlaca.Text := dadosCliente.veiculoCli;
 end;
 
 // Envio do pedido
+procedure TFormPedido.memoDescricaoDoServicoEnter(Sender: TObject);
+begin
+      memoDescricaoDoServico.SelStart := 0;
+end;
+
 procedure TFormPedido.Panel2Click(Sender: TObject);
 var codigoCli: Integer;
-    nomeCli, Contato, Endereco, CEP, Status: String;
+    codCli, nomeCli, Contato, Endereco, CEP, Status: String;
 begin
-
+    lerDadosCliente;
+    codCli := IntToStr(dadosCliente.codigoCli);
+    leCodigoCliente.Text := codCli;
+    //dbleEndereco.Text := dadosCliente.enderecoCli;
+    //dbleCEP.Text := dadosCliente.cepCli;
+    //ShowMessage('Nome: '+ dadosCliente.nomeCli+ ' Contato: '+ dadosCliente.contatoCli);
     Status := 'Aguardando orçamento';
 
-    if (lePlaca.Text = '') or (leMarca.Text = '') or (leModelo.Text = '') then begin
+    if (lePlaca.Text = '') or (leMarca.Text = '') or (leCor.Text = '') or (leModelo.Text = '') or (memoDescricaoDoServico.Text = '') then begin
         ShowMessage('Preencha os campos obrigatórios');
         Exit;
     end else begin
@@ -114,10 +129,10 @@ begin
         with DM.QueryPedidos do begin
 
         //SQL.Text := 'INSERT INTO Veiculos(placa_veiculo, modelo, marca, cor) VALUES (:Placa, :Modelo, :Marca);';
-        SQL.Text := 'INSERT INTO Pedidos(codigo_cliente, data_pedido, contato_cliente, endereco_cliente, cep_cliente, placa_veiculo, modelo, marca, cor, descricao_pedido, nome_cliente, status_pedido) VALUES (:CodCli, :Data, :Contato, :Endereco, :CEP, :Placa, :Modelo, :Marca, :Cor, :Descricao, :NomeCli, :Status);';
+        SQL.Text := 'INSERT INTO Pedidos(codigo_cliente, data_pedido, contato_cliente, endereco_cliente, cep_cliente, placa_veiculo, modelo, marca, cor, descricao_pedido, nome_cliente, status_pedido, email_cliente) VALUES (:CodCli, :Data, :Contato, :Endereco, :CEP, :Placa, :Modelo, :Marca, :Cor, :Descricao, :NomeCli, :Status, :Email);';
 
         ParamByName('CodCli').AsString := leCodigoCliente.Text;
-        ParamByName('Data').AsDate := dtData.Date;
+        ParamByName('Data').AsDateTime := Date;
         ParamByName('Contato').AsString := dbleContato.Text;
         ParamByName('Endereco').AsString := dbleRua.Text;
         ParamByName('CEP').AsString := dbleCEPEndereco.Text;
@@ -128,6 +143,9 @@ begin
         ParamByName('Descricao').AsString := memoDescricaoDoServico.Text;
         ParamByName('NomeCli').AsString := leCliente.Text;
         ParamByName('Status').AsString := Status;
+        ParamByName('Email').AsString := dadosCliente.emailCli;
+
+        ShowMessage('Descrição: '+ memoDescricaoDoServico.Text);
 
         //ParamByName('Chassi').AsString := leChassi.Text;
         //ParamByName('AnoFab').AsString := leAno.Text;

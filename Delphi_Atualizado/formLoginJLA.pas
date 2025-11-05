@@ -73,15 +73,17 @@ uses  formTrocarSenha,
       formPáginaDeInícioClientes,
       formPáginaDeInícioFunc,
       formPáginaDeInícioADM,
-      IniFiles;
+      IniFiles,
+      unitSessao;
 
 var iniArq, iniCli: TIniFile;
 
 // Registrando dados do cliente caso o usuário logado seja um cliente
 procedure TformLogin.registDadosCliente;
-var codigoCli: Integer;
+var codigoCli, codigoVeic: Integer;
     nomeCli, telefoneCli, emailCli, cepCli, enderecoCli, numEnd, bairro, cidade,
     uf, veiculo, codCli: String;
+    placaVeic, modeloVeic, marcaVeic, corVeic: String;
 begin
     //DM.QueryClientes.SQL.Text := 'SELECT * FROM "Clientes" WHERE email_cliente = :Email';
     //DM.QueryClientes.ParamByName('Email').AsString := leUsuario.Text;
@@ -101,6 +103,14 @@ begin
     veiculo := DM.QueryClientes.FieldByName('veiculo').AsString;
     codCli := IntToStr(codigoCli);
 
+//    if DM.QueryVeiculos.IsEmpty then
+//      exit;
+//
+//    codigoVeic := DM.QueryVeiculos.FieldByName('codigo_veiculo').AsInteger;
+//    placaVeic := DM.QueryVeiculos.FieldByName('placa_veiculo').AsString;
+//    corVeic := DM.QueryVeiculos.FieldByName('cor').AsString;;
+//    modeloVeic := DM.QueryVeiculos.FieldByName('modelo').AsString;
+//    marcaVeic := DM.QueryVeiculos.FieldByName('marca').AsString;
 
     iniCli := TIniFile.Create(ExtractFilePath(ParamStr(0)) + 'dadoscliente.ini');
     try
@@ -115,6 +125,10 @@ begin
       iniCli.WriteString('Cliente', 'Cidade', cidade);
       iniCli.WriteString('Cliente', 'UF', uf);
       iniCli.WriteString('Cliente', 'Veiculo', veiculo);
+//      iniCli.WriteString('Veículo', 'Placa', placaVeic);
+//      iniCli.WriteString('Veículo', 'Modelo', modeloVeic);
+//      iniCli.WriteString('Veículo', 'Marca', marcaVeic);
+//      iniCli.WriteString('Veículo', 'Cor', corVeic);
 ////      if tipoUsuario = 'Cliente' then begin
 ////          DM.QueryClientes.SQL.Text := 'SELECT codigo_cliente FROM "Clientes" WHERE email_cliente = :Email';
 ////          DM.QueryClientes.ParamByName('Email').AsString := leUsuario.Text;
@@ -265,8 +279,8 @@ begin
         end;
           if (tipoUsuario = 'Cliente') then begin
           Application.CreateForm(TformPáginaInicialCli, formPáginaInicialCli);
+          lerDadosCliente;
           formPáginaInicialCli.Show;
-
             end else if (tipoUsuario = 'Administrador') or (funcionarioAdm = true) then begin
                 Application.CreateForm(TformPáginaInicialADM, formPáginaInicialADM);
                 formPáginaInicialADM.Show;

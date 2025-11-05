@@ -77,6 +77,7 @@ begin
     codigoPedido :=  DBGrid1.Fields[0].Value;
 
     with DM.QueryPedidos do begin
+      leCodPedido.Text := FieldByName('codigo_pedido').AsString;
       leData.Text := FieldByName('data_pedido').AsString;
       leContato.Text := FieldByName('contato_cliente').AsString;
       leCEP.Text := FieldByName('cep_cliente').AsString;
@@ -94,8 +95,8 @@ end;
 
 procedure TcrudPedidos.pnlFazerOrcPedidoClick(Sender: TObject);
 begin
-    DM.QueryPedidos.SQL.Text := 'SELECT FROM Pedidos WHERE codigo_pedido = :CodPedido';
-    DM.QueryPedidos.ParamByName('CodPedido').AsString := codigoPedido;
+    //DM.QueryPedidos.SQL.Text := 'SELECT FROM Pedidos WHERE codigo_pedido = :CodPedido';
+    //DM.QueryPedidos.ParamByName('CodPedido').AsString := codigoPedido;
     with DM.QueryOrcamentos do begin
       SQL.Text :=  'INSERT INTO Orcamentos (codigo_pedido, contato_cliente, email_cliente, cep_cliente, placa_veiculo, marca, modelo, cor, descricao_pedido, status_orcamento) VALUES (:CodPedido, :Contato, :Email, :CEP, :Placa, :Marca, :Modelo, :Cor, :DescPedido, :StatusOrc)';
       ParamByName('CodPedido').AsString := codigoPedido;
@@ -108,8 +109,9 @@ begin
       ParamByName('Cor').AsString := leCorVeiculo.Text;
       ParamByName('DescPedido').AsString := descPedido.Text;
       ParamByName('StatusOrc').AsString := cbStatus.Text;
-    end;
 
+      ExecSQL;
+    end;
 end;
 
 // Mostrar dados nos campos do formulário lateral

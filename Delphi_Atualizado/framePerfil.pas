@@ -66,6 +66,18 @@ begin
         end;
     end;
 
+
+//    lerDadosCliente;
+//    dbleNome.Text := dadosCliente.nomeCli;
+//    codCli := IntToStr(dadosCliente.codigoCli);
+//    leCodigoCliente.Text := codCli;
+//    dtData.Date := Date;
+//    dbleTelefone.Text := dadosCliente.contatoCli;
+//    dbleRua.Text := dadosCliente.enderecoCli;
+//    dbleCEPendereco.Text := dadosCliente.cepCli;
+//    lePlaca.Text := dadosCliente.veiculoCli;
+end;
+
 //    dbleNome.Text :=  ;
 //    dbleTelefone.Text := ;
 //    dbleEmail.Text := ;
@@ -76,5 +88,4 @@ begin
 //    dbleCidade.Text := ;
 //    dbleUF.Text :=;
 
-end;
 end.

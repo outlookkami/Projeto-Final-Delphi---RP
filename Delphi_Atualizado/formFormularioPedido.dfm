@@ -10,6 +10,7 @@ object FormPedido: TFormPedido
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  OnShow = FormShow
   TextHeight = 15
   object pnlFrameFormPedido: TPanel
     Left = 0
@@ -19,6 +20,7 @@ object FormPedido: TFormPedido
     Align = alClient
     ParentBackground = False
     TabOrder = 0
+    ExplicitLeft = -8
     DesignSize = (
       1150
       701)
@@ -496,6 +498,7 @@ object FormPedido: TFormPedido
         '')
       TabOrder = 4
       StyleName = 'Windows'
+      OnEnter = memoDescricaoDoServicoEnter
     end
     object GridPanel4: TGridPanel
       Left = 96
@@ -660,8 +663,11 @@ object FormPedido: TFormPedido
           EditLabel.Width = 49
           EditLabel.Height = 20
           EditLabel.Caption = 'Cliente:'
+          ReadOnly = True
           TabOrder = 0
           Text = ''
+          ExplicitLeft = 13
+          ExplicitTop = 26
         end
         object leCodigoCliente: TLabeledEdit
           Left = 262
@@ -672,6 +678,7 @@ object FormPedido: TFormPedido
           EditLabel.Width = 124
           EditLabel.Height = 20
           EditLabel.Caption = 'C'#243'digo do Cliente:'
+          ReadOnly = True
           TabOrder = 1
           Text = ''
         end
@@ -681,9 +688,9 @@ object FormPedido: TFormPedido
           Width = 130
           Height = 28
           Anchors = []
-          EditLabel.Width = 124
+          EditLabel.Width = 83
           EditLabel.Height = 20
-          EditLabel.Caption = 'C'#243'digo do Pedido:'
+          EditLabel.Caption = 'alguma info:'
           TabOrder = 2
           Text = ''
         end
@@ -823,10 +830,12 @@ object FormPedido: TFormPedido
           Width = 226
           Height = 28
           Anchors = []
+          ReadOnly = True
           TabOrder = 0
           EditLabel.Width = 56
           EditLabel.Height = 20
           EditLabel.Caption = 'Contato:'
+          ExplicitLeft = 11
         end
         object Label4: TLabel
           Left = 243
@@ -844,10 +853,12 @@ object FormPedido: TFormPedido
           Height = 28
           Anchors = []
           DataSource = DSPedido
+          ReadOnly = True
           TabOrder = 1
           EditLabel.Width = 65
           EditLabel.Height = 20
           EditLabel.Caption = 'Endere'#231'o:'
+          ExplicitLeft = 262
         end
         object Label5: TLabel
           Left = 563
@@ -864,6 +875,7 @@ object FormPedido: TFormPedido
           Width = 130
           Height = 28
           Align = alCustom
+          ReadOnly = True
           TabOrder = 2
           EditLabel.Width = 28
           EditLabel.Height = 20

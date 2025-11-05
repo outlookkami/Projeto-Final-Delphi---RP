@@ -20,14 +20,13 @@
     Align = alClient
     ParentBackground = False
     TabOrder = 0
-    ExplicitHeight = 966
     DesignSize = (
       1591
       904)
     object lblDescServico: TLabel
       Left = 103
       Top = 456
-      Width = 581
+      Width = 140
       Height = 20
       Anchors = [akLeft, akTop, akRight]
       Caption = 'Descri'#231#227'o do servi'#231'o:'
@@ -37,7 +36,6 @@
       Font.Name = 'Segoe UI'
       Font.Style = []
       ParentFont = False
-      ExplicitWidth = 350
     end
     object Panel1: TPanel
       Left = 8
@@ -49,7 +47,6 @@
       Color = clHighlight
       ParentBackground = False
       TabOrder = 0
-      ExplicitWidth = 81
     end
     object memoDescricaoDoServico: TMemo
       Left = 92
@@ -65,7 +62,6 @@
         '')
       TabOrder = 1
       StyleName = 'Windows'
-      ExplicitHeight = 344
     end
     object GridPanel1: TGridPanel
       Left = 103
@@ -167,7 +163,6 @@
             Value = 100.000000000000000000
           end>
         TabOrder = 0
-        ExplicitLeft = 32
         object GridPanel3: TGridPanel
           Left = 1
           Top = 1
@@ -197,8 +192,6 @@
               Value = 100.000000000000000000
             end>
           TabOrder = 0
-          ExplicitLeft = 77
-          ExplicitWidth = 229
           object lblOrcamento: TLabel
             Left = 35
             Top = 16
@@ -220,7 +213,6 @@
             Width = 3
             Height = 53
             Align = alLeft
-            ExplicitLeft = 153
             ExplicitHeight = 15
           end
         end
@@ -253,8 +245,6 @@
               Value = 100.000000000000000000
             end>
           TabOrder = 1
-          ExplicitLeft = 306
-          ExplicitWidth = 305
           object lblEmissao: TLabel
             Left = 53
             Top = 16
@@ -276,7 +266,6 @@
             Width = 3
             Height = 53
             Align = alLeft
-            ExplicitLeft = 153
             ExplicitHeight = 15
           end
         end
@@ -309,9 +298,6 @@
               Value = 100.000000000000000000
             end>
           TabOrder = 2
-          ExplicitLeft = 560
-          ExplicitTop = 9
-          ExplicitWidth = 279
           object lblValidoate: TLabel
             Left = 53
             Top = 16
@@ -333,7 +319,6 @@
             Width = 3
             Height = 53
             Align = alLeft
-            ExplicitLeft = 153
             ExplicitHeight = 15
           end
         end
@@ -369,7 +354,6 @@
             Value = 100.000000000000000000
           end>
         TabOrder = 1
-        ExplicitLeft = 23
         DesignSize = (
           820
           58)
@@ -446,7 +430,6 @@
             Value = 100.000000000000000000
           end>
         TabOrder = 2
-        ExplicitLeft = 22
         DesignSize = (
           819
           57)
@@ -549,7 +532,6 @@
             SizeStyle = ssAuto
           end>
         TabOrder = 3
-        ExplicitLeft = 22
         DesignSize = (
           819
           57)
@@ -633,7 +615,7 @@
           end
           item
             Column = 1
-            Control = Label5
+            Control = lblPlaca
             Row = 0
           end
           item
@@ -643,7 +625,7 @@
           end
           item
             Column = 3
-            Control = Label7
+            Control = lblMarca
             Row = 0
           end
           item
@@ -653,7 +635,7 @@
           end
           item
             Column = 5
-            Control = Label9
+            Control = lblModelo
             Row = 0
           end>
         RowCollection = <
@@ -664,7 +646,6 @@
             SizeStyle = ssAuto
           end>
         TabOrder = 4
-        ExplicitLeft = 28
         DesignSize = (
           821
           56)
@@ -678,7 +659,7 @@
           ExplicitLeft = 33
           ExplicitTop = 25
         end
-        object Label5: TLabel
+        object lblPlaca: TLabel
           Left = 173
           Top = 16
           Width = 72
@@ -702,7 +683,7 @@
           ExplicitLeft = 343
           ExplicitTop = 19
         end
-        object Label7: TLabel
+        object lblMarca: TLabel
           Left = 460
           Top = 16
           Width = 36
@@ -726,7 +707,7 @@
           ExplicitLeft = 647
           ExplicitTop = 19
         end
-        object Label9: TLabel
+        object lblModelo: TLabel
           Left = 734
           Top = 18
           Width = 45
@@ -774,7 +755,7 @@
           end
           item
             Column = 3
-            Control = Label11
+            Control = lblAnoMod
             Row = 0
           end
           item
@@ -784,7 +765,7 @@
           end
           item
             Column = 5
-            Control = Label13
+            Control = lblAnoFab
             Row = 0
           end
           item
@@ -794,7 +775,7 @@
           end
           item
             Column = 1
-            Control = Label15
+            Control = lblCor
             Row = 0
           end>
         RowCollection = <
@@ -802,8 +783,6 @@
             Value = 100.000000000000000000
           end>
         TabOrder = 5
-        ExplicitLeft = 29
-        ExplicitTop = 351
         DesignSize = (
           825
           56)
@@ -817,7 +796,7 @@
           ExplicitLeft = 366
           ExplicitTop = 25
         end
-        object Label11: TLabel
+        object lblAnoMod: TLabel
           Left = 446
           Top = 16
           Width = 68
@@ -840,7 +819,7 @@
           Caption = 'ANO FAB.'
           ExplicitLeft = 654
         end
-        object Label13: TLabel
+        object lblAnoFab: TLabel
           Left = 718
           Top = 20
           Width = 85
@@ -863,7 +842,7 @@
           Caption = 'COR'
           ExplicitLeft = 44
         end
-        object Label15: TLabel
+        object lblCor: TLabel
           Left = 172
           Top = 20
           Width = 60
@@ -944,7 +923,7 @@
           Value = 7.692307692307693000
         end
         item
-          Value = 7.692307692307693000
+          Value = 7.692307692307679000
         end>
       TabOrder = 3
     end
@@ -1011,8 +990,6 @@
             Value = 100.000000000000000000
           end>
         TabOrder = 0
-        ExplicitLeft = 1
-        ExplicitTop = 6
       end
       object GridPanel14: TGridPanel
         Left = 328
@@ -1043,8 +1020,6 @@
             Value = 100.000000000000000000
           end>
         TabOrder = 1
-        ExplicitLeft = 480
-        ExplicitTop = 6
         object lblTotal: TLabel
           Left = 1
           Top = 1
@@ -1059,9 +1034,9 @@
           Font.Name = 'Segoe UI'
           Font.Style = []
           ParentFont = False
-          ExplicitLeft = 3
-          ExplicitTop = 6
-          ExplicitWidth = 235
+          ExplicitLeft = 124
+          ExplicitWidth = 35
+          ExplicitHeight = 21
         end
         object lblValorTotal: TLabel
           Left = 159
@@ -1075,8 +1050,8 @@
           Font.Name = 'Segoe UI'
           Font.Style = []
           ParentFont = False
-          ExplicitLeft = 296
-          ExplicitWidth = 175
+          ExplicitWidth = 4
+          ExplicitHeight = 21
         end
       end
       object pnlAprovar: TPanel
@@ -1096,7 +1071,6 @@
         ParentFont = False
         TabOrder = 2
         OnClick = pnlAprovarClick
-        ExplicitTop = 72
       end
       object pnlRecusar: TPanel
         Left = 394
@@ -1114,7 +1088,6 @@
         ParentBackground = False
         ParentFont = False
         TabOrder = 3
-        ExplicitTop = 80
       end
     end
   end

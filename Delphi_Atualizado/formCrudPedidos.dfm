@@ -797,7 +797,7 @@ object crudPedidos: TcrudPedidos
       end
       object lblDescricaoPedido: TLabel
         Left = 16
-        Top = 380
+        Top = 374
         Width = 143
         Height = 21
         Align = alCustom
@@ -807,7 +807,7 @@ object crudPedidos: TcrudPedidos
         Left = 15
         Top = 401
         Width = 331
-        Height = 115
+        Height = 109
         Anchors = []
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
@@ -818,6 +818,7 @@ object crudPedidos: TcrudPedidos
           '')
         ParentFont = False
         TabOrder = 7
+        ExplicitTop = 407
       end
       object Label1: TLabel
         Left = 178
@@ -862,7 +863,7 @@ object crudPedidos: TcrudPedidos
       end
       object pnlFazerOrcPedido: TPanel
         Left = 183
-        Top = 578
+        Top = 594
         Width = 162
         Height = 41
         Cursor = crHandPoint
@@ -882,7 +883,7 @@ object crudPedidos: TcrudPedidos
       end
       object pnlIncluirPedido: TPanel
         Left = 0
-        Top = 578
+        Top = 594
         Width = 161
         Height = 41
         Cursor = crHandPoint

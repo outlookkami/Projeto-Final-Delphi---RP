@@ -74,60 +74,6 @@ begin
 
 end;
 
-//procedure registDadosCliente;
-//var iniCli: TIniFile;
-//    codigoCli: Integer;
-//    nomeCli, telefoneCli, emailCli, cepCli, enderecoCli, numEnd, bairro, cidade,
-//    uf, veiculo, codCli: String;
-//begin
-//    if dadosLogin.tipoUsuario = 'Cliente' then begin
-//
-//    DM.QueryClientes.SQL.Text := 'SELECT * FROM "Clientes" WHERE email_cliente = :Email';
-//    DM.QueryClientes.ParamByName('Email').AsString := dadosLogin.emailUsuario;
-//    codigoCli := DM.QueryClientes.FieldByName('codigo_cliente').AsInteger;
-//    nomeCli := DM.QueryClientes.FieldByName('nome_cliente').AsString;
-//    telefoneCli := DM.QueryClientes.FieldByName('telefone_cliente').AsString;
-//    emailCli := DM.QueryClientes.FieldByName('email_cliente').AsString;
-//    cepCli := DM.QueryClientes.FieldByName('cep_cliente').AsString;
-//    enderecoCli := DM.QueryClientes.FieldByName('endereco_cliente').AsString;
-//    numEnd := DM.QueryClientes.FieldByName('numeroEndereco').AsString;
-//    bairro := DM.QueryClientes.FieldByName('bairro').AsString;
-//    cidade := DM.QueryClientes.FieldByName('cidade').AsString;
-//    uf := DM.QueryClientes.FieldByName('uf').AsString;
-//    veiculo := DM.QueryClientes.FieldByName('veiculo').AsString;
-//    codCli := IntToStr(codigoCli);
-//
-//
-//    iniCli := TIniFile.Create(ExtractFilePath(ParamStr(0)) + 'dadoscliente.ini');
-//    try
-//      iniCli.WriteString('Cliente', 'CodigoCli', codCli);
-//      iniCli.WriteString('Cliente', 'NomeCli', nomeCli);
-//      iniCli.WriteString('Cliente', 'TelefoneCli', telefoneCli);
-//      iniCli.WriteString('Cliente', 'EmailCli', emailCli);
-//      iniCli.WriteString('Cliente', 'CEPCli', cepCli);
-//      iniCli.WriteString('Cliente', 'EnderecoCli', enderecoCli);
-//      iniCli.WriteString('Cliente', 'NumEndereco', numEnd);
-//      iniCli.WriteString('Cliente', 'Bairro', bairro);
-//      iniCli.WriteString('Cliente', 'Cidade', cidade);
-//      iniCli.WriteString('Cliente', 'UF', uf);
-//      iniCli.WriteString('Cliente', 'Veículo', veiculo);
-//////      if tipoUsuario = 'Cliente' then begin
-//////          DM.QueryClientes.SQL.Text := 'SELECT codigo_cliente FROM "Clientes" WHERE email_cliente = :Email';
-//////          DM.QueryClientes.ParamByName('Email').AsString := leUsuario.Text;
-//////          codigoCliente := DM.QueryClientes.FieldByName('codigo_cliente').AsInteger;
-//////          iniArq.WriteString('Login', 'Codigo', IntToStr(codigoCliente));
-//////          end;
-//////
-//////      end else begin
-//    finally
-//       iniCli.Free;
-//    end;
-//end;
-
-    // criar outro ini que grave as informações do cliente
-    // nos outros forms pegar as informações do cliente diretamente do arquivo ini com os dados de cliente
-//end;
-
 //procedure dadosCliente(var codigoCli: Integer; var nomeCli, Contato, Endereco, CEP: String);
 //begin
 //    //lerDadosLogin(dadosLogin.emailUsuario, dadosLogin.tipoUsuario);

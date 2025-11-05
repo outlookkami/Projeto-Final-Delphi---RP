@@ -61,17 +61,6 @@ type
     QueryPedidoscor: TStringField;
     QueryPedidosdescricao_pedido: TMemoField;
     QueryVeiculos: TFDQuery;
-    QueryVeiculoscodigo_veiculo: TIntegerField;
-    QueryVeiculosplaca_veiculo: TStringField;
-    QueryVeiculoschassi: TStringField;
-    QueryVeiculosmodelo: TStringField;
-    QueryVeiculosmarca: TStringField;
-    QueryVeiculoscor: TStringField;
-    QueryVeiculosano_fab: TSmallintField;
-    QueryVeiculosano_mod: TSmallintField;
-    QueryVeiculosnome_cliente: TStringField;
-    QueryVeiculosnome_usuario_cliente: TStringField;
-    QueryVeiculoscodigo_cliente: TIntegerField;
     QueryLogin: TFDQuery;
     QueryLoginid_usuario: TIntegerField;
     QueryLogintipo_usuario: TStringField;
@@ -87,20 +76,6 @@ type
     QueryUsuariosativo_in: TBooleanField;
     QueryPedidosemail_cliente: TStringField;
     QueryOrcamentos: TFDQuery;
-    QueryOrcamentoscodigo_orcamento: TIntegerField;
-    QueryOrcamentoscodigo_pedido: TIntegerField;
-    QueryOrcamentosdata_emissao: TDateField;
-    QueryOrcamentosvalidade: TDateField;
-    QueryOrcamentoscontato_cliente: TStringField;
-    QueryOrcamentosemail_cliente: TStringField;
-    QueryOrcamentosnome_cliente: TStringField;
-    QueryOrcamentoscep_cliente: TStringField;
-    QueryOrcamentosplaca_veiculo: TStringField;
-    QueryOrcamentosmarca: TStringField;
-    QueryOrcamentosmodelo: TStringField;
-    QueryOrcamentoscor: TStringField;
-    QueryOrcamentosdescricao_pedido: TMemoField;
-    QueryOrcamentosstatus_orcamento: TStringField;
     QueryClientescodigo_cliente: TIntegerField;
     QueryClienteshash_senha_cli: TStringField;
     QueryClientesnome_cliente: TStringField;
@@ -116,6 +91,22 @@ type
     QueryClientescliente_data_criacao: TSQLTimeStampField;
     QueryClientesativo_in: TBooleanField;
     QueryClientesLogin: TFDQuery;
+    QueryOrcamentoscodigo_orcamento: TIntegerField;
+    QueryOrcamentoscodigo_pedido: TIntegerField;
+    QueryOrcamentosdata_emissao: TDateField;
+    QueryOrcamentosvalidade: TDateField;
+    QueryOrcamentoscontato_cliente: TStringField;
+    QueryOrcamentosemail_cliente: TStringField;
+    QueryOrcamentosnome_cliente: TStringField;
+    QueryOrcamentoscep_cliente: TStringField;
+    QueryOrcamentosplaca_veiculo: TStringField;
+    QueryOrcamentosmarca: TStringField;
+    QueryOrcamentosmodelo: TStringField;
+    QueryOrcamentoscor: TStringField;
+    QueryOrcamentosstatus_orcamento: TStringField;
+    QueryOrcamentosdescricao_servico: TMemoField;
+    QueryOrcamentosdescricao_pedido: TMemoField;
+    QueryOrcamentoscodigo_cliente: TStringField;
 
   private
     { Private declarations }

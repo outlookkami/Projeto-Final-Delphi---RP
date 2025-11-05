@@ -49,18 +49,18 @@ type
     pnlRecusar: TPanel;
     GridPanel15: TGridPanel;
     Label4: TLabel;
-    Label5: TLabel;
+    lblPlaca: TLabel;
     Label6: TLabel;
-    Label7: TLabel;
+    lblMarca: TLabel;
     Label8: TLabel;
-    Label9: TLabel;
+    lblModelo: TLabel;
     GridPanel16: TGridPanel;
     Label10: TLabel;
-    Label11: TLabel;
+    lblAnoMod: TLabel;
     Label12: TLabel;
-    Label13: TLabel;
+    lblAnoFab: TLabel;
     Label14: TLabel;
-    Label15: TLabel;
+    lblCor: TLabel;
 
     procedure FormCreate(Sender: TObject);
     procedure pnlAprovarClick(Sender: TObject);
@@ -106,28 +106,36 @@ end;
 
 
 procedure TformVerOrcamento.FormCreate(Sender: TObject);
+var codOrcStr: String;
 begin
-// Recebe as informações presentes no Crud de Orçamentos
-//    numeroOrcamento.Caption := codigo_orcamento;
-//    dataEmissao.Caption:= ;
-//    validoAte.Caption:= ;
-//    lblNomeCliente.Caption:= ;
-//    lblTelefoneCliente.Caption := ;
-//    lblEmailCliente.Caption := ;
-//    lblCodigoCliente.Caption := ;
-//    lblCEPCliente.Caption := ;
-//    lblPlacaVeic.Caption := ;
-//    lblMarca.Caption :=;
-//    lblModelo.Caption := ;
-//    lblCorVeic.Caption := ;
-//    memoDescricaoDoServico.Text := ;
+//Recebe as informações presentes no Crud de Orçamentos
+
+    with DM.QueryOrcamentos do begin
+    SQL.Text := 'SELECT (codigo_orcamento, data_emissao, validade, contato_cliente, email_cliente, nome_cliente, cep_cliente, placa_veiculo, marca, modelo, cor, descricao_servico, status_orcamento) FROM Orcamentos';
+//    codOrcStr := FieldByName('codigo_orcamento').AsString;
+    numeroOrcamento.Caption := FieldByName('codigo_orcamento').AsString;
+    dataEmissao.Caption:= FieldByName('data_emissao').AsString;
+    validoAte.Caption:= FieldByName('validade').AsString;
+    lblNomeCliente.Caption:= FieldByName('nome_cliente').AsString;
+    lblTelefoneCliente.Caption := FieldByName('contato_cliente').AsString;
+    lblEmailCliente.Caption := FieldByName('email_cliente').AsString;
+    lblCodigoCliente.Caption := FieldByName('codigo_cliente').AsString;;
+    lblCEPCliente.Caption := FieldByName('cep_cliente').AsString;
+    lblPlaca.Caption := FieldByName('placa_veiculo').AsString;;
+    lblMarca.Caption := FieldByName('marca').AsString;
+    lblModelo.Caption := FieldByName('modelo').AsString;
+    lblCor.Caption := FieldByName('cor').AsString;
+    memoDescricaoDoServico.Text := FieldByName('descricao_servico').AsString;
+    end;
+
 end;
 
 procedure TformVerOrcamento.pnlAprovarClick(Sender: TObject);
 begin
     with DM.QueryOrcamentos do begin
-       SQL.Text := 'INSERT INTO Orcamentos (status_orcamento) VALUES (:status)';
+       SQL.Text := 'INSERT INTO Orcamentos (status_orcamento) VALUES (:status) WHERE codigo_orcamento = :CodOrcamento';
        ParamByName('status').AsString := 'Orçamento Aprovado';
+       ParamByName('CodOrcamento').AsInteger := StrToInt(numeroOrcamento.Caption);
     end;
 end;
 

@@ -12300,10 +12300,9 @@
       Top = 58
       Width = 1148
       Height = 1006
-      ActivePage = TabSheet2
+      ActivePage = TabSheet6
       Align = alClient
       TabOrder = 1
-      ExplicitHeight = 782
       object TabSheet1: TTabSheet
         Caption = 'Pedidos'
       end

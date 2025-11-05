@@ -21,22 +21,6 @@ object crudOrcamentos: TcrudOrcamentos
     DesignSize = (
       1150
       701)
-    object lblDadosFunc: TLabel
-      Left = 866
-      Top = 21
-      Width = 182
-      Height = 25
-      Align = alCustom
-      Alignment = taRightJustify
-      Anchors = [akLeft, akTop, akRight, akBottom]
-      Caption = 'Dados do funcion'#225'rio'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -19
-      Font.Name = 'Segoe UI'
-      Font.Style = []
-      ParentFont = False
-    end
     object btnIncluirOrc: TPanel
       Left = 591
       Top = 74
@@ -153,8 +137,8 @@ object crudOrcamentos: TcrudOrcamentos
       end
     end
     object DBGrid1: TDBGrid
-      Left = 48
-      Top = 128
+      Left = 56
+      Top = 123
       Width = 695
       Height = 528
       Anchors = [akLeft, akTop, akRight, akBottom]
@@ -166,6 +150,7 @@ object crudOrcamentos: TcrudOrcamentos
       TitleFont.Height = -12
       TitleFont.Name = 'Segoe UI'
       TitleFont.Style = []
+      OnCellClick = DBGrid1CellClick
       Columns = <
         item
           Expanded = False
@@ -275,7 +260,7 @@ object crudOrcamentos: TcrudOrcamentos
       TextHint = 'Pesquise'
     end
     object gridPanelLogin: TGridPanel
-      Left = 760
+      Left = 757
       Top = 25
       Width = 361
       Height = 647
@@ -315,16 +300,6 @@ object crudOrcamentos: TcrudOrcamentos
         end
         item
           Column = 0
-          Control = Label8
-          Row = 13
-        end
-        item
-          Column = 0
-          Control = Label10
-          Row = 17
-        end
-        item
-          Column = 0
           Control = GridPanel1
           Row = 0
         end
@@ -332,16 +307,6 @@ object crudOrcamentos: TcrudOrcamentos
           Column = 0
           Control = GridPanel2
           Row = 2
-        end
-        item
-          Column = 0
-          Control = lblDescricaoPedido
-          Row = 14
-        end
-        item
-          Column = 0
-          Control = descPedido
-          Row = 15
         end
         item
           Column = 0
@@ -370,28 +335,8 @@ object crudOrcamentos: TcrudOrcamentos
         end
         item
           Column = 0
-          Control = pnlIncluirPedido
+          Control = pnlIncluirOrc
           Row = 22
-        end
-        item
-          Column = 0
-          Control = leMarca
-          Row = 4
-        end
-        item
-          Column = 0
-          Control = leModelo
-          Row = 6
-        end
-        item
-          Column = 0
-          Control = Label11
-          Row = 8
-        end
-        item
-          Column = 0
-          Control = ListView1
-          Row = 9
         end
         item
           Column = 0
@@ -400,8 +345,48 @@ object crudOrcamentos: TcrudOrcamentos
         end
         item
           Column = 0
-          Control = leMaoDeObra
+          Control = GridPanel3
+          Row = 4
+        end
+        item
+          Column = 0
+          Control = lblDescricaoServico
+          Row = 8
+        end
+        item
+          Column = 0
+          Control = descServico
+          Row = 9
+        end
+        item
+          Column = 0
+          Control = Label12
           Row = 12
+        end
+        item
+          Column = 0
+          Control = listviewMateriais
+          Row = 13
+        end
+        item
+          Column = 0
+          Control = Label8
+          Row = 14
+        end
+        item
+          Column = 0
+          Control = Label11
+          Row = 15
+        end
+        item
+          Column = 0
+          Control = leValorMDO
+          Row = 17
+        end
+        item
+          Column = 0
+          Control = GridPanel4
+          Row = 6
         end>
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
@@ -532,24 +517,6 @@ object crudOrcamentos: TcrudOrcamentos
         ExplicitLeft = 193
         ExplicitTop = 373
       end
-      object Label8: TLabel
-        Left = 178
-        Top = 350
-        Width = 4
-        Height = 21
-        Anchors = []
-        ExplicitLeft = 202
-        ExplicitTop = 411
-      end
-      object Label10: TLabel
-        Left = 178
-        Top = 457
-        Width = 4
-        Height = 21
-        Anchors = []
-        ExplicitLeft = 198
-        ExplicitTop = 520
-      end
       object GridPanel1: TGridPanel
         Left = 1
         Top = 0
@@ -587,13 +554,14 @@ object crudOrcamentos: TcrudOrcamentos
             SizeStyle = ssAuto
           end>
         TabOrder = 0
+        ExplicitTop = 2
         DesignSize = (
           358
           57)
         object leCodPedido: TLabeledEdit
-          Left = 11
+          Left = 14
           Top = 26
-          Width = 157
+          Width = 152
           Height = 29
           Anchors = []
           EditLabel.Width = 126
@@ -602,11 +570,12 @@ object crudOrcamentos: TcrudOrcamentos
           TabOrder = 0
           Text = ''
           TextHint = 'C'#243'digo do pedido'
+          ExplicitLeft = 16
         end
         object leDataEmissao: TLabeledEdit
           Left = 180
           Top = 26
-          Width = 165
+          Width = 173
           Height = 29
           Anchors = []
           EditLabel.Width = 117
@@ -615,6 +584,7 @@ object crudOrcamentos: TcrudOrcamentos
           TabOrder = 1
           Text = ''
           TextHint = 'Data de Emiss'#227'o'
+          ExplicitLeft = 172
         end
       end
       object GridPanel2: TGridPanel
@@ -636,7 +606,7 @@ object crudOrcamentos: TcrudOrcamentos
         ControlCollection = <
           item
             Column = 0
-            Control = leContato
+            Control = leCodigoCli
             Row = 0
           end
           item
@@ -657,23 +627,24 @@ object crudOrcamentos: TcrudOrcamentos
         DesignSize = (
           356
           56)
-        object leContato: TLabeledEdit
-          Left = 14
+        object leCodigoCli: TLabeledEdit
+          Left = 15
           Top = 25
-          Width = 151
+          Width = 149
           Height = 29
           Anchors = []
-          EditLabel.Width = 129
+          EditLabel.Width = 124
           EditLabel.Height = 21
-          EditLabel.Caption = 'Contato do cliente:'
+          EditLabel.Caption = 'C'#243'digo do cliente:'
           TabOrder = 0
           Text = ''
-          TextHint = 'Contato do cliente'
+          TextHint = 'C'#243'digo do cliente'
+          ExplicitLeft = 16
         end
         object leDataValidade: TLabeledEdit
           Left = 180
           Top = 25
-          Width = 165
+          Width = 173
           Height = 29
           Anchors = []
           EditLabel.Width = 119
@@ -682,25 +653,9 @@ object crudOrcamentos: TcrudOrcamentos
           TabOrder = 1
           Text = ''
           TextHint = 'Validade do or'#231'amento'
+          ExplicitLeft = 186
+          ExplicitTop = 19
         end
-      end
-      object lblDescricaoPedido: TLabel
-        Left = 16
-        Top = 380
-        Width = 143
-        Height = 21
-        Align = alCustom
-        Caption = 'Descri'#231#227'o do Pedido:'
-      end
-      object descPedido: TMemo
-        Left = 15
-        Top = 401
-        Width = 331
-        Height = 114
-        Anchors = []
-        Lines.Strings = (
-          '')
-        TabOrder = 2
       end
       object Label1: TLabel
         Left = 178
@@ -736,7 +691,8 @@ object crudOrcamentos: TcrudOrcamentos
         Align = alCustom
         BevelInner = bvNone
         BevelOuter = bvNone
-        TabOrder = 3
+        ItemIndex = 0
+        TabOrder = 2
         TextHint = 'Selecione o status do or'#231'amento'
         Items.Strings = (
           'Aguardando Or'#231'amento'
@@ -745,7 +701,7 @@ object crudOrcamentos: TcrudOrcamentos
           'Servi'#231'o em andamento')
       end
       object pnlFazerOrcPedido: TPanel
-        Left = 183
+        Left = 191
         Top = 590
         Width = 162
         Height = 41
@@ -761,18 +717,18 @@ object crudOrcamentos: TcrudOrcamentos
         Font.Style = []
         ParentBackground = False
         ParentFont = False
-        TabOrder = 4
+        TabOrder = 3
         Visible = False
       end
-      object pnlIncluirPedido: TPanel
-        Left = 0
+      object pnlIncluirOrc: TPanel
+        Left = 16
         Top = 590
         Width = 161
         Height = 41
         Cursor = crHandPoint
         Align = alCustom
         Anchors = []
-        Caption = 'Incluir Pedido'
+        Caption = 'Incluir Or'#231'amento'
         Color = clHighlight
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWhite
@@ -781,51 +737,118 @@ object crudOrcamentos: TcrudOrcamentos
         Font.Style = []
         ParentBackground = False
         ParentFont = False
-        TabOrder = 5
+        TabOrder = 4
         Visible = False
+        OnClick = pnlIncluirOrcClick
       end
-      object leMarca: TLabeledEdit
-        Left = 15
-        Top = 131
-        Width = 331
-        Height = 29
-        Anchors = []
-        EditLabel.Width = 121
-        EditLabel.Height = 21
-        EditLabel.Caption = 'Marca do ve'#237'culo:'
-        TabOrder = 6
-        Text = ''
-        TextHint = 'Marca do ve'#237'culo:'
-      end
-      object leModelo: TLabeledEdit
-        Left = 18
-        Top = 184
-        Width = 325
-        Height = 29
-        Anchors = []
-        EditLabel.Width = 131
-        EditLabel.Height = 21
-        EditLabel.Caption = 'Modelo do ve'#237'culo:'
-        TabOrder = 7
-        Text = ''
-        TextHint = 'Modelo do ve'#237'culo'
-        ExplicitTop = 181
-      end
-      object Label11: TLabel
-        Left = 25
-        Top = 216
-        Width = 311
+      object Label6: TLabel
+        Left = 178
+        Top = 270
+        Width = 4
         Height = 21
         Anchors = []
-        Caption = 'Materiais:'
-        ExplicitLeft = 16
+        ExplicitLeft = 157
       end
-      object ListView1: TListView
-        Left = 19
-        Top = 240
-        Width = 323
-        Height = 78
+      object GridPanel3: TGridPanel
+        Left = 5
+        Top = 107
+        Width = 350
+        Height = 62
         Anchors = []
+        BevelOuter = bvNone
+        ColumnCollection = <
+          item
+            SizeStyle = ssAbsolute
+            Value = 180.000000000000000000
+          end
+          item
+            SizeStyle = ssAbsolute
+            Value = 59.000000000000000000
+          end>
+        ControlCollection = <
+          item
+            Column = 0
+            Control = lePlaca
+            Row = 0
+          end
+          item
+            Column = 1
+            Control = leMarca
+            Row = 0
+          end>
+        ParentBackground = False
+        ParentColor = True
+        RowCollection = <
+          item
+            Value = 100.000000000000000000
+          end
+          item
+            SizeStyle = ssAuto
+          end>
+        TabOrder = 5
+        DesignSize = (
+          350
+          62)
+        object lePlaca: TLabeledEdit
+          Left = 11
+          Top = 28
+          Width = 157
+          Height = 29
+          Anchors = []
+          EditLabel.Width = 92
+          EditLabel.Height = 21
+          EditLabel.Caption = 'Placa ve'#237'culo:'
+          TabOrder = 0
+          Text = ''
+          TextHint = 'Placa do ve'#237'culo'
+        end
+        object leMarca: TLabeledEdit
+          Left = 180
+          Top = 28
+          Width = 170
+          Height = 29
+          Anchors = []
+          EditLabel.Width = 121
+          EditLabel.Height = 21
+          EditLabel.Caption = 'Marca do ve'#237'culo:'
+          TabOrder = 1
+          Text = ''
+          TextHint = 'Marca do ve'#237'culo'
+          ExplicitLeft = 183
+        end
+      end
+      object lblDescricaoServico: TLabel
+        Left = 16
+        Top = 222
+        Width = 305
+        Height = 21
+        Align = alCustom
+        Caption = 'Descri'#231#227'o do Pedido:'
+      end
+      object descServico: TMemo
+        Left = 19
+        Top = 249
+        Width = 334
+        Height = 89
+        Align = alCustom
+        Lines.Strings = (
+          'descServico')
+        TabOrder = 6
+      end
+      object Label12: TLabel
+        Left = 18
+        Top = 335
+        Width = 67
+        Height = 21
+        Align = alCustom
+        Caption = 'Materiais:'
+      end
+      object listviewMateriais: TListView
+        Left = 16
+        Top = 362
+        Width = 337
+        Height = 89
+        Align = alCustom
         Checkboxes = True
         Columns = <
           item
@@ -844,30 +867,108 @@ object crudOrcamentos: TcrudOrcamentos
             Caption = 'Estoque'
           end>
         GridLines = True
-        TabOrder = 8
+        TabOrder = 7
         ViewStyle = vsReport
       end
-      object Label6: TLabel
+      object Label8: TLabel
         Left = 178
-        Top = 270
+        Top = 377
         Width = 4
         Height = 21
         Anchors = []
         ExplicitLeft = 157
       end
-      object leMaoDeObra: TLabeledEdit
-        Left = 18
-        Top = 345
-        Width = 325
+      object Label11: TLabel
+        Left = 178
+        Top = 403
+        Width = 4
+        Height = 21
+        Anchors = []
+        ExplicitLeft = 153
+      end
+      object leValorMDO: TLabeledEdit
+        Left = 15
+        Top = 478
+        Width = 330
         Height = 29
         Anchors = []
         EditLabel.Width = 134
         EditLabel.Height = 21
         EditLabel.Caption = 'Valor M'#227'o de Obra:'
-        TabOrder = 9
+        TabOrder = 8
         Text = ''
         TextHint = 'Informe o custo de m'#227'o de obra'
-        ExplicitLeft = 8
+        ExplicitLeft = 16
+      end
+      object GridPanel4: TGridPanel
+        Left = 7
+        Top = 166
+        Width = 347
+        Height = 59
+        Align = alCustom
+        BevelOuter = bvNone
+        ColumnCollection = <
+          item
+            SizeStyle = ssAbsolute
+            Value = 180.000000000000000000
+          end
+          item
+            SizeStyle = ssAbsolute
+            Value = 59.000000000000000000
+          end>
+        ControlCollection = <
+          item
+            Column = 0
+            Control = leCor
+            Row = 0
+          end
+          item
+            Column = 1
+            Control = leModelo
+            Row = 0
+          end>
+        ParentBackground = False
+        ParentColor = True
+        RowCollection = <
+          item
+            Value = 100.000000000000000000
+          end
+          item
+            SizeStyle = ssAuto
+          end>
+        TabOrder = 9
+        DesignSize = (
+          347
+          59)
+        object leCor: TLabeledEdit
+          Left = 11
+          Top = 27
+          Width = 157
+          Height = 29
+          Anchors = []
+          EditLabel.Width = 81
+          EditLabel.Height = 21
+          EditLabel.Caption = 'Cor ve'#237'culo:'
+          TabOrder = 0
+          Text = ''
+          TextHint = 'Cor do ve'#237'culo'
+          ExplicitLeft = 8
+          ExplicitTop = 21
+        end
+        object leModelo: TLabeledEdit
+          Left = 180
+          Top = 27
+          Width = 165
+          Height = 29
+          Anchors = []
+          EditLabel.Width = 131
+          EditLabel.Height = 21
+          EditLabel.Caption = 'Modelo do ve'#237'culo:'
+          TabOrder = 1
+          Text = ''
+          TextHint = 'Modelo do ve'#237'culo'
+          ExplicitTop = 24
+        end
       end
     end
     object btnEditOrc: TPanel
@@ -946,6 +1047,6 @@ object crudOrcamentos: TcrudOrcamentos
   end
   object RESTResponse1: TRESTResponse
     Left = 16
-    Top = 352
+    Top = 344
   end
 end

@@ -815,7 +815,6 @@ object CrudVeiculos: TCrudVeiculos
         TabOrder = 7
         Text = ''
         TextHint = 'Informe a cor'
-        ExplicitTop = 249
       end
       object leCodigoVeiculo: TLabeledEdit
         Left = 13
@@ -920,7 +919,7 @@ object CrudVeiculos: TCrudVeiculos
   end
   object DSVeiculos: TDataSource
     DataSet = DM.QueryVeiculos
-    Left = 40
+    Left = 24
     Top = 80
   end
   object RESTClient1: TRESTClient

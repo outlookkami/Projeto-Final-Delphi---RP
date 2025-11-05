@@ -373,62 +373,12 @@ object DM: TDM
     end
   end
   object QueryVeiculos: TFDQuery
+    Active = True
     Connection = ConexaoBanco
     SQL.Strings = (
       'SELECT * FROM Veiculos;')
     Left = 216
     Top = 264
-    object QueryVeiculoscodigo_veiculo: TIntegerField
-      FieldName = 'codigo_veiculo'
-      Origin = 'codigo_veiculo'
-      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
-    end
-    object QueryVeiculosplaca_veiculo: TStringField
-      FieldName = 'placa_veiculo'
-      Origin = 'placa_veiculo'
-      Size = 7
-    end
-    object QueryVeiculoschassi: TStringField
-      FieldName = 'chassi'
-      Origin = 'chassi'
-      Size = 17
-    end
-    object QueryVeiculosmodelo: TStringField
-      FieldName = 'modelo'
-      Origin = 'modelo'
-      Size = 40
-    end
-    object QueryVeiculosmarca: TStringField
-      FieldName = 'marca'
-      Origin = 'marca'
-      Size = 40
-    end
-    object QueryVeiculoscor: TStringField
-      FieldName = 'cor'
-      Origin = 'cor'
-    end
-    object QueryVeiculosano_fab: TSmallintField
-      FieldName = 'ano_fab'
-      Origin = 'ano_fab'
-    end
-    object QueryVeiculosano_mod: TSmallintField
-      FieldName = 'ano_mod'
-      Origin = 'ano_mod'
-    end
-    object QueryVeiculosnome_cliente: TStringField
-      FieldName = 'nome_cliente'
-      Origin = 'nome_cliente'
-      Size = 100
-    end
-    object QueryVeiculosnome_usuario_cliente: TStringField
-      FieldName = 'nome_usuario_cliente'
-      Origin = 'nome_usuario_cliente'
-      Size = 255
-    end
-    object QueryVeiculoscodigo_cliente: TIntegerField
-      FieldName = 'codigo_cliente'
-      Origin = 'codigo_cliente'
-    end
   end
   object QueryLogin: TFDQuery
     Active = True
@@ -532,15 +482,25 @@ object DM: TDM
       FieldName = 'cor'
       Origin = 'cor'
     end
+    object QueryOrcamentosstatus_orcamento: TStringField
+      FieldName = 'status_orcamento'
+      Origin = 'status_orcamento'
+      Size = 25
+    end
+    object QueryOrcamentosdescricao_servico: TMemoField
+      FieldName = 'descricao_servico'
+      Origin = 'descricao_servico'
+      BlobType = ftMemo
+    end
     object QueryOrcamentosdescricao_pedido: TMemoField
       FieldName = 'descricao_pedido'
       Origin = 'descricao_pedido'
       BlobType = ftMemo
     end
-    object QueryOrcamentosstatus_orcamento: TStringField
-      FieldName = 'status_orcamento'
-      Origin = 'status_orcamento'
-      Size = 25
+    object QueryOrcamentoscodigo_cliente: TStringField
+      FieldName = 'codigo_cliente'
+      Origin = 'codigo_cliente'
+      Size = 5
     end
   end
   object QueryClientesLogin: TFDQuery
