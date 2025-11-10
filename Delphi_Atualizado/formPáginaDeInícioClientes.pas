@@ -54,6 +54,7 @@ uses  formFormularioPedido,
       formPortfolio;
 
 procedure TformPáginaInicialCli.FormShow(Sender: TObject);
+// Esconde as tabs do tabsheet
 var pages: Integer;
 begin
     for pages := 0 to PageControl1.PageCount - 1 do begin
@@ -63,7 +64,6 @@ end;
 
 procedure TformPáginaInicialCli.btnpPedidosClick(Sender: TObject);
 begin
-
     PageControl1.ActivePageIndex := 0;
     formPedido := TFormPedido.Create(Self);
     formPedido.Parent := PageControl1.Pages[0];

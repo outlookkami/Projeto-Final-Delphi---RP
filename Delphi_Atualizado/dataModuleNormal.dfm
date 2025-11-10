@@ -236,7 +236,6 @@ object DM: TDM
     end
   end
   object QueryProdutos: TFDQuery
-    Active = True
     Connection = ConexaoBanco
     SQL.Strings = (
       'SELECT * FROM produtos;')
@@ -286,15 +285,13 @@ object DM: TDM
       Precision = 7
       Size = 2
     end
-    object QueryProdutosfoto_produto: TStringField
-      FieldName = 'foto_produto'
-      Origin = 'foto_produto'
-      Size = 255
-    end
     object QueryProdutosmarca: TStringField
       FieldName = 'marca'
       Origin = 'marca'
       Size = 40
+    end
+    object QueryProdutosdata_criacao: TSQLTimeStampField
+      FieldName = 'data_criacao'
     end
   end
   object FDTransaction1: TFDTransaction
@@ -431,10 +428,6 @@ object DM: TDM
       Origin = 'codigo_orcamento'
       ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
     end
-    object QueryOrcamentoscodigo_pedido: TIntegerField
-      FieldName = 'codigo_pedido'
-      Origin = 'codigo_pedido'
-    end
     object QueryOrcamentosdata_emissao: TDateField
       FieldName = 'data_emissao'
       Origin = 'data_emissao'
@@ -501,6 +494,28 @@ object DM: TDM
       FieldName = 'codigo_cliente'
       Origin = 'codigo_cliente'
       Size = 5
+    end
+    object QueryOrcamentosvalor_mdo: TBCDField
+      FieldName = 'valor_mdo'
+      Origin = 'valor_mdo'
+      Precision = 6
+      Size = 2
+    end
+    object QueryOrcamentosvalor_materiais: TBCDField
+      FieldName = 'valor_materiais'
+      Origin = 'valor_materiais'
+      Precision = 6
+      Size = 2
+    end
+    object QueryOrcamentosvalor_total: TBCDField
+      FieldName = 'valor_total'
+      Origin = 'valor_total'
+      Precision = 6
+      Size = 2
+    end
+    object QueryOrcamentoscodigo_pedido: TIntegerField
+      FieldName = 'codigo_pedido'
+      Origin = 'codigo_pedido'
     end
   end
   object QueryClientesLogin: TFDQuery

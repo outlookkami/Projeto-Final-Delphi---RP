@@ -70,12 +70,12 @@ uses  formCrudPedidos,
       formPortfolio;
 
 procedure TformPáginaInicialFunc.FormShow(Sender: TObject);
+// Esconde as tabs do tabsheet
 var pages: Integer;
 begin
     for pages := 0 to PageControl1.PageCount - 1 do begin
         PageControl1.Pages[pages].TabVisible := False;
     end;
-
 end;
 
 procedure TformPáginaInicialFunc.frameCrudClientes1cadeadoSenhaClick(

@@ -47,7 +47,6 @@ type
     QueryProdutosquant_est_prevista: TIntegerField;
     QueryProdutospreco_compra: TBCDField;
     QueryProdutospreco_venda: TBCDField;
-    QueryProdutosfoto_produto: TStringField;
     QueryProdutosmarca: TStringField;
     FDTransaction1: TFDTransaction;
     QueryFuncionariosativo_in: TBooleanField;
@@ -92,7 +91,6 @@ type
     QueryClientesativo_in: TBooleanField;
     QueryClientesLogin: TFDQuery;
     QueryOrcamentoscodigo_orcamento: TIntegerField;
-    QueryOrcamentoscodigo_pedido: TIntegerField;
     QueryOrcamentosdata_emissao: TDateField;
     QueryOrcamentosvalidade: TDateField;
     QueryOrcamentoscontato_cliente: TStringField;
@@ -107,6 +105,11 @@ type
     QueryOrcamentosdescricao_servico: TMemoField;
     QueryOrcamentosdescricao_pedido: TMemoField;
     QueryOrcamentoscodigo_cliente: TStringField;
+    QueryOrcamentosvalor_mdo: TBCDField;
+    QueryOrcamentosvalor_materiais: TBCDField;
+    QueryOrcamentosvalor_total: TBCDField;
+    QueryOrcamentoscodigo_pedido: TIntegerField;
+    QueryProdutosdata_criacao: TSQLTimeStampField;
 
   private
     { Private declarations }

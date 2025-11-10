@@ -159,7 +159,7 @@ end;
 
 procedure TformPáginaInicialADM.btnpPerfilClick(Sender: TObject);
 begin
-    PageControl1.ActivePageIndex := 8;
+    PageControl1.ActivePageIndex := 9;
 end;
 
 

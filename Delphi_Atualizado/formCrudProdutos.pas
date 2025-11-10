@@ -45,8 +45,6 @@ type
     DSProdutos: TDataSource;
     cbCategoriaProd: TComboBox;
     edtQuantEstPrev: TEdit;
-    lblImagem: TLabel;
-    DBImage1: TDBImage;
     btnInativProd: TPanel;
     btnExcluirProduto: TPanel;
     btnEditVeic: TPanel;

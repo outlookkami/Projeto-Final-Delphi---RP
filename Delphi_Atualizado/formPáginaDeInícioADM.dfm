@@ -2,7 +2,7 @@
   Left = 0
   Top = 0
   Caption = 'formP'#225'ginaInicialADM'
-  ClientHeight = 761
+  ClientHeight = 1061
   ClientWidth = 1150
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -16,9 +16,10 @@
     Left = 0
     Top = 0
     Width = 1150
-    Height = 761
+    Height = 1061
     Align = alClient
     TabOrder = 0
+    ExplicitHeight = 761
     object GridPanel1: TGridPanel
       Left = 1
       Top = 1
@@ -12416,8 +12417,8 @@
       Left = 1
       Top = 58
       Width = 1148
-      Height = 702
-      ActivePage = TabSheet9
+      Height = 1002
+      ActivePage = TabSheet3
       Align = alClient
       TabOrder = 1
       object TabSheet1: TTabSheet

@@ -262,7 +262,7 @@ object formProdutos: TformProdutos
     end
     object gridPanelLogin: TGridPanel
       Left = 783
-      Top = 56
+      Top = 64
       Width = 372
       Height = 655
       Align = alCustom
@@ -363,16 +363,6 @@ object formProdutos: TformProdutos
           Column = 0
           Control = leUnidade
           Row = 9
-        end
-        item
-          Column = 0
-          Control = lblImagem
-          Row = 17
-        end
-        item
-          Column = 0
-          Control = DBImage1
-          Row = 19
         end>
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
@@ -811,22 +801,6 @@ object formProdutos: TformProdutos
         TabOrder = 7
         Text = ''
         TextHint = 'Informe a unidade de medida L, Kg, ml etc.'
-      end
-      object lblImagem: TLabel
-        Left = 19
-        Top = 512
-        Width = 60
-        Height = 21
-        Align = alCustom
-        Caption = 'Imagem:'
-      end
-      object DBImage1: TDBImage
-        Left = 125
-        Top = 512
-        Width = 105
-        Height = 105
-        Align = alCustom
-        TabOrder = 8
       end
     end
     object btnInativProd: TPanel

@@ -14,7 +14,6 @@ type
     btnIncluirOrc: TPanel;
     pnlPesquisa: TPanel;
     iconePesquisa: TImage;
-    DBGrid1: TDBGrid;
     edtPesquisa: TEdit;
     gridPanelLogin: TGridPanel;
     Label2: TLabel;
@@ -48,16 +47,29 @@ type
     lblDescricaoServico: TLabel;
     descServico: TMemo;
     Label12: TLabel;
-    listviewMateriais: TListView;
     Label8: TLabel;
     Label11: TLabel;
     leValorMDO: TLabeledEdit;
     GridPanel4: TGridPanel;
     leCor: TLabeledEdit;
     leModelo: TLabeledEdit;
+    strgridMateriais: TStringGrid;
+    tabelas: TPageControl;
+    TabSheet2: TTabSheet;
+    TabSheet1: TTabSheet;
+    DBGrid3: TDBGrid;
+    DBGrid2: TDBGrid;
+    DSProdutos: TDataSource;
+    btnAddProd: TPanel;
+    edtQtdProd: TEdit;
     procedure pnlIncluirOrcClick(Sender: TObject);
     //procedure pnlFazerOrcPedidoClick(Sender: TObject);
     procedure DBGrid1CellClick(Column: TColumn);
+    procedure pnlFazerOrcPedidoClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure strgridMateriaisSelectCell(Sender: TObject; ACol, ARow: LongInt;
+      var CanSelect: Boolean);
+    procedure btnAddProdClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -74,20 +86,16 @@ implementation
 uses formOrcamento, DataModuleNormal, formFormularioPedido;
 
 var codigoOrcamento: String;
-
-procedure materiaisListView;
-var item: TListItem;
-begin
-//    listaProdutos.Items.Clear;
-    DM.QueryProdutos.Open;
-
-end;
+codOrc: Integer;
 
 procedure TcrudOrcamentos.DBGrid1CellClick(Column: TColumn);
+// Mostrar dados nos campos do formulário lateral
 begin
-    codigoOrcamento :=  DBGrid1.Fields[0].Value;
+    codigoOrcamento :=  DBGrid3.Fields[0].Value;
+    codOrc := StrToInt(codigoOrcamento);
 
     with DM.QueryOrcamentos do begin
+      codOrc:= FieldByName('codigo_orcamento').AsInteger;
       leCodPedido.Text := FieldByName('codigo_pedido').AsString;
       leDataEmissao.Text := FieldByName('data_emissao').AsString;
       leCodigoCli.Text := FieldByName('codigo_cliente').AsString;
@@ -103,6 +111,52 @@ begin
 //      leEmailCliente.Text := FieldByName('email_cliente').AsString;
 //      leEndereco.Text := FieldByName('endereco_cliente').AsString;
     end;
+end;
+
+procedure TcrudOrcamentos.FormCreate(Sender: TObject);
+// Ao criar formulário puxa os dados do StringGrid de materiais
+var strgridMateriais: TStringGrid;
+    i: Integer;
+begin
+    DM.QueryProdutos.Open;
+    strgridMateriais.ColCount := 5;
+    strgridMateriais.RowCount := 1;
+    strgridMateriais.FixedRows := 1;
+
+    strgridMateriais.Cells[0,0] := 'Nome do produto';
+    strgridMateriais.Cells[1,0] := 'Preço';
+    strgridMateriais.Cells[2,0] := 'Qtd.';
+    strgridMateriais.Cells[3,0] := 'Subtotal';
+//    strgridMateriais.Cells[4,0] := 'Código';
+
+end;
+
+procedure TcrudOrcamentos.btnAddProdClick(Sender: TObject);
+var nomeProd: String;
+    precoVen, subtotal, qtd: Double;
+    i: Integer;
+begin
+      DM.QueryProdutos.Open;
+      nomeProd := DM.QueryProdutos.FieldByName('nome_produto').AsString;
+      precoVen := DM.QueryProdutos.FieldByName('preco_venda').AsFloat;
+
+      if Trim(edtQtdProd.Text) = '' then begin
+        ShowMessage('Informe a quantidade antes de adicionar o produto');
+        Exit;
+      end;
+
+      qtd := StrToIntDef(edtQtdProd.Text, 1);
+      subtotal := qtd * precoVen;
+
+      i := strgridMateriais.RowCount;
+      strgridMateriais.RowCount := i + 1;
+
+      strgridMateriais.Cells[0, i] := nomeProd;
+      strgridMateriais.Cells[1, i] := FormatFloat('0.00', precoVen);
+      strgridMateriais.Cells[2, i] := FormatFloat('0.00',qtd);
+      strgridMateriais.Cells[3, i] := FormatFloat('0.00', subtotal);
+
+      tabelas.ActivePage := TabSheet2;
 end;
 
 procedure receberDadosPedido;
@@ -122,7 +176,19 @@ begin
   end;
 end;
 
-// Mostrar dados nos campos do formulário lateral
+
+
+procedure TcrudOrcamentos.pnlFazerOrcPedidoClick(Sender: TObject);
+var material: TListItem;
+begin
+//    while not DM.QueryProdutos.Eof do begin
+//      material := listviewMateriais.Items.Add;
+//      material.Caption := DM.QueryProdutos.FieldByName('nome_produto').AsString;
+//      material.SubItems.Add(DM.QueryProdutos.FieldByName('preco').AsString);
+//      DM.QueryProdutos.Next;
+//    end;
+end;
+
 procedure TcrudOrcamentos.pnlIncluirOrcClick(Sender: TObject);
 begin
       pnlIncluirOrc.Visible := True;
@@ -145,7 +211,23 @@ begin
         //ParamByName('Materiais').AsString := listviewMateriais;
         ParamByName('ValorMDO').AsString := leValorMDO.Text;
         ParamByName('Status').AsString := cbStatus.Text;
+
+        ExecSQL;
       end;
+end;
+
+procedure TcrudOrcamentos.strgridMateriaisSelectCell(Sender: TObject; ACol,
+  ARow: LongInt; var CanSelect: Boolean);
+const colunaQtd = 2;
+begin
+   CanSelect := True;
+
+  if ACol = colunaQtd then begin
+    strgridMateriais.Options := strgridMateriais.Options + [goEditing];
+  end else begin
+    strgridMateriais.Options := strgridMateriais.Options - [goEditing];
+    end;
+
 end;
 
 end.

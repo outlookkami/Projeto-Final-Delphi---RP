@@ -11,7 +11,7 @@ uses
 type
   TcrudPedidos = class(TForm)
     Panel1: TPanel;
-    lblDadosFunc: TLabel;
+    lblDadosPedido: TLabel;
     btnIncluirPedi: TPanel;
     pnlPesquisa: TPanel;
     iconePesquisa: TImage;
@@ -72,9 +72,12 @@ implementation
 {$R *.dfm}
 var codigoPedido: String;
 
+
 procedure TcrudPedidos.DBGrid1CellClick(Column: TColumn);
+// Mostrar dados nos campos do formulário lateral
 begin
     codigoPedido :=  DBGrid1.Fields[0].Value;
+    //codPedido := IntToStr(leCodPedido.Text);
 
     with DM.QueryPedidos do begin
       leCodPedido.Text := FieldByName('codigo_pedido').AsString;
@@ -92,14 +95,14 @@ begin
     end;
 end;
 
-
 procedure TcrudPedidos.pnlFazerOrcPedidoClick(Sender: TObject);
 begin
+    leCodPedido.Text := codigoPedido;
     //DM.QueryPedidos.SQL.Text := 'SELECT FROM Pedidos WHERE codigo_pedido = :CodPedido';
     //DM.QueryPedidos.ParamByName('CodPedido').AsString := codigoPedido;
     with DM.QueryOrcamentos do begin
       SQL.Text :=  'INSERT INTO Orcamentos (codigo_pedido, contato_cliente, email_cliente, cep_cliente, placa_veiculo, marca, modelo, cor, descricao_pedido, status_orcamento) VALUES (:CodPedido, :Contato, :Email, :CEP, :Placa, :Marca, :Modelo, :Cor, :DescPedido, :StatusOrc)';
-      ParamByName('CodPedido').AsString := codigoPedido;
+      ParamByName('CodPedido').AsString := leCodPedido.Text;
       ParamByName('Contato').AsString := leContato.Text;
       ParamByName('Email').AsString := leEmailCliente.Text;
       ParamByName('CEP').AsString := leCEP.Text;
@@ -114,7 +117,7 @@ begin
     end;
 end;
 
-// Mostrar dados nos campos do formulário lateral
+
 procedure TcrudPedidos.btnIncluirPediClick(Sender: TObject);
 begin
       pnlIncluirPedido.Visible := True;

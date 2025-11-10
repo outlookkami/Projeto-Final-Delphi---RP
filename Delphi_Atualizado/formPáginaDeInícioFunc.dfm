@@ -3,7 +3,7 @@
   Top = 0
   Cursor = crHandPoint
   Caption = 'Sistema JLA - Funcion'#225'rios'
-  ClientHeight = 801
+  ClientHeight = 1061
   ClientWidth = 1150
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -17,9 +17,10 @@
     Left = 0
     Top = 0
     Width = 1150
-    Height = 801
+    Height = 1061
     Align = alClient
     TabOrder = 0
+    ExplicitHeight = 801
     object GridPanel1: TGridPanel
       Left = 1
       Top = 1
@@ -12389,10 +12390,11 @@
       Left = 1
       Top = 58
       Width = 1148
-      Height = 742
+      Height = 1002
       ActivePage = TabSheet3
       Align = alClient
       TabOrder = 1
+      ExplicitHeight = 742
       object TabSheet1: TTabSheet
         Caption = 'Dashboard'
       end
