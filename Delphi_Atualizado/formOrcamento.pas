@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Data.DB, Vcl.ExtCtrls,
-  Vcl.Mask, Vcl.DBCtrls, dataModuleNormal;
+  Vcl.Mask, Vcl.DBCtrls, dataModuleNormal, Vcl.Grids;
 
 type
   TformVerOrcamento = class(TForm)
@@ -61,6 +61,11 @@ type
     lblAnoFab: TLabel;
     Label14: TLabel;
     lblCor: TLabel;
+    Item: TLabel;
+    lblProduto: TLabel;
+    lblQtd: TLabel;
+    lblValorUnit: TLabel;
+    lblSubtotal: TLabel;
 
     procedure FormCreate(Sender: TObject);
     procedure pnlAprovarClick(Sender: TObject);
@@ -77,8 +82,10 @@ implementation
 
 {$R *.dfm}
 
+
 procedure recebeDados;
 begin
+
 
 //    with DM.QueryPedidos do begin
 //      SQL.Text := 'SELECT FROM Pedidos(codigo_pedido)'
@@ -127,6 +134,7 @@ begin
     lblCor.Caption := FieldByName('cor').AsString;
     memoDescricaoDoServico.Text := FieldByName('descricao_servico').AsString;
     end;
+
 
 end;
 

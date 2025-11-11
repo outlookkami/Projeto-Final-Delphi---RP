@@ -95,29 +95,6 @@ begin
     end;
 end;
 
-procedure TcrudPedidos.pnlFazerOrcPedidoClick(Sender: TObject);
-begin
-    leCodPedido.Text := codigoPedido;
-    //DM.QueryPedidos.SQL.Text := 'SELECT FROM Pedidos WHERE codigo_pedido = :CodPedido';
-    //DM.QueryPedidos.ParamByName('CodPedido').AsString := codigoPedido;
-    with DM.QueryOrcamentos do begin
-      SQL.Text :=  'INSERT INTO Orcamentos (codigo_pedido, contato_cliente, email_cliente, cep_cliente, placa_veiculo, marca, modelo, cor, descricao_pedido, status_orcamento) VALUES (:CodPedido, :Contato, :Email, :CEP, :Placa, :Marca, :Modelo, :Cor, :DescPedido, :StatusOrc)';
-      ParamByName('CodPedido').AsString := leCodPedido.Text;
-      ParamByName('Contato').AsString := leContato.Text;
-      ParamByName('Email').AsString := leEmailCliente.Text;
-      ParamByName('CEP').AsString := leCEP.Text;
-      ParamByName('Placa').AsString := lePlaca.Text;
-      ParamByName('Marca').AsString := leMarca.Text;
-      ParamByName('Modelo').AsString := leModelo.Text;
-      ParamByName('Cor').AsString := leCorVeiculo.Text;
-      ParamByName('DescPedido').AsString := descPedido.Text;
-      ParamByName('StatusOrc').AsString := cbStatus.Text;
-
-      ExecSQL;
-    end;
-end;
-
-
 procedure TcrudPedidos.btnIncluirPediClick(Sender: TObject);
 begin
       pnlIncluirPedido.Visible := True;
@@ -142,6 +119,28 @@ begin
       end;
 end;
 
+procedure TcrudPedidos.pnlFazerOrcPedidoClick(Sender: TObject);
+begin
+    leCodPedido.Text := codigoPedido;
+    DM.QueryPedidos.SQL.Text := 'SELECT FROM Pedidos WHERE codigo_pedido = :CodPedido';
+    DM.QueryPedidos.ParamByName('CodPedido').AsString := codigoPedido;
 
+    with DM.QueryOrcamentos do begin
+      DM.QueryOrcamentos.Open;
+      SQL.Text :=  'INSERT INTO Orcamentos (codigo_pedido, contato_cliente, email_cliente, cep_cliente, placa_veiculo, marca, modelo, cor, descricao_pedido, status_orcamento) VALUES (:CodPedido, :Contato, :Email, :CEP, :Placa, :Marca, :Modelo, :Cor, :DescPedido, :StatusOrc)';
+      ParamByName('CodPedido').AsInteger := StrToInt(leCodPedido.Text);
+      ParamByName('Contato').AsString := leContato.Text;
+      ParamByName('Email').AsString := leEmailCliente.Text;
+      ParamByName('CEP').AsString := leCEP.Text;
+      ParamByName('Placa').AsString := lePlaca.Text;
+      ParamByName('Marca').AsString := leMarca.Text;
+      ParamByName('Modelo').AsString := leModelo.Text;
+      ParamByName('Cor').AsString := leCorVeiculo.Text;
+      ParamByName('DescPedido').AsString := descPedido.Text;
+      ParamByName('StatusOrc').AsString := cbStatus.Text;
+
+      ExecSQL;
+    end;
+end;
 
 end.

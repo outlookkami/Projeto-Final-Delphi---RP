@@ -53,7 +53,7 @@
       Top = 497
       Width = 749
       Height = 233
-      Anchors = [akLeft, akTop, akRight, akBottom]
+      Anchors = [akLeft, akTop, akBottom]
       BevelInner = bvNone
       BevelOuter = bvNone
       BorderStyle = bsNone
@@ -859,7 +859,7 @@
       end
     end
     object GridPanel11: TGridPanel
-      Left = 959
+      Left = 951
       Top = 10
       Width = 682
       Height = 559
@@ -884,7 +884,32 @@
           SizeStyle = ssAbsolute
           Value = 100.000000000000000000
         end>
-      ControlCollection = <>
+      ControlCollection = <
+        item
+          Column = 0
+          Control = Item
+          Row = 0
+        end
+        item
+          Column = 1
+          Control = lblProduto
+          Row = 0
+        end
+        item
+          Column = 2
+          Control = lblQtd
+          Row = 0
+        end
+        item
+          Column = 3
+          Control = lblValorUnit
+          Row = 0
+        end
+        item
+          Column = 4
+          Control = lblSubtotal
+          Row = 0
+        end>
       RowCollection = <
         item
           Value = 7.692307692307693000
@@ -926,6 +951,54 @@
           Value = 7.692307692307679000
         end>
       TabOrder = 3
+      DesignSize = (
+        682
+        559)
+      object Item: TLabel
+        Left = 12
+        Top = 15
+        Width = 37
+        Height = 15
+        Anchors = []
+        Caption = 'lblItem'
+        ExplicitLeft = 19
+      end
+      object lblProduto: TLabel
+        Left = 214
+        Top = 15
+        Width = 43
+        Height = 15
+        Anchors = []
+        Caption = 'Produto'
+        ExplicitLeft = 208
+      end
+      object lblQtd: TLabel
+        Left = 431
+        Top = 15
+        Width = 20
+        Height = 15
+        Anchors = []
+        Caption = 'Qtd'
+        ExplicitLeft = 424
+      end
+      object lblValorUnit: TLabel
+        Left = 495
+        Top = 15
+        Width = 51
+        Height = 15
+        Anchors = []
+        Caption = 'Valor Unit'
+        ExplicitLeft = 490
+      end
+      object lblSubtotal: TLabel
+        Left = 599
+        Top = 15
+        Width = 44
+        Height = 15
+        Anchors = []
+        Caption = 'Subtotal'
+        ExplicitLeft = 592
+      end
     end
     object GridPanel12: TGridPanel
       Left = 959

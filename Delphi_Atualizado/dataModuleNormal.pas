@@ -105,11 +105,12 @@ type
     QueryOrcamentosdescricao_servico: TMemoField;
     QueryOrcamentosdescricao_pedido: TMemoField;
     QueryOrcamentoscodigo_cliente: TStringField;
+    QueryOrcamentoscodigo_pedido: TIntegerField;
+    QueryProdutosdata_criacao: TSQLTimeStampField;
     QueryOrcamentosvalor_mdo: TBCDField;
     QueryOrcamentosvalor_materiais: TBCDField;
     QueryOrcamentosvalor_total: TBCDField;
-    QueryOrcamentoscodigo_pedido: TIntegerField;
-    QueryProdutosdata_criacao: TSQLTimeStampField;
+    QueryOrcamentoslista_materiais: TMemoField;
 
   private
     { Private declarations }

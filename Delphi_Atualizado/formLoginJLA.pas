@@ -78,8 +78,9 @@ uses  formTrocarSenha,
 
 var iniArq, iniCli: TIniFile;
 
-// Registrando dados do cliente caso o usuário logado seja um cliente
+
 procedure TformLogin.registDadosCliente;
+// Registrando dados do cliente caso o usuário logado seja um cliente
 var codigoCli, codigoVeic: Integer;
     nomeCli, telefoneCli, emailCli, cepCli, enderecoCli, numEnd, bairro, cidade,
     uf, veiculo, codCli: String;
@@ -143,8 +144,9 @@ begin
 end;
 
 
-// Registra os dados do login no arquivo ini
+
 procedure TformLogin.registDadosLogin;
+// Registra os dados do login no arquivo ini
 var tipoUsuario, emailUsuario, codigoUsuario: String;
     codigoCliente: Integer;
     codCli:String;
@@ -186,8 +188,9 @@ begin
 
 end;
 
-// Procedures para o funcionamento do botão de mostrar senha
+
 procedure TformLogin.HideShowSenha;
+// Procedures para o funcionamento do botão de mostrar senha
 begin
     if leSenhaLogin.PasswordChar = '*' then begin
     cadeadoSenha.Picture.LoadFromFile('C:\Users\Kamilly Souza\Desktop\Projeto Delphi-JLA\Delphi_Atualizado\Assets\cadeado azul desbloqueado.png');
@@ -203,14 +206,16 @@ begin
      HideShowSenha;
 end;
 
-// Botão de fechar no canto superior direito da tela
+
 procedure TformLogin.imgFecharClick(Sender: TObject);
+// Botão de fechar no canto superior direito da tela
 begin
     Close;
 end;
 
-// Redireciona para a página de cadastro
+
 procedure TformLogin.lblCadastreAquiClick(Sender: TObject);
+// Redireciona para a página de cadastro
 begin
 //    formCadastroDeClientes.Create(Self);
 //    formCadastroDeClientes.Parent := Self;
@@ -218,8 +223,9 @@ begin
     formCadastroDeClientes.Show;
 end;
 
-// Redireciona para a página de trocar senha
+
 procedure TformLogin.lblEsqueceuSenhaClick(Sender: TObject);
+// Redireciona para a página de trocar senha
 var formTrocaSenha: TformTrocaSenha;
 begin
     formTrocaSenha := TformTrocaSenha.Create(Self);
@@ -232,11 +238,11 @@ begin
 end;
 
 
-// Verificações do Login
+
 procedure TformLogin.pnlEntrarClick(Sender: TObject);
- var
- tipoUsuario: String;
- funcionarioAdm, status: Boolean;
+// Verificações do Login
+var tipoUsuario: String;
+    funcionarioAdm, status: Boolean;
 begin
   if (leSenhaLogin.Text = '') or (Trim(leUsuario.Text) = '') then begin
     ShowMessage('Preencha todos os campos.');

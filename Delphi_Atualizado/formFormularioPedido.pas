@@ -71,6 +71,7 @@ type
     procedure Panel2Click(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure memoDescricaoDoServicoEnter(Sender: TObject);
+    procedure Panel3Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -85,7 +86,8 @@ implementation
 {$R *.dfm}
 
 uses  dataModuleNormal,
-      unitSessao;
+      unitSessao,
+      formOrcamento;
 
 procedure TFormPedido.FormShow(Sender: TObject);
 var codigoCli: Integer;
@@ -133,7 +135,7 @@ begin
 
         ParamByName('CodCli').AsString := leCodigoCliente.Text;
         ParamByName('Data').AsDateTime := Date;
-        ParamByName('Contato').AsString := dbleContato.Text;
+        ParamByName('Contato').AsString := dbleTelefone.Text;
         ParamByName('Endereco').AsString := dbleRua.Text;
         ParamByName('CEP').AsString := dbleCEPEndereco.Text;
         ParamByName('Placa').AsString := lePlaca.Text;
@@ -145,7 +147,7 @@ begin
         ParamByName('Status').AsString := Status;
         ParamByName('Email').AsString := dadosCliente.emailCli;
 
-        ShowMessage('Descrição: '+ memoDescricaoDoServico.Text);
+        //ShowMessage('Descrição: '+ memoDescricaoDoServico.Text);
 
         //ParamByName('Chassi').AsString := leChassi.Text;
         //ParamByName('AnoFab').AsString := leAno.Text;
@@ -158,6 +160,11 @@ begin
 //        mtConfirmation, [mbYes, mbNo], 0) = mrYes then FrameVeiculo else Close; Self.Close;
 
       end;
+end;
+
+procedure TFormPedido.Panel3Click;
+begin
+    formVerOrcamento.Show;
 end;
 
 end.

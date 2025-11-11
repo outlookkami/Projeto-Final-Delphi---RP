@@ -20,7 +20,6 @@ object FormPedido: TFormPedido
     Align = alClient
     ParentBackground = False
     TabOrder = 0
-    ExplicitLeft = -8
     DesignSize = (
       1150
       701)
@@ -666,8 +665,6 @@ object FormPedido: TFormPedido
           ReadOnly = True
           TabOrder = 0
           Text = ''
-          ExplicitLeft = 13
-          ExplicitTop = 26
         end
         object leCodigoCliente: TLabeledEdit
           Left = 262
@@ -835,7 +832,6 @@ object FormPedido: TFormPedido
           EditLabel.Width = 56
           EditLabel.Height = 20
           EditLabel.Caption = 'Contato:'
-          ExplicitLeft = 11
         end
         object Label4: TLabel
           Left = 243
@@ -858,7 +854,6 @@ object FormPedido: TFormPedido
           EditLabel.Width = 65
           EditLabel.Height = 20
           EditLabel.Caption = 'Endere'#231'o:'
-          ExplicitLeft = 262
         end
         object Label5: TLabel
           Left = 563
@@ -1049,7 +1044,7 @@ object FormPedido: TFormPedido
       end
     end
     object GridPanel8: TGridPanel
-      Left = 359
+      Left = 366
       Top = 599
       Width = 484
       Height = 56
@@ -1135,6 +1130,7 @@ object FormPedido: TFormPedido
         ParentBackground = False
         ParentFont = False
         TabOrder = 1
+        OnClick = Panel3Click
       end
     end
   end

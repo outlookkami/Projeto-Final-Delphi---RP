@@ -28,9 +28,6 @@ Coordinates=443,10,120,366
 [leCodPedido]
 Coordinates=837,430,88,58
 
-[leValorMDO]
-Coordinates=10,722,84,58
-
 [Label7]
 Coordinates=1211,586,53,58
 
@@ -164,7 +161,7 @@ Coordinates=10,430,104,146
 Coordinates=519,654,60,58
 
 []
-Coordinates=702,10,116,300
+Coordinates=10,722,84,58
 
 [strgridMateriais]
 Coordinates=1020,430,89,58

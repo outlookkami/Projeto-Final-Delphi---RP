@@ -495,6 +495,10 @@ object DM: TDM
       Origin = 'codigo_cliente'
       Size = 5
     end
+    object QueryOrcamentoscodigo_pedido: TIntegerField
+      FieldName = 'codigo_pedido'
+      Origin = 'codigo_pedido'
+    end
     object QueryOrcamentosvalor_mdo: TBCDField
       FieldName = 'valor_mdo'
       Origin = 'valor_mdo'
@@ -513,9 +517,10 @@ object DM: TDM
       Precision = 6
       Size = 2
     end
-    object QueryOrcamentoscodigo_pedido: TIntegerField
-      FieldName = 'codigo_pedido'
-      Origin = 'codigo_pedido'
+    object QueryOrcamentoslista_materiais: TMemoField
+      FieldName = 'lista_materiais'
+      Origin = 'lista_materiais'
+      BlobType = ftMemo
     end
   end
   object QueryClientesLogin: TFDQuery

@@ -269,11 +269,6 @@ object crudOrcamentos: TcrudOrcamentos
         end
         item
           Column = 0
-          Control = leValorMDO
-          Row = 17
-        end
-        item
-          Column = 0
           Control = GridPanel4
           Row = 6
         end
@@ -281,6 +276,11 @@ object crudOrcamentos: TcrudOrcamentos
           Column = 0
           Control = strgridMateriais
           Row = 13
+        end
+        item
+          Column = 0
+          Control = leValorMDO
+          Row = 17
         end>
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
@@ -565,7 +565,7 @@ object crudOrcamentos: TcrudOrcamentos
       end
       object lblStatus: TLabel
         Left = 14
-        Top = 516
+        Top = 544
         Width = 45
         Height = 21
         Align = alCustom
@@ -573,7 +573,7 @@ object crudOrcamentos: TcrudOrcamentos
       end
       object cbStatus: TComboBox
         Left = 16
-        Top = 543
+        Top = 571
         Width = 329
         Height = 29
         Align = alCustom
@@ -591,7 +591,7 @@ object crudOrcamentos: TcrudOrcamentos
       end
       object pnlFazerOrcPedido: TPanel
         Left = 191
-        Top = 590
+        Top = 606
         Width = 162
         Height = 41
         Cursor = crHandPoint
@@ -612,7 +612,7 @@ object crudOrcamentos: TcrudOrcamentos
       end
       object pnlIncluirOrc: TPanel
         Left = 16
-        Top = 590
+        Top = 606
         Width = 161
         Height = 41
         Cursor = crHandPoint
@@ -712,6 +712,7 @@ object crudOrcamentos: TcrudOrcamentos
         Width = 143
         Height = 21
         Align = alCustom
+        Anchors = [akLeft, akTop, akBottom]
         Caption = 'Descri'#231#227'o do Pedido:'
       end
       object descServico: TMemo
@@ -720,6 +721,7 @@ object crudOrcamentos: TcrudOrcamentos
         Width = 334
         Height = 80
         Align = alCustom
+        Anchors = [akLeft, akTop, akBottom]
         Lines.Strings = (
           'descServico')
         TabOrder = 6
@@ -749,26 +751,12 @@ object crudOrcamentos: TcrudOrcamentos
         Anchors = []
         ExplicitLeft = 153
       end
-      object leValorMDO: TLabeledEdit
-        Left = 15
-        Top = 478
-        Width = 330
-        Height = 29
-        Anchors = [akBottom]
-        EditLabel.Width = 134
-        EditLabel.Height = 21
-        EditLabel.Caption = 'Valor M'#227'o de Obra:'
-        TabOrder = 7
-        Text = ''
-        TextHint = 'Informe o custo de m'#227'o de obra'
-      end
       object GridPanel4: TGridPanel
         Left = 7
         Top = 166
         Width = 347
         Height = 59
         Align = alCustom
-        Anchors = [akLeft, akTop, akBottom]
         BevelOuter = bvNone
         ColumnCollection = <
           item
@@ -799,7 +787,7 @@ object crudOrcamentos: TcrudOrcamentos
           item
             SizeStyle = ssAuto
           end>
-        TabOrder = 8
+        TabOrder = 7
         DesignSize = (
           347
           59)
@@ -815,6 +803,7 @@ object crudOrcamentos: TcrudOrcamentos
           TabOrder = 0
           Text = ''
           TextHint = 'Cor do ve'#237'culo'
+          ExplicitLeft = 8
         end
         object leModelo: TLabeledEdit
           Left = 180
@@ -831,15 +820,30 @@ object crudOrcamentos: TcrudOrcamentos
         end
       end
       object strgridMateriais: TStringGrid
-        Left = 20
+        Left = 18
         Top = 347
-        Width = 320
-        Height = 105
-        Anchors = [akTop, akBottom]
+        Width = 325
+        Height = 142
+        Anchors = [akTop]
         RowCount = 2
         Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goEditing]
-        TabOrder = 9
+        TabOrder = 8
         OnSelectCell = strgridMateriaisSelectCell
+        ExplicitLeft = 20
+      end
+      object leValorMDO: TLabeledEdit
+        Left = 16
+        Top = 511
+        Width = 329
+        Height = 29
+        Align = alCustom
+        Anchors = [akLeft, akTop, akBottom]
+        EditLabel.Width = 134
+        EditLabel.Height = 21
+        EditLabel.Caption = 'Valor M'#227'o de Obra:'
+        TabOrder = 9
+        Text = ''
+        TextHint = 'Informe o custo de m'#227'o de obra'
       end
     end
     object btnEditOrc: TPanel
@@ -901,7 +905,7 @@ object crudOrcamentos: TcrudOrcamentos
       Top = 123
       Width = 695
       Height = 560
-      ActivePage = TabSheet2
+      ActivePage = TabSheet1
       Anchors = [akLeft, akTop, akRight, akBottom]
       TabOrder = 7
       object TabSheet1: TTabSheet

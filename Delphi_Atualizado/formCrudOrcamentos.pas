@@ -9,6 +9,7 @@ uses
   Vcl.ExtCtrls, Vcl.Grids, Vcl.DBGrids, Vcl.Imaging.pngimage, Vcl.ComCtrls;
 
 type
+  TStringList = class(TStrings);
   TcrudOrcamentos = class(TForm)
     Panel1: TPanel;
     btnIncluirOrc: TPanel;
@@ -49,7 +50,6 @@ type
     Label12: TLabel;
     Label8: TLabel;
     Label11: TLabel;
-    leValorMDO: TLabeledEdit;
     GridPanel4: TGridPanel;
     leCor: TLabeledEdit;
     leModelo: TLabeledEdit;
@@ -62,19 +62,22 @@ type
     DSProdutos: TDataSource;
     btnAddProd: TPanel;
     edtQtdProd: TEdit;
+    leValorMDO: TLabeledEdit;
     procedure pnlIncluirOrcClick(Sender: TObject);
     //procedure pnlFazerOrcPedidoClick(Sender: TObject);
     procedure DBGrid1CellClick(Column: TColumn);
     procedure pnlFazerOrcPedidoClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure strgridMateriaisSelectCell(Sender: TObject; ACol, ARow: LongInt;
-      var CanSelect: Boolean);
+    var CanSelect: Boolean);
     procedure btnAddProdClick(Sender: TObject);
+
   private
     { Private declarations }
   public
     { Public declarations }
   end;
+
 
 var
   crudOrcamentos: TcrudOrcamentos;
@@ -86,7 +89,8 @@ implementation
 uses formOrcamento, DataModuleNormal, formFormularioPedido;
 
 var codigoOrcamento: String;
-codOrc: Integer;
+    codOrc: Integer;
+    valorOrcamento, totProd, custoMDO: Double;
 
 procedure TcrudOrcamentos.DBGrid1CellClick(Column: TColumn);
 // Mostrar dados nos campos do formulário lateral
@@ -118,6 +122,7 @@ procedure TcrudOrcamentos.FormCreate(Sender: TObject);
 var strgridMateriais: TStringGrid;
     i: Integer;
 begin
+    tabelas.ActivePage := TabSheet1;
     DM.QueryProdutos.Open;
     strgridMateriais.ColCount := 5;
     strgridMateriais.RowCount := 1;
@@ -134,7 +139,7 @@ end;
 procedure TcrudOrcamentos.btnAddProdClick(Sender: TObject);
 var nomeProd: String;
     precoVen, subtotal, qtd: Double;
-    i: Integer;
+    i, coluna: Integer;
 begin
       DM.QueryProdutos.Open;
       nomeProd := DM.QueryProdutos.FieldByName('nome_produto').AsString;
@@ -156,7 +161,11 @@ begin
       strgridMateriais.Cells[2, i] := FormatFloat('0.00',qtd);
       strgridMateriais.Cells[3, i] := FormatFloat('0.00', subtotal);
 
+      totProd := subtotal;
+
       tabelas.ActivePage := TabSheet2;
+
+      //AStringList.Clear;
 end;
 
 procedure receberDadosPedido;
@@ -176,8 +185,6 @@ begin
   end;
 end;
 
-
-
 procedure TcrudOrcamentos.pnlFazerOrcPedidoClick(Sender: TObject);
 var material: TListItem;
 begin
@@ -187,6 +194,17 @@ begin
 //      material.SubItems.Add(DM.QueryProdutos.FieldByName('preco').AsString);
 //      DM.QueryProdutos.Next;
 //    end;
+
+    custoMDO := StrToInt(leValorMDO.Text);
+    valorOrcamento := custoMDO + totProd;
+
+    with DM.QueryOrcamentos do begin
+      SQL.Text := 'INSERT INTO Orcamentos (valor_mdo, valor_materiais, valor_total) VALUES (:MDO, :Materiais, :Total) WHERE codigo_pedido = :CodPedido';
+      ParamByName('MDO').AsFloat := custoMDO;
+      ParamByName('Materiais').AsFloat := totProd;
+      ParamByName('Total').AsFloat := valorOrcamento;
+      ParamByName('CodPedido').AsInteger := StrToInt(leCodPedido.Text);
+    end;
 end;
 
 procedure TcrudOrcamentos.pnlIncluirOrcClick(Sender: TObject);
