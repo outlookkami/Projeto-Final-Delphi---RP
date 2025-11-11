@@ -24,7 +24,6 @@ type
     Label7: TLabel;
     GridPanel1: TGridPanel;
     leCodPedido: TLabeledEdit;
-    leDataEmissao: TLabeledEdit;
     GridPanel2: TGridPanel;
     Label1: TLabel;
     Label9: TLabel;
@@ -33,13 +32,11 @@ type
     pnlFazerOrcPedido: TPanel;
     pnlIncluirOrc: TPanel;
     btnEditOrc: TPanel;
-    btnInativOrc: TPanel;
     btnExcluOrc: TPanel;
     DSOrcamentos: TDataSource;
     RESTClient1: TRESTClient;
     RESTRequest1: TRESTRequest;
     leCodigoCli: TLabeledEdit;
-    leDataValidade: TLabeledEdit;
     Label6: TLabel;
     GridPanel3: TGridPanel;
     lePlaca: TLabeledEdit;
@@ -63,6 +60,12 @@ type
     btnAddProd: TPanel;
     edtQtdProd: TEdit;
     leValorMDO: TLabeledEdit;
+    GridPanel10: TGridPanel;
+    Label10: TLabel;
+    dtEmissao: TDateTimePicker;
+    GridPanel5: TGridPanel;
+    Label13: TLabel;
+    dtValidade: TDateTimePicker;
     procedure pnlIncluirOrcClick(Sender: TObject);
     //procedure pnlFazerOrcPedidoClick(Sender: TObject);
     procedure DBGrid1CellClick(Column: TColumn);
@@ -92,31 +95,6 @@ var codigoOrcamento: String;
     codOrc: Integer;
     valorOrcamento, totProd, custoMDO: Double;
 
-procedure TcrudOrcamentos.DBGrid1CellClick(Column: TColumn);
-// Mostrar dados nos campos do formulário lateral
-begin
-    codigoOrcamento :=  DBGrid3.Fields[0].Value;
-    codOrc := StrToInt(codigoOrcamento);
-
-    with DM.QueryOrcamentos do begin
-      codOrc:= FieldByName('codigo_orcamento').AsInteger;
-      leCodPedido.Text := FieldByName('codigo_pedido').AsString;
-      leDataEmissao.Text := FieldByName('data_emissao').AsString;
-      leCodigoCli.Text := FieldByName('codigo_cliente').AsString;
-      lePlaca.Text := FieldByName('placa_veiculo').AsString;
-      leCor.Text := FieldByName('cor').AsString;
-      leMarca.Text := FieldByName('marca').AsString;
-      leModelo.Text := FieldByName('modelo').AsString;
-      descServico.Text := FieldByName('descricao_servico').AsString;
-      leValorMDO.Text := FieldByName('valor_mdo').AsString;
-      cbStatus.Text := FieldByName('status_pedido').AsString;
-// Soma dos valores dos materiais estimados: FieldByName('valor_materiais');
-//      leCEP.Text := FieldByName('cep_cliente').AsString;
-//      leEmailCliente.Text := FieldByName('email_cliente').AsString;
-//      leEndereco.Text := FieldByName('endereco_cliente').AsString;
-    end;
-end;
-
 procedure TcrudOrcamentos.FormCreate(Sender: TObject);
 // Ao criar formulário puxa os dados do StringGrid de materiais
 var strgridMateriais: TStringGrid;
@@ -134,6 +112,34 @@ begin
     strgridMateriais.Cells[3,0] := 'Subtotal';
 //    strgridMateriais.Cells[4,0] := 'Código';
 
+end;
+
+procedure TcrudOrcamentos.DBGrid1CellClick(Column: TColumn);
+// Mostrar dados nos campos do formulário lateral
+begin
+    codigoOrcamento :=  DBGrid3.Fields[0].Value;
+    codOrc := StrToInt(codigoOrcamento);
+
+    with DM.QueryOrcamentos do begin
+      codOrc:= FieldByName('codigo_orcamento').AsInteger;
+      leCodPedido.Text := FieldByName('codigo_pedido').AsString;
+      dtEmissao.Date := FieldByName('data_emissao').AsDateTime;
+      dtValidade.Date := FieldByName('validade').AsDateTime;
+      leCodigoCli.Text := FieldByName('codigo_cliente').AsString;
+      lePlaca.Text := FieldByName('placa_veiculo').AsString;
+      leCor.Text := FieldByName('cor').AsString;
+      leMarca.Text := FieldByName('marca').AsString;
+      leModelo.Text := FieldByName('modelo').AsString;
+      descServico.Text := FieldByName('descricao_servico').AsString;
+      leValorMDO.Text := FieldByName('valor_mdo').AsString;
+      cbStatus.Text := FieldByName('status_orcamento').AsString;
+// Soma dos valores dos materiais estimados: FieldByName('valor_materiais');
+//      leCEP.Text := FieldByName('cep_cliente').AsString;
+//      leEmailCliente.Text := FieldByName('email_cliente').AsString;
+//      leEndereco.Text := FieldByName('endereco_cliente').AsString;
+    end;
+
+    //leDataEmissao.Date := Date;
 end;
 
 procedure TcrudOrcamentos.btnAddProdClick(Sender: TObject);
@@ -165,7 +171,7 @@ begin
 
       tabelas.ActivePage := TabSheet2;
 
-      //AStringList.Clear;
+
 end;
 
 procedure receberDadosPedido;
@@ -199,10 +205,17 @@ begin
     valorOrcamento := custoMDO + totProd;
 
     with DM.QueryOrcamentos do begin
-      SQL.Text := 'INSERT INTO Orcamentos (valor_mdo, valor_materiais, valor_total) VALUES (:MDO, :Materiais, :Total) WHERE codigo_pedido = :CodPedido';
+      SQL.Text := 'INSERT INTO Orcamentos (validade, valor_mdo, valor_materiais, valor_total) VALUES (:Validade, :MDO, :Materiais, :Total) WHERE codigo_pedido = :CodPedido';
+      ParamByName('Validade').AsDate := dtValidade.Date;
       ParamByName('MDO').AsFloat := custoMDO;
       ParamByName('Materiais').AsFloat := totProd;
       ParamByName('Total').AsFloat := valorOrcamento;
+      ParamByName('CodPedido').AsInteger := StrToInt(leCodPedido.Text);
+    end;
+
+    with DM.QueryPedidos do begin
+      SQL.Text := 'INSERT INTO Pedidos (status_pedido) VALUES (:Statusorc) WHERE cod_pedido = :CodPedido';
+      ParamByName('Statusorc').AsString := 'Orçamento Realizado';
       ParamByName('CodPedido').AsInteger := StrToInt(leCodPedido.Text);
     end;
 end;
@@ -212,15 +225,14 @@ begin
       pnlIncluirOrc.Visible := True;
 
       with DM.QueryOrcamentos do begin
-        DM.QueryOrcamentos.Close;
         DM.QueryOrcamentos.Open;
-        SQL.Text := 'INSERT INTO Orcamentos (codigo_pedido, data_emissao, validade, contato_cliente, placa_veiculo, modelo, marca, cor, descricao_pedido, status_pedido, contato_cliente, nome_cliente, email_cliente, cep_cliente)' +
+        SQL.Text := 'INSERT INTO Orcamentos (codigo_pedido, data_emissao, validade, contato_cliente, placa_veiculo, modelo, marca, cor, descricao_pedido, status_orcamento, contato_cliente, nome_cliente, email_cliente, cep_cliente)' +
         'VALUES (:CodPedido, :DataEmissao, :Validade, :Contato, :Placa, :Modelo, :Marca, :Cor, :DescPedido, :ValorMDO, :Status);';
 
         ParamByName('CodPedido').AsString := leCodPedido.Text;
         ParamByName('CodCliente').AsString := leCodigoCli.Text;
-        ParamByName('DataEmissao').AsString := leDataEmissao.Text;
-        ParamByName('Validade').AsString := leDataValidade.Text;
+        ParamByName('DataEmissao').AsDateTime := dtEmissao.Date;
+        ParamByName('Validade').AsDateTime := dtValidade.Date;
         ParamByName('Placa').AsString := lePlaca.Text;
         ParamByName('Modelo').AsString := leModelo.Text;
         ParamByName('Marca').AsString := leMarca.Text;

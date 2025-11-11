@@ -1,14 +1,8 @@
 ﻿[Label3]
 Coordinates=73,586,53,58
 
-[leDataValidade]
-Coordinates=659,654,102,58
-
 [pnlIncluirOrc]
 Coordinates=645,430,87,58
-
-[btnInativOrc]
-Coordinates=312,654,84,58
 
 [GridPanel3]
 Coordinates=73,654,79,58
@@ -60,9 +54,6 @@ Coordinates=1208,430,81,58
 
 [descServico]
 Coordinates=908,654,85,58
-
-[leDataEmissao]
-Coordinates=905,586,101,58
 
 [Label12]
 Coordinates=674,586,60,58
@@ -161,7 +152,7 @@ Coordinates=10,430,104,146
 Coordinates=519,654,60,58
 
 []
-Coordinates=10,722,84,58
+Coordinates=312,654,84,58
 
 [strgridMateriais]
 Coordinates=1020,430,89,58

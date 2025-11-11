@@ -109,6 +109,7 @@
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <BRCC_IncludePath>C:\Users\Kamilly Souza\Desktop\Projeto Delphi - JLA\Componentes\bcrypt-master\src;$(BRCC_IncludePath)</BRCC_IncludePath>
+        <UsePackages>true</UsePackages>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win64)'!=''">
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
@@ -178,59 +179,46 @@
         <DCCReference Include="unitTestesDeProcedures.pas"/>
         <DCCReference Include="frameTrocarSenhaUsuario.pas">
             <Form>TrocarSenha</Form>
-            <FormType>dfm</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
         <DCCReference Include="formPortfolio.pas">
             <Form>formVerPortfolio</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="formTrocarSenha.pas">
             <Form>formTrocaSenha</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="formCrudFuncionarios.pas">
             <Form>formCrudFunc</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="formConfirmeEmail.pas">
             <Form>formConfEmail</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="formCrudProdutos.pas">
             <Form>formProdutos</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="formCrudClientes.pas">
             <Form>formCrudCli</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="formPerfilPage.pas">
             <Form>formPerfil</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="unitCEPConsultor.pas"/>
         <DCCReference Include="formCrudVeiculos.pas">
             <Form>CrudVeiculos</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="formFormularioPedido.pas">
             <Form>FormPedido</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="formOrcamento.pas">
             <Form>formVerOrcamento</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="unitPlacaConsultor.pas"/>
         <DCCReference Include="unitSessao.pas"/>
         <DCCReference Include="formCrudPedidos.pas">
             <Form>crudPedidos</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="formCrudOrcamentos.pas">
             <Form>crudOrcamentos</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <None Include="login.ini"/>
         <BuildConfiguration Include="Base">

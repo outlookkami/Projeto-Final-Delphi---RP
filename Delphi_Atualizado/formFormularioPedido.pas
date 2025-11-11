@@ -45,7 +45,7 @@ type
     Label3: TLabel;
     leCliente: TLabeledEdit;
     leCodigoCliente: TLabeledEdit;
-    leCodigoPedido: TLabeledEdit;
+    leStatusPedido: TLabeledEdit;
     GridPanel6: TGridPanel;
     dbleTelefone: TDBLabeledEdit;
     Label4: TLabel;
@@ -103,6 +103,20 @@ begin
     dbleRua.Text := dadosCliente.enderecoCli;
     dbleCEPendereco.Text := dadosCliente.cepCli;
     lePlaca.Text := dadosCliente.veiculoCli;
+
+
+    with DM.QueryVeiculos do begin
+      SQL.Text := 'SELECT * FROM Veiculos WHERE placa_veiculo = :Placa';
+      ParamByName('Placa').AsString := lePlaca.Text;
+      if not IsEmpty then begin
+      leMarca.Text := FieldByName('marca').AsString;
+      leModelo.Text := FieldByName('modelo').AsString;
+      leCor.Text := FieldByName('cor').AsString;
+      end else begin
+        Exit;
+      end;
+
+    end;
 end;
 
 // Envio do pedido

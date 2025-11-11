@@ -96,6 +96,7 @@ GUID="{3F425B2B-E5DC-4E5E-8601-0DAA4A8FC068}"
 idEurekaLog=1
 idEurekaLogDetailed=1
 idMSClassic=1
+idService=1
 idStepsToReproduce=1
 InjectCode=1
 InjectInfo=1

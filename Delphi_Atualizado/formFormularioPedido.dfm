@@ -602,7 +602,7 @@ object FormPedido: TFormPedido
           end
           item
             Column = 4
-            Control = leCodigoPedido
+            Control = leStatusPedido
             Row = 0
           end
           item
@@ -679,15 +679,15 @@ object FormPedido: TFormPedido
           TabOrder = 1
           Text = ''
         end
-        object leCodigoPedido: TLabeledEdit
+        object leStatusPedido: TLabeledEdit
           Left = 435
           Top = 25
           Width = 130
           Height = 28
           Anchors = []
-          EditLabel.Width = 83
+          EditLabel.Width = 93
           EditLabel.Height = 20
-          EditLabel.Caption = 'alguma info:'
+          EditLabel.Caption = 'Status Pedido:'
           TabOrder = 2
           Text = ''
         end
@@ -1030,7 +1030,7 @@ object FormPedido: TFormPedido
           Text = ''
         end
         object leCor: TLabeledEdit
-          Left = 573
+          Left = 563
           Top = 25
           Width = 139
           Height = 28

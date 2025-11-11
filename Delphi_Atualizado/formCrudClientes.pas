@@ -80,8 +80,9 @@ uses  System.Hash,
 
 var codigoCliente: String;
 
-// Mostrar dados nos campos do formulário lateral
+
 procedure TformCrudCli.DBGrid1CellClick(Column: TColumn);
+// Mostrar dados nos campos do formulário lateral
 begin
     codigoCliente :=  DBGrid1.Fields[0].Value;
 
@@ -96,21 +97,21 @@ begin
     cbUF.Text := DM.QueryClientes.FieldByName('uf').AsString;
 end;
 
-// Incluir Cliente
+
 procedure TformCrudCli.btnIncluirCliClick(Sender: TObject);
+// Incluir Cliente
 begin
     btnExcluCli.Enabled := False;
     btnInativCli.Enabled := False;
     btnEditCli.Enabled := False;
     pnlCadastraCliCrud.Visible := True;
     leNome.SetFocus;
-    DM.QueryClientes.Open;
     DM.QueryClientes.Insert;
+    DM.QueryClientes.Open;
 end;
 
-
-// Excluir Cliente
 procedure TformCrudCli.btnExcluCliClick(Sender: TObject);
+// Excluir Cliente
 begin
     if (DM.QueryClientes.FieldByName('ativo_in').AsBoolean = True) then begin
       ShowMessage('O cliente deve estar inativo antes de ser excluído.');
@@ -120,8 +121,8 @@ begin
     DM.QueryClientes.Open;
 end;
 
-// Inativar Cliente
 procedure TformCrudCli.btnInativCliClick(Sender: TObject);
+// Inativar Cliente
 begin
     DM.QueryClientes.Open;
     DM.QueryClientes.SQL.Text := 'UPDATE "Clientes" SET ativo_in = :boolAtivo WHERE codigo_cliente = :codCli';
@@ -129,6 +130,7 @@ begin
     DM.QueryClientes.ParamByName('codCli').AsInteger := StrToInt(codigoCliente);
     DM.QueryClientes.ExecSQL;
     DM.QueryClientes.Post;
+    DM.QueryClientes.Open;
 //    if (DM.QueryFuncionarios.State in [dsInsert, dsEdit]) then begin
 //    DM.QueryClientes.Post;
 //    end;
@@ -139,8 +141,8 @@ begin
 //    DM.QueryFuncionarios.ExecSQL;
 end;
 
-// Consulta CEP
 procedure TformCrudCli.leCEPExit(Sender: TObject);
+// Consulta CEP
 begin
     unitCEPConsultor.ConsultaCEP(leCEP.Text, TCustomEdit(leEndereco), TCustomEdit(leBairro), TCustomEdit(leCidade), cbUF, RESTClient1, RESTRequest1, RESTResponse1);
 end;

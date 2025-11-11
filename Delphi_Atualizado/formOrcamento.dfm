@@ -887,7 +887,7 @@
       ControlCollection = <
         item
           Column = 0
-          Control = Item
+          Control = lblItem
           Row = 0
         end
         item
@@ -954,14 +954,14 @@
       DesignSize = (
         682
         559)
-      object Item: TLabel
-        Left = 12
+      object lblItem: TLabel
+        Left = 19
         Top = 15
-        Width = 37
+        Width = 24
         Height = 15
         Anchors = []
-        Caption = 'lblItem'
-        ExplicitLeft = 19
+        Caption = 'Item'
+        ExplicitLeft = 12
       end
       object lblProduto: TLabel
         Left = 214
@@ -1161,6 +1161,7 @@
         ParentBackground = False
         ParentFont = False
         TabOrder = 3
+        OnClick = pnlRecusarClick
       end
     end
   end

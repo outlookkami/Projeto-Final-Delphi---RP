@@ -435,7 +435,7 @@ object crudOrcamentos: TcrudOrcamentos
           end
           item
             Column = 1
-            Control = leDataEmissao
+            Control = GridPanel10
             Row = 0
           end>
         ParentBackground = False
@@ -464,25 +464,73 @@ object crudOrcamentos: TcrudOrcamentos
           Text = ''
           TextHint = 'C'#243'digo do pedido'
         end
-        object leDataEmissao: TLabeledEdit
-          Left = 180
-          Top = 26
-          Width = 173
-          Height = 29
-          Anchors = []
-          EditLabel.Width = 117
-          EditLabel.Height = 21
-          EditLabel.Caption = 'Data de Emiss'#227'o:'
+        object GridPanel10: TGridPanel
+          Left = 173
+          Top = 0
+          Width = 185
+          Height = 57
+          Align = alCustom
+          BevelOuter = bvNone
+          ColumnCollection = <
+            item
+              Value = 100.000000000000000000
+            end>
+          ControlCollection = <
+            item
+              Column = 0
+              Control = Label10
+              Row = 0
+            end
+            item
+              Column = 0
+              Control = dtEmissao
+              Row = 1
+            end>
+          ParentBackground = False
+          RowCollection = <
+            item
+              SizeStyle = ssAbsolute
+              Value = 20.000000000000000000
+            end
+            item
+              SizeStyle = ssAbsolute
+              Value = 100.000000000000000000
+            end
+            item
+              SizeStyle = ssAuto
+            end>
           TabOrder = 1
-          Text = ''
-          TextHint = 'Data de Emiss'#227'o'
+          object Label10: TLabel
+            Left = 6
+            Top = 0
+            Width = 93
+            Height = 20
+            Align = alCustom
+            Caption = 'Data Emiss'#227'o:'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clBlack
+            Font.Height = -15
+            Font.Name = 'Segoe UI'
+            Font.Style = []
+            ParentFont = False
+          end
+          object dtEmissao: TDateTimePicker
+            Left = 14
+            Top = 26
+            Width = 115
+            Height = 31
+            Align = alCustom
+            Date = 45950.000000000000000000
+            Time = 0.594754340279905600
+            TabOrder = 0
+          end
         end
       end
       object GridPanel2: TGridPanel
         Left = 2
         Top = 53
         Width = 356
-        Height = 56
+        Height = 60
         Anchors = [akTop, akBottom]
         BevelOuter = bvNone
         ColumnCollection = <
@@ -502,7 +550,7 @@ object crudOrcamentos: TcrudOrcamentos
           end
           item
             Column = 1
-            Control = leDataValidade
+            Control = GridPanel5
             Row = 0
           end>
         ParentBackground = False
@@ -517,10 +565,10 @@ object crudOrcamentos: TcrudOrcamentos
         TabOrder = 1
         DesignSize = (
           356
-          56)
+          60)
         object leCodigoCli: TLabeledEdit
           Left = 15
-          Top = 25
+          Top = 27
           Width = 149
           Height = 29
           Anchors = []
@@ -530,19 +578,68 @@ object crudOrcamentos: TcrudOrcamentos
           TabOrder = 0
           Text = ''
           TextHint = 'C'#243'digo do cliente'
+          ExplicitTop = 25
         end
-        object leDataValidade: TLabeledEdit
-          Left = 180
-          Top = 25
-          Width = 173
-          Height = 29
-          Anchors = []
-          EditLabel.Width = 119
-          EditLabel.Height = 21
-          EditLabel.Caption = 'Data de Validade:'
+        object GridPanel5: TGridPanel
+          Left = 171
+          Top = 2
+          Width = 185
+          Height = 55
+          Align = alCustom
+          BevelOuter = bvNone
+          ColumnCollection = <
+            item
+              Value = 100.000000000000000000
+            end>
+          ControlCollection = <
+            item
+              Column = 0
+              Control = Label13
+              Row = 0
+            end
+            item
+              Column = 0
+              Control = dtValidade
+              Row = 1
+            end>
+          ParentBackground = False
+          RowCollection = <
+            item
+              SizeStyle = ssAbsolute
+              Value = 20.000000000000000000
+            end
+            item
+              SizeStyle = ssAbsolute
+              Value = 100.000000000000000000
+            end
+            item
+              SizeStyle = ssAuto
+            end>
           TabOrder = 1
-          Text = ''
-          TextHint = 'Validade do or'#231'amento'
+          object Label13: TLabel
+            Left = 6
+            Top = 0
+            Width = 97
+            Height = 20
+            Align = alCustom
+            Caption = 'Data Validade:'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clBlack
+            Font.Height = -15
+            Font.Name = 'Segoe UI'
+            Font.Style = []
+            ParentFont = False
+          end
+          object dtValidade: TDateTimePicker
+            Left = 14
+            Top = 26
+            Width = 115
+            Height = 31
+            Align = alCustom
+            Date = 45950.000000000000000000
+            Time = 0.594754340279905600
+            TabOrder = 0
+          end
         end
       end
       object Label1: TLabel
@@ -580,17 +677,19 @@ object crudOrcamentos: TcrudOrcamentos
         BevelInner = bvNone
         BevelOuter = bvNone
         Anchors = [akLeft, akBottom]
-        ItemIndex = 0
         TabOrder = 2
         TextHint = 'Selecione o status do or'#231'amento'
         Items.Strings = (
           'Aguardando Or'#231'amento'
+          'Or'#231'amento Realizado '
           'Or'#231'amento Aprovado'
           'Or'#231'amento Reprovado'
-          'Servi'#231'o em andamento')
+          'Servi'#231'o em andamento'
+          'Servi'#231'o finalizado'
+          '')
       end
       object pnlFazerOrcPedido: TPanel
-        Left = 191
+        Left = 183
         Top = 606
         Width = 162
         Height = 41
@@ -864,26 +963,8 @@ object crudOrcamentos: TcrudOrcamentos
       ParentFont = False
       TabOrder = 4
     end
-    object btnInativOrc: TPanel
-      Left = 275
-      Top = 74
-      Width = 152
-      Height = 43
-      Cursor = crHandPoint
-      Anchors = [akTop, akRight]
-      Caption = 'Inativar Or'#231'amento'
-      Color = clHighlight
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWhite
-      Font.Height = -13
-      Font.Name = 'Segoe UI'
-      Font.Style = []
-      ParentBackground = False
-      ParentFont = False
-      TabOrder = 5
-    end
     object btnExcluOrc: TPanel
-      Left = 117
+      Left = 275
       Top = 74
       Width = 152
       Height = 43
@@ -898,7 +979,7 @@ object crudOrcamentos: TcrudOrcamentos
       Font.Style = []
       ParentBackground = False
       ParentFont = False
-      TabOrder = 6
+      TabOrder = 5
     end
     object tabelas: TPageControl
       Left = 56
@@ -907,7 +988,7 @@ object crudOrcamentos: TcrudOrcamentos
       Height = 560
       ActivePage = TabSheet1
       Anchors = [akLeft, akTop, akRight, akBottom]
-      TabOrder = 7
+      TabOrder = 6
       object TabSheet1: TTabSheet
         Caption = 'Or'#231'amentos'
         ImageIndex = 1

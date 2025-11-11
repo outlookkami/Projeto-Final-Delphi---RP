@@ -10,9 +10,6 @@ Coordinates=944,408,79,58
 [Label2]
 Coordinates=188,544,53,58
 
-[leCodigoPedido]
-Coordinates=73,544,105,58
-
 [dbleCor]
 Coordinates=299,612,60,36
 
@@ -169,4 +166,7 @@ Coordinates=782,544,107,36
 
 [dbleCEPendereco]
 Coordinates=1084,544,107,36
+
+[leStatusPedido]
+Coordinates=73,544,105,58
 

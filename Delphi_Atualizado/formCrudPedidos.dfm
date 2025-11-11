@@ -856,10 +856,10 @@ object crudPedidos: TcrudPedidos
         BevelInner = bvNone
         BevelOuter = bvNone
         Anchors = [akLeft, akBottom]
-        ItemIndex = 0
         TabOrder = 8
         Items.Strings = (
           'Or'#231'amento Pendente'
+          'Or'#231'amento Realizado'
           'Or'#231'amento Aprovado'
           'Realizando Servi'#231'o'
           'Pedido Finalizado')

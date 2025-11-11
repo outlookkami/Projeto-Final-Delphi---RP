@@ -61,7 +61,7 @@ type
     lblAnoFab: TLabel;
     Label14: TLabel;
     lblCor: TLabel;
-    Item: TLabel;
+    lblItem: TLabel;
     lblProduto: TLabel;
     lblQtd: TLabel;
     lblValorUnit: TLabel;
@@ -69,6 +69,7 @@ type
 
     procedure FormCreate(Sender: TObject);
     procedure pnlAprovarClick(Sender: TObject);
+    procedure pnlRecusarClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -82,10 +83,17 @@ implementation
 
 {$R *.dfm}
 
+uses unitSessao;
+
+var codOrcStr: String;
+
 
 procedure recebeDados;
 begin
-
+//    with DM.QueryOrcamento do begin
+//      SQL.Text := 'SELECT * FROM Orcamentos';
+//      numeroOrcamento
+//    end;
 
 //    with DM.QueryPedidos do begin
 //      SQL.Text := 'SELECT FROM Pedidos(codigo_pedido)'
@@ -113,38 +121,52 @@ end;
 
 
 procedure TformVerOrcamento.FormCreate(Sender: TObject);
-var codOrcStr: String;
+
 begin
 //Recebe as informações presentes no Crud de Orçamentos
 
     with DM.QueryOrcamentos do begin
-    SQL.Text := 'SELECT (codigo_orcamento, data_emissao, validade, contato_cliente, email_cliente, nome_cliente, cep_cliente, placa_veiculo, marca, modelo, cor, descricao_servico, status_orcamento) FROM Orcamentos';
-//    codOrcStr := FieldByName('codigo_orcamento').AsString;
-    numeroOrcamento.Caption := FieldByName('codigo_orcamento').AsString;
-    dataEmissao.Caption:= FieldByName('data_emissao').AsString;
-    validoAte.Caption:= FieldByName('validade').AsString;
-    lblNomeCliente.Caption:= FieldByName('nome_cliente').AsString;
-    lblTelefoneCliente.Caption := FieldByName('contato_cliente').AsString;
-    lblEmailCliente.Caption := FieldByName('email_cliente').AsString;
-    lblCodigoCliente.Caption := FieldByName('codigo_cliente').AsString;;
-    lblCEPCliente.Caption := FieldByName('cep_cliente').AsString;
-    lblPlaca.Caption := FieldByName('placa_veiculo').AsString;;
-    lblMarca.Caption := FieldByName('marca').AsString;
-    lblModelo.Caption := FieldByName('modelo').AsString;
-    lblCor.Caption := FieldByName('cor').AsString;
-    memoDescricaoDoServico.Text := FieldByName('descricao_servico').AsString;
+      //Open;
+      SQL.Text := 'SELECT * FROM Orcamentos WHERE email_cliente = :EmailCli';
+      ParamByName('EmailCli').AsString := dadosCliente.emailCli;
+      codOrcStr := IntToStr(FieldByName('codigo_orcamento').AsInteger);
+      numeroOrcamento.Caption := codOrcStr;
+      dataEmissao.Caption:= FieldByName('data_emissao').AsString;
+      validoAte.Caption:= FieldByName('validade').AsString;
+      lblNomeCliente.Caption:= FieldByName('nome_cliente').AsString;
+      lblTelefoneCliente.Caption := FieldByName('contato_cliente').AsString;
+      lblEmailCliente.Caption := FieldByName('email_cliente').AsString;
+      lblCodigoCliente.Caption := FieldByName('codigo_cliente').AsString;;
+      lblCEPCliente.Caption := FieldByName('cep_cliente').AsString;
+      lblPlaca.Caption := FieldByName('placa_veiculo').AsString;;
+      lblMarca.Caption := FieldByName('marca').AsString;
+      lblModelo.Caption := FieldByName('modelo').AsString;
+      lblCor.Caption := FieldByName('cor').AsString;
+      memoDescricaoDoServico.Text := FieldByName('descricao_servico').AsString;
+      Open;
     end;
-
-
 end;
 
 procedure TformVerOrcamento.pnlAprovarClick(Sender: TObject);
 begin
     with DM.QueryOrcamentos do begin
-       SQL.Text := 'INSERT INTO Orcamentos (status_orcamento) VALUES (:status) WHERE codigo_orcamento = :CodOrcamento';
-       ParamByName('status').AsString := 'Orçamento Aprovado';
-       ParamByName('CodOrcamento').AsInteger := StrToInt(numeroOrcamento.Caption);
+      SQL.Text := 'INSERT INTO Orcamentos (status_orcamento) VALUES (:status) WHERE codigo_orcamento = :CodOrcamento';
+      ParamByName('status').AsString := 'Orçamento Aprovado';
+      ParamByName('CodOrcamento').AsInteger := StrToInt(numeroOrcamento.Caption);
     end;
 end;
 
+procedure TformVerOrcamento.pnlRecusarClick(Sender: TObject);
+var result: Integer;
+begin
+    ShowMessage('Ao recusar o orçamento, ele será excluído. Se desejar uma nova opção de orçamento para o mesmo pedido entre em contato com a nossa equipe pelo telefone ou email.');
+    result := MessageDlg('Tem certeza de que deseja recusar o orçamento?', mtConfirmation, [mbYes, mbNo], 0);
+    if result = mrYes then begin
+      DM.QueryOrcamentos.SQL.Text := 'INSERT INTO Orcamentos (status_orcamento) VALUES (:status) WHERE codigo_orcamento = :CodOrc';
+      DM.QueryOrcamentos.ParamByName('status').AsString := 'Orçamento Aprovado';
+      DM.QueryOrcamentos.SQL.Text := 'DELETE * FROM Orcamentos WHERE codigo_orcamento = :CodOrc';
+      DM.QueryOrcamentos.ParamByName('CodOrc').AsInteger := StrToInt(codOrcStr);
+    end else
+      Exit;
+end;
 end.

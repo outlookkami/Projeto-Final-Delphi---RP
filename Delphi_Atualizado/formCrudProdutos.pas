@@ -62,15 +62,17 @@ implementation
 
 {$R *.dfm}
 
+var codigoProduto: String;
 
 
 procedure TformProdutos.DBGrid1CellClick(Column: TColumn);
-var codigoProduto: String;
+
 begin
     codigoProduto :=  DBGrid1.Fields[0].Value;
 
     with DM.QueryProdutos do begin
-
+    Open;
+    SQL.Text := 'SELECT * FROM Produtos';
     leNomeProd.Text := FieldByName('nome_produto').AsString;
     leCodInt.Text := FieldByName('codigo_produto').AsString;
     leCodBar.Text := FieldByName('codigo_barras').AsString;
@@ -81,7 +83,7 @@ begin
     leQuantEst.Text := FieldByName('quant_estoque').AsString;
     edtQuantEstPrev.Text := FieldByName('quant_est_prevista').AsString;
     cbCategoriaProd.Text := FieldByName('categoria').AsString;
-    //leRG.Text := FieldByName('rg_funcionario').AsString;
+
     end;
 end;
 

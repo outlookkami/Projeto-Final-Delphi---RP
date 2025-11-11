@@ -860,7 +860,7 @@ object formProdutos: TformProdutos
   end
   object DSProdutos: TDataSource
     DataSet = DM.QueryProdutos
-    Left = 8
-    Top = 24
+    Left = 24
+    Top = 72
   end
 end

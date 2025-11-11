@@ -15,6 +15,7 @@ uses
   EDialogWinAPIMSClassic,
   EDialogWinAPIEurekaLogDetailed,
   EDialogWinAPIStepsToReproduce,
+  EDialogService,
   ExceptionLog7,
   {$ENDIF EurekaLog}
   Vcl.Forms,
@@ -60,6 +61,8 @@ begin
   Application.CreateForm(TformPáginaInicialFunc, formPáginaInicialFunc);
   Application.CreateForm(TformPáginaInicialCli, formPáginaInicialCli);
   Application.CreateForm(TDM, DM);
+  Application.CreateForm(TformVerOrcamento, formVerOrcamento);
   Application.Run;
 end.
+
 
