@@ -77,7 +77,50 @@ uses  formTrocarSenha,
       unitSessao;
 
 var iniArq, iniCli: TIniFile;
+    tipoUser: String;
 
+procedure TformLogin.registDadosLogin;
+// Registra os dados do login no arquivo ini
+var tipoUsuario, emailUsuario, codigoUsuario: String;
+    codigoCliente: Integer;
+    codCli:String;
+    status: String;
+begin
+    emailUsuario := Trim(leUsuario.Text);
+    tipoUsuario := DM.QueryUsuarios.FieldByName('tipo_usuario').AsString;
+    //emailUsuario := DM.QueryUsuarios.FieldByName('nome_usuario').AsString;
+    codigoUsuario := DM.QueryUsuarios.FieldByName('id_usuario').AsString;
+    status := DM.QueryUsuarios.FieldByName('ativo_in').AsString;
+
+    //codigoCliente := DM.QueryClientes.FieldByName('codigo_cliente').AsString;
+
+    iniArq := TIniFile.Create(ExtractFilePath(ParamStr(0)) + 'login.ini');
+    try
+      iniArq.WriteString('Login', 'Usuario', leUsuario.Text);
+      iniArq.WriteString('Login', 'TipoUsuario', tipoUsuario);
+      iniArq.WriteString('Login', 'CodigoUsuario', codigoUsuario);
+      iniArq.WriteString('Login', 'Status', status);
+      if tipoUsuario = 'Cliente' then begin
+        DM.QueryClientes.Close;
+        DM.QueryClientes.SQL.Text := 'SELECT * FROM "Clientes" WHERE email_cliente = :Email';
+        DM.QueryClientes.ParamByName('Email').AsString := emailUsuario;
+        DM.QueryClientes.Open;
+      end;
+       if not DM.QueryClientes.IsEmpty and (tipoUsuario = 'Cliente') then begin
+        registDadosCliente;
+       end;
+//       if tipoUsuario = 'Cliente' then begin
+//          DM.QueryClientes.SQL.Text := 'SELECT codigo_cliente FROM "Clientes" WHERE email_cliente = :Email';
+//          DM.QueryClientes.ParamByName('Email').AsString := leUsuario.Text;
+//          codigoCliente := DM.QueryClientes.FieldByName('codigo_cliente').AsInteger;
+//          codCli := IntToStr(codigoCliente);
+//          iniArq.WriteString('Cliente', 'CodigoCliente', codCli);
+//          end;
+    finally
+       iniArq.Free;
+    end;
+
+end;
 
 procedure TformLogin.registDadosCliente;
 // Registrando dados do cliente caso o usuário logado seja um cliente
@@ -88,10 +131,9 @@ var codigoCli, codigoVeic: Integer;
 begin
     //DM.QueryClientes.SQL.Text := 'SELECT * FROM "Clientes" WHERE email_cliente = :Email';
     //DM.QueryClientes.ParamByName('Email').AsString := leUsuario.Text;
-    if DM.QueryClientes.IsEmpty then
-      exit;
+    
 
-    codigoCli := DM.QueryClientes.FieldByName('codigo_cliente').AsInteger;
+    codCli := DM.QueryClientes.FieldByName('codigo_cliente').AsString;
     nomeCli := DM.QueryClientes.FieldByName('nome_cliente').AsString;
     telefoneCli := DM.QueryClientes.FieldByName('telefone_cliente').AsString;
     emailCli := DM.QueryClientes.FieldByName('email_cliente').AsString;
@@ -102,7 +144,7 @@ begin
     cidade := DM.QueryClientes.FieldByName('cidade').AsString;
     uf := DM.QueryClientes.FieldByName('uf').AsString;
     veiculo := DM.QueryClientes.FieldByName('veiculo').AsString;
-    codCli := IntToStr(codigoCli);
+    //codCli := IntToStr(codigoCli);
 
 //    if DM.QueryVeiculos.IsEmpty then
 //      exit;
@@ -142,52 +184,6 @@ begin
        iniCli.Free;
     end;
 end;
-
-
-
-procedure TformLogin.registDadosLogin;
-// Registra os dados do login no arquivo ini
-var tipoUsuario, emailUsuario, codigoUsuario: String;
-    codigoCliente: Integer;
-    codCli:String;
-    status: String;
-begin
-    emailUsuario := Trim(leUsuario.Text);
-    tipoUsuario := DM.QueryUsuarios.FieldByName('tipo_usuario').AsString;
-    //emailUsuario := DM.QueryUsuarios.FieldByName('nome_usuario').AsString;
-    codigoUsuario := DM.QueryUsuarios.FieldByName('id_usuario').AsString;
-    status := DM.QueryUsuarios.FieldByName('ativo_in').AsString;
-
-    //codigoCliente := DM.QueryClientes.FieldByName('codigo_cliente').AsString;
-
-    iniArq := TIniFile.Create(ExtractFilePath(ParamStr(0)) + 'login.ini');
-    try
-      iniArq.WriteString('Login', 'Usuario', leUsuario.Text);
-      iniArq.WriteString('Login', 'TipoUsuario', tipoUsuario);
-      iniArq.WriteString('Login', 'CodigoUsuario', codigoUsuario);
-      iniArq.WriteString('Login', 'Status', status);
-      if tipoUsuario = 'Cliente' then begin
-        DM.QueryClientes.Close;
-        DM.QueryClientes.SQL.Text := 'SELECT * FROM "Clientes" WHERE email_cliente = :Email';
-        DM.QueryClientes.ParamByName('Email').AsString := emailUsuario;
-        DM.QueryClientes.Open;
-      end;
-       if not DM.QueryClientes.IsEmpty then begin
-        registDadosCliente;
-       end;
-//       if tipoUsuario = 'Cliente' then begin
-//          DM.QueryClientes.SQL.Text := 'SELECT codigo_cliente FROM "Clientes" WHERE email_cliente = :Email';
-//          DM.QueryClientes.ParamByName('Email').AsString := leUsuario.Text;
-//          codigoCliente := DM.QueryClientes.FieldByName('codigo_cliente').AsInteger;
-//          codCli := IntToStr(codigoCliente);
-//          iniArq.WriteString('Cliente', 'CodigoCliente', codCli);
-//          end;
-    finally
-       iniArq.Free;
-    end;
-
-end;
-
 
 procedure TformLogin.HideShowSenha;
 // Procedures para o funcionamento do botão de mostrar senha

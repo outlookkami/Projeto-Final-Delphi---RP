@@ -151,7 +151,6 @@ object formCrudFunc: TformCrudFunc
           4BEF29ACE3371500429A3BCD7492B23D7FFD5FA5F0C973C979C5F50000000049
           454E44AE426082}
         Proportional = True
-        OnClick = iconePesquisaClick
       end
     end
     object DBGrid1: TDBGrid
@@ -283,7 +282,6 @@ object formCrudFunc: TformCrudFunc
       ParentFont = False
       TabOrder = 3
       TextHint = 'Pesquise'
-      OnExit = iconePesquisaClick
     end
     object gridPanelLogin: TGridPanel
       Left = 765
@@ -998,7 +996,7 @@ object formCrudFunc: TformCrudFunc
     object bitbtnInativFunc: TBitBtn
       Left = 72
       Top = 80
-      Width = 75
+      Width = 113
       Height = 25
       Caption = 'Inativar Funcion'#225'rio'
       TabOrder = 8
@@ -1016,7 +1014,7 @@ object formCrudFunc: TformCrudFunc
     object bitbtnAtivarFunc: TBitBtn
       Left = 320
       Top = 107
-      Width = 75
+      Width = 107
       Height = 25
       Caption = 'Ativar Funcion'#225'rio'
       TabOrder = 10

@@ -58,7 +58,6 @@ type
     bitbtnInativFunc: TBitBtn;
     bitbtnAtualizar: TBitBtn;
     bitbtnAtivarFunc: TBitBtn;
-    procedure iconePesquisaClick(Sender: TObject);
     procedure btnExcluFuncClick(Sender: TObject);
     procedure btnEditFuncClick(Sender: TObject);
     procedure btnIncluirFuncClick(Sender: TObject);
@@ -93,8 +92,9 @@ uses  unitCEPConsultor,
 
 var codigoFuncionario: String;
 
-// Mostrar dados nos campos do formulário lateral
+
 procedure TformCrudFunc.DBGrid1CellClick(Column: TColumn);
+// Mostrar dados nos campos do formulário lateral
 begin
     codigoFuncionario :=  DBGrid1.Fields[0].Value;
 
@@ -112,8 +112,9 @@ begin
     leRG.Text := DM.QueryFuncionarios.FieldByName('rg_funcionario').AsString;
 end;
 
-// Limpar campos do formulário lateral
+
 procedure TformCrudFunc.LimparCampos;
+// Limpar campos do formulário lateral
 begin
     leNome.Clear;
     leTelefone.Clear;
@@ -129,27 +130,34 @@ begin
     leRG.Clear;
 end;
 
-// Atualizar DBGrid
+
 procedure TformCrudFunc.bitbtnAtivarFuncClick(Sender: TObject);
 begin
-    DM.QueryFuncionarios.Close;
+    DM.QueryFuncionarios.Open;
     DM.QueryFuncionarios.SQL.Text := 'UPDATE "Funcionarios" SET ativo_in = :boolAtivo WHERE codigo_funcionario = :codFunc';
     DM.QueryFuncionarios.ParamByName('boolAtivo').AsBoolean := True;
     DM.QueryFuncionarios.ParamByName('codFunc').AsInteger := StrToInt(codigoFuncionario);
     DM.QueryFuncionarios.ExecSQL;
+    DM.QueryFuncionarios.Post;
+    DM.QueryFuncionarios.Open;
+    DM.QueryFuncionarios.Close;
 end;
 
 procedure TformCrudFunc.bitbtnAtualizarClick(Sender: TObject);
+// Atualizar DBGrid
 begin
     with DM.QueryFuncionarios do begin
-      Close;
-      SQL.Text := 'SELECT codigo_funcionario, nome_funcionario, telefone_funcionario, email_funcionario, cep_funcionario, endereco_funcionario, num_endereco, bairro, cidade, uf, funcao, cpf_funcionario, rg_funcionario, ativo_in ORDER BY nome_funcionario';
       Open;
+      Update;
+      Post;
+      Open;
+      //SQL.Text := 'SELECT codigo_funcionario, nome_funcionario, telefone_funcionario, email_funcionario, cep_funcionario, endereco_funcionario, num_endereco, bairro, cidade, uf, funcao, cpf_funcionario, rg_funcionario, ativo_in ORDER BY nome_funcionario';
     end;
 end;
 
-// Incluir funcionário
+
 procedure TformCrudFunc.btnIncluirFuncClick(Sender: TObject);
+// Incluir funcionário
 begin
     pnlSalvar.Visible := False;
     pnlCadastrar.Visible := True;
@@ -164,18 +172,26 @@ begin
 //      DM.QueryFuncionarios.Open;
 end;
 
-// Inativar funcionário
+
 procedure TformCrudFunc.bitbtnInativFuncClick(Sender: TObject);
+// Inativar funcionário
 begin
-    DM.QueryFuncionarios.Close;
-    DM.QueryFuncionarios.SQL.Text := 'UPDATE "Funcionarios" SET ativo_in = :boolAtivo WHERE codigo_funcionario = :codFunc';
-    DM.QueryFuncionarios.ParamByName('boolAtivo').AsBoolean := False;
+codigoFuncionario :=  DBGrid1.Fields[0].Value;
+    DM.QueryFuncionarios.Open;
+    if (DM.QueryFuncionarios.State in [dsInsert, dsEdit]) then
+    DM.QueryFuncionarios.SQL.Text := 'UPDATE "Funcionarios" SET ativo_in = false WHERE codigo_funcionario = :codFunc';
+    //DM.QueryFuncionarios.ParamByName('boolAtivo').AsBoolean := False;
+
     DM.QueryFuncionarios.ParamByName('codFunc').AsInteger := StrToInt(codigoFuncionario);
+
     DM.QueryFuncionarios.ExecSQL;
+    DM.QueryFuncionarios.Post;
+    DM.QueryFuncionarios.Open;
 end;
 
-//Editar Funcionário
+
 procedure TformCrudFunc.btnEditFuncClick(Sender: TObject);
+//Editar Funcionário
 begin
     pnlCadastrar.Visible := False;
     pnlSalvar.Visible := True;
@@ -195,13 +211,15 @@ begin
 //
 //    ExecSQL;
 //    end;
-
-    if not (DM.QueryFuncionarios.State in [dsInsert, dsEdit]) then
+    DM.QueryFuncionarios.Open;
+    if (DM.QueryFuncionarios.State in [dsInsert, dsEdit]) then
     DM.QueryFuncionarios.Edit;
+    DM.QueryFuncionarios.Close;
 end;
 
-// Salvar
+
 procedure TformCrudFunc.pnlSalvarClick(Sender: TObject);
+// Salvar
 begin
     if not (DM.QueryFuncionarios.State in [dsInsert, dsEdit]) then
     DM.QueryFuncionarios.Open;
@@ -210,8 +228,9 @@ begin
     DM.QueryFuncionarios.Open;
 end;
 
-// Inativar funcionário
+
 procedure TformCrudFunc.btnInativFuncClick(Sender: TObject);
+// Inativar funcionário
 begin
     DM.QueryFuncionarios.SQL.Text := 'UPDATE "Funcionarios" SET ativo_in = :boolAtivo WHERE codigo_funcionario = :codFunc';
     DM.QueryFuncionarios.ParamByName('boolAtivo').AsBoolean := False;
@@ -219,8 +238,9 @@ begin
     DM.QueryFuncionarios.ExecSQL;
 end;
 
-// Excluir funcionário
+
 procedure TformCrudFunc.btnExcluFuncClick(Sender: TObject);
+// Excluir funcionário
 begin
     if (DM.QueryFuncionarios.FieldByName('ativo_in').AsBoolean = True) then begin
       ShowMessage('O funcionário deve estar inativo antes de ser excluído.');
@@ -230,8 +250,9 @@ begin
     DM.QueryFuncionarios.Open;
 end;
 
-// Mostrar frame para cadastrar a senha do funcionário
+
 procedure TformCrudFunc.SenhaFunc;
+// Mostrar frame para cadastrar a senha do funcionário
 var SenhaFuncionario: TframeCadSenhaFuncionario;
 senhaFunci: String;
 begin
@@ -243,20 +264,16 @@ begin
     //senhaFunci := frameCadSenhaFuncionario.SenhaFunc;
 end;
 
-// ???Pesquisa???
-procedure TformCrudFunc.iconePesquisaClick(Sender: TObject);
-begin
-    //DM.QueryFuncionarios
-end;
 
-// Consulta da API de CEP  (unitCEPConsultor)
 procedure TformCrudFunc.leCEPExit(Sender: TObject);
+// Consulta da API de CEP  (unitCEPConsultor)
 begin
       unitCEPConsultor.ConsultaCEP(leCEP.Text, TCustomEdit(leEndereco), TCustomEdit(leBairro), TCustomEdit(leCidade), cbUF, RESTClient1, RESTRequest1, RESTResponse1);
 end;
 
-// Incluindo funcionário como Cliente
+
 procedure TformCrudFunc.FunciClien(Sender: TObject);
+// Incluindo funcionário como Cliente
 var hash: String;
 begin
     hash := THashSHA1.GetHashString(leCPF.Text);
@@ -279,8 +296,9 @@ begin
     end;
 end;
 
-// Cadastrando funcionário no banco de dados
+
 procedure TformCrudFunc.pnlCadastrarClick(Sender: TObject);
+// Cadastrando funcionário no banco de dados
 var hash, senhaFunci: String;
 begin
     hash := THashSHA1.GetHashString(leCPF.Text);

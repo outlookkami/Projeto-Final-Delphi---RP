@@ -19,7 +19,6 @@
     Height = 1061
     Align = alClient
     TabOrder = 0
-    ExplicitHeight = 761
     object GridPanel1: TGridPanel
       Left = 1
       Top = 1
@@ -12418,11 +12417,99 @@
       Top = 58
       Width = 1148
       Height = 1002
-      ActivePage = TabSheet3
+      ActivePage = TabSheet1
       Align = alClient
       TabOrder = 1
       object TabSheet1: TTabSheet
         Caption = 'Dasboard'
+        object Label1: TLabel
+          Left = 865
+          Top = 72
+          Width = 131
+          Height = 37
+          Caption = 'Relat'#243'rios'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -27
+          Font.Name = 'Segoe UI'
+          Font.Style = [fsBold]
+          ParentFont = False
+        end
+        object FlowPanel1: TFlowPanel
+          Left = 752
+          Top = 144
+          Width = 345
+          Height = 321
+          Caption = 'FlowPanel1'
+          TabOrder = 0
+          object Panel1: TPanel
+            Left = 1
+            Top = 1
+            Width = 344
+            Height = 56
+            Align = alCustom
+            Caption = 'Pedidos'
+            Color = clHighlight
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWhite
+            Font.Height = -16
+            Font.Name = 'Segoe UI'
+            Font.Style = []
+            ParentBackground = False
+            ParentFont = False
+            TabOrder = 0
+            OnClick = Panel1Click
+          end
+          object Panel2: TPanel
+            Left = 1
+            Top = 57
+            Width = 344
+            Height = 56
+            BevelOuter = bvNone
+            TabOrder = 1
+          end
+          object Panel3: TPanel
+            Left = 1
+            Top = 113
+            Width = 344
+            Height = 62
+            Caption = 'Or'#231'amentos'
+            Color = clHighlight
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWhite
+            Font.Height = -16
+            Font.Name = 'Segoe UI'
+            Font.Style = []
+            ParentBackground = False
+            ParentFont = False
+            TabOrder = 2
+            OnClick = Panel3Click
+          end
+          object Panel4: TPanel
+            Left = 1
+            Top = 175
+            Width = 344
+            Height = 61
+            BevelOuter = bvNone
+            TabOrder = 3
+          end
+          object Panel5: TPanel
+            Left = 1
+            Top = 236
+            Width = 344
+            Height = 60
+            Caption = 'Relat'#243'rio 3'
+            Color = clHighlight
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWhite
+            Font.Height = -16
+            Font.Name = 'Segoe UI'
+            Font.Style = []
+            ParentBackground = False
+            ParentFont = False
+            TabOrder = 4
+          end
+        end
       end
       object TabSheet2: TTabSheet
         Caption = 'Pedidos'

@@ -578,7 +578,6 @@ object crudOrcamentos: TcrudOrcamentos
           TabOrder = 0
           Text = ''
           TextHint = 'C'#243'digo do cliente'
-          ExplicitTop = 25
         end
         object GridPanel5: TGridPanel
           Left = 171
@@ -902,7 +901,6 @@ object crudOrcamentos: TcrudOrcamentos
           TabOrder = 0
           Text = ''
           TextHint = 'Cor do ve'#237'culo'
-          ExplicitLeft = 8
         end
         object leModelo: TLabeledEdit
           Left = 180
@@ -928,7 +926,6 @@ object crudOrcamentos: TcrudOrcamentos
         Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goEditing]
         TabOrder = 8
         OnSelectCell = strgridMateriaisSelectCell
-        ExplicitLeft = 20
       end
       object leValorMDO: TLabeledEdit
         Left = 16
@@ -1025,18 +1022,6 @@ object crudOrcamentos: TcrudOrcamentos
             end
             item
               Expanded = False
-              FieldName = 'data_emissao'
-              Title.Caption = 'Data de emiss'#227'o'
-              Visible = True
-            end
-            item
-              Expanded = False
-              FieldName = 'validade'
-              Title.Caption = 'Validade'
-              Visible = True
-            end
-            item
-              Expanded = False
               FieldName = 'contato_cliente'
               Title.Caption = 'Contato Cliente'
               Width = 128
@@ -1091,6 +1076,12 @@ object crudOrcamentos: TcrudOrcamentos
             end
             item
               Expanded = False
+              FieldName = 'descricao_servico'
+              Title.Caption = 'Descri'#231#227'o do servi'#231'o'
+              Visible = True
+            end
+            item
+              Expanded = False
               FieldName = 'descricao_pedido'
               Title.Caption = 'Descri'#231#227'o do Pedido'
               Visible = True
@@ -1099,6 +1090,42 @@ object crudOrcamentos: TcrudOrcamentos
               Expanded = False
               FieldName = 'status_orcamento'
               Title.Caption = 'Status or'#231'amento'
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'data_emissao'
+              Title.Caption = 'Data Emiss'#227'o'
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'validade'
+              Title.Caption = 'Validade'
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'valor_mdo'
+              Title.Caption = 'Valor MDO'
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'valor_materiais'
+              Title.Caption = 'Valor materiais'
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'valor_total'
+              Title.Caption = 'Valor Total'
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'lista_materiais'
+              Title.Caption = 'Lista de materiais'
               Visible = True
             end>
         end
@@ -1244,24 +1271,6 @@ object crudOrcamentos: TcrudOrcamentos
     DataSet = DM.QueryOrcamentos
     Left = 8
     Top = 184
-  end
-  object RESTClient1: TRESTClient
-    Params = <>
-    SynchronizedEvents = False
-    Left = 16
-    Top = 240
-  end
-  object RESTRequest1: TRESTRequest
-    Client = RESTClient1
-    Params = <>
-    Response = RESTResponse1
-    SynchronizedEvents = False
-    Left = 16
-    Top = 288
-  end
-  object RESTResponse1: TRESTResponse
-    Left = 16
-    Top = 344
   end
   object DSProdutos: TDataSource
     DataSet = DM.QueryProdutos

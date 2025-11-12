@@ -34,14 +34,11 @@ type
     btnEditOrc: TPanel;
     btnExcluOrc: TPanel;
     DSOrcamentos: TDataSource;
-    RESTClient1: TRESTClient;
-    RESTRequest1: TRESTRequest;
     leCodigoCli: TLabeledEdit;
     Label6: TLabel;
     GridPanel3: TGridPanel;
     lePlaca: TLabeledEdit;
     leMarca: TLabeledEdit;
-    RESTResponse1: TRESTResponse;
     lblDescricaoServico: TLabel;
     descServico: TMemo;
     Label12: TLabel;
@@ -80,7 +77,6 @@ type
   public
     { Public declarations }
   end;
-
 
 var
   crudOrcamentos: TcrudOrcamentos;
@@ -121,7 +117,7 @@ begin
     codOrc := StrToInt(codigoOrcamento);
 
     with DM.QueryOrcamentos do begin
-      codOrc:= FieldByName('codigo_orcamento').AsInteger;
+      codOrc := FieldByName('codigo_orcamento').AsInteger;
       leCodPedido.Text := FieldByName('codigo_pedido').AsString;
       dtEmissao.Date := FieldByName('data_emissao').AsDateTime;
       dtValidade.Date := FieldByName('validade').AsDateTime;
@@ -170,8 +166,6 @@ begin
       totProd := subtotal;
 
       tabelas.ActivePage := TabSheet2;
-
-
 end;
 
 procedure receberDadosPedido;

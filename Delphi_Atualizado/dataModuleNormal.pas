@@ -111,6 +111,10 @@ type
     QueryOrcamentosvalor_materiais: TBCDField;
     QueryOrcamentosvalor_total: TBCDField;
     QueryOrcamentoslista_materiais: TMemoField;
+    QueryPedidosRel: TFDQuery;
+    QueryPedidosRelcodigo_pedido: TIntegerField;
+    QueryPedidosReldata_pedido: TSQLTimeStampField;
+    QueryPedidosRelstatus_pedido: TStringField;
 
   private
     { Private declarations }

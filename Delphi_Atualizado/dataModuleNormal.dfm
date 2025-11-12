@@ -236,6 +236,7 @@ object DM: TDM
     end
   end
   object QueryProdutos: TFDQuery
+    Active = True
     Connection = ConexaoBanco
     SQL.Strings = (
       'SELECT * FROM produtos;')
@@ -529,5 +530,27 @@ object DM: TDM
       'SELECT * FROM "Clientes";')
     Left = 112
     Top = 336
+  end
+  object QueryPedidosRel: TFDQuery
+    Connection = ConexaoBanco
+    SQL.Strings = (
+      'SELECT * FROM Pedidos;')
+    Left = 416
+    Top = 345
+    object QueryPedidosRelcodigo_pedido: TIntegerField
+      FieldName = 'codigo_pedido'
+      Origin = 'codigo_pedido'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+    end
+    object QueryPedidosReldata_pedido: TSQLTimeStampField
+      FieldName = 'data_pedido'
+      Origin = 'data_pedido'
+      ProviderFlags = [pfInUpdate]
+    end
+    object QueryPedidosRelstatus_pedido: TStringField
+      FieldName = 'status_pedido'
+      Origin = 'status_pedido'
+      Size = 25
+    end
   end
 end

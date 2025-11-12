@@ -126,13 +126,13 @@ begin
 //Recebe as informações presentes no Crud de Orçamentos
 
     with DM.QueryOrcamentos do begin
-      //Open;
-      SQL.Text := 'SELECT * FROM Orcamentos WHERE email_cliente = :EmailCli';
+      Open;
+      SQL.Text := 'SELECT * FROM Orcamentos WHERE email_cliente = :EmailCli and validade >= CURRENT_DATE';
       ParamByName('EmailCli').AsString := dadosCliente.emailCli;
       codOrcStr := IntToStr(FieldByName('codigo_orcamento').AsInteger);
       numeroOrcamento.Caption := codOrcStr;
-      dataEmissao.Caption:= FieldByName('data_emissao').AsString;
-      validoAte.Caption:= FieldByName('validade').AsString;
+      dataEmissao.Caption := FieldByName('data_emissao').AsString;
+      validoAte.Caption := FieldByName('validade').AsString;
       lblNomeCliente.Caption:= FieldByName('nome_cliente').AsString;
       lblTelefoneCliente.Caption := FieldByName('contato_cliente').AsString;
       lblEmailCliente.Caption := FieldByName('email_cliente').AsString;
@@ -143,7 +143,7 @@ begin
       lblModelo.Caption := FieldByName('modelo').AsString;
       lblCor.Caption := FieldByName('cor').AsString;
       memoDescricaoDoServico.Text := FieldByName('descricao_servico').AsString;
-      Open;
+      //Open;
     end;
 end;
 

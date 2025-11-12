@@ -37,6 +37,13 @@ type
     TabSheet8: TTabSheet;
     TabSheet9: TTabSheet;
     TabSheet10: TTabSheet;
+    FlowPanel1: TFlowPanel;
+    Panel1: TPanel;
+    Panel2: TPanel;
+    Panel3: TPanel;
+    Panel4: TPanel;
+    Panel5: TPanel;
+    Label1: TLabel;
     procedure FormShow(Sender: TObject);
     procedure Image1Click(Sender: TObject);
     procedure btnpDashboardClick(Sender: TObject);
@@ -49,6 +56,8 @@ type
     procedure btnpVeiculosClick(Sender: TObject);
     procedure btnpFuncionariosClick(Sender: TObject);
     procedure btnpPerfilClick(Sender: TObject);
+    procedure Panel1Click(Sender: TObject);
+    procedure Panel3Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -68,7 +77,9 @@ uses formCrudFuncionarios,
       formCrudProdutos,
       formCrudClientes,
       formCrudVeiculos,
-      formPortfolio;
+      formPortfolio,
+      relatorioPedidos,
+      relatorioOrcamentos;
 
 // Controle das páginas do PageControl
 procedure TformPáginaInicialADM.FormShow(Sender: TObject);
@@ -82,6 +93,20 @@ end;
 procedure TformPáginaInicialADM.Image1Click(Sender: TObject);
 begin
     Close;
+end;
+
+procedure TformPáginaInicialADM.Panel1Click(Sender: TObject);
+begin
+    formRepPedidos := TformRepPedidos.Create(Self);
+    formRepPedidos.RLReport1.PreviewModal;
+    formRepPedidos.Release;
+end;
+
+procedure TformPáginaInicialADM.Panel3Click(Sender: TObject);
+begin
+    formRepOrcamentos := TformRepOrcamentos.Create(Self);
+    formRepOrcamentos.repOrcamentos.PreviewModal;
+    formRepOrcamentos.Release;
 end;
 
 procedure TformPáginaInicialADM.btnpDashboardClick(Sender: TObject);

@@ -70,8 +70,10 @@ var
 implementation
 
 {$R *.dfm}
-var codigoPedido: String;
 
+uses unitSessao;
+
+var codigoPedido: String;
 
 procedure TcrudPedidos.DBGrid1CellClick(Column: TColumn);
 // Mostrar dados nos campos do formulário lateral
@@ -113,7 +115,7 @@ begin
         ParamByName('Marca').AsString := leMarca.Text;
         ParamByName('Cor').AsString := leCorVeiculo.Text;
         ParamByName('DescPedido').AsString := descPedido.Text;
-        //ParamByName('NomeCli').AsString := nomeCli; //puxar o nome pelo código do cliente
+        ParamByName('NomeCli').AsString := dadosCliente.nomeCli; //puxar o nome pelo código do cliente
         ParamByName('EmailCli').AsString := leEmailCliente.Text;
         ParamByName('Status').AsString := cbStatus.Text;
       end;
@@ -122,14 +124,15 @@ end;
 procedure TcrudPedidos.pnlFazerOrcPedidoClick(Sender: TObject);
 begin
     leCodPedido.Text := codigoPedido;
-    DM.QueryPedidos.SQL.Text := 'SELECT FROM Pedidos WHERE codigo_pedido = :CodPedido';
+    DM.QueryPedidos.SQL.Text := 'SELECT * FROM Pedidos WHERE codigo_pedido = :CodPedido';
     DM.QueryPedidos.ParamByName('CodPedido').AsString := codigoPedido;
 
     with DM.QueryOrcamentos do begin
       DM.QueryOrcamentos.Open;
-      SQL.Text :=  'INSERT INTO Orcamentos (codigo_pedido, contato_cliente, email_cliente, cep_cliente, placa_veiculo, marca, modelo, cor, descricao_pedido, status_orcamento) VALUES (:CodPedido, :Contato, :Email, :CEP, :Placa, :Marca, :Modelo, :Cor, :DescPedido, :StatusOrc)';
+      SQL.Text :=  'INSERT INTO Orcamentos (codigo_pedido, contato_cliente, nome_cliente, email_cliente, cep_cliente, placa_veiculo, marca, modelo, cor, descricao_pedido, status_orcamento) VALUES (:CodPedido, :Contato, :Nome, :Email, :CEP, :Placa, :Marca, :Modelo, :Cor, :DescPedido, :StatusOrc)';
       ParamByName('CodPedido').AsInteger := StrToInt(leCodPedido.Text);
       ParamByName('Contato').AsString := leContato.Text;
+      ParamByName('Nome').AsString := dadosCliente.nomeCli;
       ParamByName('Email').AsString := leEmailCliente.Text;
       ParamByName('CEP').AsString := leCEP.Text;
       ParamByName('Placa').AsString := lePlaca.Text;

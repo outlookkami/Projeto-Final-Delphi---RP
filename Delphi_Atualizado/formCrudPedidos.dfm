@@ -243,6 +243,7 @@ object crudPedidos: TcrudPedidos
           Expanded = False
           FieldName = 'status_pedido'
           Title.Caption = 'Status do pedido'
+          Width = 64
           Visible = True
         end
         item
@@ -961,7 +962,7 @@ object crudPedidos: TcrudPedidos
     end
   end
   object DSPedidos: TDataSource
-    DataSet = DM.QueryPedidos
+    DataSet = DM.QueryPedidosRel
     Left = 40
     Top = 80
   end
