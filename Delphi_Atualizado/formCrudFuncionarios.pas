@@ -55,9 +55,8 @@ type
     leCPF: TLabeledEdit;
     pnlSalvar: TPanel;
     leNome: TLabeledEdit;
-    bitbtnInativFunc: TBitBtn;
     bitbtnAtualizar: TBitBtn;
-    bitbtnAtivarFunc: TBitBtn;
+    btnAtivFunc: TPanel;
     procedure btnExcluFuncClick(Sender: TObject);
     procedure btnEditFuncClick(Sender: TObject);
     procedure btnIncluirFuncClick(Sender: TObject);
@@ -73,7 +72,7 @@ type
     procedure recarregarGrid;
     procedure bitbtnInativFuncClick(Sender: TObject);
     procedure bitbtnAtualizarClick(Sender: TObject);
-    procedure bitbtnAtivarFuncClick(Sender: TObject);
+    procedure btnAtivarFuncClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -135,37 +134,36 @@ procedure TformCrudFunc.recarregarGrid;
 begin
 with DM.QueryFuncionarios do begin
       Close;
-      SQL.Text := 'SELECT * FROM “Funcionarios” ORDER BY nome_funcionario';
+      SQL.Text := 'SELECT * FROM "Funcionarios" ORDER BY nome_funcionario';
       Open;
     end;
 end;
 
-procedure TformCrudFunc.bitbtnAtivarFuncClick(Sender: TObject);
+procedure TformCrudFunc.btnAtivarFuncClick(Sender: TObject);
+// Ativar Funcionário
 begin
+    if (DM.QueryFuncionarios.FieldByName('ativo_in').AsBoolean = True) then begin
+      ShowMessage('O funcionário deve estar inativo para ser ativado novamente.');
+    end else begin
     DM.QueryFuncionarios.Close;
     DM.QueryFuncionarios.SQL.Text := 'UPDATE "Funcionarios" SET ativo_in = true WHERE codigo_funcionario = :codFunc';
     DM.QueryFuncionarios.ParamByName('codFunc').AsInteger := StrToInt(codigoFuncionario);
     DM.QueryFuncionarios.ExecSQL;
 
     recarregarGrid;
+    end;
 
 end;
 
 procedure TformCrudFunc.bitbtnAtualizarClick(Sender: TObject);
 // Atualizar DBGrid
 begin
-    with DM.QueryFuncionarios do begin
-      Open;
-      Update;
-      Post;
-      Open;
-      //SQL.Text := 'SELECT codigo_funcionario, nome_funcionario, telefone_funcionario, email_funcionario, cep_funcionario, endereco_funcionario, num_endereco, bairro, cidade, uf, funcao, cpf_funcionario, rg_funcionario, ativo_in ORDER BY nome_funcionario';
-    end;
+    recarregarGrid;
 end;
 
 
 procedure TformCrudFunc.btnIncluirFuncClick(Sender: TObject);
-// Incluir funcionário
+// Abrir inclusão do Funcionário
 begin
     pnlSalvar.Visible := False;
     pnlCadastrar.Visible := True;
@@ -176,30 +174,30 @@ begin
     if not (DM.QueryFuncionarios.State in [dsInsert, dsEdit]) then begin
       DM.QueryFuncionarios.Insert;
     end;
-//      DM.QueryFuncionarios.Close;
-//      DM.QueryFuncionarios.Open;
+
+    recarregarGrid;
 end;
 
 
-procedure TformCrudFunc.bitbtnInativFuncClick(Sender: TObject);
-// Inativar funcionário
-begin
-codigoFuncionario :=  DBGrid1.Fields[0].Value;
-    DM.QueryFuncionarios.Open;
-    if (DM.QueryFuncionarios.State in [dsInsert, dsEdit]) then
-    DM.QueryFuncionarios.SQL.Text := 'UPDATE "Funcionarios" SET ativo_in = false WHERE codigo_funcionario = :codFunc';
-    //DM.QueryFuncionarios.ParamByName('boolAtivo').AsBoolean := False;
-
-    DM.QueryFuncionarios.ParamByName('codFunc').AsInteger := StrToInt(codigoFuncionario);
-
-    DM.QueryFuncionarios.ExecSQL;
-    DM.QueryFuncionarios.Post;
-    DM.QueryFuncionarios.Open;
-end;
+//procedure TformCrudFunc.bitbtnInativFuncClick(Sender: TObject);
+//// Inativar Funcionário
+//begin
+//    codigoFuncionario :=  DBGrid1.Fields[0].Value;
+//    DM.QueryFuncionarios.Open;
+//    if (DM.QueryFuncionarios.State in [dsInsert, dsEdit]) then
+//    DM.QueryFuncionarios.SQL.Text := 'UPDATE "Funcionarios" SET ativo_in = false WHERE codigo_funcionario = :codFunc';
+//    //DM.QueryFuncionarios.ParamByName('boolAtivo').AsBoolean := False;
+//
+//    DM.QueryFuncionarios.ParamByName('codFunc').AsInteger := StrToInt(codigoFuncionario);
+//
+//    DM.QueryFuncionarios.ExecSQL;
+//    DM.QueryFuncionarios.Post;
+//    DM.QueryFuncionarios.Open;
+//end;
 
 
 procedure TformCrudFunc.btnEditFuncClick(Sender: TObject);
-//Editar Funcionário
+// Editar Funcionário
 begin
 
 //    DM.QueryFuncionarios.Open;
@@ -215,24 +213,29 @@ begin
     end else if DM.QueryFuncionarios.Active then begin
     DM.QueryFuncionarios.Edit;
     end else begin
-    ShowMessage(‘Não foi possível acessar os dados do funcionário para edição.’);
+    ShowMessage('Não foi possível acessar os dados do funcionário para edição.');
     end;
 end;
 
 
 procedure TformCrudFunc.pnlSalvarClick(Sender: TObject);
-// Salvar
+// Salvar edição
 begin
-    if not (DM.QueryFuncionarios.State in [dsInsert, dsEdit]) then
-    DM.QueryFuncionarios.Post;
+    //try
+      if not (DM.QueryFuncionarios.State in [dsInsert, dsEdit]) then
+        //DM.QueryFuncionarios.Open;
+        DM.QueryFuncionarios.Edit;
+        DM.QueryFuncionarios.Post;
+//    except
+//      ShowMessage('Não foi possível salvar as alterações. Tente novamente');
+    //end;
 
     recarregarGrid;
-
 end;
 
 
 procedure TformCrudFunc.btnInativFuncClick(Sender: TObject);
-// Inativar funcionário
+// Inativar Funcionário
 begin
     DM.QueryFuncionarios.Close;
     DM.QueryFuncionarios.SQL.Text := 'UPDATE "Funcionarios" SET ativo_in = false WHERE codigo_funcionario = :codFunc';
@@ -244,26 +247,24 @@ end;
 
 
 procedure TformCrudFunc.btnExcluFuncClick(Sender: TObject);
-// Excluir funcionário
+// Excluir Funcionário
 begin
 
     if (DM.QueryFuncionarios.FieldByName('ativo_in').AsBoolean = True) then begin
       ShowMessage('O funcionário deve estar inativo antes de ser excluído.');
     end else begin
-     if MessageDlg('Tem certeza de que deseja excluir o funcionário? Essa ação não poderá ser revertida.', mtConfirmation, [mbYes, mbNo], 0) = mrYes then
-    DM.QueryFuncionarios.Close;
-    DM.QueryFuncionarios.SQL.Text := ‘DELETE FROM “Funcionarios” WHERE codigo_funcionario = :codFunc’;
-    DM.QueryFuncionarios.ParamByName(‘codFunc’).AsInteger := StrToInt(codigoFuncionario);
-    DM.QueryFuncionarios.ExecSQL;
-    recarregarGrid;
+    if MessageDlg('Tem certeza de que deseja excluir o funcionário? Essa ação não poderá ser revertida.', mtConfirmation, [mbYes, mbNo], 0) = mrYes then
+      DM.QueryFuncionarios.Close;
+      DM.QueryFuncionarios.SQL.Text := 'DELETE FROM "Funcionarios" WHERE codigo_funcionario = :codFunc';
+      DM.QueryFuncionarios.ParamByName('codFunc').AsInteger := StrToInt(codigoFuncionario);
+      DM.QueryFuncionarios.ExecSQL;
+
+      recarregarGrid;
     end;
 end;
 
-
-
-
 procedure TformCrudFunc.SenhaFunc;
-// Mostrar frame para cadastrar a senha do funcionário
+// Mostrar frame para cadastrar a senha do Funcionário
 var SenhaFuncionario: TframeCadSenhaFuncionario;
 senhaFunci: String;
 begin
@@ -279,37 +280,37 @@ end;
 procedure TformCrudFunc.leCEPExit(Sender: TObject);
 // Consulta da API de CEP  (unitCEPConsultor)
 begin
-      unitCEPConsultor.ConsultaCEP(leCEP.Text, TCustomEdit(leEndereco), TCustomEdit(leBairro), TCustomEdit(leCidade), cbUF, RESTClient1, RESTRequest1, RESTResponse1);
+    unitCEPConsultor.ConsultaCEP(leCEP.Text, TCustomEdit(leEndereco), TCustomEdit(leBairro), TCustomEdit(leCidade), cbUF, RESTClient1, RESTRequest1, RESTResponse1);
 end;
 
 
 procedure TformCrudFunc.FunciClien(Sender: TObject);
-// Incluindo funcionário como Cliente
+// Incluindo Funcionário como Cliente
 var hash: String;
 begin
     hash := THashSHA1.GetHashString(leCPF.Text);
 
     with DM.QueryClientes do begin
-    DM.QueryClientes.SQL.Text := 'INSERT INTO "Clientes" (nome_cliente, telefone_cliente, email_cliente, cep_cliente, endereco_cliente, num_endereco, bairro, cidade, uf) VALUES(:Nome, :Telefone, :Email, :CEP, :Endereco, :Numero, :Bairro, :Cidade, :UF);';
+      DM.QueryClientes.SQL.Text := 'INSERT INTO "Clientes" (nome_cliente, telefone_cliente, email_cliente, cep_cliente, endereco_cliente, num_endereco, bairro, cidade, uf) VALUES(:Nome, :Telefone, :Email, :CEP, :Endereco, :Numero, :Bairro, :Cidade, :UF);';
 
-    ParamByName('Nome').AsString := leNome.Text;
-    ParamByName('Telefone').AsString := leTelefone.Text;
-    ParamByName('Email').AsString := leEmail.Text;
-    ParamByName('CEP').AsString := leCEP.Text;
-    ParamByName('Endereco').AsString := leEndereco.Text;
-    ParamByName('Numero').AsString := leNumero.Text;
-    ParamByName('Bairro').AsString := leBairro.Text;
-    ParamByName('Cidade').AsString := leCidade.Text;
-    ParamByName('UF').AsString := cbUf.Text;
-    ParamByName('SenhaHash').AsString := hash;
+      ParamByName('Nome').AsString := leNome.Text;
+      ParamByName('Telefone').AsString := leTelefone.Text;
+      ParamByName('Email').AsString := leEmail.Text;
+      ParamByName('CEP').AsString := leCEP.Text;
+      ParamByName('Endereco').AsString := leEndereco.Text;
+      ParamByName('Numero').AsString := leNumero.Text;
+      ParamByName('Bairro').AsString := leBairro.Text;
+      ParamByName('Cidade').AsString := leCidade.Text;
+      ParamByName('UF').AsString := cbUf.Text;
+      ParamByName('SenhaHash').AsString := hash;
 
-    ExecSQL;
+      ExecSQL;
     end;
 end;
 
 
 procedure TformCrudFunc.pnlCadastrarClick(Sender: TObject);
-// Cadastrando funcionário no banco de dados
+// Cadastrando Funcionário no banco de dados
 var hash, senhaFunci: String;
 begin
     hash := THashSHA1.GetHashString(leCPF.Text);
@@ -319,24 +320,23 @@ begin
     end else begin
 
         with DM.QueryFuncionarios do begin
-        DM.QueryFuncionarios.Close;
-        DM.QueryFuncionarios.Open;
-        SQL.Text := 'INSERT INTO "Funcionarios" (nome_funcionario, telefone_funcionario, email_funcionario, cep_funcionario, endereco_funcionario, num_endereco, bairro, cidade, uf, funcao, cpf_funcionario, rg_funcionario, hash_senha_func) VALUES (:Nome, :Telefone, :Email, :CEP, :Endereco, :Numero, :Bairro, :Cidade, :UF, :Funcao, :CPF, :RG, :Senha);';
+          DM.QueryFuncionarios.Close;
+          DM.QueryFuncionarios.Open;
+          SQL.Text := 'INSERT INTO "Funcionarios" (nome_funcionario, telefone_funcionario, email_funcionario, cep_funcionario, endereco_funcionario, num_endereco, bairro, cidade, uf, funcao, cpf_funcionario, rg_funcionario, hash_senha_func) VALUES (:Nome, :Telefone, :Email, :CEP, :Endereco, :Numero, :Bairro, :Cidade, :UF, :Funcao, :CPF, :RG, :Senha);';
 
-        ParamByName('Nome').AsString := leNome.Text;
-        ParamByName('Telefone').AsString := leTelefone.Text;
-        ParamByName('Email').AsString := leEmail.Text;
-        ParamByName('CEP').AsString := leCEP.Text;
-        ParamByName('Endereco').AsString := leEndereco.Text;
-        ParamByName('Numero').AsString := leNumero.Text;
-        ParamByName('Bairro').AsString := leBairro.Text;
-        ParamByName('Cidade').AsString := leCidade.Text;
-        ParamByName('UF').AsString := cbUf.Text;
-        ParamByName('Funcao').AsString := cbFuncao.Text;
-        ParamByName('CPF').AsString := leCPF.Text;
-        ParamByName('RG').AsString := leRG.Text;
-        ParamByName('Senha').AsString := hash;
-        // Senha inicial será o CPF do funcionário
+          ParamByName('Nome').AsString := leNome.Text;
+          ParamByName('Telefone').AsString := leTelefone.Text;
+          ParamByName('Email').AsString := leEmail.Text;
+          ParamByName('CEP').AsString := leCEP.Text;
+          ParamByName('Endereco').AsString := leEndereco.Text;
+          ParamByName('Numero').AsString := leNumero.Text;
+          ParamByName('Bairro').AsString := leBairro.Text;
+          ParamByName('Cidade').AsString := leCidade.Text;
+          ParamByName('UF').AsString := cbUf.Text;
+          ParamByName('Funcao').AsString := cbFuncao.Text;
+          ParamByName('CPF').AsString := leCPF.Text;
+          ParamByName('RG').AsString := leRG.Text;
+          ParamByName('Senha').AsString := hash; // Senha inicial será o CPF do funcionário
 
           if cbFuncao.Text = 'Administrador' then begin
             if MessageDlg('Tem certeza que deseja adicionar funcionário com a função de "Administrador"? Esse usuário terá acesso à todas as permissões de um administrador.',
@@ -353,9 +353,10 @@ begin
               end;
           end;
           ExecSQL;
-          DM.QueryFuncionarios.Close;
-          DM.QueryFuncionarios.Open;
-//          DM.QueryFuncionarios.Insert;
+
+          LimparCampos;
+
+          recarregarGrid;
         end;
     end;
 end;

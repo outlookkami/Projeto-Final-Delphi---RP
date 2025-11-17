@@ -22,7 +22,7 @@ object crudPedidos: TcrudPedidos
       1151
       701)
     object lblDadosPedido: TLabel
-      Left = 889
+      Left = 897
       Top = 1
       Width = 144
       Height = 25
@@ -156,7 +156,7 @@ object crudPedidos: TcrudPedidos
     end
     object DBGrid1: TDBGrid
       Left = 48
-      Top = 138
+      Top = 131
       Width = 696
       Height = 528
       Anchors = [akLeft, akTop, akRight, akBottom]
@@ -243,7 +243,6 @@ object crudPedidos: TcrudPedidos
           Expanded = False
           FieldName = 'status_pedido'
           Title.Caption = 'Status do pedido'
-          Width = 64
           Visible = True
         end
         item
@@ -361,21 +360,6 @@ object crudPedidos: TcrudPedidos
         end
         item
           Column = 0
-          Control = lblDescricaoPedido
-          Row = 14
-        end
-        item
-          Column = 0
-          Control = descPedido
-          Row = 16
-        end
-        item
-          Column = 0
-          Control = Label1
-          Row = 15
-        end
-        item
-          Column = 0
           Control = Label9
           Row = 18
         end
@@ -398,6 +382,16 @@ object crudPedidos: TcrudPedidos
           Column = 0
           Control = pnlIncluirPedido
           Row = 22
+        end
+        item
+          Column = 0
+          Control = lblDescricaoPedido
+          Row = 14
+        end
+        item
+          Column = 0
+          Control = descPedido
+          Row = 15
         end>
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
@@ -788,47 +782,13 @@ object crudPedidos: TcrudPedidos
         Top = 345
         Width = 332
         Height = 29
-        Anchors = [akTop, akBottom]
+        Anchors = [akTop]
         EditLabel.Width = 131
         EditLabel.Height = 21
         EditLabel.Caption = 'Modelo do ve'#237'culo:'
         TabOrder = 6
         Text = ''
         TextHint = 'Modelo do ve'#237'culo'
-      end
-      object lblDescricaoPedido: TLabel
-        Left = 16
-        Top = 392
-        Width = 143
-        Height = 21
-        Align = alCustom
-        Anchors = [akLeft, akTop, akRight, akBottom]
-        Caption = 'Descri'#231#227'o do Pedido:'
-      end
-      object descPedido: TMemo
-        Left = 15
-        Top = 427
-        Width = 331
-        Height = 77
-        Anchors = [akTop, akBottom]
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -13
-        Font.Name = 'Segoe UI'
-        Font.Style = []
-        Lines.Strings = (
-          '')
-        ParentFont = False
-        TabOrder = 7
-      end
-      object Label1: TLabel
-        Left = 178
-        Top = 403
-        Width = 4
-        Height = 21
-        Anchors = []
-        ExplicitLeft = 157
-        ExplicitTop = 454
       end
       object Label9: TLabel
         Left = 178
@@ -841,29 +801,31 @@ object crudPedidos: TcrudPedidos
       end
       object lblStatus: TLabel
         Left = 14
-        Top = 510
+        Top = 496
         Width = 45
         Height = 21
         Align = alCustom
-        Anchors = [akLeft, akBottom]
+        Anchors = [akLeft, akTop, akBottom]
         Caption = 'Status:'
       end
       object cbStatus: TComboBox
-        Left = 16
-        Top = 537
-        Width = 329
+        Left = 0
+        Top = 534
+        Width = 361
         Height = 29
-        Align = alCustom
+        Align = alClient
         BevelInner = bvNone
         BevelOuter = bvNone
-        Anchors = [akLeft, akBottom]
-        TabOrder = 8
+        TabOrder = 7
         Items.Strings = (
           'Or'#231'amento Pendente'
           'Or'#231'amento Realizado'
           'Or'#231'amento Aprovado'
           'Realizando Servi'#231'o'
           'Pedido Finalizado')
+        ExplicitLeft = 16
+        ExplicitTop = 523
+        ExplicitWidth = 329
       end
       object pnlFazerOrcPedido: TPanel
         Left = 183
@@ -882,11 +844,11 @@ object crudPedidos: TcrudPedidos
         Font.Style = []
         ParentBackground = False
         ParentFont = False
-        TabOrder = 9
+        TabOrder = 8
         OnClick = pnlFazerOrcPedidoClick
       end
       object pnlIncluirPedido: TPanel
-        Left = 0
+        Left = 16
         Top = 586
         Width = 161
         Height = 41
@@ -902,8 +864,34 @@ object crudPedidos: TcrudPedidos
         Font.Style = []
         ParentBackground = False
         ParentFont = False
-        TabOrder = 10
+        TabOrder = 9
         Visible = False
+      end
+      object lblDescricaoPedido: TLabel
+        Left = 16
+        Top = 380
+        Width = 156
+        Height = 21
+        Align = alCustom
+        Anchors = [akLeft, akTop, akRight, akBottom]
+        Caption = 'Descri'#231#227'o do Pedido:'
+      end
+      object descPedido: TMemo
+        Left = 15
+        Top = 401
+        Width = 331
+        Height = 89
+        Anchors = [akTop, akBottom]
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        Lines.Strings = (
+          '')
+        ParentFont = False
+        TabOrder = 10
+        ExplicitLeft = 8
       end
     end
     object btnEditPedi: TPanel

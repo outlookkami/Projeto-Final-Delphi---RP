@@ -18,15 +18,13 @@ object formCrudFunc: TformCrudFunc
     Height = 734
     Align = alClient
     TabOrder = 0
-    ExplicitWidth = 1144
-    ExplicitHeight = 717
     DesignSize = (
       1150
       734)
     object lblDadosFunc: TLabel
-      Left = 866
+      Left = 860
       Top = 21
-      Width = 176
+      Width = 182
       Height = 25
       Align = alCustom
       Alignment = taRightJustify
@@ -38,7 +36,6 @@ object formCrudFunc: TformCrudFunc
       Font.Name = 'Segoe UI'
       Font.Style = []
       ParentFont = False
-      ExplicitWidth = 182
     end
     object btnIncluirFunc: TPanel
       Left = 585
@@ -58,7 +55,6 @@ object formCrudFunc: TformCrudFunc
       ParentFont = False
       TabOrder = 2
       OnClick = btnIncluirFuncClick
-      ExplicitLeft = 579
     end
     object pnlPesquisa: TPanel
       Left = 48
@@ -71,7 +67,6 @@ object formCrudFunc: TformCrudFunc
       Color = clBtnHighlight
       ParentBackground = False
       TabOrder = 0
-      ExplicitWidth = 683
       DesignSize = (
         685
         37)
@@ -161,9 +156,9 @@ object formCrudFunc: TformCrudFunc
     end
     object DBGrid1: TDBGrid
       Left = 48
-      Top = 138
+      Top = 154
       Width = 689
-      Height = 561
+      Height = 545
       Anchors = [akLeft, akTop, akRight, akBottom]
       DataSource = DSFuncionarios
       Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
@@ -288,7 +283,6 @@ object formCrudFunc: TformCrudFunc
       ParentFont = False
       TabOrder = 3
       TextHint = 'Pesquise'
-      ExplicitWidth = 625
     end
     object gridPanelLogin: TGridPanel
       Left = 759
@@ -481,8 +475,6 @@ object formCrudFunc: TformCrudFunc
           Value = 45.000000000000000000
         end>
       TabOrder = 4
-      ExplicitLeft = 753
-      ExplicitHeight = 628
       DesignSize = (
         372
         645)
@@ -563,7 +555,6 @@ object formCrudFunc: TformCrudFunc
             Value = 100.000000000000000000
           end>
         TabOrder = 0
-        ExplicitTop = 292
         DesignSize = (
           370
           56)
@@ -638,7 +629,6 @@ object formCrudFunc: TformCrudFunc
             SizeStyle = ssAuto
           end>
         TabOrder = 1
-        ExplicitTop = 350
         DesignSize = (
           379
           56)
@@ -752,7 +742,6 @@ object formCrudFunc: TformCrudFunc
         Anchors = []
         BevelOuter = bvNone
         TabOrder = 2
-        ExplicitTop = 408
         object lblSelecionaFuncao: TLabel
           Left = 16
           Top = 3
@@ -825,7 +814,6 @@ object formCrudFunc: TformCrudFunc
         Text = ''
         TextHint = 'Informe o CEP'
         OnExit = leCEPExit
-        ExplicitTop = 199
       end
       object leEmail: TLabeledEdit
         Left = 13
@@ -839,7 +827,6 @@ object formCrudFunc: TformCrudFunc
         TabOrder = 4
         Text = ''
         TextHint = 'Digite o endere'#231'o de e-mail'
-        ExplicitTop = 141
       end
       object leTelefone: TLabeledEdit
         Left = 16
@@ -855,7 +842,6 @@ object formCrudFunc: TformCrudFunc
         TabOrder = 5
         Text = ''
         TextHint = 'Informe seu n'#250'mero de telefone'
-        ExplicitTop = 82
       end
       object leEndereco: TLabeledEdit
         Left = 14
@@ -869,7 +855,6 @@ object formCrudFunc: TformCrudFunc
         TabOrder = 6
         Text = ''
         TextHint = 'Informe o endere'#231'o'
-        ExplicitTop = 257
       end
       object leRG: TLabeledEdit
         Left = 14
@@ -885,7 +870,7 @@ object formCrudFunc: TformCrudFunc
       end
       object pnlCadastrar: TPanel
         Left = 97
-        Top = 602
+        Top = 599
         Width = 185
         Height = 40
         Cursor = crHandPoint
@@ -903,7 +888,6 @@ object formCrudFunc: TformCrudFunc
         TabOrder = 8
         Visible = False
         OnClick = pnlCadastrarClick
-        ExplicitTop = 581
       end
       object leCPF: TLabeledEdit
         Left = 16
@@ -938,7 +922,6 @@ object formCrudFunc: TformCrudFunc
         TabOrder = 10
         Visible = False
         OnClick = pnlSalvarClick
-        ExplicitTop = 586
       end
       object leNome: TLabeledEdit
         Left = 18
@@ -972,7 +955,6 @@ object formCrudFunc: TformCrudFunc
       ParentFont = False
       TabOrder = 5
       OnClick = btnEditFuncClick
-      ExplicitLeft = 421
     end
     object btnInativFunc: TPanel
       Left = 269
@@ -992,10 +974,9 @@ object formCrudFunc: TformCrudFunc
       ParentFont = False
       TabOrder = 6
       OnClick = btnInativFuncClick
-      ExplicitLeft = 263
     end
     object btnExcluFunc: TPanel
-      Left = 111
+      Left = -47
       Top = 74
       Width = 152
       Height = 43
@@ -1012,40 +993,40 @@ object formCrudFunc: TformCrudFunc
       ParentFont = False
       TabOrder = 7
       OnClick = btnExcluFuncClick
-      ExplicitLeft = 105
-    end
-    object bitbtnInativFunc: TBitBtn
-      Left = 72
-      Top = 80
-      Width = 113
-      Height = 25
-      Caption = 'Inativar Funcion'#225'rio'
-      TabOrder = 8
-      OnClick = bitbtnInativFuncClick
     end
     object bitbtnAtualizar: TBitBtn
-      Left = 152
-      Top = 112
-      Width = 75
+      Left = 585
+      Top = 123
+      Width = 152
       Height = 25
       Caption = 'Atualizar'
-      TabOrder = 9
+      TabOrder = 8
       OnClick = bitbtnAtualizarClick
     end
-    object bitbtnAtivarFunc: TBitBtn
-      Left = 320
-      Top = 107
-      Width = 107
-      Height = 25
+    object btnAtivFunc: TPanel
+      Left = 111
+      Top = 74
+      Width = 152
+      Height = 43
+      Cursor = crHandPoint
+      Anchors = [akLeft, akTop, akRight]
       Caption = 'Ativar Funcion'#225'rio'
-      TabOrder = 10
-      OnClick = bitbtnAtivarFuncClick
+      Color = clHighlight
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -13
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentBackground = False
+      ParentFont = False
+      TabOrder = 9
+      OnClick = btnAtivarFuncClick
     end
   end
   object DSFuncionarios: TDataSource
     DataSet = DM.QueryFuncionarios
-    Left = 40
-    Top = 80
+    Left = 8
+    Top = 184
   end
   object RESTClient1: TRESTClient
     Params = <>

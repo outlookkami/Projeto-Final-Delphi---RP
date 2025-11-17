@@ -46863,7 +46863,7 @@ object formLogin: TformLogin
           007440ADCBC3B93D8C000949B3D2D4FAB07A2D1184B804835FD5DD7E0F08D594
           AD29C7769DF0FF1542FD17098AE1CAD8DA74500000000049454E44AE426082}
         Stretch = True
-        ExplicitLeft = -1
+        ExplicitTop = 4
       end
     end
   end

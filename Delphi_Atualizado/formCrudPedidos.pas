@@ -46,14 +46,13 @@ type
     leCorVeiculo: TLabeledEdit;
     leMarca: TLabeledEdit;
     leModelo: TLabeledEdit;
-    lblDescricaoPedido: TLabel;
-    descPedido: TMemo;
-    Label1: TLabel;
     Label9: TLabel;
     lblStatus: TLabel;
     cbStatus: TComboBox;
     pnlFazerOrcPedido: TPanel;
     pnlIncluirPedido: TPanel;
+    lblDescricaoPedido: TLabel;
+    descPedido: TMemo;
     procedure DBGrid1CellClick(Column: TColumn);
     procedure btnIncluirPediClick(Sender: TObject);
     procedure pnlFazerOrcPedidoClick(Sender: TObject);
@@ -100,6 +99,7 @@ end;
 procedure TcrudPedidos.btnIncluirPediClick(Sender: TObject);
 begin
       pnlIncluirPedido.Visible := True;
+      pnlFazerOrcPedido.Visible := False;
 
       with DM.QueryPedidos do begin
         DM.QueryPedidos.Close;
@@ -129,7 +129,7 @@ begin
 
     with DM.QueryOrcamentos do begin
       DM.QueryOrcamentos.Open;
-      SQL.Text :=  'INSERT INTO Orcamentos (codigo_pedido, contato_cliente, nome_cliente, email_cliente, cep_cliente, placa_veiculo, marca, modelo, cor, descricao_pedido, status_orcamento) VALUES (:CodPedido, :Contato, :Nome, :Email, :CEP, :Placa, :Marca, :Modelo, :Cor, :DescPedido, :StatusOrc)';
+      SQL.Text := 'INSERT INTO Orcamentos (codigo_pedido, contato_cliente, nome_cliente, email_cliente, cep_cliente, placa_veiculo, marca, modelo, cor, descricao_pedido, status_orcamento) VALUES (:CodPedido, :Contato, :Nome, :Email, :CEP, :Placa, :Marca, :Modelo, :Cor, :DescPedido, :StatusOrc)';
       ParamByName('CodPedido').AsInteger := StrToInt(leCodPedido.Text);
       ParamByName('Contato').AsString := leContato.Text;
       ParamByName('Nome').AsString := dadosCliente.nomeCli;

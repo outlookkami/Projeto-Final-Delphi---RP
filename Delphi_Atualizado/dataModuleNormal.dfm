@@ -294,6 +294,10 @@ object DM: TDM
     object QueryProdutosdata_criacao: TSQLTimeStampField
       FieldName = 'data_criacao'
     end
+    object QueryProdutosativo_in: TBooleanField
+      FieldName = 'ativo_in'
+      Origin = 'ativo_in'
+    end
   end
   object FDTransaction1: TFDTransaction
     Connection = ConexaoBanco

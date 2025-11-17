@@ -18,15 +18,13 @@ object formCrudCli: TformCrudCli
     Height = 719
     Align = alClient
     TabOrder = 0
-    ExplicitWidth = 1162
-    ExplicitHeight = 702
     DesignSize = (
       1168
       719)
     object lblDadosCli: TLabel
-      Left = 856
+      Left = 864
       Top = 32
-      Width = 149
+      Width = 141
       Height = 25
       Align = alCustom
       Alignment = taRightJustify
@@ -57,7 +55,6 @@ object formCrudCli: TformCrudCli
       ParentFont = False
       TabOrder = 2
       OnClick = btnIncluirCliClick
-      ExplicitLeft = 597
     end
     object pnlPesquisa: TPanel
       Left = 48
@@ -70,7 +67,6 @@ object formCrudCli: TformCrudCli
       Color = clBtnHighlight
       ParentBackground = False
       TabOrder = 0
-      ExplicitWidth = 701
       DesignSize = (
         703
         37)
@@ -271,7 +267,6 @@ object formCrudCli: TformCrudCli
       ParentFont = False
       TabOrder = 3
       TextHint = 'Pesquise'
-      ExplicitWidth = 643
     end
     object gridPanelLogin: TGridPanel
       Left = 777
@@ -386,6 +381,11 @@ object formCrudCli: TformCrudCli
           Column = 0
           Control = pnlCadastraCliCrud
           Row = 19
+        end
+        item
+          Column = 0
+          Control = pnlSalvar
+          Row = 20
         end>
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
@@ -461,8 +461,6 @@ object formCrudCli: TformCrudCli
           Value = 4.545454545454532000
         end>
       TabOrder = 4
-      ExplicitLeft = 771
-      ExplicitHeight = 638
       DesignSize = (
         372
         655)
@@ -865,8 +863,8 @@ object formCrudCli: TformCrudCli
         TextHint = 'Confirme a senha padr'#227'o'
       end
       object pnlCadastraCliCrud: TPanel
-        Left = 93
-        Top = 566
+        Left = 173
+        Top = 567
         Width = 185
         Height = 41
         Cursor = crHandPoint
@@ -882,6 +880,27 @@ object formCrudCli: TformCrudCli
         ParentBackground = False
         ParentFont = False
         TabOrder = 9
+        Visible = False
+        OnClick = pnlCadastraCliCrudClick
+      end
+      object pnlSalvar: TPanel
+        Left = 13
+        Top = 565
+        Width = 154
+        Height = 41
+        Cursor = crHandPoint
+        Align = alCustom
+        Anchors = []
+        Caption = 'Salvar'
+        Color = clHighlight
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWhite
+        Font.Height = -19
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentBackground = False
+        ParentFont = False
+        TabOrder = 10
         Visible = False
         OnClick = pnlCadastraCliCrudClick
       end
@@ -904,7 +923,6 @@ object formCrudCli: TformCrudCli
       ParentFont = False
       TabOrder = 5
       OnClick = btnInativCliClick
-      ExplicitLeft = 281
     end
     object btnExcluCli: TPanel
       Left = 129
@@ -924,7 +942,6 @@ object formCrudCli: TformCrudCli
       ParentFont = False
       TabOrder = 6
       OnClick = btnExcluCliClick
-      ExplicitLeft = 123
     end
     object btnEditCli: TPanel
       Left = 445
@@ -944,7 +961,6 @@ object formCrudCli: TformCrudCli
       ParentFont = False
       TabOrder = 7
       OnClick = btnEditCliClick
-      ExplicitLeft = 439
     end
   end
   object DSCliente: TDataSource

@@ -19,8 +19,6 @@ object crudOrcamentos: TcrudOrcamentos
     Height = 701
     Align = alClient
     TabOrder = 0
-    ExplicitWidth = 1144
-    ExplicitHeight = 684
     DesignSize = (
       1150
       701)
@@ -41,7 +39,6 @@ object crudOrcamentos: TcrudOrcamentos
       ParentBackground = False
       ParentFont = False
       TabOrder = 1
-      ExplicitLeft = 579
     end
     object pnlPesquisa: TPanel
       Left = 48
@@ -54,7 +51,6 @@ object crudOrcamentos: TcrudOrcamentos
       Color = clBtnHighlight
       ParentBackground = False
       TabOrder = 0
-      ExplicitWidth = 683
       DesignSize = (
         685
         37)
@@ -157,7 +153,6 @@ object crudOrcamentos: TcrudOrcamentos
       ParentFont = False
       TabOrder = 2
       TextHint = 'Pesquise'
-      ExplicitWidth = 625
     end
     object btnEditOrc: TPanel
       Left = 427
@@ -176,7 +171,6 @@ object crudOrcamentos: TcrudOrcamentos
       ParentBackground = False
       ParentFont = False
       TabOrder = 3
-      ExplicitLeft = 421
     end
     object btnExcluOrc: TPanel
       Left = 269
@@ -195,7 +189,6 @@ object crudOrcamentos: TcrudOrcamentos
       ParentBackground = False
       ParentFont = False
       TabOrder = 4
-      ExplicitLeft = 263
     end
     object tabelas: TPageControl
       Left = 56
@@ -205,8 +198,6 @@ object crudOrcamentos: TcrudOrcamentos
       ActivePage = TabSheet1
       Anchors = [akLeft, akTop, akRight, akBottom]
       TabOrder = 5
-      ExplicitWidth = 683
-      ExplicitHeight = 543
       object TabSheet1: TTabSheet
         Caption = 'Or'#231'amentos'
         ImageIndex = 1
@@ -697,8 +688,6 @@ object crudOrcamentos: TcrudOrcamentos
           SizeStyle = ssAuto
         end>
       TabOrder = 6
-      ExplicitLeft = 745
-      ExplicitHeight = 630
       DesignSize = (
         361
         647)
@@ -1030,7 +1019,7 @@ object crudOrcamentos: TcrudOrcamentos
         Height = 41
         Cursor = crHandPoint
         Align = alCustom
-        Anchors = [akBottom]
+        Anchors = [akTop, akBottom]
         Caption = 'Fazer Or'#231'amento'
         Color = clHighlight
         Font.Charset = DEFAULT_CHARSET
@@ -1051,7 +1040,7 @@ object crudOrcamentos: TcrudOrcamentos
         Height = 41
         Cursor = crHandPoint
         Align = alCustom
-        Anchors = [akBottom]
+        Anchors = [akTop, akBottom]
         Caption = 'Incluir Or'#231'amento'
         Color = clHighlight
         Font.Charset = DEFAULT_CHARSET
@@ -1155,7 +1144,7 @@ object crudOrcamentos: TcrudOrcamentos
         Width = 334
         Height = 81
         Align = alCustom
-        Anchors = [akLeft, akTop, akBottom]
+        Anchors = [akLeft]
         Lines.Strings = (
           'descServico')
         TabOrder = 6
@@ -1186,11 +1175,12 @@ object crudOrcamentos: TcrudOrcamentos
         ExplicitLeft = 153
       end
       object GridPanel4: TGridPanel
-        Left = 7
-        Top = 166
+        Left = 0
+        Top = 170
         Width = 347
         Height = 59
         Align = alCustom
+        Anchors = [akLeft, akTop, akBottom]
         BevelOuter = bvNone
         ColumnCollection = <
           item
@@ -1230,7 +1220,7 @@ object crudOrcamentos: TcrudOrcamentos
           Top = 27
           Width = 157
           Height = 29
-          Anchors = []
+          Anchors = [akTop, akBottom]
           EditLabel.Width = 81
           EditLabel.Height = 21
           EditLabel.Caption = 'Cor ve'#237'culo:'
@@ -1243,7 +1233,7 @@ object crudOrcamentos: TcrudOrcamentos
           Top = 27
           Width = 165
           Height = 29
-          Anchors = []
+          Anchors = [akTop, akBottom]
           EditLabel.Width = 131
           EditLabel.Height = 21
           EditLabel.Caption = 'Modelo do ve'#237'culo:'

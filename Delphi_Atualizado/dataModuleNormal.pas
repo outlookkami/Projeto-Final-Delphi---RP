@@ -115,6 +115,7 @@ type
     QueryPedidosRelcodigo_pedido: TIntegerField;
     QueryPedidosReldata_pedido: TSQLTimeStampField;
     QueryPedidosRelstatus_pedido: TStringField;
+    QueryProdutosativo_in: TBooleanField;
 
   private
     { Private declarations }

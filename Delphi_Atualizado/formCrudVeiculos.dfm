@@ -347,13 +347,18 @@ object CrudVeiculos: TCrudVeiculos
         end
         item
           Column = 0
-          Control = leRG
+          Control = leContato
           Row = 18
         end
         item
           Column = 0
           Control = pnlCadastrar
           Row = 19
+        end
+        item
+          Column = 0
+          Control = pnlSalvar
+          Row = 20
         end>
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
@@ -707,21 +712,12 @@ object CrudVeiculos: TCrudVeiculos
           Font.Style = []
           ParentFont = False
         end
-        object cbDonoCli: TComboBox
+        object edtEmailCli: TEdit
           Left = 16
           Top = 30
           Width = 345
           Height = 29
-          BevelInner = bvNone
-          BevelOuter = bvNone
           TabOrder = 0
-          Text = 'Selecione o dono ou cliente'
-          TextHint = 'Selecione o dono ou cliente'
-          Items.Strings = (
-            'Funileiro'
-            'Montador/Desmontador'
-            'Pintor Automotivo'
-            'Preparador de pintura')
         end
       end
       object Label9: TLabel
@@ -828,15 +824,15 @@ object CrudVeiculos: TCrudVeiculos
         TabOrder = 8
         Text = ''
       end
-      object leRG: TLabeledEdit
+      object leContato: TLabeledEdit
         Left = 13
         Top = 534
         Width = 346
         Height = 29
         Anchors = []
-        EditLabel.Width = 24
+        EditLabel.Width = 129
         EditLabel.Height = 21
-        EditLabel.Caption = 'RG:'
+        EditLabel.Caption = 'Contato do cliente:'
         TabOrder = 9
         Text = ''
       end
@@ -859,6 +855,27 @@ object CrudVeiculos: TCrudVeiculos
         ParentFont = False
         TabOrder = 10
         Visible = False
+        OnClick = pnlCadastrarClick
+      end
+      object pnlSalvar: TPanel
+        Left = 93
+        Top = 569
+        Width = 185
+        Height = 41
+        Cursor = crHandPoint
+        Align = alCustom
+        Anchors = []
+        Caption = 'Salvar'
+        Color = clHighlight
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWhite
+        Font.Height = -19
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentBackground = False
+        ParentFont = False
+        TabOrder = 11
+        Visible = False
       end
     end
     object btnEditVeic: TPanel
@@ -878,9 +895,10 @@ object CrudVeiculos: TCrudVeiculos
       ParentBackground = False
       ParentFont = False
       TabOrder = 5
+      OnClick = btnEditVeicClick
     end
     object btnInativVeic: TPanel
-      Left = 275
+      Left = 117
       Top = 74
       Width = 152
       Height = 43
@@ -897,9 +915,10 @@ object CrudVeiculos: TCrudVeiculos
       ParentFont = False
       TabOrder = 6
       Visible = False
+      OnClick = btnInativVeicClick
     end
     object btnExcluVeic: TPanel
-      Left = 117
+      Left = 275
       Top = 74
       Width = 152
       Height = 43
@@ -916,11 +935,30 @@ object CrudVeiculos: TCrudVeiculos
       ParentFont = False
       TabOrder = 7
     end
+    object btnAtivVeic: TPanel
+      Left = -41
+      Top = 74
+      Width = 152
+      Height = 43
+      Cursor = crHandPoint
+      Anchors = [akTop, akRight]
+      Caption = 'Ativar Ve'#237'culo'
+      Color = clHighlight
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -13
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentBackground = False
+      ParentFont = False
+      TabOrder = 8
+      Visible = False
+    end
   end
   object DSVeiculos: TDataSource
     DataSet = DM.QueryVeiculos
-    Left = 24
-    Top = 80
+    Left = 8
+    Top = 208
   end
   object RESTClient1: TRESTClient
     Params = <>

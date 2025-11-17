@@ -35,7 +35,6 @@ type
     cbUF: TComboBox;
     pnlSelecionaFuncao: TPanel;
     lblSelecionaFuncao: TLabel;
-    cbDonoCli: TComboBox;
     Label9: TLabel;
     Label8: TLabel;
     Label10: TLabel;
@@ -45,7 +44,7 @@ type
     lePlaca: TLabeledEdit;
     leCor: TLabeledEdit;
     leCodigoVeiculo: TLabeledEdit;
-    leRG: TLabeledEdit;
+    leContato: TLabeledEdit;
     pnlCadastrar: TPanel;
     btnEditVeic: TPanel;
     btnInativVeic: TPanel;
@@ -54,8 +53,16 @@ type
     RESTClient1: TRESTClient;
     RESTRequest1: TRESTRequest;
     RESTResponse1: TRESTResponse;
+    btnAtivVeic: TPanel;
+    edtEmailCli: TEdit;
+    pnlSalvar: TPanel;
     procedure DBGrid1CellClick(Column: TColumn);
     procedure btnIncluirVeicClick(Sender: TObject);
+    procedure recarregarGrid;
+    procedure LimparCampos;
+    procedure pnlCadastrarClick(Sender: TObject);
+    procedure btnEditVeicClick(Sender: TObject);
+    procedure btnInativVeicClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -70,10 +77,11 @@ implementation
 
 {$R *.dfm}
 
-
+var codigoVeiculo: String;
 
 procedure TCrudVeiculos.DBGrid1CellClick(Column: TColumn);
-var codigoVeiculo: String;
+// Mostrar dados nos campos do formulário lateral
+
 begin
     codigoVeiculo :=  DBGrid1.Fields[0].Value;
 
@@ -93,24 +101,94 @@ begin
     end;
 end;
 
-// Mostrar dados nos campos do formulário lateral
-procedure TcrudVeiculos.btnIncluirVeicClick(Sender: TObject);
+procedure TcrudVeiculos.recarregarGrid;
+// Abre e fecha a Query
 begin
-      with DM.QueryPedidos do begin
-        DM.QueryPedidos.Close;
-        DM.QueryPedidos.Open;
-        SQL.Text := 'INSERT INTO Veiculos (placa_veiculo, chassi, modelo, marca, cor, ano_fab, ano_mod) VALUES (:Placa, :Chassi, :Modelo, :Marca, :Cor, :AnoFab, :AnoMod);';
-        // Informações que o banco requere mas que provavelmente serão excluídas:
-        //nome_usuario_cliente, nome_cliente, codigo_cliente
+    with DM.QueryVeiculos do begin
+      Close;
+      SQL.Text := 'SELECT * FROM Veiculos ORDER BY codigo_veiculo';
+      Open;
+    end;
+end;
 
-        ParamByName('Placa').AsString := lePlaca.Text;
-        ParamByName('Chassi').AsString := leChassi.Text;
-        ParamByName('Modelo').AsString := leModelo.Text;
-        ParamByName('Marca').AsString := leMarca.Text;
-        ParamByName('Cor').AsString := leCor.Text;
-        ParamByName('AnoFab').AsString := leAnoFab.Text;
-        ParamByName('AnoMod').AsString := leAnoMod.Text;
+procedure TcrudVeiculos.LimparCampos;
+// Limpar campos do formulário lateral
+begin
+    lePlaca.Clear;
+    leChassi.Clear;
+    leModelo.Clear;
+    leMarca.Clear;
+    leCor.Clear;
+    leAnoFab.Clear;
+    leAnoMod.Clear;
+    leCidade.Clear;
+    edtEmailCli.Clear;
+    leCodigoVeiculo.Clear;
+    leContato.Clear;
+    cbUF.ItemIndex:= -1;
+end;
+
+procedure TCrudVeiculos.pnlCadastrarClick(Sender: TObject);
+begin
+    with DM.QueryVeiculos do begin
+      DM.QueryVeiculos.Close;
+      DM.QueryVeiculos.Open;
+      SQL.Text := 'INSERT INTO Veiculos (placa_veiculo, chassi, modelo, marca, cor, ano_fab, ano_mod, nome_usuario_cliente, contato_cliente) VALUES (:Placa, :Chassi, :Modelo, :Marca, :Cor, :AnoFab, :AnoMod, :UserCli, :ContatoCli);';
+
+      ParamByName('Placa').AsString := lePlaca.Text;
+      ParamByName('Chassi').AsString := leChassi.Text;
+      ParamByName('Modelo').AsString := leModelo.Text;
+      ParamByName('Marca').AsString := leMarca.Text;
+      ParamByName('Cor').AsString := leCor.Text;
+      ParamByName('AnoFab').AsString := leAnoFab.Text;
+      ParamByName('AnoMod').AsString := leAnoMod.Text;
+      ParamByName('UserCli').AsString := edtEmailCli.Text;
+      ParamByName('ContatoCli').AsString := leContato.Text;
       end;
 end;
+
+procedure TCrudVeiculos.btnEditVeicClick(Sender: TObject);
+// Editar Veículo
+begin
+    pnlCadastrar.Visible := False;
+    pnlSalvar.Visible := True;
+
+    if not DM.QueryVeiculos.Active then begin
+      DM.QueryVeiculos.Open;
+    end else if DM.QueryVeiculos.Active and not (DM.QueryVeiculos.State in [dsInsert, dsEdit]) then begin
+      DM.QueryVeiculos.Edit;
+    end else begin
+      ShowMessage('Não foi possível acessar os dados do veículo para edição.');
+    end;
+end;
+
+procedure TCrudVeiculos.btnInativVeicClick(Sender: TObject);
+// Inativar Veículo
+begin
+    DM.QueryVeiculos.Close;
+    DM.QueryVeiculos.SQL.Text := 'UPDATE Veiculos SET ativo_in = false WHERE codigo_veiculo = :codVeic';
+    DM.QueryVeiculos.ParamByName('codVeic').AsInteger := StrToInt(codigoVeiculo);
+    DM.QueryVeiculos.ExecSQL;
+
+    recarregarGrid;
+end;
+
+procedure TcrudVeiculos.btnIncluirVeicClick(Sender: TObject);
+// Abrir inclusão Veículo
+begin
+    pnlSalvar.Visible := False;
+    pnlCadastrar.Visible := True;
+    DM.QueryVeiculos.Close;
+
+    DM.QueryVeiculos.Open;
+    LimparCampos;
+    if not (DM.QueryVeiculos.State in [dsInsert, dsEdit]) then begin
+      DM.QueryVeiculos.Insert;
+    end;
+
+    recarregarGrid;
+end;
+
+
 
 end.

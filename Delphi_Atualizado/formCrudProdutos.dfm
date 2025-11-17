@@ -3,7 +3,7 @@ object formProdutos: TformProdutos
   Top = 0
   Caption = 'Crud Produtos'
   ClientHeight = 719
-  ClientWidth = 1168
+  ClientWidth = 1177
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -14,18 +14,19 @@ object formProdutos: TformProdutos
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 1168
+    Width = 1177
     Height = 719
     Align = alClient
     TabOrder = 0
+    ExplicitWidth = 1168
     DesignSize = (
-      1168
+      1177
       719)
     object lblDadosProd: TLabel
-      Left = 898
-      Top = 25
-      Width = 153
-      Height = 25
+      Left = 906
+      Top = 32
+      Width = 162
+      Height = 26
       Align = alCustom
       Alignment = taRightJustify
       Anchors = [akLeft, akTop, akRight, akBottom]
@@ -38,7 +39,7 @@ object formProdutos: TformProdutos
       ParentFont = False
     end
     object btnIncluirProd: TPanel
-      Left = 609
+      Left = 618
       Top = 74
       Width = 152
       Height = 43
@@ -54,11 +55,13 @@ object formProdutos: TformProdutos
       ParentBackground = False
       ParentFont = False
       TabOrder = 2
+      OnClick = btnIncluirProdClick
+      ExplicitLeft = 609
     end
     object pnlPesquisa: TPanel
       Left = 48
       Top = 27
-      Width = 713
+      Width = 722
       Height = 41
       Anchors = [akLeft, akTop, akRight]
       BevelKind = bkFlat
@@ -66,11 +69,12 @@ object formProdutos: TformProdutos
       Color = clBtnHighlight
       ParentBackground = False
       TabOrder = 0
+      ExplicitWidth = 713
       DesignSize = (
-        709
+        718
         37)
       object iconePesquisa: TImage
-        Left = 667
+        Left = 676
         Top = -2
         Width = 34
         Height = 41
@@ -156,7 +160,7 @@ object formProdutos: TformProdutos
     object DBGrid1: TDBGrid
       Left = 48
       Top = 137
-      Width = 713
+      Width = 722
       Height = 546
       Anchors = [akLeft, akTop, akRight, akBottom]
       DataSource = DSProdutos
@@ -247,7 +251,7 @@ object formProdutos: TformProdutos
     object edtPesquisa: TEdit
       Left = 56
       Top = 32
-      Width = 655
+      Width = 664
       Height = 28
       Anchors = [akLeft, akTop, akRight]
       BorderStyle = bsNone
@@ -259,9 +263,10 @@ object formProdutos: TformProdutos
       ParentFont = False
       TabOrder = 3
       TextHint = 'Pesquise'
+      ExplicitWidth = 655
     end
     object gridPanelLogin: TGridPanel
-      Left = 783
+      Left = 792
       Top = 64
       Width = 372
       Height = 655
@@ -336,11 +341,6 @@ object formProdutos: TformProdutos
         end
         item
           Column = 0
-          Control = Label10
-          Row = 18
-        end
-        item
-          Column = 0
           Control = leMarcaProd
           Row = 7
         end
@@ -363,6 +363,16 @@ object formProdutos: TformProdutos
           Column = 0
           Control = leUnidade
           Row = 9
+        end
+        item
+          Column = 0
+          Control = Label1
+          Row = 17
+        end
+        item
+          Column = 0
+          Control = GridPanel1
+          Row = 18
         end>
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
@@ -708,6 +718,10 @@ object formProdutos: TformProdutos
           Height = 29
           TabOrder = 0
           TextHint = 'Selecione a categoria'
+          Items.Strings = (
+            'Lixas e Abrasivos'
+            'Tintas e Vernizes'
+            'Reparo e Acabamento')
         end
       end
       object Label9: TLabel
@@ -727,15 +741,6 @@ object formProdutos: TformProdutos
         Anchors = []
         ExplicitLeft = 202
         ExplicitTop = 411
-      end
-      object Label10: TLabel
-        Left = 184
-        Top = 540
-        Width = 4
-        Height = 21
-        Anchors = []
-        ExplicitLeft = 198
-        ExplicitTop = 520
       end
       object leMarcaProd: TLabeledEdit
         Left = 14
@@ -802,9 +807,89 @@ object formProdutos: TformProdutos
         Text = ''
         TextHint = 'Informe a unidade de medida L, Kg, ml etc.'
       end
+      object Label1: TLabel
+        Left = 184
+        Top = 510
+        Width = 4
+        Height = 21
+        Anchors = []
+        ExplicitLeft = 163
+      end
+      object GridPanel1: TGridPanel
+        Left = 0
+        Top = 536
+        Width = 372
+        Height = 57
+        Align = alCustom
+        Anchors = [akLeft, akBottom]
+        ColumnCollection = <
+          item
+            Value = 50.000000000000000000
+          end
+          item
+            Value = 50.000000000000000000
+          end>
+        ControlCollection = <
+          item
+            Column = 0
+            Control = pnlSalvar
+            Row = 0
+          end
+          item
+            Column = 1
+            Control = pnlIncluirProd
+            Row = 0
+          end>
+        RowCollection = <
+          item
+            Value = 100.000000000000000000
+          end>
+        TabOrder = 8
+        object pnlSalvar: TPanel
+          Left = 1
+          Top = 9
+          Width = 185
+          Height = 41
+          Cursor = crHandPoint
+          Align = alCustom
+          Anchors = []
+          Caption = 'Salvar'
+          Color = clHighlight
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWhite
+          Font.Height = -19
+          Font.Name = 'Segoe UI'
+          Font.Style = []
+          ParentBackground = False
+          ParentFont = False
+          TabOrder = 0
+          Visible = False
+        end
+        object pnlIncluirProd: TPanel
+          Left = 184
+          Top = 9
+          Width = 185
+          Height = 41
+          Cursor = crHandPoint
+          Align = alCustom
+          Anchors = []
+          Caption = 'Incluir'
+          Color = clHighlight
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWhite
+          Font.Height = -19
+          Font.Name = 'Segoe UI'
+          Font.Style = []
+          ParentBackground = False
+          ParentFont = False
+          TabOrder = 1
+          Visible = False
+          OnClick = pnlIncluirProdClick
+        end
+      end
     end
     object btnInativProd: TPanel
-      Left = 293
+      Left = 144
       Top = 74
       Width = 152
       Height = 43
@@ -820,9 +905,10 @@ object formProdutos: TformProdutos
       ParentBackground = False
       ParentFont = False
       TabOrder = 5
+      OnClick = btnInativProdClick
     end
     object btnExcluirProduto: TPanel
-      Left = 135
+      Left = 302
       Top = 74
       Width = 152
       Height = 43
@@ -838,15 +924,16 @@ object formProdutos: TformProdutos
       ParentBackground = False
       ParentFont = False
       TabOrder = 6
+      OnClick = btnExcluirProdutoClick
     end
-    object btnEditVeic: TPanel
-      Left = 451
+    object btnEditProd: TPanel
+      Left = 460
       Top = 74
       Width = 152
       Height = 43
       Cursor = crHandPoint
       Anchors = [akTop, akRight]
-      Caption = 'Editar Ve'#237'culo'
+      Caption = 'Editar Produto'
       Color = clHighlight
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWhite
@@ -856,11 +943,32 @@ object formProdutos: TformProdutos
       ParentBackground = False
       ParentFont = False
       TabOrder = 7
+      OnClick = btnEditProdClick
+      ExplicitLeft = 451
+    end
+    object btnAtivProd: TPanel
+      Left = -14
+      Top = 74
+      Width = 152
+      Height = 43
+      Cursor = crHandPoint
+      Anchors = [akTop, akRight]
+      Caption = 'Ativar Produto'
+      Color = clHighlight
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -13
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentBackground = False
+      ParentFont = False
+      TabOrder = 8
+      OnClick = btnAtivProdClick
     end
   end
   object DSProdutos: TDataSource
     DataSet = DM.QueryProdutos
-    Left = 24
-    Top = 72
+    Left = 8
+    Top = 216
   end
 end

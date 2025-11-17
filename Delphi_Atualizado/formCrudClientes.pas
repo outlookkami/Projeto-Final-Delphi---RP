@@ -52,6 +52,7 @@ type
     RESTResponse1: TRESTResponse;
     RESTClient1: TRESTClient;
     pnlCadastraCliCrud: TPanel;
+    pnlSalvar: TPanel;
     procedure leCEPExit(Sender: TObject);
     procedure pnlCadastraCliCrudClick(Sender: TObject);
     procedure btnIncluirCliClick(Sender: TObject);
@@ -59,6 +60,7 @@ type
     procedure btnInativCliClick(Sender: TObject);
     procedure btnExcluCliClick(Sender: TObject);
     procedure recarregarGrid;
+    procedure LimparCampos;
     procedure btnEditCliClick(Sender: TObject);
   private
     { Private declarations }
@@ -99,17 +101,36 @@ begin
     cbUF.Text := DM.QueryClientes.FieldByName('uf').AsString;
 end;
 
+procedure TformCrudCli.LimparCampos;
+begin
+// Limpar campos do formulário lateral
+
+    leNome.Clear;
+    leTelefone.Clear;
+    leEmail.Clear;
+    leCEP.Clear;
+    leEndereco.Clear;
+    leNumero.Clear;
+    leBairro.Clear;
+    leCidade.Clear;
+    leSenha.Clear;
+    leConfSenha.Clear;
+    cbUF.ItemIndex:= -1;
+
+end;
+
+
 procedure TformCrudCli.recarregarGrid;
 begin
     with DM.QueryClientes do begin
       Close;
-      SQL.Text := 'SELECT * FROM “Funcionarios” ORDER BY nome_funcionario';
+      SQL.Text := 'SELECT * FROM "Clientes" ORDER BY nome_cliente';
       Open;
     end;
 end;
 
 procedure TformCrudCli.btnIncluirCliClick(Sender: TObject);
-// Incluir Cliente
+// Abrir inclusão de Cliente
 begin
     btnExcluCli.Enabled := False;
     btnInativCli.Enabled := False;
@@ -123,15 +144,16 @@ end;
 procedure TformCrudCli.btnEditCliClick(Sender: TObject);
 // Editar Cliente
 begin
-    pnlCadastrar.Visible := False;
+    pnlCadastraCliCrud.Visible := False;
     pnlSalvar.Visible := True;
 
-    if not DM.QueryClientes.Active then
-    DM.QueryClientes.Open;
-    if DM.QueryClientes.Active then
-    DM.QueryClientes.Edit;
-    else
-    ShowMessage(‘Não foi possível acessar os dados do cliente para edição.’);
+    if not DM.QueryClientes.Active then begin
+      DM.QueryClientes.Open;
+    end else if DM.QueryClientes.Active then begin
+      DM.QueryClientes.Edit;
+    end else begin
+      ShowMessage('Não foi possível acessar os dados do cliente para edição.');
+    end;
 
 end;
 
@@ -141,10 +163,10 @@ begin
     if (DM.QueryClientes.FieldByName('ativo_in').AsBoolean = True) then begin
       ShowMessage('O cliente deve estar inativo antes de ser excluído.');
     end else if
-     MessageDlg(‘Tem certeza de que deseja excluir o cliente? Essa ação não poderá ser revertida’, mtConfirmation, [mbYes, mbNo], 0) = mrYes begin
+     MessageDlg('Tem certeza de que deseja excluir o cliente? Essa ação não poderá ser revertida', mtConfirmation, [mbYes, mbNo], 0) = mrYes then begin
       DM.QueryClientes.Close;
-      DM.QueryClientes.SQL.Text := ‘DELETE FROM “Clientes” WHERE codigo_cliente = :codCli’;
-      DM.QueryClientes.ParamByName(‘codCli’).AsInteger := StrToInt(codigoCliente);
+      DM.QueryClientes.SQL.Text := 'DELETE FROM "Clientes" WHERE codigo_cliente = :codCli';
+      DM.QueryClientes.ParamByName('codCli').AsInteger := StrToInt(codigoCliente);
       DM.QueryClientes.ExecSQL;
 
       recarregarGrid;
