@@ -70,6 +70,7 @@ type
     procedure DBGrid1CellClick(Column: TColumn);
     procedure pnlSalvarClick(Sender: TObject);
     procedure LimparCampos;
+    procedure recarregarGrid;
     procedure bitbtnInativFuncClick(Sender: TObject);
     procedure bitbtnAtualizarClick(Sender: TObject);
     procedure bitbtnAtivarFuncClick(Sender: TObject);
@@ -130,17 +131,24 @@ begin
     leRG.Clear;
 end;
 
+procedure TformCrudFunc.recarregarGrid;
+begin
+with DM.QueryFuncionarios do begin
+      Close;
+      SQL.Text := 'SELECT * FROM “Funcionarios” ORDER BY nome_funcionario';
+      Open;
+    end;
+end;
 
 procedure TformCrudFunc.bitbtnAtivarFuncClick(Sender: TObject);
 begin
-    DM.QueryFuncionarios.Open;
-    DM.QueryFuncionarios.SQL.Text := 'UPDATE "Funcionarios" SET ativo_in = :boolAtivo WHERE codigo_funcionario = :codFunc';
-    DM.QueryFuncionarios.ParamByName('boolAtivo').AsBoolean := True;
+    DM.QueryFuncionarios.Close;
+    DM.QueryFuncionarios.SQL.Text := 'UPDATE "Funcionarios" SET ativo_in = true WHERE codigo_funcionario = :codFunc';
     DM.QueryFuncionarios.ParamByName('codFunc').AsInteger := StrToInt(codigoFuncionario);
     DM.QueryFuncionarios.ExecSQL;
-    DM.QueryFuncionarios.Post;
-    DM.QueryFuncionarios.Open;
-    DM.QueryFuncionarios.Close;
+
+    recarregarGrid;
+
 end;
 
 procedure TformCrudFunc.bitbtnAtualizarClick(Sender: TObject);
@@ -193,28 +201,22 @@ end;
 procedure TformCrudFunc.btnEditFuncClick(Sender: TObject);
 //Editar Funcionário
 begin
+
+//    DM.QueryFuncionarios.Open;
+//    if (DM.QueryFuncionarios.State in [dsInsert, dsEdit]) then
+//    DM.QueryFuncionarios.Edit;
+//    DM.QueryFuncionarios.Close;
+
     pnlCadastrar.Visible := False;
     pnlSalvar.Visible := True;
 
-//    if (DM.QueryFuncionarios.FieldByName('ativo_in') = False) begin
-//        if MessageDlg('Funcionário deve estar ativo para realizar edição! Deseja tornar o funcionário ativo?',
-//              mtConfirmation, [mbYes, mbNo], 0) = mrYes then DM.QueryFuncionarios.SQL.Text := 'UPDATE "Funcionarios" SET ativo_in = :boolAtivo WHERE codigo_funcionario = :codFunc';
-//              ParamByName('boolAtivo').AsBoolean := False;
-//              ParamByName('codFunc').AsInteger := StrToInt(codigoFuncionario);
-//      end;
-
-//    with DM.QueryFuncionarios do begin
-//    Open;
-//
-//
-//
-//
-//    ExecSQL;
-//    end;
+    if not DM.QueryFuncionarios.Active then begin
     DM.QueryFuncionarios.Open;
-    if (DM.QueryFuncionarios.State in [dsInsert, dsEdit]) then
+    end else if DM.QueryFuncionarios.Active then begin
     DM.QueryFuncionarios.Edit;
-    DM.QueryFuncionarios.Close;
+    end else begin
+    ShowMessage(‘Não foi possível acessar os dados do funcionário para edição.’);
+    end;
 end;
 
 
@@ -222,33 +224,42 @@ procedure TformCrudFunc.pnlSalvarClick(Sender: TObject);
 // Salvar
 begin
     if not (DM.QueryFuncionarios.State in [dsInsert, dsEdit]) then
-    DM.QueryFuncionarios.Open;
     DM.QueryFuncionarios.Post;
-    DM.QueryFuncionarios.Close;
-    DM.QueryFuncionarios.Open;
+
+    recarregarGrid;
+
 end;
 
 
 procedure TformCrudFunc.btnInativFuncClick(Sender: TObject);
 // Inativar funcionário
 begin
-    DM.QueryFuncionarios.SQL.Text := 'UPDATE "Funcionarios" SET ativo_in = :boolAtivo WHERE codigo_funcionario = :codFunc';
-    DM.QueryFuncionarios.ParamByName('boolAtivo').AsBoolean := False;
+    DM.QueryFuncionarios.Close;
+    DM.QueryFuncionarios.SQL.Text := 'UPDATE "Funcionarios" SET ativo_in = false WHERE codigo_funcionario = :codFunc';
     DM.QueryFuncionarios.ParamByName('codFunc').AsInteger := StrToInt(codigoFuncionario);
     DM.QueryFuncionarios.ExecSQL;
+
+    recarregarGrid;
 end;
 
 
 procedure TformCrudFunc.btnExcluFuncClick(Sender: TObject);
 // Excluir funcionário
 begin
+
     if (DM.QueryFuncionarios.FieldByName('ativo_in').AsBoolean = True) then begin
       ShowMessage('O funcionário deve estar inativo antes de ser excluído.');
     end else begin
-     if MessageDlg('Tem certeza de que deseja excluir o funcionário? Essa ação não poderá ser revertida.', mtConfirmation, [mbYes, mbNo], 0) = mrYes then DM.QueryFuncionarios.Delete;;
+     if MessageDlg('Tem certeza de que deseja excluir o funcionário? Essa ação não poderá ser revertida.', mtConfirmation, [mbYes, mbNo], 0) = mrYes then
+    DM.QueryFuncionarios.Close;
+    DM.QueryFuncionarios.SQL.Text := ‘DELETE FROM “Funcionarios” WHERE codigo_funcionario = :codFunc’;
+    DM.QueryFuncionarios.ParamByName(‘codFunc’).AsInteger := StrToInt(codigoFuncionario);
+    DM.QueryFuncionarios.ExecSQL;
+    recarregarGrid;
     end;
-    DM.QueryFuncionarios.Open;
 end;
+
+
 
 
 procedure TformCrudFunc.SenhaFunc;

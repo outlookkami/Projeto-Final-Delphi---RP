@@ -1,29 +1,8 @@
-﻿[Label3]
-Coordinates=73,586,53,58
-
-[pnlIncluirOrc]
-Coordinates=645,430,87,58
-
-[GridPanel3]
-Coordinates=73,654,79,58
-
-[DM.QueryPedidos]
+﻿[DM.QueryPedidos]
 Coordinates=573,10,119,344
-
-[Label2]
-Coordinates=1238,654,53,58
-
-[Label9]
-Coordinates=1175,654,53,58
 
 [DM.QueryClientes]
 Coordinates=443,10,120,366
-
-[leCodPedido]
-Coordinates=837,430,88,58
-
-[Label7]
-Coordinates=1211,586,53,58
 
 [DM.FDMemTable1]
 Coordinates=1016,586,122,58
@@ -31,47 +10,17 @@ Coordinates=1016,586,122,58
 [Panel1]
 Coordinates=244,586,55,58
 
-[pnlFazerOrcPedido]
-Coordinates=510,430,125,58
-
 [edtPesquisa]
 Coordinates=1080,654,85,58
 
 [DM.QueryClientesLogin]
 Coordinates=744,586,151,58
 
-[leCor]
-Coordinates=162,654,45,58
-
-[leCodigoCli]
-Coordinates=1208,430,81,58
-
-[descServico]
-Coordinates=908,654,85,58
-
-[Label12]
-Coordinates=674,586,60,58
-
-[Label5]
-Coordinates=10,586,53,58
-
 [btnExcluOrc]
 Coordinates=217,654,85,58
 
-[lblStatus]
-Coordinates=834,654,64,58
-
-[GridPanel4]
-Coordinates=1119,430,79,58
-
 [DSOrcamentos]
 Coordinates=34,396,102,36
-
-[Label11]
-Coordinates=589,654,60,58
-
-[lePlaca]
-Coordinates=398,586,57,58
 
 [iconePesquisa]
 Coordinates=136,586,98,58
@@ -79,14 +28,8 @@ Coordinates=136,586,98,58
 [pnlPesquisa]
 Coordinates=742,430,85,58
 
-[GridPanel1]
-Coordinates=309,586,79,58
-
 [DM.QueryProdutos]
 Coordinates=966,10,124,300
-
-[leModelo]
-Coordinates=1003,654,67,58
 
 [FormPedido.DSPedido]
 Coordinates=517,309,146,36
@@ -94,20 +37,11 @@ Coordinates=517,309,146,36
 [DM.QueryUsuarios]
 Coordinates=1100,10,125,190
 
-[GridPanel2]
-Coordinates=242,722,79,58
-
-[gridPanelLogin]
-Coordinates=465,586,101,58
-
 [DM.QueryVeiculos]
 Coordinates=828,10,128,300
 
 [btnIncluirOrc]
 Coordinates=576,586,88,58
-
-[Label6]
-Coordinates=771,654,53,58
 
 [btnEditOrc]
 Coordinates=935,430,75,58
@@ -121,31 +55,10 @@ Coordinates=163,10,147,410
 [DM.QueryPerfil]
 Coordinates=406,654,103,58
 
-[Label4]
-Coordinates=1148,586,53,58
-
-[lblDescricaoServico]
-Coordinates=104,722,128,58
-
-[cbStatus]
-Coordinates=124,430,101,124
-
-[Label1]
-Coordinates=10,654,53,58
-
-[Label8]
-Coordinates=447,430,53,58
-
 [DM.QueryLogin]
 Coordinates=10,430,104,146
 
-[leMarca]
-Coordinates=519,654,60,58
-
 []
-Coordinates=348,430,89,80
-
-[strgridMateriais]
-Coordinates=1020,430,89,58
+Coordinates=465,586,101,58
 Visible=True
 

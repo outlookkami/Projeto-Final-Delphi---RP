@@ -18,13 +18,15 @@ object formCrudFunc: TformCrudFunc
     Height = 734
     Align = alClient
     TabOrder = 0
+    ExplicitWidth = 1144
+    ExplicitHeight = 717
     DesignSize = (
       1150
       734)
     object lblDadosFunc: TLabel
       Left = 866
       Top = 21
-      Width = 182
+      Width = 176
       Height = 25
       Align = alCustom
       Alignment = taRightJustify
@@ -36,9 +38,10 @@ object formCrudFunc: TformCrudFunc
       Font.Name = 'Segoe UI'
       Font.Style = []
       ParentFont = False
+      ExplicitWidth = 182
     end
     object btnIncluirFunc: TPanel
-      Left = 591
+      Left = 585
       Top = 74
       Width = 152
       Height = 43
@@ -55,11 +58,12 @@ object formCrudFunc: TformCrudFunc
       ParentFont = False
       TabOrder = 2
       OnClick = btnIncluirFuncClick
+      ExplicitLeft = 579
     end
     object pnlPesquisa: TPanel
       Left = 48
       Top = 27
-      Width = 695
+      Width = 689
       Height = 41
       Anchors = [akLeft, akTop, akRight]
       BevelKind = bkFlat
@@ -67,11 +71,12 @@ object formCrudFunc: TformCrudFunc
       Color = clBtnHighlight
       ParentBackground = False
       TabOrder = 0
+      ExplicitWidth = 683
       DesignSize = (
-        691
+        685
         37)
       object iconePesquisa: TImage
-        Left = 649
+        Left = 643
         Top = -2
         Width = 34
         Height = 41
@@ -151,12 +156,13 @@ object formCrudFunc: TformCrudFunc
           4BEF29ACE3371500429A3BCD7492B23D7FFD5FA5F0C973C979C5F50000000049
           454E44AE426082}
         Proportional = True
+        ExplicitLeft = 649
       end
     end
     object DBGrid1: TDBGrid
       Left = 48
       Top = 138
-      Width = 695
+      Width = 689
       Height = 561
       Anchors = [akLeft, akTop, akRight, akBottom]
       DataSource = DSFuncionarios
@@ -270,7 +276,7 @@ object formCrudFunc: TformCrudFunc
     object edtPesquisa: TEdit
       Left = 56
       Top = 32
-      Width = 637
+      Width = 631
       Height = 28
       Anchors = [akLeft, akTop, akRight]
       BorderStyle = bsNone
@@ -282,9 +288,10 @@ object formCrudFunc: TformCrudFunc
       ParentFont = False
       TabOrder = 3
       TextHint = 'Pesquise'
+      ExplicitWidth = 625
     end
     object gridPanelLogin: TGridPanel
-      Left = 765
+      Left = 759
       Top = 52
       Width = 372
       Height = 645
@@ -474,6 +481,8 @@ object formCrudFunc: TformCrudFunc
           Value = 45.000000000000000000
         end>
       TabOrder = 4
+      ExplicitLeft = 753
+      ExplicitHeight = 628
       DesignSize = (
         372
         645)
@@ -554,6 +563,7 @@ object formCrudFunc: TformCrudFunc
             Value = 100.000000000000000000
           end>
         TabOrder = 0
+        ExplicitTop = 292
         DesignSize = (
           370
           56)
@@ -628,6 +638,7 @@ object formCrudFunc: TformCrudFunc
             SizeStyle = ssAuto
           end>
         TabOrder = 1
+        ExplicitTop = 350
         DesignSize = (
           379
           56)
@@ -741,6 +752,7 @@ object formCrudFunc: TformCrudFunc
         Anchors = []
         BevelOuter = bvNone
         TabOrder = 2
+        ExplicitTop = 408
         object lblSelecionaFuncao: TLabel
           Left = 16
           Top = 3
@@ -813,6 +825,7 @@ object formCrudFunc: TformCrudFunc
         Text = ''
         TextHint = 'Informe o CEP'
         OnExit = leCEPExit
+        ExplicitTop = 199
       end
       object leEmail: TLabeledEdit
         Left = 13
@@ -826,6 +839,7 @@ object formCrudFunc: TformCrudFunc
         TabOrder = 4
         Text = ''
         TextHint = 'Digite o endere'#231'o de e-mail'
+        ExplicitTop = 141
       end
       object leTelefone: TLabeledEdit
         Left = 16
@@ -841,6 +855,7 @@ object formCrudFunc: TformCrudFunc
         TabOrder = 5
         Text = ''
         TextHint = 'Informe seu n'#250'mero de telefone'
+        ExplicitTop = 82
       end
       object leEndereco: TLabeledEdit
         Left = 14
@@ -854,6 +869,7 @@ object formCrudFunc: TformCrudFunc
         TabOrder = 6
         Text = ''
         TextHint = 'Informe o endere'#231'o'
+        ExplicitTop = 257
       end
       object leRG: TLabeledEdit
         Left = 14
@@ -887,6 +903,7 @@ object formCrudFunc: TformCrudFunc
         TabOrder = 8
         Visible = False
         OnClick = pnlCadastrarClick
+        ExplicitTop = 581
       end
       object leCPF: TLabeledEdit
         Left = 16
@@ -921,6 +938,7 @@ object formCrudFunc: TformCrudFunc
         TabOrder = 10
         Visible = False
         OnClick = pnlSalvarClick
+        ExplicitTop = 586
       end
       object leNome: TLabeledEdit
         Left = 18
@@ -937,7 +955,7 @@ object formCrudFunc: TformCrudFunc
       end
     end
     object btnEditFunc: TPanel
-      Left = 433
+      Left = 427
       Top = 74
       Width = 152
       Height = 43
@@ -954,9 +972,10 @@ object formCrudFunc: TformCrudFunc
       ParentFont = False
       TabOrder = 5
       OnClick = btnEditFuncClick
+      ExplicitLeft = 421
     end
     object btnInativFunc: TPanel
-      Left = 275
+      Left = 269
       Top = 74
       Width = 152
       Height = 43
@@ -973,9 +992,10 @@ object formCrudFunc: TformCrudFunc
       ParentFont = False
       TabOrder = 6
       OnClick = btnInativFuncClick
+      ExplicitLeft = 263
     end
     object btnExcluFunc: TPanel
-      Left = 117
+      Left = 111
       Top = 74
       Width = 152
       Height = 43
@@ -992,6 +1012,7 @@ object formCrudFunc: TformCrudFunc
       ParentFont = False
       TabOrder = 7
       OnClick = btnExcluFuncClick
+      ExplicitLeft = 105
     end
     object bitbtnInativFunc: TBitBtn
       Left = 72

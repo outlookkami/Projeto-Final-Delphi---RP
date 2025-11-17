@@ -18,13 +18,15 @@ object formCrudCli: TformCrudCli
     Height = 719
     Align = alClient
     TabOrder = 0
+    ExplicitWidth = 1162
+    ExplicitHeight = 702
     DesignSize = (
       1168
       719)
     object lblDadosCli: TLabel
-      Left = 910
+      Left = 856
       Top = 32
-      Width = 141
+      Width = 149
       Height = 25
       Align = alCustom
       Alignment = taRightJustify
@@ -38,7 +40,7 @@ object formCrudCli: TformCrudCli
       ParentFont = False
     end
     object btnIncluirCli: TPanel
-      Left = 609
+      Left = 603
       Top = 74
       Width = 152
       Height = 43
@@ -55,11 +57,12 @@ object formCrudCli: TformCrudCli
       ParentFont = False
       TabOrder = 2
       OnClick = btnIncluirCliClick
+      ExplicitLeft = 597
     end
     object pnlPesquisa: TPanel
       Left = 48
       Top = 27
-      Width = 713
+      Width = 707
       Height = 41
       Anchors = [akLeft, akTop, akRight]
       BevelKind = bkFlat
@@ -67,11 +70,12 @@ object formCrudCli: TformCrudCli
       Color = clBtnHighlight
       ParentBackground = False
       TabOrder = 0
+      ExplicitWidth = 701
       DesignSize = (
-        709
+        703
         37)
       object iconePesquisa: TImage
-        Left = 667
+        Left = 661
         Top = -2
         Width = 34
         Height = 41
@@ -157,7 +161,7 @@ object formCrudCli: TformCrudCli
     object DBGrid1: TDBGrid
       Left = 48
       Top = 136
-      Width = 713
+      Width = 707
       Height = 546
       Anchors = [akLeft, akTop, akRight, akBottom]
       DataSource = DSCliente
@@ -255,7 +259,7 @@ object formCrudCli: TformCrudCli
     object edtPesquisa: TEdit
       Left = 56
       Top = 32
-      Width = 655
+      Width = 649
       Height = 28
       Anchors = [akLeft, akTop, akRight]
       BorderStyle = bsNone
@@ -267,9 +271,10 @@ object formCrudCli: TformCrudCli
       ParentFont = False
       TabOrder = 3
       TextHint = 'Pesquise'
+      ExplicitWidth = 643
     end
     object gridPanelLogin: TGridPanel
-      Left = 783
+      Left = 777
       Top = 52
       Width = 372
       Height = 655
@@ -456,6 +461,8 @@ object formCrudCli: TformCrudCli
           Value = 4.545454545454532000
         end>
       TabOrder = 4
+      ExplicitLeft = 771
+      ExplicitHeight = 638
       DesignSize = (
         372
         655)
@@ -880,7 +887,7 @@ object formCrudCli: TformCrudCli
       end
     end
     object btnInativCli: TPanel
-      Left = 293
+      Left = 287
       Top = 74
       Width = 152
       Height = 43
@@ -897,9 +904,10 @@ object formCrudCli: TformCrudCli
       ParentFont = False
       TabOrder = 5
       OnClick = btnInativCliClick
+      ExplicitLeft = 281
     end
     object btnExcluCli: TPanel
-      Left = 135
+      Left = 129
       Top = 74
       Width = 152
       Height = 43
@@ -916,9 +924,10 @@ object formCrudCli: TformCrudCli
       ParentFont = False
       TabOrder = 6
       OnClick = btnExcluCliClick
+      ExplicitLeft = 123
     end
     object btnEditCli: TPanel
-      Left = 451
+      Left = 445
       Top = 74
       Width = 152
       Height = 43
@@ -934,12 +943,14 @@ object formCrudCli: TformCrudCli
       ParentBackground = False
       ParentFont = False
       TabOrder = 7
+      OnClick = btnEditCliClick
+      ExplicitLeft = 439
     end
   end
   object DSCliente: TDataSource
     DataSet = DM.QueryClientes
-    Left = 88
-    Top = 80
+    Left = 16
+    Top = 32
   end
   object RESTRequest1: TRESTRequest
     Client = RESTClient1

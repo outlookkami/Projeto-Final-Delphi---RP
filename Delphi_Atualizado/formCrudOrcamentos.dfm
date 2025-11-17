@@ -19,11 +19,13 @@ object crudOrcamentos: TcrudOrcamentos
     Height = 701
     Align = alClient
     TabOrder = 0
+    ExplicitWidth = 1144
+    ExplicitHeight = 684
     DesignSize = (
       1150
       701)
     object btnIncluirOrc: TPanel
-      Left = 591
+      Left = 585
       Top = 74
       Width = 152
       Height = 43
@@ -39,11 +41,12 @@ object crudOrcamentos: TcrudOrcamentos
       ParentBackground = False
       ParentFont = False
       TabOrder = 1
+      ExplicitLeft = 579
     end
     object pnlPesquisa: TPanel
       Left = 48
       Top = 27
-      Width = 695
+      Width = 689
       Height = 41
       Anchors = [akLeft, akTop, akRight]
       BevelKind = bkFlat
@@ -51,11 +54,12 @@ object crudOrcamentos: TcrudOrcamentos
       Color = clBtnHighlight
       ParentBackground = False
       TabOrder = 0
+      ExplicitWidth = 683
       DesignSize = (
-        691
+        685
         37)
       object iconePesquisa: TImage
-        Left = 649
+        Left = 643
         Top = -2
         Width = 34
         Height = 41
@@ -135,12 +139,13 @@ object crudOrcamentos: TcrudOrcamentos
           4BEF29ACE3371500429A3BCD7492B23D7FFD5FA5F0C973C979C5F50000000049
           454E44AE426082}
         Proportional = True
+        ExplicitLeft = 649
       end
     end
     object edtPesquisa: TEdit
       Left = 56
       Top = 32
-      Width = 637
+      Width = 631
       Height = 28
       Anchors = [akLeft, akTop, akRight]
       BorderStyle = bsNone
@@ -152,9 +157,338 @@ object crudOrcamentos: TcrudOrcamentos
       ParentFont = False
       TabOrder = 2
       TextHint = 'Pesquise'
+      ExplicitWidth = 625
+    end
+    object btnEditOrc: TPanel
+      Left = 427
+      Top = 74
+      Width = 152
+      Height = 43
+      Cursor = crHandPoint
+      Anchors = [akTop, akRight]
+      Caption = 'Editar Or'#231'amento'
+      Color = clHighlight
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -13
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentBackground = False
+      ParentFont = False
+      TabOrder = 3
+      ExplicitLeft = 421
+    end
+    object btnExcluOrc: TPanel
+      Left = 269
+      Top = 74
+      Width = 152
+      Height = 43
+      Cursor = crHandPoint
+      Anchors = [akTop, akRight]
+      Caption = 'Excluir Or'#231'amento'
+      Color = clHighlight
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -13
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentBackground = False
+      ParentFont = False
+      TabOrder = 4
+      ExplicitLeft = 263
+    end
+    object tabelas: TPageControl
+      Left = 56
+      Top = 123
+      Width = 689
+      Height = 560
+      ActivePage = TabSheet1
+      Anchors = [akLeft, akTop, akRight, akBottom]
+      TabOrder = 5
+      ExplicitWidth = 683
+      ExplicitHeight = 543
+      object TabSheet1: TTabSheet
+        Caption = 'Or'#231'amentos'
+        ImageIndex = 1
+        DesignSize = (
+          681
+          530)
+        object DBGrid3: TDBGrid
+          Left = 0
+          Top = 0
+          Width = 678
+          Height = 527
+          Anchors = [akLeft, akTop, akRight, akBottom]
+          DataSource = DSOrcamentos
+          Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
+          TabOrder = 0
+          TitleFont.Charset = DEFAULT_CHARSET
+          TitleFont.Color = clWindowText
+          TitleFont.Height = -12
+          TitleFont.Name = 'Segoe UI'
+          TitleFont.Style = []
+          OnCellClick = DBGrid1CellClick
+          Columns = <
+            item
+              Expanded = False
+              FieldName = 'codigo_orcamento'
+              Title.Caption = 'C'#243'd. Or'#231'amento'
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'codigo_pedido'
+              Title.Caption = 'C'#243'd. Pedido'
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'contato_cliente'
+              Title.Caption = 'Contato Cliente'
+              Width = 128
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'email_cliente'
+              Title.Caption = 'Email Cliente'
+              Width = 210
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'nome_cliente'
+              Title.Caption = 'Nome Cliente'
+              Width = 210
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'cep_cliente'
+              Title.Caption = 'CEP Cliente'
+              Width = 116
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'placa_veiculo'
+              Title.Caption = 'Placa Ve'#237'culo'
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'marca'
+              Title.Caption = 'Marca'
+              Width = 162
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'modelo'
+              Title.Caption = 'Modelo'
+              Width = 197
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'cor'
+              Title.Caption = 'Cor Ve'#237'culo'
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'descricao_servico'
+              Title.Caption = 'Descri'#231#227'o do servi'#231'o'
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'descricao_pedido'
+              Title.Caption = 'Descri'#231#227'o do Pedido'
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'status_orcamento'
+              Title.Caption = 'Status or'#231'amento'
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'data_emissao'
+              Title.Caption = 'Data Emiss'#227'o'
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'validade'
+              Title.Caption = 'Validade'
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'valor_mdo'
+              Title.Caption = 'Valor MDO'
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'valor_materiais'
+              Title.Caption = 'Valor materiais'
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'valor_total'
+              Title.Caption = 'Valor Total'
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'lista_materiais'
+              Title.Caption = 'Lista de materiais'
+              Visible = True
+            end>
+        end
+      end
+      object TabSheet2: TTabSheet
+        Caption = 'Produtos'
+        ImageIndex = 1
+        DesignSize = (
+          681
+          530)
+        object DBGrid2: TDBGrid
+          Left = 7
+          Top = 45
+          Width = 678
+          Height = 485
+          Anchors = [akLeft, akTop, akRight, akBottom]
+          DataSource = DSProdutos
+          Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgConfirmDelete, dgCancelOnExit, dgMultiSelect, dgTitleClick, dgTitleHotTrack]
+          TabOrder = 0
+          TitleFont.Charset = DEFAULT_CHARSET
+          TitleFont.Color = clWindowText
+          TitleFont.Height = -12
+          TitleFont.Name = 'Segoe UI'
+          TitleFont.Style = []
+          OnCellClick = DBGrid1CellClick
+          Columns = <
+            item
+              Expanded = False
+              FieldName = 'codigo_produto'
+              Title.Caption = 'C'#243'digo Int.'
+              Width = 65
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'codigo_barras'
+              Title.Caption = 'C'#243'digo de barras'
+              Width = 140
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'nome_produto'
+              Title.Caption = 'Nome do produto'
+              Width = 380
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'unidade_medida'
+              Title.Caption = 'Unidade de Medida'
+              Width = 110
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'marca'
+              Title.Caption = 'Marca'
+              Width = 200
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'categoria'
+              Title.Caption = 'Categoria'
+              Width = 200
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'quant_estoque'
+              Title.Caption = 'Quant. Est.'
+              Width = 80
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'quant_est_prevista'
+              Title.Caption = 'Quant. Est. Prev.'
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'preco_compra'
+              Title.Caption = 'Pre'#231'o Compra'
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'preco_venda'
+              Title.Caption = 'Pre'#231'o Venda'
+              Width = 80
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'foto_produto'
+              Title.Caption = 'Imagem do produto'
+              Width = 360
+              Visible = True
+            end>
+        end
+        object btnAddProd: TPanel
+          Left = 458
+          Top = 3
+          Width = 220
+          Height = 36
+          Cursor = crHandPoint
+          Anchors = [akTop, akRight]
+          Caption = 'Incluir produto no or'#231'amento'
+          Color = clHighlight
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWhite
+          Font.Height = -13
+          Font.Name = 'Segoe UI'
+          Font.Style = []
+          ParentBackground = False
+          ParentFont = False
+          TabOrder = 1
+          OnClick = btnAddProdClick
+        end
+        object edtQtdProd: TEdit
+          Left = 349
+          Top = 3
+          Width = 101
+          Height = 25
+          Alignment = taCenter
+          BevelInner = bvNone
+          BevelOuter = bvNone
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -13
+          Font.Name = 'Segoe UI'
+          Font.Style = []
+          ParentFont = False
+          TabOrder = 2
+          TextHint = 'Quantidade'
+        end
+      end
     end
     object gridPanelLogin: TGridPanel
-      Left = 757
+      Left = 751
       Top = 25
       Width = 361
       Height = 647
@@ -362,7 +696,9 @@ object crudOrcamentos: TcrudOrcamentos
         item
           SizeStyle = ssAuto
         end>
-      TabOrder = 3
+      TabOrder = 6
+      ExplicitLeft = 745
+      ExplicitHeight = 630
       DesignSize = (
         361
         647)
@@ -669,7 +1005,7 @@ object crudOrcamentos: TcrudOrcamentos
       end
       object cbStatus: TComboBox
         Left = 16
-        Top = 571
+        Top = 563
         Width = 329
         Height = 29
         Align = alCustom
@@ -817,7 +1153,7 @@ object crudOrcamentos: TcrudOrcamentos
         Left = 19
         Top = 249
         Width = 334
-        Height = 80
+        Height = 81
         Align = alCustom
         Anchors = [akLeft, akTop, akBottom]
         Lines.Strings = (
@@ -920,7 +1256,7 @@ object crudOrcamentos: TcrudOrcamentos
         Left = 18
         Top = 347
         Width = 325
-        Height = 142
+        Height = 131
         Anchors = [akTop]
         RowCount = 2
         Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goEditing]
@@ -940,330 +1276,6 @@ object crudOrcamentos: TcrudOrcamentos
         TabOrder = 9
         Text = ''
         TextHint = 'Informe o custo de m'#227'o de obra'
-      end
-    end
-    object btnEditOrc: TPanel
-      Left = 433
-      Top = 74
-      Width = 152
-      Height = 43
-      Cursor = crHandPoint
-      Anchors = [akTop, akRight]
-      Caption = 'Editar Or'#231'amento'
-      Color = clHighlight
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWhite
-      Font.Height = -13
-      Font.Name = 'Segoe UI'
-      Font.Style = []
-      ParentBackground = False
-      ParentFont = False
-      TabOrder = 4
-    end
-    object btnExcluOrc: TPanel
-      Left = 275
-      Top = 74
-      Width = 152
-      Height = 43
-      Cursor = crHandPoint
-      Anchors = [akTop, akRight]
-      Caption = 'Excluir Or'#231'amento'
-      Color = clHighlight
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWhite
-      Font.Height = -13
-      Font.Name = 'Segoe UI'
-      Font.Style = []
-      ParentBackground = False
-      ParentFont = False
-      TabOrder = 5
-    end
-    object tabelas: TPageControl
-      Left = 56
-      Top = 123
-      Width = 695
-      Height = 560
-      ActivePage = TabSheet1
-      Anchors = [akLeft, akTop, akRight, akBottom]
-      TabOrder = 6
-      object TabSheet1: TTabSheet
-        Caption = 'Or'#231'amentos'
-        ImageIndex = 1
-        DesignSize = (
-          687
-          530)
-        object DBGrid3: TDBGrid
-          Left = 0
-          Top = 0
-          Width = 684
-          Height = 527
-          Anchors = [akLeft, akTop, akRight, akBottom]
-          DataSource = DSOrcamentos
-          Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
-          TabOrder = 0
-          TitleFont.Charset = DEFAULT_CHARSET
-          TitleFont.Color = clWindowText
-          TitleFont.Height = -12
-          TitleFont.Name = 'Segoe UI'
-          TitleFont.Style = []
-          OnCellClick = DBGrid1CellClick
-          Columns = <
-            item
-              Expanded = False
-              FieldName = 'codigo_orcamento'
-              Title.Caption = 'C'#243'd. Or'#231'amento'
-              Visible = True
-            end
-            item
-              Expanded = False
-              FieldName = 'codigo_pedido'
-              Title.Caption = 'C'#243'd. Pedido'
-              Visible = True
-            end
-            item
-              Expanded = False
-              FieldName = 'contato_cliente'
-              Title.Caption = 'Contato Cliente'
-              Width = 128
-              Visible = True
-            end
-            item
-              Expanded = False
-              FieldName = 'email_cliente'
-              Title.Caption = 'Email Cliente'
-              Width = 210
-              Visible = True
-            end
-            item
-              Expanded = False
-              FieldName = 'nome_cliente'
-              Title.Caption = 'Nome Cliente'
-              Width = 210
-              Visible = True
-            end
-            item
-              Expanded = False
-              FieldName = 'cep_cliente'
-              Title.Caption = 'CEP Cliente'
-              Width = 116
-              Visible = True
-            end
-            item
-              Expanded = False
-              FieldName = 'placa_veiculo'
-              Title.Caption = 'Placa Ve'#237'culo'
-              Visible = True
-            end
-            item
-              Expanded = False
-              FieldName = 'marca'
-              Title.Caption = 'Marca'
-              Width = 162
-              Visible = True
-            end
-            item
-              Expanded = False
-              FieldName = 'modelo'
-              Title.Caption = 'Modelo'
-              Width = 197
-              Visible = True
-            end
-            item
-              Expanded = False
-              FieldName = 'cor'
-              Title.Caption = 'Cor Ve'#237'culo'
-              Visible = True
-            end
-            item
-              Expanded = False
-              FieldName = 'descricao_servico'
-              Title.Caption = 'Descri'#231#227'o do servi'#231'o'
-              Visible = True
-            end
-            item
-              Expanded = False
-              FieldName = 'descricao_pedido'
-              Title.Caption = 'Descri'#231#227'o do Pedido'
-              Visible = True
-            end
-            item
-              Expanded = False
-              FieldName = 'status_orcamento'
-              Title.Caption = 'Status or'#231'amento'
-              Visible = True
-            end
-            item
-              Expanded = False
-              FieldName = 'data_emissao'
-              Title.Caption = 'Data Emiss'#227'o'
-              Visible = True
-            end
-            item
-              Expanded = False
-              FieldName = 'validade'
-              Title.Caption = 'Validade'
-              Visible = True
-            end
-            item
-              Expanded = False
-              FieldName = 'valor_mdo'
-              Title.Caption = 'Valor MDO'
-              Visible = True
-            end
-            item
-              Expanded = False
-              FieldName = 'valor_materiais'
-              Title.Caption = 'Valor materiais'
-              Visible = True
-            end
-            item
-              Expanded = False
-              FieldName = 'valor_total'
-              Title.Caption = 'Valor Total'
-              Visible = True
-            end
-            item
-              Expanded = False
-              FieldName = 'lista_materiais'
-              Title.Caption = 'Lista de materiais'
-              Visible = True
-            end>
-        end
-      end
-      object TabSheet2: TTabSheet
-        Caption = 'Produtos'
-        ImageIndex = 1
-        DesignSize = (
-          687
-          530)
-        object DBGrid2: TDBGrid
-          Left = 7
-          Top = 45
-          Width = 684
-          Height = 485
-          Anchors = [akLeft, akTop, akRight, akBottom]
-          DataSource = DSProdutos
-          Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgConfirmDelete, dgCancelOnExit, dgMultiSelect, dgTitleClick, dgTitleHotTrack]
-          TabOrder = 0
-          TitleFont.Charset = DEFAULT_CHARSET
-          TitleFont.Color = clWindowText
-          TitleFont.Height = -12
-          TitleFont.Name = 'Segoe UI'
-          TitleFont.Style = []
-          OnCellClick = DBGrid1CellClick
-          Columns = <
-            item
-              Expanded = False
-              FieldName = 'codigo_produto'
-              Title.Caption = 'C'#243'digo Int.'
-              Width = 65
-              Visible = True
-            end
-            item
-              Expanded = False
-              FieldName = 'codigo_barras'
-              Title.Caption = 'C'#243'digo de barras'
-              Width = 140
-              Visible = True
-            end
-            item
-              Expanded = False
-              FieldName = 'nome_produto'
-              Title.Caption = 'Nome do produto'
-              Width = 380
-              Visible = True
-            end
-            item
-              Expanded = False
-              FieldName = 'unidade_medida'
-              Title.Caption = 'Unidade de Medida'
-              Width = 110
-              Visible = True
-            end
-            item
-              Expanded = False
-              FieldName = 'marca'
-              Title.Caption = 'Marca'
-              Width = 200
-              Visible = True
-            end
-            item
-              Expanded = False
-              FieldName = 'categoria'
-              Title.Caption = 'Categoria'
-              Width = 200
-              Visible = True
-            end
-            item
-              Expanded = False
-              FieldName = 'quant_estoque'
-              Title.Caption = 'Quant. Est.'
-              Width = 80
-              Visible = True
-            end
-            item
-              Expanded = False
-              FieldName = 'quant_est_prevista'
-              Title.Caption = 'Quant. Est. Prev.'
-              Visible = True
-            end
-            item
-              Expanded = False
-              FieldName = 'preco_compra'
-              Title.Caption = 'Pre'#231'o Compra'
-              Visible = True
-            end
-            item
-              Expanded = False
-              FieldName = 'preco_venda'
-              Title.Caption = 'Pre'#231'o Venda'
-              Width = 80
-              Visible = True
-            end
-            item
-              Expanded = False
-              FieldName = 'foto_produto'
-              Title.Caption = 'Imagem do produto'
-              Width = 360
-              Visible = True
-            end>
-        end
-        object btnAddProd: TPanel
-          Left = 464
-          Top = 3
-          Width = 220
-          Height = 36
-          Cursor = crHandPoint
-          Anchors = [akTop, akRight]
-          Caption = 'Incluir produto no or'#231'amento'
-          Color = clHighlight
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWhite
-          Font.Height = -13
-          Font.Name = 'Segoe UI'
-          Font.Style = []
-          ParentBackground = False
-          ParentFont = False
-          TabOrder = 1
-          OnClick = btnAddProdClick
-        end
-        object edtQtdProd: TEdit
-          Left = 349
-          Top = 3
-          Width = 101
-          Height = 25
-          Alignment = taCenter
-          BevelInner = bvNone
-          BevelOuter = bvNone
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -13
-          Font.Name = 'Segoe UI'
-          Font.Style = []
-          ParentFont = False
-          TabOrder = 2
-          TextHint = 'Quantidade'
-        end
       end
     end
   end

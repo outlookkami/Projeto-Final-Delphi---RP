@@ -58,6 +58,8 @@ type
     procedure DBGrid1CellClick(Column: TColumn);
     procedure btnInativCliClick(Sender: TObject);
     procedure btnExcluCliClick(Sender: TObject);
+    procedure recarregarGrid;
+    procedure btnEditCliClick(Sender: TObject);
   private
     { Private declarations }
 
@@ -97,6 +99,14 @@ begin
     cbUF.Text := DM.QueryClientes.FieldByName('uf').AsString;
 end;
 
+procedure TformCrudCli.recarregarGrid;
+begin
+    with DM.QueryClientes do begin
+      Close;
+      SQL.Text := 'SELECT * FROM “Funcionarios” ORDER BY nome_funcionario';
+      Open;
+    end;
+end;
 
 procedure TformCrudCli.btnIncluirCliClick(Sender: TObject);
 // Incluir Cliente
@@ -110,27 +120,54 @@ begin
     DM.QueryClientes.Open;
 end;
 
+procedure TformCrudCli.btnEditCliClick(Sender: TObject);
+// Editar Cliente
+begin
+    pnlCadastrar.Visible := False;
+    pnlSalvar.Visible := True;
+
+    if not DM.QueryClientes.Active then
+    DM.QueryClientes.Open;
+    if DM.QueryClientes.Active then
+    DM.QueryClientes.Edit;
+    else
+    ShowMessage(‘Não foi possível acessar os dados do cliente para edição.’);
+
+end;
+
 procedure TformCrudCli.btnExcluCliClick(Sender: TObject);
 // Excluir Cliente
 begin
     if (DM.QueryClientes.FieldByName('ativo_in').AsBoolean = True) then begin
       ShowMessage('O cliente deve estar inativo antes de ser excluído.');
-    end else begin
-      DM.QueryClientes.Delete;
-    end;
-    DM.QueryClientes.Open;
+    end else if
+     MessageDlg(‘Tem certeza de que deseja excluir o cliente? Essa ação não poderá ser revertida’, mtConfirmation, [mbYes, mbNo], 0) = mrYes begin
+      DM.QueryClientes.Close;
+      DM.QueryClientes.SQL.Text := ‘DELETE FROM “Clientes” WHERE codigo_cliente = :codCli’;
+      DM.QueryClientes.ParamByName(‘codCli’).AsInteger := StrToInt(codigoCliente);
+      DM.QueryClientes.ExecSQL;
+
+      recarregarGrid;
+     end;
 end;
 
 procedure TformCrudCli.btnInativCliClick(Sender: TObject);
 // Inativar Cliente
 begin
-    DM.QueryClientes.Open;
-    DM.QueryClientes.SQL.Text := 'UPDATE "Clientes" SET ativo_in = :boolAtivo WHERE codigo_cliente = :codCli';
-    DM.QueryClientes.ParamByName('boolAtivo').AsBoolean := False;
+    DM.QueryClientes.Close;
+    DM.QueryClientes.SQL.Text := 'UPDATE "Clientes" SET ativo_in = false WHERE codigo_cliente = :codCli';
     DM.QueryClientes.ParamByName('codCli').AsInteger := StrToInt(codigoCliente);
     DM.QueryClientes.ExecSQL;
-    DM.QueryClientes.Post;
-    DM.QueryClientes.Open;
+
+    recarregarGrid;
+
+//     DM.QueryClientes.Open;
+//    DM.QueryClientes.SQL.Text := 'UPDATE "Clientes" SET ativo_in = false WHERE codigo_cliente = :codCli';
+//    DM.QueryClientes.ParamByName('codCli').AsInteger := StrToInt(codigoCliente);
+//    DM.QueryClientes.ExecSQL;
+//    DM.QueryClientes.Post;
+//    DM.QueryClientes.Open;
+
 //    if (DM.QueryFuncionarios.State in [dsInsert, dsEdit]) then begin
 //    DM.QueryClientes.Post;
 //    end;
