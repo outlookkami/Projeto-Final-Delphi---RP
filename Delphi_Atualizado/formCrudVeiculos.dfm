@@ -818,6 +818,7 @@ object CrudVeiculos: TCrudVeiculos
         Width = 346
         Height = 29
         Align = alCustom
+        Anchors = [akBottom]
         EditLabel.Width = 128
         EditLabel.Height = 21
         EditLabel.Caption = 'C'#243'digo do ve'#237'culo:'

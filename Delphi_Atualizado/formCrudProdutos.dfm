@@ -18,15 +18,14 @@ object formProdutos: TformProdutos
     Height = 719
     Align = alClient
     TabOrder = 0
-    ExplicitWidth = 1168
     DesignSize = (
       1177
       719)
     object lblDadosProd: TLabel
-      Left = 906
+      Left = 915
       Top = 32
-      Width = 162
-      Height = 26
+      Width = 153
+      Height = 25
       Align = alCustom
       Alignment = taRightJustify
       Anchors = [akLeft, akTop, akRight, akBottom]
@@ -56,7 +55,6 @@ object formProdutos: TformProdutos
       ParentFont = False
       TabOrder = 2
       OnClick = btnIncluirProdClick
-      ExplicitLeft = 609
     end
     object pnlPesquisa: TPanel
       Left = 48
@@ -69,7 +67,6 @@ object formProdutos: TformProdutos
       Color = clBtnHighlight
       ParentBackground = False
       TabOrder = 0
-      ExplicitWidth = 713
       DesignSize = (
         718
         37)
@@ -263,7 +260,6 @@ object formProdutos: TformProdutos
       ParentFont = False
       TabOrder = 3
       TextHint = 'Pesquise'
-      ExplicitWidth = 655
     end
     object gridPanelLogin: TGridPanel
       Left = 792
@@ -944,7 +940,6 @@ object formProdutos: TformProdutos
       ParentFont = False
       TabOrder = 7
       OnClick = btnEditProdClick
-      ExplicitLeft = 451
     end
     object btnAtivProd: TPanel
       Left = -14

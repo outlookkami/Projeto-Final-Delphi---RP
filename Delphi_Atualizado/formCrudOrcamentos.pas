@@ -9,6 +9,11 @@ uses
   Vcl.ExtCtrls, Vcl.Grids, Vcl.DBGrids, Vcl.Imaging.pngimage, Vcl.ComCtrls;
 
 type
+    TvalorTotal = record
+      totProd: Double;
+      custoMDO: Double;
+      valorOrcamento: Double;
+    end;
   TStringList = class(TStrings);
   TcrudOrcamentos = class(TForm)
     Panel1: TPanel;
@@ -71,6 +76,8 @@ type
     procedure strgridMateriaisSelectCell(Sender: TObject; ACol, ARow: LongInt;
     var CanSelect: Boolean);
     procedure btnAddProdClick(Sender: TObject);
+    procedure btnIncluirOrcClick(Sender: TObject);
+    procedure LimparCampos;
 
   private
     { Private declarations }
@@ -96,6 +103,7 @@ procedure TcrudOrcamentos.FormCreate(Sender: TObject);
 var strgridMateriais: TStringGrid;
     i: Integer;
 begin
+    dtEmissao.Date := Date;
     tabelas.ActivePage := TabSheet1;
     DM.QueryProdutos.Open;
     strgridMateriais.ColCount := 5;
@@ -106,7 +114,6 @@ begin
     strgridMateriais.Cells[1,0] := 'Preço';
     strgridMateriais.Cells[2,0] := 'Qtd.';
     strgridMateriais.Cells[3,0] := 'Subtotal';
-//    strgridMateriais.Cells[4,0] := 'Código';
 
 end;
 
@@ -138,6 +145,29 @@ begin
     //leDataEmissao.Date := Date;
 end;
 
+procedure TcrudOrcamentos.LimparCampos;
+begin
+    leCodigoCli.Clear;
+    dtEmissao.Date := Date;
+    dtValidade.Date;
+    lePlaca.Clear;
+    leMarca.Clear;
+    leModelo.Clear;
+    leCor.Clear;
+    descServico.Clear;
+    strgridMateriais.RowCount := 1;
+    leValorMDO.Clear;
+    cbStatus.ItemIndex := -1;
+end;
+
+procedure TcrudOrcamentos.btnIncluirOrcClick(Sender: TObject);
+begin
+    pnlIncluirOrc.Visible := True;
+    pnlFazerOrcPedido.Visible := False;
+
+    LimparCampos;
+end;
+
 procedure TcrudOrcamentos.btnAddProdClick(Sender: TObject);
 var nomeProd: String;
     precoVen, subtotal, qtd: Double;
@@ -160,16 +190,22 @@ begin
 
       strgridMateriais.Cells[0, i] := nomeProd;
       strgridMateriais.Cells[1, i] := FormatFloat('0.00', precoVen);
-      strgridMateriais.Cells[2, i] := FormatFloat('0.00',qtd);
+      strgridMateriais.Cells[2, i] := FormatFloat('0.00', qtd);
       strgridMateriais.Cells[3, i] := FormatFloat('0.00', subtotal);
 
       totProd := subtotal;
 
       tabelas.ActivePage := TabSheet2;
+
+      TvalorTotal.totProd := totProd;
+
+
 end;
 
 procedure receberDadosPedido;
 begin
+
+
   with DM.QueryOrcamentos do begin
 //    SQL.Text :=  'INSERT INTO Orcamentos (codigo_pedido, contato_cliente, email_cliente, cep_cliente, placa_veiculo, marca, modelo, cor, descricao_pedido, status_orcamento) VALUES (:CodPedido, :Contato, :Email, :CEP, :Placa, :Marca, :Modelo, :Cor, :DescPedido, :StatusOrc)';
 //    ParamByName('CodPedido').AsString := codigoPedido;
@@ -241,7 +277,7 @@ begin
 end;
 
 procedure TcrudOrcamentos.strgridMateriaisSelectCell(Sender: TObject; ACol,
-  ARow: LongInt; var CanSelect: Boolean);
+ARow: LongInt; var CanSelect: Boolean);
 const colunaQtd = 2;
 begin
    CanSelect := True;

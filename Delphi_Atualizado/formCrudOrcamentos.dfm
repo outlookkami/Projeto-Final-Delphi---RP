@@ -39,6 +39,7 @@ object crudOrcamentos: TcrudOrcamentos
       ParentBackground = False
       ParentFont = False
       TabOrder = 1
+      OnClick = btnIncluirOrcClick
     end
     object pnlPesquisa: TPanel
       Left = 48
@@ -195,7 +196,7 @@ object crudOrcamentos: TcrudOrcamentos
       Top = 123
       Width = 689
       Height = 560
-      ActivePage = TabSheet1
+      ActivePage = TabSheet2
       Anchors = [akLeft, akTop, akRight, akBottom]
       TabOrder = 5
       object TabSheet1: TTabSheet
@@ -994,13 +995,12 @@ object crudOrcamentos: TcrudOrcamentos
       end
       object cbStatus: TComboBox
         Left = 16
-        Top = 563
+        Top = 571
         Width = 329
         Height = 29
         Align = alCustom
         BevelInner = bvNone
         BevelOuter = bvNone
-        Anchors = [akLeft, akBottom]
         TabOrder = 2
         TextHint = 'Selecione o status do or'#231'amento'
         Items.Strings = (

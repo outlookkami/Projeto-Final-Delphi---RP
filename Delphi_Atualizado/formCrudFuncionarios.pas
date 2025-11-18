@@ -251,8 +251,8 @@ begin
 
     if (DM.QueryFuncionarios.FieldByName('ativo_in').AsBoolean = True) then begin
       ShowMessage('O funcionário deve estar inativo antes de ser excluído.');
-    end else begin
-    if MessageDlg('Tem certeza de que deseja excluir o funcionário? Essa ação não poderá ser revertida.', mtConfirmation, [mbYes, mbNo], 0) = mrYes then
+    end else if
+     MessageDlg('Tem certeza de que deseja excluir o funcionário? Essa ação não poderá ser revertida.', mtConfirmation, [mbYes, mbNo], 0) = mrYes then begin
       DM.QueryFuncionarios.Close;
       DM.QueryFuncionarios.SQL.Text := 'DELETE FROM "Funcionarios" WHERE codigo_funcionario = :codFunc';
       DM.QueryFuncionarios.ParamByName('codFunc').AsInteger := StrToInt(codigoFuncionario);
