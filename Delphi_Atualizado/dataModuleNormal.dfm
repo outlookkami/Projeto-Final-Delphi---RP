@@ -381,6 +381,54 @@ object DM: TDM
       'SELECT * FROM Veiculos;')
     Left = 216
     Top = 264
+    object QueryVeiculoscodigo_veiculo: TIntegerField
+      FieldName = 'codigo_veiculo'
+      Origin = 'codigo_veiculo'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+    end
+    object QueryVeiculosplaca_veiculo: TStringField
+      FieldName = 'placa_veiculo'
+      Origin = 'placa_veiculo'
+      Size = 7
+    end
+    object QueryVeiculosmodelo: TStringField
+      FieldName = 'modelo'
+      Origin = 'modelo'
+      Size = 40
+    end
+    object QueryVeiculosmarca: TStringField
+      FieldName = 'marca'
+      Origin = 'marca'
+      Size = 40
+    end
+    object QueryVeiculoscor: TStringField
+      FieldName = 'cor'
+      Origin = 'cor'
+    end
+    object QueryVeiculosano_fab: TStringField
+      FieldName = 'ano_fab'
+      Origin = 'ano_fab'
+      Size = 4
+    end
+    object QueryVeiculosano_mod: TSmallintField
+      FieldName = 'ano_mod'
+      Origin = 'ano_mod'
+    end
+    object QueryVeiculosnome_usuario_cliente: TStringField
+      FieldName = 'nome_usuario_cliente'
+      Origin = 'nome_usuario_cliente'
+      Size = 255
+    end
+    object QueryVeiculoscontato_cliente: TStringField
+      FieldName = 'contato_cliente'
+      Origin = 'contato_cliente'
+      Size = 11
+    end
+    object QueryVeiculoschassi: TStringField
+      FieldName = 'chassi'
+      Origin = 'chassi'
+      Size = 17
+    end
   end
   object QueryLogin: TFDQuery
     Active = True

@@ -96,7 +96,7 @@ begin
     leAnoMod.Text := FieldByName('ano_mod').AsString;
     leCidade.Text := FieldByName('quant_estoque').AsString;
     cbUF.Text := FieldByName('quant_est_prevista').AsString;
-    cbDonoCli.Text := FieldByName('nome_usuario_cliente').AsString;
+    edtEmailCli.Text := FieldByName('nome_usuario_cliente').AsString;
     leCodigoVeiculo.Text := FieldByName('codigo_veiculo').AsString;
     end;
 end;

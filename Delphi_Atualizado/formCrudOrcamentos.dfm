@@ -1131,7 +1131,7 @@ object crudOrcamentos: TcrudOrcamentos
       end
       object lblDescricaoServico: TLabel
         Left = 16
-        Top = 222
+        Top = 232
         Width = 143
         Height = 21
         Align = alCustom

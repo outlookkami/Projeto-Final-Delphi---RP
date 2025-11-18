@@ -116,6 +116,16 @@ type
     QueryPedidosReldata_pedido: TSQLTimeStampField;
     QueryPedidosRelstatus_pedido: TStringField;
     QueryProdutosativo_in: TBooleanField;
+    QueryVeiculoscodigo_veiculo: TIntegerField;
+    QueryVeiculosplaca_veiculo: TStringField;
+    QueryVeiculosmodelo: TStringField;
+    QueryVeiculosmarca: TStringField;
+    QueryVeiculoscor: TStringField;
+    QueryVeiculosano_fab: TStringField;
+    QueryVeiculosano_mod: TSmallintField;
+    QueryVeiculosnome_usuario_cliente: TStringField;
+    QueryVeiculoscontato_cliente: TStringField;
+    QueryVeiculoschassi: TStringField;
 
   private
     { Private declarations }

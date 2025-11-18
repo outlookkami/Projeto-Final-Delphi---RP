@@ -26,13 +26,14 @@ type
     leConfSenha: TLabeledEdit;
     leUsuarioTS: TLabeledEdit;
     lblEspacamento: TLabel;
-    Image1: TImage;
+    btnVoltar: TImage;
     DSLoginTrocaSenha: TDataSource;
     procedure pnlBotaoTrocarSenhaClick(Sender: TObject);
     procedure cadeadoSenhaClick(Sender: TObject);
     procedure cadeadoConfSenhaClick(Sender: TObject);
-    procedure Image1Click(Sender: TObject);
+    procedure btnVoltarClick(Sender: TObject);
     procedure leUsuarioTSClick(Sender: TObject);
+    procedure FormShow(Sender: TObject);
   private
     { Private declarations }
   public
@@ -104,9 +105,14 @@ begin
     end;
 end;
 
-procedure TformTrocaSenha.Image1Click(Sender: TObject);
+procedure TformTrocaSenha.FormShow(Sender: TObject);
 begin
-  formTrocaSenha.Hide;
+    leUsuarioTS.SetFocus;
+end;
+
+procedure TformTrocaSenha.btnVoltarClick(Sender: TObject);
+begin
+  Self.Close;
 end;
 
 

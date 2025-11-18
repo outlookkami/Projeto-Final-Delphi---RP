@@ -128,10 +128,10 @@ end;
 procedure TFormCadastroDeClientes.FrameVeiculo;
 var frameVeiculo: TframeCadVeiculo;
 begin
-   frameVeiculo := TframeCadVeiculo.Create(Self);
-   frameVeiculo.Parent := Self;
-   frameVeiculo.Align := alClient;
-   frameVeiculo.Show;
+      frameVeiculo := TframeCadVeiculo.Create(Self);
+      frameVeiculo.Parent := Self;
+      frameVeiculo.Align := alClient;
+      frameVeiculo.Show;
 end;
 
 
@@ -148,28 +148,28 @@ begin
 
         with DM.QueryClientes do begin
 
-        SQL.Text := 'INSERT INTO "Clientes" (nome_cliente, telefone_cliente, email_cliente, cep_cliente, endereco_cliente, num_endereco, bairro, cidade, uf, hash_senha_cli) VALUES (:Nome, :Telefone, :Email, :CEP, :Endereco, :Numero, :Bairro, :Cidade, :UF, :SenhaHash);';
+          SQL.Text := 'INSERT INTO "Clientes" (nome_cliente, telefone_cliente, email_cliente, cep_cliente, endereco_cliente, num_endereco, bairro, cidade, uf, hash_senha_cli) VALUES (:Nome, :Telefone, :Email, :CEP, :Endereco, :Numero, :Bairro, :Cidade, :UF, :SenhaHash);';
 
-        ParamByName('Nome').AsString := leNome.Text;
-        ParamByName('Telefone').AsString := leTelefone.Text;
-        ParamByName('Email').AsString := leEmail.Text;
-        ParamByName('CEP').AsString := leCEP.Text;
-        ParamByName('Endereco').AsString := leEndereco.Text;
-        ParamByName('Numero').AsString := leNumero.Text;
-        ParamByName('Bairro').AsString := leBairro.Text;
-        ParamByName('Cidade').AsString := leCidade.Text;
-        ParamByName('UF').AsString := cbUf.Text;
-        ParamByName('SenhaHash').AsString := hash;
+          ParamByName('Nome').AsString := leNome.Text;
+          ParamByName('Telefone').AsString := Trim(leTelefone.Text);
+          ParamByName('Email').AsString := leEmail.Text;
+          ParamByName('CEP').AsString := leCEP.Text;
+          ParamByName('Endereco').AsString := leEndereco.Text;
+          ParamByName('Numero').AsString := leNumero.Text;
+          ParamByName('Bairro').AsString := leBairro.Text;
+          ParamByName('Cidade').AsString := leCidade.Text;
+          ParamByName('UF').AsString := cbUf.Text;
+          ParamByName('SenhaHash').AsString := hash;
 
-        ExecSQL;
+          ExecSQL;
 
-        if MessageDlg('Cadastro finalizado com sucesso! Deseja incluir seu veículo?',
-        mtConfirmation, [mbYes, mbNo], 0) = mrYes then FrameVeiculo else Close;
-          end;
+          if MessageDlg('Cadastro finalizado com sucesso! Deseja incluir seu veículo?',
+          mtConfirmation, [mbYes, mbNo], 0) = mrYes then FrameVeiculo else Close;
+        end;
 
       end else begin
-      ShowMessage('Senhas não compatíveis. Tente novamente');
-      end;
+        ShowMessage('Senhas não compatíveis. Tente novamente');
+        end;
     end;
 end;
 

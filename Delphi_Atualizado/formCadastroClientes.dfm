@@ -2208,14 +2208,16 @@ object formCadastroDeClientes: TformCadastroDeClientes
           TextHint = 'Digite seu nome completo'
         end
         object leTelefone: TLabeledEdit
-          Left = 59
+          Left = 60
           Top = 106
-          Width = 345
+          Width = 343
           Height = 29
           Anchors = []
           EditLabel.Width = 122
           EditLabel.Height = 21
           EditLabel.Caption = '*Telefone/Celular:'
+          EditMask = '!\(99\)00000-0000;0;_'
+          MaxLength = 14
           TabOrder = 5
           Text = ''
           TextHint = 'Informe seu n'#250'mero de telefone'
@@ -2234,14 +2236,16 @@ object formCadastroDeClientes: TformCadastroDeClientes
           TextHint = 'Digite seu endere'#231'o de e-mail'
         end
         object leCEP: TLabeledEdit
-          Left = 59
+          Left = 60
           Top = 214
-          Width = 345
+          Width = 344
           Height = 29
           Anchors = []
           EditLabel.Width = 30
           EditLabel.Height = 21
           EditLabel.Caption = 'CEP:'
+          EditMask = '00000\-999;0;_'
+          MaxLength = 9
           TabOrder = 7
           Text = ''
           TextHint = 'Informe seu CEP'

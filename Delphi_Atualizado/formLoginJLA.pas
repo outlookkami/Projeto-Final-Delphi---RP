@@ -88,11 +88,8 @@ var tipoUsuario, emailUsuario, codigoUsuario: String;
 begin
     emailUsuario := Trim(leUsuario.Text);
     tipoUsuario := DM.QueryUsuarios.FieldByName('tipo_usuario').AsString;
-    //emailUsuario := DM.QueryUsuarios.FieldByName('nome_usuario').AsString;
     codigoUsuario := DM.QueryUsuarios.FieldByName('id_usuario').AsString;
     status := DM.QueryUsuarios.FieldByName('ativo_in').AsString;
-
-    //codigoCliente := DM.QueryClientes.FieldByName('codigo_cliente').AsString;
 
     iniArq := TIniFile.Create(ExtractFilePath(ParamStr(0)) + 'login.ini');
     try
@@ -109,13 +106,6 @@ begin
        if not DM.QueryClientes.IsEmpty and (tipoUsuario = 'Cliente') then begin
         registDadosCliente;
        end;
-//       if tipoUsuario = 'Cliente' then begin
-//          DM.QueryClientes.SQL.Text := 'SELECT codigo_cliente FROM "Clientes" WHERE email_cliente = :Email';
-//          DM.QueryClientes.ParamByName('Email').AsString := leUsuario.Text;
-//          codigoCliente := DM.QueryClientes.FieldByName('codigo_cliente').AsInteger;
-//          codCli := IntToStr(codigoCliente);
-//          iniArq.WriteString('Cliente', 'CodigoCliente', codCli);
-//          end;
     finally
        iniArq.Free;
     end;
@@ -129,9 +119,6 @@ var codigoCli, codigoVeic: Integer;
     uf, veiculo, codCli: String;
     placaVeic, modeloVeic, marcaVeic, corVeic: String;
 begin
-    //DM.QueryClientes.SQL.Text := 'SELECT * FROM "Clientes" WHERE email_cliente = :Email';
-    //DM.QueryClientes.ParamByName('Email').AsString := leUsuario.Text;
-    
 
     codCli := DM.QueryClientes.FieldByName('codigo_cliente').AsString;
     nomeCli := DM.QueryClientes.FieldByName('nome_cliente').AsString;
@@ -168,18 +155,6 @@ begin
       iniCli.WriteString('Cliente', 'Cidade', cidade);
       iniCli.WriteString('Cliente', 'UF', uf);
       iniCli.WriteString('Cliente', 'Veiculo', veiculo);
-//      iniCli.WriteString('Veículo', 'Placa', placaVeic);
-//      iniCli.WriteString('Veículo', 'Modelo', modeloVeic);
-//      iniCli.WriteString('Veículo', 'Marca', marcaVeic);
-//      iniCli.WriteString('Veículo', 'Cor', corVeic);
-////      if tipoUsuario = 'Cliente' then begin
-////          DM.QueryClientes.SQL.Text := 'SELECT codigo_cliente FROM "Clientes" WHERE email_cliente = :Email';
-////          DM.QueryClientes.ParamByName('Email').AsString := leUsuario.Text;
-////          codigoCliente := DM.QueryClientes.FieldByName('codigo_cliente').AsInteger;
-////          iniArq.WriteString('Login', 'Codigo', IntToStr(codigoCliente));
-////          end;
-////
-////      end else begin
     finally
        iniCli.Free;
     end;
@@ -212,11 +187,14 @@ end;
 
 procedure TformLogin.lblCadastreAquiClick(Sender: TObject);
 // Redireciona para a página de cadastro
+var formCadastroDeClientes: TformCadastroDeClientes;
 begin
-//    formCadastroDeClientes.Create(Self);
-//    formCadastroDeClientes.Parent := Self;
-//    formCadastroDeClientes.Align := alClient;
-    formCadastroDeClientes.Show;
+    formCadastroDeClientes := TformCadastroDeClientes.Create(Self);
+    try
+      formCadastroDeClientes.ShowModal;
+    finally
+      formCadastroDeClientes.Free;
+    end;
 end;
 
 

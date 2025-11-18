@@ -70,7 +70,6 @@ type
     procedure pnlSalvarClick(Sender: TObject);
     procedure LimparCampos;
     procedure recarregarGrid;
-    procedure bitbtnInativFuncClick(Sender: TObject);
     procedure bitbtnAtualizarClick(Sender: TObject);
     procedure btnAtivarFuncClick(Sender: TObject);
   private

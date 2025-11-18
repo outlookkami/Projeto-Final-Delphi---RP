@@ -174,48 +174,56 @@ object crudPedidos: TcrudPedidos
           Expanded = False
           FieldName = 'codigo_pedido'
           Title.Caption = 'C'#243'd. Pedido'
+          Width = 68
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'endereco_cliente'
           Title.Caption = 'Endere'#231'o Cliente'
+          Width = 219
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'cep_cliente'
           Title.Caption = 'CEP Cliente'
+          Width = 100
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'placa_veiculo'
           Title.Caption = 'Placa Ve'#237'culo'
+          Width = 73
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'marca'
           Title.Caption = 'Marca'
+          Width = 107
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'modelo'
           Title.Caption = 'Modelo'
+          Width = 105
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'cor'
           Title.Caption = 'Cor'
+          Width = 73
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'descricao_pedido'
           Title.Caption = 'Descri'#231#227'o do Pedido'
+          Width = 128
           Visible = True
         end
         item
@@ -243,6 +251,7 @@ object crudPedidos: TcrudPedidos
           Expanded = False
           FieldName = 'status_pedido'
           Title.Caption = 'Status do pedido'
+          Width = 175
           Visible = True
         end
         item
@@ -583,7 +592,7 @@ object crudPedidos: TcrudPedidos
           end
           item
             Column = 1
-            Control = leData
+            Control = GridPanel10
             Row = 0
           end>
         ParentBackground = False
@@ -603,25 +612,75 @@ object crudPedidos: TcrudPedidos
           Left = 11
           Top = 24
           Width = 157
-          Height = 29
+          Height = 37
           Anchors = []
           EditLabel.Width = 126
           EditLabel.Height = 21
           EditLabel.Caption = 'C'#243'digo do Pedido:'
           TabOrder = 0
           Text = ''
+          ExplicitTop = 16
         end
-        object leData: TLabeledEdit
-          Left = 180
-          Top = 24
-          Width = 165
-          Height = 29
-          Anchors = []
-          EditLabel.Width = 108
-          EditLabel.Height = 21
-          EditLabel.Caption = 'Data do Pedido:'
+        object GridPanel10: TGridPanel
+          Left = 174
+          Top = -5
+          Width = 185
+          Height = 52
+          Align = alCustom
+          BevelOuter = bvNone
+          ColumnCollection = <
+            item
+              Value = 100.000000000000000000
+            end>
+          ControlCollection = <
+            item
+              Column = 0
+              Control = lblDataPedido
+              Row = 0
+            end
+            item
+              Column = 0
+              Control = dtPedido
+              Row = 1
+            end>
+          ParentBackground = False
+          RowCollection = <
+            item
+              SizeStyle = ssAbsolute
+              Value = 20.000000000000000000
+            end
+            item
+              SizeStyle = ssAbsolute
+              Value = 100.000000000000000000
+            end
+            item
+              SizeStyle = ssAuto
+            end>
           TabOrder = 1
-          Text = ''
+          object lblDataPedido: TLabel
+            Left = 6
+            Top = 0
+            Width = 107
+            Height = 20
+            Align = alCustom
+            Caption = 'Data do Pedido:'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clBlack
+            Font.Height = -15
+            Font.Name = 'Segoe UI'
+            Font.Style = []
+            ParentFont = False
+          end
+          object dtPedido: TDateTimePicker
+            Left = 14
+            Top = 26
+            Width = 115
+            Height = 31
+            Align = alCustom
+            Date = 45950.000000000000000000
+            Time = 0.594754340279905600
+            TabOrder = 0
+          end
         end
       end
       object GridPanel2: TGridPanel
@@ -661,6 +720,7 @@ object crudPedidos: TcrudPedidos
             SizeStyle = ssAuto
           end>
         TabOrder = 2
+        ExplicitTop = 72
         DesignSize = (
           356
           53)
@@ -823,9 +883,6 @@ object crudPedidos: TcrudPedidos
           'Or'#231'amento Aprovado'
           'Realizando Servi'#231'o'
           'Pedido Finalizado')
-        ExplicitLeft = 16
-        ExplicitTop = 523
-        ExplicitWidth = 329
       end
       object pnlFazerOrcPedido: TPanel
         Left = 183
@@ -870,7 +927,7 @@ object crudPedidos: TcrudPedidos
       object lblDescricaoPedido: TLabel
         Left = 16
         Top = 380
-        Width = 156
+        Width = 143
         Height = 21
         Align = alCustom
         Anchors = [akLeft, akTop, akRight, akBottom]
@@ -891,7 +948,6 @@ object crudPedidos: TcrudPedidos
           '')
         ParentFont = False
         TabOrder = 10
-        ExplicitLeft = 8
       end
     end
     object btnEditPedi: TPanel
@@ -912,26 +968,8 @@ object crudPedidos: TcrudPedidos
       ParentFont = False
       TabOrder = 5
     end
-    object btnInativPedi: TPanel
-      Left = 276
-      Top = 74
-      Width = 152
-      Height = 43
-      Cursor = crHandPoint
-      Anchors = [akTop, akRight]
-      Caption = 'Inativar Pedido'
-      Color = clHighlight
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWhite
-      Font.Height = -13
-      Font.Name = 'Segoe UI'
-      Font.Style = []
-      ParentBackground = False
-      ParentFont = False
-      TabOrder = 6
-    end
     object btnExcluPedi: TPanel
-      Left = 118
+      Left = 276
       Top = 74
       Width = 152
       Height = 43
@@ -946,11 +984,11 @@ object crudPedidos: TcrudPedidos
       Font.Style = []
       ParentBackground = False
       ParentFont = False
-      TabOrder = 7
+      TabOrder = 6
     end
   end
   object DSPedidos: TDataSource
-    DataSet = DM.QueryPedidosRel
+    DataSet = DM.QueryPedidos
     Left = 40
     Top = 80
   end

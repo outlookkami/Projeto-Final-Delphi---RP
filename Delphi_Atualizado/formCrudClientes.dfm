@@ -10,6 +10,9 @@ object formCrudCli: TformCrudCli
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  DesignSize = (
+    1168
+    719)
   TextHeight = 15
   object Panel1: TPanel
     Left = 0
@@ -38,9 +41,9 @@ object formCrudCli: TformCrudCli
       ParentFont = False
     end
     object btnIncluirCli: TPanel
-      Left = 603
+      Left = 624
       Top = 74
-      Width = 152
+      Width = 131
       Height = 43
       Cursor = crHandPoint
       Anchors = [akTop, akRight]
@@ -906,9 +909,9 @@ object formCrudCli: TformCrudCli
       end
     end
     object btnInativCli: TPanel
-      Left = 287
+      Left = 350
       Top = 74
-      Width = 152
+      Width = 131
       Height = 43
       Cursor = crHandPoint
       Anchors = [akTop, akRight]
@@ -925,9 +928,9 @@ object formCrudCli: TformCrudCli
       OnClick = btnInativCliClick
     end
     object btnExcluCli: TPanel
-      Left = 129
+      Left = 76
       Top = 74
-      Width = 152
+      Width = 131
       Height = 43
       Cursor = crHandPoint
       Anchors = [akTop, akRight]
@@ -944,9 +947,9 @@ object formCrudCli: TformCrudCli
       OnClick = btnExcluCliClick
     end
     object btnEditCli: TPanel
-      Left = 445
+      Left = 487
       Top = 74
-      Width = 152
+      Width = 131
       Height = 43
       Cursor = crHandPoint
       Anchors = [akTop, akRight]
@@ -962,6 +965,25 @@ object formCrudCli: TformCrudCli
       TabOrder = 7
       OnClick = btnEditCliClick
     end
+  end
+  object btnAtivCli: TPanel
+    Left = 213
+    Top = 74
+    Width = 131
+    Height = 43
+    Cursor = crHandPoint
+    Anchors = [akTop, akRight]
+    Caption = 'Ativar Cliente'
+    Color = clHighlight
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWhite
+    Font.Height = -13
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentBackground = False
+    ParentFont = False
+    TabOrder = 1
+    OnClick = btnAtivCliClick
   end
   object DSCliente: TDataSource
     DataSet = DM.QueryClientes

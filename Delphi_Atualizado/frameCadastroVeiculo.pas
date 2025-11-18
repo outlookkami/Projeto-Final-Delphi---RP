@@ -6,7 +6,7 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes,
   Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Mask,
   Vcl.ExtCtrls, Vcl.DBCtrls, Data.DB, dataModuleNormal, REST.Types, REST.Client,
-  Data.Bind.Components, Data.Bind.ObjectScope;
+  Data.Bind.Components, Data.Bind.ObjectScope, Vcl.Imaging.pngimage;
 
 type
   TframeCadVeiculo = class(TFrame)
@@ -39,7 +39,9 @@ type
     GridPanel7: TGridPanel;
     Label7: TLabel;
     cbAnoFab: TComboBox;
+    btnVoltar: TImage;
     procedure pnlBotaoCadastrarVeiculoClick(Sender: TObject);
+    procedure btnVoltarClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -52,8 +54,13 @@ implementation
 
 {$R *.dfm}
 
+procedure TframeCadVeiculo.btnVoltarClick(Sender: TObject);
+begin
+    frameCadVeiculo.Free;
+end;
+
 procedure TframeCadVeiculo.pnlBotaoCadastrarVeiculoClick(Sender: TObject);
-var codCli, userCli, nomeCli: String;
+var codCli, userCli, nomeCli, contatoCli: String;
 begin
 
     if (lePlaca.Text = '') or (leMarca.Text = '') or (leModelo.Text = '') then begin
@@ -61,32 +68,35 @@ begin
         Exit;
     end else begin
 
+      DM.QueryClientes.SQL.Text := 'SELECT * FROM "Clientes" WHERE email_cliente = :EmailCli';
+      DM.QueryClientes.ParamByName('EmailCli').AsString := leEmailCliente.Text;
+      contatoCli := DM.QueryClientes.FieldByName('telefone_cliente').AsString;
+
         with DM.QueryVeiculos do begin
 
-          SQL.Text := 'INSERT INTO Veiculos(placa_veiculo, chassi, marca, modelo, ano_mod, cor, ano_fab, nome_usuario_cliente, codigo_cliente, nome_cliente) VALUES (:Placa, :Chassi, :Marca, :Modelo, :AnoMod, :Cor, :AnoFab, :EmailCli, :CodigoCli, :NomeCli);';
+          SQL.Text := 'INSERT INTO Veiculos(placa_veiculo, chassi, marca, modelo, ano_mod, cor, ano_fab, nome_usuario_cliente, contato_cliente) VALUES (:Placa, :Chassi, :Marca, :Modelo, :AnoMod, :Cor, :AnoFab, :EmailCli, :Contato);';
 
-          ParamByName('Placa').AsString := lePlaca.Text;
+          ParamByName('Placa').AsString := UpperCase(lePlaca.Text);
           ParamByName('Chassi').AsString := leChassi.Text;
           ParamByName('Marca').AsString := leMarca.Text;
           ParamByName('Modelo').AsString := leModelo.Text;
           ParamByName('AnoMod').AsInteger := StrToInt(cbAnoMod.Text);
           ParamByName('Cor').AsString := leCor.Text;
           ParamByName('AnoFab').AsInteger := StrToInt(cbAnoFab.Text);
-          ParamByName('EmailCli').AsString := userCli;
-          ParamByName('CodigoCli').AsString := codCli;
-          ParamByName('NomeCli').AsString := nomeCli;
+          ParamByName('EmailCli').AsString := leEmailCliente.Text;
+          ParamByName('Contato').AsString := contatoCli;
 
           with DM.QueryClientes do begin
-          SQL.Text := 'INSERT INTO "Clientes"(veiculo) VALUES(:Veiculo) WHERE email_cliente = :EmailCli';
-          ParamByName('Veiculo').AsString := lePlaca.Text;
-          ParamByName('EmailCli').AsString := leEmailCliente.Text;
+            SQL.Text := 'INSERT INTO "Clientes" (veiculo) VALUES(:Veiculo) WHERE email_cliente = :EmailCli';
+            ParamByName('Veiculo').AsString := lePlaca.Text;
+            ParamByName('EmailCli').AsString := leEmailCliente.Text;
           end;
 
           ExecSQL;
 
           ShowMessage('Veículo cadastrado com sucesso!');
           Sleep(3000);
-          Close;
+          frameCadVeiculo.Free;
         end;
 
 end;

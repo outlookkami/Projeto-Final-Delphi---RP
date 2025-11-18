@@ -10,6 +10,7 @@ object formTrocaSenha: TformTrocaSenha
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  OnShow = FormShow
   TextHeight = 15
   object pnlSenhaFuncionario: TPanel
     Left = 0
@@ -45,8 +46,8 @@ object formTrocaSenha: TformTrocaSenha
       Align = alTop
       ExplicitWidth = 3
     end
-    object Image1: TImage
-      Left = 1
+    object btnVoltar: TImage
+      Left = 0
       Top = 1
       Width = 41
       Height = 41
@@ -600,7 +601,7 @@ object formTrocaSenha: TformTrocaSenha
         FAF7D9A9CE5CA5FE29AE929E9E55322AD7296E5D8774AD7F552EDBBFD3F4E6C3
         2EFF1FEF6E0AB32B93B1E90000000049454E44AE426082}
       Proportional = True
-      OnClick = Image1Click
+      OnClick = btnVoltarClick
     end
     object pnlCadSenhaFunc: TPanel
       Left = 64

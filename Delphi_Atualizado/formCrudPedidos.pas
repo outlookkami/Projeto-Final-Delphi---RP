@@ -6,7 +6,8 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, REST.Types, REST.Client,
   Data.Bind.Components, Data.Bind.ObjectScope, Vcl.StdCtrls, Vcl.Mask,
-  Vcl.ExtCtrls, Vcl.Grids, Vcl.DBGrids, Vcl.Imaging.pngimage, dataModuleNormal;
+  Vcl.ExtCtrls, Vcl.Grids, Vcl.DBGrids, Vcl.Imaging.pngimage, dataModuleNormal,
+  Vcl.ComCtrls;
 
 type
   TcrudPedidos = class(TForm)
@@ -28,7 +29,6 @@ type
     Label10: TLabel;
     leEmailCliente: TLabeledEdit;
     btnEditPedi: TPanel;
-    btnInativPedi: TPanel;
     btnExcluPedi: TPanel;
     DSPedidos: TDataSource;
     RESTClient1: TRESTClient;
@@ -36,7 +36,6 @@ type
     RESTResponse1: TRESTResponse;
     GridPanel1: TGridPanel;
     leCodPedido: TLabeledEdit;
-    leData: TLabeledEdit;
     GridPanel2: TGridPanel;
     leContato: TLabeledEdit;
     leCEP: TLabeledEdit;
@@ -53,6 +52,9 @@ type
     pnlIncluirPedido: TPanel;
     lblDescricaoPedido: TLabel;
     descPedido: TMemo;
+    GridPanel10: TGridPanel;
+    lblDataPedido: TLabel;
+    dtPedido: TDateTimePicker;
     procedure DBGrid1CellClick(Column: TColumn);
     procedure btnIncluirPediClick(Sender: TObject);
     procedure pnlFazerOrcPedidoClick(Sender: TObject);
@@ -82,7 +84,7 @@ begin
 
     with DM.QueryPedidos do begin
       leCodPedido.Text := FieldByName('codigo_pedido').AsString;
-      leData.Text := FieldByName('data_pedido').AsString;
+      dtPedido.Date := StrToDate(FieldByName('data_pedido').AsString);
       leContato.Text := FieldByName('contato_cliente').AsString;
       leCEP.Text := FieldByName('cep_cliente').AsString;
       leEmailCliente.Text := FieldByName('email_cliente').AsString;
@@ -106,7 +108,7 @@ begin
         DM.QueryPedidos.Open;
         SQL.Text := 'INSERT INTO Pedidos (data_pedido, contato_cliente, endereco_cliente, cep_cliente, placa_veiculo, modelo, marca, cor, descricao_pedido, nome_cliente, email_cliente, status_pedido) VALUES (:Data, :Contato, :Endereco, :CEP, :Placa, :Modelo, :Marca, :Cor, :DescPedido, :NomeCli, :EmailCli, :Status);';
 
-        ParamByName('Data').AsString := leData.Text;
+        ParamByName('Data').AsString := DateToStr(dtPedido.Date);
         ParamByName('Contato').AsString := leContato.Text;
         ParamByName('Endereco').AsString := leEndereco.Text;
         ParamByName('CEP').AsString := leCEP.Text;

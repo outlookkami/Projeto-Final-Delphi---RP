@@ -127,7 +127,7 @@ begin
 
     with DM.QueryOrcamentos do begin
       Open;
-      SQL.Text := 'SELECT * FROM Orcamentos WHERE email_cliente = :EmailCli and validade >= CURRENT_DATE';
+      SQL.Text := 'SELECT * FROM Orcamentos WHERE email_cliente = :EmailCli and validade >= CURRENT_DATE LIMIT 1';
       ParamByName('EmailCli').AsString := dadosCliente.emailCli;
       codOrcStr := IntToStr(FieldByName('codigo_orcamento').AsInteger);
       numeroOrcamento.Caption := codOrcStr;

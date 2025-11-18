@@ -53,6 +53,7 @@ type
     RESTClient1: TRESTClient;
     pnlCadastraCliCrud: TPanel;
     pnlSalvar: TPanel;
+    btnAtivCli: TPanel;
     procedure leCEPExit(Sender: TObject);
     procedure pnlCadastraCliCrudClick(Sender: TObject);
     procedure btnIncluirCliClick(Sender: TObject);
@@ -62,6 +63,7 @@ type
     procedure recarregarGrid;
     procedure LimparCampos;
     procedure btnEditCliClick(Sender: TObject);
+    procedure btnAtivCliClick(Sender: TObject);
   private
     { Private declarations }
 
@@ -141,6 +143,20 @@ begin
     DM.QueryClientes.Open;
 end;
 
+procedure TformCrudCli.btnAtivCliClick(Sender: TObject);
+begin
+    if (DM.QueryClientes.FieldByName('ativo_in').AsBoolean = True) then begin
+      ShowMessage('O cliente deve estar inativo para ser ativado novamente.');
+    end else begin
+    DM.QueryClientes.Close;
+    DM.QueryClientes.SQL.Text := 'UPDATE "Clientes" SET ativo_in = true WHERE codigo_funcionario = :codCli';
+    DM.QueryClientes.ParamByName('codCli').AsInteger := StrToInt(codigoCliente);
+    DM.QueryClientes.ExecSQL;
+
+    recarregarGrid;
+    end;
+end;
+
 procedure TformCrudCli.btnEditCliClick(Sender: TObject);
 // Editar Cliente
 begin
@@ -160,7 +176,7 @@ end;
 procedure TformCrudCli.btnExcluCliClick(Sender: TObject);
 // Excluir Cliente
 begin
-    if (DM.QueryClientes.FieldByName('ativo_in').AsBoolean = True) then begin
+    if DM.QueryClientes.FieldByName('ativo_in').AsBoolean = True then begin
       ShowMessage('O cliente deve estar inativo antes de ser excluído.');
     end else if
      MessageDlg('Tem certeza de que deseja excluir o cliente? Essa ação não poderá ser revertida', mtConfirmation, [mbYes, mbNo], 0) = mrYes then begin

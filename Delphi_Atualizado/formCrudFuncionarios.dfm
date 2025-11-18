@@ -934,7 +934,7 @@ object formCrudFunc: TformCrudFunc
         EditLabel.Caption = '*Nome completo:'
         TabOrder = 11
         Text = ''
-        TextHint = 'Digite seu nome completo'
+        TextHint = 'Digite o nome completo'
       end
     end
     object btnEditFunc: TPanel
@@ -999,6 +999,7 @@ object formCrudFunc: TformCrudFunc
       Top = 123
       Width = 152
       Height = 25
+      Anchors = [akTop, akRight]
       Caption = 'Atualizar'
       TabOrder = 8
       OnClick = bitbtnAtualizarClick
@@ -1009,7 +1010,7 @@ object formCrudFunc: TformCrudFunc
       Width = 152
       Height = 43
       Cursor = crHandPoint
-      Anchors = [akLeft, akTop, akRight]
+      Anchors = [akTop, akRight]
       Caption = 'Ativar Funcion'#225'rio'
       Color = clHighlight
       Font.Charset = DEFAULT_CHARSET
