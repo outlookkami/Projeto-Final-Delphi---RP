@@ -31,6 +31,13 @@ type
     RLDBText2: TRLDBText;
     RLDBText1: TRLDBText;
     RLDBText3: TRLDBText;
+    RLLabel5: TRLLabel;
+    RLDBText4: TRLDBText;
+    RLBand4: TRLBand;
+    RLLabel6: TRLLabel;
+    RLLabel7: TRLLabel;
+    RLDBResult1: TRLDBResult;
+    RLDBResult2: TRLDBResult;
 //    procedure FormCreate(Sender: TObject);
 //    procedure FormDestroy(Sender: TObject);
   private
@@ -42,11 +49,12 @@ type
 var
   formRepPedidos: TformRepPedidos;
 
+
 implementation
 
 {$R *.dfm}
 
-uses dataModuleNormal, formCrudPedidos;
+uses dataModuleNormal, formCrudPedidos, formCrudOrcamentos;
 
 //procedure TformRepPedidos.FormCreate(Sender: TObject);
 //begin

@@ -7,7 +7,7 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, REST.Types, REST.Client,
   Data.Bind.Components, Data.Bind.ObjectScope, Vcl.StdCtrls, Vcl.Mask,
   Vcl.ExtCtrls, Vcl.Grids, Vcl.DBGrids, Vcl.Imaging.pngimage, dataModuleNormal,
-  Vcl.ComCtrls;
+  Vcl.ComCtrls, Vcl.Buttons;
 
 type
   TcrudPedidos = class(TForm)
@@ -55,9 +55,16 @@ type
     GridPanel10: TGridPanel;
     lblDataPedido: TLabel;
     dtPedido: TDateTimePicker;
+    bitbtnAtualizar: TBitBtn;
+    pnlSalvar: TPanel;
     procedure DBGrid1CellClick(Column: TColumn);
     procedure btnIncluirPediClick(Sender: TObject);
     procedure pnlFazerOrcPedidoClick(Sender: TObject);
+    procedure bitbtnAtualizarClick(Sender: TObject);
+    procedure recarregarGrid;
+    procedure LimparCampos;
+    procedure FormCreate(Sender: TObject);
+    procedure pnlIncluirPedidoClick(Sender: TObject);
 
   private
     { Private declarations }
@@ -81,6 +88,7 @@ procedure TcrudPedidos.DBGrid1CellClick(Column: TColumn);
 begin
     codigoPedido :=  DBGrid1.Fields[0].Value;
     //codPedido := IntToStr(leCodPedido.Text);
+    pnlFazerOrcPedido.Visible := True;
 
     with DM.QueryPedidos do begin
       leCodPedido.Text := FieldByName('codigo_pedido').AsString;
@@ -98,29 +106,48 @@ begin
     end;
 end;
 
+procedure TcrudPedidos.FormCreate(Sender: TObject);
+begin
+    pnlFazerOrcPedido.Visible := False;
+end;
+
+procedure TcrudPedidos.LimparCampos;
+begin
+    leCodPedido.Clear;
+    dtPedido.Date := Date;
+    leContato.Clear;
+    leCep.Clear;
+    leEmailCliente.Clear;
+    leEndereco.Clear;
+    leMarca.Clear;
+    leModelo.Clear;
+    descPedido.Clear;
+    cbStatus.ItemIndex := -1;
+end;
+
+procedure TcrudPedidos.recarregarGrid;
+begin
+    with DM.QueryPedidos do begin
+      Close;
+      SQL.Text := 'SELECT * FROM Pedidos ORDER BY data_pedido ASC';
+      Open;
+    end;
+end;
+
+procedure TcrudPedidos.bitbtnAtualizarClick(Sender: TObject);
+begin
+    recarregarGrid;
+end;
+
 procedure TcrudPedidos.btnIncluirPediClick(Sender: TObject);
 begin
       pnlIncluirPedido.Visible := True;
       pnlFazerOrcPedido.Visible := False;
+      pnlSalvar.Visible := False;
 
-      with DM.QueryPedidos do begin
-        DM.QueryPedidos.Close;
-        DM.QueryPedidos.Open;
-        SQL.Text := 'INSERT INTO Pedidos (data_pedido, contato_cliente, endereco_cliente, cep_cliente, placa_veiculo, modelo, marca, cor, descricao_pedido, nome_cliente, email_cliente, status_pedido) VALUES (:Data, :Contato, :Endereco, :CEP, :Placa, :Modelo, :Marca, :Cor, :DescPedido, :NomeCli, :EmailCli, :Status);';
+      LimparCampos;
 
-        ParamByName('Data').AsString := DateToStr(dtPedido.Date);
-        ParamByName('Contato').AsString := leContato.Text;
-        ParamByName('Endereco').AsString := leEndereco.Text;
-        ParamByName('CEP').AsString := leCEP.Text;
-        ParamByName('Placa').AsString := lePlaca.Text;
-        ParamByName('Modelo').AsString := leModelo.Text;
-        ParamByName('Marca').AsString := leMarca.Text;
-        ParamByName('Cor').AsString := leCorVeiculo.Text;
-        ParamByName('DescPedido').AsString := descPedido.Text;
-        ParamByName('NomeCli').AsString := dadosCliente.nomeCli; //puxar o nome pelo código do cliente
-        ParamByName('EmailCli').AsString := leEmailCliente.Text;
-        ParamByName('Status').AsString := cbStatus.Text;
-      end;
+      leContato.setFocus;
 end;
 
 procedure TcrudPedidos.pnlFazerOrcPedidoClick(Sender: TObject);
@@ -143,6 +170,34 @@ begin
       ParamByName('Cor').AsString := leCorVeiculo.Text;
       ParamByName('DescPedido').AsString := descPedido.Text;
       ParamByName('StatusOrc').AsString := cbStatus.Text;
+
+      ExecSQL;
+    end;
+end;
+
+procedure TcrudPedidos.pnlIncluirPedidoClick(Sender: TObject);
+begin
+    pnlIncluirPedido.Visible := True;
+    pnlFazerOrcPedido.Visible := False;
+
+    LimparCampos;
+
+    with DM.QueryPedidos do begin
+      DM.QueryPedidos.Open;
+      SQL.Text := 'INSERT INTO Pedidos (data_pedido, contato_cliente, endereco_cliente, cep_cliente, placa_veiculo, modelo, marca, cor, descricao_pedido, nome_cliente, email_cliente, status_pedido) VALUES (:Data, :Contato, :Endereco, :CEP, :Placa, :Modelo, :Marca, :Cor, :DescPedido, :NomeCli, :EmailCli, :Status);';
+
+      ParamByName('Data').AsDate := dtPedido.Date;
+      ParamByName('Contato').AsString := leContato.Text;
+      ParamByName('Endereco').AsString := leEndereco.Text;
+      ParamByName('CEP').AsString := leCEP.Text;
+      ParamByName('Placa').AsString := lePlaca.Text;
+      ParamByName('Modelo').AsString := leModelo.Text;
+      ParamByName('Marca').AsString := leMarca.Text;
+      ParamByName('Cor').AsString := leCorVeiculo.Text;
+      ParamByName('DescPedido').AsString := descPedido.Text;
+      ParamByName('NomeCli').AsString := dadosCliente.nomeCli; //puxar o nome pelo código do cliente
+      ParamByName('EmailCli').AsString := leEmailCliente.Text;
+      ParamByName('Status').AsString := cbStatus.Text;
 
       ExecSQL;
     end;

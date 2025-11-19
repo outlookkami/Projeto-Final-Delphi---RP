@@ -6,14 +6,10 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, REST.Types, REST.Client,
   Data.Bind.Components, Data.Bind.ObjectScope, Vcl.StdCtrls, Vcl.Mask,
-  Vcl.ExtCtrls, Vcl.Grids, Vcl.DBGrids, Vcl.Imaging.pngimage, Vcl.ComCtrls;
+  Vcl.ExtCtrls, Vcl.Grids, Vcl.DBGrids, Vcl.Imaging.pngimage, Vcl.ComCtrls,
+  Vcl.Buttons;
 
 type
-    TvalorTotal = record
-      totProd: Double;
-      custoMDO: Double;
-      valorOrcamento: Double;
-    end;
   TStringList = class(TStrings);
   TcrudOrcamentos = class(TForm)
     Panel1: TPanel;
@@ -66,10 +62,12 @@ type
     GridPanel4: TGridPanel;
     leCor: TLabeledEdit;
     leModelo: TLabeledEdit;
-    strgridMateriais: TStringGrid;
     leValorMDO: TLabeledEdit;
+    bitbtnAtualizar: TBitBtn;
+    pnlSalvar: TPanel;
+    strgridMateriais: TStringGrid;
+    pnlRemove: TPanel;
     procedure pnlIncluirOrcClick(Sender: TObject);
-    //procedure pnlFazerOrcPedidoClick(Sender: TObject);
     procedure DBGrid1CellClick(Column: TColumn);
     procedure pnlFazerOrcPedidoClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -78,11 +76,16 @@ type
     procedure btnAddProdClick(Sender: TObject);
     procedure btnIncluirOrcClick(Sender: TObject);
     procedure LimparCampos;
-
+    procedure recarregarGrid;
+    procedure somaSubtotais;
+    procedure bitbtnAtualizarClick(Sender: TObject);
+    procedure btnEditOrcClick(Sender: TObject);
+    procedure btnExcluOrcClick(Sender: TObject);
   private
     { Private declarations }
   public
     { Public declarations }
+    var valorOrcamento, totProd, custoMDO: Double;
   end;
 
 var
@@ -96,18 +99,17 @@ uses formOrcamento, DataModuleNormal, formFormularioPedido;
 
 var codigoOrcamento: String;
     codOrc: Integer;
-    valorOrcamento, totProd, custoMDO: Double;
 
 procedure TcrudOrcamentos.FormCreate(Sender: TObject);
 // Ao criar formulário puxa os dados do StringGrid de materiais
-var strgridMateriais: TStringGrid;
+var
     i: Integer;
 begin
     dtEmissao.Date := Date;
     tabelas.ActivePage := TabSheet1;
-    DM.QueryProdutos.Open;
-    strgridMateriais.ColCount := 5;
-    strgridMateriais.RowCount := 1;
+    //DM.QueryProdutos.Open;
+    strgridMateriais.ColCount := 4;
+    strgridMateriais.RowCount := 2;
     strgridMateriais.FixedRows := 1;
 
     strgridMateriais.Cells[0,0] := 'Nome do produto';
@@ -120,6 +122,12 @@ end;
 procedure TcrudOrcamentos.DBGrid1CellClick(Column: TColumn);
 // Mostrar dados nos campos do formulário lateral
 begin
+
+    pnlFazerOrcPedido.Visible := True;
+    pnlSalvar.Visible := False;
+    pnlIncluirOrc.Visible := False;
+    dtEmissao.Date := Date;
+
     codigoOrcamento :=  DBGrid3.Fields[0].Value;
     codOrc := StrToInt(codigoOrcamento);
 
@@ -133,7 +141,7 @@ begin
       leCor.Text := FieldByName('cor').AsString;
       leMarca.Text := FieldByName('marca').AsString;
       leModelo.Text := FieldByName('modelo').AsString;
-      descServico.Text := FieldByName('descricao_servico').AsString;
+      descServico.Text := FieldByName('descricao_pedido').AsString;
       leValorMDO.Text := FieldByName('valor_mdo').AsString;
       cbStatus.Text := FieldByName('status_orcamento').AsString;
 // Soma dos valores dos materiais estimados: FieldByName('valor_materiais');
@@ -141,8 +149,6 @@ begin
 //      leEmailCliente.Text := FieldByName('email_cliente').AsString;
 //      leEndereco.Text := FieldByName('endereco_cliente').AsString;
     end;
-
-    //leDataEmissao.Date := Date;
 end;
 
 procedure TcrudOrcamentos.LimparCampos;
@@ -160,12 +166,29 @@ begin
     cbStatus.ItemIndex := -1;
 end;
 
+procedure TcrudOrcamentos.recarregarGrid;
+begin
+    with DM.QueryOrcamentos do begin
+      Close;
+      SQL.Text := 'SELECT * FROM Orcamentos ORDER BY data_emissao ASC';
+      Open;
+    end;
+end;
+
 procedure TcrudOrcamentos.btnIncluirOrcClick(Sender: TObject);
 begin
     pnlIncluirOrc.Visible := True;
     pnlFazerOrcPedido.Visible := False;
+    pnlSalvar.Visible := False;
 
     LimparCampos;
+
+    leCodPedido.setFocus;
+end;
+
+procedure TcrudOrcamentos.bitbtnAtualizarClick(Sender: TObject);
+begin
+    recarregarGrid;
 end;
 
 procedure TcrudOrcamentos.btnAddProdClick(Sender: TObject);
@@ -173,53 +196,89 @@ var nomeProd: String;
     precoVen, subtotal, qtd: Double;
     i, coluna: Integer;
 begin
-      DM.QueryProdutos.Open;
-      nomeProd := DM.QueryProdutos.FieldByName('nome_produto').AsString;
-      precoVen := DM.QueryProdutos.FieldByName('preco_venda').AsFloat;
+    if Trim(edtQtdProd.Text) = '' then begin
+      ShowMessage('Informe a quantidade antes de adicionar o produto');
+      Exit;
+    end;
 
-      if Trim(edtQtdProd.Text) = '' then begin
-        ShowMessage('Informe a quantidade antes de adicionar o produto');
-        Exit;
-      end;
+    DM.QueryProdutos.Open;
+    nomeProd := DM.QueryProdutos.FieldByName('nome_produto').AsString;
+    precoVen := DM.QueryProdutos.FieldByName('preco_venda').AsFloat;
 
-      qtd := StrToIntDef(edtQtdProd.Text, 1);
-      subtotal := qtd * precoVen;
+    qtd := StrToIntDef(edtQtdProd.Text, 1);
+    subtotal := qtd * precoVen;
 
-      i := strgridMateriais.RowCount;
-      strgridMateriais.RowCount := i + 1;
+    i := strgridMateriais.RowCount;
+    strgridMateriais.RowCount := i + 1;
 
-      strgridMateriais.Cells[0, i] := nomeProd;
-      strgridMateriais.Cells[1, i] := FormatFloat('0.00', precoVen);
-      strgridMateriais.Cells[2, i] := FormatFloat('0.00', qtd);
-      strgridMateriais.Cells[3, i] := FormatFloat('0.00', subtotal);
+    strgridMateriais.Cells[0, i] := nomeProd;
+    strgridMateriais.Cells[1, i] := FormatFloat('0.00', precoVen);
+    strgridMateriais.Cells[2, i] := FormatFloat('0.00', qtd);
+    strgridMateriais.Cells[3, i] := FormatFloat('0.00', subtotal);
 
-      totProd := subtotal;
+    totProd := subtotal;
 
-      tabelas.ActivePage := TabSheet2;
+    tabelas.ActivePage := TabSheet2;
 
-      TvalorTotal.totProd := totProd;
-
+    //TvalorTotal.totProd := totProd;
 
 end;
 
-procedure receberDadosPedido;
+procedure TcrudOrcamentos.somaSubtotais;
+var i: Integer;
+    total: Double;
 begin
+    total := 0;
 
+    for i := 1 to strgridMateriais.RowCount -1 do
+     total := total + StrToFloatDef(strgridMateriais.Cells[3, i], 0);
 
-  with DM.QueryOrcamentos do begin
-//    SQL.Text :=  'INSERT INTO Orcamentos (codigo_pedido, contato_cliente, email_cliente, cep_cliente, placa_veiculo, marca, modelo, cor, descricao_pedido, status_orcamento) VALUES (:CodPedido, :Contato, :Email, :CEP, :Placa, :Marca, :Modelo, :Cor, :DescPedido, :StatusOrc)';
-//    ParamByName('CodPedido').AsString := codigoPedido;
-//    ParamByName('Contato').AsString := leContato.Text;
-//    ParamByName('Email').AsString := leEmailCliente.Text;
-//    ParamByName('CEP').AsString := leCEP.Text;
-//    ParamByName('Placa').AsString := lePlaca.Text;
-//    ParamByName('Marca').AsString := leMarca.Text;
-//    ParamByName('Modelo').AsString := leModelo.Text;
-//    ParamByName('Cor').AsString := leCorVeiculo.Text;
-//    ParamByName('DescPedido').AsString := descPedido.Text;
-//    ParamByName('StatusOrc').AsString := cbStatus.Text;
-  end;
+     totProd := total;
 end;
+
+procedure TcrudOrcamentos.btnEditOrcClick(Sender: TObject);
+begin
+    pnlFazerOrcPedido.Visible := False;
+    pnlIncluirOrc.Visible := False;
+    pnlSalvar.Visible := True;
+
+    if not DM.QueryOrcamentos.Active then begin
+      DM.QueryOrcamentos.Open;
+    end else if DM.QueryOrcamentos.Active then begin
+      DM.QueryOrcamentos.Edit;
+    end else begin
+      ShowMessage('Não foi possível acessar os dados do cliente para edição.');
+    end;
+end;
+
+procedure TcrudOrcamentos.btnExcluOrcClick(Sender: TObject);
+begin
+    if MessageDlg('Tem certeza de que deseja excluir o orçamento? Essa ação não poderá ser revertida', mtConfirmation, [mbYes, mbNo], 0) = mrYes then begin
+      DM.QueryOrcamentos.Close;
+      DM.QueryOrcamentos.SQL.Text := 'DELETE FROM Orcamentos WHERE codigo_orcamento = :codOrc';
+      DM.QueryOrcamentos.ParamByName('codOrc').AsInteger := StrToInt(codigoOrcamento);
+      DM.QueryOrcamentos.ExecSQL;
+
+      recarregarGrid;
+     end;
+end;
+
+//procedure receberDadosPedido;
+//begin
+//  with DM.QueryOrcamentos do begin
+////    SQL.Text :=  'INSERT INTO Orcamentos (codigo_pedido, contato_cliente, email_cliente, cep_cliente, placa_veiculo, marca, modelo, cor, descricao_pedido, status_orcamento) VALUES (:CodPedido, :Contato, :Email, :CEP, :Placa, :Marca, :Modelo, :Cor, :DescPedido, :StatusOrc)';
+////    ParamByName('CodPedido').AsString := codigoPedido;
+////    ParamByName('Contato').AsString := leContato.Text;
+////    ParamByName('Email').AsString := leEmailCliente.Text;
+////    ParamByName('CEP').AsString := leCEP.Text;
+////    ParamByName('Placa').AsString := lePlaca.Text;
+////    ParamByName('Marca').AsString := leMarca.Text;
+////    ParamByName('Modelo').AsString := leModelo.Text;
+////    ParamByName('Cor').AsString := leCorVeiculo.Text;
+////    ParamByName('DescPedido').AsString := descPedido.Text;
+////    ParamByName('StatusOrc').AsString := cbStatus.Text;
+//  end;
+//end;
 
 procedure TcrudOrcamentos.pnlFazerOrcPedidoClick(Sender: TObject);
 var material: TListItem;
@@ -235,7 +294,8 @@ begin
     valorOrcamento := custoMDO + totProd;
 
     with DM.QueryOrcamentos do begin
-      SQL.Text := 'INSERT INTO Orcamentos (validade, valor_mdo, valor_materiais, valor_total) VALUES (:Validade, :MDO, :Materiais, :Total) WHERE codigo_pedido = :CodPedido';
+      SQL.Text := 'INSERT INTO Orcamentos (data_emissao, validade, valor_mdo, valor_materiais, valor_total) VALUES (:Emissao,:Validade, :MDO, :Materiais, :Total) WHERE codigo_pedido = :CodPedido';
+      ParamByName('Emissao').AsDate := dtEmissao.Date;
       ParamByName('Validade').AsDate := dtValidade.Date;
       ParamByName('MDO').AsFloat := custoMDO;
       ParamByName('Materiais').AsFloat := totProd;
@@ -244,7 +304,7 @@ begin
     end;
 
     with DM.QueryPedidos do begin
-      SQL.Text := 'INSERT INTO Pedidos (status_pedido) VALUES (:Statusorc) WHERE cod_pedido = :CodPedido';
+      SQL.Text := 'UPDATE Pedidos SET status_pedido = :Statusorc WHERE cod_pedido = :CodPedido';
       ParamByName('Statusorc').AsString := 'Orçamento Realizado';
       ParamByName('CodPedido').AsInteger := StrToInt(leCodPedido.Text);
     end;
@@ -253,11 +313,12 @@ end;
 procedure TcrudOrcamentos.pnlIncluirOrcClick(Sender: TObject);
 begin
       pnlIncluirOrc.Visible := True;
+      LimparCampos;
 
       with DM.QueryOrcamentos do begin
         DM.QueryOrcamentos.Open;
-        SQL.Text := 'INSERT INTO Orcamentos (codigo_pedido, data_emissao, validade, contato_cliente, placa_veiculo, modelo, marca, cor, descricao_pedido, status_orcamento, contato_cliente, nome_cliente, email_cliente, cep_cliente)' +
-        'VALUES (:CodPedido, :DataEmissao, :Validade, :Contato, :Placa, :Modelo, :Marca, :Cor, :DescPedido, :ValorMDO, :Status);';
+        SQL.Text := 'INSERT INTO Orcamentos (codigo_pedido, codigo_cliente, data_emissao, validade, contato_cliente, placa_veiculo, modelo, marca, cor, descricao_pedido, status_orcamento, nome_cliente, email_cliente, cep_cliente)' +
+        'VALUES (:CodPedido, :CodCliente, :DataEmissao, :Validade, :Contato, :Placa, :Modelo, :Marca, :Cor, :DescPedido, :ValorMDO, :Status);';
 
         ParamByName('CodPedido').AsString := leCodPedido.Text;
         ParamByName('CodCliente').AsString := leCodigoCli.Text;

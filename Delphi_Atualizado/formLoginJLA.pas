@@ -197,7 +197,6 @@ begin
     end;
 end;
 
-
 procedure TformLogin.lblEsqueceuSenhaClick(Sender: TObject);
 // Redireciona para a página de trocar senha
 var formTrocaSenha: TformTrocaSenha;
@@ -210,8 +209,6 @@ begin
       formTrocaSenha.Free;
     end;
 end;
-
-
 
 procedure TformLogin.pnlEntrarClick(Sender: TObject);
 // Verificações do Login

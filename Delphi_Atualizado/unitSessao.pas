@@ -27,7 +27,7 @@ uses dataModuleNormal, IniFiles, SysUtils, Vcl.Dialogs;
 var iniCli, iniArq: TIniFile;
 
 // Faz a leitura do arquivo ini com os dados de login
-//reutilizável
+// reutilizável
 procedure lerDadosLogin;//(var emailUsuario, tipoUsuario: String);
 var iniArq: TIniFile;
     caminhoIni: String;

@@ -605,4 +605,53 @@ object DM: TDM
       Size = 25
     end
   end
+  object QueryPedidosOrcamentos: TFDQuery
+    Connection = ConexaoBanco
+    SQL.Strings = (
+      'SELECT'
+      '    -- Dados do Pedido'
+      '    p.codigo_pedido        AS pedido_codigo,'
+      '    p.data_pedido          AS pedido_data,'
+      '    p.nome_cliente         AS pedido_nome,'
+      '    p.contato_cliente      AS pedido_contato,'
+      '    p.endereco_cliente     AS pedido_endereco,'
+      '    p.cep_cliente          AS pedido_cep,'
+      '    p.email_cliente        AS pedido_email,'
+      '    p.placa_veiculo        AS pedido_placa,'
+      '    p.modelo               AS pedido_modelo,'
+      '    p.marca                AS pedido_marca,'
+      '    p.cor                  AS pedido_cor,'
+      '    p.descricao_pedido     AS pedido_descricao,'
+      '    p.status_pedido        AS pedido_status,'
+      '    p.codigo_cliente       AS pedido_codigo_cliente,'
+      ''
+      '    -- Dados do Or'#231'amento'
+      '    o.codigo_orcamento     AS orc_codigo,'
+      '    o.data_emissao         AS orc_data_emissao,'
+      '    o.validade             AS orc_validade,'
+      '    o.nome_cliente         AS orc_nome,'
+      '    o.contato_cliente      AS orc_contato,'
+      '    o.email_cliente        AS orc_email,'
+      '    o.cep_cliente          AS orc_cep,'
+      '    o.placa_veiculo        AS orc_placa,'
+      '    o.marca                AS orc_marca,'
+      '    o.modelo               AS orc_modelo,'
+      '    o.cor                  AS orc_cor,'
+      '    o.status_orcamento     AS orc_status,'
+      '    o.descricao_servico    AS orc_descricao_servico,'
+      '    o.codigo_cliente       AS orc_codigo_cliente,'
+      '    o.valor_mdo            AS orc_valor_mdo,'
+      '    o.valor_materiais      AS orc_valor_materiais,'
+      '    o.valor_total          AS orc_valor_total,'
+      '    o.lista_materiais      AS orc_lista_materiais'
+      ''
+      'FROM pedidos p'
+      'INNER JOIN orcamentos o'
+      '    ON o.codigo_pedido = p.codigo_pedido'
+      ''
+      'ORDER BY p.codigo_pedido;'
+      '')
+    Left = 272
+    Top = 336
+  end
 end

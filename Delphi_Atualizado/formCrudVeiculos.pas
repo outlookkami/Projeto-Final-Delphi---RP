@@ -6,7 +6,8 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, REST.Types, REST.Client,
   Data.Bind.Components, Data.Bind.ObjectScope, Vcl.StdCtrls, Vcl.Mask,
-  Vcl.ExtCtrls, Vcl.Grids, Vcl.DBGrids, Vcl.Imaging.pngimage, dataModuleNormal;
+  Vcl.ExtCtrls, Vcl.Grids, Vcl.DBGrids, Vcl.Imaging.pngimage, dataModuleNormal,
+  Vcl.Buttons;
 
 type
   //TformCrudVeiculo = class(TForm)
@@ -56,6 +57,7 @@ type
     btnAtivVeic: TPanel;
     edtEmailCli: TEdit;
     pnlSalvar: TPanel;
+    bitbtnAtualizar: TBitBtn;
     procedure DBGrid1CellClick(Column: TColumn);
     procedure btnIncluirVeicClick(Sender: TObject);
     procedure recarregarGrid;
@@ -63,6 +65,7 @@ type
     procedure pnlCadastrarClick(Sender: TObject);
     procedure btnEditVeicClick(Sender: TObject);
     procedure btnInativVeicClick(Sender: TObject);
+    procedure bitbtnAtualizarClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -147,6 +150,11 @@ begin
       end;
 end;
 
+procedure TCrudVeiculos.bitbtnAtualizarClick(Sender: TObject);
+begin
+    recarregarGrid;
+end;
+
 procedure TCrudVeiculos.btnEditVeicClick(Sender: TObject);
 // Editar Veículo
 begin
@@ -188,7 +196,4 @@ begin
 
     recarregarGrid;
 end;
-
-
-
 end.

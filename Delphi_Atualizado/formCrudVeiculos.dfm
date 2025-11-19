@@ -155,9 +155,9 @@ object CrudVeiculos: TCrudVeiculos
     end
     object DBGrid1: TDBGrid
       Left = 48
-      Top = 123
+      Top = 154
       Width = 695
-      Height = 528
+      Height = 497
       Anchors = [akLeft, akTop, akRight, akBottom]
       DataSource = DSVeiculos
       ReadOnly = True
@@ -954,6 +954,16 @@ object CrudVeiculos: TCrudVeiculos
       ParentFont = False
       TabOrder = 8
       Visible = False
+    end
+    object bitbtnAtualizar: TBitBtn
+      Left = 591
+      Top = 123
+      Width = 152
+      Height = 25
+      Anchors = [akTop, akRight]
+      Caption = 'Atualizar'
+      TabOrder = 9
+      OnClick = bitbtnAtualizarClick
     end
   end
   object DSVeiculos: TDataSource

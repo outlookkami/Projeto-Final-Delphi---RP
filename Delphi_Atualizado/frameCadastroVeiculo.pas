@@ -55,6 +55,7 @@ implementation
 {$R *.dfm}
 
 procedure TframeCadVeiculo.btnVoltarClick(Sender: TObject);
+var frameCadVeiculo: TframeCadVeiculo;
 begin
     frameCadVeiculo.Free;
 end;

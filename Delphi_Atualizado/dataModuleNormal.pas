@@ -126,6 +126,7 @@ type
     QueryVeiculosnome_usuario_cliente: TStringField;
     QueryVeiculoscontato_cliente: TStringField;
     QueryVeiculoschassi: TStringField;
+    QueryPedidosOrcamentos: TFDQuery;
 
   private
     { Private declarations }

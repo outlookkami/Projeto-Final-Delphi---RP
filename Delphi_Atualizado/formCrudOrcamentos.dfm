@@ -11,6 +11,9 @@ object crudOrcamentos: TcrudOrcamentos
   Font.Name = 'Segoe UI'
   Font.Style = []
   OnCreate = FormCreate
+  DesignSize = (
+    1150
+    701)
   TextHeight = 15
   object Panel1: TPanel
     Left = 0
@@ -172,6 +175,7 @@ object crudOrcamentos: TcrudOrcamentos
       ParentBackground = False
       ParentFont = False
       TabOrder = 3
+      OnClick = btnEditOrcClick
     end
     object btnExcluOrc: TPanel
       Left = 269
@@ -190,13 +194,14 @@ object crudOrcamentos: TcrudOrcamentos
       ParentBackground = False
       ParentFont = False
       TabOrder = 4
+      OnClick = btnExcluOrcClick
     end
     object tabelas: TPageControl
       Left = 56
       Top = 123
       Width = 689
       Height = 560
-      ActivePage = TabSheet2
+      ActivePage = TabSheet1
       Anchors = [akLeft, akTop, akRight, akBottom]
       TabOrder = 5
       object TabSheet1: TTabSheet
@@ -442,7 +447,7 @@ object crudOrcamentos: TcrudOrcamentos
             end>
         end
         object btnAddProd: TPanel
-          Left = 458
+          Left = 114
           Top = 3
           Width = 220
           Height = 36
@@ -461,10 +466,10 @@ object crudOrcamentos: TcrudOrcamentos
           OnClick = btnAddProdClick
         end
         object edtQtdProd: TEdit
-          Left = 349
-          Top = 3
+          Left = 7
+          Top = 6
           Width = 101
-          Height = 25
+          Height = 31
           Alignment = taCenter
           BevelInner = bvNone
           BevelOuter = bvNone
@@ -477,13 +482,32 @@ object crudOrcamentos: TcrudOrcamentos
           TabOrder = 2
           TextHint = 'Quantidade'
         end
+        object pnlRemove: TPanel
+          Left = 340
+          Top = 3
+          Width = 124
+          Height = 36
+          Cursor = crHandPoint
+          Anchors = [akTop, akRight]
+          Caption = 'Remover Produto'
+          Color = clHighlight
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWhite
+          Font.Height = -13
+          Font.Name = 'Segoe UI'
+          Font.Style = []
+          ParentBackground = False
+          ParentFont = False
+          TabOrder = 3
+          OnClick = btnAddProdClick
+        end
       end
     end
     object gridPanelLogin: TGridPanel
       Left = 751
-      Top = 25
+      Top = 27
       Width = 361
-      Height = 647
+      Height = 656
       Align = alCustom
       Anchors = [akTop, akRight, akBottom]
       BevelEdges = []
@@ -600,13 +624,18 @@ object crudOrcamentos: TcrudOrcamentos
         end
         item
           Column = 0
-          Control = strgridMateriais
-          Row = 13
+          Control = leValorMDO
+          Row = 17
         end
         item
           Column = 0
-          Control = leValorMDO
-          Row = 17
+          Control = pnlSalvar
+          Row = 23
+        end
+        item
+          Column = 0
+          Control = strgridMateriais
+          Row = 13
         end>
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
@@ -691,10 +720,10 @@ object crudOrcamentos: TcrudOrcamentos
       TabOrder = 6
       DesignSize = (
         361
-        647)
+        656)
       object Label2: TLabel
         Left = 178
-        Top = 29
+        Top = 27
         Width = 4
         Height = 21
         Anchors = []
@@ -703,7 +732,7 @@ object crudOrcamentos: TcrudOrcamentos
       end
       object Label3: TLabel
         Left = 178
-        Top = 83
+        Top = 78
         Width = 4
         Height = 21
         Anchors = []
@@ -712,7 +741,7 @@ object crudOrcamentos: TcrudOrcamentos
       end
       object Label4: TLabel
         Left = 178
-        Top = 136
+        Top = 128
         Width = 4
         Height = 21
         Anchors = []
@@ -721,7 +750,7 @@ object crudOrcamentos: TcrudOrcamentos
       end
       object Label5: TLabel
         Left = 178
-        Top = 190
+        Top = 178
         Width = 4
         Height = 21
         Anchors = []
@@ -730,7 +759,7 @@ object crudOrcamentos: TcrudOrcamentos
       end
       object Label7: TLabel
         Left = 178
-        Top = 297
+        Top = 279
         Width = 4
         Height = 21
         Anchors = []
@@ -791,7 +820,7 @@ object crudOrcamentos: TcrudOrcamentos
           TextHint = 'C'#243'digo do pedido'
         end
         object GridPanel10: TGridPanel
-          Left = 173
+          Left = 172
           Top = 0
           Width = 185
           Height = 57
@@ -853,11 +882,11 @@ object crudOrcamentos: TcrudOrcamentos
         end
       end
       object GridPanel2: TGridPanel
-        Left = 2
-        Top = 53
+        Left = 0
+        Top = 61
         Width = 356
         Height = 60
-        Anchors = [akTop, akBottom]
+        Align = alCustom
         BevelOuter = bvNone
         ColumnCollection = <
           item
@@ -907,7 +936,7 @@ object crudOrcamentos: TcrudOrcamentos
         end
         object GridPanel5: TGridPanel
           Left = 171
-          Top = 2
+          Top = 4
           Width = 185
           Height = 55
           Align = alCustom
@@ -956,10 +985,10 @@ object crudOrcamentos: TcrudOrcamentos
             ParentFont = False
           end
           object dtValidade: TDateTimePicker
-            Left = 14
+            Left = 15
             Top = 26
             Width = 115
-            Height = 31
+            Height = 28
             Align = alCustom
             Date = 45950.000000000000000000
             Time = 0.594754340279905600
@@ -969,7 +998,7 @@ object crudOrcamentos: TcrudOrcamentos
       end
       object Label1: TLabel
         Left = 178
-        Top = 430
+        Top = 405
         Width = 4
         Height = 21
         Anchors = []
@@ -978,7 +1007,7 @@ object crudOrcamentos: TcrudOrcamentos
       end
       object Label9: TLabel
         Left = 178
-        Top = 484
+        Top = 455
         Width = 4
         Height = 21
         Anchors = []
@@ -987,7 +1016,7 @@ object crudOrcamentos: TcrudOrcamentos
       end
       object lblStatus: TLabel
         Left = 14
-        Top = 544
+        Top = 523
         Width = 45
         Height = 21
         Align = alCustom
@@ -995,7 +1024,7 @@ object crudOrcamentos: TcrudOrcamentos
       end
       object cbStatus: TComboBox
         Left = 16
-        Top = 571
+        Top = 542
         Width = 329
         Height = 29
         Align = alCustom
@@ -1013,13 +1042,12 @@ object crudOrcamentos: TcrudOrcamentos
           '')
       end
       object pnlFazerOrcPedido: TPanel
-        Left = 183
-        Top = 606
-        Width = 162
-        Height = 41
+        Left = 192
+        Top = 573
+        Width = 161
+        Height = 43
         Cursor = crHandPoint
         Align = alCustom
-        Anchors = [akTop, akBottom]
         Caption = 'Fazer Or'#231'amento'
         Color = clHighlight
         Font.Charset = DEFAULT_CHARSET
@@ -1034,13 +1062,11 @@ object crudOrcamentos: TcrudOrcamentos
         OnClick = pnlFazerOrcPedidoClick
       end
       object pnlIncluirOrc: TPanel
-        Left = 16
-        Top = 606
+        Left = 0
+        Top = 574
         Width = 161
         Height = 41
         Cursor = crHandPoint
-        Align = alCustom
-        Anchors = [akTop, akBottom]
         Caption = 'Incluir Or'#231'amento'
         Color = clHighlight
         Font.Charset = DEFAULT_CHARSET
@@ -1056,18 +1082,19 @@ object crudOrcamentos: TcrudOrcamentos
       end
       object Label6: TLabel
         Left = 178
-        Top = 270
+        Top = 254
         Width = 4
         Height = 21
         Anchors = []
         ExplicitLeft = 157
+        ExplicitTop = 270
       end
       object GridPanel3: TGridPanel
-        Left = 5
-        Top = 107
+        Left = 0
+        Top = 122
         Width = 350
         Height = 62
-        Anchors = [akTop, akBottom]
+        Align = alCustom
         BevelOuter = bvNone
         ColumnCollection = <
           item
@@ -1118,7 +1145,7 @@ object crudOrcamentos: TcrudOrcamentos
         object leMarca: TLabeledEdit
           Left = 180
           Top = 28
-          Width = 170
+          Width = 157
           Height = 29
           Anchors = [akTop, akBottom]
           EditLabel.Width = 121
@@ -1131,56 +1158,54 @@ object crudOrcamentos: TcrudOrcamentos
       end
       object lblDescricaoServico: TLabel
         Left = 16
-        Top = 232
+        Top = 239
         Width = 143
-        Height = 21
+        Height = 20
         Align = alCustom
-        Anchors = [akLeft, akTop, akBottom]
         Caption = 'Descri'#231#227'o do Pedido:'
       end
       object descServico: TMemo
         Left = 19
-        Top = 249
+        Top = 265
         Width = 334
-        Height = 81
+        Height = 68
         Align = alCustom
-        Anchors = [akLeft]
         Lines.Strings = (
           'descServico')
         TabOrder = 6
       end
       object Label12: TLabel
         Left = 18
-        Top = 328
+        Top = 329
         Width = 67
-        Height = 21
+        Height = 20
         Align = alCustom
-        Anchors = [akLeft, akTop, akBottom]
         Caption = 'Materiais:'
       end
       object Label8: TLabel
         Left = 178
-        Top = 377
+        Top = 355
         Width = 4
         Height = 21
         Anchors = []
         ExplicitLeft = 157
+        ExplicitTop = 377
       end
       object Label11: TLabel
         Left = 178
-        Top = 403
+        Top = 380
         Width = 4
         Height = 21
         Anchors = []
         ExplicitLeft = 153
+        ExplicitTop = 403
       end
       object GridPanel4: TGridPanel
         Left = 0
-        Top = 170
+        Top = 180
         Width = 347
-        Height = 59
+        Height = 53
         Align = alCustom
-        Anchors = [akLeft, akTop, akBottom]
         BevelOuter = bvNone
         ColumnCollection = <
           item
@@ -1214,10 +1239,10 @@ object crudOrcamentos: TcrudOrcamentos
         TabOrder = 7
         DesignSize = (
           347
-          59)
+          53)
         object leCor: TLabeledEdit
           Left = 11
-          Top = 27
+          Top = 24
           Width = 157
           Height = 29
           Anchors = [akTop, akBottom]
@@ -1230,7 +1255,7 @@ object crudOrcamentos: TcrudOrcamentos
         end
         object leModelo: TLabeledEdit
           Left = 180
-          Top = 27
+          Top = 24
           Width = 165
           Height = 29
           Anchors = [akTop, akBottom]
@@ -1242,32 +1267,61 @@ object crudOrcamentos: TcrudOrcamentos
           TextHint = 'Modelo do ve'#237'culo'
         end
       end
-      object strgridMateriais: TStringGrid
-        Left = 18
-        Top = 347
-        Width = 325
-        Height = 131
-        Anchors = [akTop]
-        RowCount = 2
-        Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goEditing]
-        TabOrder = 8
-        OnSelectCell = strgridMateriaisSelectCell
-      end
       object leValorMDO: TLabeledEdit
         Left = 16
-        Top = 511
+        Top = 490
         Width = 329
-        Height = 29
+        Height = 27
         Align = alCustom
-        Anchors = [akLeft, akTop, akBottom]
         EditLabel.Width = 134
         EditLabel.Height = 21
         EditLabel.Caption = 'Valor M'#227'o de Obra:'
-        TabOrder = 9
+        TabOrder = 8
         Text = ''
         TextHint = 'Informe o custo de m'#227'o de obra'
       end
+      object pnlSalvar: TPanel
+        Left = 0
+        Top = 615
+        Width = 161
+        Height = 41
+        Cursor = crHandPoint
+        Caption = 'Salvar'
+        Color = clHighlight
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWhite
+        Font.Height = -19
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentBackground = False
+        ParentFont = False
+        TabOrder = 9
+        Visible = False
+        OnClick = pnlIncluirOrcClick
+      end
+      object strgridMateriais: TStringGrid
+        Left = 20
+        Top = 355
+        Width = 320
+        Height = 112
+        Align = alCustom
+        DefaultColWidth = 75
+        RowCount = 2
+        Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goEditing]
+        TabOrder = 10
+        OnSelectCell = strgridMateriaisSelectCell
+      end
     end
+  end
+  object bitbtnAtualizar: TBitBtn
+    Left = 111
+    Top = 80
+    Width = 152
+    Height = 25
+    Anchors = [akTop, akRight]
+    Caption = 'Atualizar'
+    TabOrder = 1
+    OnClick = bitbtnAtualizarClick
   end
   object DSOrcamentos: TDataSource
     DataSet = DM.QueryOrcamentos

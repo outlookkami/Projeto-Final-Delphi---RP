@@ -6,7 +6,7 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes,
   Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.StdCtrls, Vcl.Mask,
   Vcl.ExtCtrls, Vcl.Grids, Vcl.DBGrids, Vcl.Imaging.pngimage, REST.Types,
-  REST.Client, Data.Bind.Components, Data.Bind.ObjectScope;
+  REST.Client, Data.Bind.Components, Data.Bind.ObjectScope, Vcl.Buttons;
 
 type
   TformCrudCli = class(TForm)
@@ -54,6 +54,7 @@ type
     pnlCadastraCliCrud: TPanel;
     pnlSalvar: TPanel;
     btnAtivCli: TPanel;
+    bitbtnAtualizar: TBitBtn;
     procedure leCEPExit(Sender: TObject);
     procedure pnlCadastraCliCrudClick(Sender: TObject);
     procedure btnIncluirCliClick(Sender: TObject);
@@ -64,6 +65,7 @@ type
     procedure LimparCampos;
     procedure btnEditCliClick(Sender: TObject);
     procedure btnAtivCliClick(Sender: TObject);
+    procedure bitbtnAtualizarClick(Sender: TObject);
   private
     { Private declarations }
 
@@ -141,6 +143,11 @@ begin
     leNome.SetFocus;
     DM.QueryClientes.Insert;
     DM.QueryClientes.Open;
+end;
+
+procedure TformCrudCli.bitbtnAtualizarClick(Sender: TObject);
+begin
+    recarregarGrid;
 end;
 
 procedure TformCrudCli.btnAtivCliClick(Sender: TObject);

@@ -10,6 +10,7 @@ object crudPedidos: TcrudPedidos
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  OnCreate = FormCreate
   TextHeight = 15
   object Panel1: TPanel
     Left = 0
@@ -156,7 +157,7 @@ object crudPedidos: TcrudPedidos
     end
     object DBGrid1: TDBGrid
       Left = 48
-      Top = 131
+      Top = 139
       Width = 696
       Height = 528
       Anchors = [akLeft, akTop, akRight, akBottom]
@@ -401,6 +402,11 @@ object crudPedidos: TcrudPedidos
           Column = 0
           Control = descPedido
           Row = 15
+        end
+        item
+          Column = 0
+          Control = pnlSalvar
+          Row = 16
         end>
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
@@ -612,14 +618,14 @@ object crudPedidos: TcrudPedidos
           Left = 11
           Top = 24
           Width = 157
-          Height = 37
+          Height = 29
           Anchors = []
           EditLabel.Width = 126
           EditLabel.Height = 21
           EditLabel.Caption = 'C'#243'digo do Pedido:'
           TabOrder = 0
           Text = ''
-          ExplicitTop = 16
+          ExplicitTop = 18
         end
         object GridPanel10: TGridPanel
           Left = 174
@@ -720,7 +726,6 @@ object crudPedidos: TcrudPedidos
             SizeStyle = ssAuto
           end>
         TabOrder = 2
-        ExplicitTop = 72
         DesignSize = (
           356
           53)
@@ -735,6 +740,7 @@ object crudPedidos: TcrudPedidos
           EditLabel.Caption = 'Contato do cliente:'
           TabOrder = 0
           Text = ''
+          ExplicitLeft = 9
         end
         object leCEP: TLabeledEdit
           Left = 180
@@ -886,7 +892,7 @@ object crudPedidos: TcrudPedidos
       end
       object pnlFazerOrcPedido: TPanel
         Left = 183
-        Top = 586
+        Top = 569
         Width = 162
         Height = 41
         Cursor = crHandPoint
@@ -906,7 +912,7 @@ object crudPedidos: TcrudPedidos
       end
       object pnlIncluirPedido: TPanel
         Left = 16
-        Top = 586
+        Top = 569
         Width = 161
         Height = 41
         Cursor = crHandPoint
@@ -923,6 +929,7 @@ object crudPedidos: TcrudPedidos
         ParentFont = False
         TabOrder = 9
         Visible = False
+        OnClick = pnlIncluirPedidoClick
       end
       object lblDescricaoPedido: TLabel
         Left = 16
@@ -948,6 +955,27 @@ object crudPedidos: TcrudPedidos
           '')
         ParentFont = False
         TabOrder = 10
+      end
+      object pnlSalvar: TPanel
+        Left = 120
+        Top = 569
+        Width = 137
+        Height = 41
+        Cursor = crHandPoint
+        Align = alCustom
+        Anchors = [akBottom]
+        Caption = 'Salvar'
+        Color = clHighlight
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWhite
+        Font.Height = -19
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentBackground = False
+        ParentFont = False
+        TabOrder = 11
+        Visible = False
+        OnClick = pnlIncluirPedidoClick
       end
     end
     object btnEditPedi: TPanel
@@ -985,6 +1013,16 @@ object crudPedidos: TcrudPedidos
       ParentBackground = False
       ParentFont = False
       TabOrder = 6
+    end
+    object bitbtnAtualizar: TBitBtn
+      Left = 118
+      Top = 74
+      Width = 152
+      Height = 25
+      Anchors = [akTop, akRight]
+      Caption = 'Atualizar'
+      TabOrder = 7
+      OnClick = bitbtnAtualizarClick
     end
   end
   object DSPedidos: TDataSource

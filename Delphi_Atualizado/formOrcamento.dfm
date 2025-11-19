@@ -10,7 +10,7 @@
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
-  OnCreate = FormCreate
+  OnShow = FormShow
   TextHeight = 15
   object pnlFrameFormPedido: TPanel
     Left = 0

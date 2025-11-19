@@ -159,9 +159,9 @@ object formCrudCli: TformCrudCli
     end
     object DBGrid1: TDBGrid
       Left = 48
-      Top = 136
+      Top = 154
       Width = 707
-      Height = 546
+      Height = 528
       Anchors = [akLeft, akTop, akRight, akBottom]
       DataSource = DSCliente
       TabOrder = 1
@@ -984,6 +984,16 @@ object formCrudCli: TformCrudCli
     ParentFont = False
     TabOrder = 1
     OnClick = btnAtivCliClick
+  end
+  object bitbtnAtualizar: TBitBtn
+    Left = 603
+    Top = 123
+    Width = 152
+    Height = 25
+    Anchors = [akTop, akRight]
+    Caption = 'Atualizar'
+    TabOrder = 2
+    OnClick = bitbtnAtualizarClick
   end
   object DSCliente: TDataSource
     DataSet = DM.QueryClientes
