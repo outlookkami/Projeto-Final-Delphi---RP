@@ -2,9 +2,6 @@
 Coordinates=281,148,69,36
 Visible=True
 
-[RLPanel2]
-Coordinates=200,148,71,36
-
 [RLSystemInfo1]
 Coordinates=88,148,102,36
 
@@ -45,5 +42,5 @@ Coordinates=88,10,69,36
 Coordinates=10,10,68,36
 
 []
-Coordinates=172,56,81,36
+Coordinates=200,148,71,36
 

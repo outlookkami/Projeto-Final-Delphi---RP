@@ -1,6 +1,6 @@
 object DM: TDM
-  Height = 480
-  Width = 640
+  Height = 671
+  Width = 861
   object ConexaoBanco: TFDConnection
     Params.Strings = (
       'User_Name=postgres'
@@ -98,7 +98,7 @@ object DM: TDM
   object FDPhysPgDriverLink2: TFDPhysPgDriverLink
     VendorLib = 
       'C:\Users\Kamilly Souza\Desktop\Projeto Delphi-JLA\Delphi_Atualiz' +
-      'ado\BancoDeDados\lib\libpq.dll'
+      'ado\lib-FD\libpq.dll'
     Left = 248
     Top = 104
   end
@@ -300,12 +300,11 @@ object DM: TDM
     end
   end
   object FDTransaction1: TFDTransaction
-    Connection = ConexaoBanco
+    Connection = formRepPedidos.ConexaoRelatorioPed
     Left = 184
     Top = 56
   end
   object QueryPedidos: TFDQuery
-    Active = True
     Connection = ConexaoBanco
     SQL.Strings = (
       'SELECT * FROM Pedidos;')
@@ -372,6 +371,11 @@ object DM: TDM
       FieldName = 'email_cliente'
       Origin = 'email_cliente'
       Size = 255
+    end
+    object QueryPedidoscodigo_cliente: TStringField
+      FieldName = 'codigo_cliente'
+      Origin = 'codigo_cliente'
+      Size = 5
     end
   end
   object QueryVeiculos: TFDQuery
@@ -582,28 +586,6 @@ object DM: TDM
       'SELECT * FROM "Clientes";')
     Left = 112
     Top = 336
-  end
-  object QueryPedidosRel: TFDQuery
-    Connection = ConexaoBanco
-    SQL.Strings = (
-      'SELECT * FROM Pedidos;')
-    Left = 416
-    Top = 345
-    object QueryPedidosRelcodigo_pedido: TIntegerField
-      FieldName = 'codigo_pedido'
-      Origin = 'codigo_pedido'
-      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
-    end
-    object QueryPedidosReldata_pedido: TSQLTimeStampField
-      FieldName = 'data_pedido'
-      Origin = 'data_pedido'
-      ProviderFlags = [pfInUpdate]
-    end
-    object QueryPedidosRelstatus_pedido: TStringField
-      FieldName = 'status_pedido'
-      Origin = 'status_pedido'
-      Size = 25
-    end
   end
   object QueryPedidosOrcamentos: TFDQuery
     Connection = ConexaoBanco

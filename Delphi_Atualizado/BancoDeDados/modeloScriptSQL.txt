@@ -10,24 +10,94 @@ SELECT * FROM Produtos;
 SELECT * FROM Usuarios;
 SELECT * FROM Veiculos;
 SELECT * FROM Pedidos;
+SELECT * FROM Orcamentos;
+
+*****REMOVER HORÁRIO DOS PEDIDOS DA TABELA DE PEDIDOS*****
+
+INSERT INTO public.pedidos
+(data_pedido, contato_cliente, endereco_cliente, cep_cliente, placa_veiculo, modelo, marca, cor,
+ descricao_pedido, nome_cliente, status_pedido, email_cliente, codigo_cliente)
+VALUES
+('2025-10-01 09:15', '41999880001', 'Rua XV de Novembro, 125', '80010010', 'BDV1A23', 'Onix', 'Chevrolet', 'Branco',
+ 'Retoque de pintura no para-choque traseiro e polimento completo.', 'Ana Paula Ribeiro',
+ 'Aguardando orçamento', 'ana.paula.ribeiro@example.com', '86'),
+
+('2025-10-03 14:40', '41999880002', 'Rua Marechal Deodoro, 785', '80020020', 'RTA9C12', 'Gol', 'Volkswagen', 'Prata',
+ 'Remoção de amassado na porta dianteira direita e repintura parcial.', 'Marcos Vinícius Silva',
+ 'Aguardando orçamento', 'marcos.silva@example.com', '87'),
+
+('2025-10-06 11:05', '41999880003', 'Rua Barão do Rio Branco, 450', '80030030', 'GHB4E55', 'Argo', 'Fiat', 'Vermelho',
+ 'Reparo de risco profundo no capô e retoque de verniz.', 'Juliana Ferreira Duarte',
+ 'Aguardando orçamento', 'juliana.duarte@example.com', '88'),
+
+('2025-10-10 16:30', '41999880004', 'Rua Cruz Machado, 312', '80040040', 'KJG2B81', 'Civic', 'Honda', 'Preto',
+ 'Desamassar lateral traseira e repintura completa da peça.', 'Ricardo Mendes Souza',
+ 'Aguardando orçamento', 'ricardo.souza@example.com', '89'),
+
+('2025-10-14 10:20', '41999880005', 'Av. João Gualberto, 2001', '80050050', 'PTX7D09', 'Corolla', 'Toyota', 'Cinza',
+ 'Retoque de pintura no para-lama dianteiro e alinhamento.', 'Patrícia Gomes Lima',
+ 'Aguardando orçamento', 'patricia.lima@example.com', '90'),
+
+('2025-10-18 13:55', '41999880006', 'Rua Mateus Leme, 1425', '80060060', 'MQW3F44', 'HB20', 'Hyundai', 'Azul',
+ 'Pintura completa do teto e correção de marcas de sol.', 'Fernando Almeida Torres',
+ 'Aguardando orçamento', 'fernando.torres@example.com', '91'),
+
+('2025-10-22 15:10', '41999880007', 'Rua Inácio Lustosa, 910', '80070070', 'LSA5H21', 'Compass', 'Jeep', 'Branco',
+ 'Reparação de arranhões profundos nas portas e polimento técnico.', 'Camila Rocha Martins',
+ 'Aguardando orçamento', 'camila.martins@example.com', '92'),
+
+('2025-10-27 08:45', '41999880008', 'Rua Brasilino Moura, 350', '80080080', 'ZKP8J33', 'Renegade', 'Jeep', 'Preto',
+ 'Desamassar para-choque e repintura total com verniz automotivo.', 'João Pedro Carvalho',
+ 'Aguardando orçamento', 'joao.carvalho@example.com', '93'),
+
+('2025-11-02 10:25', '41999880009', 'Rua Anita Garibaldi, 620', '80510010', 'XTR6A19', 'Ranger', 'Ford', 'Prata',
+ 'Correção de pequenos amassados e pintura parcial da caçamba.', 'Luiza Andrade Correia',
+ 'Aguardando orçamento', 'luiza.correia@example.com', '94'),
+
+('2025-11-05 16:12', '41999880010', 'Rua Padre Anchieta, 2501', '80520020', 'VBN1K90', 'Ka', 'Ford', 'Vermelho',
+ 'Reparo de batida leve na dianteira e alinhamento do capô.', 'Roberto César Moreira',
+ 'Aguardando orçamento', 'roberto.moreira@example.com', '95'),
+
+('2025-11-09 09:55', '41999880011', 'Rua Prof. Pedro Parigot de Souza, 1440', '80610010', 'HFS3M22', 'Cronos', 'Fiat', 'Preto',
+ 'Retoque de pintura lateral e aplicação de proteção cerâmica.', 'Beatriz Moraes Fagundes',
+ 'Aguardando orçamento', 'beatriz.fagundes@example.com', '96'),
+
+('2025-11-13 14:18', '41999880012', 'Rua Monsenhor Ivo Zanlorenzi, 2890', '80620020', 'CEQ7N51', 'Tracker', 'Chevrolet', 'Branco',
+ 'Pintura de para-choque dianteiro e reparo de arranhões.', 'Carlos Henrique Batista',
+ 'Aguardando orçamento', 'carlos.batista@example.com', '97'),
+
+('2025-11-17 11:45', '41999880013', 'Rua Prof. Ulisses Vieira, 380', '80710030', 'JLR9P18', 'Tucson', 'Hyundai', 'Prata',
+ 'Remoção de amassado na porta traseira e pintura completa da peça.', 'Daniela Cristina Lopes',
+ 'Aguardando orçamento', 'daniela.lopes@example.com', '98'),
+
+('2025-11-21 15:33', '41999880014', 'Rua João Bettega, 890', '80720040', 'WUZ2R07', 'Fit', 'Honda', 'Azul',
+ 'Reparo estrutural leve e repintura total da lateral esquerda.', 'Gabriel Augusto Ramos',
+ 'Aguardando orçamento', 'gabriel.ramos@example.com', '99'),
+
+('2025-11-28 08:55', '41999880015', 'Av. República Argentina, 3001', '81010010', 'MPD4S66', 'Cruze', 'Chevrolet', 'Cinza',
+ 'Pintura completa do veículo com correção de oxidação em partes.', 'Mariana Duarte Azevedo',
+ 'Aguardando orçamento', 'mariana.azevedo@example.com', '100');
+
+
+
 
 
 CREATE TABLE IF NOT EXISTS Orcamentos(
-codigo_pedido SERIAL PRIMARY KEY,
+codigo_orcamento SERIAL PRIMARY KEY,
+codigo_pedido INTEGER, 
 data_emissao DATE,
 validade DATE,
-nome cliente VARCHAR(100),
-telefone cliente VARCHAR(11),
+contato_cliente VARCHAR(11),
 email_cliente VARCHAR(255),
-codigo_cliente INT,
+nome_cliente VARCHAR(100),
 cep_cliente VARCHAR(8),
-placa VARCHAR(7),
+placa_veiculo VARCHAR(7),
 marca VARCHAR(40),
 modelo VARCHAR(40),
 cor VARCHAR(20),
-ano_mod VARCHAR(4),
-ano_fab VARCHAR(4),
-)
+descricao_pedido TEXT,
+status_orcamento VARCHAR(25)
+);
 
 
 CREATE EXTENSION IF NOT EXISTS pgcrypto;

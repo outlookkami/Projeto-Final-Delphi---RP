@@ -50,7 +50,10 @@ uses
   formCrudPedidos in 'formCrudPedidos.pas' {crudPedidos},
   formCrudOrcamentos in 'formCrudOrcamentos.pas' {crudOrcamentos},
   relatorioOrcamentos in 'relatorioOrcamentos.pas' {formRepOrcamentos},
-  relatorioPedidos in 'relatorioPedidos.pas' {formRepPedidos};
+  relatorioPedidos in 'relatorioPedidos.pas' {formRepPedidos},
+  relatorioComLogo in 'relatorioComLogo.pas' {Form1},
+  formFiltroRelatorioPedidos in 'formFiltroRelatorioPedidos.pas' {formFiltroRelPedidos},
+  formFiltroRelatorioOrcamentos in 'formFiltroRelatorioOrcamentos.pas' {formFiltroRelOrcamentos};
 
 {$R *.res}
 
@@ -60,6 +63,9 @@ begin
   Application.Title := 'Aviso';
   Application.CreateForm(TformLogin, formLogin);
   Application.CreateForm(TDM, DM);
+  Application.CreateForm(TForm1, Form1);
+  Application.CreateForm(TformFiltroRelPedidos, formFiltroRelPedidos);
+  Application.CreateForm(TformFiltroRelOrcamentos, formFiltroRelOrcamentos);
   Application.Run;
 end.
 

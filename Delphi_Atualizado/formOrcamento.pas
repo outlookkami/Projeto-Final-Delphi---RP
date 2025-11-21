@@ -84,13 +84,14 @@ implementation
 
 {$R *.dfm}
 
-uses unitSessao;
+uses unitSessao, formCrudOrcamentos;
 
 var codOrcStr: String;
-
+    valorOrcamento: Double;
 
 procedure recebeDados;
 begin
+    //valorOrcamento := formCrudOrcamentos.valorOrcamento;
 //
 //    with DM.QueryOrcamentos do begin
 //

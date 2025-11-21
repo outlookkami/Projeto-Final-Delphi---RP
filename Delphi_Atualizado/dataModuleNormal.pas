@@ -111,10 +111,6 @@ type
     QueryOrcamentosvalor_materiais: TBCDField;
     QueryOrcamentosvalor_total: TBCDField;
     QueryOrcamentoslista_materiais: TMemoField;
-    QueryPedidosRel: TFDQuery;
-    QueryPedidosRelcodigo_pedido: TIntegerField;
-    QueryPedidosReldata_pedido: TSQLTimeStampField;
-    QueryPedidosRelstatus_pedido: TStringField;
     QueryProdutosativo_in: TBooleanField;
     QueryVeiculoscodigo_veiculo: TIntegerField;
     QueryVeiculosplaca_veiculo: TStringField;
@@ -127,6 +123,7 @@ type
     QueryVeiculoscontato_cliente: TStringField;
     QueryVeiculoschassi: TStringField;
     QueryPedidosOrcamentos: TFDQuery;
+    QueryPedidoscodigo_cliente: TStringField;
 
   private
     { Private declarations }

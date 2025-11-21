@@ -228,6 +228,18 @@
             <Form>formRepPedidos</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="relatorioComLogo.pas">
+            <Form>Form1</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="formFiltroRelatorioPedidos.pas">
+            <Form>formFiltroRelPedidos</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="formFiltroRelatorioOrcamentos.pas">
+            <Form>formFiltroRelOrcamentos</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <None Include="login.ini"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>

@@ -968,8 +968,8 @@ object CrudVeiculos: TCrudVeiculos
   end
   object DSVeiculos: TDataSource
     DataSet = DM.QueryVeiculos
-    Left = 8
-    Top = 208
+    Left = 16
+    Top = 168
   end
   object RESTClient1: TRESTClient
     Params = <>

@@ -625,7 +625,6 @@ object crudPedidos: TcrudPedidos
           EditLabel.Caption = 'C'#243'digo do Pedido:'
           TabOrder = 0
           Text = ''
-          ExplicitTop = 18
         end
         object GridPanel10: TGridPanel
           Left = 174
@@ -740,7 +739,6 @@ object crudPedidos: TcrudPedidos
           EditLabel.Caption = 'Contato do cliente:'
           TabOrder = 0
           Text = ''
-          ExplicitLeft = 9
         end
         object leCEP: TLabeledEdit
           Left = 180

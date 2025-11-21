@@ -78,6 +78,7 @@ uses formCrudFuncionarios,
       formCrudClientes,
       formCrudVeiculos,
       formPortfolio,
+      formFiltroRelatorioPedidos,
       relatorioPedidos,
       relatorioOrcamentos;
 
@@ -97,9 +98,12 @@ end;
 
 procedure TformPáginaInicialADM.Panel1Click(Sender: TObject);
 begin
-    formRepPedidos := TformRepPedidos.Create(Self);
-    formRepPedidos.RLReport1.PreviewModal;
-    formRepPedidos.Release;
+    formFiltroRelPedidos := TformFiltroRelPedidos.Create(Self);
+    try
+      formFiltroRelPedidos.ShowModal;
+    finally
+      formFiltroRelPedidos.Free;
+    end;
 end;
 
 procedure TformPáginaInicialADM.Panel3Click(Sender: TObject);

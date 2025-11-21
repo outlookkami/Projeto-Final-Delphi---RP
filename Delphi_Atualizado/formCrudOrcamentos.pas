@@ -216,8 +216,6 @@ begin
     strgridMateriais.Cells[2, i] := FormatFloat('0.00', qtd);
     strgridMateriais.Cells[3, i] := FormatFloat('0.00', subtotal);
 
-    totProd := subtotal;
-
     tabelas.ActivePage := TabSheet2;
 
     //TvalorTotal.totProd := totProd;
