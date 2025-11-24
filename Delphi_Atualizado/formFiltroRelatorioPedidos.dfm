@@ -37,7 +37,7 @@ object formFiltroRelPedidos: TformFiltroRelPedidos
     object lblPeriodo: TLabel
       Left = 312
       Top = 128
-      Width = 62
+      Width = 54
       Height = 20
       Anchors = [akLeft, akTop, akRight]
       Caption = 'Per'#237'odo:'
@@ -51,7 +51,7 @@ object formFiltroRelPedidos: TformFiltroRelPedidos
     object lblDataInicio: TLabel
       Left = 312
       Top = 163
-      Width = 83
+      Width = 75
       Height = 15
       Anchors = [akLeft, akTop, akRight]
       Caption = 'Data de in'#237'cio:'
@@ -59,7 +59,7 @@ object formFiltroRelPedidos: TformFiltroRelPedidos
     object lblDataFim: TLabel
       Left = 312
       Top = 200
-      Width = 72
+      Width = 64
       Height = 15
       Anchors = [akLeft, akTop, akRight]
       Caption = 'Data de fim:'
@@ -113,6 +113,94 @@ object formFiltroRelPedidos: TformFiltroRelPedidos
       ParentFont = False
       TabOrder = 2
       OnClick = Button1Click
+    end
+  end
+  object QueryPedidos: TFDQuery
+    Active = True
+    Connection = DM.ConexaoBanco
+    SQL.Strings = (
+      'SELECT * FROM Pedidos;')
+    Left = 112
+    Top = 264
+    ParamData = <
+      item
+        Name = 'dataInicio'
+        DataType = ftDate
+        FDDataType = dtDate
+        ParamType = ptInput
+      end
+      item
+        Name = 'dataFim'
+        DataType = ftDate
+        FDDataType = dtDate
+        ParamType = ptInput
+      end>
+    object QueryPedidoscodigo_pedido: TIntegerField
+      FieldName = 'codigo_pedido'
+      Origin = 'codigo_pedido'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+    end
+    object QueryPedidosendereco_cliente: TStringField
+      FieldName = 'endereco_cliente'
+      Origin = 'endereco_cliente'
+      Size = 60
+    end
+    object QueryPedidoscep_cliente: TStringField
+      FieldName = 'cep_cliente'
+      Origin = 'cep_cliente'
+      EditMask = '00000-000;0;_'
+      Size = 8
+    end
+    object QueryPedidosplaca_veiculo: TStringField
+      FieldName = 'placa_veiculo'
+      Origin = 'placa_veiculo'
+      Size = 7
+    end
+    object QueryPedidosmarca: TStringField
+      FieldName = 'marca'
+      Origin = 'marca'
+    end
+    object QueryPedidosmodelo: TStringField
+      FieldName = 'modelo'
+      Origin = 'modelo'
+    end
+    object QueryPedidoscor: TStringField
+      FieldName = 'cor'
+      Origin = 'cor'
+    end
+    object QueryPedidosdescricao_pedido: TMemoField
+      FieldName = 'descricao_pedido'
+      Origin = 'descricao_pedido'
+      BlobType = ftMemo
+    end
+    object QueryPedidoscontato_cliente: TStringField
+      FieldName = 'contato_cliente'
+      Origin = 'contato_cliente'
+      Size = 11
+    end
+    object QueryPedidosdata_pedido: TSQLTimeStampField
+      FieldName = 'data_pedido'
+      Origin = 'data_pedido'
+      ProviderFlags = [pfInUpdate]
+    end
+    object QueryPedidosnome_cliente: TStringField
+      FieldName = 'nome_cliente'
+      Origin = 'nome_cliente'
+      Size = 100
+    end
+    object QueryPedidosstatus_pedido: TStringField
+      FieldName = 'status_pedido'
+      Origin = 'status_pedido'
+    end
+    object QueryPedidosemail_cliente: TStringField
+      FieldName = 'email_cliente'
+      Origin = 'email_cliente'
+      Size = 255
+    end
+    object QueryPedidoscodigo_cliente: TStringField
+      FieldName = 'codigo_cliente'
+      Origin = 'codigo_cliente'
+      Size = 5
     end
   end
 end

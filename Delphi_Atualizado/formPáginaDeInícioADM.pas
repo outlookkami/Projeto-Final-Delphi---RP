@@ -79,6 +79,7 @@ uses formCrudFuncionarios,
       formCrudVeiculos,
       formPortfolio,
       formFiltroRelatorioPedidos,
+      formFiltroRelatorioOrcamentos,
       relatorioPedidos,
       relatorioOrcamentos;
 
@@ -108,7 +109,7 @@ end;
 
 procedure TformPáginaInicialADM.Panel3Click(Sender: TObject);
 begin
-    formRepOrcamentos := TformRepOrcamentos.Create(Self);
+    formFiltroRelOrcamentos := TformFiltroRelOrcamentos.Create(Self);
     formRepOrcamentos.repOrcamentos.PreviewModal;
     formRepOrcamentos.Release;
 end;

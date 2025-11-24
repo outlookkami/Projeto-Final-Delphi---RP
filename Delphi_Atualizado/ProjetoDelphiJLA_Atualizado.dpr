@@ -2,6 +2,8 @@ program ProjetoDelphiJLA_Atualizado;
 
 
 
+{$R *.dres}
+
 uses
   {$IFDEF EurekaLog}
   EMemLeaks,

@@ -66,6 +66,7 @@ type
     procedure btnEditCliClick(Sender: TObject);
     procedure btnAtivCliClick(Sender: TObject);
     procedure bitbtnAtualizarClick(Sender: TObject);
+    procedure FrameVeiculo;
   private
     { Private declarations }
 
@@ -187,7 +188,7 @@ begin
       ShowMessage('O cliente deve estar inativo antes de ser excluído.');
     end else if
      MessageDlg('Tem certeza de que deseja excluir o cliente? Essa ação não poderá ser revertida', mtConfirmation, [mbYes, mbNo], 0) = mrYes then begin
-      DM.QueryClientes.Close;
+//      DM.QueryClientes.Close;
       DM.QueryClientes.SQL.Text := 'DELETE FROM "Clientes" WHERE codigo_cliente = :codCli';
       DM.QueryClientes.ParamByName('codCli').AsInteger := StrToInt(codigoCliente);
       DM.QueryClientes.ExecSQL;
@@ -199,7 +200,7 @@ end;
 procedure TformCrudCli.btnInativCliClick(Sender: TObject);
 // Inativar Cliente
 begin
-    DM.QueryClientes.Close;
+    //DM.QueryClientes.Close;
     DM.QueryClientes.SQL.Text := 'UPDATE "Clientes" SET ativo_in = false WHERE codigo_cliente = :codCli';
     DM.QueryClientes.ParamByName('codCli').AsInteger := StrToInt(codigoCliente);
     DM.QueryClientes.ExecSQL;
@@ -229,9 +230,54 @@ begin
     unitCEPConsultor.ConsultaCEP(leCEP.Text, TCustomEdit(leEndereco), TCustomEdit(leBairro), TCustomEdit(leCidade), cbUF, RESTClient1, RESTRequest1, RESTResponse1);
 end;
 
-procedure TformCrudCli.pnlCadastraCliCrudClick(Sender: TObject);
+procedure TformCrudCli.FrameVeiculo;
+var frameVeiculo: TframeCadVeiculo;
 begin
-    formCadastroDeClientes.pnlCadastrarClick(pnlCadastraCliCrud);
+      frameVeiculo := TframeCadVeiculo.Create(Self);
+      frameVeiculo.Parent := Self;
+      frameVeiculo.Align := alClient;
+      frameVeiculo.Show;
+end;
+
+procedure TformCrudCli.pnlCadastraCliCrudClick(Sender: TObject);
+//begin
+//    formCadastroDeClientes.pnlCadastrarClick(pnlCadastraCliCrud);
+//end;
+var hash: String;
+begin
+    hash := THashSHA1.GetHashString(leConfSenha.Text);
+    if (leNome.Text = '') or (leEmail.Text = '') or (leTelefone.Text = '') or (leSenha.Text = '') or (leConfSenha.Text = '') then begin
+        ShowMessage('Preencha os campos obrigatórios');
+        Exit;
+    end else begin
+
+      if leConfSenha.Text = leSenha.Text then begin
+
+        with DM.QueryClientes do begin
+
+          SQL.Text := 'INSERT INTO "Clientes" (nome_cliente, telefone_cliente, email_cliente, cep_cliente, endereco_cliente, num_endereco, bairro, cidade, uf, hash_senha_cli) VALUES (:Nome, :Telefone, :Email, :CEP, :Endereco, :Numero, :Bairro, :Cidade, :UF, :SenhaHash);';
+
+          ParamByName('Nome').AsString := leNome.Text;
+          ParamByName('Telefone').AsString := Trim(leTelefone.Text);
+          ParamByName('Email').AsString := leEmail.Text;
+          ParamByName('CEP').AsString := leCEP.Text;
+          ParamByName('Endereco').AsString := leEndereco.Text;
+          ParamByName('Numero').AsString := leNumero.Text;
+          ParamByName('Bairro').AsString := leBairro.Text;
+          ParamByName('Cidade').AsString := leCidade.Text;
+          ParamByName('UF').AsString := cbUf.Text;
+          ParamByName('SenhaHash').AsString := hash;
+
+          ExecSQL;
+
+          if MessageDlg('Cadastro finalizado com sucesso! Deseja incluir seu veículo?',
+          mtConfirmation, [mbYes, mbNo], 0) = mrYes then FrameVeiculo else Close;
+        end;
+
+      end else begin
+        ShowMessage('Senhas não compatíveis. Tente novamente');
+        end;
+    end;
 end;
 
 end.

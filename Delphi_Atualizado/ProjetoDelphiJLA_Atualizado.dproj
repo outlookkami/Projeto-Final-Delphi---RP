@@ -241,6 +241,38 @@
             <FormType>dfm</FormType>
         </DCCReference>
         <None Include="login.ini"/>
+        <RcItem Include="Assets\cadeado azul bloqueado.png">
+            <ResourceType>ICON</ResourceType>
+            <ResourceId>cadeado_bloqueado</ResourceId>
+        </RcItem>
+        <RcItem Include="Assets\cadeado azul desbloqueado.png">
+            <ResourceType>ICON</ResourceType>
+            <ResourceId>cadeado_desbloqueado</ResourceId>
+        </RcItem>
+        <RcItem Include="Assets\saída-X.png">
+            <ResourceType>BITMAP</ResourceType>
+            <ResourceId>sair</ResourceId>
+        </RcItem>
+        <RcItem Include="Assets\Capô T-Rock.jpg">
+            <ResourceType>RCDATA</ResourceType>
+            <ResourceId>capo_dinossauro</ResourceId>
+        </RcItem>
+        <RcItem Include="Assets\logoJLA_paintPNG.png">
+            <ResourceType>ICON</ResourceType>
+            <ResourceId>logoJLA</ResourceId>
+        </RcItem>
+        <RcItem Include="Assets\pintura-funilaria.jpg.png">
+            <ResourceType>RCDATA</ResourceType>
+            <ResourceId>plano_fundo_login</ResourceId>
+        </RcItem>
+        <RcItem Include="Assets\search-interface-symbol.png">
+            <ResourceType>BITMAP</ResourceType>
+            <ResourceId>pesquisar</ResourceId>
+        </RcItem>
+        <RcItem Include="Assets\voltarAzulBranco.png">
+            <ResourceType>BITMAP</ResourceType>
+            <ResourceId>voltar</ResourceId>
+        </RcItem>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
@@ -267,6 +299,54 @@
                 </Source>
             </Delphi.Personality>
             <Deployment Version="4">
+                <DeployFile LocalName="Assets\Capô T-Rock.jpg" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Assets\cadeado azul bloqueado.png" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Assets\cadeado azul desbloqueado.png" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Assets\logoJLA_paintPNG.png" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Assets\pintura-funilaria.jpg.png" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Assets\saída-X.png" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Assets\search-interface-symbol.png" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Assets\voltarAzulBranco.png" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="Win32\Debug\ProjetoDelphiJLA_Atualizado.exe" Configuration="Debug" Class="ProjectOutput">
                     <Platform Name="Win32">
                         <RemoteName>ProjetoDelphiJLA_Atualizado.exe</RemoteName>

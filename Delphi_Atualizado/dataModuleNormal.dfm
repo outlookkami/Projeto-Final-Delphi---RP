@@ -98,7 +98,7 @@ object DM: TDM
   object FDPhysPgDriverLink2: TFDPhysPgDriverLink
     VendorLib = 
       'C:\Users\Kamilly Souza\Desktop\Projeto Delphi-JLA\Delphi_Atualiz' +
-      'ado\lib-FD\libpq.dll'
+      'ado\BancoDeDados\lib\libpq.dll'
     Left = 248
     Top = 104
   end
@@ -305,11 +305,25 @@ object DM: TDM
     Top = 56
   end
   object QueryPedidos: TFDQuery
+    Active = True
     Connection = ConexaoBanco
     SQL.Strings = (
       'SELECT * FROM Pedidos;')
     Left = 112
     Top = 264
+    ParamData = <
+      item
+        Name = 'dataInicio'
+        DataType = ftDate
+        FDDataType = dtDate
+        ParamType = ptInput
+      end
+      item
+        Name = 'dataFim'
+        DataType = ftDate
+        FDDataType = dtDate
+        ParamType = ptInput
+      end>
     object QueryPedidoscodigo_pedido: TIntegerField
       FieldName = 'codigo_pedido'
       Origin = 'codigo_pedido'
@@ -588,6 +602,7 @@ object DM: TDM
     Top = 336
   end
   object QueryPedidosOrcamentos: TFDQuery
+    Active = True
     Connection = ConexaoBanco
     SQL.Strings = (
       'SELECT'
@@ -635,5 +650,18 @@ object DM: TDM
       '')
     Left = 272
     Top = 336
+    ParamData = <
+      item
+        Name = 'dataInicio'
+        DataType = ftDate
+        FDDataType = dtDate
+        ParamType = ptInput
+      end
+      item
+        Name = 'dataFim'
+        DataType = ftDate
+        FDDataType = dtDate
+        ParamType = ptInput
+      end>
   end
 end

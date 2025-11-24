@@ -37,10 +37,10 @@ procedure TformFiltroRelOrcamentos.Button1Click(Sender: TObject);
 begin
     formRepOrcamentos := TformRepOrcamentos.Create(Application);
     try
-      DM.QueryRelOrcamentos.Close;
-      DM.QueryRelOrcamentos.ParamByName('dataInicio').AsDate := dtInicio.Date;
-      DM.QueryRelOrcamentos.ParamByName('dataFim').AsDate := dtFim.Date;
-      DM.QueryRelOrcamentos.Open;
+      DM.QueryOrcamentos.Close;
+      DM.QueryOrcamentos.ParamByName('dataInicio').AsDate := dtInicio.Date;
+      DM.QueryOrcamentos.ParamByName('dataFim').AsDate := dtFim.Date;
+      DM.QueryOrcamentos.Open;
 
       formRepOrcamentos.repOrcamentos.Preview;
     finally

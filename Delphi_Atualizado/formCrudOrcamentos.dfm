@@ -211,7 +211,7 @@ object crudOrcamentos: TcrudOrcamentos
           681
           530)
         object DBGrid3: TDBGrid
-          Left = 0
+          Left = 7
           Top = 0
           Width = 678
           Height = 527
@@ -469,7 +469,7 @@ object crudOrcamentos: TcrudOrcamentos
           Left = 7
           Top = 6
           Width = 101
-          Height = 31
+          Height = 25
           Alignment = taCenter
           BevelInner = bvNone
           BevelOuter = bvNone
@@ -1043,7 +1043,7 @@ object crudOrcamentos: TcrudOrcamentos
       end
       object pnlFazerOrcPedido: TPanel
         Left = 192
-        Top = 573
+        Top = 577
         Width = 161
         Height = 43
         Cursor = crHandPoint
@@ -1160,7 +1160,7 @@ object crudOrcamentos: TcrudOrcamentos
         Left = 16
         Top = 239
         Width = 143
-        Height = 20
+        Height = 21
         Align = alCustom
         Caption = 'Descri'#231#227'o do Pedido:'
       end
@@ -1178,7 +1178,7 @@ object crudOrcamentos: TcrudOrcamentos
         Left = 18
         Top = 329
         Width = 67
-        Height = 20
+        Height = 21
         Align = alCustom
         Caption = 'Materiais:'
       end
@@ -1271,7 +1271,7 @@ object crudOrcamentos: TcrudOrcamentos
         Left = 16
         Top = 490
         Width = 329
-        Height = 27
+        Height = 29
         Align = alCustom
         EditLabel.Width = 134
         EditLabel.Height = 21
@@ -1297,7 +1297,7 @@ object crudOrcamentos: TcrudOrcamentos
         ParentFont = False
         TabOrder = 9
         Visible = False
-        OnClick = pnlIncluirOrcClick
+        OnClick = pnlSalvarClick
       end
       object strgridMateriais: TStringGrid
         Left = 20

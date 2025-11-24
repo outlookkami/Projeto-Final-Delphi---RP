@@ -4,7 +4,11 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ComCtrls, Vcl.ExtCtrls;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ComCtrls, Vcl.ExtCtrls,
+  FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
+  FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
+  FireDAC.Stan.Async, FireDAC.DApt, Data.DB, FireDAC.Comp.DataSet,
+  FireDAC.Comp.Client;
 
 type
   TformFiltroRelPedidos = class(TForm)
@@ -17,6 +21,21 @@ type
     lblDataFim: TLabel;
     Button1: TButton;
     Label2: TLabel;
+    QueryPedidos: TFDQuery;
+    QueryPedidoscodigo_pedido: TIntegerField;
+    QueryPedidosendereco_cliente: TStringField;
+    QueryPedidoscep_cliente: TStringField;
+    QueryPedidosplaca_veiculo: TStringField;
+    QueryPedidosmarca: TStringField;
+    QueryPedidosmodelo: TStringField;
+    QueryPedidoscor: TStringField;
+    QueryPedidosdescricao_pedido: TMemoField;
+    QueryPedidoscontato_cliente: TStringField;
+    QueryPedidosdata_pedido: TSQLTimeStampField;
+    QueryPedidosnome_cliente: TStringField;
+    QueryPedidosstatus_pedido: TStringField;
+    QueryPedidosemail_cliente: TStringField;
+    QueryPedidoscodigo_cliente: TStringField;
     procedure Button1Click(Sender: TObject);
   private
     { Private declarations }
@@ -39,10 +58,10 @@ begin
     try
 //      formRepPedidos.dtInicio := dtInicio.Date;
 //      formRepPedidos.dtFim := dtFim.Date;
-      DM.QueryRelPedidos.Close;
-      DM.QueryRelPedidos.ParamByName('dataInicio').AsDate := dtInicio.Date;
-      DM.QueryRelPedidos.ParamByName('dataFim').AsDate := dtFim.Date;
-      DM.QueryRelPedidos.Open;
+      DM.QueryPedidos.Close;
+      DM.QueryPedidos.ParamByName('dataInicio').AsDate := dtInicio.Date;
+      DM.QueryPedidos.ParamByName('dataFim').AsDate := dtFim.Date;
+      DM.QueryPedidos.Open;
 
       formRepPedidos.RLReport1.Preview;
     finally

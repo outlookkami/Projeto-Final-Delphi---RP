@@ -81,6 +81,7 @@ type
     procedure bitbtnAtualizarClick(Sender: TObject);
     procedure btnEditOrcClick(Sender: TObject);
     procedure btnExcluOrcClick(Sender: TObject);
+    procedure pnlSalvarClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -144,10 +145,10 @@ begin
       descServico.Text := FieldByName('descricao_pedido').AsString;
       leValorMDO.Text := FieldByName('valor_mdo').AsString;
       cbStatus.Text := FieldByName('status_orcamento').AsString;
-// Soma dos valores dos materiais estimados: FieldByName('valor_materiais');
-//      leCEP.Text := FieldByName('cep_cliente').AsString;
-//      leEmailCliente.Text := FieldByName('email_cliente').AsString;
-//      leEndereco.Text := FieldByName('endereco_cliente').AsString;
+      FieldByName('valor_materiais');
+      FieldByName('cep_cliente').AsString;
+      FieldByName('email_cliente').AsString;
+      //FieldByName('endereco_cliente').AsString;
     end;
 end;
 
@@ -228,8 +229,8 @@ var i: Integer;
 begin
     total := 0;
 
-    for i := 1 to strgridMateriais.RowCount -1 do
-     total := total + StrToFloatDef(strgridMateriais.Cells[3, i], 0);
+    for i := 2 to strgridMateriais.RowCount -1 do
+     total := total + StrToFloat(strgridMateriais.Cells[3, i]);
 
      totProd := total;
 end;
@@ -288,33 +289,44 @@ begin
 //      DM.QueryProdutos.Next;
 //    end;
 
-    custoMDO := StrToInt(leValorMDO.Text);
+    custoMDO:= StrToFloat(leValorMDO.Text);
     valorOrcamento := custoMDO + totProd;
 
     with DM.QueryOrcamentos do begin
-      SQL.Text := 'INSERT INTO Orcamentos (data_emissao, validade, valor_mdo, valor_materiais, valor_total) VALUES (:Emissao,:Validade, :MDO, :Materiais, :Total) WHERE codigo_pedido = :CodPedido';
+      SQL.Text := 'UPDATE Orcamentos SET data_emissao = :Emissao, validade = :Validade, valor_mdo = :MDO, valor_materiais = :Materiais, valor_total = :Total WHERE codigo_orcamento = :CodOrcamento';
+//      SQL.Text := 'INSERT INTO Orcamentos (data_emissao, validade, valor_mdo, valor_materiais, valor_total, codigo_pedido) VALUES (:Emissao,:Validade, :MDO, :Materiais, :Total, :CodPedido)';
+      ParamByName('CodOrcamento').AsInteger := StrToInt(codigoOrcamento);
       ParamByName('Emissao').AsDate := dtEmissao.Date;
       ParamByName('Validade').AsDate := dtValidade.Date;
       ParamByName('MDO').AsFloat := custoMDO;
       ParamByName('Materiais').AsFloat := totProd;
       ParamByName('Total').AsFloat := valorOrcamento;
-      ParamByName('CodPedido').AsInteger := StrToInt(leCodPedido.Text);
+
+      ExecSQL;
     end;
 
-    with DM.QueryPedidos do begin
-      SQL.Text := 'UPDATE Pedidos SET status_pedido = :Statusorc WHERE cod_pedido = :CodPedido';
-      ParamByName('Statusorc').AsString := 'Orçamento Realizado';
-      ParamByName('CodPedido').AsInteger := StrToInt(leCodPedido.Text);
-    end;
+//    with DM.QueryPedidos do begin
+//      DM.QueryPedidos.Close;
+//      SQL.Text := 'UPDATE Pedidos SET status_pedido = :Statusorc WHERE codigo_pedido = :CodPedido';
+//      ParamByName('CodPedido').AsInteger := StrToInt(leCodPedido.Text);
+//      ParamByName('Statusorc').AsString := 'Orçamento Realizado';
+//      ExecSQL;
+//    end;
 end;
 
 procedure TcrudOrcamentos.pnlIncluirOrcClick(Sender: TObject);
+var contato: String;
 begin
-      pnlIncluirOrc.Visible := True;
-      LimparCampos;
+
+      with DM.QueryPedidos do begin
+        SQL.Text := 'SELECT contato_cliente FROM Pedidos WHERE codigo_pedido = :CodPedido';
+        ParamByName('CodPedido').AsString := leCodPedido.Text;
+        contato := FieldByName('contato_cliente').AsString;
+      end;
 
       with DM.QueryOrcamentos do begin
         DM.QueryOrcamentos.Open;
+
         SQL.Text := 'INSERT INTO Orcamentos (codigo_pedido, codigo_cliente, data_emissao, validade, contato_cliente, placa_veiculo, modelo, marca, cor, descricao_pedido, status_orcamento, nome_cliente, email_cliente, cep_cliente)' +
         'VALUES (:CodPedido, :CodCliente, :DataEmissao, :Validade, :Contato, :Placa, :Modelo, :Marca, :Cor, :DescPedido, :ValorMDO, :Status);';
 
@@ -322,17 +334,25 @@ begin
         ParamByName('CodCliente').AsString := leCodigoCli.Text;
         ParamByName('DataEmissao').AsDateTime := dtEmissao.Date;
         ParamByName('Validade').AsDateTime := dtValidade.Date;
+        ParamByName('Contato').AsString := contato;
         ParamByName('Placa').AsString := lePlaca.Text;
         ParamByName('Modelo').AsString := leModelo.Text;
         ParamByName('Marca').AsString := leMarca.Text;
         ParamByName('Cor').AsString := leCor.Text;
         ParamByName('DescPedido').AsString := descServico.Text;
         //ParamByName('Materiais').AsString := listviewMateriais;
-        ParamByName('ValorMDO').AsString := leValorMDO.Text;
+        ParamByName('ValorMDO').AsString := FormatFloat('0.00', custoMDO);
         ParamByName('Status').AsString := cbStatus.Text;
 
         ExecSQL;
       end;
+end;
+
+procedure TcrudOrcamentos.pnlSalvarClick(Sender: TObject);
+begin
+    if DM.QueryOrcamentos.State in dsEditModes then begin
+    DM.QueryOrcamentos.Post;
+    end;
 end;
 
 procedure TcrudOrcamentos.strgridMateriaisSelectCell(Sender: TObject; ACol,
