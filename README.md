@@ -1,10 +1,10 @@
-#🚙 Jump Lataria Automotiva
+# 🚙 Jump Lataria Automotiva
 
 > Sistema de gestão desenvolvido para uma oficina de funilaria e pintura, com foco na organização de cadastros, orçamentos e atendimento de serviços automotivos. O sistema foi implementado em Delphi e utiliza banco de dados PostgreSQL para armazenamento das informações.
 
 ---
 
-##🚀 Funcionalidades do sistema
+## 🚀 Funcionalidades do sistema
 O projeto conta com módulos que permitem o gerenciamento de informações essenciais da oficina:
 • Cadastro de clientes
 
@@ -26,7 +26,7 @@ Embora a integração esteja presente, os relatórios ainda não estão completa
 
 ---
 
-##🛠 Tecnologias utilizadas
+## 🛠 Tecnologias utilizadas
 • Delphi 12 --> Desenvolvimento da aplicação
 • PostgreSQL --> Banco de dados do sistema
 • PgAdmin --> Gerenciamento do banco de dados
@@ -34,7 +34,7 @@ Embora a integração esteja presente, os relatórios ainda não estão completa
 
 ---
 
-##📥 Requisitos para execução
+## 📥 Requisitos para execução
 Para abertura e execução do sistema, é necessário:
 • Delphi versão 12
 
