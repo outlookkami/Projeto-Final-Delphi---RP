@@ -34,15 +34,12 @@ type
     RLLabel7: TRLLabel;
     RLDBResult1: TRLDBResult;
     RLDBResult2: TRLDBResult;
-    RLBand5: TRLBand;
-    RLDBText1: TRLDBText;
     RLDBText2: TRLDBText;
     RLDBText3: TRLDBText;
     RLDBText4: TRLDBText;
     QueryRelPedidos: TFDQuery;
     DSRelPedidos: TDataSource;
-    FDPhysPgDriverLink2: TFDPhysPgDriverLink;
-    ConexaoRelatorioPed: TFDConnection;
+    RLDBText1: TRLDBText;
 //    procedure FormCreate(Sender: TObject);
 //    procedure FormDestroy(Sender: TObject);
   private

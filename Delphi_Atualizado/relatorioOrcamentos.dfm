@@ -55,15 +55,9 @@ object formRepOrcamentos: TformRepOrcamentos
         Transparent = False
       end
     end
-    object RLBand2: TRLBand
-      Left = 38
-      Top = 321
-      Width = 718
-      Height = 112
-    end
     object RLBand3: TRLBand
       Left = 38
-      Top = 433
+      Top = 321
       Width = 718
       Height = 80
       BandType = btFooter
@@ -166,9 +160,9 @@ object formRepOrcamentos: TformRepOrcamentos
       object RLDBText1: TRLDBText
         Left = 3
         Top = 47
-        Width = 87
+        Width = 110
         Height = 16
-        DataField = 'codigo_pedido'
+        DataField = 'codigo_orcamento'
         DataSource = DSRelOrcamentos
         Text = ''
         Transparent = False
@@ -176,27 +170,29 @@ object formRepOrcamentos: TformRepOrcamentos
       object RLDBText2: TRLDBText
         Left = 96
         Top = 47
-        Width = 74
+        Width = 85
         Height = 16
-        DataField = 'data_pedido'
+        DataField = 'data_emissao'
+        DataSource = DSRelOrcamentos
         Text = ''
         Transparent = False
       end
       object RLDBText3: TRLDBText
         Left = 216
         Top = 47
-        Width = 85
+        Width = 62
         Height = 16
-        DataField = 'status_pedido'
+        DataField = 'valor_mdo'
+        DataSource = DSRelOrcamentos
         Text = ''
         Transparent = False
       end
       object RLDBText4: TRLDBText
         Left = 336
         Top = 47
-        Width = 110
+        Width = 90
         Height = 16
-        DataField = 'codigo_orcamento'
+        DataField = 'valor_materiais'
         DataSource = DSRelOrcamentos
         Text = ''
         Transparent = False
@@ -204,18 +200,19 @@ object formRepOrcamentos: TformRepOrcamentos
       object RLDBText5: TRLDBText
         Left = 480
         Top = 47
-        Width = 110
+        Width = 62
         Height = 16
-        DataField = 'codigo_orcamento'
+        DataField = 'valor_total'
+        DataSource = DSRelOrcamentos
         Text = ''
         Transparent = False
       end
       object RLDBText6: TRLDBText
         Left = 604
         Top = 47
-        Width = 110
+        Width = 108
         Height = 16
-        DataField = 'codigo_orcamento'
+        DataField = 'status_orcamento'
         DataSource = DSRelOrcamentos
         Text = ''
         Transparent = False
@@ -225,13 +222,22 @@ object formRepOrcamentos: TformRepOrcamentos
   object QueryRelOrcamentos: TFDQuery
     Connection = DM.ConexaoBanco
     SQL.Strings = (
-      '')
-    Left = 456
-    Top = 560
+      'SELECT'
+      '  o.codigo_orcamento,'
+      '  o.data_emissao,'
+      '  o.valor_mdo,'
+      '  o.valor_materiais,'
+      '  o.valor_total,'
+      '  o.status_orcamento'
+      'FROM Orcamentos o'
+      'WHERE o.data_emissao BETWEEN '#39'2025-10-01'#39' AND '#39'2025-11-11'#39
+      'ORDER BY o.status_orcamento, o.data_emissao;')
+    Left = 472
+    Top = 424
   end
   object DSRelOrcamentos: TDataSource
     DataSet = QueryRelOrcamentos
-    Left = 616
-    Top = 560
+    Left = 608
+    Top = 424
   end
 end

@@ -15,7 +15,6 @@ type
     RLBand1: TRLBand;
     RLLabel2: TRLLabel;
     RLSystemInfo1: TRLSystemInfo;
-    RLBand2: TRLBand;
     RLBand3: TRLBand;
     RLBand4: TRLBand;
     RLPanel1: TRLPanel;
