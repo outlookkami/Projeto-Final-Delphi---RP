@@ -5,21 +5,6 @@ program ProjetoDelphiJLA_Atualizado;
 {$R *.dres}
 
 uses
-  {$IFDEF EurekaLog}
-  EMemLeaks,
-  EResLeaks,
-  EDebugJCL,
-  EDebugMap,
-  EDebugExports,
-  EFixSafeCallException,
-  EMapWin32,
-  EAppVCL,
-  EDialogWinAPIMSClassic,
-  EDialogWinAPIEurekaLogDetailed,
-  EDialogWinAPIStepsToReproduce,
-  EDialogService,
-  ExceptionLog7,
-  {$ENDIF EurekaLog}
   Vcl.Forms,
   formLoginJLA in 'formLoginJLA.pas' {formLogin},
   formPáginaDeInícioFunc in 'formPáginaDeInícioFunc.pas' {formPáginaInicialFunc},
@@ -66,8 +51,6 @@ begin
   Application.CreateForm(TformLogin, formLogin);
   Application.CreateForm(TDM, DM);
   Application.CreateForm(TForm1, Form1);
-  Application.CreateForm(TformFiltroRelPedidos, formFiltroRelPedidos);
-  Application.CreateForm(TformFiltroRelOrcamentos, formFiltroRelOrcamentos);
   Application.Run;
 end.
 

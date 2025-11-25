@@ -65,17 +65,19 @@ object formCadastroDeClientes: TformCadastroDeClientes
       end
     end
     object pnlLogin: TPanel
-      Left = 641
+      Left = 637
       Top = 29
-      Width = 477
+      Width = 474
       Height = 656
       Align = alCustom
       Anchors = [akLeft, akTop, akRight, akBottom]
       TabOrder = 1
+      ExplicitLeft = 641
+      ExplicitWidth = 477
       object Label1: TLabel
         Left = 1
         Top = 1
-        Width = 475
+        Width = 472
         Height = 50
         Align = alTop
         Alignment = taCenter
@@ -91,7 +93,7 @@ object formCadastroDeClientes: TformCadastroDeClientes
       object gridPanelCad2: TGridPanel
         Left = 8
         Top = 57
-        Width = 464
+        Width = 461
         Height = 598
         Align = alCustom
         Anchors = [akLeft, akTop, akRight, akBottom]
@@ -289,11 +291,12 @@ object formCadastroDeClientes: TformCadastroDeClientes
             SizeStyle = ssAuto
           end>
         TabOrder = 0
+        ExplicitWidth = 464
         DesignSize = (
-          464
+          461
           598)
         object lblV1: TLabel
-          Left = 230
+          Left = 228
           Top = 3
           Width = 4
           Height = 21
@@ -302,7 +305,7 @@ object formCadastroDeClientes: TformCadastroDeClientes
           ExplicitTop = 4
         end
         object lblV2: TLabel
-          Left = 230
+          Left = 228
           Top = 57
           Width = 4
           Height = 21
@@ -310,7 +313,7 @@ object formCadastroDeClientes: TformCadastroDeClientes
           ExplicitLeft = 227
         end
         object Label3: TLabel
-          Left = 230
+          Left = 228
           Top = 112
           Width = 4
           Height = 21
@@ -319,7 +322,7 @@ object formCadastroDeClientes: TformCadastroDeClientes
           ExplicitTop = 125
         end
         object Label4: TLabel
-          Left = 230
+          Left = 228
           Top = 166
           Width = 4
           Height = 21
@@ -328,7 +331,7 @@ object formCadastroDeClientes: TformCadastroDeClientes
           ExplicitTop = 185
         end
         object Label5: TLabel
-          Left = 230
+          Left = 228
           Top = 220
           Width = 4
           Height = 21
@@ -337,7 +340,7 @@ object formCadastroDeClientes: TformCadastroDeClientes
           ExplicitTop = 250
         end
         object Label6: TLabel
-          Left = 230
+          Left = 228
           Top = 275
           Width = 4
           Height = 21
@@ -346,7 +349,7 @@ object formCadastroDeClientes: TformCadastroDeClientes
           ExplicitTop = 311
         end
         object GridPanel3: TGridPanel
-          Left = 47
+          Left = 45
           Top = 299
           Width = 370
           Height = 56
@@ -377,6 +380,7 @@ object formCadastroDeClientes: TformCadastroDeClientes
               Value = 100.000000000000000000
             end>
           TabOrder = 0
+          ExplicitLeft = 47
           DesignSize = (
             370
             56)
@@ -408,7 +412,7 @@ object formCadastroDeClientes: TformCadastroDeClientes
           end
         end
         object Label7: TLabel
-          Left = 230
+          Left = 228
           Top = 329
           Width = 4
           Height = 21
@@ -417,7 +421,7 @@ object formCadastroDeClientes: TformCadastroDeClientes
           ExplicitTop = 373
         end
         object GridPanel4: TGridPanel
-          Left = 42
+          Left = 41
           Top = 353
           Width = 379
           Height = 58
@@ -451,6 +455,7 @@ object formCadastroDeClientes: TformCadastroDeClientes
               SizeStyle = ssAuto
             end>
           TabOrder = 1
+          ExplicitLeft = 42
           DesignSize = (
             379
             58)
@@ -557,7 +562,7 @@ object formCadastroDeClientes: TformCadastroDeClientes
           end
         end
         object Label11: TLabel
-          Left = 230
+          Left = 228
           Top = 519
           Width = 4
           Height = 21
@@ -566,7 +571,7 @@ object formCadastroDeClientes: TformCadastroDeClientes
           ExplicitTop = 522
         end
         object pnlCadastrar: TPanel
-          Left = 141
+          Left = 139
           Top = 527
           Width = 185
           Height = 41
@@ -584,9 +589,10 @@ object formCadastroDeClientes: TformCadastroDeClientes
           ParentFont = False
           TabOrder = 2
           OnClick = pnlCadastrarClick
+          ExplicitLeft = 141
         end
         object Label13: TLabel
-          Left = 230
+          Left = 228
           Top = 574
           Width = 4
           Height = 21
@@ -595,7 +601,7 @@ object formCadastroDeClientes: TformCadastroDeClientes
           ExplicitTop = 577
         end
         object GridPanel6: TGridPanel
-          Left = 0
+          Left = -1
           Top = 465
           Width = 457
           Height = 58
@@ -649,6 +655,7 @@ object formCadastroDeClientes: TformCadastroDeClientes
               SizeStyle = ssAuto
             end>
           TabOrder = 3
+          ExplicitLeft = 0
           DesignSize = (
             457
             58)
@@ -2195,7 +2202,7 @@ object formCadastroDeClientes: TformCadastroDeClientes
           end
         end
         object leNome: TLabeledEdit
-          Left = 59
+          Left = 58
           Top = 51
           Width = 345
           Height = 29
@@ -2206,9 +2213,10 @@ object formCadastroDeClientes: TformCadastroDeClientes
           TabOrder = 4
           Text = ''
           TextHint = 'Digite seu nome completo'
+          ExplicitLeft = 59
         end
         object leTelefone: TLabeledEdit
-          Left = 60
+          Left = 59
           Top = 106
           Width = 343
           Height = 29
@@ -2221,9 +2229,10 @@ object formCadastroDeClientes: TformCadastroDeClientes
           TabOrder = 5
           Text = ''
           TextHint = 'Informe seu n'#250'mero de telefone'
+          ExplicitLeft = 60
         end
         object leEmail: TLabeledEdit
-          Left = 60
+          Left = 59
           Top = 160
           Width = 343
           Height = 29
@@ -2234,9 +2243,10 @@ object formCadastroDeClientes: TformCadastroDeClientes
           TabOrder = 6
           Text = ''
           TextHint = 'Digite seu endere'#231'o de e-mail'
+          ExplicitLeft = 60
         end
         object leCEP: TLabeledEdit
-          Left = 60
+          Left = 58
           Top = 214
           Width = 344
           Height = 29
@@ -2250,9 +2260,10 @@ object formCadastroDeClientes: TformCadastroDeClientes
           Text = ''
           TextHint = 'Informe seu CEP'
           OnExit = leCEPExit
+          ExplicitLeft = 60
         end
         object leEndereco: TLabeledEdit
-          Left = 59
+          Left = 57
           Top = 269
           Width = 346
           Height = 29
@@ -2263,9 +2274,10 @@ object formCadastroDeClientes: TformCadastroDeClientes
           TabOrder = 8
           Text = ''
           TextHint = 'Informe seu endere'#231'o'
+          ExplicitLeft = 59
         end
         object GridPanel2: TGridPanel
-          Left = 0
+          Left = -1
           Top = 413
           Width = 465
           Height = 57
@@ -2314,6 +2326,7 @@ object formCadastroDeClientes: TformCadastroDeClientes
               SizeStyle = ssAuto
             end>
           TabOrder = 9
+          ExplicitLeft = 0
           DesignSize = (
             465
             57)
@@ -3851,7 +3864,7 @@ object formCadastroDeClientes: TformCadastroDeClientes
           end
         end
         object Label10: TLabel
-          Left = 230
+          Left = 228
           Top = 411
           Width = 4
           Height = 21
@@ -3859,7 +3872,7 @@ object formCadastroDeClientes: TformCadastroDeClientes
           ExplicitLeft = 204
         end
         object Label16: TLabel
-          Left = 230
+          Left = 228
           Top = 438
           Width = 4
           Height = 21
@@ -3868,7 +3881,7 @@ object formCadastroDeClientes: TformCadastroDeClientes
           ExplicitTop = 435
         end
         object Label17: TLabel
-          Left = 230
+          Left = 228
           Top = 465
           Width = 4
           Height = 21
@@ -3877,10 +3890,6 @@ object formCadastroDeClientes: TformCadastroDeClientes
         end
       end
     end
-  end
-  object EurekaLogEvents1: TEurekaLogEvents
-    Left = 328
-    Top = 192
   end
   object RESTClient1: TRESTClient
     Params = <>

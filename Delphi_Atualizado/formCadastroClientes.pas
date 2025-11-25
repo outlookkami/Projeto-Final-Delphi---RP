@@ -6,12 +6,12 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Mask, Vcl.ExtCtrls,
   Vcl.DBCtrls, Vcl.Imaging.pngimage, System.UITypes,
-  EComponent, Data.DB, REST.Types, Data.Bind.Components, Data.Bind.ObjectScope,
+  Data.DB, REST.Types, Data.Bind.Components, Data.Bind.ObjectScope,
   REST.Client, Vcl.Buttons, Datasnap.Provider, Datasnap.DBClient, frameFormularioPedido;
 
 type
   TformCadastroDeClientes = class(TForm)
-    EurekaLogEvents1: TEurekaLogEvents;
+
     RESTClient1: TRESTClient;
     RESTRequest1: TRESTRequest;
     griPnlCadastro: TGridPanel;

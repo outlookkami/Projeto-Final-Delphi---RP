@@ -222,35 +222,22 @@
         </DCCReference>
         <DCCReference Include="relatorioOrcamentos.pas">
             <Form>formRepOrcamentos</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="relatorioPedidos.pas">
             <Form>formRepPedidos</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="relatorioComLogo.pas">
             <Form>Form1</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="formFiltroRelatorioPedidos.pas">
             <Form>formFiltroRelPedidos</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="formFiltroRelatorioOrcamentos.pas">
             <Form>formFiltroRelOrcamentos</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <None Include="login.ini"/>
-        <RcItem Include="Assets\cadeado azul bloqueado.png">
-            <ResourceType>ICON</ResourceType>
-            <ResourceId>cadeado_bloqueado</ResourceId>
-        </RcItem>
-        <RcItem Include="Assets\cadeado azul desbloqueado.png">
-            <ResourceType>ICON</ResourceType>
-            <ResourceId>cadeado_desbloqueado</ResourceId>
-        </RcItem>
         <RcItem Include="Assets\saída-X.png">
-            <ResourceType>BITMAP</ResourceType>
+            <ResourceType>RCDATA</ResourceType>
             <ResourceId>sair</ResourceId>
         </RcItem>
         <RcItem Include="Assets\Capô T-Rock.jpg">
@@ -258,7 +245,7 @@
             <ResourceId>capo_dinossauro</ResourceId>
         </RcItem>
         <RcItem Include="Assets\logoJLA_paintPNG.png">
-            <ResourceType>ICON</ResourceType>
+            <ResourceType>RCDATA</ResourceType>
             <ResourceId>logoJLA</ResourceId>
         </RcItem>
         <RcItem Include="Assets\pintura-funilaria.jpg.png">
@@ -266,12 +253,33 @@
             <ResourceId>plano_fundo_login</ResourceId>
         </RcItem>
         <RcItem Include="Assets\search-interface-symbol.png">
-            <ResourceType>BITMAP</ResourceType>
+            <ResourceType>RCDATA</ResourceType>
             <ResourceId>pesquisar</ResourceId>
         </RcItem>
         <RcItem Include="Assets\voltarAzulBranco.png">
-            <ResourceType>BITMAP</ResourceType>
+            <ResourceType>RCDATA</ResourceType>
             <ResourceId>voltar</ResourceId>
+        </RcItem>
+        <RcItem Include="Assets\cadeado azul desbloqueado.png">
+            <ResourceType>RCDATA</ResourceType>
+            <ResourceId>PngImage_1</ResourceId>
+        </RcItem>
+        <RcItem Include="Assets\fusca roxo brilhante.jpg">
+            <ResourceType>RCDATA</ResourceType>
+            <ResourceId>fusca_roxo</ResourceId>
+        </RcItem>
+        <RcItem Include="Assets\pintura e polimento.jpg">
+            <ResourceType>RCDATA</ResourceType>
+            <ResourceId>pintura_polimento</ResourceId>
+        </RcItem>
+        <RcItem Include="Assets\srv_reparacaoplasticoex1.jpg">
+            <ResourceType>RCDATA</ResourceType>
+            <ResourceId>desamassamento</ResourceId>
+        </RcItem>
+        <RcItem Include="Assets\car-service-worker-polishes-car-details-with-orbital-polisher1.webp">
+            <ContainerId>ResourceItem</ContainerId>
+            <ResourceType>RCDATA</ResourceType>
+            <ResourceId>carro_polido</ResourceId>
         </RcItem>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
@@ -305,19 +313,31 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="Assets\cadeado azul bloqueado.png" Configuration="Debug" Class="ProjectFile">
-                    <Platform Name="Win32">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
                 <DeployFile LocalName="Assets\cadeado azul desbloqueado.png" Configuration="Debug" Class="ProjectFile">
                     <Platform Name="Win32">
                         <RemoteDir>.\</RemoteDir>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
+                <DeployFile LocalName="Assets\car-service-worker-polishes-car-details-with-orbital-polisher1.webp" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Assets\fusca roxo brilhante.jpg" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="Assets\logoJLA_paintPNG.png" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Assets\pintura e polimento.jpg" Configuration="Debug" Class="ProjectFile">
                     <Platform Name="Win32">
                         <RemoteDir>.\</RemoteDir>
                         <Overwrite>true</Overwrite>
@@ -336,6 +356,12 @@
                     </Platform>
                 </DeployFile>
                 <DeployFile LocalName="Assets\search-interface-symbol.png" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Assets\srv_reparacaoplasticoex1.jpg" Configuration="Debug" Class="ProjectFile">
                     <Platform Name="Win32">
                         <RemoteDir>.\</RemoteDir>
                         <Overwrite>true</Overwrite>

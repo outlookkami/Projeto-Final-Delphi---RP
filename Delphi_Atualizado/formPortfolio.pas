@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.DBCtrls,
-  Vcl.Imaging.jpeg;
+  Vcl.Imaging.jpeg, Vcl.Skia;
 
 type
   TformVerPortfolio = class(TForm)
@@ -38,7 +38,6 @@ type
     Panel5: TPanel;
     imgPort6: TImage;
     MemoInfoPort6: TMemo;
-    DBImage1: TDBImage;
     Image1: TImage;
     Image2: TImage;
   private

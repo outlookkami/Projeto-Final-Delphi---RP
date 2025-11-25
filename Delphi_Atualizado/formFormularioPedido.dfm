@@ -26,7 +26,7 @@ object FormPedido: TFormPedido
     object lblDescServico: TLabel
       Left = 99
       Top = 315
-      Width = 140
+      Width = 134
       Height = 20
       Anchors = [akLeft, akTop, akRight]
       Caption = 'Descri'#231#227'o do servi'#231'o:'
@@ -36,22 +36,24 @@ object FormPedido: TFormPedido
       Font.Name = 'Segoe UI'
       Font.Style = []
       ParentFont = False
+      ExplicitWidth = 140
     end
     object Panel1: TPanel
       Left = 329
       Top = 24
-      Width = 541
+      Width = 535
       Height = 65
       Anchors = [akLeft, akTop, akRight]
       Caption = 'INSERIR LOGO'
       Color = clHighlight
       ParentBackground = False
       TabOrder = 0
+      ExplicitWidth = 541
     end
     object GridPanel1: TGridPanel
       Left = 94
       Top = 183
-      Width = 981
+      Width = 975
       Height = 49
       Anchors = [akLeft, akTop, akRight]
       BevelOuter = bvNone
@@ -113,8 +115,9 @@ object FormPedido: TFormPedido
           Value = 100.000000000000000000
         end>
       TabOrder = 1
+      ExplicitWidth = 981
       DesignSize = (
-        981
+        975
         49)
       object dbleContato: TDBLabeledEdit
         Left = 2
@@ -171,7 +174,7 @@ object FormPedido: TFormPedido
     object GridPanel2: TGridPanel
       Left = 94
       Top = 129
-      Width = 981
+      Width = 975
       Height = 48
       Anchors = [akLeft, akTop, akRight]
       BevelOuter = bvNone
@@ -250,8 +253,9 @@ object FormPedido: TFormPedido
           Value = 100.000000000000000000
         end>
       TabOrder = 2
+      ExplicitWidth = 981
       DesignSize = (
-        981
+        975
         48)
       object dbleCliente: TDBLabeledEdit
         Left = 2
@@ -314,7 +318,7 @@ object FormPedido: TFormPedido
         ExplicitTop = 16
       end
       object dbleData: TDBLabeledEdit
-        Left = 733
+        Left = 730
         Top = 21
         Width = 115
         Height = 25
@@ -323,12 +327,13 @@ object FormPedido: TFormPedido
         EditLabel.Width = 30
         EditLabel.Height = 17
         EditLabel.Caption = 'Data:'
+        ExplicitLeft = 733
       end
     end
     object GridPanel3: TGridPanel
       Left = 94
       Top = 238
-      Width = 981
+      Width = 975
       Height = 49
       Anchors = [akLeft, akTop, akRight]
       BevelOuter = bvNone
@@ -408,8 +413,9 @@ object FormPedido: TFormPedido
           Value = 100.000000000000000000
         end>
       TabOrder = 3
+      ExplicitWidth = 981
       DesignSize = (
-        981
+        975
         49)
       object dblePlaca: TDBLabeledEdit
         Left = 2
@@ -486,7 +492,7 @@ object FormPedido: TFormPedido
     object memoDescricaoDoServico: TMemo
       Left = 99
       Top = 357
-      Width = 978
+      Width = 972
       Height = 215
       Anchors = [akLeft, akTop, akRight, akBottom]
       BevelInner = bvNone
@@ -502,7 +508,7 @@ object FormPedido: TFormPedido
     object GridPanel4: TGridPanel
       Left = 96
       Top = 118
-      Width = 979
+      Width = 973
       Height = 183
       Anchors = [akLeft, akTop, akRight]
       ColumnCollection = <
@@ -536,11 +542,12 @@ object FormPedido: TFormPedido
           Value = 33.333333333333310000
         end>
       TabOrder = 5
+      ExplicitWidth = 979
       DesignSize = (
-        979
+        973
         183)
       object GridPanel5: TGridPanel
-        Left = 133
+        Left = 130
         Top = 1
         Width = 713
         Height = 56
@@ -754,7 +761,7 @@ object FormPedido: TFormPedido
         end
       end
       object GridPanel6: TGridPanel
-        Left = 133
+        Left = 130
         Top = 61
         Width = 713
         Height = 60
@@ -878,7 +885,7 @@ object FormPedido: TFormPedido
         end
       end
       object GridPanel7: TGridPanel
-        Left = 133
+        Left = 130
         Top = 122
         Width = 712
         Height = 55
@@ -1044,7 +1051,7 @@ object FormPedido: TFormPedido
       end
     end
     object GridPanel8: TGridPanel
-      Left = 366
+      Left = 363
       Top = 599
       Width = 484
       Height = 56
@@ -1084,6 +1091,7 @@ object FormPedido: TFormPedido
           Value = 100.000000000000000000
         end>
       TabOrder = 6
+      ExplicitLeft = 366
       DesignSize = (
         484
         56)
